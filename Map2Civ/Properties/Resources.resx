@@ -1,0 +1,438 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="Block1_v5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\ExportTemplates\Block1_v5.bin;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Block2_v5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\ExportTemplates\Block2_v5.bin;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="About_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\About_Image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BugLarge_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\BugLarge_Image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Earth_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Earth_Image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Export_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Export_Image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Help_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Help_Image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Info_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Info_Image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LockedTile_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\LockedTile_Image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MagLens_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\MagLens_Image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Minimap_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Minimap_Image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MiniRuler_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\MiniRuler_Image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MiniWorldGrid_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\MiniWorldGrid_Image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="New_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\New_Image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Open_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Open_Image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Palette_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Palette_Image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SaveAs_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\SaveAs_Image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Save_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Save_Image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Settings_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Settings_Image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Terrain_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Terrain_Image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PenRulerLarge_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\PenRulerLarge_Image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WarningLarge_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\WarningLarge_Image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WorldMapLarge_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\WorldMapLarge_Image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Cancel_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Cancel_Image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CanvasResize_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\CanvasResize_Image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="OK_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\OK_Image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SelectOff_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\SelectOff_Image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Select_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Select_Image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WorldMap16_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\WorldMap16-32.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WorldMap64_256" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\WorldMap64-256.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MeasuringTape_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\MeasuringTape_Image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Zoom_in_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Zoom-in_Image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Zoom_out_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Zoom-out_Image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Str_SourceSettingsControlReliefMap_ErrorOpeningFile" xml:space="preserve">
+    <value>Error while opening image map file.</value>
+  </data>
+  <data name="Zoom100_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Zoom100_Image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Str_AnalyserReliefMap_ErrorCreatingModel" xml:space="preserve">
+    <value>Error while creating new model.</value>
+  </data>
+  <data name="Str_AnalyserReliefMap_ModelCreated" xml:space="preserve">
+    <value>New model created..</value>
+  </data>
+  <data name="Str_BitmapOperations_RhombusNotSupported" xml:space="preserve">
+    <value>Rhombus is not currently supported</value>
+  </data>
+  <data name="Str_CivilizationVersion_Civilization5MapSizes_Duel" xml:space="preserve">
+    <value>Duel (40x25)</value>
+  </data>
+  <data name="Str_CivilizationVersion_Civilization5MapSizes_Huge" xml:space="preserve">
+    <value>Huge (128x80)</value>
+  </data>
+  <data name="Str_CivilizationVersion_Civilization5MapSizes_Humongous" xml:space="preserve">
+    <value>Humongous ** For Debugging Purposes Only ** (300,200)</value>
+  </data>
+  <data name="Str_CivilizationVersion_Civilization5MapSizes_Large" xml:space="preserve">
+    <value>Large (104x64)</value>
+  </data>
+  <data name="Str_CivilizationVersion_Civilization5MapSizes_Small" xml:space="preserve">
+    <value>Small (66x42)</value>
+  </data>
+  <data name="Str_CivilizationVersion_Civilization5MapSizes_Standard" xml:space="preserve">
+    <value>Standard (80x52</value>
+  </data>
+  <data name="Str_CivilizationVersion_Civilization5MapSizes_Tiny" xml:space="preserve">
+    <value>Tiny (56x36)</value>
+  </data>
+  <data name="Str_ExporterBase_NotSupportedMessagePart1" xml:space="preserve">
+    <value>Option </value>
+    <comment>"Option " + civilizationVersion.ToString() + " is not currently implemented.."</comment>
+  </data>
+  <data name="Str_ExporterBase_NotSupportedMessagePart2" xml:space="preserve">
+    <value> is not currently implemented..</value>
+    <comment>"Option " + civilizationVersion.ToString() + " is not currently implemented.."</comment>
+  </data>
+  <data name="Str_ExporterCivilizationV_ExportedMessage" xml:space="preserve">
+    <value>Exported model to map </value>
+    <comment>RegisteredListenersCtrl.CentralFormPublishNewInfoMessage("Exported model to map " + presentableFilename);</comment>
+  </data>
+  <data name="Str_GridType_GridTypeDescriptions_HexagonalPT" xml:space="preserve">
+    <value>Hexagonal (Pointy Topped)</value>
+  </data>
+  <data name="Str_GridType_GridTypeDescriptions_Rhombus" xml:space="preserve">
+    <value>Rhombus</value>
+  </data>
+  <data name="Str_GridType_GridTypeDescriptions_Square" xml:space="preserve">
+    <value>Square</value>
+  </data>
+  <data name="Str_ImageEditor_ImageHeight" xml:space="preserve">
+    <value>Image height: </value>
+  </data>
+  <data name="Str_ImageEditor_ImagePixels" xml:space="preserve">
+    <value>Pixels</value>
+  </data>
+  <data name="Str_ImageEditor_ImageWidth" xml:space="preserve">
+    <value>Image width: </value>
+  </data>
+  <data name="Str_KeyboardShortcutSelectorForm_ModifierRequiredCaption" xml:space="preserve">
+    <value>Invalid input.</value>
+  </data>
+  <data name="Str_KeyboardShortcutSelectorForm_ModifierRequiredText" xml:space="preserve">
+    <value>This shortcut requires that at least on key modifier (Control and/or Alt) are applied to it.</value>
+  </data>
+  <data name="Str_KeyboardShortcutSelector_MessageBoxAlreadyAssignedCaption" xml:space="preserve">
+    <value>Invalid selection.</value>
+  </data>
+  <data name="Str_KeyboardShortcutSelector_MessageBoxAlreadyAssignedText" xml:space="preserve">
+    <value>Key combination is already assigned to another shortcut.</value>
+  </data>
+  <data name="Str_LoadModelProcessor_FileError" xml:space="preserve">
+    <value>Error while performing asynchronous operation.</value>
+    <comment>ErrorForm(true, "Error while performing asynchronous operation.", ex)</comment>
+  </data>
+  <data name="Str_LoadModelProcessor_FileLoaded" xml:space="preserve">
+    <value>Loaded file </value>
+    <comment>RegisteredListenersCtrl.CentralFormPublishNewInfoMessage("Loaded file " + displayableFilename);</comment>
+  </data>
+  <data name="Str_MapDataSource_Description_GeoData" xml:space="preserve">
+    <value>Geo-Data provider</value>
+  </data>
+  <data name="Str_MapDataSource_Description_ReliefMapImage" xml:space="preserve">
+    <value>Relief Map Image File</value>
+  </data>
+  <data name="Str_NewMapForm_AnalysingPlotsPart1" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="Str_NewMapForm_AnalysingPlotsPart2" xml:space="preserve">
+    <value>% Done)</value>
+  </data>
+  <data name="Str_NewMapForm_CreatingAnalysisImage" xml:space="preserve">
+    <value>Creating Analysis Image</value>
+  </data>
+  <data name="Str_NewMapForm_UnhandledError" xml:space="preserve">
+    <value>Unhandled Error</value>
+  </data>
+  <data name="Str_PlotGeoData_NotSupported" xml:space="preserve">
+    <value>Geo-Data feature is not implemented yet.</value>
+  </data>
+  <data name="Str_ProcessedMapControlMode_Description_ColorEditor" xml:space="preserve">
+    <value>Color Editor</value>
+  </data>
+  <data name="Str_ProcessedMapControlMode_Description_PlotEditors" xml:space="preserve">
+    <value>Plot Editor</value>
+  </data>
+  <data name="Str_ProcessedMapMenu_DeAssign_Text" xml:space="preserve">
+    <value>Remove Terrain Assignment</value>
+  </data>
+  <data name="Str_ProcessedMapMenu_EditPlotColor_Text" xml:space="preserve">
+    <value>Edit Plot Color (</value>
+    <comment>_editPlotColorMenuItem.Text = "Edit Plot Color ("+ 
+                Map2Civilization.Properties.Settings.Default.KeyShrortcuts_EditPlotData.ToString().Replace(',', '+')+")";</comment>
+  </data>
+  <data name="Str_ProcessedMapMenu_EditRegion_Text" xml:space="preserve">
+    <value>Edit Region (</value>
+    <comment>_editRegionMenuItem.Text = "Edit Region ("+ 
+                Map2Civilization.Properties.Settings.Default.KeyShrortcuts_EditRegion.ToString().Replace(',', '+') + ")";</comment>
+  </data>
+  <data name="Str_SaveModelProcessor_SavedError" xml:space="preserve">
+    <value>Error while saving model.</value>
+    <comment>ErrorForm(false, "Error while saving model.", ex))</comment>
+  </data>
+  <data name="Str_SaveModelProcessor_SavedFile" xml:space="preserve">
+    <value>Saved file </value>
+    <comment>RegisteredListenersCtrl.CentralFormPublishNewInfoMessage("Saved file " + displayableFilename);</comment>
+  </data>
+  <data name="Str_SettingsForm_MinimumZoomErrorCaption" xml:space="preserve">
+    <value>Non acceptable value</value>
+  </data>
+  <data name="Str_SettingsForm_MinimumZoomErrorText" xml:space="preserve">
+    <value>The minimum zoom value should be smaller than the maximum zoom value.</value>
+  </data>
+  <data name="Str_SettingsForm_PlotWidthErrorCaption" xml:space="preserve">
+    <value>Non acceptable value</value>
+  </data>
+  <data name="Str_SettingsForm_PlotWidthErrorText" xml:space="preserve">
+    <value>The width of a plot must be an odd number.</value>
+  </data>
+  <data name="Str_SettingsForm_RestartCaption" xml:space="preserve">
+    <value>Restart Required</value>
+  </data>
+  <data name="Str_SettingsForm_RestartText" xml:space="preserve">
+    <value>The changes you have made, require an application restart.</value>
+  </data>
+  <data name="Str_SourceSettingsControlReliefMap_ImageSizeMsgBoxWaringCaption" xml:space="preserve">
+    <value>Invalid Image Ratio.</value>
+  </data>
+  <data name="Str_SourceSettingsControlReliefMap_ImageSizeMsgBoxWaringText" xml:space="preserve">
+    <value>The selected image's size is not compatible with the dimensions of the map. Would you like to select the portion of the image to be transferred to the map?</value>
+  </data>
+  <data name="Str_SourceSettingsControlReliefMap_NoImageSelected" xml:space="preserve">
+    <value>No image file selected. Please select a valid image file and try again</value>
+  </data>
+  <data name="Str_TerrainType_Description_Coast" xml:space="preserve">
+    <value>Coast</value>
+  </data>
+  <data name="Str_TerrainType_Description_Flat" xml:space="preserve">
+    <value>Plain</value>
+  </data>
+  <data name="Str_TerrainType_Description_Hill" xml:space="preserve">
+    <value>Hill</value>
+  </data>
+  <data name="Str_TerrainType_Description_Mountain" xml:space="preserve">
+    <value>Mountain</value>
+  </data>
+  <data name="Str_TerrainType_Description_NotDefined" xml:space="preserve">
+    <value>Not Defined</value>
+  </data>
+  <data name="Str_TerrainType_Description_Ocean" xml:space="preserve">
+    <value>Ocean</value>
+  </data>
+  <data name="Str_ZoomSplitButtonText" xml:space="preserve">
+    <value>Zoom:</value>
+  </data>
+  <data name="test" xml:space="preserve">
+    <value>Intended Ratio:</value>
+  </data>
+  <data name="Str_ImageEditor_IntendedRatio" xml:space="preserve">
+    <value>Intended Ratio:</value>
+  </data>
+  <data name="Str_ZoomSplitButtonText_Percent" xml:space="preserve">
+    <value>%</value>
+  </data>
+  <data name="Str_AboutForm_About" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="Str_AboutForm_Version" xml:space="preserve">
+    <value>Version</value>
+  </data>
+  <data name="Str_ExporterBase_NotSupportedCaption" xml:space="preserve">
+    <value>!</value>
+  </data>
+  <data name="Str_LoadModelProcessor_AsyncError" xml:space="preserve">
+    <value>Error while performing asynchronous operation.</value>
+  </data>
+  <data name="Str_SingleSpace" xml:space="preserve">
+    <value> </value>
+  </data>
+  <data name="Str_UnhandledError" xml:space="preserve">
+    <value>Oops! There seems to be a problem that wasn't handled at all...</value>
+  </data>
+  <data name="Str_SingleColonWithSpace" xml:space="preserve">
+    <value>: </value>
+  </data>
+  <data name="Str_OpenFileDialogFilter" xml:space="preserve">
+    <value>Map2Civ Files | *.M2C</value>
+  </data>
+  <data name="Str_OpenFileDialogDefaultExt" xml:space="preserve">
+    <value>*.M2C</value>
+  </data>
+</root>

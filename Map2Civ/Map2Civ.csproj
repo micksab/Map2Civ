@@ -1,0 +1,480 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9207AED0-01DC-415E-A874-DCDADBDF86B4}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Map2Civilization</RootNamespace>
+    <AssemblyName>Map2Civilization</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>WorldMap64-256.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>Map2Civilization.Program</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Ctrl\Analyser\Analyser.cs" />
+    <Compile Include="Ctrl\Analyser\AnalyserGeoData.cs" />
+    <Compile Include="Ctrl\Analyser\AnalyserReliefMap.cs" />
+    <Compile Include="Ctrl\DataStructure\PlotID.cs" />
+    <Compile Include="Ctrl\Enumerations\CivilizationVersion.cs" />
+    <Compile Include="Ctrl\Enumerations\GridType.cs" />
+    <Compile Include="Ctrl\Enumerations\IEnrichedEnumWrapper.cs" />
+    <Compile Include="Ctrl\Enumerations\MapDataSource.cs" />
+    <Compile Include="Ctrl\Enumerations\ProcessedMapControlMode.cs" />
+    <Compile Include="Ctrl\Enumerations\TerrainType.cs" />
+    <Compile Include="Ctrl\DataStructure\MapDimension.cs" />
+    <Compile Include="Ctrl\Listener\IUiListener.cs" />
+    <Compile Include="Ctrl\Listener\IUiListenerModel.cs" />
+    <Compile Include="Ctrl\Listener\IUiListenerZoom.cs" />
+    <Compile Include="Ctrl\Listener\IUiForwardedFocusAndClickListener.cs" />
+    <Compile Include="Ctrl\ModelFileStorage\ExporterBase.cs" />
+    <Compile Include="Ctrl\ModelFileStorage\ExporterCivlizationV.cs" />
+    <Compile Include="Ctrl\ModelFileStorage\LoadModelProcessor.cs" />
+    <Compile Include="Ctrl\ModelFileStorage\ModelDataSet.cs" />
+    <Compile Include="Ctrl\ModelFileStorage\SaveModelProcessor.cs" />
+    <Compile Include="Ctrl\VariousUtilityMethods.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="Ctrl\BitmapOperationsCtrl.cs" />
+    <Compile Include="Ctrl\DetectedColorCollectionCtrl.cs" />
+    <Compile Include="Ctrl\Listener\IUiListenerDetectedColorsCounter.cs" />
+    <Compile Include="Ctrl\Listener\IUiListenerProgress.cs" />
+    <Compile Include="Ctrl\Listener\UIListenersRegister.cs" />
+    <Compile Include="Ctrl\ModelCtrl.cs" />
+    <Compile Include="Ctrl\RegisteredListenersCtrl.cs" />
+    <Compile Include="Ctrl\PlotCollectionCtrl.cs" />
+    <Compile Include="Model\PlotGeoData.cs" />
+    <Compile Include="Model\PlotReliefMap.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Ctrl\GridCoordinateHelperCtrl.cs" />
+    <Compile Include="Ctrl\Analyser\SourceGeoDataSettings.cs" />
+    <Compile Include="Model\DetectedColor.cs" />
+    <Compile Include="Model\DetectedColors.cs" />
+    <Compile Include="Model\Plot.cs" />
+    <Compile Include="Model\DataModel.cs" />
+    <Compile Include="Model\Plots.cs" />
+    <Compile Include="Ctrl\Analyser\ISourceMapSettings.cs" />
+    <Compile Include="Ctrl\Analyser\SourceReliefMapSettings.cs" />
+    <Compile Include="View\AboutBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\AboutBox.Designer.cs">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ctrl\Listener\IUiListenerDetectedColorsGrid.cs" />
+    <Compile Include="View\CanvasSizeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\CanvasSizeForm.Designer.cs">
+      <DependentUpon>CanvasSizeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ImageEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ImageEditor.Designer.cs">
+      <DependentUpon>ImageEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\KeyboardShortcutSelectorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\KeyboardShortcutSelectorForm.Designer.cs">
+      <DependentUpon>KeyboardShortcutSelectorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\MassColorEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\MassColorEditForm.Designer.cs">
+      <DependentUpon>MassColorEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\NewMapForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\NewMapForm.Designer.cs">
+      <DependentUpon>NewMapForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\RegionEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\RegionEditForm.Designer.cs">
+      <DependentUpon>RegionEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ctrl\Listener\IUiListenerCentralForm.cs" />
+    <Compile Include="Ctrl\Listener\IUiListenerOriginalMap.cs" />
+    <Compile Include="View\ErrorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ErrorForm.Designer.cs">
+      <DependentUpon>ErrorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\SettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\SettingsForm.Designer.cs">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserControls\ColorSelector.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UserControls\ColorSelector.Designer.cs">
+      <DependentUpon>ColorSelector.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserControls\CultureAwareMessageBox.cs" />
+    <Compile Include="View\UserControls\CustomEnumComboBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UserControls\CustomEnumComboBox.Designer.cs">
+      <DependentUpon>CustomEnumComboBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserControls\DetectedColorsGrid.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UserControls\DetectedColorsGrid.Designer.cs">
+      <DependentUpon>DetectedColorsGrid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserControls\FeedbackLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\UserControls\ImageAreaSelector.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\UserControls\KeyboardShortcutSelector.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UserControls\KeyboardShortcutSelector.Designer.cs">
+      <DependentUpon>KeyboardShortcutSelector.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserControls\SourceSettingsControlBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UserControls\MapControlBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UserControls\MapControlOriginal.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UserControls\MapControlProcessed.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ctrl\Listener\IUiListenerPlotLocation.cs" />
+    <Compile Include="Ctrl\Listener\IUiListenerProcessedMap.cs" />
+    <Compile Include="View\UserControls\ProcessedMapMenu.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\UserControls\SelectedPlotPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\UserControls\AbstractControlDescriptionProvider.cs" />
+    <Compile Include="View\UserControls\SourceSettingsControlGeoData.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UserControls\SourceSettingsControlGeoData.Designer.cs">
+      <DependentUpon>SourceSettingsControlGeoData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserControls\SourceSettingsControlReliefMap.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UserControls\SourceSettingsControlReliefMap.Designer.cs">
+      <DependentUpon>SourceSettingsControlReliefMap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserControls\ZoomSplitButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.el-GR.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.el.resx" />
+    <EmbeddedResource Include="View\AboutBox.resx">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\CanvasSizeForm.el-GR.resx">
+      <DependentUpon>CanvasSizeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\CanvasSizeForm.el.resx">
+      <DependentUpon>CanvasSizeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\CanvasSizeForm.resx">
+      <DependentUpon>CanvasSizeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ErrorForm.el-GR.resx">
+      <DependentUpon>ErrorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ErrorForm.el.resx">
+      <DependentUpon>ErrorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ImageEditor.el-GR.resx">
+      <DependentUpon>ImageEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ImageEditor.el.resx">
+      <DependentUpon>ImageEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ImageEditor.resx">
+      <DependentUpon>ImageEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\KeyboardShortcutSelectorForm.el-GR.resx">
+      <DependentUpon>KeyboardShortcutSelectorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\KeyboardShortcutSelectorForm.el.resx">
+      <DependentUpon>KeyboardShortcutSelectorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\KeyboardShortcutSelectorForm.resx">
+      <DependentUpon>KeyboardShortcutSelectorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\MainForm.el-GR.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\MainForm.el.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\MassColorEditForm.el-GR.resx">
+      <DependentUpon>MassColorEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\MassColorEditForm.el.resx">
+      <DependentUpon>MassColorEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\MassColorEditForm.resx">
+      <DependentUpon>MassColorEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\NewMapForm.el-GR.resx">
+      <DependentUpon>NewMapForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\NewMapForm.el.resx">
+      <DependentUpon>NewMapForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\NewMapForm.resx">
+      <DependentUpon>NewMapForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\RegionEditForm.el-GR.resx">
+      <DependentUpon>RegionEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\RegionEditForm.el.resx">
+      <DependentUpon>RegionEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\RegionEditForm.resx">
+      <DependentUpon>RegionEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ErrorForm.resx">
+      <DependentUpon>ErrorForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\SettingsForm.el-GR.resx">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\SettingsForm.el.resx">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\SettingsForm.resx">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UserControls\ColorSelector.el-GR.resx">
+      <DependentUpon>ColorSelector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UserControls\ColorSelector.el.resx">
+      <DependentUpon>ColorSelector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UserControls\ColorSelector.resx">
+      <DependentUpon>ColorSelector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UserControls\CustomEnumComboBox.resx">
+      <DependentUpon>CustomEnumComboBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UserControls\DetectedColorsGrid.el-GR.resx">
+      <DependentUpon>DetectedColorsGrid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UserControls\DetectedColorsGrid.el.resx">
+      <DependentUpon>DetectedColorsGrid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UserControls\DetectedColorsGrid.resx">
+      <DependentUpon>DetectedColorsGrid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UserControls\KeyboardShortcutSelector.el-GR.resx">
+      <DependentUpon>KeyboardShortcutSelector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UserControls\KeyboardShortcutSelector.el.resx">
+      <DependentUpon>KeyboardShortcutSelector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UserControls\KeyboardShortcutSelector.resx">
+      <DependentUpon>KeyboardShortcutSelector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UserControls\MapControlBase.resx">
+      <DependentUpon>MapControlBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UserControls\SourceSettingsControlBase.resx">
+      <DependentUpon>SourceSettingsControlBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UserControls\SourceSettingsControlGeoData.el-GR.resx">
+      <DependentUpon>SourceSettingsControlGeoData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UserControls\SourceSettingsControlGeoData.el.resx">
+      <DependentUpon>SourceSettingsControlGeoData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UserControls\SourceSettingsControlGeoData.resx">
+      <DependentUpon>SourceSettingsControlGeoData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UserControls\SourceSettingsControlReliefMap.el-GR.resx">
+      <DependentUpon>SourceSettingsControlReliefMap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UserControls\SourceSettingsControlReliefMap.el.resx">
+      <DependentUpon>SourceSettingsControlReliefMap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UserControls\SourceSettingsControlReliefMap.resx">
+      <DependentUpon>SourceSettingsControlReliefMap.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="App.config" />
+    <None Include="ExportTemplates\Block1_v5.bin" />
+    <None Include="ExportTemplates\Block2_v5.bin" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\BlankImage1024x768.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Credits.txt" />
+    <Content Include="earth.ico" />
+    <None Include="Images\MeasuringTape_Image.png" />
+    <None Include="Images\Zoom-in_Image.png" />
+    <None Include="Images\Zoom-out_Image.png" />
+    <None Include="Images\Zoom100_Image.png" />
+    <Content Include="WorldMap64-256.ico" />
+    <None Include="Images\WorldMap16-32.ico" />
+    <None Include="Images\WorldMap64-256.ico" />
+    <None Include="Images\earth.bmp" />
+    <None Include="Images\SelectOff_Image.png" />
+    <None Include="Images\Select_Image.png" />
+    <None Include="Images\OK_Image.png" />
+    <None Include="Images\Cancel_Image.png" />
+    <None Include="Images\CanvasResize_Image.png" />
+    <None Include="Images\WorldMapLarge_Image.png" />
+    <None Include="Images\PenRulerLarge_Image.png" />
+    <None Include="Images\WarningLarge_Image.png" />
+    <None Include="Images\MiniWorldGrid_Image.png" />
+    <None Include="Images\LargeWorldGrid_Image.png" />
+    <None Include="Images\MiniRuler_Image.png" />
+    <None Include="Images\Ruler_Image.png" />
+    <None Include="Images\SaveAs_Image.png" />
+    <None Include="Images\Palette_Image.png" />
+    <None Include="Images\Open_Image.png" />
+    <None Include="Images\Settings_Image.png" />
+    <None Include="Images\New_Image.png" />
+    <None Include="Images\Minimap_Image.png" />
+    <None Include="Images\LockedTile_Image.png" />
+    <None Include="Images\MagLens_Image.png" />
+    <None Include="Images\Help_Image.png" />
+    <None Include="Images\About_Image.png" />
+    <None Include="Images\Info_Image.png" />
+    <None Include="Images\Terrain_Image.png" />
+    <None Include="Images\Save_Image.png" />
+    <None Include="Images\Export_Image.png" />
+    <None Include="Images\Earth_Image.png" />
+    <None Include="Images\BugLarge_Image.png" />
+    <None Include="Images\configure16.png" />
+    <None Include="Images\earth.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\DataSources\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

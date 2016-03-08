@@ -1,0 +1,324 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Str_SourceSettingsControlReliefMap_ErrorOpeningFile" xml:space="preserve">
+    <value>Σφάλμα κατά την φόρτωση του αρχείου.</value>
+  </data>
+  <data name="Str_AnalyserReliefMap_ErrorCreatingModel" xml:space="preserve">
+    <value>Σφάλμα κατά την δημιουργία του νέου μοντέλου.</value>
+  </data>
+  <data name="Str_AnalyserReliefMap_ModelCreated" xml:space="preserve">
+    <value>Δημιουργία νέου μοντέλου</value>
+  </data>
+  <data name="Str_BitmapOperations_RhombusNotSupported" xml:space="preserve">
+    <value>Απουσία υποστήριξης ρόμβου.</value>
+  </data>
+  <data name="Str_CivilizationVersion_Civilization5MapSizes_Duel" xml:space="preserve">
+    <value>Μονομαχία (40x25)</value>
+  </data>
+  <data name="Str_CivilizationVersion_Civilization5MapSizes_Huge" xml:space="preserve">
+    <value>Τεράστιος (128x80)</value>
+  </data>
+  <data name="Str_CivilizationVersion_Civilization5MapSizes_Humongous" xml:space="preserve">
+    <value>Τερατώδης (300x200)</value>
+  </data>
+  <data name="Str_CivilizationVersion_Civilization5MapSizes_Large" xml:space="preserve">
+    <value>Μεγάλος (104x64)</value>
+  </data>
+  <data name="Str_CivilizationVersion_Civilization5MapSizes_Small" xml:space="preserve">
+    <value>Μικρός (66x42)</value>
+  </data>
+  <data name="Str_CivilizationVersion_Civilization5MapSizes_Standard" xml:space="preserve">
+    <value>Προτεινόμενος (80x52)</value>
+  </data>
+  <data name="Str_CivilizationVersion_Civilization5MapSizes_Tiny" xml:space="preserve">
+    <value>Μικροσκοπικός (56x36)</value>
+  </data>
+  <data name="Str_ExporterBase_NotSupportedMessagePart1" xml:space="preserve">
+    <value>Η επιλογή </value>
+  </data>
+  <data name="Str_ExporterBase_NotSupportedMessagePart2" xml:space="preserve">
+    <value>δεν υποστηρίζεται.</value>
+  </data>
+  <data name="Str_ExporterCivilizationV_ExportedMessage" xml:space="preserve">
+    <value>Εξαγωγή μοντέλου στον  χάρτη</value>
+  </data>
+  <data name="Str_GridType_GridTypeDescriptions_HexagonalPT" xml:space="preserve">
+    <value>Εξάγωνο (με αιχμή στην κορυφή)</value>
+  </data>
+  <data name="Str_GridType_GridTypeDescriptions_Rhombus" xml:space="preserve">
+    <value>Ρόμβος</value>
+  </data>
+  <data name="Str_GridType_GridTypeDescriptions_Square" xml:space="preserve">
+    <value>Τετράγωνο</value>
+  </data>
+  <data name="Str_ImageEditor_ImageHeight" xml:space="preserve">
+    <value>Ύψος εικόνας: </value>
+  </data>
+  <data name="Str_ImageEditor_ImageWidth" xml:space="preserve">
+    <value>Πλάτος εικόνας: </value>
+  </data>
+  <data name="Str_KeyboardShortcutSelectorForm_ModifierRequiredCaption" xml:space="preserve">
+    <value>Μη έγκυρη τιμή.</value>
+  </data>
+  <data name="Str_KeyboardShortcutSelectorForm_ModifierRequiredText" xml:space="preserve">
+    <value>Αυτή η συντόμευση απαιτεί ένα τουλάχιστον από τα πλήκτρα Control ή/και Alt.</value>
+  </data>
+  <data name="Str_KeyboardShortcutSelector_MessageBoxAlreadyAssignedCaption" xml:space="preserve">
+    <value>Μη έγκυρη επιλογή.</value>
+  </data>
+  <data name="Str_KeyboardShortcutSelector_MessageBoxAlreadyAssignedText" xml:space="preserve">
+    <value>Η συντόμευση είναι ήδη ανατεθειμένη σε άλλη λειτουργία.</value>
+  </data>
+  <data name="Str_LoadModelProcessor_FileError" xml:space="preserve">
+    <value>Σφάλμα κατά την εκτέλεση της ασύγχρονης διαδικασίας.</value>
+  </data>
+  <data name="Str_LoadModelProcessor_FileLoaded" xml:space="preserve">
+    <value>Φορτώθηκε το αρχείο </value>
+  </data>
+  <data name="Str_MapDataSource_Description_GeoData" xml:space="preserve">
+    <value>Πάροχος  γεωχωρικών δεδομένων</value>
+  </data>
+  <data name="Str_MapDataSource_Description_ReliefMapImage" xml:space="preserve">
+    <value>Αρχείο υψομετρικού χάρτη</value>
+  </data>
+  <data name="Str_NewMapForm_AnalysingPlotsPart1" xml:space="preserve">
+    <value>Ανάλυση τομέων ( </value>
+  </data>
+  <data name="Str_NewMapForm_AnalysingPlotsPart2" xml:space="preserve">
+    <value> % Ολοκληρωμένη)</value>
+  </data>
+  <data name="Str_NewMapForm_CreatingAnalysisImage" xml:space="preserve">
+    <value>Δημιουργία εικόνας προς ανάλυση</value>
+  </data>
+  <data name="Str_NewMapForm_UnhandledError" xml:space="preserve">
+    <value>Μη διαχειρίσιμο σφάλμα</value>
+  </data>
+  <data name="Str_PlotGeoData_NotSupported" xml:space="preserve">
+    <value>Η διαχείριση γεωχωρικών δεδομένων δεν είναι ακόμη υλοποιημένη</value>
+  </data>
+  <data name="Str_ProcessedMapControlMode_Description_ColorEditor" xml:space="preserve">
+    <value>Διαχειριστής Χρωμάτων</value>
+  </data>
+  <data name="Str_ProcessedMapControlMode_Description_PlotEditors" xml:space="preserve">
+    <value>Διαχειριστής Τομέων</value>
+  </data>
+  <data name="Str_ProcessedMapMenu_DeAssign_Text" xml:space="preserve">
+    <value>Κατάργηση ανατιθεμένου υψομέτρου.</value>
+  </data>
+  <data name="Str_ProcessedMapMenu_EditPlotColor_Text" xml:space="preserve">
+    <value>Διαχείριση χρώματος τομέα (</value>
+  </data>
+  <data name="Str_ProcessedMapMenu_EditRegion_Text" xml:space="preserve">
+    <value>Διαχείριση Περιοχής (</value>
+  </data>
+  <data name="Str_SaveModelProcessor_SavedError" xml:space="preserve">
+    <value>Σφάλμα κατά την αποθήκευση του αρχείου.</value>
+  </data>
+  <data name="Str_SaveModelProcessor_SavedFile" xml:space="preserve">
+    <value>Αποθήκευση αρχείου</value>
+  </data>
+  <data name="Str_SettingsForm_MinimumZoomErrorCaption" xml:space="preserve">
+    <value>Μη αποδεκτή τιμή</value>
+  </data>
+  <data name="Str_SettingsForm_MinimumZoomErrorText" xml:space="preserve">
+    <value>Η ελάχιστη τιμή μεγέθυνσης πρέπει να είναι μικρότερη από την μέγιστη τιμή.</value>
+  </data>
+  <data name="Str_SettingsForm_PlotWidthErrorCaption" xml:space="preserve">
+    <value>Μη αποδεκτή τιμή</value>
+  </data>
+  <data name="Str_SettingsForm_PlotWidthErrorText" xml:space="preserve">
+    <value>Το πλάτος ενός τομέα θα πρέπει να είναι περιττός αριθμός.</value>
+  </data>
+  <data name="Str_SettingsForm_RestartCaption" xml:space="preserve">
+    <value>Επανεκκίνηση.</value>
+  </data>
+  <data name="Str_SettingsForm_RestartText" xml:space="preserve">
+    <value>Οι αλλαγές που κάνατε, απαιτούν την επανεκκίνηση της εφαρμογής.</value>
+  </data>
+  <data name="Str_SourceSettingsControlReliefMap_ImageSizeMsgBoxWaringCaption" xml:space="preserve">
+    <value>Μη έγκυρος λόγος πλευρών εικόνας.</value>
+  </data>
+  <data name="Str_SourceSettingsControlReliefMap_ImageSizeMsgBoxWaringText" xml:space="preserve">
+    <value>Η επιλεγμένη εικόνα δεν είναι συμβατή με τις διαστάσεις του χάρτη που έχετε επιλέξει. Θα θέλατε να επιλέξετε το τμήμα της εικόνας που θα μεταφερθεί στον χάρτη;</value>
+  </data>
+  <data name="Str_SourceSettingsControlReliefMap_NoImageSelected" xml:space="preserve">
+    <value>Δεν επιλέχθηκε κάποιο αρχείο εικόνας. Παρακαλώ επιλέξτε ένα έγκυρο αρχείο και προσπαθήστε ξανά.</value>
+  </data>
+  <data name="Str_TerrainType_Description_Coast" xml:space="preserve">
+    <value>Ακτή</value>
+  </data>
+  <data name="Str_TerrainType_Description_Flat" xml:space="preserve">
+    <value>Πεδιάδα</value>
+  </data>
+  <data name="Str_TerrainType_Description_Hill" xml:space="preserve">
+    <value>Λόφος</value>
+  </data>
+  <data name="Str_TerrainType_Description_Mountain" xml:space="preserve">
+    <value>Όρος</value>
+  </data>
+  <data name="Str_TerrainType_Description_NotDefined" xml:space="preserve">
+    <value>Μη Ορισμένο</value>
+  </data>
+  <data name="Str_TerrainType_Description_Ocean" xml:space="preserve">
+    <value>Ωκεανός</value>
+  </data>
+  <data name="Str_ZoomSplitButtonText" xml:space="preserve">
+    <value>Μεγέθυνση: </value>
+  </data>
+  <data name="test" xml:space="preserve">
+    <value>Επιθυμητός Λόγος:</value>
+  </data>
+  <data name="Str_ImageEditor_IntendedRatio" xml:space="preserve">
+    <value>Επιθυμητός Λόγος:</value>
+  </data>
+  <data name="Str_ImageEditor_ImagePixels" xml:space="preserve">
+    <value>Εικονοστοιχεία</value>
+  </data>
+  <data name="Str_ZoomSplitButtonText_Percent" xml:space="preserve">
+    <value>%</value>
+  </data>
+  <data name="Str_AboutForm_About" xml:space="preserve">
+    <value>Πληροφορίες Λογισμικού</value>
+  </data>
+  <data name="Str_AboutForm_Version" xml:space="preserve">
+    <value>Έκδοση</value>
+  </data>
+  <data name="Str_ExporterBase_NotSupportedCaption" xml:space="preserve">
+    <value>!</value>
+  </data>
+  <data name="Str_LoadModelProcessor_AsyncError" xml:space="preserve">
+    <value>Σφάλμα κατά την εκτέλεση ασύγχρονης διαδικασίας.</value>
+  </data>
+  <data name="Str_SingleSpace" xml:space="preserve">
+    <value> </value>
+  </data>
+  <data name="Str_UnhandledError" xml:space="preserve">
+    <value>Ώπα! Παρουσιάστηκε μη διαχειρίσιμο πρόβλημα!</value>
+  </data>
+  <data name="Str_SingleColonWithSpace" xml:space="preserve">
+    <value>: </value>
+  </data>
+  <data name="Str_OpenFileDialogFilter" xml:space="preserve">
+    <value>Αρχείο Map2Civ  | *.M2C</value>
+  </data>
+  <data name="Str_OpenFileDialogDefaultExt" xml:space="preserve">
+    <value>*.M2C</value>
+  </data>
+</root>
