@@ -1,22 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
-
-using System.Text;
 using System.Collections.ObjectModel;
-using System.Xml.Serialization;
-using Map2CivilizationCtrl;
-
-
 using System.Linq;
 using Map2CivilizationCtrl.Enumerations;
 
 namespace Map2CivilizationModel
 {
-    
+
     public class DetectedColors
     {
         
-        private Dictionary<String, DetectedColor> _collection;
+        readonly Dictionary<String, DetectedColor> _collection;
 
         public  DetectedColors()
         {

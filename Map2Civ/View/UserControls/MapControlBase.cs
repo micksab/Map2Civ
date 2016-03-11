@@ -1,16 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-
-using System.Text;
-
-using System.Windows.Forms;
 using System.Drawing;
-using Map2CivilizationCtrl.Listener;
-
+using System.Windows.Forms;
 using Map2CivilizationCtrl;
 using Map2CivilizationCtrl.DataStructure;
-using Map2CivilizationCtrl.Enumerations;
-using System.ComponentModel;
+using Map2CivilizationCtrl.Listener;
 
 namespace Map2CivilizationView.UserControls
 {
@@ -241,9 +234,6 @@ namespace Map2CivilizationView.UserControls
                     break;
                 case Keys.Right:
                     newPlotX++;
-                    break;
-                default:
-                    //Do nothing
                     break;
             }
 

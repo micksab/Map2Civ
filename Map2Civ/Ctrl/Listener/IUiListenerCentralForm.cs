@@ -1,6 +1,4 @@
-﻿using Map2CivilizationCtrl.DataStructure;
-using Map2CivilizationModel;
-
+﻿
 using System;
 
 namespace Map2CivilizationCtrl.Listener

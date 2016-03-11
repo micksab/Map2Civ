@@ -66,11 +66,17 @@ namespace Map2CivilizationView
             this.aboutStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bottomPanel = new System.Windows.Forms.Panel();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
+            this.plotHeaderLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.selectedPlotLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.coordinatesHeaderLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.plotCoordinatesLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.civilizationVersionHeaderLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.civVersionLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.mapSizeHeaderLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.MapSizeLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.colorsDetectedHeaderLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.colorCountLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.percentCompleteHeaderLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.percentCompleteLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.progressBar = new System.Windows.Forms.ToolStripProgressBar();
             this.workingAreaPanel = new System.Windows.Forms.Panel();
@@ -78,12 +84,6 @@ namespace Map2CivilizationView
             this.originalMapTabPage = new System.Windows.Forms.TabPage();
             this.processedMapTabPage = new System.Windows.Forms.TabPage();
             this.tabImageList = new System.Windows.Forms.ImageList(this.components);
-            this.plotHeaderLabel = new System.Windows.Forms.ToolStripStatusLabel();
-            this.coordinatesHeaderLabel = new System.Windows.Forms.ToolStripStatusLabel();
-            this.civilizationVersionHeaderLabel = new System.Windows.Forms.ToolStripStatusLabel();
-            this.mapSizeHeaderLabel = new System.Windows.Forms.ToolStripStatusLabel();
-            this.colorsDetectedHeaderLabel = new System.Windows.Forms.ToolStripStatusLabel();
-            this.percentCompleteHeaderLabel = new System.Windows.Forms.ToolStripStatusLabel();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).BeginInit();
             this.splitContainer.SuspendLayout();
             this.buttonsPanel.SuspendLayout();
@@ -300,6 +300,7 @@ namespace Map2CivilizationView
             // 
             resources.ApplyResources(this.settingsStripMenuItem, "settingsStripMenuItem");
             this.settingsStripMenuItem.Name = "settingsStripMenuItem";
+            this.settingsStripMenuItem.Click += new System.EventHandler(this.settingsButton_Click);
             // 
             // helpMenu
             // 
@@ -346,6 +347,14 @@ namespace Map2CivilizationView
             resources.ApplyResources(this.statusStrip, "statusStrip");
             this.statusStrip.Name = "statusStrip";
             // 
+            // plotHeaderLabel
+            // 
+            this.plotHeaderLabel.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)(((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Top) 
+            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
+            this.plotHeaderLabel.BorderStyle = System.Windows.Forms.Border3DStyle.SunkenInner;
+            this.plotHeaderLabel.Name = "plotHeaderLabel";
+            resources.ApplyResources(this.plotHeaderLabel, "plotHeaderLabel");
+            // 
             // selectedPlotLabel
             // 
             resources.ApplyResources(this.selectedPlotLabel, "selectedPlotLabel");
@@ -355,6 +364,14 @@ namespace Map2CivilizationView
             this.selectedPlotLabel.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.selectedPlotLabel.Name = "selectedPlotLabel";
             // 
+            // coordinatesHeaderLabel
+            // 
+            this.coordinatesHeaderLabel.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)(((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Top) 
+            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
+            this.coordinatesHeaderLabel.BorderStyle = System.Windows.Forms.Border3DStyle.SunkenInner;
+            this.coordinatesHeaderLabel.Name = "coordinatesHeaderLabel";
+            resources.ApplyResources(this.coordinatesHeaderLabel, "coordinatesHeaderLabel");
+            // 
             // plotCoordinatesLabel
             // 
             resources.ApplyResources(this.plotCoordinatesLabel, "plotCoordinatesLabel");
@@ -362,6 +379,14 @@ namespace Map2CivilizationView
             | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
             this.plotCoordinatesLabel.BorderStyle = System.Windows.Forms.Border3DStyle.SunkenInner;
             this.plotCoordinatesLabel.Name = "plotCoordinatesLabel";
+            // 
+            // civilizationVersionHeaderLabel
+            // 
+            this.civilizationVersionHeaderLabel.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)(((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Top) 
+            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
+            this.civilizationVersionHeaderLabel.BorderStyle = System.Windows.Forms.Border3DStyle.SunkenInner;
+            this.civilizationVersionHeaderLabel.Name = "civilizationVersionHeaderLabel";
+            resources.ApplyResources(this.civilizationVersionHeaderLabel, "civilizationVersionHeaderLabel");
             // 
             // civVersionLabel
             // 
@@ -371,6 +396,14 @@ namespace Map2CivilizationView
             this.civVersionLabel.BorderStyle = System.Windows.Forms.Border3DStyle.SunkenInner;
             this.civVersionLabel.Name = "civVersionLabel";
             // 
+            // mapSizeHeaderLabel
+            // 
+            this.mapSizeHeaderLabel.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)(((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Top) 
+            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
+            this.mapSizeHeaderLabel.BorderStyle = System.Windows.Forms.Border3DStyle.SunkenInner;
+            this.mapSizeHeaderLabel.Name = "mapSizeHeaderLabel";
+            resources.ApplyResources(this.mapSizeHeaderLabel, "mapSizeHeaderLabel");
+            // 
             // MapSizeLabel
             // 
             resources.ApplyResources(this.MapSizeLabel, "MapSizeLabel");
@@ -379,6 +412,14 @@ namespace Map2CivilizationView
             this.MapSizeLabel.BorderStyle = System.Windows.Forms.Border3DStyle.SunkenInner;
             this.MapSizeLabel.Name = "MapSizeLabel";
             // 
+            // colorsDetectedHeaderLabel
+            // 
+            this.colorsDetectedHeaderLabel.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)(((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Top) 
+            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
+            this.colorsDetectedHeaderLabel.BorderStyle = System.Windows.Forms.Border3DStyle.SunkenInner;
+            this.colorsDetectedHeaderLabel.Name = "colorsDetectedHeaderLabel";
+            resources.ApplyResources(this.colorsDetectedHeaderLabel, "colorsDetectedHeaderLabel");
+            // 
             // colorCountLabel
             // 
             resources.ApplyResources(this.colorCountLabel, "colorCountLabel");
@@ -386,6 +427,14 @@ namespace Map2CivilizationView
             | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
             this.colorCountLabel.BorderStyle = System.Windows.Forms.Border3DStyle.SunkenInner;
             this.colorCountLabel.Name = "colorCountLabel";
+            // 
+            // percentCompleteHeaderLabel
+            // 
+            this.percentCompleteHeaderLabel.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)(((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Top) 
+            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
+            this.percentCompleteHeaderLabel.BorderStyle = System.Windows.Forms.Border3DStyle.SunkenInner;
+            this.percentCompleteHeaderLabel.Name = "percentCompleteHeaderLabel";
+            resources.ApplyResources(this.percentCompleteHeaderLabel, "percentCompleteHeaderLabel");
             // 
             // percentCompleteLabel
             // 
@@ -435,54 +484,6 @@ namespace Map2CivilizationView
             this.tabImageList.TransparentColor = System.Drawing.Color.Transparent;
             this.tabImageList.Images.SetKeyName(0, "MiniRuler_Image.png");
             this.tabImageList.Images.SetKeyName(1, "Minimap_Image.png");
-            // 
-            // plotHeaderLabel
-            // 
-            this.plotHeaderLabel.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)(((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Top) 
-            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
-            this.plotHeaderLabel.BorderStyle = System.Windows.Forms.Border3DStyle.SunkenInner;
-            this.plotHeaderLabel.Name = "plotHeaderLabel";
-            resources.ApplyResources(this.plotHeaderLabel, "plotHeaderLabel");
-            // 
-            // coordinatesHeaderLabel
-            // 
-            this.coordinatesHeaderLabel.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)(((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Top) 
-            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
-            this.coordinatesHeaderLabel.BorderStyle = System.Windows.Forms.Border3DStyle.SunkenInner;
-            this.coordinatesHeaderLabel.Name = "coordinatesHeaderLabel";
-            resources.ApplyResources(this.coordinatesHeaderLabel, "coordinatesHeaderLabel");
-            // 
-            // civilizationVersionHeaderLabel
-            // 
-            this.civilizationVersionHeaderLabel.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)(((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Top) 
-            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
-            this.civilizationVersionHeaderLabel.BorderStyle = System.Windows.Forms.Border3DStyle.SunkenInner;
-            this.civilizationVersionHeaderLabel.Name = "civilizationVersionHeaderLabel";
-            resources.ApplyResources(this.civilizationVersionHeaderLabel, "civilizationVersionHeaderLabel");
-            // 
-            // mapSizeHeaderLabel
-            // 
-            this.mapSizeHeaderLabel.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)(((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Top) 
-            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
-            this.mapSizeHeaderLabel.BorderStyle = System.Windows.Forms.Border3DStyle.SunkenInner;
-            this.mapSizeHeaderLabel.Name = "mapSizeHeaderLabel";
-            resources.ApplyResources(this.mapSizeHeaderLabel, "mapSizeHeaderLabel");
-            // 
-            // colorsDetectedHeaderLabel
-            // 
-            this.colorsDetectedHeaderLabel.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)(((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Top) 
-            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
-            this.colorsDetectedHeaderLabel.BorderStyle = System.Windows.Forms.Border3DStyle.SunkenInner;
-            this.colorsDetectedHeaderLabel.Name = "colorsDetectedHeaderLabel";
-            resources.ApplyResources(this.colorsDetectedHeaderLabel, "colorsDetectedHeaderLabel");
-            // 
-            // percentCompleteHeaderLabel
-            // 
-            this.percentCompleteHeaderLabel.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)(((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Top) 
-            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
-            this.percentCompleteHeaderLabel.BorderStyle = System.Windows.Forms.Border3DStyle.SunkenInner;
-            this.percentCompleteHeaderLabel.Name = "percentCompleteHeaderLabel";
-            resources.ApplyResources(this.percentCompleteHeaderLabel, "percentCompleteHeaderLabel");
             // 
             // MainForm
             // 

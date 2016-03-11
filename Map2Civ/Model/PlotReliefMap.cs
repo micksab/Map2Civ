@@ -1,19 +1,14 @@
-﻿using Map2CivilizationCtrl.DataStructure;
-using Map2CivilizationCtrl.Enumerations;
-using Map2CivilizationModel;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System;
 using System.Drawing;
 using Map2CivilizationCtrl;
+using Map2CivilizationCtrl.Enumerations;
 
 namespace Map2CivilizationModel
 {
     class PlotReliefMap : Plot
     {
-        private string _hexDominantColor;
-        private Color _dominantColor;
+        readonly string _hexDominantColor;
+        readonly Color _dominantColor;
 
        
 

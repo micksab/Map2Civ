@@ -1,12 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
 
 namespace Map2CivilizationView.UserControls
 {
-    
+
     /// <summary>
     /// Class created just as a workaround for the inability of the designer to directly display a 
     /// user control that inherits form an abstract class that itself inherits from UserControl.

@@ -1,24 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-
-using System.Text;
-
-using System.Windows.Forms;
-using Map2CivilizationView.UserControls;
-using Map2CivilizationCtrl;
-
-
-using Map2CivilizationCtrl.Listener;
-using System.Reflection;
 using System.Globalization;
-using Map2CivilizationCtrl.Enumerations;
-using Map2CivilizationCtrl.DataStructure;
-using Map2CivilizationCtrl.ModelFileStorage;
+using System.Reflection;
+using System.Windows.Forms;
 using Map2Civilization.Ctrl.ModelFileStorage;
 using Map2Civilization.Properties;
+using Map2CivilizationCtrl;
+using Map2CivilizationCtrl.DataStructure;
+using Map2CivilizationCtrl.Enumerations;
+using Map2CivilizationCtrl.Listener;
+using Map2CivilizationCtrl.ModelFileStorage;
+using Map2CivilizationView.UserControls;
 
 namespace Map2CivilizationView
 {
@@ -70,7 +62,7 @@ namespace Map2CivilizationView
             toolStrip.Items.Add(_feedbackLabel);
             statusStrip.Items.Add(_zoomSplitButton);
 
-            HandleDestroyed += new System.EventHandler(MainForm_Closing);
+            HandleDestroyed += MainForm_Closing;
 
         }
 

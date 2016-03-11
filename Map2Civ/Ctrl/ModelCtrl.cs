@@ -1,19 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-
-using System.Text;
-
-using Map2CivilizationModel;
 using System.Drawing;
-using Map2CivilizationView;
-using System.Drawing.Drawing2D;
-using Map2CivilizationCtrl;
-
-
-using Map2CivilizationCtrl.Listener;
 using Map2CivilizationCtrl.DataStructure;
 using Map2CivilizationCtrl.Enumerations;
-using System.Configuration;
+using Map2CivilizationModel;
 
 namespace Map2CivilizationCtrl
 {

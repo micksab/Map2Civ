@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-
-
 using System.Windows.Forms;
-using Map2CivilizationView;
-using System.Diagnostics;
 using Map2Civilization.Properties;
+using Map2CivilizationView;
 
 namespace Map2Civilization
 {
@@ -23,11 +19,10 @@ namespace Map2Civilization
             Application.SetUnhandledExceptionMode(UnhandledExceptionMode.CatchException);
 
             // Add the event handler for handling non-UI thread exceptions to the event. 
-            AppDomain.CurrentDomain.UnhandledException +=
-                new UnhandledExceptionEventHandler(CurrentDomain_UnhandledException);
+            AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
 
-            System.Threading.Thread.CurrentThread.CurrentCulture = Map2Civilization.Properties.Settings.Default.UICulture;
-            System.Threading.Thread.CurrentThread.CurrentUICulture = Map2Civilization.Properties.Settings.Default.UICulture;
+            System.Threading.Thread.CurrentThread.CurrentCulture = Settings.Default.UICulture;
+            System.Threading.Thread.CurrentThread.CurrentUICulture = Settings.Default.UICulture;
 
 
             Application.EnableVisualStyles();

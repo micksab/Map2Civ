@@ -1,13 +1,13 @@
-﻿using Map2Civilization.Properties;
-using Map2CivilizationCtrl.Enumerations;
-using Map2CivilizationModel;
-using Map2CivilizationView;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Data;
 using System.Reflection;
+using Map2Civilization.Properties;
+using Map2CivilizationCtrl.Enumerations;
+using Map2CivilizationModel;
+using Map2CivilizationView;
 
 namespace Map2CivilizationCtrl.ModelFileStorage
 {

@@ -1,15 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Drawing;
-using System.Drawing.Drawing2D;
-using System.Data;
-
-using System.Text;
-
 using System.Windows.Forms;
-
-using System.Reflection;
 using Map2CivilizationCtrl;
 
 namespace Map2CivilizationView.UserControls
@@ -18,13 +9,13 @@ namespace Map2CivilizationView.UserControls
     {
 
         
-        private double _CurrentXPerMille;
-        private double _CurrentYPerMille;
-        private double _CurrentWidthPerMille;
-        private double _MapRatio;
-        private ImageEditor _Editor;
-        private bool _SelectorIsVisible = false;
-        private Bitmap _ForegroundBitmap;
+        double _CurrentXPerMille;
+        double _CurrentYPerMille;
+        double _CurrentWidthPerMille;
+        readonly double _MapRatio;
+        readonly ImageEditor _Editor;
+        bool _SelectorIsVisible = false;
+        Bitmap _ForegroundBitmap;
         
 
         public ImageAreaSelector(double mapRatio, ImageEditor editor)

@@ -1,21 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-
-using System.Text;
-
-using System.Collections;
-
-
-using Map2CivilizationCtrl;
+﻿using System.Collections.Generic;
 using System.Linq;
-using Map2CivilizationCtrl.Enumerations;
 using Map2CivilizationCtrl.DataStructure;
+using Map2CivilizationCtrl.Enumerations;
 
 namespace Map2CivilizationModel
 {
     class Plots
     {
-        private Dictionary<PlotId, Plot> _plotCollectionList;
+        readonly Dictionary<PlotId, Plot> _plotCollectionList;
 
         public Plots()
         {

@@ -2,8 +2,8 @@
 using System.Drawing;
 using System.Threading;
 using System.Windows.Forms;
-using Map2CivilizationCtrl;
 using Map2Civilization.Properties;
+using Map2CivilizationCtrl;
 
 namespace Map2CivilizationView
 {

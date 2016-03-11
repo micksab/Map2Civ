@@ -2,10 +2,10 @@
 using System.Drawing;
 using System.Windows.Forms;
 using Map2CivilizationCtrl;
-using Map2CivilizationView.UserControls;
-using Map2CivilizationCtrl.Listener;
 using Map2CivilizationCtrl.DataStructure;
 using Map2CivilizationCtrl.Enumerations;
+using Map2CivilizationCtrl.Listener;
+using Map2CivilizationView.UserControls;
 
 
 namespace Map2CivilizationView

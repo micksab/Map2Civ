@@ -1,6 +1,6 @@
-﻿using Map2CivilizationCtrl.Enumerations;
-using System.Data;
+﻿using System.Data;
 using System.Globalization;
+using Map2CivilizationCtrl.Enumerations;
 
 
 namespace Map2CivilizationCtrl.ModelFileStorage

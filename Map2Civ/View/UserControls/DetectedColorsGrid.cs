@@ -1,19 +1,13 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
-using System.Data;
-
-using System.Text;
-
 using System.Windows.Forms;
-
 using Map2CivilizationCtrl;
-using System.Collections;
-using Map2CivilizationCtrl.Listener;
-using Map2CivilizationCtrl.Enumerations;
 using Map2CivilizationCtrl.DataStructure;
-using System.Collections.ObjectModel;
+using Map2CivilizationCtrl.Enumerations;
+using Map2CivilizationCtrl.Listener;
 
 namespace Map2CivilizationView.UserControls
 {
@@ -33,7 +27,7 @@ namespace Map2CivilizationView.UserControls
             ((DataGridViewComboBoxColumn)gridView.Columns["settingColumn"]).DataSource =
                Enum.GetValues(typeof(TerrainType.Enumeration));
 
-            base.Disposed += new System.EventHandler(GridControl_Disposed);
+            Disposed += GridControl_Disposed;
 
 
 
@@ -110,12 +104,12 @@ namespace Map2CivilizationView.UserControls
 
             if (e.RowIndex > (-1) && discardCellChangeEvent==false && e.ColumnIndex!=gridView.Columns["ColorAssigned"].Index)
             {
-                String colorId = (String)gridView.Rows[e.RowIndex].Cells["idColumn"].Value;
+                string colorId = (String)gridView.Rows[e.RowIndex].Cells["idColumn"].Value;
                 TerrainType.Enumeration newValue = 
                     (TerrainType.Enumeration)gridView.Rows[e.RowIndex].Cells["settingColumn"].Value;
 
 
-                DetectedColorCollectionCtrl.UpdateDetectedColorsAndRefreshProcessedMap(new String[1] { colorId }, newValue);
+                DetectedColorCollectionCtrl.UpdateDetectedColorsAndRefreshProcessedMap(new string[] { colorId }, newValue);
 
                 evaluateCompleteness(e.RowIndex);
 

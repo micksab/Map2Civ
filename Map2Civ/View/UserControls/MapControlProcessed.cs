@@ -1,18 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-
-using System.Text;
-using Map2CivilizationCtrl.Listener;
-
-using Map2CivilizationCtrl;
-using Map2CivilizationView.UserControls;
-
+using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
-using Map2CivilizationCtrl.Enumerations;
+using Map2CivilizationCtrl;
 using Map2CivilizationCtrl.DataStructure;
-using System.ComponentModel;
-using System.Collections.ObjectModel;
+using Map2CivilizationCtrl.Enumerations;
+using Map2CivilizationCtrl.Listener;
 
 namespace Map2CivilizationView.UserControls
 {
@@ -20,8 +14,8 @@ namespace Map2CivilizationView.UserControls
     class MapControlProcessed : MapControlBase, IUiListenerProcessedMap
     {
 
-        private ProcessedMapControlMode.Enumeration _currentMode = ProcessedMapControlMode.Enumeration.Unspecified;
-        private ProcessedMapMenu _menu = new ProcessedMapMenu(ProcessedMapControlMode.Enumeration.Unspecified);
+        readonly ProcessedMapControlMode.Enumeration _currentMode = ProcessedMapControlMode.Enumeration.Unspecified;
+        readonly ProcessedMapMenu _menu = new ProcessedMapMenu(ProcessedMapControlMode.Enumeration.Unspecified);
 
         
 
@@ -44,8 +38,8 @@ namespace Map2CivilizationView.UserControls
             RegisteredListenersCtrl.ProcessedMapListeners.RegisterObserver(this);
 
 
-            base.HandleDestroyed += new System.EventHandler(MapControlBase_Closing);
-            KeyDown += new System.Windows.Forms.KeyEventHandler(MapControl_KeyDown);
+            HandleDestroyed += MapControlBase_Closing;
+            KeyDown += MapControl_KeyDown;
         }
 
        

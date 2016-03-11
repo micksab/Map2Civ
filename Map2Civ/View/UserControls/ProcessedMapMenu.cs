@@ -1,15 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-
-using System.Text;
-
 using System.Windows.Forms;
-
-
-using Map2CivilizationCtrl.Enumerations;
-using Map2CivilizationCtrl;
-using System.ComponentModel;
 using Map2Civilization.Properties;
+using Map2CivilizationCtrl.Enumerations;
 
 namespace Map2CivilizationView.UserControls
 {

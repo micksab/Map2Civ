@@ -1,11 +1,8 @@
-﻿using Map2Civilization.Properties;
+﻿using System;
+using System.Windows.Forms;
+using Map2Civilization.Properties;
 using Map2CivilizationCtrl;
 using Map2CivilizationCtrl.Listener;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
 
 namespace Map2CivilizationView.UserControls
 {
@@ -47,7 +44,7 @@ namespace Map2CivilizationView.UserControls
             PopulateZoomCombo();
             RegisteredListenersCtrl.ZoomListeners.RegisterObserver(this);
 
-            base.Paint += ZoomSplitButton_Paint;
+            Paint += ZoomSplitButton_Paint;
         }
 
         /// <summary>

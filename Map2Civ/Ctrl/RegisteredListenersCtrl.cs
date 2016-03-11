@@ -1,38 +1,31 @@
 ﻿using System;
 using System.Collections.Generic;
-
-using System.Text;
-
-using Map2CivilizationCtrl.Listener;
-
-using System.Windows.Forms;
 using System.Drawing;
 using Map2CivilizationCtrl.DataStructure;
-using Map2CivilizationCtrl.Enumerations;
-using System.Collections.ObjectModel;
+using Map2CivilizationCtrl.Listener;
 
 namespace Map2CivilizationCtrl
 {
     static class RegisteredListenersCtrl
     {
 
-        private static UIListenersRegister<IUiListenerOriginalMap> _originalMapListeners =
+        readonly static UIListenersRegister<IUiListenerOriginalMap> _originalMapListeners =
             new UIListenersRegister<IUiListenerOriginalMap>();
-        private static UIListenersRegister<IUiListenerProcessedMap> _processedMapListeners =
+        readonly static UIListenersRegister<IUiListenerProcessedMap> _processedMapListeners =
             new UIListenersRegister<IUiListenerProcessedMap>();
-        private static UIListenersRegister<IUiListenerCentralForm> _centralFormListeners =
+        readonly static UIListenersRegister<IUiListenerCentralForm> _centralFormListeners =
             new UIListenersRegister<IUiListenerCentralForm>();
-        private static UIListenersRegister<IUiListenerDetectedColorsGrid> _colorGridListeners =
+        readonly static UIListenersRegister<IUiListenerDetectedColorsGrid> _colorGridListeners =
             new UIListenersRegister<IUiListenerDetectedColorsGrid>();
-        private static UIListenersRegister<IUiListenerPlotLocation> _plotLocationListeners =
+        readonly static UIListenersRegister<IUiListenerPlotLocation> _plotLocationListeners =
             new UIListenersRegister<IUiListenerPlotLocation>();
-        private static UIListenersRegister<IUiListenerDetectedColorsCounter> _detectedColorsCounters =
+        readonly static UIListenersRegister<IUiListenerDetectedColorsCounter> _detectedColorsCounters =
             new UIListenersRegister<IUiListenerDetectedColorsCounter>();
-        private static UIListenersRegister<IUiListenerProgress> _progressListeners =
+        readonly static UIListenersRegister<IUiListenerProgress> _progressListeners =
             new UIListenersRegister<IUiListenerProgress>();
-        private static UIListenersRegister<IUiListenerModel> _modelListeners =
+        readonly static UIListenersRegister<IUiListenerModel> _modelListeners =
             new UIListenersRegister<IUiListenerModel>();
-        private static UIListenersRegister<IUiListenerZoom> _zoomListeners =
+        readonly static UIListenersRegister<IUiListenerZoom> _zoomListeners =
             new UIListenersRegister<IUiListenerZoom>();
 
 

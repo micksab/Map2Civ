@@ -1,14 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Text;
-using Map2CivilizationCtrl.Listener;
 
 namespace Map2CivilizationCtrl.Listener
 {
     public  class UIListenersRegister<T> where T : IUiListener
     {
-        Collection<T> _internalList = new Collection<T>();
+        readonly Collection<T> _internalList = new Collection<T>();
 
         public Collection<T> ListenersList
         {

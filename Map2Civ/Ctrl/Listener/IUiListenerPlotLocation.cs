@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-using System.Text;
-
-using System.Windows.Forms;
-using Map2CivilizationCtrl.Listener;
-using Map2CivilizationCtrl.DataStructure;
+﻿using Map2CivilizationCtrl.DataStructure;
 
 namespace Map2CivilizationCtrl.Listener
 {

@@ -1,8 +1,5 @@
-﻿using Map2Civilization.Properties;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System;
+using Map2Civilization.Properties;
 
 namespace Map2CivilizationModel
 {

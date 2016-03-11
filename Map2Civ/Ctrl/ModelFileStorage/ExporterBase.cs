@@ -1,10 +1,7 @@
 ﻿using Map2Civilization.Properties;
 using Map2CivilizationCtrl.Enumerations;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
 
 namespace Map2CivilizationCtrl.ModelFileStorage
 {

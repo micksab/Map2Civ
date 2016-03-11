@@ -5,12 +5,9 @@ using Map2CivilizationCtrl.ModelFileStorage;
 using Map2CivilizationModel;
 using Map2CivilizationView;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
 using Map2Civilization.Properties;
 
 namespace Map2Civilization.Ctrl.ModelFileStorage

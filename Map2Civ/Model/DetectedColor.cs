@@ -1,26 +1,18 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Drawing;
-
-using System.Text;
-
-using System.Xml.Serialization;
-
 using System.Collections.ObjectModel;
 
 using Map2CivilizationCtrl.Enumerations;
-using Map2CivilizationCtrl;
 
 namespace Map2CivilizationModel
 {
-    
+
     public class DetectedColor
     {
 
-        private String _colorHex;
-        private TerrainType.Enumeration _terrainDescriptor;
-        private List<Plot> _relevantPlots;
+        string _colorHex;
+        TerrainType.Enumeration _terrainDescriptor;
+        readonly List<Plot> _relevantPlots;
 
         public string ColorHex
         {

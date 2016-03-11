@@ -1,23 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
-
-using System.Text;
-
+using System.ComponentModel;
+using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Imaging;
-using Map2CivilizationModel;
-
-
 using System.IO;
 using System.Linq;
-using Map2CivilizationCtrl.Enumerations;
-using Map2CivilizationCtrl.DataStructure;
-using System.Configuration;
-using System.ComponentModel;
-using Map2CivilizationCtrl.Analyzer;
-using System.Diagnostics;
 using Map2Civilization.Properties;
-using System.Collections.ObjectModel;
+using Map2CivilizationCtrl.Analyzer;
+using Map2CivilizationCtrl.DataStructure;
+using Map2CivilizationCtrl.Enumerations;
+using Map2CivilizationModel;
 
 namespace Map2CivilizationCtrl
 {

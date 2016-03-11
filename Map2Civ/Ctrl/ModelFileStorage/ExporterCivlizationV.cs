@@ -1,9 +1,7 @@
 ﻿using Map2CivilizationCtrl.DataStructure;
 using Map2CivilizationCtrl.Enumerations;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Text;
 using Map2CivilizationModel;
 using Map2Civilization.Properties;
@@ -97,7 +95,7 @@ namespace Map2CivilizationCtrl.ModelFileStorage
                                 writer.Write(Convert.ToByte(0));
                                 break;
                             default:
-                                break;
+                                throw new NotImplementedException();
                         }
                     }
                 }

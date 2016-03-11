@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
 using Map2CivilizationCtrl.DataStructure;
 using Map2Civilization.Properties;
 using System.Collections.ObjectModel;

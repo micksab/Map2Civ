@@ -1,13 +1,9 @@
-﻿using Map2Civilization.Properties;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Globalization;
+﻿using System;
 using System.Reflection;
-
-
 using System.Windows.Forms;
+
+
+using Map2Civilization.Properties;
 
 namespace Map2CivilizationView
 {

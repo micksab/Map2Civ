@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Drawing;
+﻿using System.Drawing;
 using System.Drawing.Imaging;
 using System.Drawing.Drawing2D;
 
@@ -11,10 +7,10 @@ namespace Map2CivilizationCtrl.Analyzer
     class SourceReliefMapSettings : ISourceMapSettings
     {
         private Bitmap _mapBitmap;
-        private PixelFormat _pixelFormat;
-        private InterpolationMode _interpolationMode;
-        private CompositingQuality _compositingQuality;
-        private SmoothingMode _smoothingMode;
+        readonly PixelFormat _pixelFormat;
+        readonly InterpolationMode _interpolationMode;
+        readonly CompositingQuality _compositingQuality;
+        readonly SmoothingMode _smoothingMode;
 
         
 
