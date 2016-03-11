@@ -10,7 +10,7 @@ namespace Map2CivilizationCtrl
     {
 
         
-        private static DataModel _dataModel;
+         static DataModel _dataModel;
 
 
 
@@ -45,9 +45,9 @@ namespace Map2CivilizationCtrl
         }
 
 
-        public static String GetCurrentModelFile()
+        public static string GetCurrentModelFile()
         {
-            String toReturn = String.Empty;
+            string toReturn = string.Empty;
             if (_dataModel != null)
             {
                 toReturn = _dataModel.ModelFile;

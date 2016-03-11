@@ -10,14 +10,14 @@ namespace Map2CivilizationView
     {
         Boolean isUnhandled;
 
-        public ErrorForm(Boolean unhandled, String message, Exception ex)
+        public ErrorForm(Boolean unhandled, string message, Exception ex)
         {
             InitializeComponent();
             isUnhandled = unhandled;
 
             if(ex!=null)
             {
-                messageBox.Text = String.Concat(message, Resources.Str_SingleColonWithSpace , ex.Message);
+                messageBox.Text = string.Concat(message, Resources.Str_SingleColonWithSpace , ex.Message);
 
                 if (isUnhandled)
                 {
@@ -52,7 +52,7 @@ namespace Map2CivilizationView
         }
 
 
-        private void setExceptionBoxContents(Exception ex)
+         void setExceptionBoxContents(Exception ex)
         {
             ArrayList exLines = new ArrayList();
 
@@ -63,7 +63,7 @@ namespace Map2CivilizationView
 
             while (ex.InnerException != null)
             {
-                exLines.Add(String.Concat("Inner Exception ", counter));
+                exLines.Add(string.Concat("Inner Exception ", counter));
                 exLines.Add(ex.InnerException.Message);
                 exLines.Add(ex.StackTrace);
 
@@ -71,8 +71,8 @@ namespace Map2CivilizationView
                 ex = ex.InnerException;
             }
 
-            String toShow = String.Empty;
-            foreach (String batch in exLines)
+            string toShow = string.Empty;
+            foreach (string batch in exLines)
             {
                 toShow = toShow + "\r\n" + batch;
             }
@@ -81,14 +81,14 @@ namespace Map2CivilizationView
         }
 
 
-        private void closeButton_Click(object sender, EventArgs e)
+         void closeButton_Click(object sender, EventArgs e)
         {
             Close();
         }
 
         
 
-        private void messageBox_KeyPress(object sender, KeyPressEventArgs e)
+         void messageBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = true; //Just do nothing, so that the user may not be able to change the contents of the textbox..
         }

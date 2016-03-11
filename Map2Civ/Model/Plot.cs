@@ -32,7 +32,7 @@ namespace Map2CivilizationModel
         /// <param name="id">The id of the plot</param>
         /// <param name="terrainDescriptor">The terrain assigned to the plot</param>
         /// <param name="isLocked">Marker indicating that the plot's terrain is locked (as defined by the user)</param>
-        protected Plot(String id, TerrainType.Enumeration terrainDescriptor, 
+        protected Plot(string id, TerrainType.Enumeration terrainDescriptor, 
              Boolean isLocked)
         {
             _id = new PlotId(id);

@@ -10,7 +10,7 @@ namespace Map2CivilizationCtrl.Enumerations
         /// <summary>
         /// Used to store the single instance needed to perform any operation.
         /// </summary>
-        private static TerrainType _singleInstance;
+         static TerrainType _singleInstance;
 
         
         Bitmap _oceanPlotBitmap;
@@ -82,9 +82,9 @@ namespace Map2CivilizationCtrl.Enumerations
 
 
         /// <summary>
-        /// Private constructor
+        ///  constructor
         /// </summary>
-        private TerrainType() { }
+         TerrainType() { }
 
         
 
@@ -113,7 +113,7 @@ namespace Map2CivilizationCtrl.Enumerations
             }
         }
 
-        public String GetEnumValueDescription(System.Enum value)
+        public string GetEnumValueDescription(System.Enum value)
         {
             switch ((Enumeration)value)
             {

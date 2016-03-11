@@ -17,14 +17,14 @@ namespace POC_Tests
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+         void button1_Click(object sender, EventArgs e)
         {
             MovingBox test = new MovingBox();
             test.ShowDialog();
             test.Dispose();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+         void button2_Click(object sender, EventArgs e)
         {
             using(ColorCounterForm form = new ColorCounterForm())
             {

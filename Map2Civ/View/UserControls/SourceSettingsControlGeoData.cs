@@ -43,7 +43,7 @@ namespace Map2CivilizationView.UserControls
             
         }
 
-        override public String SettingsAreComplete
+        override public string SettingsAreComplete
         {
             get
             {

@@ -7,7 +7,7 @@ namespace Map2CivilizationView
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+         System.ComponentModel.IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -28,7 +28,7 @@ namespace Map2CivilizationView
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent()
+         void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SettingsForm));
             this.buttonsPanel = new System.Windows.Forms.TableLayoutPanel();
@@ -748,75 +748,75 @@ namespace Map2CivilizationView
 
         #endregion
 
-        private System.Windows.Forms.TableLayoutPanel buttonsPanel;
-        private System.Windows.Forms.Button cancelButton;
-        private System.Windows.Forms.Button applyButton;
-        private System.Windows.Forms.TabControl tabControl;
-        private System.Windows.Forms.TabPage generalTabPage;
-        private System.Windows.Forms.TableLayoutPanel generalTableLayoutPanel;
-        private System.Windows.Forms.Label uiCultureLabel;
-        private System.Windows.Forms.ComboBox uiLanguageComboBox;
-        private System.Windows.Forms.TabPage keyboardShortcutsTabPage;
-        private System.Windows.Forms.TableLayoutPanel keyboardShortcutsTableLayoutPanel;
-        private System.Windows.Forms.Label labelKeyShrortcuts_SaveAs;
-        private System.Windows.Forms.Label labelKeyShrortcuts_Save;
-        private System.Windows.Forms.Label labelKeyShrortcuts_NewModel;
-        private System.Windows.Forms.Label labelKeyShrortcuts_ExportToCivMap;
-        private System.Windows.Forms.Label labelKeyShrortcuts_EditRegion;
-        private System.Windows.Forms.Label labelKeyShrortcuts_EditPlotData;
-        private System.Windows.Forms.Label labelKeyShrortcuts_AssignOcean;
-        private System.Windows.Forms.Label labelKeyShrortcuts_AssignCoast;
-        private System.Windows.Forms.Label labelKeyShrortcuts_AssignFlat;
-        private System.Windows.Forms.Label labelKeyShrortcuts_AssignHill;
-        private System.Windows.Forms.Label labelKeyShrortcuts_AssignMountain;
-        private UserControls.KeyboardShortcutSelector selectorKeyShrortcuts_SaveAs;
-        private UserControls.KeyboardShortcutSelector selectorKeyShrortcuts_Save;
-        private UserControls.KeyboardShortcutSelector selectorKeyShrortcuts_NewModel;
-        private UserControls.KeyboardShortcutSelector selectorKeyShrortcuts_ExportToCivMap;
-        private UserControls.KeyboardShortcutSelector selectorKeyShrortcuts_EditRegion;
-        private UserControls.KeyboardShortcutSelector selectorKeyShrortcuts_EditPlotData;
-        private UserControls.KeyboardShortcutSelector selectorKeyShrortcuts_AssignOcean;
-        private UserControls.KeyboardShortcutSelector selectorKeyShrortcuts_AssignCoast;
-        private UserControls.KeyboardShortcutSelector selectorKeyShrortcuts_AssignFlat;
-        private UserControls.KeyboardShortcutSelector selectorKeyShrortcuts_AssignHill;
-        private UserControls.KeyboardShortcutSelector selectorKeyShrortcuts_AssignMountain;
-        private System.Windows.Forms.TabPage mapDisplayTabPage;
-        private System.Windows.Forms.GroupBox gridGroup;
-        private System.Windows.Forms.NumericUpDown highlightedPlotGridWidthNumeric;
-        private System.Windows.Forms.Label highlightedPlotGridWidthLabel;
-        private System.Windows.Forms.Label highlightedPlotGridColorLabel;
-        private UserControls.ColorSelector highlightedGridColorSelector;
-        private System.Windows.Forms.Label processedMapUnassignedGridColorLabel;
-        private UserControls.ColorSelector processedMapUnassignedGridColorSelector;
-        private System.Windows.Forms.Label originalMapGridLabel;
-        private UserControls.ColorSelector originalMapGridColorSelector;
-        private System.Windows.Forms.GroupBox plotWidthGroup;
-        private System.Windows.Forms.NumericUpDown rhombusPlotWidthNumeric;
-        private System.Windows.Forms.Label rhombusPlotWidthLabel;
-        private System.Windows.Forms.NumericUpDown squarePlotWidthNumeric;
-        private System.Windows.Forms.Label squarePlotWidthLabel;
-        private System.Windows.Forms.NumericUpDown hexPlotWidthNumeric;
-        private System.Windows.Forms.Label hexPlotWidthLabel;
-        private System.Windows.Forms.GroupBox terrainGroup;
-        private UserControls.ColorSelector mountainColorSelector;
-        private System.Windows.Forms.Label mountainPlotLabel;
-        private System.Windows.Forms.Label hillPlotLabel;
-        private System.Windows.Forms.Label flatPlotLabel;
-        private System.Windows.Forms.Label coastPlotLabel;
-        private System.Windows.Forms.Label ocealPlotLabel;
-        private UserControls.ColorSelector hillColorSelector;
-        private UserControls.ColorSelector flatColorSelector;
-        private UserControls.ColorSelector coastColorSelector;
-        private UserControls.ColorSelector oceanColorSelector;
-        private System.Windows.Forms.GroupBox zoomGroup;
-        private System.Windows.Forms.NumericUpDown zoomStepNumeric;
-        private System.Windows.Forms.Label zoomStepLabel;
-        private System.Windows.Forms.NumericUpDown maximumZoomNumeric;
-        private System.Windows.Forms.Label maximumZoomLabel;
-        private System.Windows.Forms.NumericUpDown minimumZoomNumeric;
-        private System.Windows.Forms.Label minZoomLabel;
-        private System.Windows.Forms.Button revertButton;
-        private System.Windows.Forms.Label labelKeyShrortcuts_OpenModel;
-        private UserControls.KeyboardShortcutSelector selectorKeyShrortcuts_OpenModel;
+         System.Windows.Forms.TableLayoutPanel buttonsPanel;
+         System.Windows.Forms.Button cancelButton;
+         System.Windows.Forms.Button applyButton;
+         System.Windows.Forms.TabControl tabControl;
+         System.Windows.Forms.TabPage generalTabPage;
+         System.Windows.Forms.TableLayoutPanel generalTableLayoutPanel;
+         System.Windows.Forms.Label uiCultureLabel;
+         System.Windows.Forms.ComboBox uiLanguageComboBox;
+         System.Windows.Forms.TabPage keyboardShortcutsTabPage;
+         System.Windows.Forms.TableLayoutPanel keyboardShortcutsTableLayoutPanel;
+         System.Windows.Forms.Label labelKeyShrortcuts_SaveAs;
+         System.Windows.Forms.Label labelKeyShrortcuts_Save;
+         System.Windows.Forms.Label labelKeyShrortcuts_NewModel;
+         System.Windows.Forms.Label labelKeyShrortcuts_ExportToCivMap;
+         System.Windows.Forms.Label labelKeyShrortcuts_EditRegion;
+         System.Windows.Forms.Label labelKeyShrortcuts_EditPlotData;
+         System.Windows.Forms.Label labelKeyShrortcuts_AssignOcean;
+         System.Windows.Forms.Label labelKeyShrortcuts_AssignCoast;
+         System.Windows.Forms.Label labelKeyShrortcuts_AssignFlat;
+         System.Windows.Forms.Label labelKeyShrortcuts_AssignHill;
+         System.Windows.Forms.Label labelKeyShrortcuts_AssignMountain;
+         UserControls.KeyboardShortcutSelector selectorKeyShrortcuts_SaveAs;
+         UserControls.KeyboardShortcutSelector selectorKeyShrortcuts_Save;
+         UserControls.KeyboardShortcutSelector selectorKeyShrortcuts_NewModel;
+         UserControls.KeyboardShortcutSelector selectorKeyShrortcuts_ExportToCivMap;
+         UserControls.KeyboardShortcutSelector selectorKeyShrortcuts_EditRegion;
+         UserControls.KeyboardShortcutSelector selectorKeyShrortcuts_EditPlotData;
+         UserControls.KeyboardShortcutSelector selectorKeyShrortcuts_AssignOcean;
+         UserControls.KeyboardShortcutSelector selectorKeyShrortcuts_AssignCoast;
+         UserControls.KeyboardShortcutSelector selectorKeyShrortcuts_AssignFlat;
+         UserControls.KeyboardShortcutSelector selectorKeyShrortcuts_AssignHill;
+         UserControls.KeyboardShortcutSelector selectorKeyShrortcuts_AssignMountain;
+         System.Windows.Forms.TabPage mapDisplayTabPage;
+         System.Windows.Forms.GroupBox gridGroup;
+         System.Windows.Forms.NumericUpDown highlightedPlotGridWidthNumeric;
+         System.Windows.Forms.Label highlightedPlotGridWidthLabel;
+         System.Windows.Forms.Label highlightedPlotGridColorLabel;
+         UserControls.ColorSelector highlightedGridColorSelector;
+         System.Windows.Forms.Label processedMapUnassignedGridColorLabel;
+         UserControls.ColorSelector processedMapUnassignedGridColorSelector;
+         System.Windows.Forms.Label originalMapGridLabel;
+         UserControls.ColorSelector originalMapGridColorSelector;
+         System.Windows.Forms.GroupBox plotWidthGroup;
+         System.Windows.Forms.NumericUpDown rhombusPlotWidthNumeric;
+         System.Windows.Forms.Label rhombusPlotWidthLabel;
+         System.Windows.Forms.NumericUpDown squarePlotWidthNumeric;
+         System.Windows.Forms.Label squarePlotWidthLabel;
+         System.Windows.Forms.NumericUpDown hexPlotWidthNumeric;
+         System.Windows.Forms.Label hexPlotWidthLabel;
+         System.Windows.Forms.GroupBox terrainGroup;
+         UserControls.ColorSelector mountainColorSelector;
+         System.Windows.Forms.Label mountainPlotLabel;
+         System.Windows.Forms.Label hillPlotLabel;
+         System.Windows.Forms.Label flatPlotLabel;
+         System.Windows.Forms.Label coastPlotLabel;
+         System.Windows.Forms.Label ocealPlotLabel;
+         UserControls.ColorSelector hillColorSelector;
+         UserControls.ColorSelector flatColorSelector;
+         UserControls.ColorSelector coastColorSelector;
+         UserControls.ColorSelector oceanColorSelector;
+         System.Windows.Forms.GroupBox zoomGroup;
+         System.Windows.Forms.NumericUpDown zoomStepNumeric;
+         System.Windows.Forms.Label zoomStepLabel;
+         System.Windows.Forms.NumericUpDown maximumZoomNumeric;
+         System.Windows.Forms.Label maximumZoomLabel;
+         System.Windows.Forms.NumericUpDown minimumZoomNumeric;
+         System.Windows.Forms.Label minZoomLabel;
+         System.Windows.Forms.Button revertButton;
+         System.Windows.Forms.Label labelKeyShrortcuts_OpenModel;
+         UserControls.KeyboardShortcutSelector selectorKeyShrortcuts_OpenModel;
     }
 }

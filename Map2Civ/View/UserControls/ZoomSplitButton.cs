@@ -38,7 +38,7 @@ namespace Map2CivilizationView.UserControls
             Name = "zoomButton";
             Size = new System.Drawing.Size(140, 22);
 
-            Text = String.Concat(Resources.Str_ZoomSplitButtonText, (int)(Math.Round(GridCoordinateHelperCtrl.GetZoomFactor() * 100f)),
+            Text = string.Concat(Resources.Str_ZoomSplitButtonText, (int)(Math.Round(GridCoordinateHelperCtrl.GetZoomFactor() * 100f)),
                 Resources.Str_ZoomSplitButtonText_Percent);
 
             PopulateZoomCombo();
@@ -56,7 +56,7 @@ namespace Map2CivilizationView.UserControls
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void ZoomSplitButton_Paint(object sender, PaintEventArgs e)
+         void ZoomSplitButton_Paint(object sender, PaintEventArgs e)
         {
             if (Parent != null && !_parentAssigned)
             {
@@ -69,7 +69,7 @@ namespace Map2CivilizationView.UserControls
 
         
 
-        private void Parent_HandleDestroyed(object sender, EventArgs e)
+         void Parent_HandleDestroyed(object sender, EventArgs e)
         {
             RegisteredListenersCtrl.ZoomListeners.DeregisterObserver(this);
         }
@@ -77,7 +77,7 @@ namespace Map2CivilizationView.UserControls
 
 
 
-        private void PopulateZoomCombo()
+         void PopulateZoomCombo()
         {
             float minValue = Map2Civilization.Properties.Settings.Default.MinZoomPercent;
             float maxValue = Map2Civilization.Properties.Settings.Default.MaxZoomPercent;
@@ -92,16 +92,16 @@ namespace Map2CivilizationView.UserControls
 
             _zoomCombo.SelectedIndexChanged += zoomCombo_SelectedIndexChanged;
 
-            _zoomCombo.Text = String.Concat(Resources.Str_ZoomSplitButtonText, 
+            _zoomCombo.Text = string.Concat(Resources.Str_ZoomSplitButtonText, 
                 (int)(Math.Round(((float)_zoomCombo.SelectedItem)*100f)), Resources.Str_ZoomSplitButtonText_Percent);
         }
 
 
-        private void zoomCombo_SelectedIndexChanged(object sender, EventArgs e)
+         void zoomCombo_SelectedIndexChanged(object sender, EventArgs e)
         {
             RegisteredListenersCtrl.ZoomChangedUpdate(((float)_zoomCombo.SelectedItem) / 100f);
 
-            Text = String.Concat(Resources.Str_ZoomSplitButtonText,
+            Text = string.Concat(Resources.Str_ZoomSplitButtonText,
                 (int)(Math.Round((float)_zoomCombo.SelectedItem)), Resources.Str_ZoomSplitButtonText_Percent);
         }
 
@@ -109,7 +109,7 @@ namespace Map2CivilizationView.UserControls
         public void ZoomChanged(float value)
         {
             _zoomCombo.SelectedItem = value;
-            Text = String.Concat(Resources.Str_ZoomSplitButtonText,
+            Text = string.Concat(Resources.Str_ZoomSplitButtonText,
                 (int)(Math.Round(value * 100f)), Resources.Str_ZoomSplitButtonText_Percent);
         }
     }

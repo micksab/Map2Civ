@@ -18,7 +18,7 @@ namespace Map2CivilizationView
         Color _plotCororFlat = Map2Civilization.Properties.Settings.Default.PlotColorFlat;
         Color _plotCororHill = Map2Civilization.Properties.Settings.Default.PlotColorHill;
         Color _plotCororMountain = Map2Civilization.Properties.Settings.Default.PlotColorMountain;
-        String _ReportEMailAddress = Map2Civilization.Properties.Settings.Default.ReportEMailAddress;
+        string _ReportEMailAddress = Map2Civilization.Properties.Settings.Default.ReportEMailAddress;
         int _plotWidthPixelsSquarePlot = Map2Civilization.Properties.Settings.Default.PlotWidthPixelsSquarePlot;
         int _plotWidthPixelsHexagonalP = Map2Civilization.Properties.Settings.Default.PlotWidthPixelsHexagonalP;
         int _plotWidthPixelsRhombus = Map2Civilization.Properties.Settings.Default.PlotWidthPixelsRhombus;
@@ -53,7 +53,7 @@ namespace Map2CivilizationView
             PopulateLanguagesCombo();
         }
 
-        private void PopulateShortcutsKeysSelectors()
+         void PopulateShortcutsKeysSelectors()
         {
             
 
@@ -147,7 +147,7 @@ namespace Map2CivilizationView
         }
 
 
-        private void PopulateNumericBoxes()
+         void PopulateNumericBoxes()
         {
             minimumZoomNumeric.Value = (decimal)_minZoomPercent;
             maximumZoomNumeric.Value = (decimal)_maxZoomPercent;
@@ -168,7 +168,7 @@ namespace Map2CivilizationView
         }
 
 
-        private void PopulateColorSelectors()
+         void PopulateColorSelectors()
         {
             oceanColorSelector.Color = _plotCororOcean;
             coastColorSelector.Color = _plotCororCoast;
@@ -192,7 +192,7 @@ namespace Map2CivilizationView
 
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Globalization", "CA1303:Do not pass literals as localized parameters", MessageId = "System.Console.WriteLine(System.String)")]
-        private void PopulateLanguagesCombo()
+        void PopulateLanguagesCombo()
         {
             ResourceManager rm = new ResourceManager(typeof(Map2Civilization.Properties.Resources));
 
@@ -233,12 +233,12 @@ namespace Map2CivilizationView
         }
 
 
-        private void SettingsChanged()
+         void SettingsChanged()
         {
             applyButton.Enabled = true;
         }
 
-        private void ColorSelectorValue_Changed(object sender, UserControls.ColorSelectorValueChangedEventArgs e)
+         void ColorSelectorValue_Changed(object sender, UserControls.ColorSelectorValueChangedEventArgs e)
         {
             SettingsChanged();
             ColorSelector selector = (ColorSelector)sender;
@@ -261,7 +261,7 @@ namespace Map2CivilizationView
                 _processedMapHighlightedPlotGridColor = e.SelectedColor;
         }
 
-        private void KeyboardShortcutSelectorValue_ChangedHandler(object sender,
+         void KeyboardShortcutSelectorValue_ChangedHandler(object sender,
             UserControls.KeyboardShortcutSelectorValueChangedEventArgs e)
         {
             SettingsChanged();
@@ -295,7 +295,7 @@ namespace Map2CivilizationView
             RefreshAssignedKeysList();
         }
 
-        private void zoomNumerics_ValueChanged(object sender, EventArgs e)
+         void zoomNumerics_ValueChanged(object sender, EventArgs e)
         {
             SettingsChanged();
             NumericUpDown selector = (NumericUpDown)sender;
@@ -319,7 +319,7 @@ namespace Map2CivilizationView
         
 
 
-        private void zoomNumerics_Validating(object sender, CancelEventArgs e)
+         void zoomNumerics_Validating(object sender, CancelEventArgs e)
         {
             if (minimumZoomNumeric.Value >= maximumZoomNumeric.Value)
             {
@@ -330,7 +330,7 @@ namespace Map2CivilizationView
             }
         }
 
-        private void plotWidthNumerics_Validating(object sender, CancelEventArgs e)
+         void plotWidthNumerics_Validating(object sender, CancelEventArgs e)
         {
             if(((NumericUpDown)sender).Value % 2 == 0)
             {
@@ -342,26 +342,26 @@ namespace Map2CivilizationView
         }
 
 
-        private void cancelButton_Click(object sender, EventArgs e)
+         void cancelButton_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.Cancel;
             Close();
         }
 
-        private void uiLanguageComboBox_SelectedIndexChanged(object sender, EventArgs e)
+         void uiLanguageComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             _uICulture = (System.Globalization.CultureInfo)uiLanguageComboBox.SelectedItem;
             SettingsChanged();
         }
 
-        private void revertButton_Click(object sender, EventArgs e)
+         void revertButton_Click(object sender, EventArgs e)
         {
             Settings.Default.Reset();
             Settings.Default.Save();
             RestartApp();
         }
 
-        private void SettingsForm_FormClosing(object sender, FormClosingEventArgs e)
+         void SettingsForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             selectorKeyShrortcuts_SaveAs.KeyboardShortcutSelectorValueChangedEventHandler -=
                 KeyboardShortcutSelectorValue_ChangedHandler;
@@ -410,7 +410,7 @@ namespace Map2CivilizationView
 
         }
 
-        private void applyButton_Click(object sender, EventArgs e)
+         void applyButton_Click(object sender, EventArgs e)
         {
             Map2Civilization.Properties.Settings.Default.PlotColorOcean = _plotCororOcean;
             Map2Civilization.Properties.Settings.Default.PlotColorCoast  = _plotCororCoast;

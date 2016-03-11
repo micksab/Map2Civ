@@ -429,6 +429,15 @@ namespace Map2Civilization.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ,.
+        /// </summary>
+        internal static string Str_ColorSelector_RGBSeparator {
+            get {
+                return ResourceManager.GetString("Str_ColorSelector_RGBSeparator", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to !.
         /// </summary>
         internal static string Str_ExporterBase_NotSupportedCaption {
@@ -591,6 +600,15 @@ namespace Map2Civilization.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to -.
+        /// </summary>
+        internal static string Str_MainForm_CoordinateSeparator {
+            get {
+                return ResourceManager.GetString("Str_MainForm_CoordinateSeparator", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Geo-Data provider.
         /// </summary>
         internal static string Str_MapDataSource_Description_GeoData {
@@ -609,7 +627,7 @@ namespace Map2Civilization.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Analyzing Plots.
         /// </summary>
         internal static string Str_NewMapForm_AnalysingPlotsPart1 {
             get {

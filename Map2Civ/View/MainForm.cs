@@ -66,15 +66,15 @@ namespace Map2CivilizationView
 
         }
 
-        
+
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Globalization", "CA1303:Do not pass literals as localized parameters", MessageId = "System.Windows.Forms.Control.set_Text(System.String)")]
-        public void UpdateCurrentModelFile(String fileName)
+        public void UpdateCurrentModelFile(string fileName)
         {
-            String displayableFileString = VariousUtilityMethods.ExtractDisplayableModelFilePath(fileName);
+            string displayableFilestring = VariousUtilityMethods.ExtractDisplayableModelFilePath(fileName);
 
-            String version = Assembly.GetExecutingAssembly().GetName().Version.ToString();
-            String productName;
+            string version = Assembly.GetExecutingAssembly().GetName().Version.ToString();
+            string productName;
             object[] attributes = Assembly.GetExecutingAssembly().GetCustomAttributes(typeof(AssemblyProductAttribute), false);
             if (attributes.Length == 0)
             {
@@ -82,7 +82,7 @@ namespace Map2CivilizationView
             }
             productName = ((AssemblyProductAttribute)attributes[0]).Product;
 
-            String toDisplay = String.Concat(productName, " v", version, " ", "...", displayableFileString);
+            string toDisplay = string.Concat(productName, " v", version, " ", "...", displayableFilestring);
 
             Text = toDisplay;
 
@@ -121,7 +121,7 @@ namespace Map2CivilizationView
         }
 
 
-        private void MainForm_Closing(object sender, EventArgs e)
+         void MainForm_Closing(object sender, EventArgs e)
         {
             RegisteredListenersCtrl.PlotLocationListeners.DeregisterObserver(this);
             RegisteredListenersCtrl.CentralFormListeners.DeregisterObserver(this);
@@ -130,20 +130,20 @@ namespace Map2CivilizationView
 
         }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Globalization", "CA1303:Do not pass literals as localized parameters", MessageId = "System.Windows.Forms.ToolStripItem.set_Text(System.String)")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Globalization", "CA1303:Do not pass literals as localized parameters", MessageId = "System.Windows.Forms.ToolStripItem.set_Text(System.string)")]
         public void UpdatePlotLocation(PlotId id)
         {
             
             selectedPlotLabel.Text = id.Name;
 
             PointF plotPixelCoordinates = GridCoordinateHelperCtrl.ConvertPlotIdToPixelLocation(id, true);
-            plotCoordinatesLabel.Text = String.Concat(plotPixelCoordinates.X, "-", plotPixelCoordinates.Y);
+            plotCoordinatesLabel.Text = string.Concat(plotPixelCoordinates.X, Resources.Str_MainForm_CoordinateSeparator, plotPixelCoordinates.Y);
 
         }
 
         public void UpdateColorListCount(int count)
         {
-            colorCountLabel.Text = String.Concat(count);
+            colorCountLabel.Text = string.Concat(count);
         }
 
 
@@ -179,7 +179,7 @@ namespace Map2CivilizationView
             }
         }
 
-        private void About_Click(object sender, EventArgs e)
+         void About_Click(object sender, EventArgs e)
         {
             using (AboutBox aboutForm = new AboutBox())
             {
@@ -192,10 +192,10 @@ namespace Map2CivilizationView
 
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Reliability", "CA2000:Dispose objects before losing scope")]
-        private void SaveModel_Click(object sender, EventArgs e)
+         void SaveModel_Click(object sender, EventArgs e)
         {
-            String currentFile = ModelCtrl.GetCurrentModelFile();
-            if (!String.IsNullOrEmpty(currentFile))
+            string currentFile = ModelCtrl.GetCurrentModelFile();
+            if (!string.IsNullOrEmpty(currentFile))
             {
                 SaveModelProcessor.StartProcess(currentFile);
                 //Due to the asynchronous nature of model (it is based on instances of Backgroundworker)
@@ -210,7 +210,7 @@ namespace Map2CivilizationView
             
         }
 
-        private void SaveAsModel_Click(object sender, EventArgs e)
+         void SaveAsModel_Click(object sender, EventArgs e)
         {
             using(SaveFileDialog saveFileDialog = new SaveFileDialog())
             {
@@ -218,7 +218,7 @@ namespace Map2CivilizationView
                 saveFileDialog.DefaultExt = Resources.Str_OpenFileDialogDefaultExt;
                 DialogResult result = saveFileDialog.ShowDialog();
 
-                if (result == DialogResult.OK && !String.IsNullOrEmpty(saveFileDialog.FileName))
+                if (result == DialogResult.OK && !string.IsNullOrEmpty(saveFileDialog.FileName))
                 {
                     //SaveLoadModel model = new SaveLoadModel();
                     SaveModelProcessor.StartProcess(saveFileDialog.FileName);
@@ -231,7 +231,7 @@ namespace Map2CivilizationView
         }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Reliability", "CA2000:Dispose objects before losing scope")]
-        private void LoadModel_Click(object sender, EventArgs e)
+         void LoadModel_Click(object sender, EventArgs e)
         {
             using (OpenFileDialog openFileDialog = new OpenFileDialog())
             {
@@ -239,7 +239,7 @@ namespace Map2CivilizationView
                 openFileDialog.DefaultExt = Resources.Str_OpenFileDialogDefaultExt;
                 DialogResult result = openFileDialog.ShowDialog();
 
-                if (result == DialogResult.OK && !String.IsNullOrEmpty(openFileDialog.FileName))
+                if (result == DialogResult.OK && !string.IsNullOrEmpty(openFileDialog.FileName))
                 {
                    LoadModelProcessor.StartProcess(openFileDialog.FileName);
                     //Due to the asynchronous nature of model (it is based on instances of Backgroundworker)
@@ -249,7 +249,7 @@ namespace Map2CivilizationView
             }
         }
 
-        private void NewModel_Click(object sender, EventArgs e)
+         void NewModel_Click(object sender, EventArgs e)
         {
             using (NewMapForm startForm = new NewMapForm())
             {
@@ -258,7 +258,7 @@ namespace Map2CivilizationView
         }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly", MessageId = "Civ")]
-        private void ExportToCivMap_Click(object sender, EventArgs e)
+         void ExportToCivMap_Click(object sender, EventArgs e)
         {
             using(SaveFileDialog exportFileDialog = new SaveFileDialog())
             {
@@ -267,7 +267,7 @@ namespace Map2CivilizationView
 
                 DialogResult result = exportFileDialog.ShowDialog();
 
-                if (result == DialogResult.OK && !String.IsNullOrEmpty(exportFileDialog.FileName))
+                if (result == DialogResult.OK && !string.IsNullOrEmpty(exportFileDialog.FileName))
                 {
                     ExporterBase exporter = ExporterBase.GetExporter(ModelCtrl.GetCivilizationVersion());
                     exporter.ExportModel(ModelCtrl.GetDataModel(), exportFileDialog.FileName);
@@ -278,7 +278,7 @@ namespace Map2CivilizationView
 
         
 
-        private void MainForm_KeyDown(object sender, KeyEventArgs e)
+         void MainForm_KeyDown(object sender, KeyEventArgs e)
         {
            
             if (e.KeyCode == Keys.N && e.Control)
@@ -327,7 +327,7 @@ namespace Map2CivilizationView
 
         
 
-        public void PublishNewInfoMessage(String infoMessage)
+        public void PublishNewInfoMessage(string infoMessage)
         {
             _feedbackLabel.AddFeedbackMessage(infoMessage);
 
@@ -353,19 +353,19 @@ namespace Map2CivilizationView
 
        
 
-        private void zoomInButton_Click(object sender, EventArgs e)
+         void zoomInButton_Click(object sender, EventArgs e)
         {
             float newZoomFactor = GridCoordinateHelperCtrl.GetNextZoomInFactor();
             RegisteredListenersCtrl.ZoomChangedUpdate(newZoomFactor);
         }
 
-        private void zoomOutButton_Click(object sender, EventArgs e)
+         void zoomOutButton_Click(object sender, EventArgs e)
         {
             float newZoomFactor = GridCoordinateHelperCtrl.GetNextZoomOutFactor();
             RegisteredListenersCtrl.ZoomChangedUpdate(newZoomFactor);
         }
 
-        private void settingsButton_Click(object sender, EventArgs e)
+         void settingsButton_Click(object sender, EventArgs e)
         {
             using (SettingsForm settingsForm = new SettingsForm())
             {
@@ -373,7 +373,7 @@ namespace Map2CivilizationView
             }
         }
 
-        private void defaultZoomButton_Click(object sender, EventArgs e)
+         void defaultZoomButton_Click(object sender, EventArgs e)
         {
             RegisteredListenersCtrl.ZoomChangedUpdate(1f);
         }

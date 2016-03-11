@@ -7,7 +7,7 @@ namespace Map2CivilizationView
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+         System.ComponentModel.IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -29,7 +29,7 @@ namespace Map2CivilizationView
         /// the contents of this method with the code editor.
         /// </summary>
         [GeneratedCodeAttribute("Winform Designer GeneratedCode", "VS2015")]
-        private void InitializeComponent()
+         void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AboutBox));
             this.tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
@@ -164,12 +164,12 @@ namespace Map2CivilizationView
 
         #endregion
 
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel;
-        private System.Windows.Forms.PictureBox logoPictureBox;
-        private System.Windows.Forms.Label labelProductName;
-        private System.Windows.Forms.Label labelVersion;
-        private System.Windows.Forms.Label labelCopyright;
-        private System.Windows.Forms.TextBox textBoxDescription;
-        private System.Windows.Forms.Button okButton;
+         System.Windows.Forms.TableLayoutPanel tableLayoutPanel;
+         System.Windows.Forms.PictureBox logoPictureBox;
+         System.Windows.Forms.Label labelProductName;
+         System.Windows.Forms.Label labelVersion;
+         System.Windows.Forms.Label labelCopyright;
+         System.Windows.Forms.TextBox textBoxDescription;
+         System.Windows.Forms.Button okButton;
     }
 }

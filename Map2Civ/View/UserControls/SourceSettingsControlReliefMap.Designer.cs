@@ -9,7 +9,7 @@ namespace Map2CivilizationView.UserControls
         /// <summary> 
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+         System.ComponentModel.IContainer components = null;
 
         /// <summary> 
         /// Clean up any resources being used.
@@ -33,7 +33,7 @@ namespace Map2CivilizationView.UserControls
         /// the contents of this method with the code editor.
         /// </summary>
         [GeneratedCodeAttribute("Winform Designer GeneratedCode", "VS2015")]
-        private void InitializeComponent()
+         void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SourceSettingsControlReliefMap));
             this.imageLabel = new System.Windows.Forms.Label();
@@ -161,18 +161,18 @@ namespace Map2CivilizationView.UserControls
 
         #endregion
 
-        private System.Windows.Forms.Label imageLabel;
-        private System.Windows.Forms.Button openFileButton;
-        private System.Windows.Forms.TextBox pathBox;
-        private System.Windows.Forms.GroupBox advancedGroup;
-        private System.Windows.Forms.ComboBox smoothingModeBox;
-        private System.Windows.Forms.Label smoothingLabel;
-        private System.Windows.Forms.ComboBox composingQualityBox;
-        private System.Windows.Forms.Label compositingLabel;
-        private System.Windows.Forms.ComboBox interpolationBox;
-        private System.Windows.Forms.Label interpolationLabel;
-        private System.Windows.Forms.CheckBox defaultCheck;
-        private System.Windows.Forms.ComboBox colorDepthBox;
-        private System.Windows.Forms.Label depthLabel;
+         System.Windows.Forms.Label imageLabel;
+         System.Windows.Forms.Button openFileButton;
+         System.Windows.Forms.TextBox pathBox;
+         System.Windows.Forms.GroupBox advancedGroup;
+         System.Windows.Forms.ComboBox smoothingModeBox;
+         System.Windows.Forms.Label smoothingLabel;
+         System.Windows.Forms.ComboBox composingQualityBox;
+         System.Windows.Forms.Label compositingLabel;
+         System.Windows.Forms.ComboBox interpolationBox;
+         System.Windows.Forms.Label interpolationLabel;
+         System.Windows.Forms.CheckBox defaultCheck;
+         System.Windows.Forms.ComboBox colorDepthBox;
+         System.Windows.Forms.Label depthLabel;
     }
 }

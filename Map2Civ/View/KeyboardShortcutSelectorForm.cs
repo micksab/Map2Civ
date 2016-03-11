@@ -41,7 +41,7 @@ namespace Map2CivilizationView
         }
 
 
-        private void PopulateKeysCombo()
+         void PopulateKeysCombo()
         {
             keysCombo.SelectedIndexChanged -= keysCombo_SelectedIndexChanged;
             controlBox.CheckedChanged -= controlBox_CheckedChanged;
@@ -72,7 +72,7 @@ namespace Map2CivilizationView
         }
 
 
-        private void AssignNewKeyValue()
+         void AssignNewKeyValue()
         {
             _key = (Keys)keysCombo.SelectedItem;
 
@@ -95,24 +95,24 @@ namespace Map2CivilizationView
             
         }
 
-        private void cancelButton_Click(object sender, EventArgs e)
+         void cancelButton_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.Cancel;
             Close();
         }
 
-        private void okButton_Click(object sender, EventArgs e)
+         void okButton_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.OK;
             Close();
         }
 
-        private void keysCombo_SelectedIndexChanged(object sender, EventArgs e)
+         void keysCombo_SelectedIndexChanged(object sender, EventArgs e)
         {
             AssignNewKeyValue();
         }
 
-        private void controlBox_CheckedChanged(object sender, EventArgs e)
+         void controlBox_CheckedChanged(object sender, EventArgs e)
         {
             AssignNewKeyValue();
         }
@@ -133,7 +133,7 @@ namespace Map2CivilizationView
             }
         }
 
-        private void controlBox_Validating(object sender, CancelEventArgs e)
+         void controlBox_Validating(object sender, CancelEventArgs e)
         {
             if(_requiresKeyModifier && !controlBox.Checked && !altBox.Checked)
             {

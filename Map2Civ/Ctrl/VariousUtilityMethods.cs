@@ -2,27 +2,28 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Windows.Forms;
 
 namespace Map2CivilizationCtrl
 {
     public static class VariousUtilityMethods
     {
 
-        public static String ExtractDisplayableModelFilePath(String currentFile)
+        public static string ExtractDisplayableModelFilePath(string currentFile)
         {
-            String toReturn = String.Empty;
+            string toReturn = string.Empty;
 
-            if (!String.IsNullOrEmpty(currentFile))
+            if (!string.IsNullOrEmpty(currentFile))
             {
                 //Get the filename
-                String filename = System.IO.Path.GetFileName(currentFile);
+                string filename = System.IO.Path.GetFileName(currentFile);
                 //Get the directory where the file resides at...
-                String directory = System.IO.Path.GetDirectoryName(currentFile);
+                string directory = System.IO.Path.GetDirectoryName(currentFile);
                 //.. and keep just the name of the folder that the file resides at..
-                String[] directories = directory.Split(new Char[] { '\\' });
+                string[] directories = directory.Split(new Char[] { '\\' });
 
 
-                toReturn = String.Concat("...", directories.Last<String>(), "\\", filename);
+                toReturn = string.Concat("...", directories.Last<string>(), "\\", filename);
             }
 
 
@@ -45,5 +46,26 @@ namespace Map2CivilizationCtrl
             return toReturn;
         }
 
+
+        public static string FormatKeyStringRepresentation(Keys keyValue)
+        {
+            string toReturn = String.Empty;
+
+            if (keyValue.HasFlag(Keys.Control))
+                toReturn = "Ctrl+";
+
+            if (keyValue.HasFlag(Keys.Alt))
+                toReturn = toReturn + "Alt+";
+
+            if (keyValue.HasFlag(Keys.Shift))
+                toReturn = toReturn + "Shift+";
+
+           
+
+
+            toReturn = toReturn + (keyValue & ~Keys.Control & ~Keys.Shift & ~Keys.Alt).ToString();
+
+            return toReturn;
+        }
     }
 }

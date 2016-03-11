@@ -86,7 +86,7 @@ namespace Map2CivilizationView.UserControls
 
         #region Event handlers
 
-        private void MapControl_KeyDown(object sender, KeyEventArgs e)
+         void MapControl_KeyDown(object sender, KeyEventArgs e)
         {
 
             TerrainType.Enumeration combDescr = TerrainType.Enumeration.NotDefined;
@@ -141,7 +141,7 @@ namespace Map2CivilizationView.UserControls
             
         }
 
-        private void Menu_RegionEditEvent(object sender, EventArgs e)
+         void Menu_RegionEditEvent(object sender, EventArgs e)
         {
             
             using (RegionEditForm editForm = new RegionEditForm(CurrentPlotId))
@@ -150,13 +150,13 @@ namespace Map2CivilizationView.UserControls
             }
         }
 
-        private void Menu_ColorEditEvent(object sender, EventArgs e)
+         void Menu_ColorEditEvent(object sender, EventArgs e)
         {
-            String dominantColorHex = PlotCollectionCtrl.getDominantColorHex(CurrentPlotId);
+            string dominantColorHex = PlotCollectionCtrl.getDominantColorHex(CurrentPlotId);
             RegisteredListenersCtrl.DetectedColorsGridSetSelectedColor(dominantColorHex);
         }
 
-        private void Menu_PlotEditEvent(object sender, ProcessedMapMenu.CustomPlotMapMenuEventArgs e)
+         void Menu_PlotEditEvent(object sender, ProcessedMapMenu.CustomPlotMapMenuEventArgs e)
         {
 
             if(e.SourceMenuValue== TerrainType.Enumeration.Ocean || e.SourceMenuValue == TerrainType.Enumeration.Coast ||

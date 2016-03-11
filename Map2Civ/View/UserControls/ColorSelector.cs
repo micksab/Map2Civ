@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Map2Civilization.Properties;
+using System;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -7,7 +8,7 @@ namespace Map2CivilizationView.UserControls
     public partial class ColorSelector : UserControl
     {
         Color _color;
-        private EventHandler<ColorSelectorValueChangedEventArgs> _colorSelectorValueChanged;
+         EventHandler<ColorSelectorValueChangedEventArgs> _colorSelectorValueChanged;
 
         public Color Color
         {
@@ -53,10 +54,13 @@ namespace Map2CivilizationView.UserControls
 
 
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Globalization", "CA1303:Do not pass literals as localized parameters", MessageId = "System.Windows.Forms.Control.set_Text(System.String)")]
-        private void UpdateColorDisplay()
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Globalization", "CA1303:Do not pass literals as localized parameters", MessageId = "System.Windows.Forms.Control.set_Text(System.string)")]
+         void UpdateColorDisplay()
         {
-            colorBox.Text = String.Concat(Convert.ToInt32(_color.R), ",", Convert.ToInt32(_color.G), ",", Convert.ToInt32(_color.B));
+            colorBox.Text = string.Concat(Convert.ToInt32(_color.R), Resources.Str_ColorSelector_RGBSeparator, 
+                Convert.ToInt32(_color.G), Resources.Str_ColorSelector_RGBSeparator
+                , Convert.ToInt32(_color.B));
+
             colorPanel.BackColor = _color;
         }
 
@@ -64,7 +68,7 @@ namespace Map2CivilizationView.UserControls
 
         
 
-        private void colorButton_Click(object sender, EventArgs e)
+         void colorButton_Click(object sender, EventArgs e)
         {
             using(ColorDialog colorDialog = new ColorDialog())
             {
@@ -103,7 +107,7 @@ namespace Map2CivilizationView.UserControls
 
     public class ColorSelectorValueChangedEventArgs : EventArgs
     {
-        private Color _color;
+         Color _color;
 
         public Color SelectedColor
         {

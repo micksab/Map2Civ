@@ -75,12 +75,12 @@ namespace Map2CivilizationView
 
         }
 
-        private void _originalMapControl_GotFocus(object sender, EventArgs e)
+         void _originalMapControl_GotFocus(object sender, EventArgs e)
         {
             _processedMapControl.Focus();
         }
 
-        private void RegionEditForm_HandleDestroyed(object sender, EventArgs e)
+         void RegionEditForm_HandleDestroyed(object sender, EventArgs e)
         {
             RegisteredListenersCtrl.PlotLocationListeners.DeregisterObserver(this);
             RegisteredListenersCtrl.ZoomListeners.DeregisterObserver(this);
@@ -95,7 +95,7 @@ namespace Map2CivilizationView
 
 
 
-        private void RegionEditForm_FormClosing(object sender, FormClosingEventArgs e)
+         void RegionEditForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             RegisteredListenersCtrl.PlotLocationListeners.DeregisterObserver(this);
             RegisteredListenersCtrl.ZoomListeners.DeregisterObserver(this);
@@ -104,14 +104,14 @@ namespace Map2CivilizationView
         }
 
        
-        private void SplitPanelsSizeChanged(object sender, EventArgs e)
+         void SplitPanelsSizeChanged(object sender, EventArgs e)
         {
             CenterToSelectedPlot();
         }
 
 
 
-        private void CenterToSelectedPlot()
+         void CenterToSelectedPlot()
         {
             //calc the coordinates (relative to the map) of the center plot
             PointF centerPlotPixels = GridCoordinateHelperCtrl.ConvertPlotIdToPixelLocation(_currentPlotId, true);

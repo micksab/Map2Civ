@@ -5,7 +5,7 @@
         /// <summary> 
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+         System.ComponentModel.IContainer components = null;
 
         /// <summary> 
         /// Clean up any resources being used.
@@ -26,7 +26,7 @@
         /// Required method for Designer support - do not modify 
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent()
+         void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ColorSelector));
             this.colorPanel = new System.Windows.Forms.Panel();
@@ -70,8 +70,8 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel colorPanel;
-        private System.Windows.Forms.Button colorButton;
-        private System.Windows.Forms.TextBox colorBox;
+         System.Windows.Forms.Panel colorPanel;
+         System.Windows.Forms.Button colorButton;
+         System.Windows.Forms.TextBox colorBox;
     }
 }

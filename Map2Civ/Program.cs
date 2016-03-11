@@ -34,7 +34,7 @@ namespace Map2Civilization
 
 
         
-        private static void CurrentDomain_UnhandledException(object sender, UnhandledExceptionEventArgs e)
+         static void CurrentDomain_UnhandledException(object sender, UnhandledExceptionEventArgs e)
         {
             Exception ex = (Exception)e.ExceptionObject;
             using (ErrorForm toShow = new ErrorForm(true, Resources.Str_UnhandledError, ex))

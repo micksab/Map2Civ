@@ -19,16 +19,16 @@ namespace Map2CivilizationCtrl.Enumerations
         /// <summary>
         /// Used to store the single instance needed to perform any operation.
         /// </summary>
-        private static GridType _singleInstance;
-        private static int _plotWidthPixelsSquarePlot;
-        private static int _plotWidthPixelsHexagonalPt;
-        private static int _plotWidthPixelsRhombus;
+         static GridType _singleInstance;
+         static int _plotWidthPixelsSquarePlot;
+         static int _plotWidthPixelsHexagonalPt;
+         static int _plotWidthPixelsRhombus;
         
 
         /// <summary>
-        /// Private constructor
+        ///  constructor
         /// </summary>
-        private GridType()
+         GridType()
         {
 
             _plotWidthPixelsSquarePlot = Map2Civilization.Properties.Settings.Default.PlotWidthPixelsSquarePlot;
@@ -64,7 +64,7 @@ namespace Map2CivilizationCtrl.Enumerations
             }
         }
 
-        public String GetEnumValueDescription(System.Enum value)
+        public string GetEnumValueDescription(System.Enum value)
         {
             switch ((Enumeration)value)
             {

@@ -10,11 +10,11 @@ namespace Map2CivilizationView
     
     public partial class ImageEditor : Form
     {
-        private Bitmap _originalBmp;
-        private double _intendedRatio;
-        private double _imageRatio;
-        private double _panelRatio;
-        private Boolean _consumeValueChangedEvents = true;
+         Bitmap _originalBmp;
+         double _intendedRatio;
+         double _imageRatio;
+         double _panelRatio;
+         Boolean _consumeValueChangedEvents = true;
 
         UserControls.ImageAreaSelector _selectionToolControl;
 
@@ -48,7 +48,7 @@ namespace Map2CivilizationView
        
 
 
-        private void PositionImageAreaSelector()
+         void PositionImageAreaSelector()
         {
             int selectorWidth = 0;
             int selectorHeight = 0;
@@ -82,7 +82,7 @@ namespace Map2CivilizationView
         }
 
 
-        private Boolean EvaluateIntendedRatio()
+         Boolean EvaluateIntendedRatio()
         {
             Boolean toReturn = false;
            
@@ -106,12 +106,12 @@ namespace Map2CivilizationView
         }
 
 
-        private void CalculateImageRatio()
+         void CalculateImageRatio()
         {
              _imageRatio = (double)_selectionToolControl.BackgroundImage.Width / (double)_selectionToolControl.BackgroundImage.Height;
         }
 
-        private void CalculatePanelRatio()
+         void CalculatePanelRatio()
         {
              _panelRatio = (double)imagePanel.Width / (double)imagePanel.Height;
         }
@@ -171,13 +171,13 @@ namespace Map2CivilizationView
 
 
 
-        private void CancelButton_Click(object sender, EventArgs e)
+         void CancelButton_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.Cancel;
             Close();
         }
 
-        private void OkButton_Click(object sender, EventArgs e)
+         void OkButton_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.OK;
             Close();
@@ -187,18 +187,18 @@ namespace Map2CivilizationView
 
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly", MessageId = "px")]
-        private void showImageSize(Bitmap bmp)
+         void showImageSize(Bitmap bmp)
         {
-            imageWidthLabel.Text = String.Concat(Resources.Str_ImageEditor_ImageWidth, bmp.Width, 
+            imageWidthLabel.Text = string.Concat(Resources.Str_ImageEditor_ImageWidth, bmp.Width, 
                 Resources.Str_ImageEditor_ImagePixels);
-            imageHeightLabel.Text = String.Concat(Resources.Str_ImageEditor_ImageHeight, bmp.Height,
+            imageHeightLabel.Text = string.Concat(Resources.Str_ImageEditor_ImageHeight, bmp.Height,
                 Resources.Str_ImageEditor_ImagePixels);
         }
 
 
         
 
-        private void setImage(Bitmap bmp)
+         void setImage(Bitmap bmp)
         {
             _selectionToolControl.BackgroundImage = bmp;
             showImageSize(bmp);
@@ -206,7 +206,7 @@ namespace Map2CivilizationView
             PositionImageAreaSelector();
         }
 
-        private void resizeButton_Click(object sender, EventArgs e)
+         void resizeButton_Click(object sender, EventArgs e)
         {
             using (CanvasSizeForm canvasForm = new CanvasSizeForm(_originalBmp.Size, _intendedRatio))
             {
@@ -224,7 +224,7 @@ namespace Map2CivilizationView
                 
         }
 
-        private void selectAreaButton_Click(object sender, EventArgs e)
+         void selectAreaButton_Click(object sender, EventArgs e)
         {
             if(sender == selectAreaOnButton)
             {
@@ -250,7 +250,7 @@ namespace Map2CivilizationView
 
         
 
-        private void imagePanel_Resize(object sender, EventArgs e)
+         void imagePanel_Resize(object sender, EventArgs e)
         {
             EvaluateIntendedRatio();
             PositionImageAreaSelector();
@@ -258,7 +258,7 @@ namespace Map2CivilizationView
 
 
 
-        private void xValueChanged(object sender, EventArgs e)
+         void xValueChanged(object sender, EventArgs e)
         {
             if (_consumeValueChangedEvents)
             {
@@ -280,7 +280,7 @@ namespace Map2CivilizationView
             
         }
 
-        private void yValueChanged(object sender, EventArgs e)
+         void yValueChanged(object sender, EventArgs e)
         {
             if (_consumeValueChangedEvents)
             {
@@ -302,7 +302,7 @@ namespace Map2CivilizationView
             
         }
 
-        private void wValueChanged(object sender, EventArgs e)
+         void wValueChanged(object sender, EventArgs e)
         {
             if (_consumeValueChangedEvents)
             {

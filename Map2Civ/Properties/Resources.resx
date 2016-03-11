@@ -310,7 +310,7 @@
     <value>Relief Map Image File</value>
   </data>
   <data name="Str_NewMapForm_AnalysingPlotsPart1" xml:space="preserve">
-    <value></value>
+    <value>Analyzing Plots</value>
   </data>
   <data name="Str_NewMapForm_AnalysingPlotsPart2" xml:space="preserve">
     <value>% Done)</value>
@@ -434,5 +434,11 @@
   </data>
   <data name="Str_OpenFileDialogDefaultExt" xml:space="preserve">
     <value>*.M2C</value>
+  </data>
+  <data name="Str_MainForm_CoordinateSeparator" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="Str_ColorSelector_RGBSeparator" xml:space="preserve">
+    <value>,</value>
   </data>
 </root>

@@ -31,7 +31,7 @@ namespace POC_Tests
 
         }
 
-        private void trackBar_Scroll(object sender, EventArgs e)
+         void trackBar_Scroll(object sender, EventArgs e)
         {
             
 

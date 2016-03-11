@@ -70,14 +70,14 @@ namespace Map2CivilizationCtrl
         public static Bitmap GenerateAnalysisImage(Bitmap modelBitmap, SourceReliefMapSettings settings)
         {
             /******** TEST CODE - REMEMBER TO REMOVE ********/
-            //String timeStampStr = System.DateTime.Now.ToString("yyyyMMdd_HHmmss_");
-            //String savePathRoot = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
-            //String savePath = System.IO.Path.Combine(savePathRoot, "CreateTest");
+            //string timeStampStr = System.DateTime.Now.ToString("yyyyMMdd_HHmmss_");
+            //string savePathRoot = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
+            //string savePath = System.IO.Path.Combine(savePathRoot, "CreateTest");
             //if (!System.IO.Directory.Exists(savePath))
             //{
             //    System.IO.Directory.CreateDirectory(savePath);
             //}
-            //modelBitmap.Save(System.IO.Path.Combine(savePath, String.Concat(timeStampStr, "ModelSourceImage", ".bmp")));
+            //modelBitmap.Save(System.IO.Path.Combine(savePath, string.Concat(timeStampStr, "ModelSourceImage", ".bmp")));
             /************************************************/
 
 
@@ -88,13 +88,13 @@ namespace Map2CivilizationCtrl
                                 modelBitmap.Width, modelBitmap.Height), settings.PixelFormat);
 
                     /******** TEST CODE - REMEMBER TO REMOVE ********/
-                    //toReturn.Save(System.IO.Path.Combine(savePath, String.Concat(timeStampStr, "Returned", ".bmp")));
+                    //toReturn.Save(System.IO.Path.Combine(savePath, string.Concat(timeStampStr, "Returned", ".bmp")));
                     /************************************************/
 
                     return toReturn;
                 default:
                     /******** TEST CODE - REMEMBER TO REMOVE ********/
-                    //modelBitmap.Save(System.IO.Path.Combine(savePath, String.Concat(timeStampStr, "Returned", ".bmp")));
+                    //modelBitmap.Save(System.IO.Path.Combine(savePath, string.Concat(timeStampStr, "Returned", ".bmp")));
                     /************************************************/
                     return modelBitmap;
             }
@@ -205,7 +205,7 @@ namespace Map2CivilizationCtrl
 
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Reliability", "CA2000:Dispose objects before losing scope")]
-        public static Bitmap CreateSolidColorBitmap(String colorHex)
+        public static Bitmap CreateSolidColorBitmap(string colorHex)
         {
             ColorConverter conv = new ColorConverter();
             Color color = (Color)conv.ConvertFromString(colorHex);
@@ -347,16 +347,18 @@ namespace Map2CivilizationCtrl
 
 
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Globalization", "CA1305:SpecifyIFormatProvider", MessageId = "System.Byte.ToString(System.String)")]
-        public static String HexFromColor(System.Drawing.Color c)
+        public static string HexFromColor(System.Drawing.Color c)
         {
-            return "#" + c.R.ToString("X2") + c.G.ToString("X2") + c.B.ToString("X2");
+
+            return "#" + c.R.ToString("X2", System.Threading.Thread.CurrentThread.CurrentCulture) + 
+                c.G.ToString("X2", System.Threading.Thread.CurrentThread.CurrentCulture) + 
+                c.B.ToString("X2", System.Threading.Thread.CurrentThread.CurrentCulture);
 
         }
 
         
 
-        public static Color ColorFromHex(String hex)
+        public static Color ColorFromHex(string hex)
         {
             ColorConverter conv = new ColorConverter();
             Color toReturn = (Color)conv.ConvertFromString(hex);
@@ -368,7 +370,7 @@ namespace Map2CivilizationCtrl
 
 
 
-        public static String getBase64StringFromBitmap(Bitmap image)
+        public static string getBase64stringFromBitmap(Bitmap image)
         {
             ImageConverter converter = new ImageConverter();
             return Convert.ToBase64String((byte[])converter.ConvertTo(image, typeof(byte[])));
@@ -376,11 +378,11 @@ namespace Map2CivilizationCtrl
         }
 
 
-        public static Bitmap getBitmapFromBase64String(String imageString)
+        public static Bitmap getBitmapFromBase64string(string imagestring)
         {
             Bitmap toReturn;
             
-            Byte[] bytes = Convert.FromBase64String(imageString);
+            Byte[] bytes = Convert.FromBase64String(imagestring);
 
             using (MemoryStream ms = new MemoryStream(bytes))
             {
@@ -472,7 +474,7 @@ namespace Map2CivilizationCtrl
 
 
 
-        private static Rectangle GetPointListBounds(PointF[] points)
+         static Rectangle GetPointListBounds(PointF[] points)
         {
             float xmin = points[0].X;
             float xmax = xmin;

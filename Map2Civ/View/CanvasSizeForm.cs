@@ -8,11 +8,11 @@ namespace Map2CivilizationView
 {
     public partial class CanvasSizeForm : Form
     {
-        private int _minWidth;
-        private int _minHeight;
-        private double _intentedRatio;
-        private Size _imageSize;
-        private Color _backColor = Color.Blue;
+         int _minWidth;
+         int _minHeight;
+         double _intentedRatio;
+         Size _imageSize;
+         Color _backColor = Color.Blue;
 
         public CanvasSizeForm(Size imageSize, double intendedRatio)
         {
@@ -75,19 +75,19 @@ namespace Map2CivilizationView
 
         #region Event Handlers
 
-        private void cancelButton_Click(object sender, EventArgs e)
+         void cancelButton_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.Cancel;
             Close();
         }
 
-        private void okButton_Click(object sender, EventArgs e)
+         void okButton_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.OK;
             Close();
         }
 
-        private void radioCheckedChanged(object sender, EventArgs e)
+         void radioCheckedChanged(object sender, EventArgs e)
         {
             if (nearestRadio.Checked)
             {
@@ -99,7 +99,7 @@ namespace Map2CivilizationView
             }
         }
 
-        private void colorButton_Click(object sender, EventArgs e)
+         void colorButton_Click(object sender, EventArgs e)
         {
             DialogResult result = colorDialog.ShowDialog();
 

@@ -11,16 +11,16 @@ namespace Map2CivilizationCtrl.Analyzer
 {
     class AnalyserReliefMap : AnalyzerFactory, IDisposable
     {
-        private SourceReliefMapSettings _settings;
-        private GridType.Enumeration  _gridType;
-        private MapDimension _dimension;
-        private BackgroundWorker _analyseBackgroundWorker = new BackgroundWorker();
-        private CivilizationVersion.Enumeration _civilizationVersion;
+         SourceReliefMapSettings _settings;
+         GridType.Enumeration  _gridType;
+         MapDimension _dimension;
+         BackgroundWorker _analyseBackgroundWorker = new BackgroundWorker();
+         CivilizationVersion.Enumeration _civilizationVersion;
 
-        private readonly string _settingsKey = "settings";
-        private readonly string _gridTypeKey = "gridType";
-        private readonly string _dimensionKey = "mapDimension";
-        private readonly string _civilizationVersionKey = "civVersion";
+         readonly string _settingsKey = "settings";
+         readonly string _gridTypeKey = "gridType";
+         readonly string _dimensionKey = "mapDimension";
+         readonly string _civilizationVersionKey = "civVersion";
 
 
         public AnalyserReliefMap(SourceReliefMapSettings settings, GridType.Enumeration gridType, 
@@ -40,7 +40,7 @@ namespace Map2CivilizationCtrl.Analyzer
         {
             RegisteredListenersCtrl.ProgressStarted();
 
-            Dictionary<string, object> arguments = new Dictionary<String, Object>();
+            Dictionary<string, object> arguments = new Dictionary<string, Object>();
             arguments.Add(_settingsKey, _settings);
             arguments.Add(_gridTypeKey, _gridType);
             arguments.Add(_dimensionKey, _dimension);
@@ -51,7 +51,7 @@ namespace Map2CivilizationCtrl.Analyzer
 
 
 
-        private void AnalysisBackgroundWorker_DoWork(object sender, DoWorkEventArgs e)
+         void AnalysisBackgroundWorker_DoWork(object sender, DoWorkEventArgs e)
         {
             Dictionary<string, object> arguments = (Dictionary<string, object>)e.Argument;
             SourceReliefMapSettings settings = (SourceReliefMapSettings)arguments[_settingsKey];
@@ -100,7 +100,7 @@ namespace Map2CivilizationCtrl.Analyzer
                         PlotId id = new PlotId(xPlot, yPlot);
                         Bitmap plotBitmap = BitmapOperationsCtrl.GetPlotArea(analysisImage, id, br, gridTypeEnum, mapDimension);
                         Color dominantColor = BitmapOperationsCtrl.calcDominantColor(plotBitmap);
-                        String hexDominantColor = BitmapOperationsCtrl.HexFromColor(dominantColor);
+                        string hexDominantColor = BitmapOperationsCtrl.HexFromColor(dominantColor);
                         //plotAreasList.Remove(id);
                         plotBitmap.Dispose();
 
@@ -124,7 +124,7 @@ namespace Map2CivilizationCtrl.Analyzer
         }
         
 
-        private void AnalysiseBackgroundWorker_ProgressChanged(object sender, ProgressChangedEventArgs e)
+         void AnalysiseBackgroundWorker_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
             int toReport = e.ProgressPercentage;
             RegisteredListenersCtrl.SetProgressPercent(toReport);
@@ -132,7 +132,7 @@ namespace Map2CivilizationCtrl.Analyzer
 
 
 
-        private void AnalysisBackgroundWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+         void AnalysisBackgroundWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             try
             {

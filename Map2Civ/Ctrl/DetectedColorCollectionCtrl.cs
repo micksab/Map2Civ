@@ -13,11 +13,11 @@ namespace Map2CivilizationCtrl
        
 
 
-        public static void UpdateDetectedColorsAndRefreshProcessedMap(String[] colorIDs,
+        public static void UpdateDetectedColorsAndRefreshProcessedMap(string[] colorIDs,
             TerrainType.Enumeration descriptor)
         {
 
-            foreach (String colorID in colorIDs)
+            foreach (string colorID in colorIDs)
             {
                 ModelCtrl.GetDataModel().DetectedColorCollection.UpdateDetectedColor(colorID, descriptor);
             }
@@ -36,12 +36,12 @@ namespace Map2CivilizationCtrl
 
         
 
-        public static String[] getDetectedColorIDsArray()
+        public static string[] getDetectedColorIDsArray()
         {
             return ModelCtrl.GetDataModel().DetectedColorCollection.GetDetectedColorIds();
         }
 
-        public static DetectedColor getDetectedColor(String colorID)
+        public static DetectedColor getDetectedColor(string colorID)
         {
             return ModelCtrl.GetDataModel().DetectedColorCollection.GetColorByID(colorID);
         }
@@ -55,7 +55,7 @@ namespace Map2CivilizationCtrl
         
 
 
-        public static TerrainType.Enumeration getCombinedDescriptorByColorID(String colorID)
+        public static TerrainType.Enumeration getCombinedDescriptorByColorID(string colorID)
         {
            
             DetectedColor detColor = getDetectedColor(colorID);
@@ -63,7 +63,7 @@ namespace Map2CivilizationCtrl
 
         }
 
-        public static List<PlotId> getDetectedColorPlotCoordinates(String colorID)
+        public static List<PlotId> getDetectedColorPlotCoordinates(string colorID)
         {
             List<PlotId> toReturn = new List<PlotId>();
             DetectedColor detColor = getDetectedColor(colorID);

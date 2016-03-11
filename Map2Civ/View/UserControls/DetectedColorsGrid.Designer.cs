@@ -7,7 +7,7 @@ namespace Map2CivilizationView.UserControls
         /// <summary> 
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+         System.ComponentModel.IContainer components = null;
 
         /// <summary> 
         /// Clean up any resources being used.
@@ -30,7 +30,7 @@ namespace Map2CivilizationView.UserControls
         /// the contents of this method with the code editor.
         /// </summary>
         [GeneratedCodeAttribute("Winform Designer GeneratedCode", "VS2015")]
-        private void InitializeComponent()
+         void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DetectedColorsGrid));
@@ -120,12 +120,12 @@ namespace Map2CivilizationView.UserControls
 
         #endregion
 
-        private System.Windows.Forms.DataGridView gridView;
-        private System.Windows.Forms.ContextMenuStrip contextMenu;
-        private System.Windows.Forms.ToolStripMenuItem massAssignMenuEntry;
-        private System.Windows.Forms.DataGridViewImageColumn colorDisplayColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idColumn;
-        private System.Windows.Forms.DataGridViewComboBoxColumn settingColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn ColorAssigned;
+         System.Windows.Forms.DataGridView gridView;
+         System.Windows.Forms.ContextMenuStrip contextMenu;
+         System.Windows.Forms.ToolStripMenuItem massAssignMenuEntry;
+         System.Windows.Forms.DataGridViewImageColumn colorDisplayColumn;
+         System.Windows.Forms.DataGridViewTextBoxColumn idColumn;
+         System.Windows.Forms.DataGridViewComboBoxColumn settingColumn;
+         System.Windows.Forms.DataGridViewCheckBoxColumn ColorAssigned;
     }
 }

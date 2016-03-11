@@ -13,9 +13,9 @@ namespace Map2CivilizationCtrl.ModelFileStorage
 {
     class SaveModelProcessor : IDisposable
     {
-        private BackgroundWorker _saveBackgroundWorker = new BackgroundWorker();
+         BackgroundWorker _saveBackgroundWorker = new BackgroundWorker();
 
-        private SaveModelProcessor()
+         SaveModelProcessor()
         {
             _saveBackgroundWorker.WorkerReportsProgress = true;
 
@@ -24,12 +24,12 @@ namespace Map2CivilizationCtrl.ModelFileStorage
             _saveBackgroundWorker.RunWorkerCompleted += SaveBackgroundWorker_RunWorkerCompleted;
         }
 
-        private static SaveModelProcessor Singleton()
+         static SaveModelProcessor Singleton()
         {
             return new SaveModelProcessor();
         }
 
-        public static void StartProcess(String fullFilePath)
+        public static void StartProcess(string fullFilePath)
         {
             RegisteredListenersCtrl.ProgressStarted();
             SaveModelProcessor processor = Singleton();
@@ -39,9 +39,9 @@ namespace Map2CivilizationCtrl.ModelFileStorage
 
         //[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Maintainability", "CA1506:AvoidExcessiveClassCoupling")]
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Maintainability", "CA1506:AvoidExcessiveClassCoupling")]
-        private void SaveBackgroundWorker_DoWork(object sender, DoWorkEventArgs e)
+         void SaveBackgroundWorker_DoWork(object sender, DoWorkEventArgs e)
         {
-            String fullFilePath = (String)e.Argument;
+            string fullFilePath = (string)e.Argument;
             ModelCtrl.GetDataModel().ModelFile = fullFilePath;
 
             DataSet theSet = ModelDataSet.GetModelEmptyDataSet();
@@ -57,7 +57,7 @@ namespace Map2CivilizationCtrl.ModelFileStorage
             DataRow globalTableRow = theSet.Tables["Global"].NewRow();
             globalTableRow.SetField<string>("AppVersion", Assembly.GetExecutingAssembly().GetName().Version.ToString());
             globalTableRow.SetField<string>("SelectedMapSize", ModelCtrl.GetMapSize().ToString());
-            globalTableRow.SetField<String>("DataSourceImage", BitmapOperationsCtrl.getBase64StringFromBitmap(ModelCtrl.GetDataSourceImage()));
+            globalTableRow.SetField<string>("DataSourceImage", BitmapOperationsCtrl.getBase64stringFromBitmap(ModelCtrl.GetDataSourceImage()));
             globalTableRow.SetField<GridType.Enumeration>("GridType", ModelCtrl.GetGridType());
             globalTableRow.SetField<MapDataSource.Enumeration>("MapDataSource", ModelCtrl.GetModelDataSourceType());
             globalTableRow.SetField<CivilizationVersion.Enumeration>("CivilizationVersion", ModelCtrl.GetCivilizationVersion());
@@ -96,7 +96,7 @@ namespace Map2CivilizationCtrl.ModelFileStorage
             foreach (DetectedColor color in colors)
             {
                 DataRow newRow = theSet.Tables["Color"].NewRow();
-                newRow.SetField<String>("Id", color.ColorHex);
+                newRow.SetField<string>("Id", color.ColorHex);
                 newRow.SetField<TerrainType.Enumeration>("Terrain",
                     color.TerrainDescriptor);
                 theSet.Tables["Color"].Rows.Add(newRow);
@@ -111,21 +111,21 @@ namespace Map2CivilizationCtrl.ModelFileStorage
         }
 
 
-        private void SaveBackgroundWorker_ProgressChanged(object sender, ProgressChangedEventArgs e)
+         void SaveBackgroundWorker_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
             int toReport = e.ProgressPercentage;
             RegisteredListenersCtrl.SetProgressPercent(toReport);
         }
 
 
-        private void SaveBackgroundWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+         void SaveBackgroundWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             try
             {
                 if (e.Error == null)
                 {
-                    String currentFile = ModelCtrl.GetDataModel().ModelFile;
-                    String displayableFilename = VariousUtilityMethods.ExtractDisplayableModelFilePath(currentFile);
+                    string currentFile = ModelCtrl.GetDataModel().ModelFile;
+                    string displayableFilename = VariousUtilityMethods.ExtractDisplayableModelFilePath(currentFile);
 
                     RegisteredListenersCtrl.CentralFormPublishNewInfoMessage(Resources.Str_SaveModelProcessor_SavedFile + 
                         displayableFilename);

@@ -62,7 +62,7 @@ namespace Map2CivilizationView.UserControls
         }
 
         //Using code found at http://stackoverflow.com/questions/11445125/disabling-particular-items-in-a-combobox
-        private void comboBox_DrawItem(object sender, DrawItemEventArgs e)
+         void comboBox_DrawItem(object sender, DrawItemEventArgs e)
         {
             if (e.Index >= 0)
             {
@@ -70,7 +70,7 @@ namespace Map2CivilizationView.UserControls
                 {
                     Enum selectedEnum = (Enum)comboBox.Items[e.Index];
                     Boolean isEnabled = _dataSource.GetEnumValueEnabledStatus(selectedEnum);
-                    String displayText = _dataSource.GetEnumValueDescription(selectedEnum);
+                    string displayText = _dataSource.GetEnumValueDescription(selectedEnum);
 
                     if (!isEnabled)
                     {
@@ -92,7 +92,7 @@ namespace Map2CivilizationView.UserControls
         }
 
         //Using code found at http://stackoverflow.com/questions/11445125/disabling-particular-items-in-a-combobox
-        private void comboBox_SelectedIndexChanged(object sender, EventArgs e)
+         void comboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
 
             if (comboBox.SelectedIndex >= 0)
@@ -104,7 +104,7 @@ namespace Map2CivilizationView.UserControls
                 switch(isEnabled)
                 {
                     case false:
-                    String displayText = _dataSource.GetEnumValueDescription(selectedEnum);
+                    string displayText = _dataSource.GetEnumValueDescription(selectedEnum);
                     CultureAwareMessageBox.Show(Resources.Str_ExporterBase_NotSupportedMessagePart1 +
                         displayText+Resources.Str_ExporterBase_NotSupportedMessagePart2, 
                         Resources.Str_ExporterBase_NotSupportedCaption, MessageBoxButtons.OK, 
@@ -124,7 +124,7 @@ namespace Map2CivilizationView.UserControls
         }
 
 
-        private void SelectDefaultEnumEntry(Type enumType)
+         void SelectDefaultEnumEntry(Type enumType)
         {
             foreach (Enum tempEnum in Enum.GetValues(enumType))
             {

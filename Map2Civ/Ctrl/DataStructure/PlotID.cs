@@ -53,7 +53,7 @@ namespace Map2CivilizationCtrl.DataStructure
         {
             _x = plotX;
             _y = plotY;
-            _name = String.Concat(plotX, ",", plotY);
+            _name = string.Concat(plotX, ",", plotY);
         }
 
         /// <summary>
@@ -62,15 +62,15 @@ namespace Map2CivilizationCtrl.DataStructure
         /// created.
         /// </summary>
         /// <param name="uniqueName">A string of the form "X,Y", where X and Y are integer values.</param>
-        public PlotId(String uniqueName)
+        public PlotId(string uniqueName)
         {
-            if (String.IsNullOrEmpty(uniqueName) || (uniqueName.Split(',').Count() != 2))
+            if (string.IsNullOrEmpty(uniqueName) || (uniqueName.Split(',').Count() != 2))
             {
                 throw new ArgumentException("Invalid value for argument unique name");
             }
             else
             {
-                String[] components = uniqueName.Split(',');
+                string[] components = uniqueName.Split(',');
                 int xComponent = 0;
                 int yComponent = 0;
                 if ( (int.TryParse(components[0],out xComponent)) && (int.TryParse(components[1],out yComponent)) )

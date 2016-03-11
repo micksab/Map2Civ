@@ -8,7 +8,7 @@ namespace Map2CivilizationView.UserControls
 {
     sealed class FeedbackToolstripLabel : ToolStripLabel
     {
-        Queue<String> _messages = new Queue<String>();
+        Queue<string> _messages = new Queue<string>();
         System.ComponentModel.BackgroundWorker _backWorker = new System.ComponentModel.BackgroundWorker();
 
         public FeedbackToolstripLabel()
@@ -18,7 +18,7 @@ namespace Map2CivilizationView.UserControls
             Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             Size = new System.Drawing.Size(0, 32);
             Margin = new System.Windows.Forms.Padding(30, 0, 30, 0);
-            Text = String.Empty;
+            Text = string.Empty;
 
             _backWorker.WorkerReportsProgress = true;
             _backWorker.DoWork += BackWorker_DoWork;
@@ -29,7 +29,7 @@ namespace Map2CivilizationView.UserControls
        
 
 
-        public void AddFeedbackMessage(String message)
+        public void AddFeedbackMessage(string message)
         {
            
             _messages.Enqueue(message);
@@ -45,13 +45,13 @@ namespace Map2CivilizationView.UserControls
 
         
 
-        private void BackWorker_DoWork(object sender, DoWorkEventArgs e)
+         void BackWorker_DoWork(object sender, DoWorkEventArgs e)
         {
-            Queue<String> theMessages = (Queue<String>)e.Argument;
+            Queue<string> theMessages = (Queue<string>)e.Argument;
 
             while (theMessages.Count > 0)
             {
-                String message = theMessages.Dequeue();
+                string message = theMessages.Dequeue();
                 int rgbElementValue = 0;
                 int rgbElementStep = 10;
                 Boolean isFirstIteration = true;
@@ -78,19 +78,19 @@ namespace Map2CivilizationView.UserControls
         }
 
 
-        private void BackWorker_ProgressChanged(object sender, ProgressChangedEventArgs e)
+         void BackWorker_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
             int rgbElement = e.ProgressPercentage;
-            String message = (String)e.UserState;
+            string message = (string)e.UserState;
             ForeColor = Color.FromArgb(rgbElement, rgbElement, rgbElement);
             Text = message;
         }
 
 
-        private void BackWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+         void BackWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             Image = null;
-            Text = String.Empty;
+            Text = string.Empty;
         }
 
     }

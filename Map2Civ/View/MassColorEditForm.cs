@@ -9,16 +9,16 @@ namespace Map2CivilizationView
 {
     public partial class MassColorEditForm : Form
     {
-        private String[] colorIDs;
+         string[] colorIDs;
 
-        public MassColorEditForm(String[] theColorIds )
+        public MassColorEditForm(string[] theColorIds )
         {
             InitializeComponent();
 
             colorIDs = theColorIds;
 
             StringBuilder sb = new StringBuilder();
-            foreach(String color in colorIDs)
+            foreach(string color in colorIDs)
             {
                 sb.Append(color);
                 sb.Append(",");
@@ -30,13 +30,13 @@ namespace Map2CivilizationView
             terrainsCombo.SelectedIndex = 0;
         }
 
-        private void cancelButton_Click(object sender, EventArgs e)
+         void cancelButton_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.Cancel;
             Close();
         }
 
-        private void okButton_Click(object sender, EventArgs e)
+         void okButton_Click(object sender, EventArgs e)
         {
             TerrainType.Enumeration selectedValue = (TerrainType.Enumeration)terrainsCombo.SelectedValue;
             DetectedColorCollectionCtrl.UpdateDetectedColorsAndRefreshProcessedMap(colorIDs, selectedValue);

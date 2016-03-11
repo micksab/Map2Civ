@@ -10,14 +10,14 @@ namespace Map2CivilizationView.UserControls
 
     public abstract class MapControlBase: UserControl, IUiListenerPlotLocation, IUiListenerZoom, IUiForwardedFocusAndClickListener
     {
-        private Panel _basePanel = new Panel();
-        private PictureBox _pictureBox = new PictureBox();
-        private SelectedPlotPanel _markerCtrl;
-        private bool _AllowScroll = true;
+         Panel _basePanel = new Panel();
+         PictureBox _pictureBox = new PictureBox();
+         SelectedPlotPanel _markerCtrl;
+         bool _AllowScroll = true;
 
 
-        private PlotId _currentPlotId;
-        private Point _mouseMoveStartPoint;
+         PlotId _currentPlotId;
+         Point _mouseMoveStartPoint;
 
         #region get/setters
 
@@ -200,7 +200,7 @@ namespace Map2CivilizationView.UserControls
 
 
 
-        private void PictureBox_Click(object sender, EventArgs e)
+         void PictureBox_Click(object sender, EventArgs e)
         {
             if (RegisteredListenersCtrl.PlotLocationListeners.Contains(this))
             {
@@ -250,7 +250,7 @@ namespace Map2CivilizationView.UserControls
 
 
 
-        private void pictureBox_MouseMove(object sender, MouseEventArgs e)
+         void pictureBox_MouseMove(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
             {
@@ -261,7 +261,7 @@ namespace Map2CivilizationView.UserControls
             }
         }
 
-        private void pictureBox_MouseDown(object sender, MouseEventArgs e)
+         void pictureBox_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
             {
@@ -270,7 +270,7 @@ namespace Map2CivilizationView.UserControls
             }
         }
 
-        private void pictureBox_MouseUp(object sender, MouseEventArgs e)
+         void pictureBox_MouseUp(object sender, MouseEventArgs e)
         {
             Cursor = Cursors.Default;
         }
@@ -333,8 +333,8 @@ namespace Map2CivilizationView.UserControls
         /// <summary>
         /// Used only for compatibility with the VS designer.
         /// </summary>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        private void InitializeComponent()
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1811:AvoidUncalledCode")]
+         void InitializeComponent()
         {
             this.SuspendLayout();
             // 

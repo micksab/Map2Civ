@@ -7,7 +7,7 @@ namespace Map2CivilizationView
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+         System.ComponentModel.IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -30,7 +30,7 @@ namespace Map2CivilizationView
         /// the contents of this method with the code editor.
         /// </summary>
         [GeneratedCodeAttribute("Winform Designer GeneratedCode", "VS2015")]
-        private void InitializeComponent()
+         void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ImageEditor));
             this.toolStrip = new System.Windows.Forms.ToolStrip();
@@ -291,26 +291,26 @@ namespace Map2CivilizationView
 
         #endregion
 
-        private System.Windows.Forms.ToolStrip toolStrip;
-        private System.Windows.Forms.ToolStripButton resizeButton;
-        private System.Windows.Forms.ToolStripButton cancelButton;
-        private System.Windows.Forms.ToolStripButton okButton;
-        private System.Windows.Forms.StatusStrip statusStrip;
-        private System.Windows.Forms.ToolStripStatusLabel intentedRatioLabel;
-        private System.Windows.Forms.ToolStripStatusLabel imageWidthLabel;
-        private System.Windows.Forms.ToolStripStatusLabel imageHeightLabel;
-        private System.Windows.Forms.ToolStripButton selectAreaOnButton;
-        private System.Windows.Forms.ToolStripButton selectAreaOffButton;
-        private System.Windows.Forms.TableLayoutPanel slidersPanel;
-        private System.Windows.Forms.Panel imagePanel;
-        private System.Windows.Forms.NumericUpDown wNumeric;
-        private System.Windows.Forms.TrackBar wTrackBar;
-        private System.Windows.Forms.Label wLabel;
-        private System.Windows.Forms.NumericUpDown yNumeric;
-        private System.Windows.Forms.TrackBar yTrackBar;
-        private System.Windows.Forms.Label yLabel;
-        private System.Windows.Forms.Label xLabel;
-        private System.Windows.Forms.TrackBar xTrackBar;
-        private System.Windows.Forms.NumericUpDown xNumeric;
+         System.Windows.Forms.ToolStrip toolStrip;
+         System.Windows.Forms.ToolStripButton resizeButton;
+         System.Windows.Forms.ToolStripButton cancelButton;
+         System.Windows.Forms.ToolStripButton okButton;
+         System.Windows.Forms.StatusStrip statusStrip;
+         System.Windows.Forms.ToolStripStatusLabel intentedRatioLabel;
+         System.Windows.Forms.ToolStripStatusLabel imageWidthLabel;
+         System.Windows.Forms.ToolStripStatusLabel imageHeightLabel;
+         System.Windows.Forms.ToolStripButton selectAreaOnButton;
+         System.Windows.Forms.ToolStripButton selectAreaOffButton;
+         System.Windows.Forms.TableLayoutPanel slidersPanel;
+         System.Windows.Forms.Panel imagePanel;
+         System.Windows.Forms.NumericUpDown wNumeric;
+         System.Windows.Forms.TrackBar wTrackBar;
+         System.Windows.Forms.Label wLabel;
+         System.Windows.Forms.NumericUpDown yNumeric;
+         System.Windows.Forms.TrackBar yTrackBar;
+         System.Windows.Forms.Label yLabel;
+         System.Windows.Forms.Label xLabel;
+         System.Windows.Forms.TrackBar xTrackBar;
+         System.Windows.Forms.NumericUpDown xNumeric;
     }
 }

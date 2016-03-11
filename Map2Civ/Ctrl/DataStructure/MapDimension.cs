@@ -6,10 +6,10 @@ namespace Map2CivilizationCtrl.DataStructure
 {
     public struct MapDimension
     {
-        private string _description;
-        private int _widthPlots;
-        private int _heightPlots;
-        private bool _isDefault;
+         string _description;
+         int _widthPlots;
+         int _heightPlots;
+         bool _isDefault;
 
         #region getters
         public string Description
@@ -46,7 +46,7 @@ namespace Map2CivilizationCtrl.DataStructure
 
         public override string ToString()
         {
-            return String.Concat(_description, "#", _widthPlots, "#", _heightPlots, "#", _isDefault);
+            return string.Concat(_description, "#", _widthPlots, "#", _heightPlots, "#", _isDefault);
         }
 
         #endregion
@@ -60,9 +60,9 @@ namespace Map2CivilizationCtrl.DataStructure
             _isDefault = isDefault;
         }
 
-        public MapDimension(String elementsValue)
+        public MapDimension(string elementsValue)
         {
-            if (!String.IsNullOrEmpty(elementsValue))
+            if (!string.IsNullOrEmpty(elementsValue))
             {
                 string[] elements = elementsValue.Split('#');
 

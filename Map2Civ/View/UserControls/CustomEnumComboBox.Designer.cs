@@ -9,7 +9,7 @@ namespace Map2CivilizationView.UserControls
         /// <summary> 
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+         System.ComponentModel.IContainer components = null;
 
         /// <summary> 
         /// Clean up any resources being used.
@@ -32,7 +32,7 @@ namespace Map2CivilizationView.UserControls
         /// the contents of this method with the code editor.
         /// </summary>
         [GeneratedCodeAttribute("Winform Designer GeneratedCode", "VS2015")]
-        private void InitializeComponent()
+         void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomEnumComboBox));
             this.comboBox = new System.Windows.Forms.ComboBox();
@@ -61,6 +61,6 @@ namespace Map2CivilizationView.UserControls
 
         #endregion
 
-        private System.Windows.Forms.ComboBox comboBox;
+         System.Windows.Forms.ComboBox comboBox;
     }
 }

@@ -10,11 +10,11 @@ namespace Map2CivilizationModel
     public class DetectedColors
     {
         
-        readonly Dictionary<String, DetectedColor> _collection;
+        readonly Dictionary<string, DetectedColor> _collection;
 
         public  DetectedColors()
         {
-            _collection = new Dictionary<String, DetectedColor>();
+            _collection = new Dictionary<string, DetectedColor>();
         }
 
        
@@ -37,13 +37,13 @@ namespace Map2CivilizationModel
         }
 
 
-        public String[] GetDetectedColorIds()
+        public string[] GetDetectedColorIds()
         {
             //DetectedColor[] toReturn = collection.Values.ToArray() as DetectedColor[];
 
             //return toReturn;
 
-            String[] toReturn = _collection.Keys.ToArray<String>();
+            string[] toReturn = _collection.Keys.ToArray<string>();
 
           
             return toReturn;
@@ -64,7 +64,7 @@ namespace Map2CivilizationModel
         }
 
 
-        public void UpdateDetectedColor(String colorHex, TerrainType.Enumeration descriptor)
+        public void UpdateDetectedColor(string colorHex, TerrainType.Enumeration descriptor)
         {
             DetectedColor detColor = _collection[colorHex];
           

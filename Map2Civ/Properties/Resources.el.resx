@@ -321,4 +321,10 @@
   <data name="Str_OpenFileDialogDefaultExt" xml:space="preserve">
     <value>*.M2C</value>
   </data>
+  <data name="Str_MainForm_CoordinateSeparator" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="Str_ColorSelector_RGBSeparator" xml:space="preserve">
+    <value>,</value>
+  </data>
 </root>

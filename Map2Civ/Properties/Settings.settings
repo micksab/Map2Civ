@@ -17,7 +17,7 @@
     <Setting Name="PlotColorMountain" Type="System.Drawing.Color" Scope="User">
       <Value Profile="(Default)">Maroon</Value>
     </Setting>
-    <Setting Name="ReportEMailAddress" Type="System.String" Scope="User">
+    <Setting Name="ReportEMailAddress" Type="System.string" Scope="User">
       <Value Profile="(Default)">Map2CivReport@gmail.com</Value>
     </Setting>
     <Setting Name="PlotWidthPixelsSquarePlot" Type="System.Int32" Scope="User">

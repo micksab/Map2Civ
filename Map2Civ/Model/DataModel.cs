@@ -8,16 +8,16 @@ namespace Map2CivilizationModel
     public class DataModel
     {
 
-        private MapDimension _selectedMapSize;
-        private Bitmap _dataSourceImage;
-        private GridType.Enumeration  _gridType;
-        private MapDataSource.Enumeration _mapDataSource;
-        private CivilizationVersion.Enumeration _civilizationVersion;
-        private Plots _plotCollection = new Plots();
-        private DetectedColors _detectedColorCollection = new DetectedColors();
+         MapDimension _selectedMapSize;
+         Bitmap _dataSourceImage;
+         GridType.Enumeration  _gridType;
+         MapDataSource.Enumeration _mapDataSource;
+         CivilizationVersion.Enumeration _civilizationVersion;
+         Plots _plotCollection = new Plots();
+         DetectedColors _detectedColorCollection = new DetectedColors();
 
 
-        private String _modelFile = String.Empty;
+         string _modelFile = string.Empty;
        
 
 

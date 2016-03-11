@@ -47,7 +47,7 @@ namespace Map2CivilizationModel
           
         }
 
-        public DetectedColor(String colorHexValue)
+        public DetectedColor(string colorHexValue)
         {
             _colorHex = colorHexValue;
             _terrainDescriptor = TerrainType.Enumeration.NotDefined;
@@ -55,7 +55,7 @@ namespace Map2CivilizationModel
         }
 
 
-        public DetectedColor(String hexColor, TerrainType.Enumeration terrainDescriptor)
+        public DetectedColor(string hexColor, TerrainType.Enumeration terrainDescriptor)
         {
             _colorHex = hexColor;
             _terrainDescriptor  = terrainDescriptor;
@@ -79,7 +79,7 @@ namespace Map2CivilizationModel
         }
 
 
-        private void UpdateRelevantPlots()
+         void UpdateRelevantPlots()
         {
             foreach(Plot plot in _relevantPlots)
             {

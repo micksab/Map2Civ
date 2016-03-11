@@ -7,7 +7,7 @@ namespace Map2CivilizationView
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+         System.ComponentModel.IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -30,7 +30,7 @@ namespace Map2CivilizationView
         /// the contents of this method with the code editor.
         /// </summary>
         [GeneratedCodeAttribute("Winform Designer GeneratedCode", "VS2015")]
-        private void InitializeComponent()
+         void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ErrorForm));
             this.buttonPanel = new System.Windows.Forms.Panel();
@@ -144,15 +144,15 @@ namespace Map2CivilizationView
         }
 
         #endregion
-        private System.Windows.Forms.Panel buttonPanel;
-        private System.Windows.Forms.Button closeButton;
-        private System.Windows.Forms.Panel descriptionPanel;
-        private System.Windows.Forms.Panel ExceptionInfoPanel;
-        private System.Windows.Forms.TextBox exceptionBox;
-        private System.Windows.Forms.Panel messagePanel;
-        private System.Windows.Forms.Panel iconPanel;
-        private System.Windows.Forms.PictureBox pictureBox;
-        private System.Windows.Forms.TextBox messageBox;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+         System.Windows.Forms.Panel buttonPanel;
+         System.Windows.Forms.Button closeButton;
+         System.Windows.Forms.Panel descriptionPanel;
+         System.Windows.Forms.Panel ExceptionInfoPanel;
+         System.Windows.Forms.TextBox exceptionBox;
+         System.Windows.Forms.Panel messagePanel;
+         System.Windows.Forms.Panel iconPanel;
+         System.Windows.Forms.PictureBox pictureBox;
+         System.Windows.Forms.TextBox messageBox;
+         System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
     }
 }

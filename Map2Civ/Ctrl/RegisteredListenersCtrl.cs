@@ -158,7 +158,7 @@ namespace Map2CivilizationCtrl
         }
         
 
-        public static void CentralFormPublishNewInfoMessage(String infoMessage)
+        public static void CentralFormPublishNewInfoMessage(string infoMessage)
         {
             foreach (IUiListenerCentralForm temp in _centralFormListeners.ListenersList)
             {
@@ -242,7 +242,7 @@ namespace Map2CivilizationCtrl
 
         
 
-        public static void DetectedColorsGridSetSelectedColor(String colorID)
+        public static void DetectedColorsGridSetSelectedColor(string colorID)
         {
             foreach(IUiListenerDetectedColorsGrid temp in _colorGridListeners.ListenersList)
             {

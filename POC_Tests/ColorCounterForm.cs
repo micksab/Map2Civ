@@ -17,7 +17,7 @@ namespace POC_Tests
             InitializeComponent();
         }
 
-        private void loadButton_Click(object sender, EventArgs e)
+         void loadButton_Click(object sender, EventArgs e)
         {
             try
             {
@@ -70,7 +70,7 @@ namespace POC_Tests
             }
         }
 
-        private void fileBox_TextChanged(object sender, EventArgs e)
+         void fileBox_TextChanged(object sender, EventArgs e)
         {
             fileBox.Text = fileBox.Text.Replace("\"", String.Empty);
         }

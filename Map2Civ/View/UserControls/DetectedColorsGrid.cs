@@ -14,7 +14,7 @@ namespace Map2CivilizationView.UserControls
     public partial class DetectedColorsGrid : UserControl, IUiListenerDetectedColorsGrid
     {
 
-        String[] detectedColors;
+        string[] detectedColors;
         bool discardCellChangeEvent = false;
 
         public DetectedColorsGrid()
@@ -43,7 +43,7 @@ namespace Map2CivilizationView.UserControls
             {
                 
 
-                String id = (String)tempRow.Cells["idColumn"].Value;
+                string id = (string)tempRow.Cells["idColumn"].Value;
                 TerrainType.Enumeration displayedValue = (TerrainType.Enumeration)tempRow.Cells["settingColumn"].Value;
 
                 TerrainType.Enumeration storedValue = 
@@ -73,11 +73,11 @@ namespace Map2CivilizationView.UserControls
             detectedColors = DetectedColorCollectionCtrl.getDetectedColorIDsArray();
 
 
-            foreach (String colorID in detectedColors)
+            foreach (string colorID in detectedColors)
             {
                 
                 Bitmap bmpToAdd  = BitmapOperationsCtrl.CreateSolidColorBitmap(colorID);
-                String idToAdd = colorID;
+                string idToAdd = colorID;
 
                 TerrainType.Enumeration selectedSettingToAdd = 
                     DetectedColorCollectionCtrl.getCombinedDescriptorByColorID(idToAdd);
@@ -99,12 +99,12 @@ namespace Map2CivilizationView.UserControls
 
         }
 
-        private void gridView_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+         void gridView_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
 
             if (e.RowIndex > (-1) && discardCellChangeEvent==false && e.ColumnIndex!=gridView.Columns["ColorAssigned"].Index)
             {
-                string colorId = (String)gridView.Rows[e.RowIndex].Cells["idColumn"].Value;
+                string colorId = (string)gridView.Rows[e.RowIndex].Cells["idColumn"].Value;
                 TerrainType.Enumeration newValue = 
                     (TerrainType.Enumeration)gridView.Rows[e.RowIndex].Cells["settingColumn"].Value;
 
@@ -123,9 +123,9 @@ namespace Map2CivilizationView.UserControls
        
 
 
-        private void evaluateCompleteness(int rownum)
+         void evaluateCompleteness(int rownum)
         {
-            String id = (String)gridView.Rows[rownum].Cells["idColumn"].Value;
+            string id = (string)gridView.Rows[rownum].Cells["idColumn"].Value;
 
             TerrainType.Enumeration  descriptor = 
             DetectedColorCollectionCtrl.getCombinedDescriptorByColorID(id);
@@ -144,7 +144,7 @@ namespace Map2CivilizationView.UserControls
 
 
 
-        private void gridView_SelectionChanged(object sender, EventArgs e)
+         void gridView_SelectionChanged(object sender, EventArgs e)
         {
             DataGridViewSelectedRowCollection selectedCol = gridView.SelectedRows;
             List<PlotId> plotIdList = new List<PlotId>();
@@ -156,7 +156,7 @@ namespace Map2CivilizationView.UserControls
                 {
                     
                     List<PlotId> toAdd = 
-                        DetectedColorCollectionCtrl.getDetectedColorPlotCoordinates((String)tempRow.Cells["idColumn"].Value);
+                        DetectedColorCollectionCtrl.getDetectedColorPlotCoordinates((string)tempRow.Cells["idColumn"].Value);
 
                     plotIdList.AddRange(toAdd);
                 }
@@ -168,7 +168,7 @@ namespace Map2CivilizationView.UserControls
 
         }
 
-        private void massAssignMenuEntry_Click(object sender, EventArgs e)
+         void massAssignMenuEntry_Click(object sender, EventArgs e)
         {
             DataGridViewSelectedRowCollection selectedCol = gridView.SelectedRows;
             ArrayList toEdit = new ArrayList();
@@ -178,13 +178,13 @@ namespace Map2CivilizationView.UserControls
 
                 foreach (DataGridViewRow tempRow in selectedCol)
                 {
-                    String toAdd = (String)tempRow.Cells["idColumn"].Value;
+                    string toAdd = (string)tempRow.Cells["idColumn"].Value;
                     toEdit.Add(toAdd);
                 }
 
             }
 
-            String[] toEditArray = (String[])toEdit.ToArray(typeof(String));
+            string[] toEditArray = (string[])toEdit.ToArray(typeof(string));
             using (MassColorEditForm massForm = new MassColorEditForm(toEditArray))
             {
                 DialogResult result = massForm.ShowDialog();
@@ -197,14 +197,14 @@ namespace Map2CivilizationView.UserControls
         }
 
 
-        public void SetSelectedColor(String colorId)
+        public void SetSelectedColor(string colorId)
         {
             DataGridViewRowCollection rowCol = gridView.Rows;
             gridView.ClearSelection();
 
             foreach (DataGridViewRow tempRow in rowCol)
             {
-                if (((String)tempRow.Cells[idColumn.Name].Value).Equals(colorId))
+                if (((string)tempRow.Cells[idColumn.Name].Value).Equals(colorId))
                 {
                     tempRow.Selected = true;
                     DataGridViewCell cell = tempRow.Cells[colorDisplayColumn.Name];
@@ -219,7 +219,7 @@ namespace Map2CivilizationView.UserControls
 
 
 
-        private void GridControl_Disposed(object sender, EventArgs e)
+         void GridControl_Disposed(object sender, EventArgs e)
         {
             RegisteredListenersCtrl.ColorGridListeners.DeregisterObserver(this);
         }

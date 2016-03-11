@@ -12,15 +12,15 @@ namespace Map2CivilizationModel
 
        
 
-        public PlotReliefMap(int plotX, int plotY, String hexDominantColor) : base(plotX, plotY)
+        public PlotReliefMap(int plotX, int plotY, string hexDominantColor) : base(plotX, plotY)
         {
             _hexDominantColor = hexDominantColor;
             _dominantColor = BitmapOperationsCtrl.ColorFromHex(_hexDominantColor);
         }
 
 
-        public PlotReliefMap(String id, TerrainType.Enumeration terrainDescriptor,
-             Boolean isCustom, String hexColor) : base(id, terrainDescriptor, isCustom)
+        public PlotReliefMap(string id, TerrainType.Enumeration terrainDescriptor,
+             Boolean isCustom, string hexColor) : base(id, terrainDescriptor, isCustom)
         {
             _hexDominantColor = hexColor;
             _dominantColor = BitmapOperationsCtrl.ColorFromHex(_hexDominantColor);

@@ -7,7 +7,7 @@ namespace Map2CivilizationView
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+         System.ComponentModel.IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -30,7 +30,7 @@ namespace Map2CivilizationView
         /// the contents of this method with the code editor.
         /// </summary>
         [GeneratedCodeAttribute("Winform Designer GeneratedCode", "VS2015")]
-        private void InitializeComponent()
+         void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MassColorEditForm));
             this.terrainsCombo = new System.Windows.Forms.ComboBox();
@@ -89,10 +89,10 @@ namespace Map2CivilizationView
         }
 
         #endregion
-        private System.Windows.Forms.ComboBox terrainsCombo;
-        private System.Windows.Forms.Label colorsLabel;
-        private System.Windows.Forms.TextBox colorsTextBox;
-        private System.Windows.Forms.Button okButton;
-        private System.Windows.Forms.Button cancelButton;
+         System.Windows.Forms.ComboBox terrainsCombo;
+         System.Windows.Forms.Label colorsLabel;
+         System.Windows.Forms.TextBox colorsTextBox;
+         System.Windows.Forms.Button okButton;
+         System.Windows.Forms.Button cancelButton;
     }
 }

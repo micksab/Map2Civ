@@ -18,12 +18,12 @@ namespace Map2CivilizationCtrl.Enumerations
         /// <summary>
         /// Used to store the single instance needed to perform any operation.
         /// </summary>
-        private static MapDataSource _singleInstance;
+         static MapDataSource _singleInstance;
 
         /// <summary>
-        /// Private constructor
+        ///  constructor
         /// </summary>
-        private MapDataSource() { }
+         MapDataSource() { }
 
         
 
@@ -50,7 +50,7 @@ namespace Map2CivilizationCtrl.Enumerations
             }
         }
 
-        public String GetEnumValueDescription(System.Enum value)
+        public string GetEnumValueDescription(System.Enum value)
         {
             switch ((Enumeration)value)
             {

@@ -13,9 +13,9 @@ namespace Map2CivilizationView.UserControls
     public partial class SourceSettingsControlReliefMap : SourceSettingsControlBase
     {
 
-        private Bitmap _mapBitmap;
-        private MapDimension _mapDimension;
-        private GridType.Enumeration _gridTypeEnum;
+         Bitmap _mapBitmap;
+         MapDimension _mapDimension;
+         GridType.Enumeration _gridTypeEnum;
 
         public SourceSettingsControlReliefMap()
         {
@@ -55,7 +55,7 @@ namespace Map2CivilizationView.UserControls
         }
        
 
-        private void PopulateListBoxes()
+         void PopulateListBoxes()
         {
             colorDepthBox.DataSource = Enum.GetValues(typeof(System.Drawing.Imaging.PixelFormat));
 
@@ -69,7 +69,7 @@ namespace Map2CivilizationView.UserControls
         }
 
 
-        private void SetRestoreDefaultValues()
+         void SetRestoreDefaultValues()
         {
             colorDepthBox.SelectedItem = System.Drawing.Imaging.PixelFormat.Format8bppIndexed;
             interpolationBox.SelectedItem = System.Drawing.Drawing2D.InterpolationMode.Default;
@@ -78,9 +78,10 @@ namespace Map2CivilizationView.UserControls
 
         }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly", MessageId = "png")]
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Globalization", "CA1303:Do not pass literals as localized parameters", MessageId = "System.Windows.Forms.FileDialog.set_Filter(System.String)")]
-        private void OpenFileButton_Click(object sender, EventArgs e)
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly", MessageId = "png")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Globalization", "CA1303:Do not pass literals as localized parameters", MessageId = "System.Windows.Forms.FileDialog.set_Filter(System.string)")]
+         void OpenFileButton_Click(object sender, EventArgs e)
         {
 
             try
@@ -92,9 +93,9 @@ namespace Map2CivilizationView.UserControls
                     openFileDialog.Multiselect = false;
 
 
-                    if (openFileDialog.ShowDialog() == DialogResult.OK && !String.IsNullOrEmpty(openFileDialog.FileName))
+                    if (openFileDialog.ShowDialog() == DialogResult.OK && !string.IsNullOrEmpty(openFileDialog.FileName))
                     {
-                        String selectedFile = openFileDialog.FileNames[0];
+                        string selectedFile = openFileDialog.FileNames[0];
                         pathBox.Text = selectedFile;
 
                         using(Bitmap toProc = (Bitmap)Image.FromFile(openFileDialog.FileName))
@@ -127,16 +128,16 @@ namespace Map2CivilizationView.UserControls
 
         }
 
-        override public String SettingsAreComplete
+        override public string SettingsAreComplete
         {
             get
             {
-                switch (String.IsNullOrEmpty(pathBox.Text))
+                switch (string.IsNullOrEmpty(pathBox.Text))
                 {
                     case true:
                         return Resources.Str_SourceSettingsControlReliefMap_NoImageSelected;
                     default:
-                        return String.Empty;
+                        return string.Empty;
 
                 }
             }
@@ -146,8 +147,8 @@ namespace Map2CivilizationView.UserControls
         {
             get
             {
-                String completeCheckResult = SettingsAreComplete;
-                if (String.IsNullOrEmpty(completeCheckResult))
+                string completeCheckResult = SettingsAreComplete;
+                if (string.IsNullOrEmpty(completeCheckResult))
                 {
                     SourceReliefMapSettings settings;
 
@@ -167,7 +168,7 @@ namespace Map2CivilizationView.UserControls
             }
         }
 
-        private void defaultCheck_CheckedChanged(object sender, EventArgs e)
+         void defaultCheck_CheckedChanged(object sender, EventArgs e)
         {
             if (defaultCheck.Checked)
             {
@@ -186,7 +187,7 @@ namespace Map2CivilizationView.UserControls
 
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Reliability", "CA2001:AvoidCallingProblematicMethods", MessageId = "System.GC.Collect")]
-        private Bitmap CheckImageDimensionsCompatibility(Bitmap sourceImage)
+         Bitmap CheckImageDimensionsCompatibility(Bitmap sourceImage)
         {
 
            

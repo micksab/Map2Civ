@@ -28,12 +28,12 @@ namespace Map2CivilizationCtrl.Enumerations
         /// <summary>
         /// Used to store the single instance needed to perform any operation.
         /// </summary>
-        private static CivilizationVersion _singleInstance;
+         static CivilizationVersion _singleInstance;
 
         /// <summary>
-        /// Private constructor
+        ///  constructor
         /// </summary>
-        private CivilizationVersion() { }
+         CivilizationVersion() { }
 
         
 
@@ -59,7 +59,7 @@ namespace Map2CivilizationCtrl.Enumerations
             }
         }
 
-        public String GetEnumValueDescription(System.Enum value)
+        public string GetEnumValueDescription(System.Enum value)
         {
             switch ((Enumeration)value)
             {

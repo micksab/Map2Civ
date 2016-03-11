@@ -9,7 +9,7 @@ namespace Map2CivilizationView
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+         System.ComponentModel.IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -32,7 +32,7 @@ namespace Map2CivilizationView
         /// the contents of this method with the code editor.
         /// </summary>
         [GeneratedCodeAttribute("Winform Designer GeneratedCode", "VS2015")]
-        private void InitializeComponent()
+         void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewMapForm));
             this.progressPanel = new System.Windows.Forms.Panel();
@@ -200,23 +200,23 @@ namespace Map2CivilizationView
 
         #endregion
 
-        private System.Windows.Forms.Panel progressPanel;
-        private System.Windows.Forms.ProgressBar progressBar;
-        private System.Windows.Forms.TableLayoutPanel buttonsPanel;
-        private System.Windows.Forms.Button cancelButton;
-        private System.Windows.Forms.Button createButton;
-        private System.Windows.Forms.Panel labelPanel;
-        private System.Windows.Forms.Label messageLabel;
-        private System.Windows.Forms.TableLayoutPanel standardOptionsPanel;
-        private Map2CivilizationView.UserControls.CustomEnumComboBox versionCustomEnumComboBox;
-        private Map2CivilizationView.UserControls.CustomEnumComboBox dataSourceCustomEnumComboBox;
-        private System.Windows.Forms.Label mapSizeLabel;
-        private System.Windows.Forms.Label dataSourceLabel;
-        private System.Windows.Forms.Label gridTypeLabel;
-        private System.Windows.Forms.Label versionLabel;
-        private System.Windows.Forms.Panel extraOptionsPanel;
-        private System.Windows.Forms.TextBox gridTypeBox;
-        private System.Windows.Forms.ComboBox mapSizeComboBox;
-        private System.Windows.Forms.Label progressLabel;
+         System.Windows.Forms.Panel progressPanel;
+         System.Windows.Forms.ProgressBar progressBar;
+         System.Windows.Forms.TableLayoutPanel buttonsPanel;
+         System.Windows.Forms.Button cancelButton;
+         System.Windows.Forms.Button createButton;
+         System.Windows.Forms.Panel labelPanel;
+         System.Windows.Forms.Label messageLabel;
+         System.Windows.Forms.TableLayoutPanel standardOptionsPanel;
+         Map2CivilizationView.UserControls.CustomEnumComboBox versionCustomEnumComboBox;
+         Map2CivilizationView.UserControls.CustomEnumComboBox dataSourceCustomEnumComboBox;
+         System.Windows.Forms.Label mapSizeLabel;
+         System.Windows.Forms.Label dataSourceLabel;
+         System.Windows.Forms.Label gridTypeLabel;
+         System.Windows.Forms.Label versionLabel;
+         System.Windows.Forms.Panel extraOptionsPanel;
+         System.Windows.Forms.TextBox gridTypeBox;
+         System.Windows.Forms.ComboBox mapSizeComboBox;
+         System.Windows.Forms.Label progressLabel;
     }
 }

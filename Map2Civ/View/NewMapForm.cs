@@ -15,7 +15,7 @@ namespace Map2CivilizationView
     public partial class NewMapForm : Form, IUiListenerProgress
     {
 
-        private GridType.Enumeration _gridTypeValue;
+         GridType.Enumeration _gridTypeValue;
 
         public NewMapForm()
         {
@@ -36,7 +36,7 @@ namespace Map2CivilizationView
 
 
 
-        private void SelectedCivVersionChanged(Object sender, EventArgs e)
+         void SelectedCivVersionChanged(Object sender, EventArgs e)
         {
             CivilizationVersion.Enumeration version = 
                 (CivilizationVersion.Enumeration)versionCustomEnumComboBox.SelectedItem;
@@ -57,7 +57,7 @@ namespace Map2CivilizationView
 
         }
 
-        private void SelectDefaultMapSize()
+         void SelectDefaultMapSize()
         {
             foreach (Object tempItem in mapSizeComboBox.Items)
             {
@@ -69,7 +69,7 @@ namespace Map2CivilizationView
             }
         }
 
-        private void SelectedSourceTypeChanged(Object sender, EventArgs e)
+         void SelectedSourceTypeChanged(Object sender, EventArgs e)
         {
             //Dispose of the controls that are currently being displayed
             for (int i = extraOptionsPanel.Controls.Count - 1; i >= 0; --i)
@@ -104,7 +104,7 @@ namespace Map2CivilizationView
         }
 
 
-        private void mapSizeComboBox_SelectedValueChanged(object sender, EventArgs e)
+         void mapSizeComboBox_SelectedValueChanged(object sender, EventArgs e)
         {
             
             foreach(Control tempControl in this.extraOptionsPanel.Controls)
@@ -120,7 +120,7 @@ namespace Map2CivilizationView
         public void SetProgressPercent(int percent)
         {
             progressBar.Value = percent;
-            progressLabel.Text = String.Concat(Resources.Str_NewMapForm_AnalysingPlotsPart1, percent, 
+            progressLabel.Text = string.Concat(Resources.Str_NewMapForm_AnalysingPlotsPart1, percent, 
                 Resources.Str_NewMapForm_AnalysingPlotsPart2);
         }
 
@@ -140,7 +140,7 @@ namespace Map2CivilizationView
         {
             Close();
             progressLabel.Enabled = false;
-            progressLabel.Text = String.Empty;
+            progressLabel.Text = string.Empty;
         }
 
         #endregion
@@ -148,20 +148,20 @@ namespace Map2CivilizationView
 
 
 
-        private void cancelButton_Click(object sender, EventArgs e)
+         void cancelButton_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
             this.Close();
         }
 
 
-        private void NewMapForm_FormClosed(object sender, FormClosedEventArgs e)
+         void NewMapForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             RegisteredListenersCtrl.ProgressListeners.DeregisterObserver(this);
         }
 
 
-        private void nextButton_Click(object sender, EventArgs e)
+         void nextButton_Click(object sender, EventArgs e)
         {
             try
             {
@@ -176,14 +176,14 @@ namespace Map2CivilizationView
             }
             catch (InvalidOperationException ioe)
             {
-                using(ErrorForm errorForm = new ErrorForm(false, String.Empty, ioe))
+                using(ErrorForm errorForm = new ErrorForm(false, string.Empty, ioe))
                 {
                     errorForm.ShowDialog();
                 }
             }
             catch(NotImplementedException nie)
             {
-                using (ErrorForm errorForm = new ErrorForm(false, String.Empty, nie))
+                using (ErrorForm errorForm = new ErrorForm(false, string.Empty, nie))
                 {
                     errorForm.ShowDialog();
                 }

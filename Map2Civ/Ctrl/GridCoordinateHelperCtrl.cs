@@ -246,7 +246,7 @@ namespace Map2CivilizationCtrl
 
 
 
-        private static float CalculatePointDistanceFromPlotCenter(PlotId plotId, PointF point, GridType.Enumeration gridType)
+         static float CalculatePointDistanceFromPlotCenter(PlotId plotId, PointF point, GridType.Enumeration gridType)
         {
             float zoomMultiplier = _currentZoomFactor;
 

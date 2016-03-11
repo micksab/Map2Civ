@@ -107,7 +107,7 @@ namespace Map2CivilizationCtrl.ModelFileStorage
 
 
 
-            String presentableFilename = VariousUtilityMethods.ExtractDisplayableModelFilePath(fullFilePath);
+            string presentableFilename = VariousUtilityMethods.ExtractDisplayableModelFilePath(fullFilePath);
             RegisteredListenersCtrl.CentralFormPublishNewInfoMessage(Resources.Str_ExporterCivilizationV_ExportedMessage +
                 presentableFilename);
         }
@@ -128,7 +128,7 @@ namespace Map2CivilizationCtrl.ModelFileStorage
 
         //File.WriteAllBytes(@"C:\Users\Michael\Documents\My Games\Sid Meier's Civilization 5\Maps\Block1_v5.bin", blockBytes);
 
-        //String test = "test";
+        //string test = "test";
 
         /******************************************************************************************************************/
         /******************************************************************************************************************/
@@ -159,8 +159,8 @@ namespace Map2CivilizationCtrl.ModelFileStorage
         //string[] --Resource type list
         //string --Map Name string
         //string --Description string
-        //int --Length of String3 (only present in version xB or later)
-        //string --String3(only present in version xB or later)
+        //int --Length of string3 (only present in version xB or later)
+        //string --string3(only present in version xB or later)
 
         //Map Data
         //Map data is just a list of plots, where a plot is an array of 8 bytes.It starts at plot (0, 0), continues along the x-axis until the row is done, then moves on to (0, 1), etc.So a useful way to read it is to loop the y values from 0 to Height-1 and inside that loop the x values from 0 to Width-1; then you can simply read the next 8 bytes to get the info for plot(x, y) and do whatever you need to with it.
@@ -203,7 +203,7 @@ namespace Map2CivilizationCtrl.ModelFileStorage
         //Code:
         //            TERRAIN_GRASS.TERRAIN_PLAINS.TERRAIN_DESERT.TERRAIN_TUNDRA.TERRAIN_SNOW.TERRAIN_COAST.TERRAIN_OCEAN.
         //            These blocks can be read en masse and then split on the nulls into an array of type names.
-        //            The int/ string combination for String3 was apparently added for version xB maps as it is not present in any version xA maps that I've looked at.
+        //            The int/ string combination for string3 was apparently added for version xB maps as it is not present in any version xA maps that I've looked at.
         //             Plots only seem to have 1 of the 2 feature types present.For exported maps, if a plot has a "normal" feature(forest, jungle, flood plain) it'll be the first feature; if instead it has a Natural Wonder feature, it'll be the second feature.
         #endregion
     }

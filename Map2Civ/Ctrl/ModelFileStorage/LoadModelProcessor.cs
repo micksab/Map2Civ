@@ -14,23 +14,22 @@ namespace Map2Civilization.Ctrl.ModelFileStorage
 {
     class LoadModelProcessor : IDisposable
     {
-        private BackgroundWorker _loadBackgroundWorker = new BackgroundWorker();
+         BackgroundWorker _loadBackgroundWorker = new BackgroundWorker();
 
-        private LoadModelProcessor()
+        LoadModelProcessor()
         {
             _loadBackgroundWorker.WorkerReportsProgress = true;
-
             _loadBackgroundWorker.DoWork += LoadBackgroundWorker_DoWork;
             _loadBackgroundWorker.ProgressChanged += LoadBackgroundWorker_ProgressChanged;
             _loadBackgroundWorker.RunWorkerCompleted += LoadBackgroundWorker_RunWorkerCompleted;
         }
 
-        private static LoadModelProcessor Singleton()
+         static LoadModelProcessor Singleton()
         {
             return new LoadModelProcessor();
         }
 
-        public static void StartProcess(String fullFilePath)
+        public static void StartProcess(string fullFilePath)
         {
             RegisteredListenersCtrl.ProgressStarted();
             LoadModelProcessor processor = Singleton();
@@ -38,9 +37,9 @@ namespace Map2Civilization.Ctrl.ModelFileStorage
         }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Reliability", "CA2000:Dispose objects before losing scope")]
-        private void LoadBackgroundWorker_DoWork(object sender, DoWorkEventArgs e)
+         void LoadBackgroundWorker_DoWork(object sender, DoWorkEventArgs e)
         {
-            String fullFilePath = (String)e.Argument;
+            string fullFilePath = (string)e.Argument;
             DataSet theSet = ModelDataSet.GetModelEmptyDataSet();
             theSet.ReadXml(fullFilePath);
 
@@ -54,8 +53,8 @@ namespace Map2Civilization.Ctrl.ModelFileStorage
 
             /**** Load 'Global' table values *****/
             // read the image of the original Bitmap 
-            String originalImageString = (String)theSet.Tables["Global"].Rows[0]["DataSourceImage"];
-            Bitmap originalImage = BitmapOperationsCtrl.getBitmapFromBase64String(originalImageString);
+            string originalImagestring = (string)theSet.Tables["Global"].Rows[0]["DataSourceImage"];
+            Bitmap originalImage = BitmapOperationsCtrl.getBitmapFromBase64string(originalImagestring);
             Bitmap streamFreeImage = new Bitmap(originalImage.Width, originalImage.Height);
             //If we were to assign the originalImage instance at newDataMode.ImageToProcess, 
             // we would get a misleading "Out of Memory" exception on any method that would 
@@ -84,10 +83,10 @@ namespace Map2Civilization.Ctrl.ModelFileStorage
 
             foreach (DataRow temp in theSet.Tables["Plot"].Rows)
             {
-                string Id = (String)temp["Id"];
+                string Id = (string)temp["Id"];
                 TerrainType.Enumeration typeDescriptor = (TerrainType.Enumeration)temp["Terrain"];
                 bool isLocked = (bool)temp["Locked"];
-                String hexColor = (string)temp["Color"];
+                string hexColor = (string)temp["Color"];
 
                 switch (newDataModel.MapDataSource)
                 {
@@ -111,7 +110,7 @@ namespace Map2Civilization.Ctrl.ModelFileStorage
 
             foreach (DataRow temp in theSet.Tables["Color"].Rows)
             {
-                String ID = (String)temp["Id"];
+                string ID = (string)temp["Id"];
                 TerrainType.Enumeration ctd = (TerrainType.Enumeration)temp["Terrain"];
                 newDataModel.DetectedColorCollection.UpdateDetectedColor(ID, ctd);
                 counter++;
@@ -125,14 +124,14 @@ namespace Map2Civilization.Ctrl.ModelFileStorage
 
 
 
-        private void LoadBackgroundWorker_ProgressChanged(object sender, ProgressChangedEventArgs e)
+         void LoadBackgroundWorker_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
             int toReport = e.ProgressPercentage;
             RegisteredListenersCtrl.SetProgressPercent(toReport);
         }
 
 
-        private void LoadBackgroundWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+         void LoadBackgroundWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             try
             {

@@ -15,10 +15,10 @@ namespace Map2CivilizationView
 
 
 
-            Text = String.Concat(Map2Civilization.Properties.Resources.Str_AboutForm_About,
+            Text = string.Concat(Map2Civilization.Properties.Resources.Str_AboutForm_About,
                 Resources.Str_SingleSpace, this.AssemblyTitle);
             labelProductName.Text = this.AssemblyProduct;
-            labelVersion.Text = String.Concat(Resources.Str_AboutForm_Version, 
+            labelVersion.Text = string.Concat(Resources.Str_AboutForm_Version, 
                 Resources.Str_SingleSpace, this.AssemblyVersion);
             labelCopyright.Text = this.AssemblyCopyright;
             
@@ -36,7 +36,7 @@ namespace Map2CivilizationView
                 if (attributes.Length > 0)
                 {
                     AssemblyTitleAttribute titleAttribute = (AssemblyTitleAttribute)attributes[0];
-                    if (!String.IsNullOrEmpty(titleAttribute.Title))
+                    if (!string.IsNullOrEmpty(titleAttribute.Title))
                     {
                         return titleAttribute.Title;
                     }

@@ -7,7 +7,7 @@ namespace Map2CivilizationView
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+         System.ComponentModel.IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -30,7 +30,7 @@ namespace Map2CivilizationView
         /// the contents of this method with the code editor.
         /// </summary>
         [GeneratedCodeAttribute("Winform Designer GeneratedCode", "VS2015")]
-        private void InitializeComponent()
+         void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegionEditForm));
             this.statusStrip = new System.Windows.Forms.StatusStrip();
@@ -96,9 +96,9 @@ namespace Map2CivilizationView
         }
 
         #endregion
-        private System.Windows.Forms.StatusStrip statusStrip;
-        private System.Windows.Forms.ToolStripStatusLabel plotTitleLabel;
-        private System.Windows.Forms.ToolStripStatusLabel plotValueLabel;
-        private System.Windows.Forms.SplitContainer splitContainer;
+         System.Windows.Forms.StatusStrip statusStrip;
+         System.Windows.Forms.ToolStripStatusLabel plotTitleLabel;
+         System.Windows.Forms.ToolStripStatusLabel plotValueLabel;
+         System.Windows.Forms.SplitContainer splitContainer;
     }
 }

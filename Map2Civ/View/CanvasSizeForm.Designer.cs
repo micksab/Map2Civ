@@ -7,7 +7,7 @@ namespace Map2CivilizationView
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+         System.ComponentModel.IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -30,7 +30,7 @@ namespace Map2CivilizationView
         /// the contents of this method with the code editor.
         /// </summary>
         [GeneratedCodeAttribute("Winform Designer GeneratedCode", "VS2015")]
-        private void InitializeComponent()
+         void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CanvasSizeForm));
             this.widthLabel = new System.Windows.Forms.Label();
@@ -171,18 +171,18 @@ namespace Map2CivilizationView
 
         #endregion
 
-        private System.Windows.Forms.Label widthLabel;
-        private System.Windows.Forms.Label heightLabel;
-        private System.Windows.Forms.NumericUpDown widthNumeric;
-        private System.Windows.Forms.NumericUpDown heightNumeric;
-        private System.Windows.Forms.Button okButton;
-        private System.Windows.Forms.Button cancelButton;
-        private System.Windows.Forms.RadioButton nearestRadio;
-        private System.Windows.Forms.RadioButton customRadio;
-        private System.Windows.Forms.GroupBox sizeGroupBox;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button colorButton;
-        private System.Windows.Forms.Panel colorPanel;
-        private System.Windows.Forms.ColorDialog colorDialog;
+         System.Windows.Forms.Label widthLabel;
+         System.Windows.Forms.Label heightLabel;
+         System.Windows.Forms.NumericUpDown widthNumeric;
+         System.Windows.Forms.NumericUpDown heightNumeric;
+         System.Windows.Forms.Button okButton;
+         System.Windows.Forms.Button cancelButton;
+         System.Windows.Forms.RadioButton nearestRadio;
+         System.Windows.Forms.RadioButton customRadio;
+         System.Windows.Forms.GroupBox sizeGroupBox;
+         System.Windows.Forms.GroupBox groupBox1;
+         System.Windows.Forms.Button colorButton;
+         System.Windows.Forms.Panel colorPanel;
+         System.Windows.Forms.ColorDialog colorDialog;
     }
 }

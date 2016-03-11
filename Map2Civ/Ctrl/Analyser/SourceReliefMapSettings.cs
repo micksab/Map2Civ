@@ -6,7 +6,7 @@ namespace Map2CivilizationCtrl.Analyzer
 {
     class SourceReliefMapSettings : ISourceMapSettings
     {
-        private Bitmap _mapBitmap;
+         Bitmap _mapBitmap;
         readonly PixelFormat _pixelFormat;
         readonly InterpolationMode _interpolationMode;
         readonly CompositingQuality _compositingQuality;

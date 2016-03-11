@@ -129,7 +129,7 @@ namespace Map2CivilizationView.UserControls
         }
 
 
-        private void DrawSelectionRect()
+         void DrawSelectionRect()
         {
 
             if(_ForegroundBitmap== null || _ForegroundBitmap.Size!= ClientRectangle.Size)

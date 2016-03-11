@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 using Map2Civilization.Properties;
+using Map2CivilizationCtrl;
 
 namespace Map2CivilizationView.UserControls
 {
@@ -31,9 +32,9 @@ namespace Map2CivilizationView.UserControls
             _requiresKeyModifier = requiresKeyModifier;
         }
 
-        private void ShowKeyTextRepresentation()
+         void ShowKeyTextRepresentation()
         {
-            shortcutBox.Text = _currentlySelectedShortcut.ToString().Replace(',', '+');   
+            shortcutBox.Text = VariousUtilityMethods.FormatKeyStringRepresentation(_currentlySelectedShortcut);   
         }
 
         public Keys CurrentlySelectedShortcut
@@ -72,7 +73,7 @@ namespace Map2CivilizationView.UserControls
             }
         }
 
-        private void newShortcutButton_Click(object sender, EventArgs e)
+         void newShortcutButton_Click(object sender, EventArgs e)
         {
             using(KeyboardShortcutSelectorForm selectorForm = 
                 new KeyboardShortcutSelectorForm(_currentlySelectedShortcut, _requiresKeyModifier))
@@ -116,7 +117,7 @@ namespace Map2CivilizationView.UserControls
     {
        
 
-        private Keys _shortcut = Keys.None;
+         Keys _shortcut = Keys.None;
 
         public Keys Shortcut
         {

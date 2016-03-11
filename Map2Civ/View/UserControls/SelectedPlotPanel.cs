@@ -31,7 +31,7 @@ namespace Map2CivilizationView.UserControls
 
         
 
-        private void SelectedPlotPanel_MouseClick(object sender, MouseEventArgs e)
+         void SelectedPlotPanel_MouseClick(object sender, MouseEventArgs e)
         {
             if (_clickAndFocusForwardingTarget != null)
             {

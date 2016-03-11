@@ -5,7 +5,7 @@
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+         System.ComponentModel.IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -26,7 +26,7 @@
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent()
+         void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(KeyboardShortcutSelectorForm));
             this.controlBox = new System.Windows.Forms.CheckBox();
@@ -126,14 +126,14 @@
 
         #endregion
 
-        private System.Windows.Forms.CheckBox controlBox;
-        private System.Windows.Forms.CheckBox shiftBox;
-        private System.Windows.Forms.CheckBox altBox;
-        private System.Windows.Forms.Label modifiersLabel;
-        private System.Windows.Forms.Label keyLabel;
-        private System.Windows.Forms.ComboBox keysCombo;
-        private System.Windows.Forms.TableLayoutPanel buttonsPanel;
-        private System.Windows.Forms.Button cancelButton;
-        private System.Windows.Forms.Button okButton;
+         System.Windows.Forms.CheckBox controlBox;
+         System.Windows.Forms.CheckBox shiftBox;
+         System.Windows.Forms.CheckBox altBox;
+         System.Windows.Forms.Label modifiersLabel;
+         System.Windows.Forms.Label keyLabel;
+         System.Windows.Forms.ComboBox keysCombo;
+         System.Windows.Forms.TableLayoutPanel buttonsPanel;
+         System.Windows.Forms.Button cancelButton;
+         System.Windows.Forms.Button okButton;
     }
 }

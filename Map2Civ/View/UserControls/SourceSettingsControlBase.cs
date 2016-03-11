@@ -23,7 +23,7 @@ namespace Map2CivilizationView.UserControls
         /// Property that verifies if all the required settings of the source data are valid.
         /// </summary>
         /// <returns>Empty string if everything is OK, an error message string if not.</returns>
-        public abstract String SettingsAreComplete { get; }
+        public abstract string SettingsAreComplete { get; }
 
         /// <summary>
         /// Property that returns to the caller the currently selected settigs
@@ -34,8 +34,8 @@ namespace Map2CivilizationView.UserControls
         /// <summary>
         /// Used just for compatibility with the VS designer
         /// </summary>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        private void InitializeComponent()
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1811:AvoidUncalledCode")]
+         void InitializeComponent()
         {
             this.SuspendLayout();
             // 

@@ -34,6 +34,6 @@ namespace Map2CivilizationCtrl.ModelFileStorage
         }
 
 
-        public abstract void ExportModel(Map2CivilizationModel.DataModel dataModel, String fullFilePath);
+        public abstract void ExportModel(Map2CivilizationModel.DataModel dataModel, string fullFilePath);
     }
 }

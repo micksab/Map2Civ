@@ -7,7 +7,7 @@ namespace Map2CivilizationView
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+         System.ComponentModel.IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -30,7 +30,7 @@ namespace Map2CivilizationView
         /// the contents of this method with the code editor.
         /// </summary>
         [GeneratedCodeAttribute("Winform Designer GeneratedCode", "VS2015")]
-        private void InitializeComponent()
+         void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
@@ -517,56 +517,56 @@ namespace Map2CivilizationView
 
         #endregion
 
-        private System.Windows.Forms.Panel buttonsPanel;
-        private System.Windows.Forms.Panel bottomPanel;
-        private System.Windows.Forms.Panel workingAreaPanel;
-        private System.Windows.Forms.StatusStrip statusStrip;
-        private System.Windows.Forms.ToolStrip toolStrip;
-        private System.Windows.Forms.ToolStripButton saveButton;
-        private System.Windows.Forms.ToolStripButton exportToCivMap;
-        private System.Windows.Forms.TabControl tabContainer;
-        private System.Windows.Forms.TabPage originalMapTabPage;
-        private System.Windows.Forms.TabPage processedMapTabPage;
-        private System.Windows.Forms.ToolStripStatusLabel selectedPlotLabel;
-        private System.Windows.Forms.ToolStripStatusLabel MapSizeLabel;
-        private System.Windows.Forms.ToolStripStatusLabel colorCountLabel;
-        private System.Windows.Forms.ToolStripStatusLabel percentCompleteLabel;
-        private System.Windows.Forms.ToolStripButton newModelButton;
-        private System.Windows.Forms.ToolStripButton loadMapButton;
-        private System.Windows.Forms.ToolStripButton aboutButton;
-        private System.Windows.Forms.ToolStripStatusLabel plotCoordinatesLabel;
-        private System.Windows.Forms.SplitContainer splitContainer;
-        private System.Windows.Forms.ToolStripButton settingsButton;
-        private System.Windows.Forms.ToolStripButton saveAsButton;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
-        private System.Windows.Forms.ToolStripButton helpButton;
-        private System.Windows.Forms.MenuStrip menuStrip;
-        private System.Windows.Forms.ToolStripMenuItem fileMenu;
-        private System.Windows.Forms.ToolStripMenuItem newStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem openStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem saveStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem saveAsStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem exportToCivStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem settingsMenu;
-        private System.Windows.Forms.ToolStripMenuItem settingsStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem helpMenu;
-        private System.Windows.Forms.ToolStripMenuItem helpStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem aboutStripMenuItem;
-        private System.Windows.Forms.ToolStripProgressBar progressBar;
-        private System.Windows.Forms.ImageList tabImageList;
-        private System.Windows.Forms.ToolStripStatusLabel civVersionLabel;
-        private System.Windows.Forms.ToolStripButton zoomInButton;
-        private System.Windows.Forms.ToolStripButton zoomOutButton;
-        private System.Windows.Forms.ToolStripButton zoomDefaultButton;
-        private System.Windows.Forms.ToolStripStatusLabel plotHeaderLabel;
-        private System.Windows.Forms.ToolStripStatusLabel coordinatesHeaderLabel;
-        private System.Windows.Forms.ToolStripStatusLabel civilizationVersionHeaderLabel;
-        private System.Windows.Forms.ToolStripStatusLabel mapSizeHeaderLabel;
-        private System.Windows.Forms.ToolStripStatusLabel colorsDetectedHeaderLabel;
-        private System.Windows.Forms.ToolStripStatusLabel percentCompleteHeaderLabel;
+         System.Windows.Forms.Panel buttonsPanel;
+         System.Windows.Forms.Panel bottomPanel;
+         System.Windows.Forms.Panel workingAreaPanel;
+         System.Windows.Forms.StatusStrip statusStrip;
+         System.Windows.Forms.ToolStrip toolStrip;
+         System.Windows.Forms.ToolStripButton saveButton;
+         System.Windows.Forms.ToolStripButton exportToCivMap;
+         System.Windows.Forms.TabControl tabContainer;
+         System.Windows.Forms.TabPage originalMapTabPage;
+         System.Windows.Forms.TabPage processedMapTabPage;
+         System.Windows.Forms.ToolStripStatusLabel selectedPlotLabel;
+         System.Windows.Forms.ToolStripStatusLabel MapSizeLabel;
+         System.Windows.Forms.ToolStripStatusLabel colorCountLabel;
+         System.Windows.Forms.ToolStripStatusLabel percentCompleteLabel;
+         System.Windows.Forms.ToolStripButton newModelButton;
+         System.Windows.Forms.ToolStripButton loadMapButton;
+         System.Windows.Forms.ToolStripButton aboutButton;
+         System.Windows.Forms.ToolStripStatusLabel plotCoordinatesLabel;
+         System.Windows.Forms.SplitContainer splitContainer;
+         System.Windows.Forms.ToolStripButton settingsButton;
+         System.Windows.Forms.ToolStripButton saveAsButton;
+         System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+         System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+         System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+         System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+         System.Windows.Forms.ToolStripButton helpButton;
+         System.Windows.Forms.MenuStrip menuStrip;
+         System.Windows.Forms.ToolStripMenuItem fileMenu;
+         System.Windows.Forms.ToolStripMenuItem newStripMenuItem;
+         System.Windows.Forms.ToolStripMenuItem openStripMenuItem;
+         System.Windows.Forms.ToolStripMenuItem saveStripMenuItem;
+         System.Windows.Forms.ToolStripMenuItem saveAsStripMenuItem;
+         System.Windows.Forms.ToolStripMenuItem exportToCivStripMenuItem;
+         System.Windows.Forms.ToolStripMenuItem settingsMenu;
+         System.Windows.Forms.ToolStripMenuItem settingsStripMenuItem;
+         System.Windows.Forms.ToolStripMenuItem helpMenu;
+         System.Windows.Forms.ToolStripMenuItem helpStripMenuItem;
+         System.Windows.Forms.ToolStripMenuItem aboutStripMenuItem;
+         System.Windows.Forms.ToolStripProgressBar progressBar;
+         System.Windows.Forms.ImageList tabImageList;
+         System.Windows.Forms.ToolStripStatusLabel civVersionLabel;
+         System.Windows.Forms.ToolStripButton zoomInButton;
+         System.Windows.Forms.ToolStripButton zoomOutButton;
+         System.Windows.Forms.ToolStripButton zoomDefaultButton;
+         System.Windows.Forms.ToolStripStatusLabel plotHeaderLabel;
+         System.Windows.Forms.ToolStripStatusLabel coordinatesHeaderLabel;
+         System.Windows.Forms.ToolStripStatusLabel civilizationVersionHeaderLabel;
+         System.Windows.Forms.ToolStripStatusLabel mapSizeHeaderLabel;
+         System.Windows.Forms.ToolStripStatusLabel colorsDetectedHeaderLabel;
+         System.Windows.Forms.ToolStripStatusLabel percentCompleteHeaderLabel;
     }
 }
 
