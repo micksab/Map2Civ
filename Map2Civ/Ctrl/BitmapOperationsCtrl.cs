@@ -255,7 +255,7 @@ namespace Map2CivilizationCtrl
             Stopwatch stopWatch = new Stopwatch();
             stopWatch.Start();
 
-            Pen UnassignedPen = new Pen(Settings.Default.ProcessedMapUnAssignedPlotGridColor, 1);
+            Pen UnassignedPen = new Pen(Map2Civilization.Properties.Settings.Default.ProcessedMapUnAssignedPlotGridColor, 1);
             Pen bluePen = new Pen(Color.Blue, 1);
 
             Bitmap sourceBitmap = ModelCtrl.GetDataSourceImage();

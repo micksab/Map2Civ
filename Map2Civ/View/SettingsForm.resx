@@ -384,23 +384,20 @@
   <data name="keyboardShortcutsTableLayoutPanel.ColumnCount" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <data name="selectorKeyShrortcuts_OpenModel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
   <data name="selectorKeyShrortcuts_OpenModel.Location" type="System.Drawing.Point, System.Drawing">
     <value>203, 93</value>
   </data>
   <data name="selectorKeyShrortcuts_OpenModel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>294, 24</value>
+    <value>200, 24</value>
   </data>
   <data name="selectorKeyShrortcuts_OpenModel.TabIndex" type="System.Int32, mscorlib">
-    <value>23</value>
+    <value>0</value>
   </data>
   <data name="&gt;&gt;selectorKeyShrortcuts_OpenModel.Name" xml:space="preserve">
     <value>selectorKeyShrortcuts_OpenModel</value>
   </data>
   <data name="&gt;&gt;selectorKeyShrortcuts_OpenModel.Type" xml:space="preserve">
-    <value>Map2CivilizationView.UserControls.KeyboardShortcutSelector, Map2Civilization, Version=0.9.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Map2CivilizationView.UserControls.KeyboardShortcutSettingSelector, Map2Civilization, Version=0.9.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;selectorKeyShrortcuts_OpenModel.Parent" xml:space="preserve">
     <value>keyboardShortcutsTableLayoutPanel</value>
@@ -876,23 +873,20 @@
   <data name="&gt;&gt;labelKeyShrortcuts_AssignMountain.ZOrder" xml:space="preserve">
     <value>12</value>
   </data>
-  <data name="selectorKeyShrortcuts_SaveAs.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
   <data name="selectorKeyShrortcuts_SaveAs.Location" type="System.Drawing.Point, System.Drawing">
     <value>203, 3</value>
   </data>
   <data name="selectorKeyShrortcuts_SaveAs.Size" type="System.Drawing.Size, System.Drawing">
-    <value>294, 24</value>
+    <value>200, 24</value>
   </data>
   <data name="selectorKeyShrortcuts_SaveAs.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
+    <value>23</value>
   </data>
   <data name="&gt;&gt;selectorKeyShrortcuts_SaveAs.Name" xml:space="preserve">
     <value>selectorKeyShrortcuts_SaveAs</value>
   </data>
   <data name="&gt;&gt;selectorKeyShrortcuts_SaveAs.Type" xml:space="preserve">
-    <value>Map2CivilizationView.UserControls.KeyboardShortcutSelector, Map2Civilization, Version=0.9.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Map2CivilizationView.UserControls.KeyboardShortcutSettingSelector, Map2Civilization, Version=0.9.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;selectorKeyShrortcuts_SaveAs.Parent" xml:space="preserve">
     <value>keyboardShortcutsTableLayoutPanel</value>
@@ -900,23 +894,20 @@
   <data name="&gt;&gt;selectorKeyShrortcuts_SaveAs.ZOrder" xml:space="preserve">
     <value>13</value>
   </data>
-  <data name="selectorKeyShrortcuts_Save.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
   <data name="selectorKeyShrortcuts_Save.Location" type="System.Drawing.Point, System.Drawing">
     <value>203, 33</value>
   </data>
   <data name="selectorKeyShrortcuts_Save.Size" type="System.Drawing.Size, System.Drawing">
-    <value>294, 24</value>
+    <value>200, 24</value>
   </data>
   <data name="selectorKeyShrortcuts_Save.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
+    <value>24</value>
   </data>
   <data name="&gt;&gt;selectorKeyShrortcuts_Save.Name" xml:space="preserve">
     <value>selectorKeyShrortcuts_Save</value>
   </data>
   <data name="&gt;&gt;selectorKeyShrortcuts_Save.Type" xml:space="preserve">
-    <value>Map2CivilizationView.UserControls.KeyboardShortcutSelector, Map2Civilization, Version=0.9.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Map2CivilizationView.UserControls.KeyboardShortcutSettingSelector, Map2Civilization, Version=0.9.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;selectorKeyShrortcuts_Save.Parent" xml:space="preserve">
     <value>keyboardShortcutsTableLayoutPanel</value>
@@ -924,23 +915,20 @@
   <data name="&gt;&gt;selectorKeyShrortcuts_Save.ZOrder" xml:space="preserve">
     <value>14</value>
   </data>
-  <data name="selectorKeyShrortcuts_NewModel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
   <data name="selectorKeyShrortcuts_NewModel.Location" type="System.Drawing.Point, System.Drawing">
     <value>203, 63</value>
   </data>
   <data name="selectorKeyShrortcuts_NewModel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>294, 24</value>
+    <value>200, 24</value>
   </data>
   <data name="selectorKeyShrortcuts_NewModel.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
+    <value>25</value>
   </data>
   <data name="&gt;&gt;selectorKeyShrortcuts_NewModel.Name" xml:space="preserve">
     <value>selectorKeyShrortcuts_NewModel</value>
   </data>
   <data name="&gt;&gt;selectorKeyShrortcuts_NewModel.Type" xml:space="preserve">
-    <value>Map2CivilizationView.UserControls.KeyboardShortcutSelector, Map2Civilization, Version=0.9.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Map2CivilizationView.UserControls.KeyboardShortcutSettingSelector, Map2Civilization, Version=0.9.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;selectorKeyShrortcuts_NewModel.Parent" xml:space="preserve">
     <value>keyboardShortcutsTableLayoutPanel</value>
@@ -948,23 +936,20 @@
   <data name="&gt;&gt;selectorKeyShrortcuts_NewModel.ZOrder" xml:space="preserve">
     <value>15</value>
   </data>
-  <data name="selectorKeyShrortcuts_ExportToCivMap.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
   <data name="selectorKeyShrortcuts_ExportToCivMap.Location" type="System.Drawing.Point, System.Drawing">
     <value>203, 123</value>
   </data>
   <data name="selectorKeyShrortcuts_ExportToCivMap.Size" type="System.Drawing.Size, System.Drawing">
-    <value>294, 24</value>
+    <value>200, 24</value>
   </data>
   <data name="selectorKeyShrortcuts_ExportToCivMap.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
+    <value>26</value>
   </data>
   <data name="&gt;&gt;selectorKeyShrortcuts_ExportToCivMap.Name" xml:space="preserve">
     <value>selectorKeyShrortcuts_ExportToCivMap</value>
   </data>
   <data name="&gt;&gt;selectorKeyShrortcuts_ExportToCivMap.Type" xml:space="preserve">
-    <value>Map2CivilizationView.UserControls.KeyboardShortcutSelector, Map2Civilization, Version=0.9.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Map2CivilizationView.UserControls.KeyboardShortcutSettingSelector, Map2Civilization, Version=0.9.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;selectorKeyShrortcuts_ExportToCivMap.Parent" xml:space="preserve">
     <value>keyboardShortcutsTableLayoutPanel</value>
@@ -972,23 +957,20 @@
   <data name="&gt;&gt;selectorKeyShrortcuts_ExportToCivMap.ZOrder" xml:space="preserve">
     <value>16</value>
   </data>
-  <data name="selectorKeyShrortcuts_EditRegion.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
   <data name="selectorKeyShrortcuts_EditRegion.Location" type="System.Drawing.Point, System.Drawing">
     <value>203, 153</value>
   </data>
   <data name="selectorKeyShrortcuts_EditRegion.Size" type="System.Drawing.Size, System.Drawing">
-    <value>294, 24</value>
+    <value>200, 24</value>
   </data>
   <data name="selectorKeyShrortcuts_EditRegion.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
+    <value>27</value>
   </data>
   <data name="&gt;&gt;selectorKeyShrortcuts_EditRegion.Name" xml:space="preserve">
     <value>selectorKeyShrortcuts_EditRegion</value>
   </data>
   <data name="&gt;&gt;selectorKeyShrortcuts_EditRegion.Type" xml:space="preserve">
-    <value>Map2CivilizationView.UserControls.KeyboardShortcutSelector, Map2Civilization, Version=0.9.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Map2CivilizationView.UserControls.KeyboardShortcutSettingSelector, Map2Civilization, Version=0.9.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;selectorKeyShrortcuts_EditRegion.Parent" xml:space="preserve">
     <value>keyboardShortcutsTableLayoutPanel</value>
@@ -996,23 +978,20 @@
   <data name="&gt;&gt;selectorKeyShrortcuts_EditRegion.ZOrder" xml:space="preserve">
     <value>17</value>
   </data>
-  <data name="selectorKeyShrortcuts_EditPlotData.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
   <data name="selectorKeyShrortcuts_EditPlotData.Location" type="System.Drawing.Point, System.Drawing">
     <value>203, 183</value>
   </data>
   <data name="selectorKeyShrortcuts_EditPlotData.Size" type="System.Drawing.Size, System.Drawing">
-    <value>294, 24</value>
+    <value>200, 24</value>
   </data>
   <data name="selectorKeyShrortcuts_EditPlotData.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
+    <value>28</value>
   </data>
   <data name="&gt;&gt;selectorKeyShrortcuts_EditPlotData.Name" xml:space="preserve">
     <value>selectorKeyShrortcuts_EditPlotData</value>
   </data>
   <data name="&gt;&gt;selectorKeyShrortcuts_EditPlotData.Type" xml:space="preserve">
-    <value>Map2CivilizationView.UserControls.KeyboardShortcutSelector, Map2Civilization, Version=0.9.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Map2CivilizationView.UserControls.KeyboardShortcutSettingSelector, Map2Civilization, Version=0.9.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;selectorKeyShrortcuts_EditPlotData.Parent" xml:space="preserve">
     <value>keyboardShortcutsTableLayoutPanel</value>
@@ -1020,23 +999,20 @@
   <data name="&gt;&gt;selectorKeyShrortcuts_EditPlotData.ZOrder" xml:space="preserve">
     <value>18</value>
   </data>
-  <data name="selectorKeyShrortcuts_AssignOcean.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
   <data name="selectorKeyShrortcuts_AssignOcean.Location" type="System.Drawing.Point, System.Drawing">
     <value>203, 213</value>
   </data>
   <data name="selectorKeyShrortcuts_AssignOcean.Size" type="System.Drawing.Size, System.Drawing">
-    <value>294, 24</value>
+    <value>200, 24</value>
   </data>
   <data name="selectorKeyShrortcuts_AssignOcean.TabIndex" type="System.Int32, mscorlib">
-    <value>17</value>
+    <value>29</value>
   </data>
   <data name="&gt;&gt;selectorKeyShrortcuts_AssignOcean.Name" xml:space="preserve">
     <value>selectorKeyShrortcuts_AssignOcean</value>
   </data>
   <data name="&gt;&gt;selectorKeyShrortcuts_AssignOcean.Type" xml:space="preserve">
-    <value>Map2CivilizationView.UserControls.KeyboardShortcutSelector, Map2Civilization, Version=0.9.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Map2CivilizationView.UserControls.KeyboardShortcutSettingSelector, Map2Civilization, Version=0.9.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;selectorKeyShrortcuts_AssignOcean.Parent" xml:space="preserve">
     <value>keyboardShortcutsTableLayoutPanel</value>
@@ -1044,23 +1020,20 @@
   <data name="&gt;&gt;selectorKeyShrortcuts_AssignOcean.ZOrder" xml:space="preserve">
     <value>19</value>
   </data>
-  <data name="selectorKeyShrortcuts_AssignCoast.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
   <data name="selectorKeyShrortcuts_AssignCoast.Location" type="System.Drawing.Point, System.Drawing">
     <value>203, 243</value>
   </data>
   <data name="selectorKeyShrortcuts_AssignCoast.Size" type="System.Drawing.Size, System.Drawing">
-    <value>294, 24</value>
+    <value>200, 24</value>
   </data>
   <data name="selectorKeyShrortcuts_AssignCoast.TabIndex" type="System.Int32, mscorlib">
-    <value>18</value>
+    <value>30</value>
   </data>
   <data name="&gt;&gt;selectorKeyShrortcuts_AssignCoast.Name" xml:space="preserve">
     <value>selectorKeyShrortcuts_AssignCoast</value>
   </data>
   <data name="&gt;&gt;selectorKeyShrortcuts_AssignCoast.Type" xml:space="preserve">
-    <value>Map2CivilizationView.UserControls.KeyboardShortcutSelector, Map2Civilization, Version=0.9.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Map2CivilizationView.UserControls.KeyboardShortcutSettingSelector, Map2Civilization, Version=0.9.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;selectorKeyShrortcuts_AssignCoast.Parent" xml:space="preserve">
     <value>keyboardShortcutsTableLayoutPanel</value>
@@ -1068,23 +1041,20 @@
   <data name="&gt;&gt;selectorKeyShrortcuts_AssignCoast.ZOrder" xml:space="preserve">
     <value>20</value>
   </data>
-  <data name="selectorKeyShrortcuts_AssignFlat.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
   <data name="selectorKeyShrortcuts_AssignFlat.Location" type="System.Drawing.Point, System.Drawing">
     <value>203, 273</value>
   </data>
   <data name="selectorKeyShrortcuts_AssignFlat.Size" type="System.Drawing.Size, System.Drawing">
-    <value>294, 24</value>
+    <value>200, 24</value>
   </data>
   <data name="selectorKeyShrortcuts_AssignFlat.TabIndex" type="System.Int32, mscorlib">
-    <value>19</value>
+    <value>31</value>
   </data>
   <data name="&gt;&gt;selectorKeyShrortcuts_AssignFlat.Name" xml:space="preserve">
     <value>selectorKeyShrortcuts_AssignFlat</value>
   </data>
   <data name="&gt;&gt;selectorKeyShrortcuts_AssignFlat.Type" xml:space="preserve">
-    <value>Map2CivilizationView.UserControls.KeyboardShortcutSelector, Map2Civilization, Version=0.9.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Map2CivilizationView.UserControls.KeyboardShortcutSettingSelector, Map2Civilization, Version=0.9.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;selectorKeyShrortcuts_AssignFlat.Parent" xml:space="preserve">
     <value>keyboardShortcutsTableLayoutPanel</value>
@@ -1092,23 +1062,20 @@
   <data name="&gt;&gt;selectorKeyShrortcuts_AssignFlat.ZOrder" xml:space="preserve">
     <value>21</value>
   </data>
-  <data name="selectorKeyShrortcuts_AssignHill.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
   <data name="selectorKeyShrortcuts_AssignHill.Location" type="System.Drawing.Point, System.Drawing">
     <value>203, 303</value>
   </data>
   <data name="selectorKeyShrortcuts_AssignHill.Size" type="System.Drawing.Size, System.Drawing">
-    <value>294, 24</value>
+    <value>200, 24</value>
   </data>
   <data name="selectorKeyShrortcuts_AssignHill.TabIndex" type="System.Int32, mscorlib">
-    <value>20</value>
+    <value>32</value>
   </data>
   <data name="&gt;&gt;selectorKeyShrortcuts_AssignHill.Name" xml:space="preserve">
     <value>selectorKeyShrortcuts_AssignHill</value>
   </data>
   <data name="&gt;&gt;selectorKeyShrortcuts_AssignHill.Type" xml:space="preserve">
-    <value>Map2CivilizationView.UserControls.KeyboardShortcutSelector, Map2Civilization, Version=0.9.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Map2CivilizationView.UserControls.KeyboardShortcutSettingSelector, Map2Civilization, Version=0.9.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;selectorKeyShrortcuts_AssignHill.Parent" xml:space="preserve">
     <value>keyboardShortcutsTableLayoutPanel</value>
@@ -1116,23 +1083,20 @@
   <data name="&gt;&gt;selectorKeyShrortcuts_AssignHill.ZOrder" xml:space="preserve">
     <value>22</value>
   </data>
-  <data name="selectorKeyShrortcuts_AssignMountain.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
   <data name="selectorKeyShrortcuts_AssignMountain.Location" type="System.Drawing.Point, System.Drawing">
     <value>203, 333</value>
   </data>
   <data name="selectorKeyShrortcuts_AssignMountain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>294, 24</value>
+    <value>200, 24</value>
   </data>
   <data name="selectorKeyShrortcuts_AssignMountain.TabIndex" type="System.Int32, mscorlib">
-    <value>21</value>
+    <value>33</value>
   </data>
   <data name="&gt;&gt;selectorKeyShrortcuts_AssignMountain.Name" xml:space="preserve">
     <value>selectorKeyShrortcuts_AssignMountain</value>
   </data>
   <data name="&gt;&gt;selectorKeyShrortcuts_AssignMountain.Type" xml:space="preserve">
-    <value>Map2CivilizationView.UserControls.KeyboardShortcutSelector, Map2Civilization, Version=0.9.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Map2CivilizationView.UserControls.KeyboardShortcutSettingSelector, Map2Civilization, Version=0.9.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;selectorKeyShrortcuts_AssignMountain.Parent" xml:space="preserve">
     <value>keyboardShortcutsTableLayoutPanel</value>
@@ -1201,16 +1165,16 @@
     <value>175, 142</value>
   </data>
   <data name="highlightedPlotGridWidthNumeric.Size" type="System.Drawing.Size, System.Drawing">
-    <value>72, 20</value>
+    <value>91, 20</value>
   </data>
   <data name="highlightedPlotGridWidthNumeric.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
+    <value>16</value>
   </data>
   <data name="&gt;&gt;highlightedPlotGridWidthNumeric.Name" xml:space="preserve">
     <value>highlightedPlotGridWidthNumeric</value>
   </data>
   <data name="&gt;&gt;highlightedPlotGridWidthNumeric.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>Map2CivilizationView.UserControls.NumericSettingSelector, Map2Civilization, Version=0.9.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;highlightedPlotGridWidthNumeric.Parent" xml:space="preserve">
     <value>gridGroup</value>
@@ -1297,19 +1261,19 @@
     <value>2</value>
   </data>
   <data name="highlightedGridColorSelector.Location" type="System.Drawing.Point, System.Drawing">
-    <value>175, 99</value>
+    <value>175, 101</value>
   </data>
   <data name="highlightedGridColorSelector.Size" type="System.Drawing.Size, System.Drawing">
-    <value>174, 30</value>
+    <value>172, 28</value>
   </data>
   <data name="highlightedGridColorSelector.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+    <value>13</value>
   </data>
   <data name="&gt;&gt;highlightedGridColorSelector.Name" xml:space="preserve">
     <value>highlightedGridColorSelector</value>
   </data>
   <data name="&gt;&gt;highlightedGridColorSelector.Type" xml:space="preserve">
-    <value>Map2CivilizationView.UserControls.ColorSelector, Map2Civilization, Version=0.9.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Map2CivilizationView.UserControls.ColorSettingSelector, Map2Civilization, Version=0.9.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;highlightedGridColorSelector.Parent" xml:space="preserve">
     <value>gridGroup</value>
@@ -1324,7 +1288,7 @@
     <value>NoControl</value>
   </data>
   <data name="processedMapUnassignedGridColorLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 58</value>
+    <value>6, 60</value>
   </data>
   <data name="processedMapUnassignedGridColorLabel.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>155, 30</value>
@@ -1357,19 +1321,19 @@
     <value>4</value>
   </data>
   <data name="processedMapUnassignedGridColorSelector.Location" type="System.Drawing.Point, System.Drawing">
-    <value>175, 58</value>
+    <value>175, 60</value>
   </data>
   <data name="processedMapUnassignedGridColorSelector.Size" type="System.Drawing.Size, System.Drawing">
-    <value>174, 30</value>
+    <value>172, 28</value>
   </data>
   <data name="processedMapUnassignedGridColorSelector.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+    <value>14</value>
   </data>
   <data name="&gt;&gt;processedMapUnassignedGridColorSelector.Name" xml:space="preserve">
     <value>processedMapUnassignedGridColorSelector</value>
   </data>
   <data name="&gt;&gt;processedMapUnassignedGridColorSelector.Type" xml:space="preserve">
-    <value>Map2CivilizationView.UserControls.ColorSelector, Map2Civilization, Version=0.9.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Map2CivilizationView.UserControls.ColorSettingSelector, Map2Civilization, Version=0.9.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;processedMapUnassignedGridColorSelector.Parent" xml:space="preserve">
     <value>gridGroup</value>
@@ -1384,7 +1348,7 @@
     <value>NoControl</value>
   </data>
   <data name="originalMapGridLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 21</value>
+    <value>6, 18</value>
   </data>
   <data name="originalMapGridLabel.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>155, 30</value>
@@ -1420,16 +1384,16 @@
     <value>175, 21</value>
   </data>
   <data name="originalMapGridColorSelector.Size" type="System.Drawing.Size, System.Drawing">
-    <value>174, 30</value>
+    <value>172, 28</value>
   </data>
   <data name="originalMapGridColorSelector.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>15</value>
   </data>
   <data name="&gt;&gt;originalMapGridColorSelector.Name" xml:space="preserve">
     <value>originalMapGridColorSelector</value>
   </data>
   <data name="&gt;&gt;originalMapGridColorSelector.Type" xml:space="preserve">
-    <value>Map2CivilizationView.UserControls.ColorSelector, Map2Civilization, Version=0.9.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Map2CivilizationView.UserControls.ColorSettingSelector, Map2Civilization, Version=0.9.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;originalMapGridColorSelector.Parent" xml:space="preserve">
     <value>gridGroup</value>
@@ -1462,25 +1426,67 @@
     <value>0</value>
   </data>
   <data name="rhombusPlotWidthNumeric.Location" type="System.Drawing.Point, System.Drawing">
-    <value>234, 67</value>
+    <value>239, 67</value>
   </data>
   <data name="rhombusPlotWidthNumeric.Size" type="System.Drawing.Size, System.Drawing">
-    <value>71, 20</value>
+    <value>91, 20</value>
   </data>
   <data name="rhombusPlotWidthNumeric.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>8</value>
   </data>
   <data name="&gt;&gt;rhombusPlotWidthNumeric.Name" xml:space="preserve">
     <value>rhombusPlotWidthNumeric</value>
   </data>
   <data name="&gt;&gt;rhombusPlotWidthNumeric.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>Map2CivilizationView.UserControls.NumericSettingSelector, Map2Civilization, Version=0.9.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;rhombusPlotWidthNumeric.Parent" xml:space="preserve">
     <value>plotWidthGroup</value>
   </data>
   <data name="&gt;&gt;rhombusPlotWidthNumeric.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="squarePlotWidthNumeric.Location" type="System.Drawing.Point, System.Drawing">
+    <value>239, 43</value>
+  </data>
+  <data name="squarePlotWidthNumeric.Size" type="System.Drawing.Size, System.Drawing">
+    <value>91, 20</value>
+  </data>
+  <data name="squarePlotWidthNumeric.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;squarePlotWidthNumeric.Name" xml:space="preserve">
+    <value>squarePlotWidthNumeric</value>
+  </data>
+  <data name="&gt;&gt;squarePlotWidthNumeric.Type" xml:space="preserve">
+    <value>Map2CivilizationView.UserControls.NumericSettingSelector, Map2Civilization, Version=0.9.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;squarePlotWidthNumeric.Parent" xml:space="preserve">
+    <value>plotWidthGroup</value>
+  </data>
+  <data name="&gt;&gt;squarePlotWidthNumeric.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="hexPlotWidthNumeric.Location" type="System.Drawing.Point, System.Drawing">
+    <value>239, 20</value>
+  </data>
+  <data name="hexPlotWidthNumeric.Size" type="System.Drawing.Size, System.Drawing">
+    <value>91, 20</value>
+  </data>
+  <data name="hexPlotWidthNumeric.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;hexPlotWidthNumeric.Name" xml:space="preserve">
+    <value>hexPlotWidthNumeric</value>
+  </data>
+  <data name="&gt;&gt;hexPlotWidthNumeric.Type" xml:space="preserve">
+    <value>Map2CivilizationView.UserControls.NumericSettingSelector, Map2Civilization, Version=0.9.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;hexPlotWidthNumeric.Parent" xml:space="preserve">
+    <value>plotWidthGroup</value>
+  </data>
+  <data name="&gt;&gt;hexPlotWidthNumeric.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="rhombusPlotWidthLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -1510,28 +1516,7 @@
     <value>plotWidthGroup</value>
   </data>
   <data name="&gt;&gt;rhombusPlotWidthLabel.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="squarePlotWidthNumeric.Location" type="System.Drawing.Point, System.Drawing">
-    <value>233, 43</value>
-  </data>
-  <data name="squarePlotWidthNumeric.Size" type="System.Drawing.Size, System.Drawing">
-    <value>71, 20</value>
-  </data>
-  <data name="squarePlotWidthNumeric.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
-  </data>
-  <data name="&gt;&gt;squarePlotWidthNumeric.Name" xml:space="preserve">
-    <value>squarePlotWidthNumeric</value>
-  </data>
-  <data name="&gt;&gt;squarePlotWidthNumeric.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;squarePlotWidthNumeric.Parent" xml:space="preserve">
-    <value>plotWidthGroup</value>
-  </data>
-  <data name="&gt;&gt;squarePlotWidthNumeric.ZOrder" xml:space="preserve">
-    <value>2</value>
   </data>
   <data name="squarePlotWidthLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -1561,27 +1546,6 @@
     <value>plotWidthGroup</value>
   </data>
   <data name="&gt;&gt;squarePlotWidthLabel.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="hexPlotWidthNumeric.Location" type="System.Drawing.Point, System.Drawing">
-    <value>233, 18</value>
-  </data>
-  <data name="hexPlotWidthNumeric.Size" type="System.Drawing.Size, System.Drawing">
-    <value>71, 20</value>
-  </data>
-  <data name="hexPlotWidthNumeric.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;hexPlotWidthNumeric.Name" xml:space="preserve">
-    <value>hexPlotWidthNumeric</value>
-  </data>
-  <data name="&gt;&gt;hexPlotWidthNumeric.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;hexPlotWidthNumeric.Parent" xml:space="preserve">
-    <value>plotWidthGroup</value>
-  </data>
-  <data name="&gt;&gt;hexPlotWidthNumeric.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
   <data name="hexPlotWidthLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
@@ -1639,19 +1603,19 @@
     <value>1</value>
   </data>
   <data name="mountainColorSelector.Location" type="System.Drawing.Point, System.Drawing">
-    <value>184, 179</value>
+    <value>177, 181</value>
   </data>
   <data name="mountainColorSelector.Size" type="System.Drawing.Size, System.Drawing">
-    <value>174, 30</value>
+    <value>172, 28</value>
   </data>
   <data name="mountainColorSelector.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+    <value>0</value>
   </data>
   <data name="&gt;&gt;mountainColorSelector.Name" xml:space="preserve">
     <value>mountainColorSelector</value>
   </data>
   <data name="&gt;&gt;mountainColorSelector.Type" xml:space="preserve">
-    <value>Map2CivilizationView.UserControls.ColorSelector, Map2Civilization, Version=0.9.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Map2CivilizationView.UserControls.ColorSettingSelector, Map2Civilization, Version=0.9.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;mountainColorSelector.Parent" xml:space="preserve">
     <value>terrainGroup</value>
@@ -1855,19 +1819,19 @@
     <value>5</value>
   </data>
   <data name="hillColorSelector.Location" type="System.Drawing.Point, System.Drawing">
-    <value>184, 139</value>
+    <value>177, 142</value>
   </data>
   <data name="hillColorSelector.Size" type="System.Drawing.Size, System.Drawing">
-    <value>174, 30</value>
+    <value>172, 28</value>
   </data>
   <data name="hillColorSelector.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>9</value>
   </data>
   <data name="&gt;&gt;hillColorSelector.Name" xml:space="preserve">
     <value>hillColorSelector</value>
   </data>
   <data name="&gt;&gt;hillColorSelector.Type" xml:space="preserve">
-    <value>Map2CivilizationView.UserControls.ColorSelector, Map2Civilization, Version=0.9.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Map2CivilizationView.UserControls.ColorSettingSelector, Map2Civilization, Version=0.9.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;hillColorSelector.Parent" xml:space="preserve">
     <value>terrainGroup</value>
@@ -1876,19 +1840,19 @@
     <value>6</value>
   </data>
   <data name="flatColorSelector.Location" type="System.Drawing.Point, System.Drawing">
-    <value>184, 99</value>
+    <value>177, 101</value>
   </data>
   <data name="flatColorSelector.Size" type="System.Drawing.Size, System.Drawing">
-    <value>174, 30</value>
+    <value>172, 28</value>
   </data>
   <data name="flatColorSelector.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>10</value>
   </data>
   <data name="&gt;&gt;flatColorSelector.Name" xml:space="preserve">
     <value>flatColorSelector</value>
   </data>
   <data name="&gt;&gt;flatColorSelector.Type" xml:space="preserve">
-    <value>Map2CivilizationView.UserControls.ColorSelector, Map2Civilization, Version=0.9.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Map2CivilizationView.UserControls.ColorSettingSelector, Map2Civilization, Version=0.9.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;flatColorSelector.Parent" xml:space="preserve">
     <value>terrainGroup</value>
@@ -1897,19 +1861,19 @@
     <value>7</value>
   </data>
   <data name="coastColorSelector.Location" type="System.Drawing.Point, System.Drawing">
-    <value>184, 58</value>
+    <value>177, 60</value>
   </data>
   <data name="coastColorSelector.Size" type="System.Drawing.Size, System.Drawing">
-    <value>174, 30</value>
+    <value>172, 28</value>
   </data>
   <data name="coastColorSelector.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>11</value>
   </data>
   <data name="&gt;&gt;coastColorSelector.Name" xml:space="preserve">
     <value>coastColorSelector</value>
   </data>
   <data name="&gt;&gt;coastColorSelector.Type" xml:space="preserve">
-    <value>Map2CivilizationView.UserControls.ColorSelector, Map2Civilization, Version=0.9.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Map2CivilizationView.UserControls.ColorSettingSelector, Map2Civilization, Version=0.9.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;coastColorSelector.Parent" xml:space="preserve">
     <value>terrainGroup</value>
@@ -1918,19 +1882,19 @@
     <value>8</value>
   </data>
   <data name="oceanColorSelector.Location" type="System.Drawing.Point, System.Drawing">
-    <value>183, 19</value>
+    <value>177, 21</value>
   </data>
   <data name="oceanColorSelector.Size" type="System.Drawing.Size, System.Drawing">
-    <value>174, 30</value>
+    <value>172, 28</value>
   </data>
   <data name="oceanColorSelector.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+    <value>12</value>
   </data>
   <data name="&gt;&gt;oceanColorSelector.Name" xml:space="preserve">
     <value>oceanColorSelector</value>
   </data>
   <data name="&gt;&gt;oceanColorSelector.Type" xml:space="preserve">
-    <value>Map2CivilizationView.UserControls.ColorSelector, Map2Civilization, Version=0.9.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Map2CivilizationView.UserControls.ColorSettingSelector, Map2Civilization, Version=0.9.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;oceanColorSelector.Parent" xml:space="preserve">
     <value>terrainGroup</value>
@@ -1963,25 +1927,67 @@
     <value>2</value>
   </data>
   <data name="zoomStepNumeric.Location" type="System.Drawing.Point, System.Drawing">
-    <value>229, 67</value>
+    <value>230, 67</value>
   </data>
   <data name="zoomStepNumeric.Size" type="System.Drawing.Size, System.Drawing">
-    <value>71, 20</value>
+    <value>91, 20</value>
   </data>
   <data name="zoomStepNumeric.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>7</value>
   </data>
   <data name="&gt;&gt;zoomStepNumeric.Name" xml:space="preserve">
     <value>zoomStepNumeric</value>
   </data>
   <data name="&gt;&gt;zoomStepNumeric.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>Map2CivilizationView.UserControls.NumericSettingSelector, Map2Civilization, Version=0.9.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;zoomStepNumeric.Parent" xml:space="preserve">
     <value>zoomGroup</value>
   </data>
   <data name="&gt;&gt;zoomStepNumeric.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="maximumZoomNumeric.Location" type="System.Drawing.Point, System.Drawing">
+    <value>230, 43</value>
+  </data>
+  <data name="maximumZoomNumeric.Size" type="System.Drawing.Size, System.Drawing">
+    <value>91, 20</value>
+  </data>
+  <data name="maximumZoomNumeric.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;maximumZoomNumeric.Name" xml:space="preserve">
+    <value>maximumZoomNumeric</value>
+  </data>
+  <data name="&gt;&gt;maximumZoomNumeric.Type" xml:space="preserve">
+    <value>Map2CivilizationView.UserControls.NumericSettingSelector, Map2Civilization, Version=0.9.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;maximumZoomNumeric.Parent" xml:space="preserve">
+    <value>zoomGroup</value>
+  </data>
+  <data name="&gt;&gt;maximumZoomNumeric.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="minimumZoomNumeric.Location" type="System.Drawing.Point, System.Drawing">
+    <value>230, 19</value>
+  </data>
+  <data name="minimumZoomNumeric.Size" type="System.Drawing.Size, System.Drawing">
+    <value>91, 20</value>
+  </data>
+  <data name="minimumZoomNumeric.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;minimumZoomNumeric.Name" xml:space="preserve">
+    <value>minimumZoomNumeric</value>
+  </data>
+  <data name="&gt;&gt;minimumZoomNumeric.Type" xml:space="preserve">
+    <value>Map2CivilizationView.UserControls.NumericSettingSelector, Map2Civilization, Version=0.9.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;minimumZoomNumeric.Parent" xml:space="preserve">
+    <value>zoomGroup</value>
+  </data>
+  <data name="&gt;&gt;minimumZoomNumeric.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="zoomStepLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -2011,28 +2017,7 @@
     <value>zoomGroup</value>
   </data>
   <data name="&gt;&gt;zoomStepLabel.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="maximumZoomNumeric.Location" type="System.Drawing.Point, System.Drawing">
-    <value>228, 43</value>
-  </data>
-  <data name="maximumZoomNumeric.Size" type="System.Drawing.Size, System.Drawing">
-    <value>71, 20</value>
-  </data>
-  <data name="maximumZoomNumeric.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
-  </data>
-  <data name="&gt;&gt;maximumZoomNumeric.Name" xml:space="preserve">
-    <value>maximumZoomNumeric</value>
-  </data>
-  <data name="&gt;&gt;maximumZoomNumeric.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;maximumZoomNumeric.Parent" xml:space="preserve">
-    <value>zoomGroup</value>
-  </data>
-  <data name="&gt;&gt;maximumZoomNumeric.ZOrder" xml:space="preserve">
-    <value>2</value>
   </data>
   <data name="maximumZoomLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -2062,27 +2047,6 @@
     <value>zoomGroup</value>
   </data>
   <data name="&gt;&gt;maximumZoomLabel.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="minimumZoomNumeric.Location" type="System.Drawing.Point, System.Drawing">
-    <value>229, 18</value>
-  </data>
-  <data name="minimumZoomNumeric.Size" type="System.Drawing.Size, System.Drawing">
-    <value>71, 20</value>
-  </data>
-  <data name="minimumZoomNumeric.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;minimumZoomNumeric.Name" xml:space="preserve">
-    <value>minimumZoomNumeric</value>
-  </data>
-  <data name="&gt;&gt;minimumZoomNumeric.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;minimumZoomNumeric.Parent" xml:space="preserve">
-    <value>zoomGroup</value>
-  </data>
-  <data name="&gt;&gt;minimumZoomNumeric.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
   <data name="minZoomLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">

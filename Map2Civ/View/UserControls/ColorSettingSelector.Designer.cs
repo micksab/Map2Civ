@@ -1,6 +1,6 @@
 ﻿namespace Map2CivilizationView.UserControls
 {
-    partial class ColorSelector
+    partial class ColorSettingSelector
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
          void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ColorSelector));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ColorSettingSelector));
             this.colorPanel = new System.Windows.Forms.Panel();
             this.colorButton = new System.Windows.Forms.Button();
             this.colorBox = new System.Windows.Forms.TextBox();

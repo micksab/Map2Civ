@@ -5,24 +5,13 @@ using System.Windows.Forms;
 
 namespace Map2CivilizationView.UserControls
 {
-    public partial class ColorSelector : UserControl
+    public partial class ColorSettingSelector : UserControl, ISettingControl
     {
-        Color _color;
-         EventHandler<ColorSelectorValueChangedEventArgs> _colorSelectorValueChanged;
+        Color _currentlySelectedColor;
+        EventHandler<ColorSelectorValueChangedEventArgs> _colorSelectorValueChanged;
+        string _propertyName = String.Empty;
 
-        public Color Color
-        {
-            get
-            {
-                return _color;
-            }
-
-            set
-            {
-                _color = value;
-                UpdateColorDisplay();
-            }
-        }
+        
 
         public EventHandler<ColorSelectorValueChangedEventArgs> ColorSelectorValueChanged
         {
@@ -37,16 +26,16 @@ namespace Map2CivilizationView.UserControls
             }
         }
 
-        public ColorSelector()
+        public ColorSettingSelector()
         {
             InitializeComponent();
             UpdateColorDisplay();
         }
 
-        public ColorSelector(Color color)
+        public void AssignColorProperty(string propertyName)
         {
-            InitializeComponent();
-            _color = color;
+            _propertyName = propertyName;
+            _currentlySelectedColor = (Color)Settings.Default[_propertyName];
             UpdateColorDisplay();
 
         }
@@ -57,11 +46,11 @@ namespace Map2CivilizationView.UserControls
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Globalization", "CA1303:Do not pass literals as localized parameters", MessageId = "System.Windows.Forms.Control.set_Text(System.string)")]
          void UpdateColorDisplay()
         {
-            colorBox.Text = string.Concat(Convert.ToInt32(_color.R), Resources.Str_ColorSelector_RGBSeparator, 
-                Convert.ToInt32(_color.G), Resources.Str_ColorSelector_RGBSeparator
-                , Convert.ToInt32(_color.B));
+            colorBox.Text = string.Concat(Convert.ToInt32(_currentlySelectedColor.R), Resources.Str_ColorSelector_RGBSeparator, 
+                Convert.ToInt32(_currentlySelectedColor.G), Resources.Str_ColorSelector_RGBSeparator
+                , Convert.ToInt32(_currentlySelectedColor.B));
 
-            colorPanel.BackColor = _color;
+            colorPanel.BackColor = _currentlySelectedColor;
         }
 
 
@@ -72,7 +61,7 @@ namespace Map2CivilizationView.UserControls
         {
             using(ColorDialog colorDialog = new ColorDialog())
             {
-                colorDialog.Color = _color;
+                colorDialog.Color = _currentlySelectedColor;
                 colorDialog.AnyColor = true;
                 colorDialog.FullOpen = true;
                 colorDialog.SolidColorOnly = true;
@@ -81,18 +70,23 @@ namespace Map2CivilizationView.UserControls
 
                 if(result == DialogResult.OK)
                 {
-                    _color = colorDialog.Color;
+                    _currentlySelectedColor = colorDialog.Color;
                     UpdateColorDisplay();
 
                     if (_colorSelectorValueChanged != null)
                     {
                         ColorSelectorValueChangedEventArgs ce = new ColorSelectorValueChangedEventArgs();
-                        ce.SelectedColor = _color;
+                        ce.SelectedColor = _currentlySelectedColor;
                         _colorSelectorValueChanged(this, ce);
                     }
 
                 }
             }
+        }
+
+        public void SavePropertySetting()
+        {
+            Settings.Default[_propertyName] = _currentlySelectedColor;
         }
     }
 

@@ -60,9 +60,6 @@ namespace Map2CivilizationCtrl
             if (keyValue.HasFlag(Keys.Shift))
                 toReturn = toReturn + "Shift+";
 
-           
-
-
             toReturn = toReturn + (keyValue & ~Keys.Control & ~Keys.Shift & ~Keys.Alt).ToString();
 
             return toReturn;

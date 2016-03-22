@@ -1,6 +1,6 @@
 ﻿namespace Map2CivilizationView.UserControls
 {
-    partial class KeyboardShortcutSelector
+    partial class KeyboardShortcutSettingSelector
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
          void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(KeyboardShortcutSelector));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(KeyboardShortcutSettingSelector));
             this.newShortcutButton = new System.Windows.Forms.Button();
             this.shortcutBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();

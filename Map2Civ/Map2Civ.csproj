@@ -180,11 +180,11 @@
     <Compile Include="View\SettingsForm.Designer.cs">
       <DependentUpon>SettingsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\UserControls\ColorSelector.cs">
+    <Compile Include="View\UserControls\ColorSettingSelector.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\UserControls\ColorSelector.Designer.cs">
-      <DependentUpon>ColorSelector.cs</DependentUpon>
+    <Compile Include="View\UserControls\ColorSettingSelector.Designer.cs">
+      <DependentUpon>ColorSettingSelector.cs</DependentUpon>
     </Compile>
     <Compile Include="View\UserControls\CultureAwareMessageBox.cs" />
     <Compile Include="View\UserControls\CustomEnumComboBox.cs">
@@ -205,11 +205,18 @@
     <Compile Include="View\UserControls\ImageAreaSelector.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="View\UserControls\KeyboardShortcutSelector.cs">
+    <Compile Include="View\UserControls\ISettingControl.cs" />
+    <Compile Include="View\UserControls\KeyboardShortcutSettingSelector.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\UserControls\KeyboardShortcutSelector.Designer.cs">
-      <DependentUpon>KeyboardShortcutSelector.cs</DependentUpon>
+    <Compile Include="View\UserControls\KeyboardShortcutSettingSelector.Designer.cs">
+      <DependentUpon>KeyboardShortcutSettingSelector.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserControls\NumericSettingSelector.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UserControls\NumericSettingSelector.Designer.cs">
+      <DependentUpon>NumericSettingSelector.cs</DependentUpon>
     </Compile>
     <Compile Include="View\UserControls\SourceSettingsControlBase.cs">
       <SubType>UserControl</SubType>
@@ -342,14 +349,14 @@
     <EmbeddedResource Include="View\SettingsForm.resx">
       <DependentUpon>SettingsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\UserControls\ColorSelector.el-GR.resx">
-      <DependentUpon>ColorSelector.cs</DependentUpon>
+    <EmbeddedResource Include="View\UserControls\ColorSettingSelector.el-GR.resx">
+      <DependentUpon>ColorSettingSelector.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\UserControls\ColorSelector.el.resx">
-      <DependentUpon>ColorSelector.cs</DependentUpon>
+    <EmbeddedResource Include="View\UserControls\ColorSettingSelector.el.resx">
+      <DependentUpon>ColorSettingSelector.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\UserControls\ColorSelector.resx">
-      <DependentUpon>ColorSelector.cs</DependentUpon>
+    <EmbeddedResource Include="View\UserControls\ColorSettingSelector.resx">
+      <DependentUpon>ColorSettingSelector.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\UserControls\CustomEnumComboBox.resx">
       <DependentUpon>CustomEnumComboBox.cs</DependentUpon>
@@ -363,17 +370,20 @@
     <EmbeddedResource Include="View\UserControls\DetectedColorsGrid.resx">
       <DependentUpon>DetectedColorsGrid.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\UserControls\KeyboardShortcutSelector.el-GR.resx">
-      <DependentUpon>KeyboardShortcutSelector.cs</DependentUpon>
+    <EmbeddedResource Include="View\UserControls\KeyboardShortcutSettingSelector.el-GR.resx">
+      <DependentUpon>KeyboardShortcutSettingSelector.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\UserControls\KeyboardShortcutSelector.el.resx">
-      <DependentUpon>KeyboardShortcutSelector.cs</DependentUpon>
+    <EmbeddedResource Include="View\UserControls\KeyboardShortcutSettingSelector.el.resx">
+      <DependentUpon>KeyboardShortcutSettingSelector.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\UserControls\KeyboardShortcutSelector.resx">
-      <DependentUpon>KeyboardShortcutSelector.cs</DependentUpon>
+    <EmbeddedResource Include="View\UserControls\KeyboardShortcutSettingSelector.resx">
+      <DependentUpon>KeyboardShortcutSettingSelector.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\UserControls\MapControlBase.resx">
       <DependentUpon>MapControlBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UserControls\NumericSettingSelector.resx">
+      <DependentUpon>NumericSettingSelector.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\UserControls\SourceSettingsControlBase.resx">
       <DependentUpon>SourceSettingsControlBase.cs</DependentUpon>

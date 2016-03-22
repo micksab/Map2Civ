@@ -8,39 +8,47 @@ using System.Resources;
 using System.Windows.Forms;
 using Map2Civilization.Properties;
 using Map2CivilizationView.UserControls;
+using Map2CivilizationCtrl;
 
 namespace Map2CivilizationView
 {
     public partial class SettingsForm : Form
     {
-        Color _plotCororOcean = Map2Civilization.Properties.Settings.Default.PlotColorOcean;
-        Color _plotCororCoast = Map2Civilization.Properties.Settings.Default.PlotColorCoast;
-        Color _plotCororFlat = Map2Civilization.Properties.Settings.Default.PlotColorFlat;
-        Color _plotCororHill = Map2Civilization.Properties.Settings.Default.PlotColorHill;
-        Color _plotCororMountain = Map2Civilization.Properties.Settings.Default.PlotColorMountain;
+
+        List<ISettingControl> _settingControlList = new List<ISettingControl>();
+
+        const string PlotColorOcean = "PlotColorOcean";
+        const string PlotColorCoast = "PlotColorCoast";
+        const string PlotColorFlat = "PlotColorFlat";
+        const string PlotColorHill = "PlotColorHill";
+        const string PlotColorMountain = "PlotColorMountain";
+        const string ReportEMailAddress = "ReportEMailAddress";
+        const string PlotWidthPixelsSquarePlot = "PlotWidthPixelsSquarePlot";
+        const string PlotWidthPixelsHexagonalP = "PlotWidthPixelsHexagonalP";
+        const string PlotWidthPixelsRhombus = "PlotWidthPixelsRhombus";
+        const string MapGridColorModel = "MapGridColorModel";
+        const string ProcessedMapUnAssignedPlotGridColor = "ProcessedMapUnAssignedPlotGridColor";
+        const string ProcessedMapHighlightedPlotGridColor = "ProcessedMapHighlightedPlotGridColor";
+        const string ProcessedMapHighlightedPlotGridWidthPixels = "ProcessedMapHighlightedPlotGridWidthPixels";
+        const string MinZoomPercent = "MinZoomPercent";
+        const string MaxZoomPercent = "MaxZoomPercent";
+        const string ZoomStepPercent = "ZoomStepPercent";
+        const string KeyShrortcuts_SaveAs = "KeyShrortcuts_SaveAs";
+        const string KeyShrortcuts_Save = "KeyShrortcuts_Save";
+        const string KeyShrortcuts_NewModel = "KeyShrortcuts_NewModel";
+        const string KeyShrortcuts_ExportToCivMap = "KeyShrortcuts_ExportToCivMap";
+        const string KeyShrortcuts_EditRegion = "KeyShrortcuts_EditRegion";
+        const string KeyShrortcuts_EditPlotData = "KeyShrortcuts_EditPlotData";
+        const string KeyShrortcuts_AssignOcean = "KeyShrortcuts_AssignOcean";
+        const string KeyShrortcuts_AssignMountain = "KeyShrortcuts_AssignMountain";
+        const string KeyShrortcuts_AssignHill = "KeyShrortcuts_AssignHill";
+        const string KeyShrortcuts_AssignFlat = "KeyShrortcuts_AssignFlat";
+        const string KeyShrortcuts_AssignCoast = "KeyShrortcuts_AssignCoast";
+        const string KeyShrortcuts_OpenModel = "KeyShrortcuts_OpenModel";
+        const string UiCulture = "UICulture";
+
+       
         string _ReportEMailAddress = Map2Civilization.Properties.Settings.Default.ReportEMailAddress;
-        int _plotWidthPixelsSquarePlot = Map2Civilization.Properties.Settings.Default.PlotWidthPixelsSquarePlot;
-        int _plotWidthPixelsHexagonalP = Map2Civilization.Properties.Settings.Default.PlotWidthPixelsHexagonalP;
-        int _plotWidthPixelsRhombus = Map2Civilization.Properties.Settings.Default.PlotWidthPixelsRhombus;
-        Color _mapGridColorModel = Map2Civilization.Properties.Settings.Default.MapGridColorModel;
-        Color _processedMapUnAssignedPlotColor = Map2Civilization.Properties.Settings.Default.ProcessedMapUnAssignedPlotGridColor;
-        Color _processedMapHighlightedPlotGridColor = Map2Civilization.Properties.Settings.Default.ProcessedMapHighlightedPlotGridColor;
-        int _processedMapHighlightedPlotGridWidthPixels = Map2Civilization.Properties.Settings.Default.ProcessedMapHighlightedPlotGridWidthPixels;
-        float _minZoomPercent = Map2Civilization.Properties.Settings.Default.MinZoomPercent;
-        float _maxZoomPercent = Map2Civilization.Properties.Settings.Default.MaxZoomPercent; 
-        float _zoomStepPercent = Map2Civilization.Properties.Settings.Default.ZoomStepPercent;
-        Keys _keyShrortcuts_SaveAs = Map2Civilization.Properties.Settings.Default.KeyShrortcuts_SaveAs;
-        Keys _keyShrortcuts_Save = Map2Civilization.Properties.Settings.Default.KeyShrortcuts_Save;
-        Keys _keyShrortcuts_NewModel = Map2Civilization.Properties.Settings.Default.KeyShrortcuts_NewModel;
-        Keys _keyShrortcuts_ExportToCivMap = Map2Civilization.Properties.Settings.Default.KeyShrortcuts_ExportToCivMap;
-        Keys _keyShrortcuts_EditRegion = Map2Civilization.Properties.Settings.Default.KeyShrortcuts_EditRegion;
-        Keys _keyShrortcuts_EditPlotData = Map2Civilization.Properties.Settings.Default.KeyShrortcuts_EditPlotData;
-        Keys _keyShrortcuts_AssignOcean = Map2Civilization.Properties.Settings.Default.KeyShrortcuts_AssignOcean;
-        Keys _keyShrortcuts_AssignMountain = Map2Civilization.Properties.Settings.Default.KeyShrortcuts_AssignMountain;
-        Keys _keyShrortcuts_AssignHill = Map2Civilization.Properties.Settings.Default.KeyShrortcuts_AssignHill;
-        Keys _keyShrortcuts_AssignFlat = Map2Civilization.Properties.Settings.Default.KeyShrortcuts_AssignFlat;
-        Keys _keyShrortcuts_AssignCoast = Map2Civilization.Properties.Settings.Default.KeyShrortcuts_AssignCoast;
-        Keys _keyShrortcuts_OpenModel = Map2Civilization.Properties.Settings.Default.KeyShrortcuts_OpenModel;
         System.Globalization.CultureInfo _uICulture = Map2Civilization.Properties.Settings.Default.UICulture;
 
         public SettingsForm()
@@ -57,137 +65,128 @@ namespace Map2CivilizationView
         {
             
 
-            selectorKeyShrortcuts_SaveAs.CurrentlySelectedShortcut = _keyShrortcuts_SaveAs;
-            selectorKeyShrortcuts_SaveAs.RequiresKeyModifier = true;
-            selectorKeyShrortcuts_Save.CurrentlySelectedShortcut = _keyShrortcuts_Save;
-            selectorKeyShrortcuts_Save.RequiresKeyModifier = true;
-            selectorKeyShrortcuts_NewModel.CurrentlySelectedShortcut = _keyShrortcuts_NewModel;
-            selectorKeyShrortcuts_NewModel.RequiresKeyModifier = true;
-            selectorKeyShrortcuts_ExportToCivMap.CurrentlySelectedShortcut = _keyShrortcuts_ExportToCivMap;
-            selectorKeyShrortcuts_ExportToCivMap.RequiresKeyModifier = true;
-            selectorKeyShrortcuts_EditRegion.CurrentlySelectedShortcut = _keyShrortcuts_EditRegion;
-            selectorKeyShrortcuts_EditRegion.RequiresKeyModifier = true;
-            selectorKeyShrortcuts_EditPlotData.CurrentlySelectedShortcut = _keyShrortcuts_EditPlotData;
-            selectorKeyShrortcuts_EditPlotData.RequiresKeyModifier = true;
-            selectorKeyShrortcuts_AssignOcean.CurrentlySelectedShortcut = _keyShrortcuts_AssignOcean;
-            selectorKeyShrortcuts_AssignMountain.CurrentlySelectedShortcut = _keyShrortcuts_AssignMountain;
-            selectorKeyShrortcuts_AssignHill.CurrentlySelectedShortcut = _keyShrortcuts_AssignHill;
-            selectorKeyShrortcuts_AssignFlat.CurrentlySelectedShortcut = _keyShrortcuts_AssignFlat;
-            selectorKeyShrortcuts_AssignCoast.CurrentlySelectedShortcut = _keyShrortcuts_AssignCoast;
-            selectorKeyShrortcuts_OpenModel.CurrentlySelectedShortcut = _keyShrortcuts_OpenModel;
-            selectorKeyShrortcuts_OpenModel.RequiresKeyModifier = true;
+            selectorKeyShrortcuts_SaveAs.AssignKeyShortcutProperty(KeyShrortcuts_SaveAs, true);
+            _settingControlList.Add(selectorKeyShrortcuts_SaveAs);
+            selectorKeyShrortcuts_Save.AssignKeyShortcutProperty(KeyShrortcuts_Save, true);
+            _settingControlList.Add(selectorKeyShrortcuts_Save);
+            selectorKeyShrortcuts_NewModel.AssignKeyShortcutProperty(KeyShrortcuts_NewModel, true);
+            _settingControlList.Add(selectorKeyShrortcuts_NewModel);
+            selectorKeyShrortcuts_ExportToCivMap.AssignKeyShortcutProperty(KeyShrortcuts_ExportToCivMap, true);
+            _settingControlList.Add(selectorKeyShrortcuts_ExportToCivMap);
+            selectorKeyShrortcuts_EditRegion.AssignKeyShortcutProperty(KeyShrortcuts_EditRegion, true);
+            _settingControlList.Add(selectorKeyShrortcuts_EditRegion);
+            selectorKeyShrortcuts_EditPlotData.AssignKeyShortcutProperty(KeyShrortcuts_EditPlotData, true);
+            _settingControlList.Add(selectorKeyShrortcuts_EditPlotData);
+            selectorKeyShrortcuts_AssignOcean.AssignKeyShortcutProperty(KeyShrortcuts_AssignOcean, false);
+            _settingControlList.Add(selectorKeyShrortcuts_AssignOcean);
+            selectorKeyShrortcuts_AssignMountain.AssignKeyShortcutProperty(KeyShrortcuts_AssignMountain, false);
+            _settingControlList.Add(selectorKeyShrortcuts_AssignMountain);
+            selectorKeyShrortcuts_AssignHill.AssignKeyShortcutProperty(KeyShrortcuts_AssignHill, false);
+            _settingControlList.Add(selectorKeyShrortcuts_AssignHill);
+            selectorKeyShrortcuts_AssignFlat.AssignKeyShortcutProperty(KeyShrortcuts_AssignFlat, false);
+            _settingControlList.Add(selectorKeyShrortcuts_AssignFlat);
+            selectorKeyShrortcuts_AssignCoast.AssignKeyShortcutProperty(KeyShrortcuts_AssignCoast, false);
+            _settingControlList.Add(selectorKeyShrortcuts_AssignCoast);
+            selectorKeyShrortcuts_OpenModel.AssignKeyShortcutProperty(KeyShrortcuts_OpenModel, true);
+            _settingControlList.Add(selectorKeyShrortcuts_OpenModel);
+            
+
+            foreach(ISettingControl tempControl in _settingControlList)
+            {
+                if(tempControl.GetType() == typeof(KeyboardShortcutSettingSelector))
+                    ((KeyboardShortcutSettingSelector)tempControl).KeyboardShortcutSelectorValueChangedEventHandler += 
+                        KeyboardShortcutSelectorValue_ChangedHandler;
+            }
 
 
-            selectorKeyShrortcuts_SaveAs.KeyboardShortcutSelectorValueChangedEventHandler +=
-                KeyboardShortcutSelectorValue_ChangedHandler;
-            selectorKeyShrortcuts_Save.KeyboardShortcutSelectorValueChangedEventHandler +=
-                KeyboardShortcutSelectorValue_ChangedHandler;
-            selectorKeyShrortcuts_NewModel.KeyboardShortcutSelectorValueChangedEventHandler +=
-                KeyboardShortcutSelectorValue_ChangedHandler;
-            selectorKeyShrortcuts_ExportToCivMap.KeyboardShortcutSelectorValueChangedEventHandler +=
-                KeyboardShortcutSelectorValue_ChangedHandler;
-            selectorKeyShrortcuts_EditRegion.KeyboardShortcutSelectorValueChangedEventHandler +=
-                KeyboardShortcutSelectorValue_ChangedHandler;
-            selectorKeyShrortcuts_EditPlotData.KeyboardShortcutSelectorValueChangedEventHandler +=
-                KeyboardShortcutSelectorValue_ChangedHandler;
-            selectorKeyShrortcuts_AssignOcean.KeyboardShortcutSelectorValueChangedEventHandler +=
-                KeyboardShortcutSelectorValue_ChangedHandler;
-            selectorKeyShrortcuts_AssignMountain.KeyboardShortcutSelectorValueChangedEventHandler +=
-                KeyboardShortcutSelectorValue_ChangedHandler;
-            selectorKeyShrortcuts_AssignHill.KeyboardShortcutSelectorValueChangedEventHandler +=
-                KeyboardShortcutSelectorValue_ChangedHandler;
-            selectorKeyShrortcuts_AssignFlat.KeyboardShortcutSelectorValueChangedEventHandler +=
-                KeyboardShortcutSelectorValue_ChangedHandler;
-            selectorKeyShrortcuts_AssignCoast.KeyboardShortcutSelectorValueChangedEventHandler +=
-                KeyboardShortcutSelectorValue_ChangedHandler;
-            selectorKeyShrortcuts_OpenModel.KeyboardShortcutSelectorValueChangedEventHandler +=
-                KeyboardShortcutSelectorValue_ChangedHandler;
 
+            
             RefreshAssignedKeysList();
 
         }
 
         void RefreshAssignedKeysList()
         {
-            Dictionary<KeyboardShortcutSelector, Keys> keysList = RefreshAssignedKeysList(this);
+            List<Keys> toTransmit = new List<Keys>();
 
-            List<Keys> toTransmit = keysList.Values.ToList<Keys>();
-
-            foreach (KeyValuePair<KeyboardShortcutSelector, Keys> temp in keysList)
+            foreach (ISettingControl tempControl in _settingControlList)
             {
-                temp.Key.AssignedKeysList.AddRange(toTransmit);
-            }
-        }
-
-        Dictionary<KeyboardShortcutSelector, Keys> RefreshAssignedKeysList(Control control)
-        {
-            Dictionary<KeyboardShortcutSelector, Keys> keysList = new Dictionary<KeyboardShortcutSelector, Keys>();
-           
-
-            foreach(Control tempControl in control.Controls)
-            {
-                Dictionary<KeyboardShortcutSelector, Keys> innerList = RefreshAssignedKeysList(tempControl);
-                foreach(KeyValuePair<KeyboardShortcutSelector, Keys> tempPair in innerList)
-                {
-                    keysList.Add(tempPair.Key, tempPair.Value);
-                }
-            }
-            
-            foreach (Control tempControl in control.Controls)
-            {
-                if (tempControl.GetType() == typeof(KeyboardShortcutSelector))
-                {
-                    KeyboardShortcutSelector selectorControl = (KeyboardShortcutSelector)tempControl;
-                    keysList.Add(selectorControl, selectorControl.CurrentlySelectedShortcut);
-                }
+                if (tempControl.GetType() == typeof(KeyboardShortcutSettingSelector))
+                    toTransmit.Add(((KeyboardShortcutSettingSelector)tempControl).CurrentlySelectedShortcut);
             }
 
-            return keysList;
+            foreach (ISettingControl tempControl in _settingControlList)
+            {
+                if (tempControl.GetType() == typeof(KeyboardShortcutSettingSelector))
+                    ((KeyboardShortcutSettingSelector)tempControl).SetAssignedKeysList(toTransmit);
+            }
+
             
         }
+        
 
 
          void PopulateNumericBoxes()
         {
-            minimumZoomNumeric.Value = (decimal)_minZoomPercent;
-            maximumZoomNumeric.Value = (decimal)_maxZoomPercent;
-            zoomStepNumeric.Value = (decimal)_zoomStepPercent;
-            hexPlotWidthNumeric.Value = _plotWidthPixelsHexagonalP;
-            squarePlotWidthNumeric.Value = _plotWidthPixelsSquarePlot;
-            rhombusPlotWidthNumeric.Value = _plotWidthPixelsRhombus;
-            highlightedPlotGridWidthNumeric.Value = _processedMapHighlightedPlotGridWidthPixels;
+            zoomStepNumeric.AssignNumericProperty(ZoomStepPercent);
+            _settingControlList.Add(zoomStepNumeric);
+            minimumZoomNumeric.AssignNumericProperty(MinZoomPercent);
+            minimumZoomNumeric.Increment = zoomStepNumeric.Value;
+            _settingControlList.Add(minimumZoomNumeric);
+            maximumZoomNumeric.AssignNumericProperty(MaxZoomPercent);
+            maximumZoomNumeric.Increment = zoomStepNumeric.Value;
+            _settingControlList.Add(maximumZoomNumeric);
+            
+            hexPlotWidthNumeric.AssignNumericProperty(PlotWidthPixelsHexagonalP);
+            _settingControlList.Add(hexPlotWidthNumeric);
+            squarePlotWidthNumeric.AssignNumericProperty(PlotWidthPixelsSquarePlot);
+            _settingControlList.Add(squarePlotWidthNumeric);
+            rhombusPlotWidthNumeric.AssignNumericProperty(PlotWidthPixelsRhombus);
+            _settingControlList.Add(rhombusPlotWidthNumeric);
+            highlightedPlotGridWidthNumeric.AssignNumericProperty(ProcessedMapHighlightedPlotGridWidthPixels);
+            _settingControlList.Add(highlightedPlotGridWidthNumeric);
+
+            foreach(ISettingControl tempControl in _settingControlList)
+            {
+                if(tempControl.GetType() == typeof(NumericSettingSelector))
+                {
+                    ((NumericSettingSelector)tempControl).NumericSelectorValueChanged
+                        += zoomNumerics_ValueChanged;
+                }
+                    
+
+            }
 
 
-            highlightedPlotGridWidthNumeric.ValueChanged += zoomNumerics_ValueChanged;
-            rhombusPlotWidthNumeric.ValueChanged += zoomNumerics_ValueChanged;
-            squarePlotWidthNumeric.ValueChanged += zoomNumerics_ValueChanged;
-            hexPlotWidthNumeric.ValueChanged += zoomNumerics_ValueChanged;
-            zoomStepNumeric.ValueChanged += zoomNumerics_ValueChanged;
-            maximumZoomNumeric.ValueChanged += zoomNumerics_ValueChanged;
-            minimumZoomNumeric.ValueChanged += zoomNumerics_ValueChanged;
+           
         }
 
 
          void PopulateColorSelectors()
         {
-            oceanColorSelector.Color = _plotCororOcean;
-            coastColorSelector.Color = _plotCororCoast;
-            flatColorSelector.Color = _plotCororFlat;
-            hillColorSelector.Color = _plotCororHill;
-            mountainColorSelector.Color = _plotCororMountain;
-            originalMapGridColorSelector.Color = _mapGridColorModel;
-            processedMapUnassignedGridColorSelector.Color = _processedMapUnAssignedPlotColor;
-            highlightedGridColorSelector.Color = _processedMapHighlightedPlotGridColor;
+            oceanColorSelector.AssignColorProperty(PlotColorOcean);
+            _settingControlList.Add(oceanColorSelector);
+            coastColorSelector.AssignColorProperty(PlotColorCoast);
+            _settingControlList.Add(coastColorSelector);
+            flatColorSelector.AssignColorProperty(PlotColorFlat);
+            _settingControlList.Add(flatColorSelector);
+            hillColorSelector.AssignColorProperty(PlotColorHill);
+            _settingControlList.Add(hillColorSelector);
+            mountainColorSelector.AssignColorProperty(PlotColorMountain);
+            _settingControlList.Add(mountainColorSelector);
+            originalMapGridColorSelector.AssignColorProperty(MapGridColorModel);
+            _settingControlList.Add(originalMapGridColorSelector);
+            processedMapUnassignedGridColorSelector.AssignColorProperty(ProcessedMapUnAssignedPlotGridColor);
+            _settingControlList.Add(processedMapUnassignedGridColorSelector);
+            highlightedGridColorSelector.AssignColorProperty(ProcessedMapHighlightedPlotGridColor);
+            _settingControlList.Add(highlightedGridColorSelector);
+            
 
-
-            oceanColorSelector.ColorSelectorValueChanged += ColorSelectorValue_Changed;
-            coastColorSelector.ColorSelectorValueChanged += ColorSelectorValue_Changed;
-            flatColorSelector.ColorSelectorValueChanged += ColorSelectorValue_Changed;
-            hillColorSelector.ColorSelectorValueChanged += ColorSelectorValue_Changed;
-            mountainColorSelector.ColorSelectorValueChanged += ColorSelectorValue_Changed;
-            originalMapGridColorSelector.ColorSelectorValueChanged += ColorSelectorValue_Changed;
-            processedMapUnassignedGridColorSelector.ColorSelectorValueChanged += ColorSelectorValue_Changed;
-            highlightedGridColorSelector.ColorSelectorValueChanged += ColorSelectorValue_Changed;
+            foreach(ISettingControl tempControl in _settingControlList)
+            {
+                if(tempControl.GetType()== typeof(ColorSettingSelector))
+                    ((ColorSettingSelector)tempControl).ColorSelectorValueChanged += ColorSelectorValue_Changed;
+            }
         }
 
 
@@ -241,56 +240,14 @@ namespace Map2CivilizationView
          void ColorSelectorValue_Changed(object sender, UserControls.ColorSelectorValueChangedEventArgs e)
         {
             SettingsChanged();
-            ColorSelector selector = (ColorSelector)sender;
-
-            if (selector == oceanColorSelector)
-                _plotCororOcean = e.SelectedColor;
-            else if (selector == coastColorSelector)
-                _plotCororCoast = e.SelectedColor;
-            else if (selector == flatColorSelector)
-                _plotCororFlat = e.SelectedColor;
-            else if (selector == hillColorSelector)
-                _plotCororHill = e.SelectedColor;
-            else if (selector == mountainColorSelector)
-                _plotCororMountain = e.SelectedColor;
-            else if (selector == originalMapGridColorSelector)
-                _mapGridColorModel = e.SelectedColor;
-            else if (selector == processedMapUnassignedGridColorSelector)
-                _processedMapUnAssignedPlotColor = e.SelectedColor;
-            else if (selector == highlightedGridColorSelector)
-                _processedMapHighlightedPlotGridColor = e.SelectedColor;
         }
 
          void KeyboardShortcutSelectorValue_ChangedHandler(object sender,
             UserControls.KeyboardShortcutSelectorValueChangedEventArgs e)
         {
             SettingsChanged();
-            KeyboardShortcutSelector selector = (KeyboardShortcutSelector)sender;
+            KeyboardShortcutSettingSelector selector = (KeyboardShortcutSettingSelector)sender;
 
-            if (selector == selectorKeyShrortcuts_SaveAs)
-                _keyShrortcuts_SaveAs = e.Shortcut;
-            else if (selector == selectorKeyShrortcuts_Save)
-                _keyShrortcuts_Save = e.Shortcut;
-            else if (selector == selectorKeyShrortcuts_NewModel)
-                _keyShrortcuts_NewModel = e.Shortcut;
-            else if (selector == selectorKeyShrortcuts_ExportToCivMap)
-                _keyShrortcuts_ExportToCivMap = e.Shortcut;
-            else if (selector == selectorKeyShrortcuts_EditRegion)
-                _keyShrortcuts_EditRegion = e.Shortcut;
-            else if (selector == selectorKeyShrortcuts_EditPlotData)
-                _keyShrortcuts_EditPlotData = e.Shortcut;
-            else if (selector == selectorKeyShrortcuts_AssignOcean)
-                _keyShrortcuts_AssignOcean = e.Shortcut;
-            else if (selector == selectorKeyShrortcuts_AssignCoast)
-                _keyShrortcuts_AssignCoast = e.Shortcut;
-            else if (selector == selectorKeyShrortcuts_AssignFlat)
-                _keyShrortcuts_AssignFlat = e.Shortcut;
-            else if (selector == selectorKeyShrortcuts_AssignHill)
-                _keyShrortcuts_AssignHill = e.Shortcut;
-            else if (selector == selectorKeyShrortcuts_AssignMountain)
-                _keyShrortcuts_AssignMountain = e.Shortcut;
-            else if (selector == selectorKeyShrortcuts_OpenModel)
-                _keyShrortcuts_OpenModel = e.Shortcut;
 
             RefreshAssignedKeysList();
         }
@@ -298,22 +255,34 @@ namespace Map2CivilizationView
          void zoomNumerics_ValueChanged(object sender, EventArgs e)
         {
             SettingsChanged();
-            NumericUpDown selector = (NumericUpDown)sender;
+            NumericSettingSelector selector = (NumericSettingSelector)sender;
 
-            if (selector == minimumZoomNumeric)
-                _minZoomPercent = (float)selector.Value;
-            else if (selector == maximumZoomNumeric)
-                _maxZoomPercent = (float)selector.Value;
-            else if (selector == zoomStepNumeric)
-                _zoomStepPercent = (float)selector.Value;
-            else if (selector == hexPlotWidthNumeric)
-                _plotWidthPixelsHexagonalP = (int)selector.Value;
-            else if (selector == squarePlotWidthNumeric)
-                _plotWidthPixelsSquarePlot = (int)selector.Value;
-            else if (selector == rhombusPlotWidthNumeric)
-                _plotWidthPixelsRhombus = (int)selector.Value;
-            else if (selector == highlightedPlotGridWidthNumeric)
-                _processedMapHighlightedPlotGridWidthPixels = (int)selector.Value;
+            if(sender == maximumZoomNumeric || sender == minimumZoomNumeric)
+            {
+                if (maximumZoomNumeric.Value <= minimumZoomNumeric.Value)
+                {
+                    CultureAwareMessageBox.Show(Resources.Str_SettingsForm_MinimumZoomErrorText,
+                    Resources.Str_SettingsForm_MinimumZoomErrorCaption,
+                    MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
+
+                    if (sender == maximumZoomNumeric)
+                    {
+                        maximumZoomNumeric.Value = maximumZoomNumeric.Value + zoomStepNumeric.Value;
+                    }
+                    else
+                    {
+                        minimumZoomNumeric.Value = minimumZoomNumeric.Value - zoomStepNumeric.Value;
+                    }
+                }
+            }
+
+
+            if(sender == zoomStepNumeric)
+            {
+                decimal stepValue = zoomStepNumeric.Value;
+                minimumZoomNumeric.Increment = stepValue;
+                maximumZoomNumeric.Increment = stepValue;
+            }
         }
 
         
@@ -321,7 +290,7 @@ namespace Map2CivilizationView
 
          void zoomNumerics_Validating(object sender, CancelEventArgs e)
         {
-            if (minimumZoomNumeric.Value >= maximumZoomNumeric.Value)
+            if (minimumZoomNumeric.Value+zoomStepNumeric.Value >= maximumZoomNumeric.Value)
             {
                 e.Cancel = true;
                 CultureAwareMessageBox.Show(Resources.Str_SettingsForm_MinimumZoomErrorText, 
@@ -363,48 +332,35 @@ namespace Map2CivilizationView
 
          void SettingsForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            selectorKeyShrortcuts_SaveAs.KeyboardShortcutSelectorValueChangedEventHandler -=
-                KeyboardShortcutSelectorValue_ChangedHandler;
-            selectorKeyShrortcuts_Save.KeyboardShortcutSelectorValueChangedEventHandler -=
-                KeyboardShortcutSelectorValue_ChangedHandler;
-            selectorKeyShrortcuts_NewModel.KeyboardShortcutSelectorValueChangedEventHandler -=
-                KeyboardShortcutSelectorValue_ChangedHandler;
-            selectorKeyShrortcuts_ExportToCivMap.KeyboardShortcutSelectorValueChangedEventHandler -=
-                KeyboardShortcutSelectorValue_ChangedHandler;
-            selectorKeyShrortcuts_EditRegion.KeyboardShortcutSelectorValueChangedEventHandler -=
-                KeyboardShortcutSelectorValue_ChangedHandler;
-            selectorKeyShrortcuts_EditPlotData.KeyboardShortcutSelectorValueChangedEventHandler -=
-                KeyboardShortcutSelectorValue_ChangedHandler;
-            selectorKeyShrortcuts_AssignOcean.KeyboardShortcutSelectorValueChangedEventHandler -=
-                KeyboardShortcutSelectorValue_ChangedHandler;
-            selectorKeyShrortcuts_AssignMountain.KeyboardShortcutSelectorValueChangedEventHandler -=
-                KeyboardShortcutSelectorValue_ChangedHandler;
-            selectorKeyShrortcuts_AssignHill.KeyboardShortcutSelectorValueChangedEventHandler -=
-                KeyboardShortcutSelectorValue_ChangedHandler;
-            selectorKeyShrortcuts_AssignFlat.KeyboardShortcutSelectorValueChangedEventHandler -=
-                KeyboardShortcutSelectorValue_ChangedHandler;
-            selectorKeyShrortcuts_AssignCoast.KeyboardShortcutSelectorValueChangedEventHandler -=
-                KeyboardShortcutSelectorValue_ChangedHandler;
-            selectorKeyShrortcuts_OpenModel.KeyboardShortcutSelectorValueChangedEventHandler -=
-                KeyboardShortcutSelectorValue_ChangedHandler;
 
-            oceanColorSelector.ColorSelectorValueChanged -= ColorSelectorValue_Changed;
-            coastColorSelector.ColorSelectorValueChanged -= ColorSelectorValue_Changed;
-            flatColorSelector.ColorSelectorValueChanged -= ColorSelectorValue_Changed;
-            hillColorSelector.ColorSelectorValueChanged -= ColorSelectorValue_Changed;
-            mountainColorSelector.ColorSelectorValueChanged -= ColorSelectorValue_Changed;
-            originalMapGridColorSelector.ColorSelectorValueChanged -= ColorSelectorValue_Changed;
-            processedMapUnassignedGridColorSelector.ColorSelectorValueChanged -= ColorSelectorValue_Changed;
-            highlightedGridColorSelector.ColorSelectorValueChanged -= ColorSelectorValue_Changed;
+            string keyShortcutTypeString = typeof(KeyboardShortcutSettingSelector).ToString().ToUpper();
+            string colorSelectorTypeString = typeof(ColorSettingSelector).ToString().ToUpper();
+            string numericSelectorTypeString = typeof(NumericSettingSelector).ToString().ToUpper();
 
-            oceanColorSelector.ColorSelectorValueChanged -= ColorSelectorValue_Changed;
-            coastColorSelector.ColorSelectorValueChanged -= ColorSelectorValue_Changed;
-            flatColorSelector.ColorSelectorValueChanged -= ColorSelectorValue_Changed;
-            hillColorSelector.ColorSelectorValueChanged -= ColorSelectorValue_Changed;
-            mountainColorSelector.ColorSelectorValueChanged -= ColorSelectorValue_Changed;
-            originalMapGridColorSelector.ColorSelectorValueChanged -= ColorSelectorValue_Changed;
-            processedMapUnassignedGridColorSelector.ColorSelectorValueChanged -= ColorSelectorValue_Changed;
-            highlightedGridColorSelector.ColorSelectorValueChanged -= ColorSelectorValue_Changed;
+            foreach (ISettingControl tempControl in _settingControlList)
+            {
+
+                string controlTypeString = tempControl.GetType().ToString().ToUpper();
+
+                if (controlTypeString.Equals(keyShortcutTypeString))
+                {
+                    ((KeyboardShortcutSettingSelector)tempControl).KeyboardShortcutSelectorValueChangedEventHandler -=
+                            KeyboardShortcutSelectorValue_ChangedHandler;
+                }
+                else if(controlTypeString.Equals(colorSelectorTypeString))
+                {
+                    ((ColorSettingSelector)tempControl).ColorSelectorValueChanged -=
+                                ColorSelectorValue_Changed;
+                }
+                else if (controlTypeString.Equals(numericSelectorTypeString))
+                {
+                    ((NumericSettingSelector)tempControl).NumericSelectorValueChanged -=
+                        zoomNumerics_ValueChanged;
+                }
+
+                
+            }
+            
 
             this.uiLanguageComboBox.SelectedIndexChanged -=uiLanguageComboBox_SelectedIndexChanged;
 
@@ -412,36 +368,15 @@ namespace Map2CivilizationView
 
          void applyButton_Click(object sender, EventArgs e)
         {
-            Map2Civilization.Properties.Settings.Default.PlotColorOcean = _plotCororOcean;
-            Map2Civilization.Properties.Settings.Default.PlotColorCoast  = _plotCororCoast;
-            Map2Civilization.Properties.Settings.Default.PlotColorFlat = _plotCororFlat;
-            Map2Civilization.Properties.Settings.Default.PlotColorHill=_plotCororHill;
-            Map2Civilization.Properties.Settings.Default.PlotColorMountain = _plotCororMountain;
+            
             Map2Civilization.Properties.Settings.Default.ReportEMailAddress = _ReportEMailAddress;
-            Map2Civilization.Properties.Settings.Default.PlotWidthPixelsSquarePlot = _plotWidthPixelsSquarePlot;
-            Map2Civilization.Properties.Settings.Default.PlotWidthPixelsHexagonalP = _plotWidthPixelsHexagonalP;
-            Map2Civilization.Properties.Settings.Default.PlotWidthPixelsRhombus = _plotWidthPixelsRhombus;
-            Map2Civilization.Properties.Settings.Default.MapGridColorModel = _mapGridColorModel;
-            Map2Civilization.Properties.Settings.Default.ProcessedMapUnAssignedPlotGridColor = _processedMapUnAssignedPlotColor;
-            Map2Civilization.Properties.Settings.Default.ProcessedMapHighlightedPlotGridColor = _processedMapHighlightedPlotGridColor;
-            Map2Civilization.Properties.Settings.Default.ProcessedMapHighlightedPlotGridWidthPixels = _processedMapHighlightedPlotGridWidthPixels;
-            Map2Civilization.Properties.Settings.Default.MinZoomPercent = _minZoomPercent;
-            Map2Civilization.Properties.Settings.Default.MaxZoomPercent= _maxZoomPercent;
-            Map2Civilization.Properties.Settings.Default.ZoomStepPercent = _zoomStepPercent;
-            Map2Civilization.Properties.Settings.Default.KeyShrortcuts_SaveAs= _keyShrortcuts_SaveAs;
-            Map2Civilization.Properties.Settings.Default.KeyShrortcuts_Save= _keyShrortcuts_Save;
-            Map2Civilization.Properties.Settings.Default.KeyShrortcuts_NewModel= _keyShrortcuts_NewModel;
-            Map2Civilization.Properties.Settings.Default.KeyShrortcuts_ExportToCivMap= _keyShrortcuts_ExportToCivMap;
-            Map2Civilization.Properties.Settings.Default.KeyShrortcuts_EditRegion= _keyShrortcuts_EditRegion;
-            Map2Civilization.Properties.Settings.Default.KeyShrortcuts_EditPlotData= _keyShrortcuts_EditPlotData;
-            Map2Civilization.Properties.Settings.Default.KeyShrortcuts_AssignOcean= _keyShrortcuts_AssignOcean;
-            Map2Civilization.Properties.Settings.Default.KeyShrortcuts_AssignMountain= _keyShrortcuts_AssignMountain;
-            Map2Civilization.Properties.Settings.Default.KeyShrortcuts_AssignHill= _keyShrortcuts_AssignHill;
-            Map2Civilization.Properties.Settings.Default.KeyShrortcuts_AssignFlat= _keyShrortcuts_AssignFlat;
-            Map2Civilization.Properties.Settings.Default.KeyShrortcuts_AssignCoast= _keyShrortcuts_AssignCoast;
-            Map2Civilization.Properties.Settings.Default.KeyShrortcuts_OpenModel = _keyShrortcuts_OpenModel;
             Map2Civilization.Properties.Settings.Default.UICulture= _uICulture;
 
+
+            foreach(ISettingControl tempControl in _settingControlList)
+            {
+                tempControl.SavePropertySetting();
+            }
 
             Map2Civilization.Properties.Settings.Default.Save();
 

@@ -6,27 +6,27 @@ using Map2CivilizationCtrl;
 
 namespace Map2CivilizationView.UserControls
 {
-    public partial class KeyboardShortcutSelector : UserControl
+    public partial class KeyboardShortcutSettingSelector : UserControl, ISettingControl
     {
         Keys _currentlySelectedShortcut;
         List<Keys> _assignedKeysList = new List<Keys>();
         bool _requiresKeyModifier = false;
+        string _propertyName = String.Empty;
 
-       
+        
+
         public event EventHandler<KeyboardShortcutSelectorValueChangedEventArgs> KeyboardShortcutSelectorValueChangedEventHandler;
         
 
-        public KeyboardShortcutSelector()
+        public KeyboardShortcutSettingSelector()
         {
             InitializeComponent();
         }
 
-        public KeyboardShortcutSelector(Keys currentlySelectedShortcut, bool requiresKeyModifier )
+        public void AssignKeyShortcutProperty(string propertyName, bool requiresKeyModifier )
         {
-            InitializeComponent();
-
-            _currentlySelectedShortcut = currentlySelectedShortcut;
-
+            _propertyName = propertyName;
+            _currentlySelectedShortcut = (Keys)Settings.Default[propertyName];
             ShowKeyTextRepresentation();
 
             _requiresKeyModifier = requiresKeyModifier;
@@ -37,43 +37,26 @@ namespace Map2CivilizationView.UserControls
             shortcutBox.Text = VariousUtilityMethods.FormatKeyStringRepresentation(_currentlySelectedShortcut);   
         }
 
+       
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1002:DoNotExposeGenericLists")]
+        public void SetAssignedKeysList(List<Keys> list)
+        {
+            _assignedKeysList.Clear();
+             _assignedKeysList.AddRange(list);   
+        }
+
+        
+
         public Keys CurrentlySelectedShortcut
         {
             get
             {
                 return _currentlySelectedShortcut;
             }
-
-            set
-            {
-                _currentlySelectedShortcut = value;
-                ShowKeyTextRepresentation();
-            }
         }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1002:DoNotExposeGenericLists")]
-        public List<Keys> AssignedKeysList
-        {
-            get
-            {
-                return _assignedKeysList;
-            }
-        }
-
-        public bool RequiresKeyModifier
-        {
-            get
-            {
-                return _requiresKeyModifier;
-            }
-
-            set
-            {
-                _requiresKeyModifier = value;
-            }
-        }
-
-         void newShortcutButton_Click(object sender, EventArgs e)
+        void newShortcutButton_Click(object sender, EventArgs e)
         {
             using(KeyboardShortcutSelectorForm selectorForm = 
                 new KeyboardShortcutSelectorForm(_currentlySelectedShortcut, _requiresKeyModifier))
@@ -107,6 +90,11 @@ namespace Map2CivilizationView.UserControls
                     }
                 }
             }
+        }
+
+        public void SavePropertySetting()
+        {
+            Settings.Default[_propertyName] = _currentlySelectedShortcut;
         }
     }
 

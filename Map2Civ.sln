@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Map2Civ", "Map2Civ\Map2Civ.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "POC_Tests", "POC_Tests\POC_Tests.csproj", "{947A106D-7F1B-4FEF-90A7-7A87B0F42147}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Map2CivTests", "Map2CivTests\Map2CivTests.csproj", "{9FCED57A-4D92-474A-BEB5-9F5408C4C68F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{947A106D-7F1B-4FEF-90A7-7A87B0F42147}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{947A106D-7F1B-4FEF-90A7-7A87B0F42147}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{947A106D-7F1B-4FEF-90A7-7A87B0F42147}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9FCED57A-4D92-474A-BEB5-9F5408C4C68F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FCED57A-4D92-474A-BEB5-9F5408C4C68F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FCED57A-4D92-474A-BEB5-9F5408C4C68F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FCED57A-4D92-474A-BEB5-9F5408C4C68F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
