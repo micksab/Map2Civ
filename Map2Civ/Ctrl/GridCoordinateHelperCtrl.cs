@@ -13,10 +13,47 @@ namespace Map2CivilizationCtrl
     static class GridCoordinateHelperCtrl
     {
 
-        static float _currentZoomFactor = 1f;
-        static float _zoomStep = Map2Civilization.Properties.Settings.Default.ZoomStepPercent / 100f;
-        static float _zoomMax = Map2Civilization.Properties.Settings.Default.MaxZoomPercent / 100f;
-        static float _zoomMin = Map2Civilization.Properties.Settings.Default.MinZoomPercent / 100f;
+        static float _currentZoomFactor = 100f;
+        static float _currentZoomMultiplier = 1f;
+        static LinkedList<float> zoomValuesList = PopulateZoomList();
+
+
+        static LinkedList<float> PopulateZoomList()
+        {
+            LinkedList<float> toReturn = new LinkedList<float>();
+
+            float minValue = Settings.Default.MinZoomPercent;
+            float maxValue = Settings.Default.MaxZoomPercent;
+            float step = Settings.Default.ZoomStepPercent;
+
+            for (float i = 100; i >= minValue; i = i - step)
+            {
+                    toReturn.AddFirst(i);
+
+                if (i > minValue && (i - step) < minValue)
+                    toReturn.AddFirst(minValue);
+            }
+
+
+            for (float i = 100+step; i <= maxValue; i = i + step)
+            {
+                toReturn.AddLast(i);
+
+                if (i < maxValue && (i + step) > maxValue)
+                    toReturn.AddLast(maxValue);
+            }
+
+            return toReturn;
+        }
+
+
+        public static float[] GetAvailableZoomFactors()
+        {
+            float[] toReturn = new float[zoomValuesList.Count];
+            zoomValuesList.CopyTo(toReturn, 0);
+            return toReturn;
+        }
+
 
         public static float GetZoomFactor()
         {
@@ -25,41 +62,32 @@ namespace Map2CivilizationCtrl
 
         public static void SetZoomFactor(float value)
         {
-            if (value > _zoomMax)
-            {
-                _currentZoomFactor = _zoomMax;
-            }
-            else if (value < _zoomMin)
-            {
-                _currentZoomFactor = _zoomMin;
-            }
-            else
-            {
+
+            if(zoomValuesList.Contains(value))
                 _currentZoomFactor = value;
-            }
+                _currentZoomMultiplier = value / 100f;
+
         }
 
         public static float GetNextZoomInFactor()
         {
-            
-            float newZoomFactor = _currentZoomFactor + _zoomStep;
-            if (newZoomFactor >= _zoomMax)
-            {
-                newZoomFactor = _zoomMax;
-            }
 
-            return newZoomFactor;
+            LinkedListNode<float> currentNode = zoomValuesList.Find(_currentZoomFactor);
+
+            if (currentNode.Next == null)
+                return _currentZoomFactor;
+
+            return currentNode.Next.Value;
         }
 
         public static float GetNextZoomOutFactor()
         {
-            float newZoomFactor = _currentZoomFactor - _zoomStep;
-            if (newZoomFactor <= _zoomMin)
-            {
-                newZoomFactor = _zoomMin;
-            }
+            LinkedListNode<float> currentNode = zoomValuesList.Find(_currentZoomFactor);
 
-            return newZoomFactor;
+            if (currentNode.Previous == null)
+                return _currentZoomFactor;
+
+            return currentNode.Previous.Value;
         }
 
 
@@ -73,7 +101,7 @@ namespace Map2CivilizationCtrl
         /// and the second value is the Y component of the plot's name</returns>
         public static PlotId ConvertPixelLocationToPlotId(int pixelX, int pixelY)
         {
-            float zoomMultiplier = _currentZoomFactor;
+            float zoomMultiplier = _currentZoomMultiplier;
             float plotWidth = (int)ModelCtrl.GetPlotWidthPixels()* zoomMultiplier;
             float plotHeight = (int)ModelCtrl.GetPlotHeightPixels()*zoomMultiplier;
             MapDimension mapSize = ModelCtrl.GetMapSize();
@@ -122,7 +150,7 @@ namespace Map2CivilizationCtrl
             float zoomMultiplier = 0;
             if (useZoom)
             {
-                zoomMultiplier = _currentZoomFactor;
+                zoomMultiplier = _currentZoomMultiplier;
             }
             else
             {
@@ -248,7 +276,7 @@ namespace Map2CivilizationCtrl
 
          static float CalculatePointDistanceFromPlotCenter(PlotId plotId, PointF point, GridType.Enumeration gridType)
         {
-            float zoomMultiplier = _currentZoomFactor;
+            float zoomMultiplier = _currentZoomMultiplier;
 
             PointF plotUpperLeftCorner = ConvertPlotIdToPixelLocation(plotId, true);
             float plotWidthPixels = GridType.Singleton.GetPlotWidthPixels(gridType)* zoomMultiplier;

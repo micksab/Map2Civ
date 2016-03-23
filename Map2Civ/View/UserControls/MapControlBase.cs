@@ -316,8 +316,8 @@ namespace Map2CivilizationView.UserControls
 
         public void ZoomChanged(float value)
         {
-            float newWidth = _pictureBox.BackgroundImage.Width * value;
-            float newHeight = _pictureBox.BackgroundImage.Height * value;
+            float newWidth = _pictureBox.BackgroundImage.Width * (value/100f);
+            float newHeight = _pictureBox.BackgroundImage.Height * (value/100f);
             _pictureBox.Size = new Size((int)Math.Ceiling(newWidth), (int)Math.Ceiling(newHeight));
 
             if(!_AllowScroll)

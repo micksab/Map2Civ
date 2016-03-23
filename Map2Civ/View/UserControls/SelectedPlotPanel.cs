@@ -60,8 +60,8 @@ namespace Map2CivilizationView.UserControls
         {
             float zoomFactor = GridCoordinateHelperCtrl.GetZoomFactor();
             GridType.Enumeration currentGridType = ModelCtrl.GetGridType();
-            float widthPixels = (GridType.Singleton.GetPlotWidthPixels(currentGridType) * zoomFactor)+ SystemInformation.BorderSize.Width*4;
-            float heightPixels = (GridType.Singleton.GetPlotHeightPixels(currentGridType) * zoomFactor)+ SystemInformation.BorderSize.Height*4;
+            float widthPixels = (GridType.Singleton.GetPlotWidthPixels(currentGridType) * (zoomFactor/100f))+ SystemInformation.BorderSize.Width*4;
+            float heightPixels = (GridType.Singleton.GetPlotHeightPixels(currentGridType) * (zoomFactor/100f))+ SystemInformation.BorderSize.Height*4;
 
             this.Size = new Size((int)Math.Ceiling(widthPixels), (int)Math.Ceiling(heightPixels));
             this.Update();

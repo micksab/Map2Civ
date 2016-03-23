@@ -755,6 +755,24 @@ namespace Map2Civilization.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Non acceptable value.
         /// </summary>
+        internal static string Str_SettingsForm_MaximumZoomErrorCaption {
+            get {
+                return ResourceManager.GetString("Str_SettingsForm_MaximumZoomErrorCaption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The maximum zoom value must be greater than 100.
+        /// </summary>
+        internal static string Str_SettingsForm_MaximumZoomErrorText {
+            get {
+                return ResourceManager.GetString("Str_SettingsForm_MaximumZoomErrorText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Non acceptable value.
+        /// </summary>
         internal static string Str_SettingsForm_MinimumZoomErrorCaption {
             get {
                 return ResourceManager.GetString("Str_SettingsForm_MinimumZoomErrorCaption", resourceCulture);
@@ -762,7 +780,7 @@ namespace Map2Civilization.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The minimum zoom value should be smaller than the maximum zoom value..
+        ///   Looks up a localized string similar to The minimum zoom value must be smaller than 100.
         /// </summary>
         internal static string Str_SettingsForm_MinimumZoomErrorText {
             get {
@@ -803,6 +821,24 @@ namespace Map2Civilization.Properties {
         internal static string Str_SettingsForm_RestartText {
             get {
                 return ResourceManager.GetString("Str_SettingsForm_RestartText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Non acceptable value.
+        /// </summary>
+        internal static string Str_SettingsForm_ZoomErrorCaption {
+            get {
+                return ResourceManager.GetString("Str_SettingsForm_ZoomErrorCaption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The minimum zoom value should be smaller than the maximum zoom value..
+        /// </summary>
+        internal static string Str_SettingsForm_ZoomErrorText {
+            get {
+                return ResourceManager.GetString("Str_SettingsForm_ZoomErrorText", resourceCulture);
             }
         }
         

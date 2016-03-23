@@ -97,7 +97,8 @@ namespace Map2CivilizationView.UserControls
 
         public void SavePropertySetting()
         {
-            Settings.Default[_propertyName] = _value;
+            Type propertyType = Settings.Default[_propertyName].GetType();
+            Settings.Default[_propertyName] = Convert.ChangeType(_value, propertyType);
         }
 
         void numericUpDown_ValueChanged(object sender, EventArgs e)
@@ -105,6 +106,7 @@ namespace Map2CivilizationView.UserControls
             if(_numericSelectorValueChanged != null)
             {
                 _numericSelectorValueChanged(this, e);
+                _value = numericUpDown.Value;
             }
         }
 

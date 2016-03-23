@@ -2296,6 +2296,9 @@
         AwDD+AMA4/AHAPH4DwD4fh8A/gB/AP+B/wA=
 </value>
   </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="$this.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>786, 531</value>
   </data>

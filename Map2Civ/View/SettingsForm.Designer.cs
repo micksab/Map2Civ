@@ -42,7 +42,6 @@ namespace Map2CivilizationView
             this.revertButton = new System.Windows.Forms.Button();
             this.keyboardShortcutsTabPage = new System.Windows.Forms.TabPage();
             this.keyboardShortcutsTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.selectorKeyShrortcuts_OpenModel = new Map2CivilizationView.UserControls.KeyboardShortcutSettingSelector();
             this.labelKeyShrortcuts_OpenModel = new System.Windows.Forms.Label();
             this.labelKeyShrortcuts_SaveAs = new System.Windows.Forms.Label();
             this.labelKeyShrortcuts_Save = new System.Windows.Forms.Label();
@@ -55,6 +54,27 @@ namespace Map2CivilizationView
             this.labelKeyShrortcuts_AssignFlat = new System.Windows.Forms.Label();
             this.labelKeyShrortcuts_AssignHill = new System.Windows.Forms.Label();
             this.labelKeyShrortcuts_AssignMountain = new System.Windows.Forms.Label();
+            this.mapDisplayTabPage = new System.Windows.Forms.TabPage();
+            this.gridGroup = new System.Windows.Forms.GroupBox();
+            this.highlightedPlotGridWidthLabel = new System.Windows.Forms.Label();
+            this.highlightedPlotGridColorLabel = new System.Windows.Forms.Label();
+            this.processedMapUnassignedGridColorLabel = new System.Windows.Forms.Label();
+            this.originalMapGridLabel = new System.Windows.Forms.Label();
+            this.plotWidthGroup = new System.Windows.Forms.GroupBox();
+            this.rhombusPlotWidthLabel = new System.Windows.Forms.Label();
+            this.squarePlotWidthLabel = new System.Windows.Forms.Label();
+            this.hexPlotWidthLabel = new System.Windows.Forms.Label();
+            this.terrainGroup = new System.Windows.Forms.GroupBox();
+            this.mountainPlotLabel = new System.Windows.Forms.Label();
+            this.hillPlotLabel = new System.Windows.Forms.Label();
+            this.flatPlotLabel = new System.Windows.Forms.Label();
+            this.coastPlotLabel = new System.Windows.Forms.Label();
+            this.ocealPlotLabel = new System.Windows.Forms.Label();
+            this.zoomGroup = new System.Windows.Forms.GroupBox();
+            this.zoomStepLabel = new System.Windows.Forms.Label();
+            this.maximumZoomLabel = new System.Windows.Forms.Label();
+            this.minZoomLabel = new System.Windows.Forms.Label();
+            this.selectorKeyShrortcuts_OpenModel = new Map2CivilizationView.UserControls.KeyboardShortcutSettingSelector();
             this.selectorKeyShrortcuts_SaveAs = new Map2CivilizationView.UserControls.KeyboardShortcutSettingSelector();
             this.selectorKeyShrortcuts_Save = new Map2CivilizationView.UserControls.KeyboardShortcutSettingSelector();
             this.selectorKeyShrortcuts_NewModel = new Map2CivilizationView.UserControls.KeyboardShortcutSettingSelector();
@@ -66,41 +86,21 @@ namespace Map2CivilizationView
             this.selectorKeyShrortcuts_AssignFlat = new Map2CivilizationView.UserControls.KeyboardShortcutSettingSelector();
             this.selectorKeyShrortcuts_AssignHill = new Map2CivilizationView.UserControls.KeyboardShortcutSettingSelector();
             this.selectorKeyShrortcuts_AssignMountain = new Map2CivilizationView.UserControls.KeyboardShortcutSettingSelector();
-            this.mapDisplayTabPage = new System.Windows.Forms.TabPage();
-            this.gridGroup = new System.Windows.Forms.GroupBox();
             this.highlightedPlotGridWidthNumeric = new Map2CivilizationView.UserControls.NumericSettingSelector();
-            this.highlightedPlotGridWidthLabel = new System.Windows.Forms.Label();
-            this.highlightedPlotGridColorLabel = new System.Windows.Forms.Label();
             this.highlightedGridColorSelector = new Map2CivilizationView.UserControls.ColorSettingSelector();
-            this.processedMapUnassignedGridColorLabel = new System.Windows.Forms.Label();
             this.processedMapUnassignedGridColorSelector = new Map2CivilizationView.UserControls.ColorSettingSelector();
-            this.originalMapGridLabel = new System.Windows.Forms.Label();
             this.originalMapGridColorSelector = new Map2CivilizationView.UserControls.ColorSettingSelector();
-            this.plotWidthGroup = new System.Windows.Forms.GroupBox();
             this.rhombusPlotWidthNumeric = new Map2CivilizationView.UserControls.NumericSettingSelector();
             this.squarePlotWidthNumeric = new Map2CivilizationView.UserControls.NumericSettingSelector();
             this.hexPlotWidthNumeric = new Map2CivilizationView.UserControls.NumericSettingSelector();
-            this.rhombusPlotWidthLabel = new System.Windows.Forms.Label();
-            this.squarePlotWidthLabel = new System.Windows.Forms.Label();
-            this.hexPlotWidthLabel = new System.Windows.Forms.Label();
-            this.terrainGroup = new System.Windows.Forms.GroupBox();
             this.mountainColorSelector = new Map2CivilizationView.UserControls.ColorSettingSelector();
-            this.mountainPlotLabel = new System.Windows.Forms.Label();
-            this.hillPlotLabel = new System.Windows.Forms.Label();
-            this.flatPlotLabel = new System.Windows.Forms.Label();
-            this.coastPlotLabel = new System.Windows.Forms.Label();
-            this.ocealPlotLabel = new System.Windows.Forms.Label();
             this.hillColorSelector = new Map2CivilizationView.UserControls.ColorSettingSelector();
             this.flatColorSelector = new Map2CivilizationView.UserControls.ColorSettingSelector();
             this.coastColorSelector = new Map2CivilizationView.UserControls.ColorSettingSelector();
             this.oceanColorSelector = new Map2CivilizationView.UserControls.ColorSettingSelector();
-            this.zoomGroup = new System.Windows.Forms.GroupBox();
             this.zoomStepNumeric = new Map2CivilizationView.UserControls.NumericSettingSelector();
             this.maximumZoomNumeric = new Map2CivilizationView.UserControls.NumericSettingSelector();
             this.minimumZoomNumeric = new Map2CivilizationView.UserControls.NumericSettingSelector();
-            this.zoomStepLabel = new System.Windows.Forms.Label();
-            this.maximumZoomLabel = new System.Windows.Forms.Label();
-            this.minZoomLabel = new System.Windows.Forms.Label();
             this.buttonsPanel.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.generalTabPage.SuspendLayout();
@@ -214,11 +214,6 @@ namespace Map2CivilizationView
             this.keyboardShortcutsTableLayoutPanel.Controls.Add(this.selectorKeyShrortcuts_AssignMountain, 1, 11);
             this.keyboardShortcutsTableLayoutPanel.Name = "keyboardShortcutsTableLayoutPanel";
             // 
-            // selectorKeyShrortcuts_OpenModel
-            // 
-            resources.ApplyResources(this.selectorKeyShrortcuts_OpenModel, "selectorKeyShrortcuts_OpenModel");
-            this.selectorKeyShrortcuts_OpenModel.Name = "selectorKeyShrortcuts_OpenModel";
-            // 
             // labelKeyShrortcuts_OpenModel
             // 
             resources.ApplyResources(this.labelKeyShrortcuts_OpenModel, "labelKeyShrortcuts_OpenModel");
@@ -279,6 +274,150 @@ namespace Map2CivilizationView
             resources.ApplyResources(this.labelKeyShrortcuts_AssignMountain, "labelKeyShrortcuts_AssignMountain");
             this.labelKeyShrortcuts_AssignMountain.Name = "labelKeyShrortcuts_AssignMountain";
             // 
+            // mapDisplayTabPage
+            // 
+            this.mapDisplayTabPage.Controls.Add(this.gridGroup);
+            this.mapDisplayTabPage.Controls.Add(this.plotWidthGroup);
+            this.mapDisplayTabPage.Controls.Add(this.terrainGroup);
+            this.mapDisplayTabPage.Controls.Add(this.zoomGroup);
+            resources.ApplyResources(this.mapDisplayTabPage, "mapDisplayTabPage");
+            this.mapDisplayTabPage.Name = "mapDisplayTabPage";
+            this.mapDisplayTabPage.UseVisualStyleBackColor = true;
+            // 
+            // gridGroup
+            // 
+            this.gridGroup.Controls.Add(this.highlightedPlotGridWidthNumeric);
+            this.gridGroup.Controls.Add(this.highlightedPlotGridWidthLabel);
+            this.gridGroup.Controls.Add(this.highlightedPlotGridColorLabel);
+            this.gridGroup.Controls.Add(this.highlightedGridColorSelector);
+            this.gridGroup.Controls.Add(this.processedMapUnassignedGridColorLabel);
+            this.gridGroup.Controls.Add(this.processedMapUnassignedGridColorSelector);
+            this.gridGroup.Controls.Add(this.originalMapGridLabel);
+            this.gridGroup.Controls.Add(this.originalMapGridColorSelector);
+            resources.ApplyResources(this.gridGroup, "gridGroup");
+            this.gridGroup.Name = "gridGroup";
+            this.gridGroup.TabStop = false;
+            // 
+            // highlightedPlotGridWidthLabel
+            // 
+            resources.ApplyResources(this.highlightedPlotGridWidthLabel, "highlightedPlotGridWidthLabel");
+            this.highlightedPlotGridWidthLabel.Name = "highlightedPlotGridWidthLabel";
+            // 
+            // highlightedPlotGridColorLabel
+            // 
+            resources.ApplyResources(this.highlightedPlotGridColorLabel, "highlightedPlotGridColorLabel");
+            this.highlightedPlotGridColorLabel.Name = "highlightedPlotGridColorLabel";
+            // 
+            // processedMapUnassignedGridColorLabel
+            // 
+            resources.ApplyResources(this.processedMapUnassignedGridColorLabel, "processedMapUnassignedGridColorLabel");
+            this.processedMapUnassignedGridColorLabel.Name = "processedMapUnassignedGridColorLabel";
+            // 
+            // originalMapGridLabel
+            // 
+            resources.ApplyResources(this.originalMapGridLabel, "originalMapGridLabel");
+            this.originalMapGridLabel.Name = "originalMapGridLabel";
+            // 
+            // plotWidthGroup
+            // 
+            this.plotWidthGroup.Controls.Add(this.rhombusPlotWidthNumeric);
+            this.plotWidthGroup.Controls.Add(this.squarePlotWidthNumeric);
+            this.plotWidthGroup.Controls.Add(this.hexPlotWidthNumeric);
+            this.plotWidthGroup.Controls.Add(this.rhombusPlotWidthLabel);
+            this.plotWidthGroup.Controls.Add(this.squarePlotWidthLabel);
+            this.plotWidthGroup.Controls.Add(this.hexPlotWidthLabel);
+            resources.ApplyResources(this.plotWidthGroup, "plotWidthGroup");
+            this.plotWidthGroup.Name = "plotWidthGroup";
+            this.plotWidthGroup.TabStop = false;
+            // 
+            // rhombusPlotWidthLabel
+            // 
+            resources.ApplyResources(this.rhombusPlotWidthLabel, "rhombusPlotWidthLabel");
+            this.rhombusPlotWidthLabel.Name = "rhombusPlotWidthLabel";
+            // 
+            // squarePlotWidthLabel
+            // 
+            resources.ApplyResources(this.squarePlotWidthLabel, "squarePlotWidthLabel");
+            this.squarePlotWidthLabel.Name = "squarePlotWidthLabel";
+            // 
+            // hexPlotWidthLabel
+            // 
+            resources.ApplyResources(this.hexPlotWidthLabel, "hexPlotWidthLabel");
+            this.hexPlotWidthLabel.Name = "hexPlotWidthLabel";
+            // 
+            // terrainGroup
+            // 
+            this.terrainGroup.Controls.Add(this.mountainColorSelector);
+            this.terrainGroup.Controls.Add(this.mountainPlotLabel);
+            this.terrainGroup.Controls.Add(this.hillPlotLabel);
+            this.terrainGroup.Controls.Add(this.flatPlotLabel);
+            this.terrainGroup.Controls.Add(this.coastPlotLabel);
+            this.terrainGroup.Controls.Add(this.ocealPlotLabel);
+            this.terrainGroup.Controls.Add(this.hillColorSelector);
+            this.terrainGroup.Controls.Add(this.flatColorSelector);
+            this.terrainGroup.Controls.Add(this.coastColorSelector);
+            this.terrainGroup.Controls.Add(this.oceanColorSelector);
+            resources.ApplyResources(this.terrainGroup, "terrainGroup");
+            this.terrainGroup.Name = "terrainGroup";
+            this.terrainGroup.TabStop = false;
+            // 
+            // mountainPlotLabel
+            // 
+            resources.ApplyResources(this.mountainPlotLabel, "mountainPlotLabel");
+            this.mountainPlotLabel.Name = "mountainPlotLabel";
+            // 
+            // hillPlotLabel
+            // 
+            resources.ApplyResources(this.hillPlotLabel, "hillPlotLabel");
+            this.hillPlotLabel.Name = "hillPlotLabel";
+            // 
+            // flatPlotLabel
+            // 
+            resources.ApplyResources(this.flatPlotLabel, "flatPlotLabel");
+            this.flatPlotLabel.Name = "flatPlotLabel";
+            // 
+            // coastPlotLabel
+            // 
+            resources.ApplyResources(this.coastPlotLabel, "coastPlotLabel");
+            this.coastPlotLabel.Name = "coastPlotLabel";
+            // 
+            // ocealPlotLabel
+            // 
+            resources.ApplyResources(this.ocealPlotLabel, "ocealPlotLabel");
+            this.ocealPlotLabel.Name = "ocealPlotLabel";
+            // 
+            // zoomGroup
+            // 
+            this.zoomGroup.Controls.Add(this.zoomStepNumeric);
+            this.zoomGroup.Controls.Add(this.maximumZoomNumeric);
+            this.zoomGroup.Controls.Add(this.minimumZoomNumeric);
+            this.zoomGroup.Controls.Add(this.zoomStepLabel);
+            this.zoomGroup.Controls.Add(this.maximumZoomLabel);
+            this.zoomGroup.Controls.Add(this.minZoomLabel);
+            resources.ApplyResources(this.zoomGroup, "zoomGroup");
+            this.zoomGroup.Name = "zoomGroup";
+            this.zoomGroup.TabStop = false;
+            // 
+            // zoomStepLabel
+            // 
+            resources.ApplyResources(this.zoomStepLabel, "zoomStepLabel");
+            this.zoomStepLabel.Name = "zoomStepLabel";
+            // 
+            // maximumZoomLabel
+            // 
+            resources.ApplyResources(this.maximumZoomLabel, "maximumZoomLabel");
+            this.maximumZoomLabel.Name = "maximumZoomLabel";
+            // 
+            // minZoomLabel
+            // 
+            resources.ApplyResources(this.minZoomLabel, "minZoomLabel");
+            this.minZoomLabel.Name = "minZoomLabel";
+            // 
+            // selectorKeyShrortcuts_OpenModel
+            // 
+            resources.ApplyResources(this.selectorKeyShrortcuts_OpenModel, "selectorKeyShrortcuts_OpenModel");
+            this.selectorKeyShrortcuts_OpenModel.Name = "selectorKeyShrortcuts_OpenModel";
+            // 
             // selectorKeyShrortcuts_SaveAs
             // 
             resources.ApplyResources(this.selectorKeyShrortcuts_SaveAs, "selectorKeyShrortcuts_SaveAs");
@@ -334,30 +473,6 @@ namespace Map2CivilizationView
             resources.ApplyResources(this.selectorKeyShrortcuts_AssignMountain, "selectorKeyShrortcuts_AssignMountain");
             this.selectorKeyShrortcuts_AssignMountain.Name = "selectorKeyShrortcuts_AssignMountain";
             // 
-            // mapDisplayTabPage
-            // 
-            this.mapDisplayTabPage.Controls.Add(this.gridGroup);
-            this.mapDisplayTabPage.Controls.Add(this.plotWidthGroup);
-            this.mapDisplayTabPage.Controls.Add(this.terrainGroup);
-            this.mapDisplayTabPage.Controls.Add(this.zoomGroup);
-            resources.ApplyResources(this.mapDisplayTabPage, "mapDisplayTabPage");
-            this.mapDisplayTabPage.Name = "mapDisplayTabPage";
-            this.mapDisplayTabPage.UseVisualStyleBackColor = true;
-            // 
-            // gridGroup
-            // 
-            this.gridGroup.Controls.Add(this.highlightedPlotGridWidthNumeric);
-            this.gridGroup.Controls.Add(this.highlightedPlotGridWidthLabel);
-            this.gridGroup.Controls.Add(this.highlightedPlotGridColorLabel);
-            this.gridGroup.Controls.Add(this.highlightedGridColorSelector);
-            this.gridGroup.Controls.Add(this.processedMapUnassignedGridColorLabel);
-            this.gridGroup.Controls.Add(this.processedMapUnassignedGridColorSelector);
-            this.gridGroup.Controls.Add(this.originalMapGridLabel);
-            this.gridGroup.Controls.Add(this.originalMapGridColorSelector);
-            resources.ApplyResources(this.gridGroup, "gridGroup");
-            this.gridGroup.Name = "gridGroup";
-            this.gridGroup.TabStop = false;
-            // 
             // highlightedPlotGridWidthNumeric
             // 
             this.highlightedPlotGridWidthNumeric.Increment = new decimal(new int[] {
@@ -384,27 +499,12 @@ namespace Map2CivilizationView
             0,
             0});
             // 
-            // highlightedPlotGridWidthLabel
-            // 
-            resources.ApplyResources(this.highlightedPlotGridWidthLabel, "highlightedPlotGridWidthLabel");
-            this.highlightedPlotGridWidthLabel.Name = "highlightedPlotGridWidthLabel";
-            // 
-            // highlightedPlotGridColorLabel
-            // 
-            resources.ApplyResources(this.highlightedPlotGridColorLabel, "highlightedPlotGridColorLabel");
-            this.highlightedPlotGridColorLabel.Name = "highlightedPlotGridColorLabel";
-            // 
             // highlightedGridColorSelector
             // 
             this.highlightedGridColorSelector.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.highlightedGridColorSelector.ColorSelectorValueChanged = null;
             resources.ApplyResources(this.highlightedGridColorSelector, "highlightedGridColorSelector");
             this.highlightedGridColorSelector.Name = "highlightedGridColorSelector";
-            // 
-            // processedMapUnassignedGridColorLabel
-            // 
-            resources.ApplyResources(this.processedMapUnassignedGridColorLabel, "processedMapUnassignedGridColorLabel");
-            this.processedMapUnassignedGridColorLabel.Name = "processedMapUnassignedGridColorLabel";
             // 
             // processedMapUnassignedGridColorSelector
             // 
@@ -413,29 +513,12 @@ namespace Map2CivilizationView
             resources.ApplyResources(this.processedMapUnassignedGridColorSelector, "processedMapUnassignedGridColorSelector");
             this.processedMapUnassignedGridColorSelector.Name = "processedMapUnassignedGridColorSelector";
             // 
-            // originalMapGridLabel
-            // 
-            resources.ApplyResources(this.originalMapGridLabel, "originalMapGridLabel");
-            this.originalMapGridLabel.Name = "originalMapGridLabel";
-            // 
             // originalMapGridColorSelector
             // 
             this.originalMapGridColorSelector.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.originalMapGridColorSelector.ColorSelectorValueChanged = null;
             resources.ApplyResources(this.originalMapGridColorSelector, "originalMapGridColorSelector");
             this.originalMapGridColorSelector.Name = "originalMapGridColorSelector";
-            // 
-            // plotWidthGroup
-            // 
-            this.plotWidthGroup.Controls.Add(this.rhombusPlotWidthNumeric);
-            this.plotWidthGroup.Controls.Add(this.squarePlotWidthNumeric);
-            this.plotWidthGroup.Controls.Add(this.hexPlotWidthNumeric);
-            this.plotWidthGroup.Controls.Add(this.rhombusPlotWidthLabel);
-            this.plotWidthGroup.Controls.Add(this.squarePlotWidthLabel);
-            this.plotWidthGroup.Controls.Add(this.hexPlotWidthLabel);
-            resources.ApplyResources(this.plotWidthGroup, "plotWidthGroup");
-            this.plotWidthGroup.Name = "plotWidthGroup";
-            this.plotWidthGroup.TabStop = false;
             // 
             // rhombusPlotWidthNumeric
             // 
@@ -515,68 +598,12 @@ namespace Map2CivilizationView
             0,
             0});
             // 
-            // rhombusPlotWidthLabel
-            // 
-            resources.ApplyResources(this.rhombusPlotWidthLabel, "rhombusPlotWidthLabel");
-            this.rhombusPlotWidthLabel.Name = "rhombusPlotWidthLabel";
-            // 
-            // squarePlotWidthLabel
-            // 
-            resources.ApplyResources(this.squarePlotWidthLabel, "squarePlotWidthLabel");
-            this.squarePlotWidthLabel.Name = "squarePlotWidthLabel";
-            // 
-            // hexPlotWidthLabel
-            // 
-            resources.ApplyResources(this.hexPlotWidthLabel, "hexPlotWidthLabel");
-            this.hexPlotWidthLabel.Name = "hexPlotWidthLabel";
-            // 
-            // terrainGroup
-            // 
-            this.terrainGroup.Controls.Add(this.mountainColorSelector);
-            this.terrainGroup.Controls.Add(this.mountainPlotLabel);
-            this.terrainGroup.Controls.Add(this.hillPlotLabel);
-            this.terrainGroup.Controls.Add(this.flatPlotLabel);
-            this.terrainGroup.Controls.Add(this.coastPlotLabel);
-            this.terrainGroup.Controls.Add(this.ocealPlotLabel);
-            this.terrainGroup.Controls.Add(this.hillColorSelector);
-            this.terrainGroup.Controls.Add(this.flatColorSelector);
-            this.terrainGroup.Controls.Add(this.coastColorSelector);
-            this.terrainGroup.Controls.Add(this.oceanColorSelector);
-            resources.ApplyResources(this.terrainGroup, "terrainGroup");
-            this.terrainGroup.Name = "terrainGroup";
-            this.terrainGroup.TabStop = false;
-            // 
             // mountainColorSelector
             // 
             this.mountainColorSelector.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.mountainColorSelector.ColorSelectorValueChanged = null;
             resources.ApplyResources(this.mountainColorSelector, "mountainColorSelector");
             this.mountainColorSelector.Name = "mountainColorSelector";
-            // 
-            // mountainPlotLabel
-            // 
-            resources.ApplyResources(this.mountainPlotLabel, "mountainPlotLabel");
-            this.mountainPlotLabel.Name = "mountainPlotLabel";
-            // 
-            // hillPlotLabel
-            // 
-            resources.ApplyResources(this.hillPlotLabel, "hillPlotLabel");
-            this.hillPlotLabel.Name = "hillPlotLabel";
-            // 
-            // flatPlotLabel
-            // 
-            resources.ApplyResources(this.flatPlotLabel, "flatPlotLabel");
-            this.flatPlotLabel.Name = "flatPlotLabel";
-            // 
-            // coastPlotLabel
-            // 
-            resources.ApplyResources(this.coastPlotLabel, "coastPlotLabel");
-            this.coastPlotLabel.Name = "coastPlotLabel";
-            // 
-            // ocealPlotLabel
-            // 
-            resources.ApplyResources(this.ocealPlotLabel, "ocealPlotLabel");
-            this.ocealPlotLabel.Name = "ocealPlotLabel";
             // 
             // hillColorSelector
             // 
@@ -605,18 +632,6 @@ namespace Map2CivilizationView
             this.oceanColorSelector.ColorSelectorValueChanged = null;
             resources.ApplyResources(this.oceanColorSelector, "oceanColorSelector");
             this.oceanColorSelector.Name = "oceanColorSelector";
-            // 
-            // zoomGroup
-            // 
-            this.zoomGroup.Controls.Add(this.zoomStepNumeric);
-            this.zoomGroup.Controls.Add(this.maximumZoomNumeric);
-            this.zoomGroup.Controls.Add(this.minimumZoomNumeric);
-            this.zoomGroup.Controls.Add(this.zoomStepLabel);
-            this.zoomGroup.Controls.Add(this.maximumZoomLabel);
-            this.zoomGroup.Controls.Add(this.minZoomLabel);
-            resources.ApplyResources(this.zoomGroup, "zoomGroup");
-            this.zoomGroup.Name = "zoomGroup";
-            this.zoomGroup.TabStop = false;
             // 
             // zoomStepNumeric
             // 
@@ -658,14 +673,14 @@ namespace Map2CivilizationView
             0,
             0});
             this.maximumZoomNumeric.Minimum = new decimal(new int[] {
-            100,
+            101,
             0,
             0,
             0});
             this.maximumZoomNumeric.Name = "maximumZoomNumeric";
             this.maximumZoomNumeric.NumericSelectorValueChanged = null;
             this.maximumZoomNumeric.Value = new decimal(new int[] {
-            100,
+            101,
             0,
             0,
             0});
@@ -679,8 +694,8 @@ namespace Map2CivilizationView
             0});
             resources.ApplyResources(this.minimumZoomNumeric, "minimumZoomNumeric");
             this.minimumZoomNumeric.Maximum = new decimal(new int[] {
-            1215752191,
-            23,
+            99,
+            0,
             0,
             0});
             this.minimumZoomNumeric.Minimum = new decimal(new int[] {
@@ -695,21 +710,6 @@ namespace Map2CivilizationView
             0,
             0,
             0});
-            // 
-            // zoomStepLabel
-            // 
-            resources.ApplyResources(this.zoomStepLabel, "zoomStepLabel");
-            this.zoomStepLabel.Name = "zoomStepLabel";
-            // 
-            // maximumZoomLabel
-            // 
-            resources.ApplyResources(this.maximumZoomLabel, "maximumZoomLabel");
-            this.maximumZoomLabel.Name = "maximumZoomLabel";
-            // 
-            // minZoomLabel
-            // 
-            resources.ApplyResources(this.minZoomLabel, "minZoomLabel");
-            this.minZoomLabel.Name = "minZoomLabel";
             // 
             // SettingsForm
             // 

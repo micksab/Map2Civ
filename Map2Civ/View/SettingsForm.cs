@@ -131,10 +131,8 @@ namespace Map2CivilizationView
             zoomStepNumeric.AssignNumericProperty(ZoomStepPercent);
             _settingControlList.Add(zoomStepNumeric);
             minimumZoomNumeric.AssignNumericProperty(MinZoomPercent);
-            minimumZoomNumeric.Increment = zoomStepNumeric.Value;
             _settingControlList.Add(minimumZoomNumeric);
             maximumZoomNumeric.AssignNumericProperty(MaxZoomPercent);
-            maximumZoomNumeric.Increment = zoomStepNumeric.Value;
             _settingControlList.Add(maximumZoomNumeric);
             
             hexPlotWidthNumeric.AssignNumericProperty(PlotWidthPixelsHexagonalP);
@@ -261,8 +259,8 @@ namespace Map2CivilizationView
             {
                 if (maximumZoomNumeric.Value <= minimumZoomNumeric.Value)
                 {
-                    CultureAwareMessageBox.Show(Resources.Str_SettingsForm_MinimumZoomErrorText,
-                    Resources.Str_SettingsForm_MinimumZoomErrorCaption,
+                    CultureAwareMessageBox.Show(Resources.Str_SettingsForm_ZoomErrorText,
+                    Resources.Str_SettingsForm_ZoomErrorCaption,
                     MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
 
                     if (sender == maximumZoomNumeric)
@@ -274,30 +272,34 @@ namespace Map2CivilizationView
                         minimumZoomNumeric.Value = minimumZoomNumeric.Value - zoomStepNumeric.Value;
                     }
                 }
+
+                if (minimumZoomNumeric.Value >= 100)
+                {
+                    CultureAwareMessageBox.Show(Resources.Str_SettingsForm_MinimumZoomErrorText,
+                    Resources.Str_SettingsForm_MinimumZoomErrorCaption,
+                    MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
+
+                    minimumZoomNumeric.Value = minimumZoomNumeric.Value - zoomStepNumeric.Value;
+                }
+
+                if(maximumZoomNumeric.Value <= 100)
+                {
+                    CultureAwareMessageBox.Show(Resources.Str_SettingsForm_MaximumZoomErrorText,
+                    Resources.Str_SettingsForm_MaximumZoomErrorCaption,
+                    MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
+
+                    maximumZoomNumeric.Value = maximumZoomNumeric.Value + zoomStepNumeric.Value;
+                }
+
             }
 
-
-            if(sender == zoomStepNumeric)
-            {
-                decimal stepValue = zoomStepNumeric.Value;
-                minimumZoomNumeric.Increment = stepValue;
-                maximumZoomNumeric.Increment = stepValue;
-            }
+            
         }
 
         
 
 
-         void zoomNumerics_Validating(object sender, CancelEventArgs e)
-        {
-            if (minimumZoomNumeric.Value+zoomStepNumeric.Value >= maximumZoomNumeric.Value)
-            {
-                e.Cancel = true;
-                CultureAwareMessageBox.Show(Resources.Str_SettingsForm_MinimumZoomErrorText, 
-                    Resources.Str_SettingsForm_MinimumZoomErrorCaption,
-                    MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
-            }
-        }
+         
 
          void plotWidthNumerics_Validating(object sender, CancelEventArgs e)
         {

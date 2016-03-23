@@ -112,7 +112,7 @@ namespace Map2CivilizationCtrl
             }
 
             //Reset zoom factor to 100%
-            RegisteredListenersCtrl.ZoomChangedUpdate(1f);
+            RegisteredListenersCtrl.ZoomChangedUpdate(100f);
         }
 
 

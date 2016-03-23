@@ -351,10 +351,10 @@
     <value>Saved file </value>
     <comment>RegisteredListenersCtrl.CentralFormPublishNewInfoMessage("Saved file " + displayableFilename);</comment>
   </data>
-  <data name="Str_SettingsForm_MinimumZoomErrorCaption" xml:space="preserve">
+  <data name="Str_SettingsForm_ZoomErrorCaption" xml:space="preserve">
     <value>Non acceptable value</value>
   </data>
-  <data name="Str_SettingsForm_MinimumZoomErrorText" xml:space="preserve">
+  <data name="Str_SettingsForm_ZoomErrorText" xml:space="preserve">
     <value>The minimum zoom value should be smaller than the maximum zoom value.</value>
   </data>
   <data name="Str_SettingsForm_PlotWidthErrorCaption" xml:space="preserve">
@@ -440,5 +440,17 @@
   </data>
   <data name="Str_ColorSelector_RGBSeparator" xml:space="preserve">
     <value>,</value>
+  </data>
+  <data name="Str_SettingsForm_MinimumZoomErrorText" xml:space="preserve">
+    <value>The minimum zoom value must be smaller than 100</value>
+  </data>
+  <data name="Str_SettingsForm_MinimumZoomErrorCaption" xml:space="preserve">
+    <value>Non acceptable value</value>
+  </data>
+  <data name="Str_SettingsForm_MaximumZoomErrorText" xml:space="preserve">
+    <value>The maximum zoom value must be greater than 100</value>
+  </data>
+  <data name="Str_SettingsForm_MaximumZoomErrorCaption" xml:space="preserve">
+    <value>Non acceptable value</value>
   </data>
 </root>
