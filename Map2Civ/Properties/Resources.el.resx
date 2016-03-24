@@ -243,9 +243,6 @@
   <data name="Str_SettingsForm_PlotWidthErrorCaption" xml:space="preserve">
     <value>Μη αποδεκτή τιμή</value>
   </data>
-  <data name="Str_SettingsForm_PlotWidthErrorText" xml:space="preserve">
-    <value>Το πλάτος ενός τομέα θα πρέπει να είναι περιττός αριθμός.</value>
-  </data>
   <data name="Str_SettingsForm_RestartCaption" xml:space="preserve">
     <value>Επανεκκίνηση.</value>
   </data>
@@ -288,9 +285,6 @@
   <data name="Str_ImageEditor_IntendedRatio" xml:space="preserve">
     <value>Επιθυμητός Λόγος:</value>
   </data>
-  <data name="Str_ImageEditor_ImagePixels" xml:space="preserve">
-    <value>Εικονοστοιχεία</value>
-  </data>
   <data name="Str_ZoomSplitButtonText_Percent" xml:space="preserve">
     <value>%</value>
   </data>
@@ -327,16 +321,19 @@
   <data name="Str_ColorSelector_RGBSeparator" xml:space="preserve">
     <value>,</value>
   </data>
+  <data name="Str_SettingsForm_MinimumZoomErrorText" xml:space="preserve">
+    <value>Η ελάχιστη τιμή μεγέθυνσης πρέπει να είναι μικρότερη του 100</value>
+  </data>
   <data name="Str_SettingsForm_MinimumZoomErrorCaption" xml:space="preserve">
     <value>Μη αποδεκτή τιμή</value>
+  </data>
+  <data name="Str_SettingsForm_MaximumZoomErrorText" xml:space="preserve">
+    <value>Η μέγιστη τιμή μεγέθυνσης πρέπει να είναι μεγαλύτερη του 100</value>
   </data>
   <data name="Str_SettingsForm_MaximumZoomErrorCaption" xml:space="preserve">
     <value>Μη αποδεκτή τιμή</value>
   </data>
-  <data name="Str_SettingsForm_MinimumZoomErrorText" xml:space="preserve">
-    <value>Η ελάχιστη τιμή μεγέθυνσης πρέπει να είναι μικρότερη του 100</value>
-  </data>
-  <data name="Str_SettingsForm_MaximumZoomErrorText" xml:space="preserve">
-    <value>Η μέγιστη τιμή μεγέθυνσης πρέπει να είναι μεγαλύτερη του 100</value>
+  <data name="Str_ImageEditor_ImagePixels" xml:space="preserve">
+    <value>Εικονοστοιχεία</value>
   </data>
 </root>

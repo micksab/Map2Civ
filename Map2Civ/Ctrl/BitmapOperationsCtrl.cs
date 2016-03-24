@@ -156,7 +156,7 @@ namespace Map2CivilizationCtrl
 
 
 
-        public static Color calcDominantColor(Bitmap bmp)
+        public static Color CalcDominantColor(Bitmap bmp)
         {
             Dictionary<Color, int> colorList = new Dictionary<Color, int>();
 

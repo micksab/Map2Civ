@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using Map2Civilization.Properties;
 using System.ComponentModel;
+using System.Globalization;
 
 namespace Map2CivilizationView.UserControls
 {
@@ -34,7 +35,7 @@ namespace Map2CivilizationView.UserControls
         public void AssignNumericProperty(string propertyName)
         {
             _propertyName = propertyName;
-            _value = Convert.ToDecimal(Settings.Default[_propertyName]);
+            _value = Convert.ToDecimal(Settings.Default[_propertyName], CultureInfo.InvariantCulture);
             this.numericUpDown.Value = _value;
 
         }
@@ -98,7 +99,7 @@ namespace Map2CivilizationView.UserControls
         public void SavePropertySetting()
         {
             Type propertyType = Settings.Default[_propertyName].GetType();
-            Settings.Default[_propertyName] = Convert.ChangeType(_value, propertyType);
+            Settings.Default[_propertyName] = Convert.ChangeType(_value, propertyType, CultureInfo.InvariantCulture);
         }
 
         void numericUpDown_ValueChanged(object sender, EventArgs e)

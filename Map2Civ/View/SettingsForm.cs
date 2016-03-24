@@ -1,14 +1,11 @@
-﻿using System;
+﻿using Map2Civilization.Properties;
+using Map2CivilizationView.UserControls;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Drawing;
 using System.Globalization;
-using System.Linq;
 using System.Resources;
 using System.Windows.Forms;
-using Map2Civilization.Properties;
-using Map2CivilizationView.UserControls;
-using Map2CivilizationCtrl;
 
 namespace Map2CivilizationView
 {
@@ -244,72 +241,12 @@ namespace Map2CivilizationView
             UserControls.KeyboardShortcutSelectorValueChangedEventArgs e)
         {
             SettingsChanged();
-            KeyboardShortcutSettingSelector selector = (KeyboardShortcutSettingSelector)sender;
-
-
             RefreshAssignedKeysList();
         }
 
          void zoomNumerics_ValueChanged(object sender, EventArgs e)
         {
             SettingsChanged();
-            NumericSettingSelector selector = (NumericSettingSelector)sender;
-
-            if(sender == maximumZoomNumeric || sender == minimumZoomNumeric)
-            {
-                if (maximumZoomNumeric.Value <= minimumZoomNumeric.Value)
-                {
-                    CultureAwareMessageBox.Show(Resources.Str_SettingsForm_ZoomErrorText,
-                    Resources.Str_SettingsForm_ZoomErrorCaption,
-                    MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
-
-                    if (sender == maximumZoomNumeric)
-                    {
-                        maximumZoomNumeric.Value = maximumZoomNumeric.Value + zoomStepNumeric.Value;
-                    }
-                    else
-                    {
-                        minimumZoomNumeric.Value = minimumZoomNumeric.Value - zoomStepNumeric.Value;
-                    }
-                }
-
-                if (minimumZoomNumeric.Value >= 100)
-                {
-                    CultureAwareMessageBox.Show(Resources.Str_SettingsForm_MinimumZoomErrorText,
-                    Resources.Str_SettingsForm_MinimumZoomErrorCaption,
-                    MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
-
-                    minimumZoomNumeric.Value = minimumZoomNumeric.Value - zoomStepNumeric.Value;
-                }
-
-                if(maximumZoomNumeric.Value <= 100)
-                {
-                    CultureAwareMessageBox.Show(Resources.Str_SettingsForm_MaximumZoomErrorText,
-                    Resources.Str_SettingsForm_MaximumZoomErrorCaption,
-                    MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
-
-                    maximumZoomNumeric.Value = maximumZoomNumeric.Value + zoomStepNumeric.Value;
-                }
-
-            }
-
-            
-        }
-
-        
-
-
-         
-
-         void plotWidthNumerics_Validating(object sender, CancelEventArgs e)
-        {
-            if(((NumericUpDown)sender).Value % 2 == 0)
-            {
-                e.Cancel = true;
-                CultureAwareMessageBox.Show(Resources.Str_SettingsForm_PlotWidthErrorText,
-                    Resources.Str_SettingsForm_PlotWidthErrorCaption,
-                    MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
-            }
         }
 
 
@@ -335,32 +272,30 @@ namespace Map2CivilizationView
          void SettingsForm_FormClosing(object sender, FormClosingEventArgs e)
         {
 
-            string keyShortcutTypeString = typeof(KeyboardShortcutSettingSelector).ToString().ToUpper();
-            string colorSelectorTypeString = typeof(ColorSettingSelector).ToString().ToUpper();
-            string numericSelectorTypeString = typeof(NumericSettingSelector).ToString().ToUpper();
+            Type keyShortcutType = typeof(KeyboardShortcutSettingSelector);
+            Type colorSelectorType = typeof(ColorSettingSelector);
+            Type numericSelectorType = typeof(NumericSettingSelector);
 
             foreach (ISettingControl tempControl in _settingControlList)
             {
+                Type controlType= tempControl.GetType();
 
-                string controlTypeString = tempControl.GetType().ToString().ToUpper();
-
-                if (controlTypeString.Equals(keyShortcutTypeString))
+                if (controlType.Equals(keyShortcutType))
                 {
                     ((KeyboardShortcutSettingSelector)tempControl).KeyboardShortcutSelectorValueChangedEventHandler -=
                             KeyboardShortcutSelectorValue_ChangedHandler;
                 }
-                else if(controlTypeString.Equals(colorSelectorTypeString))
+                else if (controlType.Equals(colorSelectorType))
                 {
                     ((ColorSettingSelector)tempControl).ColorSelectorValueChanged -=
                                 ColorSelectorValue_Changed;
                 }
-                else if (controlTypeString.Equals(numericSelectorTypeString))
+                else if (controlType.Equals(numericSelectorType))
                 {
                     ((NumericSettingSelector)tempControl).NumericSelectorValueChanged -=
                         zoomNumerics_ValueChanged;
                 }
 
-                
             }
             
 
@@ -371,8 +306,8 @@ namespace Map2CivilizationView
          void applyButton_Click(object sender, EventArgs e)
         {
             
-            Map2Civilization.Properties.Settings.Default.ReportEMailAddress = _ReportEMailAddress;
-            Map2Civilization.Properties.Settings.Default.UICulture= _uICulture;
+            Settings.Default.ReportEMailAddress = _ReportEMailAddress;
+            Settings.Default.UICulture= _uICulture;
 
 
             foreach(ISettingControl tempControl in _settingControlList)
@@ -380,7 +315,7 @@ namespace Map2CivilizationView
                 tempControl.SavePropertySetting();
             }
 
-            Map2Civilization.Properties.Settings.Default.Save();
+            Settings.Default.Save();
 
             RestartApp();
 

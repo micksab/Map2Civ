@@ -99,7 +99,7 @@ namespace Map2CivilizationCtrl.Analyzer
                     {
                         PlotId id = new PlotId(xPlot, yPlot);
                         Bitmap plotBitmap = BitmapOperationsCtrl.GetPlotArea(analysisImage, id, br, gridTypeEnum, mapDimension);
-                        Color dominantColor = BitmapOperationsCtrl.calcDominantColor(plotBitmap);
+                        Color dominantColor = BitmapOperationsCtrl.CalcDominantColor(plotBitmap);
                         string hexDominantColor = BitmapOperationsCtrl.HexFromColor(dominantColor);
                         //plotAreasList.Remove(id);
                         plotBitmap.Dispose();

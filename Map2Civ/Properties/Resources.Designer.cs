@@ -798,15 +798,6 @@ namespace Map2Civilization.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The width of a plot must be an odd number..
-        /// </summary>
-        internal static string Str_SettingsForm_PlotWidthErrorText {
-            get {
-                return ResourceManager.GetString("Str_SettingsForm_PlotWidthErrorText", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Restart Required.
         /// </summary>
         internal static string Str_SettingsForm_RestartCaption {
