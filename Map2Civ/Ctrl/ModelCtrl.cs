@@ -3,6 +3,7 @@ using System.Drawing;
 using Map2CivilizationCtrl.DataStructure;
 using Map2CivilizationCtrl.Enumerations;
 using Map2CivilizationModel;
+using Map2Civilization.Properties;
 
 namespace Map2CivilizationCtrl
 {
@@ -10,9 +11,16 @@ namespace Map2CivilizationCtrl
     {
 
         
-         static DataModel _dataModel;
+        static DataModel _dataModel;
+        
 
+        public static Bitmap GetProcessedBitmap()
+        {
+            if (_dataModel== null)
+                return null;
 
+            return _dataModel.ProcessedBitmap;
+        }
 
         internal static DataModel GetDataModel()
         {
@@ -60,11 +68,16 @@ namespace Map2CivilizationCtrl
 
         internal static void SetDataModel(DataModel newModel)
         {
+            if (_dataModel != null)
+            {
+                _dataModel.Dispose();
+            }
+
             _dataModel = newModel;
 
             TerrainType.Singleton.GenerateTerrainBitmaps();
             RegisteredListenersCtrl.CentralFormUpdateAssignedPercentComplete();
-            RegisteredListenersCtrl.ProcessedMapNotifyProcessedMapChanged();
+            RegisteredListenersCtrl.ProcessedMapNotifyProcessedMapChanged(_dataModel.PlotCollection.GetPlotIds());
             RegisteredListenersCtrl.UpdateOriginalMap();
             RegisteredListenersCtrl.ModelListenersModelChanged();
             RegisteredListenersCtrl.DetectedColorsGridFill();
@@ -108,14 +121,14 @@ namespace Map2CivilizationCtrl
 
         public static Bitmap GetDataSourceImage()
         {
-            Bitmap toReturn = _dataModel.DataSourceImage;
-            return toReturn;
+            return _dataModel.DataSourceImage;
         }
 
 
         public static Bitmap GetDataSourceImageWithGrid()
         {
-            Bitmap toReturn = _dataModel.DataSourceImage;
+
+            Bitmap toReturn = new Bitmap(_dataModel.DataSourceImage);
             
             if (toReturn != null)
             {

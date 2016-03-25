@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
 using Map2CivilizationCtrl.Enumerations;
+using Map2CivilizationCtrl.DataStructure;
 
 namespace Map2CivilizationModel
 {
@@ -28,14 +29,33 @@ namespace Map2CivilizationModel
         }
 
 
-        public Collection<Plot> RelevantPlots
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1002:DoNotExposeGenericLists")]
+        public List<Plot> RelevantPlots
         {
             get
             {
-                return new Collection<Plot>(_relevantPlots);
+                return _relevantPlots;
             }
 
         }
+
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1002:DoNotExposeGenericLists")]
+        public List<PlotId> RelevantPlotIds
+        {
+            get
+            {
+                List<PlotId> toReturn = new List<PlotId>();
+
+                foreach(Plot plot in _relevantPlots)
+                {
+                    toReturn.Add(plot.Id);
+                }
+
+                return toReturn;
+            }
+        }
+
 
         public TerrainType.Enumeration TerrainDescriptor
         {

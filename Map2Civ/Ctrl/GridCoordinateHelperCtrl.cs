@@ -6,6 +6,7 @@ using System.Drawing;
 using Map2Civilization.Properties;
 using Map2CivilizationCtrl.DataStructure;
 using Map2CivilizationCtrl.Enumerations;
+using Map2CivilizationCtrl.DataStructure;
 using Map2CivilizationModel;
 
 namespace Map2CivilizationCtrl
@@ -122,7 +123,7 @@ namespace Map2CivilizationCtrl
                     PlotId shortestDistanceCenterPlotId = new PlotId(0, 0);
                     float minDistance = float.MaxValue;
 
-                    foreach (Plot tempPlot in ModelCtrl.GetDataModel().PlotCollection.getPlots())
+                    foreach (Plot tempPlot in ModelCtrl.GetDataModel().PlotCollection.GetPlots())
                     {
                         float distance = CalculatePointDistanceFromPlotCenter(tempPlot.Id, new PointF((float)pixelX, (float)pixelY), gridType);
 
@@ -286,6 +287,36 @@ namespace Map2CivilizationCtrl
             float distanceY = Math.Abs((plotUpperLeftCorner.Y+(plotHeightPixels/2f)) - point.Y);
 
             return (float)Math.Sqrt(Math.Pow(distanceX, 2) + Math.Pow(distanceY, 2));
+        }
+
+
+        public static Size CalculateImageSize(MapDimension mapSize, GridType.Enumeration gridTypeEnum)
+        {
+            int newWidth = 0;
+            int newHeight = 0;
+            float wp = mapSize.WidthPlots;
+            float hp = mapSize.HeightPlots;
+            float w = GridType.Singleton.GetPlotWidthPixels(gridTypeEnum);
+            float h = GridType.Singleton.GetPlotHeightPixels(gridTypeEnum);
+
+            switch (gridTypeEnum)
+            {
+                case GridType.Enumeration.Square:
+
+                    newWidth = (int)(wp * w);
+                    newHeight = (int)(hp * h);
+                    break;
+                case GridType.Enumeration.HexagonalPT:
+                    newWidth = (int)(wp * w + (w / 2));
+                    newHeight = (int)(((2f * w) / Math.Sqrt(3)) + ((6f * w) / (4f * Math.Sqrt(3))) * (hp - 1f));
+                    break;
+                case GridType.Enumeration.Rhombus:
+                    throw new NotImplementedException(Resources.Str_BitmapOperations_RhombusNotSupported);
+                default:
+                    throw new InvalidEnumArgumentException("Invalid value of enum GridType");
+            }
+
+            return new Size(newWidth, newHeight);
         }
     }
 }

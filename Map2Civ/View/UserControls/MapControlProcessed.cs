@@ -54,9 +54,13 @@ namespace Map2CivilizationView.UserControls
                 throw new ArgumentNullException(nameof(bitmap));
 
             //Remove the decorative image 
-            base.BackgroundImage = null;
-            BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            PictureBox.BackgroundImage = bitmap;
+            if (base.BackgroundImage != bitmap)
+            {
+                base.BackgroundImage = null;
+                BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+                PictureBox.BackgroundImage = bitmap;
+            }
+            
 
 
             if (!RegisteredListenersCtrl.PlotLocationListeners.Contains(this))
@@ -69,6 +73,9 @@ namespace Map2CivilizationView.UserControls
 
                 _menu.setMode(_currentMode);
             }
+
+            PictureBox.Update();
+            PictureBox.Refresh();
         }
 
 

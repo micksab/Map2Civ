@@ -17,12 +17,18 @@ namespace Map2CivilizationCtrl
             TerrainType.Enumeration descriptor)
         {
 
+            List<PlotId> plotsToUpdate = new List<PlotId>();
+
             foreach (string colorID in colorIDs)
             {
                 ModelCtrl.GetDataModel().DetectedColorCollection.UpdateDetectedColor(colorID, descriptor);
+                List<PlotId> tempCollection = ModelCtrl.GetDataModel().DetectedColorCollection.GetColorByID(colorID).RelevantPlotIds;
+                plotsToUpdate.AddRange(tempCollection);
             }
 
-            RegisteredListenersCtrl.ProcessedMapNotifyProcessedMapChanged();
+             
+
+            RegisteredListenersCtrl.ProcessedMapNotifyProcessedMapChanged(plotsToUpdate);
         }
 
 
@@ -67,7 +73,7 @@ namespace Map2CivilizationCtrl
         {
             List<PlotId> toReturn = new List<PlotId>();
             DetectedColor detColor = getDetectedColor(colorID);
-            Collection<Plot>  plots = detColor.RelevantPlots;
+            List<Plot>  plots = detColor.RelevantPlots;
 
             foreach(Plot plot in plots)
             {

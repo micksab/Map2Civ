@@ -5,11 +5,12 @@ using Map2CivilizationCtrl.Enumerations;
 
 namespace Map2CivilizationModel
 {
-    public class DataModel
+    public sealed class DataModel : IDisposable
     {
 
          MapDimension _selectedMapSize;
          Bitmap _dataSourceImage;
+         Bitmap _processedBitmap;
          GridType.Enumeration  _gridType;
          MapDataSource.Enumeration _mapDataSource;
          CivilizationVersion.Enumeration _civilizationVersion;
@@ -122,7 +123,33 @@ namespace Map2CivilizationModel
             set
             {
                 _dataSourceImage = value;
+
+                if (value != null)
+                {
+                    _processedBitmap = new Bitmap(value.Width, value.Height);
+
+                    using (Graphics g = Graphics.FromImage(_processedBitmap))
+                    {
+                        g.Clear(Color.Black);
+                    }
+                }
+                
             }
+        }
+
+        public Bitmap ProcessedBitmap
+        {
+            get
+            {
+                return _processedBitmap;
+            }
+        }
+
+        public void Dispose()
+        {
+            
+            _dataSourceImage.Dispose();
+            _processedBitmap.Dispose();
         }
     }
 }

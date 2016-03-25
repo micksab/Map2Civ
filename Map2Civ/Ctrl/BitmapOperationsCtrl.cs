@@ -24,31 +24,9 @@ namespace Map2CivilizationCtrl
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Reliability", "CA2000:Dispose objects before losing scope")]
         public static Bitmap InitializeDataSourceImage(SourceReliefMapSettings settings, MapDimension mapSize, GridType.Enumeration gridTypeEnum)
         {
-            int newWidth = 0;
-            int newHeight = 0;
-            float wp = mapSize.WidthPlots;
-            float hp = mapSize.HeightPlots;
-            float w = GridType.Singleton.GetPlotWidthPixels(gridTypeEnum);
-            float h = GridType.Singleton.GetPlotHeightPixels(gridTypeEnum);
+            Size imageSize = GridCoordinateHelperCtrl.CalculateImageSize(mapSize, gridTypeEnum);
 
-            switch (gridTypeEnum)
-            {
-                case GridType.Enumeration.Square:
-
-                    newWidth = (int)(wp * w);
-                    newHeight = (int)(hp * h);
-                    break;
-                case GridType.Enumeration.HexagonalPT:
-                    newWidth = (int)(wp * w + (w / 2));
-                    newHeight = (int)(((2f * w) / Math.Sqrt(3)) + ((6f * w) / (4f * Math.Sqrt(3))) * (hp - 1f));
-                    break;
-                case GridType.Enumeration.Rhombus:
-                    throw new NotImplementedException(Resources.Str_BitmapOperations_RhombusNotSupported);
-                default:
-                    throw new InvalidEnumArgumentException("Invalid value of enum GridType");
-            }
-
-            Bitmap resizedBmp = new Bitmap(newWidth, newHeight);
+            Bitmap resizedBmp = new Bitmap(imageSize.Width, imageSize.Height);
 
             using (Graphics g = Graphics.FromImage(resizedBmp))
             {
@@ -56,7 +34,7 @@ namespace Map2CivilizationCtrl
                 g.CompositingQuality = settings.CompositingQuality;
                 g.SmoothingMode = settings.SmoothingMode;
 
-                g.DrawImage(settings.MapBitmap, new Rectangle(0, 0, newWidth, newHeight));
+                g.DrawImage(settings.MapBitmap, new Rectangle(0, 0, imageSize.Width, imageSize.Height));
             }
 
             resizedBmp.SetResolution(96, 96);
@@ -139,7 +117,7 @@ namespace Map2CivilizationCtrl
             {
                 using (Graphics graphics = Graphics.FromImage(bmp))
                 {
-                    foreach(Plot plot in ModelCtrl.GetDataModel().PlotCollection.getPlots())
+                    foreach(Plot plot in ModelCtrl.GetDataModel().PlotCollection.GetPlots())
                     {
                         PointF[] points = GridCoordinateHelperCtrl.GetPlotPolygonPoints(plot.Id);
                         graphics.DrawPolygon(gridPen, points);
@@ -250,7 +228,7 @@ namespace Map2CivilizationCtrl
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Globalization", "CA1303:Do not pass literals as localized parameters", MessageId = "System.Console.WriteLine(System.String,System.Object)")]
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Reliability", "CA2000:Dispose objects before losing scope")]
-        public static Bitmap RebuidProcessedBitmap()
+        public static Bitmap RebuidProcessedBitmap(List<PlotId> plotIds)
         {
             Stopwatch stopWatch = new Stopwatch();
             stopWatch.Start();
@@ -258,44 +236,45 @@ namespace Map2CivilizationCtrl
             Pen UnassignedPen = new Pen(Map2Civilization.Properties.Settings.Default.ProcessedMapUnAssignedPlotGridColor, 1);
             Pen bluePen = new Pen(Color.Blue, 1);
 
-            Bitmap sourceBitmap = ModelCtrl.GetDataSourceImage();
-            int widthPixels = sourceBitmap.Width;
-            int heightPixels = sourceBitmap.Height;
-            PixelFormat format = sourceBitmap.PixelFormat;
+            Bitmap toReturn = ModelCtrl.GetProcessedBitmap();
             Bitmap oceanBmp = TerrainType.Singleton.OceanPlotBitmap;
             Bitmap coastBmp = TerrainType.Singleton.CoastPlotBitmap;
             Bitmap flatBmp = TerrainType.Singleton.FlatPlotBitmap;
             Bitmap hillBmp = TerrainType.Singleton.HillPlotBitmap;
             Bitmap mountainBmp = TerrainType.Singleton.MountainPlotBitmap;
-
-            
             Bitmap lockBmp = new Bitmap(Resources.LockedTile_Image);
-            Bitmap toReturn = new Bitmap(widthPixels, heightPixels, format);
+
             
 
             using (Graphics grp = Graphics.FromImage(toReturn))
             {
-                grp.Clear(Color.Black);
-
-
-
-                foreach (Plot tempPlot in PlotCollectionCtrl.getPlots())
+                foreach (PlotId tempPlotId in plotIds)
                 {
-                    SolidBrush brushToUse = new SolidBrush(((PlotReliefMap)tempPlot).DominantColor);
+                    SolidBrush brushToUse;
 
-                    PointF plotPoint = GridCoordinateHelperCtrl.ConvertPlotIdToPixelLocation(tempPlot.Id,false);
+                    if(ModelCtrl.GetDataModel().MapDataSource == MapDataSource.Enumeration.ReliefMapImage)
+                    {
+                        brushToUse = 
+                            new SolidBrush(((PlotReliefMap)ModelCtrl.GetDataModel().PlotCollection.GetPlot(tempPlotId)).DominantColor);
+                    }
+                    else
+                    {
+                        throw new NotImplementedException();
+                    }
+
+                    PointF plotPoint = GridCoordinateHelperCtrl.ConvertPlotIdToPixelLocation(tempPlotId,false);
                     float xRefPix = plotPoint.X;
                     float yRefPix = plotPoint.Y;
 
                    
 
 
-                    PointF[] points = GridCoordinateHelperCtrl.GetPlotPolygonPoints(tempPlot.Id).ToArray();
+                    PointF[] points = GridCoordinateHelperCtrl.GetPlotPolygonPoints(tempPlotId).ToArray();
 
                     grp.FillPolygon(brushToUse, points.ToArray());
 
 
-                    switch (tempPlot.TerrainDescriptor)
+                    switch (ModelCtrl.GetDataModel().PlotCollection.GetPlot(tempPlotId).TerrainDescriptor)
                     {
                         case TerrainType.Enumeration.NotDefined:
                             grp.DrawPolygon(UnassignedPen, points);
@@ -317,12 +296,12 @@ namespace Map2CivilizationCtrl
                             break;
                             default:
                             throw new InvalidEnumArgumentException(
-                                "Invalid terrain descriptor value for plot "+tempPlot.Id);
+                                "Invalid terrain descriptor value for plot "+tempPlotId);
                     }
 
                     
 
-                    if (tempPlot.IsLocked)
+                    if (ModelCtrl.GetDataModel().PlotCollection.GetPlot(tempPlotId).IsLocked)
                     {
                         grp.DrawImage(lockBmp, 
                             xRefPix + (GridType.Singleton.GetPlotWidthPixels(ModelCtrl.GetGridType())/2f)-3.5f,

@@ -13,7 +13,7 @@ namespace Map2CivilizationCtrl
 
         public static string getDominantColorHex(PlotId plotID)
         {
-            PlotReliefMap plot =  (PlotReliefMap)ModelCtrl.GetDataModel().PlotCollection.getPlot(plotID);
+            PlotReliefMap plot =  (PlotReliefMap)ModelCtrl.GetDataModel().PlotCollection.GetPlot(plotID);
             return plot.HexDominantColor;
         }
 
@@ -24,10 +24,12 @@ namespace Map2CivilizationCtrl
             TerrainType.Enumeration descriptor, Boolean IsLocked)
         {
             Plot plot = PlotCollectionCtrl.getPlot(plotID);
-           
             plot.UpdatePlot(descriptor, IsLocked);
 
-            RegisteredListenersCtrl.ProcessedMapNotifyProcessedMapChanged();
+            List<PlotId> singleElementPlotList = new List<PlotId>();
+            singleElementPlotList.Add(plotID);
+
+            RegisteredListenersCtrl.ProcessedMapNotifyProcessedMapChanged(singleElementPlotList);
 
 
 
@@ -43,14 +45,14 @@ namespace Map2CivilizationCtrl
 
         internal static Plot getPlot(PlotId id)
         {
-            return ModelCtrl.GetDataModel().PlotCollection.getPlot(id);
+            return ModelCtrl.GetDataModel().PlotCollection.GetPlot(id);
         }
 
 
 
         public static List<Plot> getPlots()
         {
-            return ModelCtrl.GetDataModel().PlotCollection.getPlots();
+            return ModelCtrl.GetDataModel().PlotCollection.GetPlots();
         }
 
 

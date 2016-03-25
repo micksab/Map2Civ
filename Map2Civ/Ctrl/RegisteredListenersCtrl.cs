@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using Map2CivilizationCtrl.DataStructure;
 using Map2CivilizationCtrl.Listener;
+using Map2CivilizationModel;
 
 namespace Map2CivilizationCtrl
 {
@@ -211,9 +212,9 @@ namespace Map2CivilizationCtrl
 
         #region ***** Processed map observer Interface  Ctrl methods
 
-        public static void ProcessedMapNotifyProcessedMapChanged()
+        public static void ProcessedMapNotifyProcessedMapChanged(List<PlotId> plots)
         {
-            Bitmap toDraw = BitmapOperationsCtrl.RebuidProcessedBitmap();
+            Bitmap toDraw = BitmapOperationsCtrl.RebuidProcessedBitmap(plots);
 
             foreach (IUiListenerProcessedMap temp in _processedMapListeners.ListenersList)
             {

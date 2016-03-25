@@ -40,7 +40,9 @@ namespace Map2Civilization.Ctrl.ModelFileStorage
          void LoadBackgroundWorker_DoWork(object sender, DoWorkEventArgs e)
         {
             string fullFilePath = (string)e.Argument;
-            DataSet theSet = ModelDataSet.GetModelEmptyDataSet();
+            //DataSet theSet = ModelDataSet.GetModelEmptyDataSet();
+            DataSet theSet = new DataSet();
+
             theSet.ReadXml(fullFilePath);
 
             decimal progressMaxValue = theSet.Tables["Global"].Rows.Count + theSet.Tables["Plot"].Rows.Count + theSet.Tables["Color"].Rows.Count;
@@ -59,7 +61,7 @@ namespace Map2Civilization.Ctrl.ModelFileStorage
             //If we were to assign the originalImage instance at newDataMode.ImageToProcess, 
             // we would get a misleading "Out of Memory" exception on any method that would 
             // use its graphics, so we create a copy that is independent of the underlying stream 
-            // used to load the image into the system. From more info check
+            // used to load the image into the system. For more info check
             //https://social.msdn.microsoft.com/Forums/en-US/4aac43fa-cccb-4bf7-b37e-58ec5351ab80/outofmemoryexception-when-using-graphicsfromimage
             using (Graphics g = Graphics.FromImage(streamFreeImage))
             {

@@ -6,7 +6,7 @@ using Map2CivilizationCtrl.DataStructure;
 using Map2CivilizationCtrl.Enumerations;
 using Map2CivilizationCtrl.Listener;
 using Map2CivilizationView.UserControls;
-
+using System.Collections.Generic;
 
 namespace Map2CivilizationView
 {
@@ -40,7 +40,7 @@ namespace Map2CivilizationView
             _originalMapControl.Size = sizeToAssign;
             _processedMapControl.Size = sizeToAssign;
 
-            RegisteredListenersCtrl.ProcessedMapNotifyProcessedMapChanged();
+            RegisteredListenersCtrl.ProcessedMapNotifyProcessedMapChanged(new List<PlotId>());
             RegisteredListenersCtrl.UpdateOriginalMap();
             
 

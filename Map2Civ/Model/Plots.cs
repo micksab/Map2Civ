@@ -14,9 +14,9 @@ namespace Map2CivilizationModel
            _plotCollectionList = new Dictionary<PlotId, Plot>();
         }
 
-       
 
-        
+
+
 
 
         public void AddNewPlot(Plot plot)
@@ -24,13 +24,22 @@ namespace Map2CivilizationModel
             _plotCollectionList.Add(plot.Id, plot);
         }
 
-        public List<Plot> getPlots()
+        public List<Plot> GetPlots()
         {
             return _plotCollectionList.Values.ToList<Plot>();
         }
 
 
-        public Plot getPlot(PlotId id)
+        public List<PlotId> GetPlotIds()
+        {
+            List<PlotId> toReturn = new List<PlotId>();
+
+            toReturn.AddRange(_plotCollectionList.Keys);
+
+            return toReturn;
+        }
+
+        public Plot GetPlot(PlotId id)
         {
             Plot toReturn;
             if(_plotCollectionList.TryGetValue(id, out toReturn))

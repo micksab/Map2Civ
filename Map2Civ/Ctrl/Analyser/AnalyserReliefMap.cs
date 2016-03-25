@@ -51,7 +51,8 @@ namespace Map2CivilizationCtrl.Analyzer
 
 
 
-         void AnalysisBackgroundWorker_DoWork(object sender, DoWorkEventArgs e)
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Reliability", "CA2000:Dispose objects before losing scope")]
+        void AnalysisBackgroundWorker_DoWork(object sender, DoWorkEventArgs e)
         {
             Dictionary<string, object> arguments = (Dictionary<string, object>)e.Argument;
             SourceReliefMapSettings settings = (SourceReliefMapSettings)arguments[_settingsKey];
@@ -140,11 +141,10 @@ namespace Map2CivilizationCtrl.Analyzer
 
                 if (e.Error == null)
                 {
-                    
-                        DataModel newModel = (DataModel)e.Result;
-                        ModelCtrl.SetDataModel(newModel);
-                        RegisteredListenersCtrl.CentralFormPublishNewInfoMessage(Map2Civilization.Properties.Resources.Str_AnalyserReliefMap_ModelCreated);
-                        RegisteredListenersCtrl.CentralFormSetModelButtonAndMenusEnabledState(true, false);
+                    DataModel newModel = (DataModel)e.Result;
+                    ModelCtrl.SetDataModel(newModel);
+                    RegisteredListenersCtrl.CentralFormPublishNewInfoMessage(Map2Civilization.Properties.Resources.Str_AnalyserReliefMap_ModelCreated);
+                    RegisteredListenersCtrl.CentralFormSetModelButtonAndMenusEnabledState(true, false);
                 }
                 else
                 {
