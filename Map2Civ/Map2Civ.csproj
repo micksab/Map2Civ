@@ -418,6 +418,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="SampleMapFiles\Attika-Peloponnese-Cyclades.Civ5Map" />
+    <None Include="SampleMapFiles\Attika-Peloponnese-Cyclades_Std.M2C" />
+    <None Include="SampleMapFiles\Crete_Large.M2C" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\BlankImage1024x768.png" />
@@ -429,6 +432,11 @@
     <None Include="Images\Zoom-in_Image.png" />
     <None Include="Images\Zoom-out_Image.png" />
     <None Include="Images\Zoom100_Image.png" />
+    <None Include="SampleMapFiles\10f32_crete_greece_physical_map.jpg" />
+    <None Include="SampleMapFiles\Cyprus_relief_location_map.jpg" />
+    <None Include="SampleMapFiles\Greece_large_topographic_basemap_adjusted.png" />
+    <None Include="SampleMapFiles\Greece_topo_scaled.jpg" />
+    <None Include="SampleMapFiles\Peloponnese_relief_map-blank.png" />
     <Content Include="WorldMap64-256.ico" />
     <None Include="Images\WorldMap16-32.ico" />
     <None Include="Images\WorldMap64-256.ico" />

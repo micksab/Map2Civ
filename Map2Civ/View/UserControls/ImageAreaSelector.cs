@@ -29,9 +29,6 @@ namespace Map2CivilizationView.UserControls
 
         
 
-       
-
-
         public void ShowSelectionTool(double imageRatio)
         {
             _CurrentXPerMille = 0;

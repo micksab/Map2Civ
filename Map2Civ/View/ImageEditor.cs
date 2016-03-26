@@ -44,11 +44,14 @@ namespace Map2CivilizationView
             }
         }
 
+        private void ImageEditor_Load(object sender, EventArgs e)
+        {
+            string test = "test";
+        }
 
-       
 
 
-         void PositionImageAreaSelector()
+        void PositionImageAreaSelector()
         {
             int selectorWidth = 0;
             int selectorHeight = 0;
