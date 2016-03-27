@@ -14,6 +14,7 @@ namespace Map2CivilizationView.UserControls
     class MapControlProcessed : MapControlBase, IUiListenerProcessedMap
     {
 
+
         readonly ProcessedMapControlMode.Enumeration _currentMode = ProcessedMapControlMode.Enumeration.Unspecified;
         readonly ProcessedMapMenu _menu = new ProcessedMapMenu(ProcessedMapControlMode.Enumeration.Unspecified);
 
@@ -30,8 +31,9 @@ namespace Map2CivilizationView.UserControls
             _menu.PlotEditEvent += Menu_PlotEditEvent;
             _menu.ColorEditEvent += Menu_ColorEditEvent;
             _menu.RegionEditEvent += Menu_RegionEditEvent;
-
             PictureBox.ContextMenuStrip = _menu;
+
+            
 
             AllowScroll(allowScroll);
 
@@ -159,7 +161,7 @@ namespace Map2CivilizationView.UserControls
 
          void Menu_ColorEditEvent(object sender, EventArgs e)
         {
-            string dominantColorHex = PlotCollectionCtrl.getDominantColorHex(CurrentPlotId);
+            string dominantColorHex = PlotCollectionCtrl.GetDominantColorHex(CurrentPlotId);
             RegisteredListenersCtrl.DetectedColorsGridSetSelectedColor(dominantColorHex);
         }
 

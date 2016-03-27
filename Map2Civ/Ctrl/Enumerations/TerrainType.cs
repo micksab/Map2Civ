@@ -23,12 +23,12 @@ namespace Map2CivilizationCtrl.Enumerations
         public enum Enumeration
         {
            
-            NotDefined,
-            Flat,
-            Hills,
-            Mountains,
-            Coast,
-            Ocean
+            NotDefined = 0,
+            Flat = 1,
+            Hills = 2,
+            Mountains = 3,
+            Coast = 4,
+            Ocean = 5
         }
 
 

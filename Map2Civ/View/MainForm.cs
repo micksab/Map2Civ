@@ -3,7 +3,6 @@ using System.Drawing;
 using System.Globalization;
 using System.Reflection;
 using System.Windows.Forms;
-using Map2Civilization.Ctrl.ModelFileStorage;
 using Map2Civilization.Properties;
 using Map2CivilizationCtrl;
 using Map2CivilizationCtrl.DataStructure;

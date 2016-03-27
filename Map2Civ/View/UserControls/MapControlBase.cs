@@ -268,6 +268,11 @@ namespace Map2CivilizationView.UserControls
                 _mouseMoveStartPoint = e.Location;
                 Cursor = Cursors.Hand;
             }
+
+            if(e.Button == MouseButtons.Right)
+            {
+                PictureBox_Click(this, e);
+            }
         }
 
          void pictureBox_MouseUp(object sender, MouseEventArgs e)

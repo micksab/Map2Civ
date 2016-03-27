@@ -1,13 +1,12 @@
 ﻿
+using Map2Civilization.Properties;
+using Map2CivilizationCtrl.DataStructure;
+using Map2CivilizationCtrl.Enumerations;
+using Map2CivilizationModel;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
-using Map2Civilization.Properties;
-using Map2CivilizationCtrl.DataStructure;
-using Map2CivilizationCtrl.Enumerations;
-using Map2CivilizationCtrl.DataStructure;
-using Map2CivilizationModel;
 
 namespace Map2CivilizationCtrl
 {

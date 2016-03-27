@@ -35,12 +35,12 @@ namespace Map2CivilizationView.UserControls
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DetectedColorsGrid));
             this.gridView = new System.Windows.Forms.DataGridView();
-            this.colorDisplayColumn = new System.Windows.Forms.DataGridViewImageColumn();
-            this.idColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.massAssignMenuEntry = new System.Windows.Forms.ToolStripMenuItem();
+            this.colorDisplayColumn = new System.Windows.Forms.DataGridViewImageColumn();
+            this.idColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.settingColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.ColorAssigned = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.colorIsAssignedColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).BeginInit();
             this.contextMenu.SuspendLayout();
             this.SuspendLayout();
@@ -54,13 +54,27 @@ namespace Map2CivilizationView.UserControls
             this.colorDisplayColumn,
             this.idColumn,
             this.settingColumn,
-            this.ColorAssigned});
+            this.colorIsAssignedColumn});
             resources.ApplyResources(this.gridView, "gridView");
             this.gridView.Name = "gridView";
             this.gridView.RowHeadersVisible = false;
             this.gridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridView.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridView_CellValueChanged);
             this.gridView.SelectionChanged += new System.EventHandler(this.gridView_SelectionChanged);
+            // 
+            // contextMenu
+            // 
+            this.contextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.massAssignMenuEntry});
+            this.contextMenu.Name = "contextMenu";
+            resources.ApplyResources(this.contextMenu, "contextMenu");
+            // 
+            // massAssignMenuEntry
+            // 
+            this.massAssignMenuEntry.Image = global::Map2Civilization.Properties.Resources.Terrain_Image;
+            this.massAssignMenuEntry.Name = "massAssignMenuEntry";
+            resources.ApplyResources(this.massAssignMenuEntry, "massAssignMenuEntry");
+            this.massAssignMenuEntry.Click += new System.EventHandler(this.massAssignMenuEntry_Click);
             // 
             // colorDisplayColumn
             // 
@@ -79,20 +93,6 @@ namespace Map2CivilizationView.UserControls
             this.idColumn.Name = "idColumn";
             this.idColumn.ReadOnly = true;
             // 
-            // contextMenu
-            // 
-            this.contextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.massAssignMenuEntry});
-            this.contextMenu.Name = "contextMenu";
-            resources.ApplyResources(this.contextMenu, "contextMenu");
-            // 
-            // massAssignMenuEntry
-            // 
-            this.massAssignMenuEntry.Image = global::Map2Civilization.Properties.Resources.Terrain_Image;
-            this.massAssignMenuEntry.Name = "massAssignMenuEntry";
-            resources.ApplyResources(this.massAssignMenuEntry, "massAssignMenuEntry");
-            this.massAssignMenuEntry.Click += new System.EventHandler(this.massAssignMenuEntry_Click);
-            // 
             // settingColumn
             // 
             this.settingColumn.FillWeight = 60F;
@@ -100,11 +100,11 @@ namespace Map2CivilizationView.UserControls
             this.settingColumn.Name = "settingColumn";
             this.settingColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
-            // ColorAssigned
+            // colorIsAssignedColumn
             // 
-            resources.ApplyResources(this.ColorAssigned, "ColorAssigned");
-            this.ColorAssigned.Name = "ColorAssigned";
-            this.ColorAssigned.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            resources.ApplyResources(this.colorIsAssignedColumn, "colorIsAssignedColumn");
+            this.colorIsAssignedColumn.Name = "colorIsAssignedColumn";
+            this.colorIsAssignedColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // DetectedColorsGrid
             // 
@@ -123,9 +123,9 @@ namespace Map2CivilizationView.UserControls
          System.Windows.Forms.DataGridView gridView;
          System.Windows.Forms.ContextMenuStrip contextMenu;
          System.Windows.Forms.ToolStripMenuItem massAssignMenuEntry;
-         System.Windows.Forms.DataGridViewImageColumn colorDisplayColumn;
-         System.Windows.Forms.DataGridViewTextBoxColumn idColumn;
-         System.Windows.Forms.DataGridViewComboBoxColumn settingColumn;
-         System.Windows.Forms.DataGridViewCheckBoxColumn ColorAssigned;
+        private System.Windows.Forms.DataGridViewImageColumn colorDisplayColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idColumn;
+        private System.Windows.Forms.DataGridViewComboBoxColumn settingColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn colorIsAssignedColumn;
     }
 }

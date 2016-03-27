@@ -11,7 +11,7 @@ namespace Map2CivilizationCtrl
 
        
 
-        public static string getDominantColorHex(PlotId plotID)
+        public static string GetDominantColorHex(PlotId plotID)
         {
             PlotReliefMap plot =  (PlotReliefMap)ModelCtrl.GetDataModel().PlotCollection.GetPlot(plotID);
             return plot.HexDominantColor;

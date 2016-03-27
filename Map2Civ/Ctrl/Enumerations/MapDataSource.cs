@@ -8,8 +8,8 @@ namespace Map2CivilizationCtrl.Enumerations
     {
         public enum Enumeration
         {
-            ReliefMapImage,
-            GeoDataProvider
+            ReliefMapImage = 0,
+            GeoDataProvider = 1
         }
 
 

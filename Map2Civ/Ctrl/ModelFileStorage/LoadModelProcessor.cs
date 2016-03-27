@@ -10,7 +10,7 @@ using System.Data;
 using System.Drawing;
 using Map2Civilization.Properties;
 
-namespace Map2Civilization.Ctrl.ModelFileStorage
+namespace Map2CivilizationCtrl.ModelFileStorage
 {
     class LoadModelProcessor : IDisposable
     {
@@ -41,11 +41,11 @@ namespace Map2Civilization.Ctrl.ModelFileStorage
         {
             string fullFilePath = (string)e.Argument;
             //DataSet theSet = ModelDataSet.GetModelEmptyDataSet();
-            DataSet theSet = new DataSet();
+            DataSet theSet = ModelDataSet.GetModelEmptyDataSet();
 
             theSet.ReadXml(fullFilePath);
 
-            decimal progressMaxValue = theSet.Tables["Global"].Rows.Count + theSet.Tables["Plot"].Rows.Count + theSet.Tables["Color"].Rows.Count;
+            decimal progressMaxValue = theSet.Tables[ModelDataSet.GlobalTableName].Rows.Count + theSet.Tables["Plot"].Rows.Count + theSet.Tables["Color"].Rows.Count;
             decimal counter = 0;
 
 
@@ -68,12 +68,20 @@ namespace Map2Civilization.Ctrl.ModelFileStorage
                 g.DrawImageUnscaled(originalImage, 0, 0);
             }
             // read the size of the map
-            MapDimension size = new MapDimension((string)theSet.Tables["Global"].Rows[0]["SelectedMapSize"]);
+            MapDimension size = 
+                new MapDimension((string)theSet.Tables[ModelDataSet.GlobalTableName].
+                Rows[0][ModelDataSet.GlobalTableSelectedMapSizeColName]);
             newDataModel.SelectedMapSize = size;
             newDataModel.DataSourceImage = streamFreeImage;
-            newDataModel.GridType = (GridType.Enumeration)theSet.Tables["Global"].Rows[0]["GridType"];
-            newDataModel.MapDataSource = (MapDataSource.Enumeration) theSet.Tables["Global"].Rows[0]["MapDataSource"];
-            newDataModel.CivilizationVersion = (CivilizationVersion.Enumeration)theSet.Tables["Global"].Rows[0]["CivilizationVersion"];
+            newDataModel.GridType = 
+                (GridType.Enumeration)theSet.Tables[ModelDataSet.GlobalTableName].
+                Rows[0][ModelDataSet.GlobalTableGridTypeColName];
+            newDataModel.MapDataSource = 
+                (MapDataSource.Enumeration) theSet.Tables[ModelDataSet.GlobalTableName].
+                Rows[0][ModelDataSet.GlobalTableMapDataSourceColName];
+            newDataModel.CivilizationVersion = 
+                (CivilizationVersion.Enumeration)theSet.Tables[ModelDataSet.GlobalTableName].
+                Rows[0][ModelDataSet.GlobalTableCivilizationVersionColName];
 
 
 
@@ -83,12 +91,12 @@ namespace Map2Civilization.Ctrl.ModelFileStorage
 
 
 
-            foreach (DataRow temp in theSet.Tables["Plot"].Rows)
+            foreach (DataRow temp in theSet.Tables[ModelDataSet.PlotTableName].Rows)
             {
-                string Id = (string)temp["Id"];
-                TerrainType.Enumeration typeDescriptor = (TerrainType.Enumeration)temp["Terrain"];
-                bool isLocked = (bool)temp["Locked"];
-                string hexColor = (string)temp["Color"];
+                string Id = (string)temp[ModelDataSet.PlotTableIdColName];
+                TerrainType.Enumeration typeDescriptor = (TerrainType.Enumeration)temp[ModelDataSet.PlotTableTerrainColName];
+                bool isLocked = (bool)temp[ModelDataSet.PlotTableLockedColName];
+                string hexColor = (string)temp[ModelDataSet.PlotTableColorColName];
 
                 switch (newDataModel.MapDataSource)
                 {
@@ -110,10 +118,10 @@ namespace Map2Civilization.Ctrl.ModelFileStorage
             }
 
 
-            foreach (DataRow temp in theSet.Tables["Color"].Rows)
+            foreach (DataRow temp in theSet.Tables[ModelDataSet.ColorTableName].Rows)
             {
-                string ID = (string)temp["Id"];
-                TerrainType.Enumeration ctd = (TerrainType.Enumeration)temp["Terrain"];
+                string ID = (string)temp[ModelDataSet.ColorTableIdColName];
+                TerrainType.Enumeration ctd = (TerrainType.Enumeration)temp[ModelDataSet.ColorTableTerrainColName];
                 newDataModel.DetectedColorCollection.UpdateDetectedColor(ID, ctd);
                 counter++;
                 _loadBackgroundWorker.ReportProgress((int)((counter / progressMaxValue) * 100));

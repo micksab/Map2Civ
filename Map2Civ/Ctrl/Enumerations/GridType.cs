@@ -8,9 +8,9 @@ namespace Map2CivilizationCtrl.Enumerations
     {
         public enum Enumeration
         {
-            Square,
-            HexagonalPT,
-            Rhombus
+            Square = 0,
+            HexagonalPT = 1,
+            Rhombus = 2
         }
 
 

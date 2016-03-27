@@ -8,9 +8,9 @@ namespace Map2CivilizationCtrl.Enumerations
     {
         public enum Enumeration
         {
-            Unspecified,
-            ColorEditor,
-            PlotEditor
+            Unspecified = 0,
+            ColorEditor = 1,
+            PlotEditor = 2
         }
 
         #region Singleton methods
