@@ -277,13 +277,13 @@
     <value>Fill</value>
   </data>
   <data name="wNumeric.Location" type="System.Drawing.Point, System.Drawing">
-    <value>668, 51</value>
+    <value>650, 51</value>
   </data>
   <data name="wNumeric.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
   <data name="wNumeric.Size" type="System.Drawing.Size, System.Drawing">
-    <value>139, 20</value>
+    <value>157, 20</value>
   </data>
   <data name="wNumeric.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
@@ -310,7 +310,7 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="wTrackBar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>609, 22</value>
+    <value>591, 22</value>
   </data>
   <data name="wTrackBar.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
@@ -367,13 +367,13 @@
     <value>Fill</value>
   </data>
   <data name="yNumeric.Location" type="System.Drawing.Point, System.Drawing">
-    <value>668, 27</value>
+    <value>650, 27</value>
   </data>
   <data name="yNumeric.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
   <data name="yNumeric.Size" type="System.Drawing.Size, System.Drawing">
-    <value>139, 20</value>
+    <value>157, 20</value>
   </data>
   <data name="yNumeric.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -400,7 +400,7 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="yTrackBar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>609, 21</value>
+    <value>591, 21</value>
   </data>
   <data name="yTrackBar.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -499,7 +499,7 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="xTrackBar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>609, 21</value>
+    <value>591, 21</value>
   </data>
   <data name="xTrackBar.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -520,13 +520,13 @@
     <value>Fill</value>
   </data>
   <data name="xNumeric.Location" type="System.Drawing.Point, System.Drawing">
-    <value>668, 3</value>
+    <value>650, 3</value>
   </data>
   <data name="xNumeric.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
   <data name="xNumeric.Size" type="System.Drawing.Size, System.Drawing">
-    <value>139, 20</value>
+    <value>157, 20</value>
   </data>
   <data name="xNumeric.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -574,7 +574,7 @@
     <value>1</value>
   </data>
   <data name="slidersPanel.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="wNumeric" Row="2" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="wTrackBar" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="wLabel" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="yNumeric" Row="1" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="yTrackBar" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="yLabel" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="xLabel" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="xTrackBar" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="xNumeric" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Absolute,50,Percent,100,Absolute,139" /&gt;&lt;Rows Styles="Percent,33.33333,Percent,33.33333,Percent,33.33333" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="wNumeric" Row="2" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="wTrackBar" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="wLabel" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="yNumeric" Row="1" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="yTrackBar" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="yLabel" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="xLabel" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="xTrackBar" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="xNumeric" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Absolute,50,Percent,100,Absolute,157" /&gt;&lt;Rows Styles="Percent,33.33333,Percent,33.33333,Percent,33.33333" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="imagePanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>

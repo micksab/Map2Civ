@@ -117,124 +117,34 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="cancelButton.Text" xml:space="preserve">
-    <value>Ακύρωση</value>
+  <data name="creditsButton.Text" xml:space="preserve">
+    <value>Συντελεστές</value>
   </data>
-  <data name="applyButton.Text" xml:space="preserve">
-    <value>Εφαρμογή Αλλαγών</value>
+  <data name="labelProductName.Text" xml:space="preserve">
+    <value>Ονομασία Προϊόντος</value>
   </data>
-  <data name="generalTabPage.Text" xml:space="preserve">
-    <value>Γενικά</value>
+  <data name="labelCopyright.Text" xml:space="preserve">
+    <value>Copyright</value>
   </data>
-  <data name="highlightedPlotGridColorLabel.Text" xml:space="preserve">
-    <value>Χρώμα Πλέγματος Επιλεγμένου Τομέα</value>
+  <data name="labelVersion.Text" xml:space="preserve">
+    <value>Έκδοση</value>
+  </data>
+  <data name="textBoxDescription.Text" xml:space="preserve">
+    <value>Map2Civilization is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.
+
+Map2Civilization is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along with Map2Civilization .  If not, see http://www.gnu.org/licenses/.
+
+</value>
+  </data>
+  <data name="licenseLabel.Text" xml:space="preserve">
+    <value>Άδεια Χρήσης:</value>
+  </data>
+  <data name="okButton.Text" xml:space="preserve">
+    <value>Έξοδος</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Ρυθμίσεις</value>
-  </data>
-  <data name="labelKeyShrortcuts_RepealAssignment.Text" xml:space="preserve">
-    <value>Ακύρωση Ανάθεσης Ανάγλυφου</value>
-  </data>
-  <data name="labelKeyShrortcuts_OpenModel.Text" xml:space="preserve">
-    <value>Φόρτωση Υπάρχοντος Μοντέλου</value>
-  </data>
-  <data name="labelKeyShrortcuts_SaveAs.Text" xml:space="preserve">
-    <value>Αποθήκευση Ως</value>
-  </data>
-  <data name="labelKeyShrortcuts_Save.Text" xml:space="preserve">
-    <value>Αποθήκευση</value>
-  </data>
-  <data name="labelKeyShrortcuts_NewModel.Text" xml:space="preserve">
-    <value>Δημιουργία Νέου Μοντέλου</value>
-  </data>
-  <data name="labelKeyShrortcuts_ExportToCivMap.Text" xml:space="preserve">
-    <value>Αποθήκευση Σε Χάρτη Civilization</value>
-  </data>
-  <data name="labelKeyShrortcuts_EditRegion.Text" xml:space="preserve">
-    <value>Επεξεργασία Περιοχής</value>
-  </data>
-  <data name="labelKeyShrortcuts_EditPlotData.Text" xml:space="preserve">
-    <value>Μεταβολή Δεδομένων Τομέα</value>
-  </data>
-  <data name="labelKeyShrortcuts_AssignOcean.Text" xml:space="preserve">
-    <value>Ανάθεση Αναγλύφου 'Ωκεανός'</value>
-  </data>
-  <data name="labelKeyShrortcuts_AssignCoast.Text" xml:space="preserve">
-    <value>Ανάθεση Αναγλύφου 'Ακτή'</value>
-  </data>
-  <data name="labelKeyShrortcuts_AssignFlat.Text" xml:space="preserve">
-    <value>Ανάθεση Αναγλύφου 'Πεδιάδα'</value>
-  </data>
-  <data name="labelKeyShrortcuts_AssignHill.Text" xml:space="preserve">
-    <value>Ανάθεση Αναγλύφου 'Λόφος'</value>
-  </data>
-  <data name="labelKeyShrortcuts_AssignMountain.Text" xml:space="preserve">
-    <value>Ανάθεση Αναγλύφου 'Όρος'</value>
-  </data>
-  <data name="keyboardShortcutsTabPage.Text" xml:space="preserve">
-    <value>Συντομεύσεις Πλήκτρων</value>
-  </data>
-  <data name="mapDisplayTabPage.Text" xml:space="preserve">
-    <value>Προβολή Χάρτη</value>
-  </data>
-  <data name="uiCultureLabel.Text" xml:space="preserve">
-    <value>Γλώσσα</value>
-  </data>
-  <data name="revertButton.Text" xml:space="preserve">
-    <value>Επαναφορά Προτεινόμενων Ρυθμίσεων</value>
-  </data>
-  <data name="gridGroup.Text" xml:space="preserve">
-    <value>Πλέγμα</value>
-  </data>
-  <data name="processedMapUnassignedGridColorLabel.Text" xml:space="preserve">
-    <value>Χρώμα Πλέγματος Μη Ανατεθειμένου Τομέα</value>
-  </data>
-  <data name="originalMapGridLabel.Text" xml:space="preserve">
-    <value>Χρώμα Πλέγματος Πηγαίου Χάρτη</value>
-  </data>
-  <data name="plotWidthGroup.Text" xml:space="preserve">
-    <value>Πλάτος Τομέα</value>
-  </data>
-  <data name="rhombusPlotWidthLabel.Text" xml:space="preserve">
-    <value>Πλάτος Τομέα Σχήματος Ρόμβου</value>
-  </data>
-  <data name="squarePlotWidthLabel.Text" xml:space="preserve">
-    <value>Πλάτος Τομέα Σχήματος Τετραγώνου</value>
-  </data>
-  <data name="hexPlotWidthLabel.Text" xml:space="preserve">
-    <value>Πλάτος Τομέα Σχήματος Εξαγώνου</value>
-  </data>
-  <data name="terrainGroup.Text" xml:space="preserve">
-    <value>Χρώματα Αναγλύφου</value>
-  </data>
-  <data name="mountainPlotLabel.Text" xml:space="preserve">
-    <value>Χρώμα Όρους</value>
-  </data>
-  <data name="hillPlotLabel.Text" xml:space="preserve">
-    <value>Χρώμα Λόφου</value>
-  </data>
-  <data name="flatPlotLabel.Text" xml:space="preserve">
-    <value>Χρώμα Πεδιάδας</value>
-  </data>
-  <data name="coastPlotLabel.Text" xml:space="preserve">
-    <value>Χρώμα Ακτής</value>
-  </data>
-  <data name="ocealPlotLabel.Text" xml:space="preserve">
-    <value>Χρώμα Ωκεανού</value>
-  </data>
-  <data name="zoomGroup.Text" xml:space="preserve">
-    <value>Μεγέθυνσης</value>
-  </data>
-  <data name="zoomStepLabel.Text" xml:space="preserve">
-    <value>Κλίμακα Μεταβολής Μεγέθυνσης (%)</value>
-  </data>
-  <data name="maximumZoomLabel.Text" xml:space="preserve">
-    <value>Μέγιστη Τιμή Μεγέθυνσης</value>
-  </data>
-  <data name="minZoomLabel.Text" xml:space="preserve">
-    <value>Ελάχιστη Τιμή Μεγέθυνσης</value>
-  </data>
-  <data name="highlightedPlotGridWidthLabel.Text" xml:space="preserve">
-    <value>Πλάτος Πλέγματος Επιλεγμένου Τομέα</value>
+    <value>Πληροφορίες</value>
   </data>
 </root>

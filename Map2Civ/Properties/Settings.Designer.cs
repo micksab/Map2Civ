@@ -15,7 +15,7 @@ namespace Map2Civilization.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "14.0.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
-         static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
+        private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
         
         public static Settings Default {
             get {
@@ -380,6 +380,18 @@ namespace Map2Civilization.Properties {
             }
             set {
                 this["KeyShrortcuts_OpenModel"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("X")]
+        public global::System.Windows.Forms.Keys KeyShrortcuts_RepealAssignment {
+            get {
+                return ((global::System.Windows.Forms.Keys)(this["KeyShrortcuts_RepealAssignment"]));
+            }
+            set {
+                this["KeyShrortcuts_RepealAssignment"] = value;
             }
         }
     }

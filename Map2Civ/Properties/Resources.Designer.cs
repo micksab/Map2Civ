@@ -321,6 +321,19 @@ namespace Map2Civilization.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Map2Civilization is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.
+        ///
+        ///Map2Civilization is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+        ///
+        ///You should have received [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Str_AboutBox_CopyrightInfo {
+            get {
+                return ResourceManager.GetString("Str_AboutBox_CopyrightInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to About.
         /// </summary>
         internal static string Str_AboutForm_About {
@@ -627,7 +640,7 @@ namespace Map2Civilization.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Analyzing Plots.
+        ///   Looks up a localized string similar to Analyzing Plots (.
         /// </summary>
         internal static string Str_NewMapForm_AnalysingPlotsPart1 {
             get {

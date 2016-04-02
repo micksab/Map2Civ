@@ -83,7 +83,7 @@ namespace Map2CivilizationView
             this.resizeButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.resizeButton.Image = global::Map2Civilization.Properties.Resources.CanvasResize_Image;
             this.resizeButton.Name = "resizeButton";
-            this.resizeButton.Click += new System.EventHandler(this.resizeButton_Click);
+            this.resizeButton.Click += new System.EventHandler(this.ResizeButton_Click);
             // 
             // cancelButton
             // 
@@ -109,7 +109,7 @@ namespace Map2CivilizationView
             this.selectAreaOnButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.selectAreaOnButton.Image = global::Map2Civilization.Properties.Resources.Select_Image;
             this.selectAreaOnButton.Name = "selectAreaOnButton";
-            this.selectAreaOnButton.Click += new System.EventHandler(this.selectAreaButton_Click);
+            this.selectAreaOnButton.Click += new System.EventHandler(this.SelectAreaButton_Click);
             // 
             // selectAreaOffButton
             // 
@@ -117,7 +117,7 @@ namespace Map2CivilizationView
             this.selectAreaOffButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.selectAreaOffButton.Image = global::Map2Civilization.Properties.Resources.SelectOff_Image;
             this.selectAreaOffButton.Name = "selectAreaOffButton";
-            this.selectAreaOffButton.Click += new System.EventHandler(this.selectAreaButton_Click);
+            this.selectAreaOffButton.Click += new System.EventHandler(this.SelectAreaButton_Click);
             // 
             // statusStrip
             // 
@@ -180,7 +180,7 @@ namespace Map2CivilizationView
             this.wNumeric.Name = "wNumeric";
             this.wNumeric.ReadOnly = true;
             this.wNumeric.TabStop = false;
-            this.wNumeric.ValueChanged += new System.EventHandler(this.wValueChanged);
+            this.wNumeric.ValueChanged += new System.EventHandler(this.WValueChanged);
             // 
             // wTrackBar
             // 
@@ -189,7 +189,7 @@ namespace Map2CivilizationView
             this.wTrackBar.Maximum = 1000;
             this.wTrackBar.Name = "wTrackBar";
             this.wTrackBar.TabStop = false;
-            this.wTrackBar.ValueChanged += new System.EventHandler(this.wValueChanged);
+            this.wTrackBar.ValueChanged += new System.EventHandler(this.WValueChanged);
             // 
             // wLabel
             // 
@@ -208,7 +208,7 @@ namespace Map2CivilizationView
             this.yNumeric.Name = "yNumeric";
             this.yNumeric.ReadOnly = true;
             this.yNumeric.TabStop = false;
-            this.yNumeric.ValueChanged += new System.EventHandler(this.yValueChanged);
+            this.yNumeric.ValueChanged += new System.EventHandler(this.YValueChanged);
             // 
             // yTrackBar
             // 
@@ -217,7 +217,7 @@ namespace Map2CivilizationView
             this.yTrackBar.Maximum = 1000;
             this.yTrackBar.Name = "yTrackBar";
             this.yTrackBar.TabStop = false;
-            this.yTrackBar.ValueChanged += new System.EventHandler(this.yValueChanged);
+            this.yTrackBar.ValueChanged += new System.EventHandler(this.YValueChanged);
             // 
             // yLabel
             // 
@@ -238,7 +238,7 @@ namespace Map2CivilizationView
             this.xTrackBar.Maximum = 1000;
             this.xTrackBar.Name = "xTrackBar";
             this.xTrackBar.TabStop = false;
-            this.xTrackBar.ValueChanged += new System.EventHandler(this.xValueChanged);
+            this.xTrackBar.ValueChanged += new System.EventHandler(this.XValueChanged);
             // 
             // xNumeric
             // 
@@ -251,14 +251,13 @@ namespace Map2CivilizationView
             this.xNumeric.Name = "xNumeric";
             this.xNumeric.ReadOnly = true;
             this.xNumeric.TabStop = false;
-            this.xNumeric.ValueChanged += new System.EventHandler(this.xValueChanged);
+            this.xNumeric.ValueChanged += new System.EventHandler(this.XValueChanged);
             // 
             // imagePanel
             // 
             this.imagePanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             resources.ApplyResources(this.imagePanel, "imagePanel");
             this.imagePanel.Name = "imagePanel";
-            this.imagePanel.Resize += new System.EventHandler(this.imagePanel_Resize);
             // 
             // ImageEditor
             // 

@@ -13,7 +13,7 @@ namespace Map2CivilizationView.UserControls
          Panel _basePanel = new Panel();
          PictureBox _pictureBox = new PictureBox();
          SelectedPlotPanel _markerCtrl;
-         bool _AllowScroll = true;
+         bool _allowScroll = true;
 
 
          PlotId _currentPlotId;
@@ -90,7 +90,6 @@ namespace Map2CivilizationView.UserControls
             _basePanel.Margin = new Padding(0, 0, 0, 0);
             _basePanel.AutoScroll = false;
             _basePanel.Controls.Add(_pictureBox);
-            _basePanel.MouseWheel += BasePanelMouseWheel;
 
             _pictureBox.Dock = DockStyle.None;
             _pictureBox.Size = new Size(0, 0);
@@ -100,18 +99,25 @@ namespace Map2CivilizationView.UserControls
             _pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
 
 
+            //Due to differences in how each operating system (in our case Windows XP, 7 and 10)
+            //handle focus, an event listener for MouseWheel event is created for all possible 
+            // focus receivers. They all point to the same event handler.
+            MouseWheel += PictureBoxMouseWheel;
+            _basePanel.MouseWheel += PictureBoxMouseWheel;
+            _pictureBox.MouseWheel += PictureBoxMouseWheel;
 
-
-            HandleDestroyed += MapControlBase_Closing;
             KeyDown += MapControlBase_KeyDown;
+
             _pictureBox.Click += PictureBox_Click;
             _pictureBox.MouseDown += pictureBox_MouseDown;
             _pictureBox.MouseMove += pictureBox_MouseMove;
             _pictureBox.MouseUp += pictureBox_MouseUp;
-            _pictureBox.MouseWheel += PictureBoxMouseWheel;
 
             _markerCtrl = new SelectedPlotPanel(this);
             RegisteredListenersCtrl.ZoomListeners.RegisterObserver(this);
+
+            HandleDestroyed += MapControlBase_Closing;
+
 
         }
 
@@ -121,7 +127,7 @@ namespace Map2CivilizationView.UserControls
 
         protected  void AllowScroll(Boolean value)
         {
-            _AllowScroll = value;
+            _allowScroll = value;
             _basePanel.AutoScroll = value;
             _basePanel.HorizontalScroll.Visible = value;
             _basePanel.VerticalScroll.Visible = value;
@@ -183,15 +189,20 @@ namespace Map2CivilizationView.UserControls
 
 
         
-        protected void BasePanelMouseWheel(object sender, MouseEventArgs e)
-        {
-            //Do nothing
-        }
+        
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1707:IdentifiersShouldNotContainUnderscores")]
         protected void MapControlBase_Closing(object sender, EventArgs e)
         {
-            //mapBitmap = null;
+            MouseWheel -= PictureBoxMouseWheel;
+            _basePanel.MouseWheel -= PictureBoxMouseWheel;
+            _pictureBox.MouseWheel -= PictureBoxMouseWheel;
+            KeyDown -= MapControlBase_KeyDown;
+            _pictureBox.Click -= PictureBox_Click;
+            _pictureBox.MouseDown -= pictureBox_MouseDown;
+            _pictureBox.MouseMove -= pictureBox_MouseMove;
+            _pictureBox.MouseUp -= pictureBox_MouseUp;
+
             RegisteredListenersCtrl.PlotLocationListeners.DeregisterObserver(this);
             RegisteredListenersCtrl.ZoomListeners.DeregisterObserver(this);
 
@@ -321,16 +332,19 @@ namespace Map2CivilizationView.UserControls
 
         public void ZoomChanged(float value)
         {
-            float newWidth = _pictureBox.BackgroundImage.Width * (value/100f);
-            float newHeight = _pictureBox.BackgroundImage.Height * (value/100f);
-            _pictureBox.Size = new Size((int)Math.Ceiling(newWidth), (int)Math.Ceiling(newHeight));
-
-            if(!_AllowScroll)
+            if (_pictureBox.BackgroundImage != null)
             {
-                Size = new Size((int)Math.Ceiling(newWidth), (int)Math.Ceiling(newHeight));
-            }
-            _markerCtrl.RepositionSelectedPlotPanel(_currentPlotId);
+                float newWidth = _pictureBox.BackgroundImage.Width * (value / 100f);
+                float newHeight = _pictureBox.BackgroundImage.Height * (value / 100f);
+                _pictureBox.Size = new Size((int)Math.Ceiling(newWidth), (int)Math.Ceiling(newHeight));
 
+                if (!_allowScroll)
+                {
+                    Size = new Size((int)Math.Ceiling(newWidth), (int)Math.Ceiling(newHeight));
+                }
+                _markerCtrl.RepositionSelectedPlotPanel(_currentPlotId);
+
+            }
         }
 
         #endregion

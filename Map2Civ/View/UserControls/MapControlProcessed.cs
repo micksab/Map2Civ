@@ -7,6 +7,7 @@ using Map2CivilizationCtrl;
 using Map2CivilizationCtrl.DataStructure;
 using Map2CivilizationCtrl.Enumerations;
 using Map2CivilizationCtrl.Listener;
+using System.Diagnostics;
 
 namespace Map2CivilizationView.UserControls
 {
@@ -97,9 +98,6 @@ namespace Map2CivilizationView.UserControls
 
          void MapControl_KeyDown(object sender, KeyEventArgs e)
         {
-
-            TerrainType.Enumeration combDescr = TerrainType.Enumeration.NotDefined;
-            
             if(_currentMode == ProcessedMapControlMode.Enumeration.ColorEditor)
             {
                 if (e.KeyData == Map2Civilization.Properties.Settings.Default.KeyShrortcuts_EditRegion )
@@ -113,36 +111,38 @@ namespace Map2CivilizationView.UserControls
             }
             else if (_currentMode == ProcessedMapControlMode.Enumeration.PlotEditor)
             {
+                
+
                 if (e.KeyData == Map2Civilization.Properties.Settings.Default.KeyShrortcuts_AssignOcean)
                 {
-                    combDescr = TerrainType.Enumeration.Ocean;
-                    PlotCollectionCtrl.UpdatePlotCombinedPlotDescriptors(CurrentPlotId, combDescr, true);
+                    PlotCollectionCtrl.UpdatePlotPlotTerrain(CurrentPlotId, TerrainType.Enumeration.Ocean, true);
 
                 }
                 else if (e.KeyData == Map2Civilization.Properties.Settings.Default.KeyShrortcuts_AssignCoast)
                 {
-                    combDescr = TerrainType.Enumeration.Coast;
-                    PlotCollectionCtrl.UpdatePlotCombinedPlotDescriptors(CurrentPlotId, combDescr, true);
+                    PlotCollectionCtrl.UpdatePlotPlotTerrain(CurrentPlotId, TerrainType.Enumeration.Coast, true);
 
                 }
                 else if (e.KeyData == Map2Civilization.Properties.Settings.Default.KeyShrortcuts_AssignFlat)
                 {
-                    combDescr = TerrainType.Enumeration.Flat;
-                    PlotCollectionCtrl.UpdatePlotCombinedPlotDescriptors(CurrentPlotId, combDescr, true);
+                    PlotCollectionCtrl.UpdatePlotPlotTerrain(CurrentPlotId, TerrainType.Enumeration.Flat, true);
 
                 }
                 else if (e.KeyData == Map2Civilization.Properties.Settings.Default.KeyShrortcuts_AssignHill)
                 {
-                    combDescr = TerrainType.Enumeration.Hills;
-                    PlotCollectionCtrl.UpdatePlotCombinedPlotDescriptors(CurrentPlotId, combDescr, true);
+                    PlotCollectionCtrl.UpdatePlotPlotTerrain(CurrentPlotId, TerrainType.Enumeration.Hills, true);
 
                 }
                 else if (e.KeyData == Map2Civilization.Properties.Settings.Default.KeyShrortcuts_AssignMountain)
                 {
-                    combDescr = TerrainType.Enumeration.Mountains;
-                    PlotCollectionCtrl.UpdatePlotCombinedPlotDescriptors(CurrentPlotId, combDescr, true);
+                    PlotCollectionCtrl.UpdatePlotPlotTerrain(CurrentPlotId, TerrainType.Enumeration.Mountains, true);
+                }
+                else if (e.KeyData == Map2Civilization.Properties.Settings.Default.KeyShrortcuts_RepealAssignment)
+                {
+                    PlotCollectionCtrl.ResetManuallyLockedPlot(CurrentPlotId);
                 }
 
+                
             }
 
             
@@ -172,14 +172,13 @@ namespace Map2CivilizationView.UserControls
                 e.SourceMenuValue == TerrainType.Enumeration.Flat || e.SourceMenuValue == TerrainType.Enumeration.Hills ||
                 e.SourceMenuValue == TerrainType.Enumeration.Mountains)
             {
-                PlotCollectionCtrl.UpdatePlotCombinedPlotDescriptors(CurrentPlotId, e.SourceMenuValue, true);
+                PlotCollectionCtrl.UpdatePlotPlotTerrain(CurrentPlotId, e.SourceMenuValue, true);
 
             }
 
             if (e.SourceMenuValue == TerrainType.Enumeration.NotDefined)
             {
-                PlotCollectionCtrl.UpdatePlotCombinedPlotDescriptors(CurrentPlotId, e.SourceMenuValue, false);
-
+                PlotCollectionCtrl.ResetManuallyLockedPlot(CurrentPlotId);
             }
 
         }

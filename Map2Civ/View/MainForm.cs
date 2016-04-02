@@ -374,7 +374,7 @@ namespace Map2CivilizationView
 
          void defaultZoomButton_Click(object sender, EventArgs e)
         {
-            RegisteredListenersCtrl.ZoomChangedUpdate(1f);
+            RegisteredListenersCtrl.ZoomChangedUpdate(100f);
         }
     }
 }

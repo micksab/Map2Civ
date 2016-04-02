@@ -92,5 +92,8 @@
     <Setting Name="KeyShrortcuts_OpenModel" Type="System.Windows.Forms.Keys" Scope="User">
       <Value Profile="(Default)">Ctrl+O</Value>
     </Setting>
+    <Setting Name="KeyShrortcuts_RepealAssignment" Type="System.Windows.Forms.Keys" Scope="User">
+      <Value Profile="(Default)">X</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

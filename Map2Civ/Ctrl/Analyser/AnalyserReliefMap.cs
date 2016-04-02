@@ -90,7 +90,7 @@ namespace Map2CivilizationCtrl.Analyzer
             // to be necessary in order to:
             // 1/ Extract the bitmaps of the plots as fast as possible
             // 2/ Extract each of these bitmaps on its own (instead of producing a list of bitmaps
-            // for all the plots), so that the temporary memory usage 'bump' due to this process
+            // for all the plots), so that the temporary memory usage "spike" due to this process
             // is kept to a minimum.
             using (Brush br = new TextureBrush(analysisImage))
             {
@@ -148,12 +148,15 @@ namespace Map2CivilizationCtrl.Analyzer
                 }
                 else
                 {
-                    throw e.Error;
+                    using (ErrorForm errorForm = new ErrorForm(true, Map2Civilization.Properties.Resources.Str_AnalyserReliefMap_ErrorCreatingModel, e.Error))
+                    {
+                        errorForm.ShowDialog();
+                    }
                 }
             }
             catch (Exception ex)
             {
-                using (ErrorForm errorForm = new ErrorForm(false, Map2Civilization.Properties.Resources.Str_AnalyserReliefMap_ErrorCreatingModel, ex))
+                using (ErrorForm errorForm = new ErrorForm(true, Map2Civilization.Properties.Resources.Str_AnalyserReliefMap_ErrorCreatingModel, ex))
                 {
                     errorForm.ShowDialog();
                 }

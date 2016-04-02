@@ -47,22 +47,14 @@ namespace Map2CivilizationCtrl
 
         public static Bitmap GenerateAnalysisImage(Bitmap modelBitmap, SourceReliefMapSettings settings)
         {
-            /******** TEST CODE - REMEMBER TO REMOVE ********/
-            //string timeStampStr = System.DateTime.Now.ToString("yyyyMMdd_HHmmss_");
-            //string savePathRoot = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
-            //string savePath = System.IO.Path.Combine(savePathRoot, "CreateTest");
-            //if (!System.IO.Directory.Exists(savePath))
-            //{
-            //    System.IO.Directory.CreateDirectory(savePath);
-            //}
-            //modelBitmap.Save(System.IO.Path.Combine(savePath, string.Concat(timeStampStr, "ModelSourceImage", ".bmp")));
-            /************************************************/
+            
 
 
             switch (modelBitmap.PixelFormat == settings.PixelFormat)
             {
                 case false:
-                    Bitmap toReturn = modelBitmap.Clone(new Rectangle(0, 0,
+                    Bitmap intermediateBitmap = new Bitmap(modelBitmap);
+                    Bitmap toReturn = intermediateBitmap.Clone(new Rectangle(0, 0,
                                 modelBitmap.Width, modelBitmap.Height), settings.PixelFormat);
 
                     /******** TEST CODE - REMEMBER TO REMOVE ********/

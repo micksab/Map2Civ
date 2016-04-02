@@ -20,7 +20,7 @@ namespace Map2CivilizationCtrl
        
 
 
-        public static void UpdatePlotCombinedPlotDescriptors(PlotId plotID, 
+        public static void UpdatePlotPlotTerrain(PlotId plotID, 
             TerrainType.Enumeration descriptor, Boolean IsLocked)
         {
             Plot plot = PlotCollectionCtrl.getPlot(plotID);
@@ -39,7 +39,12 @@ namespace Map2CivilizationCtrl
         
 
 
-        
+        public static void ResetManuallyLockedPlot(PlotId plotID)
+        {
+            string dominantColor = GetDominantColorHex(plotID);
+            TerrainType.Enumeration terrain = DetectedColorCollectionCtrl.getCombinedDescriptorByColorID(dominantColor);
+            UpdatePlotPlotTerrain(plotID, terrain, false);
+        }
 
 
 

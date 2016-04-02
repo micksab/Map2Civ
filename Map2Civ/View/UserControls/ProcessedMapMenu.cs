@@ -113,7 +113,8 @@ namespace Map2CivilizationView.UserControls
             _removeTerrainMenuItem.Image = Resources.Cancel_Image;
             _removeTerrainMenuItem.Name = TerrainType.Enumeration.Mountains.ToString();
             _removeTerrainMenuItem.Size = new System.Drawing.Size(202, 22);
-            _removeTerrainMenuItem.Text = Resources.Str_ProcessedMapMenu_DeAssign_Text;
+            _removeTerrainMenuItem.Text = Resources.Str_ProcessedMapMenu_DeAssign_Text + " (" +
+               VariousUtilityMethods.FormatKeyStringRepresentation(Settings.Default.KeyShrortcuts_RepealAssignment) + ")";
             _removeTerrainMenuItem.Click += plotMenuStrip_Click;
 
             setMode(mode);

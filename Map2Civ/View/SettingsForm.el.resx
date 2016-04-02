@@ -123,14 +123,17 @@
   <data name="applyButton.Text" xml:space="preserve">
     <value>Εφαρμογή Αλλαγών</value>
   </data>
-  <data name="uiCultureLabel.Text" xml:space="preserve">
-    <value>Γλώσσα</value>
-  </data>
-  <data name="revertButton.Text" xml:space="preserve">
-    <value>Επαναφορά Προτεινόμενων Ρυθμίσεων</value>
-  </data>
   <data name="generalTabPage.Text" xml:space="preserve">
     <value>Γενικά</value>
+  </data>
+  <data name="highlightedPlotGridColorLabel.Text" xml:space="preserve">
+    <value>Χρώμα Πλέγματος Επιλεγμένου Τομέα</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Ρυθμίσεις</value>
+  </data>
+  <data name="labelKeyShrortcuts_RepealAssignment.Text" xml:space="preserve">
+    <value>Ακύρωση Ανάθεσης Ανάγλυφου</value>
   </data>
   <data name="labelKeyShrortcuts_OpenModel.Text" xml:space="preserve">
     <value>Φόρτωση Υπάρχοντος Μοντέλου</value>
@@ -141,11 +144,11 @@
   <data name="labelKeyShrortcuts_Save.Text" xml:space="preserve">
     <value>Αποθήκευση</value>
   </data>
-  <data name="labelKeyShrortcuts_ExportToCivMap.Text" xml:space="preserve">
-    <value>Αποθήκευση Σε Χάρτη Civilization</value>
-  </data>
   <data name="labelKeyShrortcuts_NewModel.Text" xml:space="preserve">
     <value>Δημιουργία Νέου Μοντέλου</value>
+  </data>
+  <data name="labelKeyShrortcuts_ExportToCivMap.Text" xml:space="preserve">
+    <value>Αποθήκευση Σε Χάρτη Civilization</value>
   </data>
   <data name="labelKeyShrortcuts_EditRegion.Text" xml:space="preserve">
     <value>Επεξεργασία Περιοχής</value>
@@ -171,11 +174,17 @@
   <data name="keyboardShortcutsTabPage.Text" xml:space="preserve">
     <value>Συντομεύσεις Πλήκτρων</value>
   </data>
-  <data name="highlightedPlotGridWidthLabel.Text" xml:space="preserve">
-    <value>Πλάτος Πλέγματος Επιλεγμένου Τομέα</value>
+  <data name="mapDisplayTabPage.Text" xml:space="preserve">
+    <value>Προβολή Χάρτη</value>
   </data>
-  <data name="highlightedPlotGridColorLabel.Text" xml:space="preserve">
-    <value>Χρώμα Πλέγματος Επιλεγμένου Τομέα</value>
+  <data name="uiCultureLabel.Text" xml:space="preserve">
+    <value>Γλώσσα</value>
+  </data>
+  <data name="revertButton.Text" xml:space="preserve">
+    <value>Επαναφορά Προτεινόμενων Ρυθμίσεων</value>
+  </data>
+  <data name="gridGroup.Text" xml:space="preserve">
+    <value>Πλέγμα</value>
   </data>
   <data name="processedMapUnassignedGridColorLabel.Text" xml:space="preserve">
     <value>Χρώμα Πλέγματος Μη Ανατεθειμένου Τομέα</value>
@@ -183,8 +192,8 @@
   <data name="originalMapGridLabel.Text" xml:space="preserve">
     <value>Χρώμα Πλέγματος Πηγαίου Χάρτη</value>
   </data>
-  <data name="gridGroup.Text" xml:space="preserve">
-    <value>Πλέγμα</value>
+  <data name="plotWidthGroup.Text" xml:space="preserve">
+    <value>Πλάτος Τομέα</value>
   </data>
   <data name="rhombusPlotWidthLabel.Text" xml:space="preserve">
     <value>Πλάτος Τομέα Σχήματος Ρόμβου</value>
@@ -195,8 +204,8 @@
   <data name="hexPlotWidthLabel.Text" xml:space="preserve">
     <value>Πλάτος Τομέα Σχήματος Εξαγώνου</value>
   </data>
-  <data name="plotWidthGroup.Text" xml:space="preserve">
-    <value>Πλάτος Τομέα</value>
+  <data name="terrainGroup.Text" xml:space="preserve">
+    <value>Χρώματα Αναγλύφου</value>
   </data>
   <data name="mountainPlotLabel.Text" xml:space="preserve">
     <value>Χρώμα Όρους</value>
@@ -213,8 +222,8 @@
   <data name="ocealPlotLabel.Text" xml:space="preserve">
     <value>Χρώμα Ωκεανού</value>
   </data>
-  <data name="terrainGroup.Text" xml:space="preserve">
-    <value>Χρώματα Αναγλύφου</value>
+  <data name="zoomGroup.Text" xml:space="preserve">
+    <value>Μεγέθυνσης</value>
   </data>
   <data name="zoomStepLabel.Text" xml:space="preserve">
     <value>Κλίμακα Μεταβολής Μεγέθυνσης (%)</value>
@@ -225,13 +234,7 @@
   <data name="minZoomLabel.Text" xml:space="preserve">
     <value>Ελάχιστη Τιμή Μεγέθυνσης</value>
   </data>
-  <data name="zoomGroup.Text" xml:space="preserve">
-    <value>Μεγέθυνσης</value>
-  </data>
-  <data name="mapDisplayTabPage.Text" xml:space="preserve">
-    <value>Προβολή Χάρτη</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Ρυθμίσεις</value>
+  <data name="highlightedPlotGridWidthLabel.Text" xml:space="preserve">
+    <value>Πλάτος Πλέγματος Επιλεγμένου Τομέα</value>
   </data>
 </root>

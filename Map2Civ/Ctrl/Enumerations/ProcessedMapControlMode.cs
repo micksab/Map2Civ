@@ -36,7 +36,6 @@ namespace Map2CivilizationCtrl.Enumerations
                 {
                     _singleInstance = new ProcessedMapControlMode();
                 }
-
                 return _singleInstance;
             }
         }

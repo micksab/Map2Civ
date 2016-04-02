@@ -42,6 +42,7 @@ namespace Map2CivilizationView
         const string KeyShrortcuts_AssignFlat = "KeyShrortcuts_AssignFlat";
         const string KeyShrortcuts_AssignCoast = "KeyShrortcuts_AssignCoast";
         const string KeyShrortcuts_OpenModel = "KeyShrortcuts_OpenModel";
+        const string KeyShortcuts_RepealAssignment = "KeyShrortcuts_RepealAssignment";
         const string UiCulture = "UICulture";
 
        
@@ -82,6 +83,8 @@ namespace Map2CivilizationView
             _settingControlList.Add(selectorKeyShrortcuts_AssignHill);
             selectorKeyShrortcuts_AssignFlat.AssignKeyShortcutProperty(KeyShrortcuts_AssignFlat, false);
             _settingControlList.Add(selectorKeyShrortcuts_AssignFlat);
+            selectorKeyShrortcuts_RepealAssignment.AssignKeyShortcutProperty(KeyShortcuts_RepealAssignment, false);
+            _settingControlList.Add(selectorKeyShrortcuts_RepealAssignment);
             selectorKeyShrortcuts_AssignCoast.AssignKeyShortcutProperty(KeyShrortcuts_AssignCoast, false);
             _settingControlList.Add(selectorKeyShrortcuts_AssignCoast);
             selectorKeyShrortcuts_OpenModel.AssignKeyShortcutProperty(KeyShrortcuts_OpenModel, true);
