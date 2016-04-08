@@ -40,7 +40,6 @@ namespace Map2CivilizationModel
             _isLocked = isLocked;
         }
 
-       
 
         public PlotId Id
         {
@@ -50,8 +49,7 @@ namespace Map2CivilizationModel
             }
         }
 
-        
-        
+
 
         public bool IsLocked
         {
@@ -62,7 +60,6 @@ namespace Map2CivilizationModel
 
             
         }
-
         public TerrainType.Enumeration TerrainDescriptor
         {
             get
@@ -75,6 +72,15 @@ namespace Map2CivilizationModel
                 _terrainDescriptor = value;
             }
         }
+
+        public String IdString
+        {
+            get
+            {
+                return _id.Name;
+            }
+        }
+
 
         public void UpdatePlot(TerrainType.Enumeration terrainDescriptor, Boolean isLocked)
         {

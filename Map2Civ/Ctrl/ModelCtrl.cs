@@ -4,6 +4,7 @@ using Map2CivilizationCtrl.DataStructure;
 using Map2CivilizationCtrl.Enumerations;
 using Map2CivilizationModel;
 using Map2Civilization.Properties;
+using Map2CivilizationCtrl.Analyzer;
 
 namespace Map2CivilizationCtrl
 {
@@ -24,13 +25,7 @@ namespace Map2CivilizationCtrl
 
         internal static DataModel GetDataModel()
         {
-            if(_dataModel == null)
-            {
-                _dataModel = new DataModel();
-            }
-           
-            return _dataModel;
-            
+            return _dataModel;   
         }
 
 
@@ -44,6 +39,12 @@ namespace Map2CivilizationCtrl
             {
                 return MapDataSource.Enumeration.ReliefMapImage;
             }
+        }
+
+
+        public static SourceReliefMapSettings GetReliefMapSettings()
+        {
+            return _dataModel.ReliefMapSettings;
         }
 
 
@@ -119,17 +120,17 @@ namespace Map2CivilizationCtrl
         }
 
 
-        public static Bitmap GetDataSourceImage()
+        public static Bitmap GetDataSourceEditedImage()
         {
-            return _dataModel.DataSourceImage;
+            return _dataModel.ReliefMapSettings.AdjustedMapBitmap;
         }
 
 
-        public static Bitmap GetDataSourceImageWithGrid()
+        public static Bitmap GetDataSourceAdjustedImageWithGrid()
         {
 
-            Bitmap toReturn = new Bitmap(_dataModel.DataSourceImage);
-            
+            Bitmap toReturn = BitmapOperationsCtrl.SafeCloneStreamBasedBitmap(_dataModel.ReliefMapSettings.AdjustedMapBitmap);
+
             if (toReturn != null)
             {
                 toReturn = BitmapOperationsCtrl.DrawGridLines(toReturn);
@@ -141,7 +142,7 @@ namespace Map2CivilizationCtrl
 
         public static double GetAssignedPercentComplete()
         {
-            return _dataModel.PlotCollection.getAssignedPercentComplete();
+            return _dataModel.PlotCollection.GetAssignedPercentComplete();
         }
 
 

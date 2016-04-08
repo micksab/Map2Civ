@@ -36,7 +36,7 @@ namespace Map2CivilizationView
             splitContainer.Panel2.Controls.Add(_processedMapControl);
 
             ////Set the size of the map controls 
-            Size sizeToAssign = ModelCtrl.GetDataSourceImage().Size;
+            Size sizeToAssign = GridCoordinateHelperCtrl.CalculateImageSize(ModelCtrl.GetMapSize(), ModelCtrl.GetGridType()) ;
             _originalMapControl.Size = sizeToAssign;
             _processedMapControl.Size = sizeToAssign;
 

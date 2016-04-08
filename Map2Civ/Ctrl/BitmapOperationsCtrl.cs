@@ -11,6 +11,7 @@ using Map2CivilizationCtrl.Analyzer;
 using Map2CivilizationCtrl.DataStructure;
 using Map2CivilizationCtrl.Enumerations;
 using Map2CivilizationModel;
+using System.IO.Compression;
 
 namespace Map2CivilizationCtrl
 {
@@ -22,7 +23,8 @@ namespace Map2CivilizationCtrl
 
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Reliability", "CA2000:Dispose objects before losing scope")]
-        public static Bitmap InitializeDataSourceImage(SourceReliefMapSettings settings, MapDimension mapSize, GridType.Enumeration gridTypeEnum)
+        public static Bitmap InitializeDataSourceImage(SourceReliefMapSettings settings, MapDimension mapSize, 
+            GridType.Enumeration gridTypeEnum)
         {
             Size imageSize = GridCoordinateHelperCtrl.CalculateImageSize(mapSize, gridTypeEnum);
 
@@ -34,7 +36,7 @@ namespace Map2CivilizationCtrl
                 g.CompositingQuality = settings.CompositingQuality;
                 g.SmoothingMode = settings.SmoothingMode;
 
-                g.DrawImage(settings.MapBitmap, new Rectangle(0, 0, imageSize.Width, imageSize.Height));
+                g.DrawImage(settings.OriginalMapBitmap, new Rectangle(0, 0, imageSize.Width, imageSize.Height));
             }
 
             resizedBmp.SetResolution(96, 96);
@@ -45,11 +47,27 @@ namespace Map2CivilizationCtrl
         }
 
 
-        public static Bitmap GenerateAnalysisImage(Bitmap modelBitmap, SourceReliefMapSettings settings)
+
+
+        public static Bitmap InitializeProcessedMapImage(MapDimension mapDimension, GridType.Enumeration gridTypeEnum)
         {
+            Size imageSize = GridCoordinateHelperCtrl.CalculateImageSize(mapDimension, gridTypeEnum);
+            Bitmap toReturn  = new Bitmap(imageSize.Width, imageSize.Height);
+            toReturn.SetResolution(96, 96);
+
+            using (Graphics g = Graphics.FromImage(toReturn))
+            {
+                g.Clear(Color.Black);
+            }
+
             
 
+            return toReturn;
+        }
 
+
+        public static Bitmap GenerateAnalysisImage(Bitmap modelBitmap, SourceReliefMapSettings settings)
+        {
             switch (modelBitmap.PixelFormat == settings.PixelFormat)
             {
                 case false:
@@ -105,7 +123,7 @@ namespace Map2CivilizationCtrl
 
         public static Bitmap DrawGridLines(Bitmap bmp)
         {
-            using (Pen gridPen = new Pen(Map2Civilization.Properties.Settings.Default.MapGridColorModel, 1))
+            using (Pen gridPen = new Pen(Settings.Default.MapGridColorModel, 1))
             {
                 using (Graphics graphics = Graphics.FromImage(bmp))
                 {
@@ -225,7 +243,7 @@ namespace Map2CivilizationCtrl
             Stopwatch stopWatch = new Stopwatch();
             stopWatch.Start();
 
-            Pen UnassignedPen = new Pen(Map2Civilization.Properties.Settings.Default.ProcessedMapUnAssignedPlotGridColor, 1);
+            Pen UnassignedPen = new Pen(Settings.Default.ProcessedMapUnAssignedPlotGridColor, 1);
             Pen bluePen = new Pen(Color.Blue, 1);
 
             Bitmap toReturn = ModelCtrl.GetProcessedBitmap();
@@ -236,6 +254,7 @@ namespace Map2CivilizationCtrl
             Bitmap mountainBmp = TerrainType.Singleton.MountainPlotBitmap;
             Bitmap lockBmp = new Bitmap(Resources.LockedTile_Image);
 
+            
             
 
             using (Graphics grp = Graphics.FromImage(toReturn))
@@ -257,8 +276,6 @@ namespace Map2CivilizationCtrl
                     PointF plotPoint = GridCoordinateHelperCtrl.ConvertPlotIdToPixelLocation(tempPlotId,false);
                     float xRefPix = plotPoint.X;
                     float yRefPix = plotPoint.Y;
-
-                   
 
 
                     PointF[] points = GridCoordinateHelperCtrl.GetPlotPolygonPoints(tempPlotId).ToArray();
@@ -341,19 +358,21 @@ namespace Map2CivilizationCtrl
 
 
 
-        public static string getBase64stringFromBitmap(Bitmap image)
+
+
+        public static string GetBase64stringFromBitmap(Bitmap image)
         {
             ImageConverter converter = new ImageConverter();
             return Convert.ToBase64String((byte[])converter.ConvertTo(image, typeof(byte[])));
-            
+
         }
 
 
-        public static Bitmap getBitmapFromBase64string(string imagestring)
+        public static Bitmap GetBitmapFromBase64string(string imagestring)
         {
             Bitmap toReturn;
-            
-            Byte[] bytes = Convert.FromBase64String(imagestring);
+
+            byte[] bytes = Convert.FromBase64String(imagestring);
 
             using (MemoryStream ms = new MemoryStream(bytes))
             {
@@ -377,7 +396,7 @@ namespace Map2CivilizationCtrl
         {
             Color highlightedGridColor = Map2Civilization.Properties.Settings.Default.ProcessedMapHighlightedPlotGridColor;
             int gridLineWidthPixels = Map2Civilization.Properties.Settings.Default.ProcessedMapHighlightedPlotGridWidthPixels;
-            Size mapSizePixels = ModelCtrl.GetDataModel().DataSourceImage.Size;
+            Size mapSizePixels = GridCoordinateHelperCtrl.CalculateImageSize(ModelCtrl.GetMapSize(), ModelCtrl.GetGridType());
             Bitmap toReturn = new Bitmap(mapSizePixels.Width, mapSizePixels.Height);
             toReturn.SetResolution(96, 96);
 
@@ -534,6 +553,24 @@ namespace Map2CivilizationCtrl
         }
 
         
+
+        public static Bitmap SafeCloneStreamBasedBitmap(Bitmap sourceBitmap)
+        {
+            Bitmap toReturn = new Bitmap(sourceBitmap.Width,
+                sourceBitmap.Height);
+            //Due to a GID+ feature according to which if a bitmap is opened from a stream, the stream should be available for 
+            // the lifetime of the bitmap's instance (and that applies to cloned instances of the original bitmap), 
+            // we would get a misleading "Out of Memory" exception on any method that would 
+            // use its graphics, so we create a copy that is independent of the underlying stream 
+            // used to load the image into the system. For more info check
+            //https://social.msdn.microsoft.com/Forums/en-US/4aac43fa-cccb-4bf7-b37e-58ec5351ab80/outofmemoryexception-when-using-graphicsfromimage
+            using (Graphics g = Graphics.FromImage(toReturn))
+            {
+                g.DrawImageUnscaled(sourceBitmap, 0, 0);
+            }
+
+            return toReturn;
+        }
 
     }
 }

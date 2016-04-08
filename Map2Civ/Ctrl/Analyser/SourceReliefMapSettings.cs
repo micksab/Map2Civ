@@ -1,19 +1,21 @@
-﻿using System.Drawing;
-using System.Drawing.Imaging;
+﻿using System;
+using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.Drawing.Imaging;
+
 
 namespace Map2CivilizationCtrl.Analyzer
 {
-    class SourceReliefMapSettings : ISourceMapSettings
+    public class SourceReliefMapSettings : ISourceMapSettings, IDisposable
     {
-         Bitmap _mapBitmap;
+        Bitmap _originalMapBitmap;
+        Bitmap _adjustedMapBitmap;
         readonly PixelFormat _pixelFormat;
         readonly InterpolationMode _interpolationMode;
         readonly CompositingQuality _compositingQuality;
         readonly SmoothingMode _smoothingMode;
 
         
-
         public PixelFormat PixelFormat
         {
             get
@@ -23,7 +25,6 @@ namespace Map2CivilizationCtrl.Analyzer
         }
 
        
-
         public InterpolationMode InterpolationMode
         {
             get
@@ -48,31 +49,52 @@ namespace Map2CivilizationCtrl.Analyzer
             }
         }
 
-        public Bitmap MapBitmap
+        public Bitmap OriginalMapBitmap
         {
             get
             {
-                return _mapBitmap;
+                return _originalMapBitmap;
             }
 
             set
             {
-                _mapBitmap = value;
+                _originalMapBitmap = value;
             }
         }
 
+        public Bitmap AdjustedMapBitmap
+        {
+            get
+            {
+                return _adjustedMapBitmap;
+            }
+
+            set
+            {
+                _adjustedMapBitmap = value;
+            }
+        }
+
+        
         public SourceReliefMapSettings(Bitmap mapBitmap, System.Drawing.Imaging.PixelFormat pixelFormat,
             System.Drawing.Drawing2D.InterpolationMode interpolationMode,
             System.Drawing.Drawing2D.CompositingQuality compositingQuallity,
             System.Drawing.Drawing2D.SmoothingMode smoothingMode)
         {
-            _mapBitmap = mapBitmap;
+            _originalMapBitmap = mapBitmap;
             _pixelFormat = pixelFormat;
             _interpolationMode = interpolationMode;
             _compositingQuality = compositingQuallity;
             _smoothingMode = smoothingMode;
         }
 
+
+        
+
+        public void Dispose()
+        {
+            _originalMapBitmap.Dispose();
+        }
     }
 
    

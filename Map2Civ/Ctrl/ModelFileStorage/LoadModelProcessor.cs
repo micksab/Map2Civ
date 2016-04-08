@@ -9,6 +9,13 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using Map2Civilization.Properties;
+using System.Drawing.Imaging;
+using System.Drawing.Drawing2D;
+using Map2CivilizationCtrl.Analyzer;
+using Newtonsoft.Json;
+using System.Diagnostics;
+using Map2CivilizationCtrl.JsonAdapters;
+using System.IO;
 
 namespace Map2CivilizationCtrl.ModelFileStorage
 {
@@ -37,99 +44,95 @@ namespace Map2CivilizationCtrl.ModelFileStorage
         }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Reliability", "CA2000:Dispose objects before losing scope")]
-         void LoadBackgroundWorker_DoWork(object sender, DoWorkEventArgs e)
+        void LoadBackgroundWorker_DoWork(object sender, DoWorkEventArgs e)
         {
             string fullFilePath = (string)e.Argument;
-            //DataSet theSet = ModelDataSet.GetModelEmptyDataSet();
-            DataSet theSet = ModelDataSet.GetModelEmptyDataSet();
 
-            theSet.ReadXml(fullFilePath);
 
-            decimal progressMaxValue = theSet.Tables[ModelDataSet.GlobalTableName].Rows.Count + theSet.Tables["Plot"].Rows.Count + theSet.Tables["Color"].Rows.Count;
-            decimal counter = 0;
+            Stopwatch jsonDeserializeStopWatch = new Stopwatch();
+            jsonDeserializeStopWatch.Start();
+            DataModelJsonAdapter loadModelAdapter;
+            JsonSerializer deserializer = new JsonSerializer();
+            using (StreamReader rd = new StreamReader(fullFilePath))
+            using (JsonReader jrd = new JsonTextReader(rd))
+            {
+                loadModelAdapter = deserializer.Deserialize<DataModelJsonAdapter>(jrd);
+            }
+            jsonDeserializeStopWatch.Stop();
+            Console.WriteLine("Read json file in {0} millis", jsonDeserializeStopWatch.ElapsedMilliseconds);
 
+            decimal progressMaxValue = 2 + loadModelAdapter.DetectedColorArray.Length +
+                loadModelAdapter.ReliefPlotArray.Length + loadModelAdapter.GeoDataPlotArray.Length;
+            decimal counter = 0m;
+
+            DataModel newDataModel = new DataModel();
+            newDataModel.CivilizationVersion = loadModelAdapter.CivilizationVersion;
+            newDataModel.GridType = loadModelAdapter.GridType;
+            newDataModel.MapDataSource = loadModelAdapter.MapDataSourceType;
+            newDataModel.SelectedMapSize = loadModelAdapter.MapSize.GetMapDimension();
 
             
-            DataModel newDataModel = new DataModel();
-            newDataModel.ModelFile = fullFilePath;
-
-            /**** Load 'Global' table values *****/
-            // read the image of the original Bitmap 
-            string originalImagestring = (string)theSet.Tables["Global"].Rows[0]["DataSourceImage"];
-            Bitmap originalImage = BitmapOperationsCtrl.getBitmapFromBase64string(originalImagestring);
-            Bitmap streamFreeImage = new Bitmap(originalImage.Width, originalImage.Height);
-            //If we were to assign the originalImage instance at newDataMode.ImageToProcess, 
-            // we would get a misleading "Out of Memory" exception on any method that would 
-            // use its graphics, so we create a copy that is independent of the underlying stream 
-            // used to load the image into the system. For more info check
-            //https://social.msdn.microsoft.com/Forums/en-US/4aac43fa-cccb-4bf7-b37e-58ec5351ab80/outofmemoryexception-when-using-graphicsfromimage
-            using (Graphics g = Graphics.FromImage(streamFreeImage))
-            {
-                g.DrawImageUnscaled(originalImage, 0, 0);
-            }
-            // read the size of the map
-            MapDimension size = 
-                new MapDimension((string)theSet.Tables[ModelDataSet.GlobalTableName].
-                Rows[0][ModelDataSet.GlobalTableSelectedMapSizeColName]);
-            newDataModel.SelectedMapSize = size;
-            newDataModel.DataSourceImage = streamFreeImage;
-            newDataModel.GridType = 
-                (GridType.Enumeration)theSet.Tables[ModelDataSet.GlobalTableName].
-                Rows[0][ModelDataSet.GlobalTableGridTypeColName];
-            newDataModel.MapDataSource = 
-                (MapDataSource.Enumeration) theSet.Tables[ModelDataSet.GlobalTableName].
-                Rows[0][ModelDataSet.GlobalTableMapDataSourceColName];
-            newDataModel.CivilizationVersion = 
-                (CivilizationVersion.Enumeration)theSet.Tables[ModelDataSet.GlobalTableName].
-                Rows[0][ModelDataSet.GlobalTableCivilizationVersionColName];
-
+            
 
 
             counter++;
             _loadBackgroundWorker.ReportProgress((int)((counter / progressMaxValue) * 100));
 
+            
 
-
-
-            foreach (DataRow temp in theSet.Tables[ModelDataSet.PlotTableName].Rows)
-            {
-                string Id = (string)temp[ModelDataSet.PlotTableIdColName];
-                TerrainType.Enumeration typeDescriptor = (TerrainType.Enumeration)temp[ModelDataSet.PlotTableTerrainColName];
-                bool isLocked = (bool)temp[ModelDataSet.PlotTableLockedColName];
-                string hexColor = (string)temp[ModelDataSet.PlotTableColorColName];
-
-                switch (newDataModel.MapDataSource)
+            if (newDataModel.MapDataSource == MapDataSource.Enumeration.ReliefMapImage)
+            { 
+            newDataModel.ReliefMapSettings = loadModelAdapter.ReliefMapSettings.GetSourceReliefMapSettings();
+                //Add the relief plots
+                foreach (PlotReliefMapJsonAdapter plot in loadModelAdapter.ReliefPlotArray)
                 {
-                    case MapDataSource.Enumeration.ReliefMapImage:
-                        PlotReliefMap plotToAdd = new PlotReliefMap(Id,
-                        typeDescriptor, isLocked, hexColor);
-                        newDataModel.PlotCollection.AddNewPlot(plotToAdd);
-                        DetectedColor detColorToAdd = new DetectedColor(plotToAdd.HexDominantColor);
-                        newDataModel.DetectedColorCollection.AddDetectedColor(detColorToAdd);
-                        newDataModel.DetectedColorCollection.AddDetectedColorPlot(detColorToAdd, plotToAdd);
-                        break;
-                    case MapDataSource.Enumeration.GeoDataProvider:
-                        throw new NotImplementedException("No implementation for Geo-Data Source Settings.");
-                    default:
-                        throw new InvalidEnumArgumentException("Non expected enumeration value.");
+                    PlotReliefMap reliefPlot = plot.GetPlotReliefMap();
+                    DetectedColor detColorToAdd = new DetectedColor(reliefPlot.HexDominantColor);
+                    newDataModel.PlotCollection.AddNewPlot(reliefPlot);
+                    newDataModel.DetectedColorCollection.AddDetectedColor(detColorToAdd);
+                    newDataModel.DetectedColorCollection.AddDetectedColorPlot(detColorToAdd, reliefPlot);
+
+                    counter++;
+                    _loadBackgroundWorker.ReportProgress((int)((counter / progressMaxValue) * 100));
                 }
-                counter++;
-                _loadBackgroundWorker.ReportProgress((int)((counter / progressMaxValue) * 100));
             }
 
 
-            foreach (DataRow temp in theSet.Tables[ModelDataSet.ColorTableName].Rows)
+            if (newDataModel.MapDataSource == MapDataSource.Enumeration.GeoDataProvider)
             {
-                string ID = (string)temp[ModelDataSet.ColorTableIdColName];
-                TerrainType.Enumeration ctd = (TerrainType.Enumeration)temp[ModelDataSet.ColorTableTerrainColName];
-                newDataModel.DetectedColorCollection.UpdateDetectedColor(ID, ctd);
+                newDataModel.GeoDataSettings = loadModelAdapter.GeoDataSettings.GetGeoDataSettings();
+                //Add the geo-data plots
+                foreach (PlotGeoDataJsonAdapter plot in loadModelAdapter.GeoDataPlotArray)
+                {
+                    newDataModel.PlotCollection.AddNewPlot(plot.GetPlotGeoData());
+                    counter++;
+                    _loadBackgroundWorker.ReportProgress((int)((counter / progressMaxValue) * 100));
+                }
+            }
+
+
+            //update the detected colors...
+            foreach (DetectedColorJsonAdapter color in loadModelAdapter.DetectedColorArray)
+            {
+                DetectedColor detectedColor = color.GetDetectedColor();
+                newDataModel.DetectedColorCollection.UpdateDetectedColor(detectedColor.ColorHex, detectedColor.TerrainDescriptor);
                 counter++;
                 _loadBackgroundWorker.ReportProgress((int)((counter / progressMaxValue) * 100));
             }
-            e.Result = newDataModel;
-            theSet.Dispose();
-            originalImage.Dispose();
 
+
+            //Initialize the empty processed map image
+            newDataModel.ProcessedBitmap = BitmapOperationsCtrl.InitializeProcessedMapImage(newDataModel.SelectedMapSize, newDataModel.GridType);
+            //Initialize the adjusted source image 
+            newDataModel.ReliefMapSettings.AdjustedMapBitmap = BitmapOperationsCtrl.InitializeDataSourceImage(
+                newDataModel.ReliefMapSettings, newDataModel.SelectedMapSize, newDataModel.GridType);
+            newDataModel.ModelFile = fullFilePath;
+
+            counter++;
+            _loadBackgroundWorker.ReportProgress((int)((counter / progressMaxValue) * 100));
+
+
+            e.Result = newDataModel;
         }
 
 

@@ -133,7 +133,7 @@ namespace Map2CivilizationCtrl
         public static void UpdateOriginalMap()
         {
             //Get the original datasource image and apply the grid on it...
-            Bitmap bmpWithGrid = ModelCtrl.GetDataSourceImageWithGrid();
+            Bitmap bmpWithGrid = ModelCtrl.GetDataSourceAdjustedImageWithGrid();
 
             foreach (IUiListenerOriginalMap temp in _originalMapListeners.ListenersList)
             {

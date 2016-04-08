@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-
+﻿using System.Collections.Generic;
 using Map2CivilizationCtrl.Enumerations;
 using Map2CivilizationCtrl.DataStructure;
+
 
 namespace Map2CivilizationModel
 {
@@ -15,6 +13,7 @@ namespace Map2CivilizationModel
         TerrainType.Enumeration _terrainDescriptor;
         readonly List<Plot> _relevantPlots;
 
+        
         public string ColorHex
         {
             get
@@ -56,7 +55,6 @@ namespace Map2CivilizationModel
             }
         }
 
-
         public TerrainType.Enumeration TerrainDescriptor
         {
             get
@@ -74,11 +72,16 @@ namespace Map2CivilizationModel
             _relevantPlots = new List<Plot>();
         }
 
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="hexColor">The string representation of the color (eg. #99CCFF) </param>
+        /// <param name="terrainDescriptor">The terrain value assigned to the color</param>
         public DetectedColor(string hexColor, TerrainType.Enumeration terrainDescriptor)
         {
             _colorHex = hexColor;
             _terrainDescriptor  = terrainDescriptor;
+            _relevantPlots = new List<Plot>();
            
         }
 

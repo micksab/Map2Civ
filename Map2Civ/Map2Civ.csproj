@@ -57,6 +57,10 @@
     <StartupObject>Map2Civilization.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.3\lib\net40\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
@@ -80,6 +84,12 @@
     <Compile Include="Ctrl\Enumerations\ProcessedMapControlMode.cs" />
     <Compile Include="Ctrl\Enumerations\TerrainType.cs" />
     <Compile Include="Ctrl\DataStructure\MapDimension.cs" />
+    <Compile Include="Ctrl\JsonAdapters\DetectedColorJsonAdapter.cs" />
+    <Compile Include="Ctrl\JsonAdapters\MapDimensionJsonAdapter.cs" />
+    <Compile Include="Ctrl\JsonAdapters\PlotGeoDataJsonAdapter.cs" />
+    <Compile Include="Ctrl\JsonAdapters\PlotReliefMapJsonAdapter.cs" />
+    <Compile Include="Ctrl\JsonAdapters\SourceGeoDataSettingsJsonAdapter.cs" />
+    <Compile Include="Ctrl\JsonAdapters\SourceReliefMapSettingsJsonAdapter.cs" />
     <Compile Include="Ctrl\Listener\IUiListener.cs" />
     <Compile Include="Ctrl\Listener\IUiListenerModel.cs" />
     <Compile Include="Ctrl\Listener\IUiListenerZoom.cs" />
@@ -87,7 +97,6 @@
     <Compile Include="Ctrl\ModelFileStorage\ExporterBase.cs" />
     <Compile Include="Ctrl\ModelFileStorage\ExporterCivlizationV.cs" />
     <Compile Include="Ctrl\ModelFileStorage\LoadModelProcessor.cs" />
-    <Compile Include="Ctrl\ModelFileStorage\ModelDataSet.cs" />
     <Compile Include="Ctrl\ModelFileStorage\SaveModelProcessor.cs" />
     <Compile Include="Ctrl\VariousUtilityMethods.cs" />
     <Compile Include="GlobalSuppressions.cs" />
@@ -99,6 +108,7 @@
     <Compile Include="Ctrl\ModelCtrl.cs" />
     <Compile Include="Ctrl\RegisteredListenersCtrl.cs" />
     <Compile Include="Ctrl\PlotCollectionCtrl.cs" />
+    <Compile Include="Ctrl\JsonAdapters\DataModelJsonAdapter.cs" />
     <Compile Include="Model\PlotGeoData.cs" />
     <Compile Include="Model\PlotReliefMap.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -430,6 +440,7 @@
     <None Include="App.config" />
     <None Include="ExportTemplates\Block1_v5.bin" />
     <None Include="ExportTemplates\Block2_v5.bin" />
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

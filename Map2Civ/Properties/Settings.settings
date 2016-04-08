@@ -69,7 +69,7 @@
       <Value Profile="(Default)">Ctrl+R</Value>
     </Setting>
     <Setting Name="KeyShrortcuts_AssignOcean" Type="System.Windows.Forms.Keys" Scope="User">
-      <Value Profile="(Default)">Ctrl+O</Value>
+      <Value Profile="(Default)">O</Value>
     </Setting>
     <Setting Name="KeyShrortcuts_AssignCoast" Type="System.Windows.Forms.Keys" Scope="User">
       <Value Profile="(Default)">C</Value>

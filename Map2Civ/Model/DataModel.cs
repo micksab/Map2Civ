@@ -1,28 +1,54 @@
-﻿using System;
-using System.Drawing;
+﻿using Map2CivilizationCtrl;
+using Map2CivilizationCtrl.Analyzer;
 using Map2CivilizationCtrl.DataStructure;
 using Map2CivilizationCtrl.Enumerations;
+using System;
+using System.Collections.Generic;
+using System.Drawing;
 
 namespace Map2CivilizationModel
 {
     public sealed class DataModel : IDisposable
     {
 
-         MapDimension _selectedMapSize;
-         Bitmap _dataSourceImage;
-         Bitmap _processedBitmap;
-         GridType.Enumeration  _gridType;
-         MapDataSource.Enumeration _mapDataSource;
-         CivilizationVersion.Enumeration _civilizationVersion;
-         Plots _plotCollection = new Plots();
-         DetectedColors _detectedColorCollection = new DetectedColors();
+        MapDimension _selectedMapSize;
+        SourceReliefMapSettings _reliefMapSettings;
+        SourceGeoDataSettings _geoDataSettings;
+        Bitmap _processedBitmap;
+        GridType.Enumeration  _gridType;
+        MapDataSource.Enumeration _mapDataSource;
+        CivilizationVersion.Enumeration _civilizationVersion;
+        Plots _plotCollection = new Plots();
+        DetectedColors _detectedColorCollection = new DetectedColors();
 
 
-         string _modelFile = string.Empty;
+        string _modelFile = string.Empty;
        
 
 
-       
+        public DataModel() { }
+
+        /// <summary>
+        /// Model constructor intented to be used when it is based on a relief map image
+        /// </summary>
+        /// <param name="mapDimension">The dimension of the model to be created</param>
+        /// <param name="gridType">The type of grid applied to the model</param>
+        /// <param name="mapDataSource">The type of source for the map to be created</param>
+        /// <param name="civilizationVersion">The intended (to be exported) version of Civilization map</param>
+        /// <param name="reliefSettings">The settings based upon which the analysis of the source image is 
+        /// to be performed.</param>
+        public DataModel(MapDimension mapDimension, GridType.Enumeration gridType, MapDataSource.Enumeration mapDataSource, 
+            CivilizationVersion.Enumeration civilizationVersion, SourceReliefMapSettings reliefSettings)
+        {
+            _selectedMapSize = mapDimension;
+            _reliefMapSettings = reliefSettings;
+            _gridType = gridType;
+            _mapDataSource = mapDataSource;
+            _civilizationVersion = civilizationVersion;
+        }
+
+
+        
 
 
         public MapDimension SelectedMapSize
@@ -37,17 +63,19 @@ namespace Map2CivilizationModel
             }
         }
 
+
+
+
         
 
 
 
-        internal Plots PlotCollection
-        {
-            get
-            {
-                return _plotCollection;
-            }
-        }
+        
+
+
+        
+
+
 
         internal DetectedColors DetectedColorCollection
         {
@@ -60,7 +88,6 @@ namespace Map2CivilizationModel
 
 
         
-
         public string ModelFile
         {
             get
@@ -113,29 +140,6 @@ namespace Map2CivilizationModel
             }
         }
 
-        public Bitmap DataSourceImage
-        {
-            get
-            {
-                return _dataSourceImage;
-            }
-
-            set
-            {
-                _dataSourceImage = value;
-
-                if (value != null)
-                {
-                    _processedBitmap = new Bitmap(value.Width, value.Height);
-
-                    using (Graphics g = Graphics.FromImage(_processedBitmap))
-                    {
-                        g.Clear(Color.Black);
-                    }
-                }
-                
-            }
-        }
 
         public Bitmap ProcessedBitmap
         {
@@ -143,12 +147,51 @@ namespace Map2CivilizationModel
             {
                 return _processedBitmap;
             }
+            set
+            {
+                _processedBitmap = value;
+            }
+        }
+
+        internal SourceReliefMapSettings ReliefMapSettings
+        {
+            get
+            {
+                return _reliefMapSettings;
+            }
+
+            set
+            {
+                _reliefMapSettings = value;
+            }
+        }
+
+        internal SourceGeoDataSettings GeoDataSettings
+        {
+            get
+            {
+                return null;
+                //throw new NotImplementedException();
+            }
+
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public Plots PlotCollection
+        {
+            get
+            {
+                return _plotCollection;
+            }
         }
 
         public void Dispose()
         {
-            
-            _dataSourceImage.Dispose();
+
+            _reliefMapSettings.Dispose();
             _processedBitmap.Dispose();
         }
     }

@@ -19,7 +19,6 @@ namespace Map2CivilizationCtrl.DataStructure
                 return _description;
             }
         }
-
         public int WidthPlots
         {
             get
@@ -50,7 +49,6 @@ namespace Map2CivilizationCtrl.DataStructure
         }
 
         #endregion
-
 
         public MapDimension(string description, int widthPlots, int heightPlots, bool isDefault)
         {

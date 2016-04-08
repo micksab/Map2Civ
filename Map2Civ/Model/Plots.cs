@@ -5,7 +5,7 @@ using Map2CivilizationCtrl.Enumerations;
 
 namespace Map2CivilizationModel
 {
-    class Plots
+    public class Plots
     {
         readonly Dictionary<PlotId, Plot> _plotCollectionList;
 
@@ -14,9 +14,21 @@ namespace Map2CivilizationModel
            _plotCollectionList = new Dictionary<PlotId, Plot>();
         }
 
+        /// <summary>
+        /// Constructor used to facilitate instance creation from Json 
+        /// </summary>
+        /// <param name="plots"></param>
+        public Plots(Plot[] plots)
+        {
+            _plotCollectionList = new Dictionary<PlotId, Plot>();
 
+            foreach(Plot tempPlot in plots)
+            {
+                AddNewPlot(tempPlot);
+            }
+        }
 
-
+       
 
 
         public void AddNewPlot(Plot plot)
@@ -53,7 +65,7 @@ namespace Map2CivilizationModel
         }
 
 
-        public double getAssignedPercentComplete()
+        public double GetAssignedPercentComplete()
         {
             int total = 0;
             int assigned = 0;

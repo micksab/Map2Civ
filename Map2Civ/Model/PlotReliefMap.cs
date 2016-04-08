@@ -5,7 +5,8 @@ using Map2CivilizationCtrl.Enumerations;
 
 namespace Map2CivilizationModel
 {
-    class PlotReliefMap : Plot
+    
+    public class PlotReliefMap : Plot
     {
         readonly string _hexDominantColor;
         readonly Color _dominantColor;
@@ -18,14 +19,12 @@ namespace Map2CivilizationModel
             _dominantColor = BitmapOperationsCtrl.ColorFromHex(_hexDominantColor);
         }
 
-
         public PlotReliefMap(string id, TerrainType.Enumeration terrainDescriptor,
-             Boolean isCustom, string hexColor) : base(id, terrainDescriptor, isCustom)
+             Boolean isLocked, string dominantColor) : base(id, terrainDescriptor, isLocked)
         {
-            _hexDominantColor = hexColor;
+            _hexDominantColor = dominantColor;
             _dominantColor = BitmapOperationsCtrl.ColorFromHex(_hexDominantColor);
         }
-
 
 
         protected internal string HexDominantColor

@@ -39,13 +39,8 @@ namespace Map2CivilizationModel
 
         public string[] GetDetectedColorIds()
         {
-            //DetectedColor[] toReturn = collection.Values.ToArray() as DetectedColor[];
-
-            //return toReturn;
-
             string[] toReturn = _collection.Keys.ToArray<string>();
 
-          
             return toReturn;
         }
 
@@ -61,6 +56,12 @@ namespace Map2CivilizationModel
             }
 
             return toReturn;
+        }
+
+
+        public DetectedColor[] GetDetectedColorsArray()
+        {
+            return _collection.Values.ToArray<DetectedColor>();
         }
 
 

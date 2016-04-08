@@ -8,6 +8,12 @@ using Map2Civilization.Properties;
 using Map2CivilizationCtrl.Enumerations;
 using Map2CivilizationModel;
 using Map2CivilizationView;
+using System.Drawing.Imaging;
+using System.Drawing.Drawing2D;
+using Newtonsoft.Json;
+using System.IO;
+using Map2CivilizationCtrl.JsonAdapters;
+using System.Diagnostics;
 
 namespace Map2CivilizationCtrl.ModelFileStorage
 {
@@ -44,70 +50,39 @@ namespace Map2CivilizationCtrl.ModelFileStorage
             string fullFilePath = (string)e.Argument;
             ModelCtrl.GetDataModel().ModelFile = fullFilePath;
 
-            DataSet theSet = ModelDataSet.GetModelEmptyDataSet();
+            Stopwatch jsonSerializeStopWatch = new Stopwatch();
+            jsonSerializeStopWatch.Start();
+            DataModelJsonAdapter modelAdapter  = new DataModelJsonAdapter(ModelCtrl.GetDataModel());
+            JsonSerializer serializer = new JsonSerializer();
 
-            List<Plot> plots = PlotCollectionCtrl.getPlots();
-            Collection<DetectedColor> colors = DetectedColorCollectionCtrl.getDetectedColors();
-
-            decimal maxProgress = plots.Count + colors.Count + 1;
-            decimal counter = 0;
-
-
-            //Populate "Global" table
-            DataRow globalTableRow = theSet.Tables["Global"].NewRow();
-            globalTableRow.SetField<string>("AppVersion", Assembly.GetExecutingAssembly().GetName().Version.ToString());
-            globalTableRow.SetField<string>("SelectedMapSize", ModelCtrl.GetMapSize().ToString());
-            globalTableRow.SetField<string>("DataSourceImage", BitmapOperationsCtrl.getBase64stringFromBitmap(ModelCtrl.GetDataSourceImage()));
-            globalTableRow.SetField<GridType.Enumeration>("GridType", ModelCtrl.GetGridType());
-            globalTableRow.SetField<MapDataSource.Enumeration>("MapDataSource", ModelCtrl.GetModelDataSourceType());
-            globalTableRow.SetField<CivilizationVersion.Enumeration>("CivilizationVersion", ModelCtrl.GetCivilizationVersion());
-            theSet.Tables["Global"].Rows.Add(globalTableRow);
-            counter++;
-            _saveBackgroundWorker.ReportProgress((int)((counter / maxProgress) * 100));
-
-
-
-            //Populate "Plot" table
-            foreach (Plot tempPlot in plots)
+            using (StreamWriter sw = new StreamWriter(fullFilePath))
+            using (JsonWriter writer = new JsonTextWriter(sw))
             {
-                DataRow newPlotRow = theSet.Tables["Plot"].NewRow();
-                newPlotRow.SetField<string>("Id", tempPlot.Id.Name);
-                newPlotRow.SetField<TerrainType.Enumeration>("Terrain", tempPlot.TerrainDescriptor);
-                newPlotRow.SetField<bool>("Locked", tempPlot.IsLocked);
-
-                switch (ModelCtrl.GetModelDataSourceType())
-                {
-                    case MapDataSource.Enumeration.ReliefMapImage:
-                        PlotReliefMap reliefPlot = (PlotReliefMap)tempPlot;
-                        newPlotRow.SetField<string>("Color", reliefPlot.HexDominantColor);
-                        break;
-                    case MapDataSource.Enumeration.GeoDataProvider:
-                        throw new NotImplementedException("No implementation for Geo-Data Source Settings.");
-                    default:
-                        throw new InvalidEnumArgumentException("Non expected enumeration value.");
-                }
-                theSet.Tables["Plot"].Rows.Add(newPlotRow);
-                counter++;
-                _saveBackgroundWorker.ReportProgress((int)((counter / maxProgress) * 100));
+                serializer.Serialize(writer, modelAdapter);
             }
 
+            jsonSerializeStopWatch.Stop();
+            Console.WriteLine("Created json file in {0} millis", jsonSerializeStopWatch.ElapsedMilliseconds);
+            
+
+            //Stopwatch jsonDeserializeStopWatch = new Stopwatch();
+            //jsonDeserializeStopWatch.Start();
+            //DataModelJsonAdapter model2;
+            //JsonSerializer deserializer = new JsonSerializer();
+            //using (StreamReader rd = new StreamReader(@"C:\MyDocuments\GeoMap2Civ5Map\Map2Civ\Map2Civ\bin\Debug\json.txt"))
+            //using (JsonReader jrd = new JsonTextReader(rd))
+            //{
+            //     model2 = deserializer.Deserialize<DataModelJsonAdapter>(jrd);
+            //    //model2.ReliefMapSettings.OriginalMapBitmap.Save(@"C:\MyDocuments\GeoMap2Civ5Map\Map2Civ\Map2Civ\bin\Debug\json.bmp");
+            //}
+            //jsonDeserializeStopWatch.Stop();
+            //Console.WriteLine("Read json file in {0} millis", jsonSerializeStopWatch.ElapsedMilliseconds);
 
 
-            foreach (DetectedColor color in colors)
-            {
-                DataRow newRow = theSet.Tables["Color"].NewRow();
-                newRow.SetField<string>("Id", color.ColorHex);
-                newRow.SetField<TerrainType.Enumeration>("Terrain",
-                    color.TerrainDescriptor);
-                theSet.Tables["Color"].Rows.Add(newRow);
-                counter++;
-                _saveBackgroundWorker.ReportProgress((int)((counter / maxProgress) * 100));
-            }
+   
+            _saveBackgroundWorker.ReportProgress(100);
 
 
-            theSet.WriteXml(fullFilePath, XmlWriteMode.IgnoreSchema);
-
-            theSet.Dispose();
         }
 
 

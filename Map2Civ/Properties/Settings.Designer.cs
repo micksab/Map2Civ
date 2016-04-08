@@ -289,7 +289,7 @@ namespace Map2Civilization.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Ctrl+O")]
+        [global::System.Configuration.DefaultSettingValueAttribute("O")]
         public global::System.Windows.Forms.Keys KeyShrortcuts_AssignOcean {
             get {
                 return ((global::System.Windows.Forms.Keys)(this["KeyShrortcuts_AssignOcean"]));

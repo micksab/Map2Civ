@@ -31,5 +31,17 @@ namespace POC_Tests
                 form.ShowDialog();
             }
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            string originalString = System.IO.File.ReadAllText(@"C:\MyDocuments\GeoMap2Civ5Map\Map2Civ\POC_Tests\StringTest.txt");
+
+            string compressedString = StringCompression.Compress(originalString);
+
+            int originalStringLength = originalString.Length;
+            int compressedStringLength = compressedString.Length;
+
+            return;
+        }
     }
 }

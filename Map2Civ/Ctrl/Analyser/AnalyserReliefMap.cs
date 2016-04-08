@@ -66,18 +66,19 @@ namespace Map2CivilizationCtrl.Analyzer
             decimal counter = 0;
 
 
-            DataModel newDataModel = new DataModel();
-            newDataModel.SelectedMapSize = mapDimension;
-            newDataModel.GridType = gridTypeEnum;
-            newDataModel.CivilizationVersion = civilizationVersion;
-            newDataModel.MapDataSource = MapDataSource.Enumeration.ReliefMapImage;
-            newDataModel.DataSourceImage = BitmapOperationsCtrl.InitializeDataSourceImage( settings, mapDimension, gridTypeEnum);
+            DataModel newDataModel = new DataModel(mapDimension, gridTypeEnum, MapDataSource.Enumeration.ReliefMapImage,
+                civilizationVersion, settings);
+            //Initialize the empty processed map image
+            newDataModel.ProcessedBitmap = BitmapOperationsCtrl.InitializeProcessedMapImage(mapDimension, gridTypeEnum);
+            //Initialize the adjusted source image 
+            newDataModel.ReliefMapSettings.AdjustedMapBitmap = BitmapOperationsCtrl.InitializeDataSourceImage( settings, mapDimension, gridTypeEnum);
+
             counter++;
             _analyseBackgroundWorker.ReportProgress((int)((counter / progressMaxValue) * 100));
 
 
             /****** Analysis image *****/
-            Bitmap analysisImage = BitmapOperationsCtrl.GenerateAnalysisImage(newDataModel.DataSourceImage,
+            Bitmap analysisImage = BitmapOperationsCtrl.GenerateAnalysisImage(newDataModel.ReliefMapSettings.AdjustedMapBitmap,
                  settings);
             counter++;
             _analyseBackgroundWorker.ReportProgress((int)((counter / progressMaxValue) * 100));

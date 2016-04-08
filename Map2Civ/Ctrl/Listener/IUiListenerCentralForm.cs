@@ -8,7 +8,5 @@ namespace Map2CivilizationCtrl.Listener
         void UpdateAssignedPercentComplete();
         void PublishNewInfoMessage(string infoMessage);
         void SetModelButtonAndMenusEnabledState(Boolean saveActive, Boolean saveAsActive);
-
-
     }
 }

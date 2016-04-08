@@ -1,10 +1,12 @@
 ﻿using System;
+using System.Globalization;
 using System.Linq;
 
 namespace Map2CivilizationCtrl.DataStructure
 {
     public struct PlotId : IEquatable<PlotId>
     {
+        
         readonly int _x;
         readonly int _y;
         readonly string _name;
@@ -35,7 +37,6 @@ namespace Map2CivilizationCtrl.DataStructure
             }
         }
 
-        
 
         public string Name
         {
@@ -47,44 +48,32 @@ namespace Map2CivilizationCtrl.DataStructure
 
         #endregion
 
+        public PlotId(string name)
+        {
+            _name = name;
+            char[] delimiterChar = {','};
+
+            if (string.IsNullOrEmpty(name.Trim()))
+                throw new ArgumentException(string.Empty, "name");
+
+            string[] components = name.Split(delimiterChar,StringSplitOptions.RemoveEmptyEntries);
+
+            if(components.Length!=2)
+                throw new ArgumentException(string.Empty, "name");
+
+
+            _x = Convert.ToInt32(components[0], CultureInfo.InvariantCulture);
+            _y = Convert.ToInt32(components[1], CultureInfo.InvariantCulture);
+        }
         
-
-        public PlotId(int plotX, int plotY)
+        public PlotId(int X, int Y)
         {
-            _x = plotX;
-            _y = plotY;
-            _name = string.Concat(plotX, ",", plotY);
+            _x = X;
+            _y = Y;
+            _name = string.Concat(X, ",", Y);
         }
 
-        /// <summary>
-        /// Alternative constructor of PlotID that takes as an argument a string of the form "X,Y"
-        /// where X and Y are the integer values of the X and Y plot coordinates of the plotID to be 
-        /// created.
-        /// </summary>
-        /// <param name="uniqueName">A string of the form "X,Y", where X and Y are integer values.</param>
-        public PlotId(string uniqueName)
-        {
-            if (string.IsNullOrEmpty(uniqueName) || (uniqueName.Split(',').Count() != 2))
-            {
-                throw new ArgumentException("Invalid value for argument unique name");
-            }
-            else
-            {
-                string[] components = uniqueName.Split(',');
-                int xComponent = 0;
-                int yComponent = 0;
-                if ( (int.TryParse(components[0],out xComponent)) && (int.TryParse(components[1],out yComponent)) )
-                {
-                    _x = xComponent;
-                    _y = yComponent;
-                    _name = uniqueName;
-                }
-                else
-                {
-                    throw new ArgumentException("Invalid value for argument unique name");
-                }
-            }
-        }
+        
 
         public bool Equals(PlotId other)
         {
