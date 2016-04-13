@@ -3,19 +3,17 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 
-
 namespace Map2CivilizationCtrl.Analyzer
 {
     public class SourceReliefMapSettings : ISourceMapSettings, IDisposable
     {
-        Bitmap _originalMapBitmap;
-        Bitmap _adjustedMapBitmap;
-        readonly PixelFormat _pixelFormat;
-        readonly InterpolationMode _interpolationMode;
-        readonly CompositingQuality _compositingQuality;
-        readonly SmoothingMode _smoothingMode;
+        private Bitmap _originalMapBitmap;
+        private Bitmap _adjustedMapBitmap;
+        private readonly PixelFormat _pixelFormat;
+        private readonly InterpolationMode _interpolationMode;
+        private readonly CompositingQuality _compositingQuality;
+        private readonly SmoothingMode _smoothingMode;
 
-        
         public PixelFormat PixelFormat
         {
             get
@@ -24,7 +22,6 @@ namespace Map2CivilizationCtrl.Analyzer
             }
         }
 
-       
         public InterpolationMode InterpolationMode
         {
             get
@@ -75,7 +72,6 @@ namespace Map2CivilizationCtrl.Analyzer
             }
         }
 
-        
         public SourceReliefMapSettings(Bitmap mapBitmap, System.Drawing.Imaging.PixelFormat pixelFormat,
             System.Drawing.Drawing2D.InterpolationMode interpolationMode,
             System.Drawing.Drawing2D.CompositingQuality compositingQuallity,
@@ -88,15 +84,9 @@ namespace Map2CivilizationCtrl.Analyzer
             _smoothingMode = smoothingMode;
         }
 
-
-        
-
         public void Dispose()
         {
             _originalMapBitmap.Dispose();
         }
     }
-
-   
-
 }

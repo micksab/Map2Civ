@@ -2,18 +2,14 @@
 using Map2CivilizationModel;
 using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace Map2CivilizationCtrl.JsonAdapters
 {
-    class PlotGeoDataJsonAdapter
+    internal class PlotGeoDataJsonAdapter
     {
-        string _id;
-        TerrainType.Enumeration _terrainDescriptor = TerrainType.Enumeration.NotDefined;
-        bool _isLocked = false;
-
+        private string _id;
+        private TerrainType.Enumeration _terrainDescriptor = TerrainType.Enumeration.NotDefined;
+        private bool _isLocked = false;
 
         #region public properties
 
@@ -59,8 +55,7 @@ namespace Map2CivilizationCtrl.JsonAdapters
             }
         }
 
-
-        #endregion
+        #endregion public properties
 
         public PlotGeoDataJsonAdapter(PlotGeoData plot)
         {

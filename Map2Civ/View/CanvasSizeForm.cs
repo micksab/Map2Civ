@@ -3,16 +3,15 @@ using System.Drawing;
 
 using System.Windows.Forms;
 
-
 namespace Map2CivilizationView
 {
     public partial class CanvasSizeForm : Form
     {
-         int _minWidth;
-         int _minHeight;
-         double _intentedRatio;
-         Size _imageSize;
-         Color _backColor = Color.Blue;
+        private int _minWidth;
+        private int _minHeight;
+        private double _intentedRatio;
+        private Size _imageSize;
+        private Color _backColor = Color.Blue;
 
         public CanvasSizeForm(Size imageSize, double intendedRatio)
         {
@@ -26,7 +25,6 @@ namespace Map2CivilizationView
             widthNumeric.Minimum = _minWidth;
             heightNumeric.Minimum = _minHeight;
             colorPanel.BackColor = _backColor;
-
         }
 
         #region Public methods
@@ -43,7 +41,7 @@ namespace Map2CivilizationView
                 if (_intentedRatio <= imageRatio)
                 {
                     //We need to adjust the height
-                    double newHeight = _imageSize.Width/ _intentedRatio;
+                    double newHeight = _imageSize.Width / _intentedRatio;
 
                     toReturn = new Size(_imageSize.Width, (int)newHeight);
                 }
@@ -60,7 +58,6 @@ namespace Map2CivilizationView
                 toReturn = new Size((int)widthNumeric.Value, (int)heightNumeric.Value);
             }
 
-            
             return toReturn;
         }
 
@@ -70,24 +67,23 @@ namespace Map2CivilizationView
             return _backColor;
         }
 
-        #endregion
-
+        #endregion Public methods
 
         #region Event Handlers
 
-         void cancelButton_Click(object sender, EventArgs e)
+        private void cancelButton_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.Cancel;
             Close();
         }
 
-         void okButton_Click(object sender, EventArgs e)
+        private void okButton_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.OK;
             Close();
         }
 
-         void radioCheckedChanged(object sender, EventArgs e)
+        private void radioCheckedChanged(object sender, EventArgs e)
         {
             if (nearestRadio.Checked)
             {
@@ -99,11 +95,11 @@ namespace Map2CivilizationView
             }
         }
 
-         void colorButton_Click(object sender, EventArgs e)
+        private void colorButton_Click(object sender, EventArgs e)
         {
             DialogResult result = colorDialog.ShowDialog();
 
-            if(result == DialogResult.OK)
+            if (result == DialogResult.OK)
             {
                 Color newColor = colorDialog.Color;
                 colorPanel.BackColor = newColor;
@@ -111,6 +107,6 @@ namespace Map2CivilizationView
             }
         }
 
-        #endregion
+        #endregion Event Handlers
     }
 }

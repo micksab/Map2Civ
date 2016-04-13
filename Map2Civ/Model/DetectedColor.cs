@@ -1,19 +1,15 @@
-﻿using System.Collections.Generic;
+﻿using Map2CivilizationCtrl.DataStructure;
 using Map2CivilizationCtrl.Enumerations;
-using Map2CivilizationCtrl.DataStructure;
-
+using System.Collections.Generic;
 
 namespace Map2CivilizationModel
 {
-
     public class DetectedColor
     {
+        private string _colorHex;
+        private TerrainType.Enumeration _terrainDescriptor;
+        private readonly List<Plot> _relevantPlots;
 
-        string _colorHex;
-        TerrainType.Enumeration _terrainDescriptor;
-        readonly List<Plot> _relevantPlots;
-
-        
         public string ColorHex
         {
             get
@@ -27,7 +23,6 @@ namespace Map2CivilizationModel
             }
         }
 
-
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1002:DoNotExposeGenericLists")]
         public List<Plot> RelevantPlots
         {
@@ -35,9 +30,7 @@ namespace Map2CivilizationModel
             {
                 return _relevantPlots;
             }
-
         }
-
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1002:DoNotExposeGenericLists")]
         public List<PlotId> RelevantPlotIds
@@ -46,7 +39,7 @@ namespace Map2CivilizationModel
             {
                 List<PlotId> toReturn = new List<PlotId>();
 
-                foreach(Plot plot in _relevantPlots)
+                foreach (Plot plot in _relevantPlots)
                 {
                     toReturn.Add(plot.Id);
                 }
@@ -61,8 +54,6 @@ namespace Map2CivilizationModel
             {
                 return _terrainDescriptor;
             }
-
-          
         }
 
         public DetectedColor(string colorHexValue)
@@ -73,25 +64,22 @@ namespace Map2CivilizationModel
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="hexColor">The string representation of the color (eg. #99CCFF) </param>
         /// <param name="terrainDescriptor">The terrain value assigned to the color</param>
         public DetectedColor(string hexColor, TerrainType.Enumeration terrainDescriptor)
         {
             _colorHex = hexColor;
-            _terrainDescriptor  = terrainDescriptor;
+            _terrainDescriptor = terrainDescriptor;
             _relevantPlots = new List<Plot>();
-           
         }
-
 
         public void UpdateDetectedColor(TerrainType.Enumeration terrainDescriptor)
         {
             _terrainDescriptor = terrainDescriptor;
             UpdateRelevantPlots();
         }
-
 
         public void AddRelevantPlot(Plot plot)
         {
@@ -101,33 +89,15 @@ namespace Map2CivilizationModel
             }
         }
 
-
-         void UpdateRelevantPlots()
+        private void UpdateRelevantPlots()
         {
-            foreach(Plot plot in _relevantPlots)
+            foreach (Plot plot in _relevantPlots)
             {
-                
-
-                if(!plot.IsLocked)
+                if (!plot.IsLocked)
                 {
                     plot.UpdatePlot(_terrainDescriptor, false);
-                   
                 }
-                
-
             }
         }
-
-
-        
-
-
-
-        
-
-       
-
-        
-
     }
 }

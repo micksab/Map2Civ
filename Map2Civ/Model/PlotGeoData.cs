@@ -1,6 +1,6 @@
-﻿using System;
-using Map2Civilization.Properties;
+﻿using Map2Civilization.Properties;
 using Map2CivilizationCtrl.Enumerations;
+using System;
 
 namespace Map2CivilizationModel
 {
@@ -12,7 +12,7 @@ namespace Map2CivilizationModel
             throw new NotImplementedException(Resources.Str_PlotGeoData_NotSupported);
         }
 
-        public PlotGeoData(string id, TerrainType.Enumeration terrainDescriptor, bool isLocked) : base( id, terrainDescriptor, isLocked)
+        public PlotGeoData(string id, TerrainType.Enumeration terrainDescriptor, bool isLocked) : base(id, terrainDescriptor, isLocked)
         {
             throw new NotImplementedException(Resources.Str_PlotGeoData_NotSupported);
         }

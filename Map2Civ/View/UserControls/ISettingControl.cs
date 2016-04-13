@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace Map2CivilizationView.UserControls
+﻿namespace Map2CivilizationView.UserControls
 {
-    interface ISettingControl
+    internal interface ISettingControl
     {
         void SavePropertySetting();
     }

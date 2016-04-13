@@ -31,6 +31,9 @@ namespace Map2CivilizationView
             _originalBmp = image;
             _intendedRatio = intendedRatio;
 
+            this.BringToFront();
+            this.Focus();
+
             
         }
 

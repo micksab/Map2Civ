@@ -1,19 +1,16 @@
-﻿using System;
+﻿using Map2CivilizationCtrl;
+using Map2CivilizationCtrl.DataStructure;
+using Map2CivilizationCtrl.Listener;
+using System;
 using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
-using Map2CivilizationCtrl;
-using Map2CivilizationCtrl.DataStructure;
-using Map2CivilizationCtrl.Listener;
 
 namespace Map2CivilizationView.UserControls
 {
     [TypeDescriptionProvider(typeof(AbstractControlDescriptionProvider<MapControlBase, UserControl>))]
     public class MapControlOriginal : MapControlBase, IUiListenerOriginalMap
     {
-        
-
-
         public MapControlOriginal(bool allowScroll)
         {
             RegisteredListenersCtrl.OriginalMapListeners.RegisterObserver(this);
@@ -25,7 +22,6 @@ namespace Map2CivilizationView.UserControls
             HandleDestroyed += MapControlBase_Closing;
         }
 
-
         #region IUIListener_Original map interface implementation
 
         public void ReloadMap(Bitmap bmp)
@@ -36,26 +32,21 @@ namespace Map2CivilizationView.UserControls
             //Remove the decorative backgroud image
             base.BackgroundImage = null;
             PictureBox.BackgroundImage = bmp;
-            
 
             if (!RegisteredListenersCtrl.PlotLocationListeners.Contains(this))
             {
                 PictureBox.Size = bmp.Size;
                 PictureBox.Controls.Add(MarkerCtrl);
-                MarkerCtrl.RepositionSelectedPlotPanel(new PlotId(0,0));
+                MarkerCtrl.RepositionSelectedPlotPanel(new PlotId(0, 0));
                 MarkerCtrl.BringToFront();
                 RegisteredListenersCtrl.PlotLocationListeners.RegisterObserver(this);
             }
-
-
 
             PictureBox.Refresh();
             PictureBox.Update();
         }
 
-
-        #endregion
-
+        #endregion IUIListener_Original map interface implementation
 
         #region Event handlers
 
@@ -64,11 +55,8 @@ namespace Map2CivilizationView.UserControls
         {
             //base.MapControlBase_Closing(sender, e);
             RegisteredListenersCtrl.OriginalMapListeners.DeregisterObserver(this);
-            
         }
 
-        #endregion
-
-        
+        #endregion Event handlers
     }
 }

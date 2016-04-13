@@ -8,7 +8,6 @@ namespace Map2CivilizationCtrl
 {
     public static class VariousUtilityMethods
     {
-
         public static string ExtractDisplayableModelFilePath(string currentFile)
         {
             string toReturn = string.Empty;
@@ -22,14 +21,11 @@ namespace Map2CivilizationCtrl
                 //.. and keep just the name of the folder that the file resides at..
                 string[] directories = directory.Split(new Char[] { '\\' });
 
-
                 toReturn = string.Concat("...", directories.Last<string>(), "\\", filename);
             }
 
-
             return toReturn;
         }
-
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1002:DoNotExposeGenericLists")]
         public static Collection<T> ListToCollection<T>(List<T> list)
@@ -45,7 +41,6 @@ namespace Map2CivilizationCtrl
 
             return toReturn;
         }
-
 
         public static string FormatKeyStringRepresentation(Keys keyValue)
         {

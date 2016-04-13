@@ -18,15 +18,13 @@ namespace Map2CivilizationCtrl.Enumerations
         /// <summary>
         /// Used to store the single instance needed to perform any operation.
         /// </summary>
-         static ProcessedMapControlMode _singleInstance;
+        private static ProcessedMapControlMode _singleInstance;
 
         /// <summary>
         ///  constructor
         /// </summary>
-         ProcessedMapControlMode() { }
-
-        
-
+        private ProcessedMapControlMode()
+        { }
 
         public static ProcessedMapControlMode Singleton
         {
@@ -54,8 +52,10 @@ namespace Map2CivilizationCtrl.Enumerations
             {
                 case Enumeration.ColorEditor:
                     return Resources.Str_ProcessedMapControlMode_Description_ColorEditor;
+
                 case Enumeration.PlotEditor:
                     return Resources.Str_ProcessedMapControlMode_Description_PlotEditors;
+
                 default:
                     throw new InvalidEnumArgumentException("Non existing enumeration value.");
             }
@@ -67,13 +67,14 @@ namespace Map2CivilizationCtrl.Enumerations
             {
                 case Enumeration.ColorEditor:
                     return true;
+
                 case Enumeration.PlotEditor:
                     return false;
+
                 default:
                     throw new InvalidEnumArgumentException("Non existing enumeration value.");
             }
         }
-
 
         public Boolean GetEnumValueDefaultStatus(System.Enum value)
         {
@@ -81,13 +82,15 @@ namespace Map2CivilizationCtrl.Enumerations
             {
                 case Enumeration.ColorEditor:
                     return true;
+
                 case Enumeration.PlotEditor:
                     return false;
+
                 default:
                     throw new InvalidEnumArgumentException("Non existing enumeration value.");
             }
         }
 
-        #endregion
+        #endregion Singleton methods
     }
 }

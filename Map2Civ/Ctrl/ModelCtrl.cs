@@ -1,23 +1,18 @@
-﻿using System;
-using System.Drawing;
+﻿using Map2CivilizationCtrl.Analyzer;
 using Map2CivilizationCtrl.DataStructure;
 using Map2CivilizationCtrl.Enumerations;
 using Map2CivilizationModel;
-using Map2Civilization.Properties;
-using Map2CivilizationCtrl.Analyzer;
+using System.Drawing;
 
 namespace Map2CivilizationCtrl
 {
-    static class ModelCtrl
+    internal static class ModelCtrl
     {
-
-        
-        static DataModel _dataModel;
-        
+        private static DataModel _dataModel;
 
         public static Bitmap GetProcessedBitmap()
         {
-            if (_dataModel== null)
+            if (_dataModel == null)
                 return null;
 
             return _dataModel.ProcessedBitmap;
@@ -25,9 +20,8 @@ namespace Map2CivilizationCtrl
 
         internal static DataModel GetDataModel()
         {
-            return _dataModel;   
+            return _dataModel;
         }
-
 
         public static MapDataSource.Enumeration GetModelDataSourceType()
         {
@@ -41,18 +35,15 @@ namespace Map2CivilizationCtrl
             }
         }
 
-
         public static SourceReliefMapSettings GetReliefMapSettings()
         {
             return _dataModel.ReliefMapSettings;
         }
 
-
         public static CivilizationVersion.Enumeration GetCivilizationVersion()
         {
             return _dataModel.CivilizationVersion;
         }
-
 
         public static string GetCurrentModelFile()
         {
@@ -64,8 +55,6 @@ namespace Map2CivilizationCtrl
 
             return toReturn;
         }
-
-
 
         internal static void SetDataModel(DataModel newModel)
         {
@@ -83,18 +72,11 @@ namespace Map2CivilizationCtrl
             RegisteredListenersCtrl.ModelListenersModelChanged();
             RegisteredListenersCtrl.DetectedColorsGridFill();
         }
-        
-        
-
-        
-
 
         public static MapDimension GetMapSize()
         {
             return _dataModel.SelectedMapSize;
         }
-
-
 
         public static GridType.Enumeration GetGridType()
         {
@@ -119,66 +101,26 @@ namespace Map2CivilizationCtrl
             return GridType.Singleton.GetPlotHeightPixels(_dataModel.GridType);
         }
 
-
         public static Bitmap GetDataSourceEditedImage()
         {
             return _dataModel.ReliefMapSettings.AdjustedMapBitmap;
         }
 
-
         public static Bitmap GetDataSourceAdjustedImageWithGrid()
         {
-
             Bitmap toReturn = BitmapOperationsCtrl.SafeCloneStreamBasedBitmap(_dataModel.ReliefMapSettings.AdjustedMapBitmap);
 
             if (toReturn != null)
             {
                 toReturn = BitmapOperationsCtrl.DrawGridLines(toReturn);
             }
-           
+
             return toReturn;
         }
-
 
         public static double GetAssignedPercentComplete()
         {
             return _dataModel.PlotCollection.GetAssignedPercentComplete();
         }
-
-
-
-
-       
-
-
-
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     }
 }

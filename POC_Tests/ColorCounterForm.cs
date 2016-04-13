@@ -1,11 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace POC_Tests
@@ -17,11 +12,10 @@ namespace POC_Tests
             InitializeComponent();
         }
 
-         void loadButton_Click(object sender, EventArgs e)
+        private void loadButton_Click(object sender, EventArgs e)
         {
             try
             {
-
                 //this.fileBox_TextChanged(this, new EventArgs());
                 Cursor = Cursors.WaitCursor;
                 Bitmap image = (Bitmap)Image.FromFile(fileBox.Text);
@@ -31,10 +25,8 @@ namespace POC_Tests
 
                 for (int x = 0; x < image.Width; x++)
                 {
-
                     for (int y = 0; y < image.Height; y++)
                     {
-
                         Color tempColor = image.GetPixel(x, y);
 
                         if (tempColor != Color.Transparent)
@@ -48,20 +40,15 @@ namespace POC_Tests
                                 colorList.Add(tempColor, 1);
                             }
                         }
-
-
                     }
-
                 }
 
                 this.colorsDetectedLabel.Text = "Colors Detected: " + colorList.Count;
-
-
             }
-           catch(Exception ex)
+            catch (Exception ex)
             {
                 Cursor = Cursors.Default;
-                MessageBox.Show("Error while loading image file:" + ex.Message, "Error!", 
+                MessageBox.Show("Error while loading image file:" + ex.Message, "Error!",
                     MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
             }
             finally
@@ -70,7 +57,7 @@ namespace POC_Tests
             }
         }
 
-         void fileBox_TextChanged(object sender, EventArgs e)
+        private void fileBox_TextChanged(object sender, EventArgs e)
         {
             fileBox.Text = fileBox.Text.Replace("\"", String.Empty);
         }

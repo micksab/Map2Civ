@@ -1,23 +1,23 @@
-﻿using System;
+﻿using Map2Civilization.Properties;
+using System;
 using System.Collections;
 using System.Drawing;
 using System.Windows.Forms;
-using Map2Civilization.Properties;
 
 namespace Map2CivilizationView
 {
     public partial class ErrorForm : Form
     {
-        Boolean isUnhandled;
+        private Boolean isUnhandled;
 
         public ErrorForm(Boolean unhandled, string message, Exception ex)
         {
             InitializeComponent();
             isUnhandled = unhandled;
 
-            if(ex!=null)
+            if (ex != null)
             {
-                messageBox.Text = string.Concat(message, Resources.Str_SingleColonWithSpace , ex.Message);
+                messageBox.Text = string.Concat(message, Resources.Str_SingleColonWithSpace, ex.Message);
 
                 if (isUnhandled)
                 {
@@ -33,29 +33,17 @@ namespace Map2CivilizationView
                     int width = messagePanel.Width;
                     int height = messagePanel.Height + buttonPanel.Height;
                     Size = new Size(width, height);
-
                 }
             }
             else
             {
                 throw new ArgumentNullException(nameof(ex));
             }
-
-            
-           
-
-            
-
-            
-
-
         }
 
-
-         void setExceptionBoxContents(Exception ex)
+        private void setExceptionBoxContents(Exception ex)
         {
             ArrayList exLines = new ArrayList();
-
 
             exLines.Add(ex.StackTrace);
 
@@ -80,15 +68,12 @@ namespace Map2CivilizationView
             exceptionBox.Text = toShow;
         }
 
-
-         void closeButton_Click(object sender, EventArgs e)
+        private void closeButton_Click(object sender, EventArgs e)
         {
             Close();
         }
 
-        
-
-         void messageBox_KeyPress(object sender, KeyPressEventArgs e)
+        private void messageBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = true; //Just do nothing, so that the user may not be able to change the contents of the textbox..
         }

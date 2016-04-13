@@ -6,12 +6,13 @@ namespace Map2CivilizationCtrl.DataStructure
 {
     public struct MapDimension
     {
-         string _description;
-         int _widthPlots;
-         int _heightPlots;
-         bool _isDefault;
+        private string _description;
+        private int _widthPlots;
+        private int _heightPlots;
+        private bool _isDefault;
 
         #region getters
+
         public string Description
         {
             get
@@ -19,6 +20,7 @@ namespace Map2CivilizationCtrl.DataStructure
                 return _description;
             }
         }
+
         public int WidthPlots
         {
             get
@@ -48,7 +50,7 @@ namespace Map2CivilizationCtrl.DataStructure
             return string.Concat(_description, "#", _widthPlots, "#", _heightPlots, "#", _isDefault);
         }
 
-        #endregion
+        #endregion getters
 
         public MapDimension(string description, int widthPlots, int heightPlots, bool isDefault)
         {
@@ -82,7 +84,6 @@ namespace Map2CivilizationCtrl.DataStructure
             }
         }
 
-
         public override bool Equals(object obj)
         {
             if (!(obj is MapDimension))
@@ -96,7 +97,7 @@ namespace Map2CivilizationCtrl.DataStructure
             return (_description.Equals(other.Description)
                && _widthPlots == other.WidthPlots
                && _heightPlots == other.HeightPlots
-               && _isDefault == other.IsDefault);    
+               && _isDefault == other.IsDefault);
         }
 
         public override int GetHashCode()
@@ -113,6 +114,5 @@ namespace Map2CivilizationCtrl.DataStructure
         {
             return !dimension1.Equals(dimension2);
         }
-
     }
 }

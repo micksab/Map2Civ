@@ -1,29 +1,21 @@
-﻿using Map2CivilizationCtrl.DataStructure;
-using Map2CivilizationCtrl;
+﻿using Map2Civilization.Properties;
 using Map2CivilizationCtrl.Enumerations;
-using Map2CivilizationCtrl.ModelFileStorage;
+using Map2CivilizationCtrl.JsonAdapters;
 using Map2CivilizationModel;
 using Map2CivilizationView;
+using Newtonsoft.Json;
 using System;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using Map2Civilization.Properties;
-using System.Drawing.Imaging;
-using System.Drawing.Drawing2D;
-using Map2CivilizationCtrl.Analyzer;
-using Newtonsoft.Json;
 using System.Diagnostics;
-using Map2CivilizationCtrl.JsonAdapters;
 using System.IO;
 
 namespace Map2CivilizationCtrl.ModelFileStorage
 {
-    class LoadModelProcessor : IDisposable
+    internal class LoadModelProcessor : IDisposable
     {
-         BackgroundWorker _loadBackgroundWorker = new BackgroundWorker();
+        private BackgroundWorker _loadBackgroundWorker = new BackgroundWorker();
 
-        LoadModelProcessor()
+        private LoadModelProcessor()
         {
             _loadBackgroundWorker.WorkerReportsProgress = true;
             _loadBackgroundWorker.DoWork += LoadBackgroundWorker_DoWork;
@@ -31,7 +23,7 @@ namespace Map2CivilizationCtrl.ModelFileStorage
             _loadBackgroundWorker.RunWorkerCompleted += LoadBackgroundWorker_RunWorkerCompleted;
         }
 
-         static LoadModelProcessor Singleton()
+        private static LoadModelProcessor Singleton()
         {
             return new LoadModelProcessor();
         }
@@ -44,10 +36,9 @@ namespace Map2CivilizationCtrl.ModelFileStorage
         }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Reliability", "CA2000:Dispose objects before losing scope")]
-        void LoadBackgroundWorker_DoWork(object sender, DoWorkEventArgs e)
+        private void LoadBackgroundWorker_DoWork(object sender, DoWorkEventArgs e)
         {
             string fullFilePath = (string)e.Argument;
-
 
             Stopwatch jsonDeserializeStopWatch = new Stopwatch();
             jsonDeserializeStopWatch.Start();
@@ -71,18 +62,12 @@ namespace Map2CivilizationCtrl.ModelFileStorage
             newDataModel.MapDataSource = loadModelAdapter.MapDataSourceType;
             newDataModel.SelectedMapSize = loadModelAdapter.MapSize.GetMapDimension();
 
-            
-            
-
-
             counter++;
             _loadBackgroundWorker.ReportProgress((int)((counter / progressMaxValue) * 100));
 
-            
-
             if (newDataModel.MapDataSource == MapDataSource.Enumeration.ReliefMapImage)
-            { 
-            newDataModel.ReliefMapSettings = loadModelAdapter.ReliefMapSettings.GetSourceReliefMapSettings();
+            {
+                newDataModel.ReliefMapSettings = loadModelAdapter.ReliefMapSettings.GetSourceReliefMapSettings();
                 //Add the relief plots
                 foreach (PlotReliefMapJsonAdapter plot in loadModelAdapter.ReliefPlotArray)
                 {
@@ -97,7 +82,6 @@ namespace Map2CivilizationCtrl.ModelFileStorage
                 }
             }
 
-
             if (newDataModel.MapDataSource == MapDataSource.Enumeration.GeoDataProvider)
             {
                 newDataModel.GeoDataSettings = loadModelAdapter.GeoDataSettings.GetGeoDataSettings();
@@ -110,7 +94,6 @@ namespace Map2CivilizationCtrl.ModelFileStorage
                 }
             }
 
-
             //update the detected colors...
             foreach (DetectedColorJsonAdapter color in loadModelAdapter.DetectedColorArray)
             {
@@ -120,10 +103,9 @@ namespace Map2CivilizationCtrl.ModelFileStorage
                 _loadBackgroundWorker.ReportProgress((int)((counter / progressMaxValue) * 100));
             }
 
-
             //Initialize the empty processed map image
             newDataModel.ProcessedBitmap = BitmapOperationsCtrl.InitializeProcessedMapImage(newDataModel.SelectedMapSize, newDataModel.GridType);
-            //Initialize the adjusted source image 
+            //Initialize the adjusted source image
             newDataModel.ReliefMapSettings.AdjustedMapBitmap = BitmapOperationsCtrl.InitializeDataSourceImage(
                 newDataModel.ReliefMapSettings, newDataModel.SelectedMapSize, newDataModel.GridType);
             newDataModel.ModelFile = fullFilePath;
@@ -131,28 +113,21 @@ namespace Map2CivilizationCtrl.ModelFileStorage
             counter++;
             _loadBackgroundWorker.ReportProgress((int)((counter / progressMaxValue) * 100));
 
-
             e.Result = newDataModel;
         }
 
-
-
-         void LoadBackgroundWorker_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        private void LoadBackgroundWorker_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
             int toReport = e.ProgressPercentage;
             RegisteredListenersCtrl.SetProgressPercent(toReport);
         }
 
-
-         void LoadBackgroundWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        private void LoadBackgroundWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             try
             {
-
-
                 if (e.Error == null)
                 {
-                    
                     DataModel newModel = (DataModel)e.Result;
                     ModelCtrl.SetDataModel(newModel);
                     string currentFile = ModelCtrl.GetDataModel().ModelFile;
@@ -181,13 +156,10 @@ namespace Map2CivilizationCtrl.ModelFileStorage
                 RegisteredListenersCtrl.ProgressFinished();
                 Dispose();
             }
-
-
-
         }
 
+        #region IDisposable interface implementation (for backgroundworker threads).
 
-        #region IDisposable interface implementation (for backgroundworker threads). 
         //Implementation of IDisposabe is needed because the worker instances are used on a non-UI class
         // that would normally take case itself of properly of disposing them.
         //http://stackoverflow.com/questions/2542326/proper-way-to-dispose-of-a-backgroundworker
@@ -209,7 +181,6 @@ namespace Map2CivilizationCtrl.ModelFileStorage
             GC.SuppressFinalize(this);
         }
 
-        #endregion
-
+        #endregion IDisposable interface implementation (for backgroundworker threads).
     }
 }

@@ -13,15 +13,12 @@
     You should have received a copy of the GNU General Public License
     along with Foobar.  If not, see<http://www.gnu.org/licenses/>.*/
 
-
-using System;
-using System.Reflection;
-using System.Windows.Forms;
-
-
 using Map2Civilization.Properties;
+using System;
 using System.Diagnostics;
 using System.Globalization;
+using System.Reflection;
+using System.Windows.Forms;
 
 namespace Map2CivilizationView
 {
@@ -31,16 +28,12 @@ namespace Map2CivilizationView
         {
             InitializeComponent();
 
-
-
             Text = string.Concat(Map2Civilization.Properties.Resources.Str_AboutForm_About,
                 Resources.Str_SingleSpace, this.AssemblyTitle);
             labelProductName.Text = this.AssemblyProduct;
-            labelVersion.Text = string.Concat(Resources.Str_AboutForm_Version, 
+            labelVersion.Text = string.Concat(Resources.Str_AboutForm_Version,
                 Resources.Str_SingleSpace, this.AssemblyVersion);
             labelCopyright.Text = AssemblyCopyright;
-
-
         }
 
         #region Assembly Attribute Accessors
@@ -100,8 +93,6 @@ namespace Map2CivilizationView
             }
         }
 
-        
-
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
         public string AssemblyCompany
         {
@@ -116,7 +107,6 @@ namespace Map2CivilizationView
             }
         }
 
-
         public String AssemblyCopyright
         {
             get
@@ -130,13 +120,12 @@ namespace Map2CivilizationView
             }
         }
 
-        #endregion
+        #endregion Assembly Attribute Accessors
 
         private void textBoxDescription_LinkClicked(object sender, LinkClickedEventArgs e)
         {
             if (IsHttpURL(e.LinkText)) Process.Start(e.LinkText);
         }
-
 
         // Performs the actual browser launch to follow link:
         private void LaunchWeblink(string url)
@@ -155,7 +144,7 @@ namespace Map2CivilizationView
 
         private void creditsButton_Click(object sender, EventArgs e)
         {
-            using(CreditsForm creditsForm = new CreditsForm())
+            using (CreditsForm creditsForm = new CreditsForm())
             {
                 creditsForm.ShowDialog();
             }

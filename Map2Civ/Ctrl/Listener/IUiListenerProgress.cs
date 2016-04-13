@@ -3,8 +3,9 @@
     public interface IUiListenerProgress : IUiListener
     {
         void SetProgressPercent(int percent);
+
         void ProgressStarted();
+
         void ProgressFinished();
-        
     }
 }

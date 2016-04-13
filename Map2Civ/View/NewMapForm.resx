@@ -487,7 +487,7 @@
     <value>versionCustomEnumComboBox</value>
   </data>
   <data name="&gt;&gt;versionCustomEnumComboBox.Type" xml:space="preserve">
-    <value>Map2CivilizationView.UserControls.CustomEnumComboBox, Map2Civilization, Version=0.9.0.1, Culture=neutral, PublicKeyToken=null</value>
+    <value>Map2CivilizationView.UserControls.CustomEnumComboBox, Map2Civilization, Version=0.9.0.2, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;versionCustomEnumComboBox.Parent" xml:space="preserve">
     <value>standardOptionsPanel</value>
@@ -514,7 +514,7 @@
     <value>dataSourceCustomEnumComboBox</value>
   </data>
   <data name="&gt;&gt;dataSourceCustomEnumComboBox.Type" xml:space="preserve">
-    <value>Map2CivilizationView.UserControls.CustomEnumComboBox, Map2Civilization, Version=0.9.0.1, Culture=neutral, PublicKeyToken=null</value>
+    <value>Map2CivilizationView.UserControls.CustomEnumComboBox, Map2Civilization, Version=0.9.0.2, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;dataSourceCustomEnumComboBox.Parent" xml:space="preserve">
     <value>standardOptionsPanel</value>
@@ -813,6 +813,9 @@
         HwDx4Y8A5+HnAM/h8wDP4PMAn8D5AJ/AeQA+ADwAPAA4ABwAgAAcAAAAPAgAAD4+AACfMgEAn4ABAMeA
         AwDD+AMA4/AHAPH4DwD4fh8A/gB/AP+B/wA=
 </value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterParent</value>

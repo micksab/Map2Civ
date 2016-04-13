@@ -1,17 +1,16 @@
-﻿using System;
+﻿using Map2Civilization.Properties;
+using Map2CivilizationView.UserControls;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Windows.Forms;
-using Map2Civilization.Properties;
-using Map2CivilizationView.UserControls;
-
 
 namespace Map2CivilizationView
 {
     public partial class KeyboardShortcutSelectorForm : Form
     {
-        Keys _key;
-        bool _requiresKeyModifier =false;
+        private Keys _key;
+        private bool _requiresKeyModifier = false;
 
         public bool RequiresKeyModifier
         {
@@ -40,8 +39,7 @@ namespace Map2CivilizationView
             PopulateKeysCombo();
         }
 
-
-         void PopulateKeysCombo()
+        private void PopulateKeysCombo()
         {
             keysCombo.SelectedIndexChanged -= keysCombo_SelectedIndexChanged;
             controlBox.CheckedChanged -= controlBox_CheckedChanged;
@@ -57,7 +55,6 @@ namespace Map2CivilizationView
             keysCombo.DataSource = values;
             keysCombo.DisplayMember = ToString();
 
-            
             controlBox.Checked = _key.HasFlag(Keys.Control);
             shiftBox.Checked = _key.HasFlag(Keys.Shift);
             altBox.Checked = _key.HasFlag(Keys.Alt);
@@ -68,11 +65,9 @@ namespace Map2CivilizationView
             controlBox.CheckedChanged += controlBox_CheckedChanged;
             shiftBox.CheckedChanged += controlBox_CheckedChanged;
             altBox.CheckedChanged += controlBox_CheckedChanged;
-
         }
 
-
-         void AssignNewKeyValue()
+        private void AssignNewKeyValue()
         {
             _key = (Keys)keysCombo.SelectedItem;
 
@@ -80,7 +75,6 @@ namespace Map2CivilizationView
             {
                 _key = _key | Keys.Control;
             }
-
 
             if (shiftBox.Checked)
             {
@@ -91,32 +85,29 @@ namespace Map2CivilizationView
             {
                 _key = _key | Keys.Alt;
             }
-
-            
         }
 
-         void cancelButton_Click(object sender, EventArgs e)
+        private void cancelButton_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.Cancel;
             Close();
         }
 
-         void okButton_Click(object sender, EventArgs e)
+        private void okButton_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.OK;
             Close();
         }
 
-         void keysCombo_SelectedIndexChanged(object sender, EventArgs e)
+        private void keysCombo_SelectedIndexChanged(object sender, EventArgs e)
         {
             AssignNewKeyValue();
         }
 
-         void controlBox_CheckedChanged(object sender, EventArgs e)
+        private void controlBox_CheckedChanged(object sender, EventArgs e)
         {
             AssignNewKeyValue();
         }
-
 
         public Keys SelectedValue
         {
@@ -128,14 +119,13 @@ namespace Map2CivilizationView
                         throw new InvalidOperationException("Attempt to retrieve value from form marked as cancelled");
                     default:
                         return _key;
-
                 }
             }
         }
 
-         void controlBox_Validating(object sender, CancelEventArgs e)
+        private void controlBox_Validating(object sender, CancelEventArgs e)
         {
-            if(_requiresKeyModifier && !controlBox.Checked && !altBox.Checked)
+            if (_requiresKeyModifier && !controlBox.Checked && !altBox.Checked)
             {
                 CultureAwareMessageBox.Show(Resources.Str_KeyboardShortcutSelectorForm_ModifierRequiredText,
                     Resources.Str_KeyboardShortcutSelectorForm_ModifierRequiredCaption,

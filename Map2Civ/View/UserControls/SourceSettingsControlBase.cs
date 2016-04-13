@@ -1,17 +1,16 @@
-﻿using System;
-using System.ComponentModel;
-using System.Windows.Forms;
-using Map2CivilizationCtrl.Analyzer;
+﻿using Map2CivilizationCtrl.Analyzer;
 using Map2CivilizationCtrl.DataStructure;
 using Map2CivilizationCtrl.Enumerations;
+using System.ComponentModel;
+using System.Windows.Forms;
 
 namespace Map2CivilizationView.UserControls
 {
     [TypeDescriptionProvider(typeof(AbstractControlDescriptionProvider<SourceSettingsControlBase, UserControl>))]
     public abstract class SourceSettingsControlBase : UserControl
     {
-
         public abstract GridType.Enumeration SelectedGridType { set; get; }
+
         /// <summary>
         /// Property where the container of the control should update whenever a change of the selected map
         /// size occurs.
@@ -19,6 +18,7 @@ namespace Map2CivilizationView.UserControls
         /// <param name="dimension">The MapDimension instance holding the information
         /// of the selected map dimension</param>
         public abstract MapDimension SelectedMapDimension { set; get; }
+
         /// <summary>
         /// Property that verifies if all the required settings of the source data are valid.
         /// </summary>
@@ -35,15 +35,14 @@ namespace Map2CivilizationView.UserControls
         /// Used just for compatibility with the VS designer
         /// </summary>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1811:AvoidUncalledCode")]
-         void InitializeComponent()
+        private void InitializeComponent()
         {
             this.SuspendLayout();
-            // 
+            //
             // SourceSettingsControlBase
-            // 
+            //
             this.Name = "SourceSettingsControlBase";
             this.ResumeLayout(false);
-
         }
     }
 }

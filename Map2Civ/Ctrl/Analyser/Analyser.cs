@@ -1,16 +1,16 @@
-﻿using System;
+﻿using Map2CivilizationCtrl.DataStructure;
 using Map2CivilizationCtrl.Enumerations;
-using Map2CivilizationCtrl.DataStructure;
+using System;
 
 namespace Map2CivilizationCtrl.Analyzer
 {
     public abstract class AnalyzerFactory
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Reliability", "CA2000:Dispose objects before losing scope")]
-        public static AnalyzerFactory GetAnalyzer(ISourceMapSettings settings, GridType.Enumeration gridTypeEnum, 
+        public static AnalyzerFactory GetAnalyzer(ISourceMapSettings settings, GridType.Enumeration gridTypeEnum,
             MapDimension dimension, CivilizationVersion.Enumeration civilizationVersion)
         {
-            if(settings == null)
+            if (settings == null)
             {
                 throw new ArgumentNullException(nameof(settings), "Invalid or empty parameter value.");
             }
@@ -29,6 +29,6 @@ namespace Map2CivilizationCtrl.Analyzer
             }
         }
 
-        public abstract void AnalyzeData();  
+        public abstract void AnalyzeData();
     }
 }

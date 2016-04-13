@@ -1,16 +1,15 @@
-﻿using System;
-using System.Windows.Forms;
-using Map2Civilization.Properties;
-using System.ComponentModel;
+﻿using Map2Civilization.Properties;
+using System;
 using System.Globalization;
+using System.Windows.Forms;
 
 namespace Map2CivilizationView.UserControls
 {
     public partial class NumericSettingSelector : UserControl, ISettingControl
     {
-        string _propertyName = String.Empty;
-        decimal _value = 0;
-        EventHandler<EventArgs> _numericSelectorValueChanged;
+        private string _propertyName = String.Empty;
+        private decimal _value = 0;
+        private EventHandler<EventArgs> _numericSelectorValueChanged;
 
         public EventHandler<EventArgs> NumericSelectorValueChanged
         {
@@ -25,8 +24,6 @@ namespace Map2CivilizationView.UserControls
             }
         }
 
-        
-
         public NumericSettingSelector()
         {
             InitializeComponent();
@@ -37,7 +34,6 @@ namespace Map2CivilizationView.UserControls
             _propertyName = propertyName;
             _value = Convert.ToDecimal(Settings.Default[_propertyName], CultureInfo.InvariantCulture);
             this.numericUpDown.Value = _value;
-
         }
 
         public decimal Increment
@@ -52,7 +48,6 @@ namespace Map2CivilizationView.UserControls
             }
         }
 
-
         public decimal Minimum
         {
             get
@@ -64,7 +59,6 @@ namespace Map2CivilizationView.UserControls
                 numericUpDown.Minimum = value;
             }
         }
-
 
         public decimal Maximum
         {
@@ -78,9 +72,6 @@ namespace Map2CivilizationView.UserControls
             }
         }
 
-        
-
-
         public decimal Value
         {
             get
@@ -91,10 +82,7 @@ namespace Map2CivilizationView.UserControls
             {
                 numericUpDown.Value = value;
             }
-            
         }
-
-        
 
         public void SavePropertySetting()
         {
@@ -102,15 +90,13 @@ namespace Map2CivilizationView.UserControls
             Settings.Default[_propertyName] = Convert.ChangeType(_value, propertyType, CultureInfo.InvariantCulture);
         }
 
-        void numericUpDown_ValueChanged(object sender, EventArgs e)
+        private void numericUpDown_ValueChanged(object sender, EventArgs e)
         {
-            if(_numericSelectorValueChanged != null)
+            if (_numericSelectorValueChanged != null)
             {
                 _numericSelectorValueChanged(this, e);
                 _value = numericUpDown.Value;
             }
         }
-
-        
     }
 }

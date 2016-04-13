@@ -1,16 +1,15 @@
-﻿using System;
+﻿using Map2Civilization.Properties;
+using Map2CivilizationCtrl.Enumerations;
+using System;
 using System.Drawing;
 using System.Windows.Forms;
-using Map2Civilization.Properties;
-using Map2CivilizationCtrl.Enumerations;
 
 namespace Map2CivilizationView.UserControls
 {
     public partial class CustomEnumComboBox : UserControl
     {
-        
-        EventHandler _selectedIndexChanged;
-        IEnrichedEnumWrapper _dataSource;
+        private EventHandler _selectedIndexChanged;
+        private IEnrichedEnumWrapper _dataSource;
 
         public EventHandler SelectedIndexChanged
         {
@@ -30,8 +29,6 @@ namespace Map2CivilizationView.UserControls
             InitializeComponent();
         }
 
-        
-
         public void SetEnumDataSource(IEnrichedEnumWrapper source)
         {
             comboBox.Items.Clear();
@@ -45,12 +42,8 @@ namespace Map2CivilizationView.UserControls
                 }
 
                 SelectDefaultEnumEntry(source.EnumType);
-
             }
-
-           
         }
-
 
         public Enum SelectedItem
         {
@@ -58,15 +51,14 @@ namespace Map2CivilizationView.UserControls
             {
                 return (Enum)comboBox.SelectedItem;
             }
-            
         }
 
         //Using code found at http://stackoverflow.com/questions/11445125/disabling-particular-items-in-a-combobox
-         void comboBox_DrawItem(object sender, DrawItemEventArgs e)
+        private void comboBox_DrawItem(object sender, DrawItemEventArgs e)
         {
             if (e.Index >= 0)
             {
-                using(Font myFont = System.Drawing.SystemFonts.DefaultFont)
+                using (Font myFont = System.Drawing.SystemFonts.DefaultFont)
                 {
                     Enum selectedEnum = (Enum)comboBox.Items[e.Index];
                     Boolean isEnabled = _dataSource.GetEnumValueEnabledStatus(selectedEnum);
@@ -79,38 +71,33 @@ namespace Map2CivilizationView.UserControls
                     else
                     {
                         e.DrawBackground();
-                         
+
                         e.Graphics.DrawString(displayText, myFont, Brushes.Black, e.Bounds);
                         e.DrawFocusRectangle();
                     }
                 }
-
-               
             }
-           
-            
         }
 
         //Using code found at http://stackoverflow.com/questions/11445125/disabling-particular-items-in-a-combobox
-         void comboBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void comboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-
             if (comboBox.SelectedIndex >= 0)
             {
                 Enum selectedEnum = (Enum)comboBox.Items[comboBox.SelectedIndex];
                 Boolean isEnabled = _dataSource.GetEnumValueEnabledStatus(selectedEnum);
 
-
-                switch(isEnabled)
+                switch (isEnabled)
                 {
                     case false:
-                    string displayText = _dataSource.GetEnumValueDescription(selectedEnum);
-                    CultureAwareMessageBox.Show(Resources.Str_ExporterBase_NotSupportedMessagePart1 +
-                        displayText+Resources.Str_ExporterBase_NotSupportedMessagePart2, 
-                        Resources.Str_ExporterBase_NotSupportedCaption, MessageBoxButtons.OK, 
-                        MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1);
-                    SelectDefaultEnumEntry(selectedEnum.GetType());
+                        string displayText = _dataSource.GetEnumValueDescription(selectedEnum);
+                        CultureAwareMessageBox.Show(Resources.Str_ExporterBase_NotSupportedMessagePart1 +
+                            displayText + Resources.Str_ExporterBase_NotSupportedMessagePart2,
+                            Resources.Str_ExporterBase_NotSupportedCaption, MessageBoxButtons.OK,
+                            MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1);
+                        SelectDefaultEnumEntry(selectedEnum.GetType());
                         break;
+
                     default:
                         if (SelectedIndexChanged != null)
                         {
@@ -119,12 +106,9 @@ namespace Map2CivilizationView.UserControls
                         break;
                 }
             }
-
-
         }
 
-
-         void SelectDefaultEnumEntry(Type enumType)
+        private void SelectDefaultEnumEntry(Type enumType)
         {
             foreach (Enum tempEnum in Enum.GetValues(enumType))
             {
@@ -136,6 +120,5 @@ namespace Map2CivilizationView.UserControls
                 }
             }
         }
-
     }
 }

@@ -1,5 +1,4 @@
-﻿
-using Map2Civilization.Properties;
+﻿using Map2Civilization.Properties;
 using Map2CivilizationCtrl.DataStructure;
 using Map2CivilizationCtrl.Enumerations;
 using Map2CivilizationModel;
@@ -10,15 +9,13 @@ using System.Drawing;
 
 namespace Map2CivilizationCtrl
 {
-    static class GridCoordinateHelperCtrl
+    internal static class GridCoordinateHelperCtrl
     {
+        private static float _currentZoomFactor = 100f;
+        private static float _currentZoomMultiplier = 1f;
+        private static LinkedList<float> zoomValuesList = PopulateZoomList();
 
-        static float _currentZoomFactor = 100f;
-        static float _currentZoomMultiplier = 1f;
-        static LinkedList<float> zoomValuesList = PopulateZoomList();
-
-
-        static LinkedList<float> PopulateZoomList()
+        private static LinkedList<float> PopulateZoomList()
         {
             LinkedList<float> toReturn = new LinkedList<float>();
 
@@ -28,14 +25,13 @@ namespace Map2CivilizationCtrl
 
             for (float i = 100; i >= minValue; i = i - step)
             {
-                    toReturn.AddFirst(i);
+                toReturn.AddFirst(i);
 
                 if (i > minValue && (i - step) < minValue)
                     toReturn.AddFirst(minValue);
             }
 
-
-            for (float i = 100+step; i <= maxValue; i = i + step)
+            for (float i = 100 + step; i <= maxValue; i = i + step)
             {
                 toReturn.AddLast(i);
 
@@ -46,14 +42,12 @@ namespace Map2CivilizationCtrl
             return toReturn;
         }
 
-
         public static float[] GetAvailableZoomFactors()
         {
             float[] toReturn = new float[zoomValuesList.Count];
             zoomValuesList.CopyTo(toReturn, 0);
             return toReturn;
         }
-
 
         public static float GetZoomFactor()
         {
@@ -62,16 +56,13 @@ namespace Map2CivilizationCtrl
 
         public static void SetZoomFactor(float value)
         {
-
-            if(zoomValuesList.Contains(value))
+            if (zoomValuesList.Contains(value))
                 _currentZoomFactor = value;
-                _currentZoomMultiplier = value / 100f;
-
+            _currentZoomMultiplier = value / 100f;
         }
 
         public static float GetNextZoomInFactor()
         {
-
             LinkedListNode<float> currentNode = zoomValuesList.Find(_currentZoomFactor);
 
             if (currentNode.Next == null)
@@ -90,7 +81,6 @@ namespace Map2CivilizationCtrl
             return currentNode.Previous.Value;
         }
 
-
         /// <summary>
         /// Given the pixel location of a point, this method returns the Plot location of
         /// the corresponding plot
@@ -102,11 +92,10 @@ namespace Map2CivilizationCtrl
         public static PlotId ConvertPixelLocationToPlotId(int pixelX, int pixelY)
         {
             float zoomMultiplier = _currentZoomMultiplier;
-            float plotWidth = (int)ModelCtrl.GetPlotWidthPixels()* zoomMultiplier;
-            float plotHeight = (int)ModelCtrl.GetPlotHeightPixels()*zoomMultiplier;
+            float plotWidth = (int)ModelCtrl.GetPlotWidthPixels() * zoomMultiplier;
+            float plotHeight = (int)ModelCtrl.GetPlotHeightPixels() * zoomMultiplier;
             MapDimension mapSize = ModelCtrl.GetMapSize();
             GridType.Enumeration gridType = ModelCtrl.GetGridType();
-
 
             int currentPlotX = 0;
             int currentPlotY = 0;
@@ -118,6 +107,7 @@ namespace Map2CivilizationCtrl
                     int tempPlotY = (int)(pixelY / plotHeight);
                     currentPlotY = Math.Abs(tempPlotY - mapSize.HeightPlots + 1);
                     return new PlotId(currentPlotX, currentPlotY);
+
                 case GridType.Enumeration.HexagonalPT:
                     PlotId shortestDistanceCenterPlotId = new PlotId(0, 0);
                     float minDistance = float.MaxValue;
@@ -134,16 +124,13 @@ namespace Map2CivilizationCtrl
                     }
 
                     return shortestDistanceCenterPlotId;
+
                 case GridType.Enumeration.Rhombus:
                     throw new NotImplementedException();
                 default:
                     throw new InvalidEnumArgumentException("Unknown Grid Type");
             }
-
         }
-
-
-     
 
         public static PointF ConvertPlotIdToPixelLocation(PlotId id, MapDimension mapSize, GridType.Enumeration gridType, Boolean useZoom)
         {
@@ -154,10 +141,9 @@ namespace Map2CivilizationCtrl
             }
             else
             {
-                zoomMultiplier = 1f; 
+                zoomMultiplier = 1f;
             }
 
-            
             float plotWidthPixels = GridType.Singleton.GetPlotWidthPixels(gridType) * zoomMultiplier;
             float plotHeightPixels = GridType.Singleton.GetPlotHeightPixels(gridType) * zoomMultiplier;
 
@@ -167,18 +153,19 @@ namespace Map2CivilizationCtrl
                     float currentPlotXPixel = id.X * plotWidthPixels;
                     float currentPlotYPixel = Math.Abs((mapSize.HeightPlots - id.Y - 1) * plotHeightPixels);
                     return new PointF(currentPlotXPixel, currentPlotYPixel);
+
                 case GridType.Enumeration.HexagonalPT:
                     int baseYPlot = Math.Abs(mapSize.HeightPlots - id.Y - 1);
                     //if the base plot is the first one
                     if (id.Y == 0)
                     {
-                        return new PointF(id.X * plotWidthPixels, (3f/4f)*baseYPlot*plotHeightPixels);
+                        return new PointF(id.X * plotWidthPixels, (3f / 4f) * baseYPlot * plotHeightPixels);
                     }
                     else
                     {
                         //For info on checking odd/even numbers, check http://cc.davelozinski.com/c-sharp/fastest-way-to-check-if-a-number-is-odd-or-even
                         //If the current y plot is even..
-                        if(id.Y % 2 == 0)
+                        if (id.Y % 2 == 0)
                         {
                             return new PointF(id.X * plotWidthPixels, (3f / 4f) * baseYPlot * plotHeightPixels);
                         }
@@ -188,7 +175,7 @@ namespace Map2CivilizationCtrl
                             return new PointF((id.X * plotWidthPixels) + plotWidthPixels / 2f, (3f / 4f) * baseYPlot * plotHeightPixels);
                         }
                     }
-                    
+
                 case GridType.Enumeration.Rhombus:
                     throw new NotImplementedException(Resources.Str_BitmapOperations_RhombusNotSupported);
                 default:
@@ -207,13 +194,9 @@ namespace Map2CivilizationCtrl
             return ConvertPlotIdToPixelLocation(id, ModelCtrl.GetMapSize(), ModelCtrl.GetGridType(), useZoom);
         }
 
-
-
-
         public static Boolean VerifyPlotLocationValidity(PlotId id)
         {
             MapDimension mapSize = ModelCtrl.GetMapSize();
-
 
             if ((id.X >= 0) && (id.X <= (mapSize.WidthPlots - 1)) && (id.Y >= 0) && (id.Y <= mapSize.HeightPlots - 1))
             {
@@ -222,7 +205,6 @@ namespace Map2CivilizationCtrl
 
             return false;
         }
-
 
         public static PointF[] GetPlotPolygonPoints(PlotId id, GridType.Enumeration gridType, MapDimension mapDimension)
         {
@@ -238,16 +220,18 @@ namespace Map2CivilizationCtrl
                     toReturn.Add(new PointF(UpperLeftCornerPoint.X + plotWidth, UpperLeftCornerPoint.Y));
                     toReturn.Add(new PointF(UpperLeftCornerPoint.X + plotWidth, UpperLeftCornerPoint.Y + plotHeight));
                     toReturn.Add(new PointF(UpperLeftCornerPoint.X, UpperLeftCornerPoint.Y + plotHeight));
-                    
+
                     break;
+
                 case GridType.Enumeration.HexagonalPT:
                     toReturn.Add(new PointF(UpperLeftCornerPoint.X + (plotWidth / 2), UpperLeftCornerPoint.Y));
-                    toReturn.Add(new PointF(UpperLeftCornerPoint.X + plotWidth, UpperLeftCornerPoint.Y+(plotHeight/4)));
-                    toReturn.Add(new PointF(UpperLeftCornerPoint.X + plotWidth, UpperLeftCornerPoint.Y + (3*plotHeight / 4)));
-                    toReturn.Add(new PointF(UpperLeftCornerPoint.X + (plotWidth/2), UpperLeftCornerPoint.Y + plotHeight));
+                    toReturn.Add(new PointF(UpperLeftCornerPoint.X + plotWidth, UpperLeftCornerPoint.Y + (plotHeight / 4)));
+                    toReturn.Add(new PointF(UpperLeftCornerPoint.X + plotWidth, UpperLeftCornerPoint.Y + (3 * plotHeight / 4)));
+                    toReturn.Add(new PointF(UpperLeftCornerPoint.X + (plotWidth / 2), UpperLeftCornerPoint.Y + plotHeight));
                     toReturn.Add(new PointF(UpperLeftCornerPoint.X, UpperLeftCornerPoint.Y + (3 * plotHeight / 4)));
                     toReturn.Add(new PointF(UpperLeftCornerPoint.X, UpperLeftCornerPoint.Y + (plotHeight / 4)));
                     break;
+
                 case GridType.Enumeration.Rhombus:
                     throw new NotImplementedException(Resources.Str_BitmapOperations_RhombusNotSupported);
                 default:
@@ -257,11 +241,10 @@ namespace Map2CivilizationCtrl
             return toReturn.ToArray();
         }
 
-
         /// <summary>
-        /// Method that given the id of the plot returns the points of the polygon that 
+        /// Method that given the id of the plot returns the points of the polygon that
         /// represents it.
-        /// ***CAUTION*** This overload of the method is intented to be used when examining an allready 
+        /// ***CAUTION*** This overload of the method is intented to be used when examining an allready
         /// initialized model! DO NOT use it when creating a new model.
         /// </summary>
         /// <param name="id">The id of the plot whose polygon points we wish to retreive</param>
@@ -272,22 +255,19 @@ namespace Map2CivilizationCtrl
             return toReturn;
         }
 
-
-
-         static float CalculatePointDistanceFromPlotCenter(PlotId plotId, PointF point, GridType.Enumeration gridType)
+        private static float CalculatePointDistanceFromPlotCenter(PlotId plotId, PointF point, GridType.Enumeration gridType)
         {
             float zoomMultiplier = _currentZoomMultiplier;
 
             PointF plotUpperLeftCorner = ConvertPlotIdToPixelLocation(plotId, true);
-            float plotWidthPixels = GridType.Singleton.GetPlotWidthPixels(gridType)* zoomMultiplier;
-            float plotHeightPixels = GridType.Singleton.GetPlotHeightPixels(gridType)* zoomMultiplier;
+            float plotWidthPixels = GridType.Singleton.GetPlotWidthPixels(gridType) * zoomMultiplier;
+            float plotHeightPixels = GridType.Singleton.GetPlotHeightPixels(gridType) * zoomMultiplier;
 
-            float distanceX = Math.Abs((plotUpperLeftCorner.X+(plotWidthPixels/2f)) - point.X);
-            float distanceY = Math.Abs((plotUpperLeftCorner.Y+(plotHeightPixels/2f)) - point.Y);
+            float distanceX = Math.Abs((plotUpperLeftCorner.X + (plotWidthPixels / 2f)) - point.X);
+            float distanceY = Math.Abs((plotUpperLeftCorner.Y + (plotHeightPixels / 2f)) - point.Y);
 
             return (float)Math.Sqrt(Math.Pow(distanceX, 2) + Math.Pow(distanceY, 2));
         }
-
 
         public static Size CalculateImageSize(MapDimension mapSize, GridType.Enumeration gridTypeEnum)
         {
@@ -305,10 +285,12 @@ namespace Map2CivilizationCtrl
                     newWidth = (int)(wp * w);
                     newHeight = (int)(hp * h);
                     break;
+
                 case GridType.Enumeration.HexagonalPT:
                     newWidth = (int)(wp * w + (w / 2));
                     newHeight = (int)(((2f * w) / Math.Sqrt(3)) + ((6f * w) / (4f * Math.Sqrt(3))) * (hp - 1f));
                     break;
+
                 case GridType.Enumeration.Rhombus:
                     throw new NotImplementedException(Resources.Str_BitmapOperations_RhombusNotSupported);
                 default:

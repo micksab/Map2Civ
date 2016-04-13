@@ -7,9 +7,9 @@ namespace Map2CivilizationCtrl.Enumerations
         Type EnumType { get; }
 
         string GetEnumValueDescription(System.Enum value);
+
         Boolean GetEnumValueEnabledStatus(System.Enum value);
+
         Boolean GetEnumValueDefaultStatus(System.Enum value);
-
-
     }
 }

@@ -1,21 +1,20 @@
-﻿using System;
-using System.ComponentModel;
-using System.Drawing;
-using System.Windows.Forms;
-using Map2Civilization.Properties;
+﻿using Map2Civilization.Properties;
 using Map2CivilizationCtrl;
 using Map2CivilizationCtrl.Analyzer;
 using Map2CivilizationCtrl.DataStructure;
 using Map2CivilizationCtrl.Enumerations;
 using Map2CivilizationCtrl.Listener;
 using Map2CivilizationView.UserControls;
+using System;
+using System.ComponentModel;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace Map2CivilizationView
 {
     public partial class NewMapForm : Form, IUiListenerProgress
     {
-
-         GridType.Enumeration _gridTypeValue;
+        private GridType.Enumeration _gridTypeValue;
 
         public NewMapForm()
         {
@@ -34,11 +33,9 @@ namespace Map2CivilizationView
             RegisteredListenersCtrl.ProgressListeners.RegisterObserver(this);
         }
 
-
-
-         void SelectedCivVersionChanged(Object sender, EventArgs e)
+        private void SelectedCivVersionChanged(Object sender, EventArgs e)
         {
-            CivilizationVersion.Enumeration version = 
+            CivilizationVersion.Enumeration version =
                 (CivilizationVersion.Enumeration)versionCustomEnumComboBox.SelectedItem;
 
             mapSizeComboBox.DataSource = CivilizationVersion.Singleton.GetVersionMapDimensions(
@@ -50,14 +47,13 @@ namespace Map2CivilizationView
             _gridTypeValue = gridTypeEnum;
             gridTypeBox.Text = GridType.Singleton.GetEnumValueDescription(gridTypeEnum);
 
-            foreach(Control tempControl in this.extraOptionsPanel.Controls)
+            foreach (Control tempControl in this.extraOptionsPanel.Controls)
             {
                 ((SourceSettingsControlBase)tempControl).SelectedGridType = gridTypeEnum;
             }
-
         }
 
-         void SelectDefaultMapSize()
+        private void SelectDefaultMapSize()
         {
             foreach (Object tempItem in mapSizeComboBox.Items)
             {
@@ -69,7 +65,7 @@ namespace Map2CivilizationView
             }
         }
 
-         void SelectedSourceTypeChanged(Object sender, EventArgs e)
+        private void SelectedSourceTypeChanged(Object sender, EventArgs e)
         {
             //Dispose of the controls that are currently being displayed
             for (int i = extraOptionsPanel.Controls.Count - 1; i >= 0; --i)
@@ -83,7 +79,7 @@ namespace Map2CivilizationView
 
             if (dataSourceCustomEnumComboBox.SelectedItem.Equals(MapDataSource.Enumeration.ReliefMapImage))
             {
-                settingsControlToAdd = new UserControls.SourceSettingsControlReliefMap();
+                settingsControlToAdd = new UserControls.SourceSettingsControlReliefMap(this);
                 extraOptionsPanel.Controls.Add(settingsControlToAdd);
                 settingsControlToAdd.Location = new Point(0, 0);
                 createButton.Enabled = true;
@@ -97,30 +93,24 @@ namespace Map2CivilizationView
             }
             else
             {
-
                 throw new InvalidEnumArgumentException("Unexpected enum entry in combo box 'Data Source Type'");
             }
-
         }
 
-
-         void mapSizeComboBox_SelectedValueChanged(object sender, EventArgs e)
+        private void mapSizeComboBox_SelectedValueChanged(object sender, EventArgs e)
         {
-            
-            foreach(Control tempControl in this.extraOptionsPanel.Controls)
+            foreach (Control tempControl in this.extraOptionsPanel.Controls)
             {
                 ((SourceSettingsControlBase)tempControl).SelectedMapDimension = (MapDimension)this.mapSizeComboBox.SelectedItem;
             }
         }
-
-
 
         #region IUIListener_Progress method implementations
 
         public void SetProgressPercent(int percent)
         {
             progressBar.Value = percent;
-            progressLabel.Text = string.Concat(Resources.Str_NewMapForm_AnalysingPlotsPart1, percent, 
+            progressLabel.Text = string.Concat(Resources.Str_NewMapForm_AnalysingPlotsPart1, percent,
                 Resources.Str_NewMapForm_AnalysingPlotsPart2);
         }
 
@@ -133,7 +123,6 @@ namespace Map2CivilizationView
 
             progressLabel.Enabled = true;
             progressLabel.Text = Resources.Str_NewMapForm_CreatingAnalysisImage;
-
         }
 
         public void ProgressFinished()
@@ -143,63 +132,51 @@ namespace Map2CivilizationView
             progressLabel.Text = string.Empty;
         }
 
-        #endregion
+        #endregion IUIListener_Progress method implementations
 
-
-
-
-         void cancelButton_Click(object sender, EventArgs e)
+        private void cancelButton_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
             this.Close();
         }
 
-
-         void NewMapForm_FormClosed(object sender, FormClosedEventArgs e)
+        private void NewMapForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             RegisteredListenersCtrl.ProgressListeners.DeregisterObserver(this);
         }
 
-
-         void nextButton_Click(object sender, EventArgs e)
+        private void nextButton_Click(object sender, EventArgs e)
         {
             try
             {
-
                 ISourceMapSettings settings = ((SourceSettingsControlBase)extraOptionsPanel.Controls[0]).Settings;
 
-                AnalyzerFactory analyser = AnalyzerFactory.GetAnalyzer(settings, _gridTypeValue, 
+                AnalyzerFactory analyser = AnalyzerFactory.GetAnalyzer(settings, _gridTypeValue,
                     (MapDimension)mapSizeComboBox.SelectedItem, (CivilizationVersion.Enumeration)versionCustomEnumComboBox.SelectedItem);
 
                 analyser.AnalyzeData();
-
             }
             catch (InvalidOperationException ioe)
             {
-                using(ErrorForm errorForm = new ErrorForm(false, string.Empty, ioe))
+                using (ErrorForm errorForm = new ErrorForm(false, string.Empty, ioe))
                 {
                     errorForm.ShowDialog();
                 }
             }
-            catch(NotImplementedException nie)
+            catch (NotImplementedException nie)
             {
                 using (ErrorForm errorForm = new ErrorForm(false, string.Empty, nie))
                 {
                     errorForm.ShowDialog();
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                using (ErrorForm errorForm = new ErrorForm(true, Resources.Str_NewMapForm_UnhandledError, ex)) 
+                using (ErrorForm errorForm = new ErrorForm(true, Resources.Str_NewMapForm_UnhandledError, ex))
                 {
                     errorForm.ShowDialog();
                 }
             }
         }
-
-
     }
 }
-
-
-

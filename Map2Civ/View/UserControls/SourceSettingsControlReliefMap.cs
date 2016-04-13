@@ -1,27 +1,27 @@
-﻿using System;
-using System.ComponentModel;
-using System.Drawing;
-using System.Windows.Forms;
-using Map2Civilization.Properties;
+﻿using Map2Civilization.Properties;
 using Map2CivilizationCtrl.Analyzer;
 using Map2CivilizationCtrl.DataStructure;
 using Map2CivilizationCtrl.Enumerations;
+using System;
+using System.ComponentModel;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace Map2CivilizationView.UserControls
 {
     [TypeDescriptionProvider(typeof(AbstractControlDescriptionProvider<SourceSettingsControlBase, UserControl>))]
     public partial class SourceSettingsControlReliefMap : SourceSettingsControlBase
     {
+        private Bitmap _mapBitmap;
+        private MapDimension _mapDimension;
+        private GridType.Enumeration _gridTypeEnum;
+        private Form _ownerForm;
 
-         Bitmap _mapBitmap;
-         MapDimension _mapDimension;
-         GridType.Enumeration _gridTypeEnum;
-
-        public SourceSettingsControlReliefMap()
+        public SourceSettingsControlReliefMap(Form ownerForm)
         {
             InitializeComponent();
             PopulateListBoxes();
-            
+            _ownerForm = ownerForm;
         }
 
         override public MapDimension SelectedMapDimension
@@ -31,16 +31,14 @@ namespace Map2CivilizationView.UserControls
                 _mapDimension = value;
                 if (_mapBitmap != null)
                 {
-                    _mapBitmap =  CheckImageDimensionsCompatibility(_mapBitmap);
+                    _mapBitmap = CheckImageDimensionsCompatibility(_mapBitmap);
                 }
             }
             get
             {
                 return _mapDimension;
             }
-           
         }
-
 
         public override GridType.Enumeration SelectedGridType
         {
@@ -53,13 +51,10 @@ namespace Map2CivilizationView.UserControls
                 return _gridTypeEnum;
             }
         }
-       
 
-         void PopulateListBoxes()
+        private void PopulateListBoxes()
         {
             colorDepthBox.DataSource = Enum.GetValues(typeof(System.Drawing.Imaging.PixelFormat));
-
-            
 
             interpolationBox.DataSource = Enum.GetValues(typeof(System.Drawing.Drawing2D.InterpolationMode));
             composingQualityBox.DataSource = Enum.GetValues(typeof(System.Drawing.Drawing2D.CompositingQuality));
@@ -68,22 +63,19 @@ namespace Map2CivilizationView.UserControls
             SetRestoreDefaultValues();
         }
 
-
-         void SetRestoreDefaultValues()
+        private void SetRestoreDefaultValues()
         {
             colorDepthBox.SelectedItem = System.Drawing.Imaging.PixelFormat.Format8bppIndexed;
             interpolationBox.SelectedItem = System.Drawing.Drawing2D.InterpolationMode.Default;
             composingQualityBox.SelectedItem = System.Drawing.Drawing2D.CompositingQuality.Default;
             smoothingModeBox.SelectedItem = System.Drawing.Drawing2D.SmoothingMode.Default;
-
         }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Globalization", "CA1303:Do not pass literals as localized parameters", MessageId = "System.Windows.Forms.FileDialog.set_Filter(System.String)")]
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly", MessageId = "png")]
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Globalization", "CA1303:Do not pass literals as localized parameters", MessageId = "System.Windows.Forms.FileDialog.set_Filter(System.string)")]
-         void OpenFileButton_Click(object sender, EventArgs e)
+        private void OpenFileButton_Click(object sender, EventArgs e)
         {
-
             try
             {
                 using (OpenFileDialog openFileDialog = new OpenFileDialog())
@@ -92,13 +84,12 @@ namespace Map2CivilizationView.UserControls
                     openFileDialog.FilterIndex = 0;
                     openFileDialog.Multiselect = false;
 
-
                     if (openFileDialog.ShowDialog() == DialogResult.OK && !string.IsNullOrEmpty(openFileDialog.FileName))
                     {
                         string selectedFile = openFileDialog.FileNames[0];
                         pathBox.Text = selectedFile;
 
-                        using(Bitmap toProc = (Bitmap)Image.FromFile(openFileDialog.FileName))
+                        using (Bitmap toProc = (Bitmap)Image.FromFile(openFileDialog.FileName))
                         {
                             toProc.SetResolution(96, 96);
                             _mapBitmap = new Bitmap(toProc.Width, toProc.Height);
@@ -114,8 +105,6 @@ namespace Map2CivilizationView.UserControls
                         }
                     }
                 }
-
-
             }
             catch (Exception ex)
             {
@@ -124,8 +113,6 @@ namespace Map2CivilizationView.UserControls
                     toShow.ShowDialog();
                 }
             }
-
-
         }
 
         override public string SettingsAreComplete
@@ -136,9 +123,9 @@ namespace Map2CivilizationView.UserControls
                 {
                     case true:
                         return Resources.Str_SourceSettingsControlReliefMap_NoImageSelected;
+
                     default:
                         return string.Empty;
-
                 }
             }
         }
@@ -164,11 +151,10 @@ namespace Map2CivilizationView.UserControls
                 {
                     throw new InvalidOperationException(completeCheckResult);
                 }
-
             }
         }
 
-         void defaultCheck_CheckedChanged(object sender, EventArgs e)
+        private void defaultCheck_CheckedChanged(object sender, EventArgs e)
         {
             if (defaultCheck.Checked)
             {
@@ -185,12 +171,9 @@ namespace Map2CivilizationView.UserControls
             smoothingLabel.Enabled = !defaultCheck.Checked;
         }
 
-
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Reliability", "CA2001:AvoidCallingProblematicMethods", MessageId = "System.GC.Collect")]
-         Bitmap CheckImageDimensionsCompatibility(Bitmap sourceImage)
+        private Bitmap CheckImageDimensionsCompatibility(Bitmap sourceImage)
         {
-
-           
             double modelRatio = GridType.Singleton.GetMapRatio(_gridTypeEnum, _mapDimension.WidthPlots, _mapDimension.HeightPlots);
             double imageRatio = (double)sourceImage.Width / (double)sourceImage.Height;
 
@@ -204,10 +187,6 @@ namespace Map2CivilizationView.UserControls
                 DialogResult result = CultureAwareMessageBox.Show(Resources.Str_SourceSettingsControlReliefMap_ImageSizeMsgBoxWaringText,
                         Resources.Str_SourceSettingsControlReliefMap_ImageSizeMsgBoxWaringCaption,
                     MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
-                    
-                    //MessageBox.Show(Resources.Str_SourceSettingsControlReliefMap_ImageSizeMsgBoxWaringText,
-                    //    Resources.Str_SourceSettingsControlReliefMap_ImageSizeMsgBoxWaringCaption,
-                    //MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
 
                 if (result == DialogResult.No)
                 {
@@ -215,35 +194,38 @@ namespace Map2CivilizationView.UserControls
                 }
                 else
                 {
-                    //Hide();
                     Bitmap toReturn;
                     using (ImageEditor editorForm = new ImageEditor(sourceImage, modelRatio))
                     {
-                        DialogResult editorResult = editorForm.ShowDialog();
-                        //Show();
+                        DialogResult editorResult = editorForm.ShowDialog(_ownerForm);
+                        
 
                         switch (editorResult)
                         {
                             case DialogResult.OK:
                                 toReturn = editorForm.GetBitmapToProcess();
                                 break;
+
                             case DialogResult.Cancel:
                                 toReturn = sourceImage;
                                 break;
+
                             default:
                                 throw new InvalidEnumArgumentException("Unexpected Dialog Result Value");
                         }
                     }
 
-                    //Force Garbage collection because Bitmaps that are not explicitly disposed are 
+                    //Force Garbage collection because Bitmaps that are not explicitly disposed are
                     // very slow to be sweapt by the garbage collector..
                     GC.Collect();
                     return toReturn;
                 }
 
+
+
             }
         }
-
     }
 
 }
+

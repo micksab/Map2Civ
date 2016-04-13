@@ -1,23 +1,21 @@
-﻿using System;
-using System.Drawing;
-using System.Windows.Forms;
-using Map2CivilizationCtrl;
+﻿using Map2CivilizationCtrl;
 using Map2CivilizationCtrl.DataStructure;
 using Map2CivilizationCtrl.Listener;
+using System;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace Map2CivilizationView.UserControls
 {
-
-    public abstract class MapControlBase: UserControl, IUiListenerPlotLocation, IUiListenerZoom, IUiForwardedFocusAndClickListener
+    public abstract class MapControlBase : UserControl, IUiListenerPlotLocation, IUiListenerZoom, IUiForwardedFocusAndClickListener
     {
-         Panel _basePanel = new Panel();
-         PictureBox _pictureBox = new PictureBox();
-         SelectedPlotPanel _markerCtrl;
-         bool _allowScroll = true;
+        private Panel _basePanel = new Panel();
+        private PictureBox _pictureBox = new PictureBox();
+        private SelectedPlotPanel _markerCtrl;
+        private bool _allowScroll = true;
 
-
-         PlotId _currentPlotId;
-         Point _mouseMoveStartPoint;
+        private PlotId _currentPlotId;
+        private Point _mouseMoveStartPoint;
 
         #region get/setters
 
@@ -37,8 +35,6 @@ namespace Map2CivilizationView.UserControls
             }
         }
 
-        
-
         public Point MouseMoveStartPoint
         {
             get
@@ -51,7 +47,6 @@ namespace Map2CivilizationView.UserControls
                 _mouseMoveStartPoint = value;
             }
         }
-
 
         public SelectedPlotPanel MarkerCtrl
         {
@@ -79,8 +74,7 @@ namespace Map2CivilizationView.UserControls
             }
         }
 
-        #endregion
-
+        #endregion get/setters
 
         protected MapControlBase()
         {
@@ -98,9 +92,8 @@ namespace Map2CivilizationView.UserControls
             _pictureBox.BackgroundImageLayout = ImageLayout.Zoom;
             _pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
 
-
             //Due to differences in how each operating system (in our case Windows XP, 7 and 10)
-            //handle focus, an event listener for MouseWheel event is created for all possible 
+            //handle focus, an event listener for MouseWheel event is created for all possible
             // focus receivers. They all point to the same event handler.
             MouseWheel += PictureBoxMouseWheel;
             _basePanel.MouseWheel += PictureBoxMouseWheel;
@@ -117,36 +110,28 @@ namespace Map2CivilizationView.UserControls
             RegisteredListenersCtrl.ZoomListeners.RegisterObserver(this);
 
             HandleDestroyed += MapControlBase_Closing;
-
-
         }
-
-
 
         #region public methods
 
-        protected  void AllowScroll(Boolean value)
+        protected void AllowScroll(Boolean value)
         {
             _allowScroll = value;
             _basePanel.AutoScroll = value;
             _basePanel.HorizontalScroll.Visible = value;
             _basePanel.VerticalScroll.Visible = value;
-            
-            
         }
 
-        #endregion
-
-
-
+        #endregion public methods
 
         #region IUI_ForwardedFocusAndClickListener Interface method(s)
+
         public void ReceiveFocusAndClickEvent(MouseEventArgs e)
         {
             PictureBox_Click(this, e);
         }
-        #endregion
 
+        #endregion IUI_ForwardedFocusAndClickListener Interface method(s)
 
         #region IUIListener_PlotLocation interface methods
 
@@ -156,13 +141,11 @@ namespace Map2CivilizationView.UserControls
             _currentPlotId = id;
         }
 
-        #endregion
-
-
+        #endregion IUIListener_PlotLocation interface methods
 
         #region Control Event Handlers
 
-        protected void PictureBoxMouseWheel(object sender , MouseEventArgs e)
+        protected void PictureBoxMouseWheel(object sender, MouseEventArgs e)
         {
             if (e == null)
                 throw new ArgumentNullException(nameof(e));
@@ -173,7 +156,7 @@ namespace Map2CivilizationView.UserControls
                 {
                     newZoomValue = GridCoordinateHelperCtrl.GetNextZoomInFactor();
                 }
-                else if (e.Delta <0)
+                else if (e.Delta < 0)
                 {
                     newZoomValue = GridCoordinateHelperCtrl.GetNextZoomOutFactor();
                 }
@@ -183,13 +166,8 @@ namespace Map2CivilizationView.UserControls
                 //Make sure that the wheel event does not bubble-up to
                 // the parent container (_basePanel in this case)
                 ((HandledMouseEventArgs)e).Handled = true;
-              
             }
         }
-
-
-        
-        
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1707:IdentifiersShouldNotContainUnderscores")]
         protected void MapControlBase_Closing(object sender, EventArgs e)
@@ -205,13 +183,9 @@ namespace Map2CivilizationView.UserControls
 
             RegisteredListenersCtrl.PlotLocationListeners.DeregisterObserver(this);
             RegisteredListenersCtrl.ZoomListeners.DeregisterObserver(this);
-
-
         }
 
-
-
-         void PictureBox_Click(object sender, EventArgs e)
+        private void PictureBox_Click(object sender, EventArgs e)
         {
             if (RegisteredListenersCtrl.PlotLocationListeners.Contains(this))
             {
@@ -222,8 +196,6 @@ namespace Map2CivilizationView.UserControls
             }
         }
 
-
-
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:Validate arguments of public methods", MessageId = "1")]
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1707:IdentifiersShouldNotContainUnderscores")]
         protected void MapControlBase_KeyDown(object sender, KeyEventArgs e)
@@ -231,37 +203,35 @@ namespace Map2CivilizationView.UserControls
             int newPlotX = CurrentPlotId.X;
             int newPlotY = CurrentPlotId.Y;
 
-
             switch (e.KeyCode)
             {
                 case Keys.Up:
                     newPlotY++;
                     break;
+
                 case Keys.Down:
                     newPlotY--;
                     break;
+
                 case Keys.Left:
                     newPlotX--;
                     break;
+
                 case Keys.Right:
                     newPlotX++;
                     break;
             }
 
-
             PlotId newPlotId = new PlotId(newPlotX, newPlotY);
 
-            if (    (!newPlotId.Equals(CurrentPlotId)) &&
+            if ((!newPlotId.Equals(CurrentPlotId)) &&
                 GridCoordinateHelperCtrl.VerifyPlotLocationValidity(newPlotId))
             {
                 RegisteredListenersCtrl.PlotLocationUpdate(newPlotId);
             }
-
         }
 
-
-
-         void pictureBox_MouseMove(object sender, MouseEventArgs e)
+        private void pictureBox_MouseMove(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
             {
@@ -272,7 +242,7 @@ namespace Map2CivilizationView.UserControls
             }
         }
 
-         void pictureBox_MouseDown(object sender, MouseEventArgs e)
+        private void pictureBox_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
             {
@@ -280,30 +250,25 @@ namespace Map2CivilizationView.UserControls
                 Cursor = Cursors.Hand;
             }
 
-            if(e.Button == MouseButtons.Right)
+            if (e.Button == MouseButtons.Right)
             {
                 PictureBox_Click(this, e);
             }
         }
 
-         void pictureBox_MouseUp(object sender, MouseEventArgs e)
+        private void pictureBox_MouseUp(object sender, MouseEventArgs e)
         {
             Cursor = Cursors.Default;
         }
 
-
-
-
-        #endregion
-
-
+        #endregion Control Event Handlers
 
         #region Overriden methods
 
         /// <summary>
         /// Overriden method IsInputKey. Overriding is required in order to specify that arrow keys are not to
-        /// be hanlded by the preprocessing phase (ie, used by the app to transfer focus to another control). In 
-        /// this implementation, arrow key presses are processed by the current control in order to modify the 
+        /// be hanlded by the preprocessing phase (ie, used by the app to transfer focus to another control). In
+        /// this implementation, arrow key presses are processed by the current control in order to modify the
         /// location of the plot marker.
         /// </summary>
         /// <param name="keyData">The data of the key being pressed</param>
@@ -317,16 +282,13 @@ namespace Map2CivilizationView.UserControls
                 case Keys.Up:
                 case Keys.Down:
                     return true;
+
                 default:
                     return base.IsInputKey(keyData);
             }
-
         }
 
-
-        
-
-        #endregion
+        #endregion Overriden methods
 
         #region IUIListener_ZoomChanged implementations
 
@@ -343,25 +305,23 @@ namespace Map2CivilizationView.UserControls
                     Size = new Size((int)Math.Ceiling(newWidth), (int)Math.Ceiling(newHeight));
                 }
                 _markerCtrl.RepositionSelectedPlotPanel(_currentPlotId);
-
             }
         }
 
-        #endregion
+        #endregion IUIListener_ZoomChanged implementations
 
         /// <summary>
         /// Used only for compatibility with the VS designer.
         /// </summary>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1811:AvoidUncalledCode")]
-         void InitializeComponent()
+        private void InitializeComponent()
         {
             this.SuspendLayout();
-            // 
+            //
             // MapControlBase
-            // 
+            //
             this.Name = "MapControlBase";
             this.ResumeLayout(false);
-
         }
     }
 }

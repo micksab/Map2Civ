@@ -10,19 +10,16 @@ namespace Map2CivilizationCtrl.Enumerations
         /// <summary>
         /// Used to store the single instance needed to perform any operation.
         /// </summary>
-         static TerrainType _singleInstance;
+        private static TerrainType _singleInstance;
 
-        
-        Bitmap _oceanPlotBitmap;
-        Bitmap _coastPlotBitmap;
-        Bitmap _flatPlotBitmap;
-        Bitmap _hillPlotBitmap;
-        Bitmap _mountainPlotBitmap;
-
+        private Bitmap _oceanPlotBitmap;
+        private Bitmap _coastPlotBitmap;
+        private Bitmap _flatPlotBitmap;
+        private Bitmap _hillPlotBitmap;
+        private Bitmap _mountainPlotBitmap;
 
         public enum Enumeration
         {
-           
             NotDefined = 0,
             Flat = 1,
             Hills = 2,
@@ -31,10 +28,7 @@ namespace Map2CivilizationCtrl.Enumerations
             Ocean = 5
         }
 
-
-
         #region Singleton methods
-
 
         #region properties
 
@@ -78,21 +72,18 @@ namespace Map2CivilizationCtrl.Enumerations
             }
         }
 
-        #endregion
-
+        #endregion properties
 
         /// <summary>
         ///  constructor
         /// </summary>
-         TerrainType() { }
-
-        
+        private TerrainType()
+        { }
 
         public static TerrainType Singleton
         {
             get
             {
-
                 if (_singleInstance == null)
                 {
                     _singleInstance = new TerrainType();
@@ -101,9 +92,6 @@ namespace Map2CivilizationCtrl.Enumerations
                 return _singleInstance;
             }
         }
-
-
-
 
         public Type EnumType
         {
@@ -119,16 +107,22 @@ namespace Map2CivilizationCtrl.Enumerations
             {
                 case Enumeration.NotDefined:
                     return Resources.Str_TerrainType_Description_NotDefined;
+
                 case Enumeration.Ocean:
                     return Resources.Str_TerrainType_Description_Ocean;
+
                 case Enumeration.Coast:
                     return Resources.Str_TerrainType_Description_Coast;
+
                 case Enumeration.Flat:
                     return Resources.Str_TerrainType_Description_Flat;
+
                 case Enumeration.Hills:
                     return Resources.Str_TerrainType_Description_Hill;
+
                 case Enumeration.Mountains:
                     return Resources.Str_TerrainType_Description_Mountain;
+
                 default:
                     throw new InvalidEnumArgumentException("Non existing enumeration value.");
             }
@@ -140,21 +134,26 @@ namespace Map2CivilizationCtrl.Enumerations
             {
                 case Enumeration.NotDefined:
                     return true;
+
                 case Enumeration.Ocean:
                     return true;
+
                 case Enumeration.Coast:
                     return true;
+
                 case Enumeration.Flat:
                     return true;
+
                 case Enumeration.Hills:
                     return true;
+
                 case Enumeration.Mountains:
                     return true;
+
                 default:
                     throw new InvalidEnumArgumentException("Non existing enumeration value.");
             }
         }
-
 
         public Boolean GetEnumValueDefaultStatus(System.Enum value)
         {
@@ -162,22 +161,28 @@ namespace Map2CivilizationCtrl.Enumerations
             {
                 case Enumeration.NotDefined:
                     return true;
+
                 case Enumeration.Ocean:
                     return false;
+
                 case Enumeration.Coast:
                     return false;
+
                 case Enumeration.Flat:
                     return false;
+
                 case Enumeration.Hills:
                     return false;
+
                 case Enumeration.Mountains:
                     return false;
+
                 default:
                     throw new InvalidEnumArgumentException("Non existing enumeration value.");
             }
         }
 
-        #endregion
+        #endregion Singleton methods
 
         protected internal void GenerateTerrainBitmaps()
         {
@@ -191,9 +196,6 @@ namespace Map2CivilizationCtrl.Enumerations
             _flatPlotBitmap = BitmapOperationsCtrl.GetAssignedPlotBitmap(gridType, TerrainType.Enumeration.Flat, width, height);
             _hillPlotBitmap = BitmapOperationsCtrl.GetAssignedPlotBitmap(gridType, TerrainType.Enumeration.Hills, width, height);
             _mountainPlotBitmap = BitmapOperationsCtrl.GetAssignedPlotBitmap(gridType, TerrainType.Enumeration.Mountains, width, height);
-
         }
-
-
     }
 }

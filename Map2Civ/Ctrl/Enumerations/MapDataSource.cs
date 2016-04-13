@@ -12,21 +12,18 @@ namespace Map2CivilizationCtrl.Enumerations
             GeoDataProvider = 1
         }
 
-
         #region Singleton methods
 
         /// <summary>
         /// Used to store the single instance needed to perform any operation.
         /// </summary>
-         static MapDataSource _singleInstance;
+        private static MapDataSource _singleInstance;
 
         /// <summary>
         ///  constructor
         /// </summary>
-         MapDataSource() { }
-
-        
-
+        private MapDataSource()
+        { }
 
         public static MapDataSource Singleton
         {
@@ -40,7 +37,6 @@ namespace Map2CivilizationCtrl.Enumerations
                 return _singleInstance;
             }
         }
-
 
         public Type EnumType
         {
@@ -56,8 +52,10 @@ namespace Map2CivilizationCtrl.Enumerations
             {
                 case Enumeration.GeoDataProvider:
                     return Resources.Str_MapDataSource_Description_GeoData;
+
                 case Enumeration.ReliefMapImage:
                     return Resources.Str_MapDataSource_Description_ReliefMapImage;
+
                 default:
                     throw new InvalidEnumArgumentException("Non existing enumeration value.");
             }
@@ -69,13 +67,14 @@ namespace Map2CivilizationCtrl.Enumerations
             {
                 case Enumeration.GeoDataProvider:
                     return false;
+
                 case Enumeration.ReliefMapImage:
                     return true;
+
                 default:
                     throw new InvalidEnumArgumentException("Non existing enumeration value.");
             }
         }
-
 
         public Boolean GetEnumValueDefaultStatus(System.Enum value)
         {
@@ -83,15 +82,15 @@ namespace Map2CivilizationCtrl.Enumerations
             {
                 case Enumeration.GeoDataProvider:
                     return false;
+
                 case Enumeration.ReliefMapImage:
                     return true;
+
                 default:
                     throw new InvalidEnumArgumentException("Non existing enumeration value.");
             }
         }
 
-        #endregion
-
-
+        #endregion Singleton methods
     }
 }

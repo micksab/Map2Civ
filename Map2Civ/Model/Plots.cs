@@ -1,35 +1,32 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using Map2CivilizationCtrl.DataStructure;
+﻿using Map2CivilizationCtrl.DataStructure;
 using Map2CivilizationCtrl.Enumerations;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Map2CivilizationModel
 {
     public class Plots
     {
-        readonly Dictionary<PlotId, Plot> _plotCollectionList;
+        private readonly Dictionary<PlotId, Plot> _plotCollectionList;
 
         public Plots()
         {
-           _plotCollectionList = new Dictionary<PlotId, Plot>();
+            _plotCollectionList = new Dictionary<PlotId, Plot>();
         }
 
         /// <summary>
-        /// Constructor used to facilitate instance creation from Json 
+        /// Constructor used to facilitate instance creation from Json
         /// </summary>
         /// <param name="plots"></param>
         public Plots(Plot[] plots)
         {
             _plotCollectionList = new Dictionary<PlotId, Plot>();
 
-            foreach(Plot tempPlot in plots)
+            foreach (Plot tempPlot in plots)
             {
                 AddNewPlot(tempPlot);
             }
         }
-
-       
-
 
         public void AddNewPlot(Plot plot)
         {
@@ -40,7 +37,6 @@ namespace Map2CivilizationModel
         {
             return _plotCollectionList.Values.ToList<Plot>();
         }
-
 
         public List<PlotId> GetPlotIds()
         {
@@ -54,7 +50,7 @@ namespace Map2CivilizationModel
         public Plot GetPlot(PlotId id)
         {
             Plot toReturn;
-            if(_plotCollectionList.TryGetValue(id, out toReturn))
+            if (_plotCollectionList.TryGetValue(id, out toReturn))
             {
                 return toReturn;
             }
@@ -64,17 +60,16 @@ namespace Map2CivilizationModel
             }
         }
 
-
         public double GetAssignedPercentComplete()
         {
             int total = 0;
             int assigned = 0;
 
-            foreach(KeyValuePair<PlotId, Plot> pair in _plotCollectionList)
+            foreach (KeyValuePair<PlotId, Plot> pair in _plotCollectionList)
             {
                 Plot p = pair.Value;
 
-                if(p.TerrainDescriptor!= TerrainType.Enumeration.NotDefined)
+                if (p.TerrainDescriptor != TerrainType.Enumeration.NotDefined)
                 {
                     assigned++;
                 }
@@ -83,10 +78,5 @@ namespace Map2CivilizationModel
 
             return ((float)assigned / total) * 100;
         }
-
-
-
-
-
     }
 }

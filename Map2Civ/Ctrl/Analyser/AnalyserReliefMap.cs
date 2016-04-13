@@ -1,29 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
-using Map2CivilizationModel;
-using Map2CivilizationCtrl.DataStructure;
+﻿using Map2CivilizationCtrl.DataStructure;
 using Map2CivilizationCtrl.Enumerations;
-using System.ComponentModel;
+using Map2CivilizationModel;
 using Map2CivilizationView;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
 using System.Drawing;
 
 namespace Map2CivilizationCtrl.Analyzer
 {
-    class AnalyserReliefMap : AnalyzerFactory, IDisposable
+    internal class AnalyserReliefMap : AnalyzerFactory, IDisposable
     {
-         SourceReliefMapSettings _settings;
-         GridType.Enumeration  _gridType;
-         MapDimension _dimension;
-         BackgroundWorker _analyseBackgroundWorker = new BackgroundWorker();
-         CivilizationVersion.Enumeration _civilizationVersion;
+        private SourceReliefMapSettings _settings;
+        private GridType.Enumeration _gridType;
+        private MapDimension _dimension;
+        private BackgroundWorker _analyseBackgroundWorker = new BackgroundWorker();
+        private CivilizationVersion.Enumeration _civilizationVersion;
 
-         readonly string _settingsKey = "settings";
-         readonly string _gridTypeKey = "gridType";
-         readonly string _dimensionKey = "mapDimension";
-         readonly string _civilizationVersionKey = "civVersion";
+        private readonly string _settingsKey = "settings";
+        private readonly string _gridTypeKey = "gridType";
+        private readonly string _dimensionKey = "mapDimension";
+        private readonly string _civilizationVersionKey = "civVersion";
 
-
-        public AnalyserReliefMap(SourceReliefMapSettings settings, GridType.Enumeration gridType, 
+        public AnalyserReliefMap(SourceReliefMapSettings settings, GridType.Enumeration gridType,
             MapDimension dimension, CivilizationVersion.Enumeration civilizationVersion)
         {
             _settings = settings;
@@ -49,10 +48,8 @@ namespace Map2CivilizationCtrl.Analyzer
             _analyseBackgroundWorker.RunWorkerAsync(arguments);
         }
 
-
-
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Reliability", "CA2000:Dispose objects before losing scope")]
-        void AnalysisBackgroundWorker_DoWork(object sender, DoWorkEventArgs e)
+        private void AnalysisBackgroundWorker_DoWork(object sender, DoWorkEventArgs e)
         {
             Dictionary<string, object> arguments = (Dictionary<string, object>)e.Argument;
             SourceReliefMapSettings settings = (SourceReliefMapSettings)arguments[_settingsKey];
@@ -60,22 +57,20 @@ namespace Map2CivilizationCtrl.Analyzer
             MapDimension mapDimension = (MapDimension)arguments[_dimensionKey];
             CivilizationVersion.Enumeration civilizationVersion = (CivilizationVersion.Enumeration)arguments[_civilizationVersionKey];
 
-            //Calculate the number of plots to process, and initialize a counter 
+            //Calculate the number of plots to process, and initialize a counter
             // used to track progress
             decimal progressMaxValue = mapDimension.WidthPlots * mapDimension.HeightPlots + 2;
             decimal counter = 0;
-
 
             DataModel newDataModel = new DataModel(mapDimension, gridTypeEnum, MapDataSource.Enumeration.ReliefMapImage,
                 civilizationVersion, settings);
             //Initialize the empty processed map image
             newDataModel.ProcessedBitmap = BitmapOperationsCtrl.InitializeProcessedMapImage(mapDimension, gridTypeEnum);
-            //Initialize the adjusted source image 
-            newDataModel.ReliefMapSettings.AdjustedMapBitmap = BitmapOperationsCtrl.InitializeDataSourceImage( settings, mapDimension, gridTypeEnum);
+            //Initialize the adjusted source image
+            newDataModel.ReliefMapSettings.AdjustedMapBitmap = BitmapOperationsCtrl.InitializeDataSourceImage(settings, mapDimension, gridTypeEnum);
 
             counter++;
             _analyseBackgroundWorker.ReportProgress((int)((counter / progressMaxValue) * 100));
-
 
             /****** Analysis image *****/
             Bitmap analysisImage = BitmapOperationsCtrl.GenerateAnalysisImage(newDataModel.ReliefMapSettings.AdjustedMapBitmap,
@@ -83,10 +78,7 @@ namespace Map2CivilizationCtrl.Analyzer
             counter++;
             _analyseBackgroundWorker.ReportProgress((int)((counter / progressMaxValue) * 100));
 
-
-
-
-            //The use of the brush over here seems to be out of place (it should normally be inside 
+            //The use of the brush over here seems to be out of place (it should normally be inside
             //function BitmapOperationsCtrl.GetPlotArea), but after extensive testing it was deemed
             // to be necessary in order to:
             // 1/ Extract the bitmaps of the plots as fast as possible
@@ -112,34 +104,25 @@ namespace Map2CivilizationCtrl.Analyzer
                         newDataModel.DetectedColorCollection.AddDetectedColor(newDetectedColor);
                         newDataModel.DetectedColorCollection.AddDetectedColorPlot(newDetectedColor, toAdd);
 
-                       
-
                         counter++;
                         _analyseBackgroundWorker.ReportProgress((int)((counter / progressMaxValue) * 100));
                     }
                 }
             }
 
-
             e.Result = newDataModel;
-
         }
-        
 
-         void AnalysiseBackgroundWorker_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        private void AnalysiseBackgroundWorker_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
             int toReport = e.ProgressPercentage;
             RegisteredListenersCtrl.SetProgressPercent(toReport);
         }
 
-
-
-         void AnalysisBackgroundWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        private void AnalysisBackgroundWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             try
             {
-
-
                 if (e.Error == null)
                 {
                     DataModel newModel = (DataModel)e.Result;
@@ -161,7 +144,6 @@ namespace Map2CivilizationCtrl.Analyzer
                 {
                     errorForm.ShowDialog();
                 }
-
             }
             finally
             {
@@ -171,29 +153,22 @@ namespace Map2CivilizationCtrl.Analyzer
             }
         }
 
+        #region IDisposable interface implementation (for backgroundworker threads).
 
-
-
-
-        #region IDisposable interface implementation (for backgroundworker threads). 
-            //Implementation of IDisposabe is needed because the worker instances are used on a non-UI class
-            // that would normally take case itself of properly of disposing them.
-            //http://stackoverflow.com/questions/2542326/proper-way-to-dispose-of-a-backgroundworker
-            //https://msdn.microsoft.com/library/ms182172.aspx
+        //Implementation of IDisposabe is needed because the worker instances are used on a non-UI class
+        // that would normally take case itself of properly of disposing them.
+        //http://stackoverflow.com/questions/2542326/proper-way-to-dispose-of-a-backgroundworker
+        //https://msdn.microsoft.com/library/ms182172.aspx
 
         protected virtual void Dispose(bool disposing)
         {
             if (disposing)
             {
-
-
                 _analyseBackgroundWorker.DoWork -= AnalysisBackgroundWorker_DoWork;
                 _analyseBackgroundWorker.ProgressChanged -= AnalysiseBackgroundWorker_ProgressChanged;
                 _analyseBackgroundWorker.RunWorkerCompleted -= AnalysisBackgroundWorker_RunWorkerCompleted;
                 _analyseBackgroundWorker.Dispose();
-
             }
-
         }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA1816:CallGCSuppressFinalizeCorrectly")]
@@ -203,6 +178,6 @@ namespace Map2CivilizationCtrl.Analyzer
             GC.SuppressFinalize(this);
         }
 
-        #endregion
+        #endregion IDisposable interface implementation (for backgroundworker threads).
     }
 }

@@ -1,18 +1,13 @@
 ﻿using Map2CivilizationCtrl.Enumerations;
 using Map2CivilizationModel;
 using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace Map2CivilizationCtrl.JsonAdapters
 {
-    class DetectedColorJsonAdapter
+    internal class DetectedColorJsonAdapter
     {
-
-        string _colorHex;
-        TerrainType.Enumeration _terrainDescriptor;
+        private string _colorHex;
+        private TerrainType.Enumeration _terrainDescriptor;
 
         #region public properties
 
@@ -44,15 +39,13 @@ namespace Map2CivilizationCtrl.JsonAdapters
             }
         }
 
-
-        #endregion
+        #endregion public properties
 
         public DetectedColorJsonAdapter(DetectedColor color)
         {
             _colorHex = color.ColorHex;
             _terrainDescriptor = color.TerrainDescriptor;
         }
-
 
         /// <summary>
         /// Constructor used to facilitate Json deserialization
@@ -65,7 +58,6 @@ namespace Map2CivilizationCtrl.JsonAdapters
             _colorHex = cx;
             _terrainDescriptor = td;
         }
-
 
         public DetectedColor GetDetectedColor()
         {

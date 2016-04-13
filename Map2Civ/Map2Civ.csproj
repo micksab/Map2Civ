@@ -450,9 +450,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="SampleMapFiles\Attika-Peloponnese-Cyclades.Civ5Map" />
-    <None Include="SampleMapFiles\Attika-Peloponnese-Cyclades_Std.M2C" />
-    <None Include="SampleMapFiles\Crete_Large.M2C" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\BlankImage1024x768.png" />

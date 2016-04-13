@@ -114,19 +114,19 @@ namespace Map2CivilizationView
             // 
             // sizeGroupBox
             // 
-            resources.ApplyResources(this.sizeGroupBox, "sizeGroupBox");
             this.sizeGroupBox.Controls.Add(this.widthNumeric);
             this.sizeGroupBox.Controls.Add(this.widthLabel);
             this.sizeGroupBox.Controls.Add(this.heightNumeric);
             this.sizeGroupBox.Controls.Add(this.heightLabel);
+            resources.ApplyResources(this.sizeGroupBox, "sizeGroupBox");
             this.sizeGroupBox.Name = "sizeGroupBox";
             this.sizeGroupBox.TabStop = false;
             // 
             // groupBox1
             // 
-            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Controls.Add(this.colorButton);
             this.groupBox1.Controls.Add(this.colorPanel);
+            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.TabStop = false;
             // 
@@ -139,9 +139,9 @@ namespace Map2CivilizationView
             // 
             // colorPanel
             // 
-            resources.ApplyResources(this.colorPanel, "colorPanel");
             this.colorPanel.BackColor = System.Drawing.Color.Blue;
             this.colorPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            resources.ApplyResources(this.colorPanel, "colorPanel");
             this.colorPanel.Name = "colorPanel";
             // 
             // colorDialog
@@ -160,6 +160,7 @@ namespace Map2CivilizationView
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.okButton);
             this.Name = "CanvasSizeForm";
+            this.TopMost = true;
             ((System.ComponentModel.ISupportInitialize)(this.widthNumeric)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.heightNumeric)).EndInit();
             this.sizeGroupBox.ResumeLayout(false);

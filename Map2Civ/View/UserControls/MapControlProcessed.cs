@@ -1,25 +1,20 @@
-﻿using System;
+﻿using Map2CivilizationCtrl;
+using Map2CivilizationCtrl.DataStructure;
+using Map2CivilizationCtrl.Enumerations;
+using Map2CivilizationCtrl.Listener;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
-using Map2CivilizationCtrl;
-using Map2CivilizationCtrl.DataStructure;
-using Map2CivilizationCtrl.Enumerations;
-using Map2CivilizationCtrl.Listener;
-using System.Diagnostics;
 
 namespace Map2CivilizationView.UserControls
 {
     [TypeDescriptionProvider(typeof(AbstractControlDescriptionProvider<MapControlBase, UserControl>))]
-    class MapControlProcessed : MapControlBase, IUiListenerProcessedMap
+    internal class MapControlProcessed : MapControlBase, IUiListenerProcessedMap
     {
-
-
-        readonly ProcessedMapControlMode.Enumeration _currentMode = ProcessedMapControlMode.Enumeration.Unspecified;
-        readonly ProcessedMapMenu _menu = new ProcessedMapMenu(ProcessedMapControlMode.Enumeration.Unspecified);
-
-        
+        private readonly ProcessedMapControlMode.Enumeration _currentMode = ProcessedMapControlMode.Enumeration.Unspecified;
+        private readonly ProcessedMapMenu _menu = new ProcessedMapMenu(ProcessedMapControlMode.Enumeration.Unspecified);
 
         public MapControlProcessed(bool allowScroll, ProcessedMapControlMode.Enumeration mode)
         {
@@ -27,27 +22,19 @@ namespace Map2CivilizationView.UserControls
             BackgroundImage = Map2Civilization.Properties.Resources.PenRulerLarge_Image;
             BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
 
-
             //Add event handlers for the menu
             _menu.PlotEditEvent += Menu_PlotEditEvent;
             _menu.ColorEditEvent += Menu_ColorEditEvent;
             _menu.RegionEditEvent += Menu_RegionEditEvent;
             PictureBox.ContextMenuStrip = _menu;
 
-            
-
             AllowScroll(allowScroll);
 
             RegisteredListenersCtrl.ProcessedMapListeners.RegisterObserver(this);
 
-
             HandleDestroyed += MapControlBase_Closing;
             KeyDown += MapControl_KeyDown;
         }
-
-       
-
-
 
         #region IUIListener_ProcessedMap map interface implementation
 
@@ -56,15 +43,13 @@ namespace Map2CivilizationView.UserControls
             if (bitmap == null)
                 throw new ArgumentNullException(nameof(bitmap));
 
-            //Remove the decorative image 
+            //Remove the decorative image
             if (base.BackgroundImage != bitmap)
             {
                 base.BackgroundImage = null;
                 BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
                 PictureBox.BackgroundImage = bitmap;
             }
-            
-
 
             if (!RegisteredListenersCtrl.PlotLocationListeners.Contains(this))
             {
@@ -81,26 +66,20 @@ namespace Map2CivilizationView.UserControls
             PictureBox.Refresh();
         }
 
-
-
         public void ShowSelectedColorsPlots(List<PlotId> plotCoordinatePairs)
         {
             PictureBox.Image = BitmapOperationsCtrl.CreateHighlightedColorsProcessedBitmap(plotCoordinatePairs);
         }
 
-
-        #endregion
-
-
-
+        #endregion IUIListener_ProcessedMap map interface implementation
 
         #region Event handlers
 
-         void MapControl_KeyDown(object sender, KeyEventArgs e)
+        private void MapControl_KeyDown(object sender, KeyEventArgs e)
         {
-            if(_currentMode == ProcessedMapControlMode.Enumeration.ColorEditor)
+            if (_currentMode == ProcessedMapControlMode.Enumeration.ColorEditor)
             {
-                if (e.KeyData == Map2Civilization.Properties.Settings.Default.KeyShrortcuts_EditRegion )
+                if (e.KeyData == Map2Civilization.Properties.Settings.Default.KeyShrortcuts_EditRegion)
                 {
                     Menu_RegionEditEvent(this, new EventArgs());
                 }
@@ -111,27 +90,21 @@ namespace Map2CivilizationView.UserControls
             }
             else if (_currentMode == ProcessedMapControlMode.Enumeration.PlotEditor)
             {
-                
-
                 if (e.KeyData == Map2Civilization.Properties.Settings.Default.KeyShrortcuts_AssignOcean)
                 {
                     PlotCollectionCtrl.UpdatePlotPlotTerrain(CurrentPlotId, TerrainType.Enumeration.Ocean, true);
-
                 }
                 else if (e.KeyData == Map2Civilization.Properties.Settings.Default.KeyShrortcuts_AssignCoast)
                 {
                     PlotCollectionCtrl.UpdatePlotPlotTerrain(CurrentPlotId, TerrainType.Enumeration.Coast, true);
-
                 }
                 else if (e.KeyData == Map2Civilization.Properties.Settings.Default.KeyShrortcuts_AssignFlat)
                 {
                     PlotCollectionCtrl.UpdatePlotPlotTerrain(CurrentPlotId, TerrainType.Enumeration.Flat, true);
-
                 }
                 else if (e.KeyData == Map2Civilization.Properties.Settings.Default.KeyShrortcuts_AssignHill)
                 {
                     PlotCollectionCtrl.UpdatePlotPlotTerrain(CurrentPlotId, TerrainType.Enumeration.Hills, true);
-
                 }
                 else if (e.KeyData == Map2Civilization.Properties.Settings.Default.KeyShrortcuts_AssignMountain)
                 {
@@ -141,61 +114,44 @@ namespace Map2CivilizationView.UserControls
                 {
                     PlotCollectionCtrl.ResetManuallyLockedPlot(CurrentPlotId);
                 }
-
-                
             }
-
-            
-            
-            
         }
 
-         void Menu_RegionEditEvent(object sender, EventArgs e)
+        private void Menu_RegionEditEvent(object sender, EventArgs e)
         {
-            
             using (RegionEditForm editForm = new RegionEditForm(CurrentPlotId))
             {
                 editForm.ShowDialog();
             }
         }
 
-         void Menu_ColorEditEvent(object sender, EventArgs e)
+        private void Menu_ColorEditEvent(object sender, EventArgs e)
         {
             string dominantColorHex = PlotCollectionCtrl.GetDominantColorHex(CurrentPlotId);
             RegisteredListenersCtrl.DetectedColorsGridSetSelectedColor(dominantColorHex);
         }
 
-         void Menu_PlotEditEvent(object sender, ProcessedMapMenu.CustomPlotMapMenuEventArgs e)
+        private void Menu_PlotEditEvent(object sender, ProcessedMapMenu.CustomPlotMapMenuEventArgs e)
         {
-
-            if(e.SourceMenuValue== TerrainType.Enumeration.Ocean || e.SourceMenuValue == TerrainType.Enumeration.Coast ||
+            if (e.SourceMenuValue == TerrainType.Enumeration.Ocean || e.SourceMenuValue == TerrainType.Enumeration.Coast ||
                 e.SourceMenuValue == TerrainType.Enumeration.Flat || e.SourceMenuValue == TerrainType.Enumeration.Hills ||
                 e.SourceMenuValue == TerrainType.Enumeration.Mountains)
             {
                 PlotCollectionCtrl.UpdatePlotPlotTerrain(CurrentPlotId, e.SourceMenuValue, true);
-
             }
 
             if (e.SourceMenuValue == TerrainType.Enumeration.NotDefined)
             {
                 PlotCollectionCtrl.ResetManuallyLockedPlot(CurrentPlotId);
             }
-
         }
-
-
 
         protected new void MapControlBase_Closing(object sender, EventArgs e)
         {
             _menu.Dispose();
             RegisteredListenersCtrl.ProcessedMapListeners.DeregisterObserver(this);
-
         }
 
-        #endregion
-
-
-       
-
+        #endregion Event handlers
     }
 }

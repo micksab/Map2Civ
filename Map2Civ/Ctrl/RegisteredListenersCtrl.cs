@@ -1,35 +1,39 @@
-﻿using System;
+﻿using Map2CivilizationCtrl.DataStructure;
+using Map2CivilizationCtrl.Listener;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
-using Map2CivilizationCtrl.DataStructure;
-using Map2CivilizationCtrl.Listener;
-using Map2CivilizationModel;
 
 namespace Map2CivilizationCtrl
 {
-    static class RegisteredListenersCtrl
+    internal static class RegisteredListenersCtrl
     {
-
-        readonly static UIListenersRegister<IUiListenerOriginalMap> _originalMapListeners =
+        private static readonly UIListenersRegister<IUiListenerOriginalMap> _originalMapListeners =
             new UIListenersRegister<IUiListenerOriginalMap>();
-        readonly static UIListenersRegister<IUiListenerProcessedMap> _processedMapListeners =
+
+        private static readonly UIListenersRegister<IUiListenerProcessedMap> _processedMapListeners =
             new UIListenersRegister<IUiListenerProcessedMap>();
-        readonly static UIListenersRegister<IUiListenerCentralForm> _centralFormListeners =
+
+        private static readonly UIListenersRegister<IUiListenerCentralForm> _centralFormListeners =
             new UIListenersRegister<IUiListenerCentralForm>();
-        readonly static UIListenersRegister<IUiListenerDetectedColorsGrid> _colorGridListeners =
+
+        private static readonly UIListenersRegister<IUiListenerDetectedColorsGrid> _colorGridListeners =
             new UIListenersRegister<IUiListenerDetectedColorsGrid>();
-        readonly static UIListenersRegister<IUiListenerPlotLocation> _plotLocationListeners =
+
+        private static readonly UIListenersRegister<IUiListenerPlotLocation> _plotLocationListeners =
             new UIListenersRegister<IUiListenerPlotLocation>();
-        readonly static UIListenersRegister<IUiListenerDetectedColorsCounter> _detectedColorsCounters =
+
+        private static readonly UIListenersRegister<IUiListenerDetectedColorsCounter> _detectedColorsCounters =
             new UIListenersRegister<IUiListenerDetectedColorsCounter>();
-        readonly static UIListenersRegister<IUiListenerProgress> _progressListeners =
+
+        private static readonly UIListenersRegister<IUiListenerProgress> _progressListeners =
             new UIListenersRegister<IUiListenerProgress>();
-        readonly static UIListenersRegister<IUiListenerModel> _modelListeners =
+
+        private static readonly UIListenersRegister<IUiListenerModel> _modelListeners =
             new UIListenersRegister<IUiListenerModel>();
-        readonly static UIListenersRegister<IUiListenerZoom> _zoomListeners =
+
+        private static readonly UIListenersRegister<IUiListenerZoom> _zoomListeners =
             new UIListenersRegister<IUiListenerZoom>();
-
-
 
         internal static UIListenersRegister<IUiListenerOriginalMap> OriginalMapListeners
         {
@@ -107,7 +111,7 @@ namespace Map2CivilizationCtrl
 
         public static void ModelListenersModelChanged()
         {
-            foreach(IUiListenerModel temp in _modelListeners.ListenersList)
+            foreach (IUiListenerModel temp in _modelListeners.ListenersList)
             {
                 temp.ModelChanged();
             }
@@ -116,19 +120,17 @@ namespace Map2CivilizationCtrl
             RegisteredListenersCtrl.ZoomChangedUpdate(100f);
         }
 
-
         public static void ModelListenersCurrentFileChanged(string fullFilename)
         {
-            foreach(IUiListenerModel temp in _modelListeners.ListenersList)
+            foreach (IUiListenerModel temp in _modelListeners.ListenersList)
             {
                 temp.UpdateCurrentModelFile(fullFilename);
             }
         }
 
-        #endregion
+        #endregion Model Interface Ctrl Methods
 
-
-        #region  Original Map Observer Interface Ctrl methods
+        #region Original Map Observer Interface Ctrl methods
 
         public static void UpdateOriginalMap()
         {
@@ -141,14 +143,9 @@ namespace Map2CivilizationCtrl
             }
         }
 
-        #endregion
-
-
-
+        #endregion Original Map Observer Interface Ctrl methods
 
         #region ***** Central Form Listener Interface  Ctrl methods
-        
-       
 
         public static void CentralFormUpdateAssignedPercentComplete()
         {
@@ -157,7 +154,6 @@ namespace Map2CivilizationCtrl
                 temp.UpdateAssignedPercentComplete();
             }
         }
-        
 
         public static void CentralFormPublishNewInfoMessage(string infoMessage)
         {
@@ -167,7 +163,6 @@ namespace Map2CivilizationCtrl
             }
         }
 
-
         public static void CentralFormSetModelButtonAndMenusEnabledState(Boolean saveActive, Boolean saveAsActive)
         {
             foreach (IUiListenerCentralForm temp in _centralFormListeners.ListenersList)
@@ -176,9 +171,7 @@ namespace Map2CivilizationCtrl
             }
         }
 
-        #endregion
-
-
+        #endregion ***** Central Form Listener Interface  Ctrl methods
 
         #region ***** Progress listeners
 
@@ -189,7 +182,6 @@ namespace Map2CivilizationCtrl
                 temp.SetProgressPercent(value);
             }
         }
-
 
         public static void ProgressStarted()
         {
@@ -207,8 +199,7 @@ namespace Map2CivilizationCtrl
             }
         }
 
-        #endregion
-
+        #endregion ***** Progress listeners
 
         #region ***** Processed map observer Interface  Ctrl methods
 
@@ -222,38 +213,27 @@ namespace Map2CivilizationCtrl
             }
 
             CentralFormUpdateAssignedPercentComplete();
-
         }
-
 
         public static void ProcessedMapShowSelectedColorsPlots(List<PlotId> plotCoordinatePairs)
         {
-            
             foreach (IUiListenerProcessedMap temp in _processedMapListeners.ListenersList)
             {
                 temp.ShowSelectedColorsPlots(plotCoordinatePairs);
             }
-           
         }
 
-        #endregion
-
+        #endregion ***** Processed map observer Interface  Ctrl methods
 
         #region ***** Detected colors Grid interface  Ctrl methods
 
-        
-
         public static void DetectedColorsGridSetSelectedColor(string colorID)
         {
-            foreach(IUiListenerDetectedColorsGrid temp in _colorGridListeners.ListenersList)
+            foreach (IUiListenerDetectedColorsGrid temp in _colorGridListeners.ListenersList)
             {
                 temp.SetSelectedColor(colorID);
             }
-               
-            
         }
-
-        
 
         public static void DetectedColorsGridFill()
         {
@@ -263,25 +243,19 @@ namespace Map2CivilizationCtrl
             }
         }
 
-        #endregion
+        #endregion ***** Detected colors Grid interface  Ctrl methods
 
-        #region  Plot location observers  Ctrl methods
-
-        
+        #region Plot location observers  Ctrl methods
 
         public static void PlotLocationUpdate(PlotId id)
         {
-           foreach(IUiListenerPlotLocation temp in _plotLocationListeners.ListenersList)
+            foreach (IUiListenerPlotLocation temp in _plotLocationListeners.ListenersList)
             {
                 temp.UpdatePlotLocation(id);
             }
         }
-        
 
-
-        #endregion
-
-
+        #endregion Plot location observers  Ctrl methods
 
         #region IUIListener_DetectedColorsCounter
 
@@ -290,12 +264,10 @@ namespace Map2CivilizationCtrl
             foreach (IUiListenerDetectedColorsCounter temp in _detectedColorsCounters.ListenersList)
             {
                 temp.UpdateColorListCount(count);
-
             }
         }
 
-        #endregion
-
+        #endregion IUIListener_DetectedColorsCounter
 
         #region IUIListener_ZoomChanged observers
 
@@ -309,8 +281,7 @@ namespace Map2CivilizationCtrl
             }
         }
 
-        #endregion 
-
+        #endregion IUIListener_ZoomChanged observers
 
     }
 }

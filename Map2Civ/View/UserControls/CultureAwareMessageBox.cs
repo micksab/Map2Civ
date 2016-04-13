@@ -2,9 +2,9 @@
 
 namespace Map2CivilizationView.UserControls
 {
-    public static class CultureAwareMessageBox 
+    public static class CultureAwareMessageBox
     {
-        public static DialogResult Show(string text, string caption, MessageBoxButtons buttons, 
+        public static DialogResult Show(string text, string caption, MessageBoxButtons buttons,
             MessageBoxIcon icon, MessageBoxDefaultButton defaultButton)
         {
             MessageBoxOptions options = MessageBoxOptions.ServiceNotification;

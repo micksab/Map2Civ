@@ -1,16 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
 using System.IO.Compression;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace POC_Tests
 {
-    class StringCompression
+    internal class StringCompression
     {
-
         public static string Compress(string text)
         {
             byte[] buffer = Encoding.UTF8.GetBytes(text);
@@ -50,7 +46,6 @@ namespace POC_Tests
 
                 return Encoding.UTF8.GetString(buffer);
             }
-
         }
     }
 }

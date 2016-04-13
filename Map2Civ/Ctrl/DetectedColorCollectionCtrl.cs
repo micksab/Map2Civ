@@ -1,22 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using Map2CivilizationCtrl.DataStructure;
+﻿using Map2CivilizationCtrl.DataStructure;
 using Map2CivilizationCtrl.Enumerations;
 using Map2CivilizationModel;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
 namespace Map2CivilizationCtrl
 {
-    static class DetectedColorCollectionCtrl
+    internal static class DetectedColorCollectionCtrl
     {
-
-       
-
-
         public static void UpdateDetectedColorsAndRefreshProcessedMap(string[] colorIDs,
             TerrainType.Enumeration descriptor)
         {
-
             List<PlotId> plotsToUpdate = new List<PlotId>();
 
             foreach (string colorID in colorIDs)
@@ -26,21 +20,8 @@ namespace Map2CivilizationCtrl
                 plotsToUpdate.AddRange(tempCollection);
             }
 
-             
-
             RegisteredListenersCtrl.ProcessedMapNotifyProcessedMapChanged(plotsToUpdate);
         }
-
-
-
-        
-        
-
-
-        
-
-
-        
 
         public static string[] getDetectedColorIDsArray()
         {
@@ -57,32 +38,24 @@ namespace Map2CivilizationCtrl
             return ModelCtrl.GetDataModel().DetectedColorCollection.GetDetectedColors();
         }
 
-
-        
-
-
         public static TerrainType.Enumeration getCombinedDescriptorByColorID(string colorID)
         {
-           
             DetectedColor detColor = getDetectedColor(colorID);
             return detColor.TerrainDescriptor;
-
         }
 
         public static List<PlotId> getDetectedColorPlotCoordinates(string colorID)
         {
             List<PlotId> toReturn = new List<PlotId>();
             DetectedColor detColor = getDetectedColor(colorID);
-            List<Plot>  plots = detColor.RelevantPlots;
+            List<Plot> plots = detColor.RelevantPlots;
 
-            foreach(Plot plot in plots)
+            foreach (Plot plot in plots)
             {
                 toReturn.Add(plot.Id);
             }
 
             return toReturn;
-
         }
-
     }
 }

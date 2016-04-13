@@ -1,10 +1,10 @@
-﻿using System;
-using Map2CivilizationCtrl.DataStructure;
+﻿using Map2CivilizationCtrl.DataStructure;
 using Map2CivilizationCtrl.Enumerations;
+using System;
 
 namespace Map2CivilizationCtrl.Analyzer
 {
-    class AnalyserGeoData : AnalyzerFactory
+    internal class AnalyserGeoData : AnalyzerFactory
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA1801:ReviewUnusedParameters", MessageId = "gridType")]
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA1801:ReviewUnusedParameters", MessageId = "settings")]

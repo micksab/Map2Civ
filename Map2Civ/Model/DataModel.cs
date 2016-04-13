@@ -1,32 +1,28 @@
-﻿using Map2CivilizationCtrl;
-using Map2CivilizationCtrl.Analyzer;
+﻿using Map2CivilizationCtrl.Analyzer;
 using Map2CivilizationCtrl.DataStructure;
 using Map2CivilizationCtrl.Enumerations;
 using System;
-using System.Collections.Generic;
 using System.Drawing;
 
 namespace Map2CivilizationModel
 {
     public sealed class DataModel : IDisposable
     {
+        private MapDimension _selectedMapSize;
+        private SourceReliefMapSettings _reliefMapSettings;
+        private SourceGeoDataSettings _geoDataSettings;
+        private Bitmap _processedBitmap;
+        private GridType.Enumeration _gridType;
+        private MapDataSource.Enumeration _mapDataSource;
+        private CivilizationVersion.Enumeration _civilizationVersion;
+        private Plots _plotCollection = new Plots();
+        private DetectedColors _detectedColorCollection = new DetectedColors();
 
-        MapDimension _selectedMapSize;
-        SourceReliefMapSettings _reliefMapSettings;
-        SourceGeoDataSettings _geoDataSettings;
-        Bitmap _processedBitmap;
-        GridType.Enumeration  _gridType;
-        MapDataSource.Enumeration _mapDataSource;
-        CivilizationVersion.Enumeration _civilizationVersion;
-        Plots _plotCollection = new Plots();
-        DetectedColors _detectedColorCollection = new DetectedColors();
+        private string _modelFile = string.Empty;
 
-
-        string _modelFile = string.Empty;
-       
-
-
-        public DataModel() { }
+        public DataModel()
+        {
+        }
 
         /// <summary>
         /// Model constructor intented to be used when it is based on a relief map image
@@ -35,9 +31,9 @@ namespace Map2CivilizationModel
         /// <param name="gridType">The type of grid applied to the model</param>
         /// <param name="mapDataSource">The type of source for the map to be created</param>
         /// <param name="civilizationVersion">The intended (to be exported) version of Civilization map</param>
-        /// <param name="reliefSettings">The settings based upon which the analysis of the source image is 
+        /// <param name="reliefSettings">The settings based upon which the analysis of the source image is
         /// to be performed.</param>
-        public DataModel(MapDimension mapDimension, GridType.Enumeration gridType, MapDataSource.Enumeration mapDataSource, 
+        public DataModel(MapDimension mapDimension, GridType.Enumeration gridType, MapDataSource.Enumeration mapDataSource,
             CivilizationVersion.Enumeration civilizationVersion, SourceReliefMapSettings reliefSettings)
         {
             _selectedMapSize = mapDimension;
@@ -47,10 +43,6 @@ namespace Map2CivilizationModel
             _civilizationVersion = civilizationVersion;
         }
 
-
-        
-
-
         public MapDimension SelectedMapSize
         {
             set
@@ -59,23 +51,9 @@ namespace Map2CivilizationModel
             }
             get
             {
-                return  _selectedMapSize;
+                return _selectedMapSize;
             }
         }
-
-
-
-
-        
-
-
-
-        
-
-
-        
-
-
 
         internal DetectedColors DetectedColorCollection
         {
@@ -85,9 +63,6 @@ namespace Map2CivilizationModel
             }
         }
 
-
-
-        
         public string ModelFile
         {
             get
@@ -140,7 +115,6 @@ namespace Map2CivilizationModel
             }
         }
 
-
         public Bitmap ProcessedBitmap
         {
             get
@@ -190,7 +164,6 @@ namespace Map2CivilizationModel
 
         public void Dispose()
         {
-
             _reliefMapSettings.Dispose();
             _processedBitmap.Dispose();
         }

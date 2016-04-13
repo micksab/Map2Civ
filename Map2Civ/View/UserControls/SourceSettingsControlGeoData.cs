@@ -1,17 +1,16 @@
-﻿using System;
-using System.ComponentModel;
-using System.Windows.Forms;
-using Map2CivilizationCtrl.Analyzer;
+﻿using Map2CivilizationCtrl.Analyzer;
 using Map2CivilizationCtrl.DataStructure;
 using Map2CivilizationCtrl.Enumerations;
+using System.ComponentModel;
+using System.Windows.Forms;
 
 namespace Map2CivilizationView.UserControls
 {
     [TypeDescriptionProvider(typeof(AbstractControlDescriptionProvider<SourceSettingsControlBase, UserControl>))]
-    public partial class SourceSettingsControlGeoData :  SourceSettingsControlBase
+    public partial class SourceSettingsControlGeoData : SourceSettingsControlBase
     {
-        MapDimension _mapDimension;
-        GridType.Enumeration _gridTypeEnum;
+        private MapDimension _mapDimension;
+        private GridType.Enumeration _gridTypeEnum;
 
         public SourceSettingsControlGeoData()
         {
@@ -30,7 +29,7 @@ namespace Map2CivilizationView.UserControls
             }
         }
 
-        override public  MapDimension SelectedMapDimension
+        override public MapDimension SelectedMapDimension
         {
             set
             {
@@ -40,7 +39,6 @@ namespace Map2CivilizationView.UserControls
             {
                 return _mapDimension;
             }
-            
         }
 
         override public string SettingsAreComplete
@@ -58,7 +56,5 @@ namespace Map2CivilizationView.UserControls
                 throw new System.NotSupportedException("Not implemented.");
             }
         }
-
-        
     }
 }

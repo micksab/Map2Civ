@@ -228,24 +228,6 @@
   <metadata name="statusStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>115, 17</value>
   </metadata>
-  <data name="intentedRatioLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>114, 19</value>
-  </data>
-  <data name="intentedRatioLabel.Text" xml:space="preserve">
-    <value>Intended Size Ratio:</value>
-  </data>
-  <data name="imageWidthLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>82, 19</value>
-  </data>
-  <data name="imageWidthLabel.Text" xml:space="preserve">
-    <value>Image Width:</value>
-  </data>
-  <data name="imageHeightLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>86, 19</value>
-  </data>
-  <data name="imageHeightLabel.Text" xml:space="preserve">
-    <value>Image Height:</value>
-  </data>
   <data name="statusStrip.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 534</value>
   </data>
@@ -267,23 +249,182 @@
   <data name="&gt;&gt;statusStrip.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="intentedRatioLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>114, 19</value>
+  </data>
+  <data name="intentedRatioLabel.Text" xml:space="preserve">
+    <value>Intended Size Ratio:</value>
+  </data>
+  <data name="imageWidthLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>82, 19</value>
+  </data>
+  <data name="imageWidthLabel.Text" xml:space="preserve">
+    <value>Image Width:</value>
+  </data>
+  <data name="imageHeightLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>86, 19</value>
+  </data>
+  <data name="imageHeightLabel.Text" xml:space="preserve">
+    <value>Image Height:</value>
+  </data>
   <data name="slidersPanel.CellBorderStyle" type="System.Windows.Forms.TableLayoutPanelCellBorderStyle, System.Windows.Forms">
     <value>OutsetPartial</value>
   </data>
   <data name="slidersPanel.ColumnCount" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
+  <data name="&gt;&gt;wNumeric.Name" xml:space="preserve">
+    <value>wNumeric</value>
+  </data>
+  <data name="&gt;&gt;wNumeric.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;wNumeric.Parent" xml:space="preserve">
+    <value>slidersPanel</value>
+  </data>
+  <data name="&gt;&gt;wNumeric.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;wTrackBar.Name" xml:space="preserve">
+    <value>wTrackBar</value>
+  </data>
+  <data name="&gt;&gt;wTrackBar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;wTrackBar.Parent" xml:space="preserve">
+    <value>slidersPanel</value>
+  </data>
+  <data name="&gt;&gt;wTrackBar.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;wLabel.Name" xml:space="preserve">
+    <value>wLabel</value>
+  </data>
+  <data name="&gt;&gt;wLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;wLabel.Parent" xml:space="preserve">
+    <value>slidersPanel</value>
+  </data>
+  <data name="&gt;&gt;wLabel.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;yNumeric.Name" xml:space="preserve">
+    <value>yNumeric</value>
+  </data>
+  <data name="&gt;&gt;yNumeric.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;yNumeric.Parent" xml:space="preserve">
+    <value>slidersPanel</value>
+  </data>
+  <data name="&gt;&gt;yNumeric.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;yTrackBar.Name" xml:space="preserve">
+    <value>yTrackBar</value>
+  </data>
+  <data name="&gt;&gt;yTrackBar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;yTrackBar.Parent" xml:space="preserve">
+    <value>slidersPanel</value>
+  </data>
+  <data name="&gt;&gt;yTrackBar.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;yLabel.Name" xml:space="preserve">
+    <value>yLabel</value>
+  </data>
+  <data name="&gt;&gt;yLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;yLabel.Parent" xml:space="preserve">
+    <value>slidersPanel</value>
+  </data>
+  <data name="&gt;&gt;yLabel.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;xLabel.Name" xml:space="preserve">
+    <value>xLabel</value>
+  </data>
+  <data name="&gt;&gt;xLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;xLabel.Parent" xml:space="preserve">
+    <value>slidersPanel</value>
+  </data>
+  <data name="&gt;&gt;xLabel.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;xTrackBar.Name" xml:space="preserve">
+    <value>xTrackBar</value>
+  </data>
+  <data name="&gt;&gt;xTrackBar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;xTrackBar.Parent" xml:space="preserve">
+    <value>slidersPanel</value>
+  </data>
+  <data name="&gt;&gt;xTrackBar.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;xNumeric.Name" xml:space="preserve">
+    <value>xNumeric</value>
+  </data>
+  <data name="&gt;&gt;xNumeric.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;xNumeric.Parent" xml:space="preserve">
+    <value>slidersPanel</value>
+  </data>
+  <data name="&gt;&gt;xNumeric.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="slidersPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="slidersPanel.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="slidersPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 458</value>
+  </data>
+  <data name="slidersPanel.RowCount" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="slidersPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>810, 76</value>
+  </data>
+  <data name="slidersPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;slidersPanel.Name" xml:space="preserve">
+    <value>slidersPanel</value>
+  </data>
+  <data name="&gt;&gt;slidersPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;slidersPanel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;slidersPanel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="slidersPanel.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="wNumeric" Row="2" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="wTrackBar" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="wLabel" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="yNumeric" Row="1" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="yTrackBar" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="yLabel" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="xLabel" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="xTrackBar" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="xNumeric" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Absolute,50,Percent,100,Absolute,163" /&gt;&lt;Rows Styles="Percent,33.33333,Percent,33.33333,Percent,33.33333" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
   <data name="wNumeric.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
   <data name="wNumeric.Location" type="System.Drawing.Point, System.Drawing">
-    <value>650, 51</value>
+    <value>644, 51</value>
   </data>
   <data name="wNumeric.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
   <data name="wNumeric.Size" type="System.Drawing.Size, System.Drawing">
-    <value>157, 20</value>
+    <value>163, 20</value>
   </data>
   <data name="wNumeric.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
@@ -310,7 +451,7 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="wTrackBar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>591, 22</value>
+    <value>585, 22</value>
   </data>
   <data name="wTrackBar.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
@@ -367,13 +508,13 @@
     <value>Fill</value>
   </data>
   <data name="yNumeric.Location" type="System.Drawing.Point, System.Drawing">
-    <value>650, 27</value>
+    <value>644, 27</value>
   </data>
   <data name="yNumeric.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
   <data name="yNumeric.Size" type="System.Drawing.Size, System.Drawing">
-    <value>157, 20</value>
+    <value>163, 20</value>
   </data>
   <data name="yNumeric.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -400,7 +541,7 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="yTrackBar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>591, 21</value>
+    <value>585, 21</value>
   </data>
   <data name="yTrackBar.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -499,7 +640,7 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="xTrackBar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>591, 21</value>
+    <value>585, 21</value>
   </data>
   <data name="xTrackBar.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -520,13 +661,13 @@
     <value>Fill</value>
   </data>
   <data name="xNumeric.Location" type="System.Drawing.Point, System.Drawing">
-    <value>650, 3</value>
+    <value>644, 3</value>
   </data>
   <data name="xNumeric.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
   <data name="xNumeric.Size" type="System.Drawing.Size, System.Drawing">
-    <value>157, 20</value>
+    <value>163, 20</value>
   </data>
   <data name="xNumeric.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -542,39 +683,6 @@
   </data>
   <data name="&gt;&gt;xNumeric.ZOrder" xml:space="preserve">
     <value>8</value>
-  </data>
-  <data name="slidersPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Bottom</value>
-  </data>
-  <data name="slidersPanel.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="slidersPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 458</value>
-  </data>
-  <data name="slidersPanel.RowCount" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="slidersPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>810, 76</value>
-  </data>
-  <data name="slidersPanel.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;slidersPanel.Name" xml:space="preserve">
-    <value>slidersPanel</value>
-  </data>
-  <data name="&gt;&gt;slidersPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;slidersPanel.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;slidersPanel.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="slidersPanel.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="wNumeric" Row="2" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="wTrackBar" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="wLabel" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="yNumeric" Row="1" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="yTrackBar" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="yLabel" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="xLabel" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="xTrackBar" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="xNumeric" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Absolute,50,Percent,100,Absolute,157" /&gt;&lt;Rows Styles="Percent,33.33333,Percent,33.33333,Percent,33.33333" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="imagePanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -744,6 +852,9 @@
         HwDx4Y8A5+HnAM/h8wDP4PMAn8D5AJ/AeQA+ADwAPAA4ABwAgAAcAAAAPAgAAD4+AACfMgEAn4ABAMeA
         AwDD+AMA4/AHAPH4DwD4fh8A/gB/AP+B/wA=
 </value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterParent</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Image Editor</value>

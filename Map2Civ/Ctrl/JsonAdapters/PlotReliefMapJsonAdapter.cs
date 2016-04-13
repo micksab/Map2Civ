@@ -1,20 +1,15 @@
 ﻿using Map2CivilizationCtrl.Enumerations;
 using Map2CivilizationModel;
 using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace Map2CivilizationCtrl.JsonAdapters
 {
-    class PlotReliefMapJsonAdapter
+    internal class PlotReliefMapJsonAdapter
     {
-        string _id;
-        TerrainType.Enumeration _terrainDescriptor = TerrainType.Enumeration.NotDefined;
-        bool _isLocked = false;
-        readonly string _hexDominantColor;
-
+        private string _id;
+        private TerrainType.Enumeration _terrainDescriptor = TerrainType.Enumeration.NotDefined;
+        private bool _isLocked = false;
+        private readonly string _hexDominantColor;
 
         #region public properties
 
@@ -69,7 +64,7 @@ namespace Map2CivilizationCtrl.JsonAdapters
             }
         }
 
-        #endregion
+        #endregion public properties
 
         /// <summary>
         /// Constructor used to transform a PlotReliefMap instance to PlotReliefMapJsonAdapter
@@ -82,7 +77,6 @@ namespace Map2CivilizationCtrl.JsonAdapters
             _isLocked = plot.IsLocked;
             _hexDominantColor = plot.HexDominantColor;
         }
-
 
         /// <summary>
         /// Constructor used to facilitate Json deserialization
@@ -97,19 +91,12 @@ namespace Map2CivilizationCtrl.JsonAdapters
             _id = id;
             _terrainDescriptor = td;
             _isLocked = lc;
-            _hexDominantColor= dc;
+            _hexDominantColor = dc;
         }
-
-
-        
 
         public PlotReliefMap GetPlotReliefMap()
         {
             return new PlotReliefMap(_id, _terrainDescriptor, _isLocked, _hexDominantColor);
         }
-
     }
-
-
-   
 }

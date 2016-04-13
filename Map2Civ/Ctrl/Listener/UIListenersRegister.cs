@@ -3,9 +3,9 @@ using System.Collections.ObjectModel;
 
 namespace Map2CivilizationCtrl.Listener
 {
-    public  class UIListenersRegister<T> where T : IUiListener
+    public class UIListenersRegister<T> where T : IUiListener
     {
-        readonly Collection<T> _internalList = new Collection<T>();
+        private readonly Collection<T> _internalList = new Collection<T>();
 
         public Collection<T> ListenersList
         {
@@ -14,7 +14,6 @@ namespace Map2CivilizationCtrl.Listener
                 return _internalList;
             }
         }
-
 
         public void RegisterObserver(T implementer)
         {
@@ -30,7 +29,5 @@ namespace Map2CivilizationCtrl.Listener
         {
             return _internalList.Contains(implementer);
         }
-
-        
     }
 }

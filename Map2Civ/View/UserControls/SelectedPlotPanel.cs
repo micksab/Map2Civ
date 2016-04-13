@@ -1,17 +1,17 @@
-﻿using System;
-using System.Drawing;
-using System.Windows.Forms;
-using Map2CivilizationCtrl;
+﻿using Map2CivilizationCtrl;
 using Map2CivilizationCtrl.DataStructure;
 using Map2CivilizationCtrl.Enumerations;
 using Map2CivilizationCtrl.Listener;
+using System;
+using System.Drawing;
+using System.Windows.Forms;
+
 namespace Map2CivilizationView.UserControls
 {
     public class SelectedPlotPanel : Panel, IUiListenerZoom
     {
-
-        PlotId _currentPlotId;
-        IUiForwardedFocusAndClickListener _clickAndFocusForwardingTarget;
+        private PlotId _currentPlotId;
+        private IUiForwardedFocusAndClickListener _clickAndFocusForwardingTarget;
 
         public SelectedPlotPanel(IUiForwardedFocusAndClickListener clickAndFocusForwardingTarget)
         {
@@ -22,23 +22,18 @@ namespace Map2CivilizationView.UserControls
             BorderStyle = BorderStyle.Fixed3D;
             BackColor = Color.FromArgb(0, 0, 0, 0);
 
-
-           
             RegisteredListenersCtrl.ZoomListeners.RegisterObserver(this);
             HandleDestroyed += SelectedPlotPanel_Closing;
             MouseClick += SelectedPlotPanel_MouseClick;
         }
 
-        
-
-         void SelectedPlotPanel_MouseClick(object sender, MouseEventArgs e)
+        private void SelectedPlotPanel_MouseClick(object sender, MouseEventArgs e)
         {
             if (_clickAndFocusForwardingTarget != null)
             {
                 MouseEventArgs argsToForward = new MouseEventArgs(e.Button, e.Clicks, e.X + Location.X, e.Y + Location.Y, e.Delta);
                 _clickAndFocusForwardingTarget.ReceiveFocusAndClickEvent(argsToForward);
             }
-           
         }
 
         public void RepositionSelectedPlotPanel(PlotId id)
@@ -53,15 +48,14 @@ namespace Map2CivilizationView.UserControls
 
             Update();
             Refresh();
-
         }
 
         public void ResizePanel()
         {
             float zoomFactor = GridCoordinateHelperCtrl.GetZoomFactor();
             GridType.Enumeration currentGridType = ModelCtrl.GetGridType();
-            float widthPixels = (GridType.Singleton.GetPlotWidthPixels(currentGridType) * (zoomFactor/100f))+ SystemInformation.BorderSize.Width*4;
-            float heightPixels = (GridType.Singleton.GetPlotHeightPixels(currentGridType) * (zoomFactor/100f))+ SystemInformation.BorderSize.Height*4;
+            float widthPixels = (GridType.Singleton.GetPlotWidthPixels(currentGridType) * (zoomFactor / 100f)) + SystemInformation.BorderSize.Width * 4;
+            float heightPixels = (GridType.Singleton.GetPlotHeightPixels(currentGridType) * (zoomFactor / 100f)) + SystemInformation.BorderSize.Height * 4;
 
             this.Size = new Size((int)Math.Ceiling(widthPixels), (int)Math.Ceiling(heightPixels));
             this.Update();
@@ -71,12 +65,12 @@ namespace Map2CivilizationView.UserControls
         #region Event handlers
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1707:IdentifiersShouldNotContainUnderscores")]
-        protected  void SelectedPlotPanel_Closing(object sender, EventArgs e)
+        protected void SelectedPlotPanel_Closing(object sender, EventArgs e)
         {
             RegisteredListenersCtrl.ZoomListeners.DeregisterObserver(this);
         }
 
-        #endregion
+        #endregion Event handlers
 
         #region IUIListener_ZoomChanged implementations
 
@@ -86,8 +80,6 @@ namespace Map2CivilizationView.UserControls
             RepositionSelectedPlotPanel(_currentPlotId);
         }
 
-        #endregion
-
-
+        #endregion IUIListener_ZoomChanged implementations
     }
 }

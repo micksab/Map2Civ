@@ -6,14 +6,13 @@ using System.Windows.Forms;
 
 namespace Map2CivilizationView.UserControls
 {
-    sealed class FeedbackToolstripLabel : ToolStripLabel
+    internal sealed class FeedbackToolstripLabel : ToolStripLabel
     {
-        Queue<string> _messages = new Queue<string>();
-        System.ComponentModel.BackgroundWorker _backWorker = new System.ComponentModel.BackgroundWorker();
+        private Queue<string> _messages = new Queue<string>();
+        private System.ComponentModel.BackgroundWorker _backWorker = new System.ComponentModel.BackgroundWorker();
 
         public FeedbackToolstripLabel()
         {
-
             Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             Size = new System.Drawing.Size(0, 32);
@@ -26,12 +25,8 @@ namespace Map2CivilizationView.UserControls
             _backWorker.RunWorkerCompleted += BackWorker_RunWorkerCompleted;
         }
 
-       
-
-
         public void AddFeedbackMessage(string message)
         {
-           
             _messages.Enqueue(message);
             Image = Map2Civilization.Properties.Resources.Info_Image;
 
@@ -39,13 +34,9 @@ namespace Map2CivilizationView.UserControls
             {
                 _backWorker.RunWorkerAsync(_messages);
             }
-            
-            
         }
 
-        
-
-         void BackWorker_DoWork(object sender, DoWorkEventArgs e)
+        private void BackWorker_DoWork(object sender, DoWorkEventArgs e)
         {
             Queue<string> theMessages = (Queue<string>)e.Argument;
 
@@ -68,17 +59,15 @@ namespace Map2CivilizationView.UserControls
                     {
                         System.Threading.Thread.Sleep(50);
                     }
-                    
+
                     rgbElementValue = rgbElementValue + rgbElementStep;
 
                     isFirstIteration = false;
-
                 }
             }
         }
 
-
-         void BackWorker_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        private void BackWorker_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
             int rgbElement = e.ProgressPercentage;
             string message = (string)e.UserState;
@@ -86,12 +75,10 @@ namespace Map2CivilizationView.UserControls
             Text = message;
         }
 
-
-         void BackWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        private void BackWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             Image = null;
             Text = string.Empty;
         }
-
     }
 }

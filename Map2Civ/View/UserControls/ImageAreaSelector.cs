@@ -1,22 +1,19 @@
-﻿using System;
+﻿using Map2CivilizationCtrl;
+using System;
 using System.Drawing;
 using System.Windows.Forms;
-using Map2CivilizationCtrl;
 
 namespace Map2CivilizationView.UserControls
 {
     public class ImageAreaSelector : PictureBox
     {
-
-        
-        double _CurrentXPerMille;
-        double _CurrentYPerMille;
-        double _CurrentWidthPerMille;
-        readonly double _MapRatio;
-        readonly ImageEditor _Editor;
-        bool _SelectorIsVisible = false;
-        Bitmap _ForegroundBitmap;
-        
+        private double _CurrentXPerMille;
+        private double _CurrentYPerMille;
+        private double _CurrentWidthPerMille;
+        private readonly double _MapRatio;
+        private readonly ImageEditor _Editor;
+        private bool _SelectorIsVisible = false;
+        private Bitmap _ForegroundBitmap;
 
         public ImageAreaSelector(double mapRatio, ImageEditor editor)
         {
@@ -24,10 +21,7 @@ namespace Map2CivilizationView.UserControls
             BackgroundImageLayout = ImageLayout.Zoom;
             BorderStyle = BorderStyle.Fixed3D;
             _Editor = editor;
-
         }
-
-        
 
         public void ShowSelectionTool(double imageRatio)
         {
@@ -39,19 +33,16 @@ namespace Map2CivilizationView.UserControls
                 //The width is smaller than the height, so it's safe to assign
                 // full width
                 _CurrentWidthPerMille = 1000d;
-
             }
             else
             {
-                //the width is larger than the height, so it's safe to assign full 
+                //the width is larger than the height, so it's safe to assign full
                 // height
-                _CurrentWidthPerMille = 1000d / (imageRatio/ _MapRatio);
+                _CurrentWidthPerMille = 1000d / (imageRatio / _MapRatio);
             }
             _Editor.SetWValue(_CurrentWidthPerMille);
             _SelectorIsVisible = true;
             DrawSelectionRect();
-
-
         }
 
         public void HideSelectionTool()
@@ -62,10 +53,9 @@ namespace Map2CivilizationView.UserControls
 
         public void SetNewXPosition(double value)
         {
-            
-            if(value + _CurrentWidthPerMille <= 1000d  )
+            if (value + _CurrentWidthPerMille <= 1000d)
             {
-               _CurrentXPerMille = value;
+                _CurrentXPerMille = value;
                 DrawSelectionRect();
             }
             else
@@ -74,13 +64,11 @@ namespace Map2CivilizationView.UserControls
             }
 
             DrawSelectionRect();
-
         }
-
 
         public void SetNewYPosition(double value, double imageRatio)
         {
-            double currentHeightPerMille = imageRatio *(_CurrentWidthPerMille / _MapRatio);
+            double currentHeightPerMille = imageRatio * (_CurrentWidthPerMille / _MapRatio);
 
             if (value + currentHeightPerMille <= 1000)
             {
@@ -92,8 +80,6 @@ namespace Map2CivilizationView.UserControls
                 _Editor.SetYValue(_CurrentYPerMille);
             }
         }
-
-
 
         public void SetNewWidth(double value, double imageRatio)
         {
@@ -109,7 +95,6 @@ namespace Map2CivilizationView.UserControls
             {
                 _Editor.SetWValue(_CurrentWidthPerMille);
             }
-
         }
 
         public bool SelectorIsVisible
@@ -125,11 +110,9 @@ namespace Map2CivilizationView.UserControls
             }
         }
 
-
-         void DrawSelectionRect()
+        private void DrawSelectionRect()
         {
-
-            if(_ForegroundBitmap== null || _ForegroundBitmap.Size!= ClientRectangle.Size)
+            if (_ForegroundBitmap == null || _ForegroundBitmap.Size != ClientRectangle.Size)
             {
                 _ForegroundBitmap = new Bitmap(ClientRectangle.Width, ClientRectangle.Height);
                 Image = _ForegroundBitmap;
@@ -143,16 +126,13 @@ namespace Map2CivilizationView.UserControls
                 {
                     using (Brush blackBrush = new SolidBrush(Color.FromArgb(70, 0, 0, 0)))
                     {
-                    
-
-                        double pixelsX = ClientRectangle.Width * (_CurrentXPerMille/1000d);
-                        double pixelsY = ClientRectangle.Height * (_CurrentYPerMille/1000d);
+                        double pixelsX = ClientRectangle.Width * (_CurrentXPerMille / 1000d);
+                        double pixelsY = ClientRectangle.Height * (_CurrentYPerMille / 1000d);
                         double pixelsWidth = ClientRectangle.Width * (_CurrentWidthPerMille / 1000d);
-                        double pixelsHeight = ClientRectangle.Width * ( (_CurrentWidthPerMille/ _MapRatio) / 1000d);
+                        double pixelsHeight = ClientRectangle.Width * ((_CurrentWidthPerMille / _MapRatio) / 1000d);
 
                         g.FillRectangle(blackBrush, (float)pixelsX, (float)pixelsY, (float)pixelsWidth, (float)pixelsHeight);
                     }
-
                 }
             }
 
@@ -160,14 +140,11 @@ namespace Map2CivilizationView.UserControls
             Refresh();
         }
 
-
-
         protected override void OnResize(EventArgs e)
         {
             base.OnResize(e);
             DrawSelectionRect();
         }
-
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1024:UsePropertiesWhereAppropriate")]
         public Bitmap GetSelectedAreaImage()
@@ -177,11 +154,10 @@ namespace Map2CivilizationView.UserControls
             double pixelsWidth = BackgroundImage.Width * (_CurrentWidthPerMille / 1000d);
             double pixelsHeight = BackgroundImage.Width * ((_CurrentWidthPerMille / _MapRatio) / 1000d);
 
-            Bitmap toReturn = BitmapOperationsCtrl.FetchRegionOfBitmap((Bitmap)BackgroundImage, new Point((int)pixelsX, (int) pixelsY), 
+            Bitmap toReturn = BitmapOperationsCtrl.FetchRegionOfBitmap((Bitmap)BackgroundImage, new Point((int)pixelsX, (int)pixelsY),
                 (int)pixelsWidth, (int)pixelsHeight);
 
             return toReturn;
         }
-
     }
 }

@@ -1,9 +1,4 @@
 ﻿using NUnit.Framework;
-using Map2CivilizationCtrl;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace Map2CivilizationCtrl.Tests
 {
@@ -15,7 +10,6 @@ namespace Map2CivilizationCtrl.Tests
         {
             Assert.Fail();
         }
-
 
         [Test()]
         public void ExtractDisplayableModelFilePathTest()

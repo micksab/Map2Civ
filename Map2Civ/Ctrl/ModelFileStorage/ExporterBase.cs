@@ -25,6 +25,7 @@ namespace Map2CivilizationCtrl.ModelFileStorage
                         civilizationVersion.ToString() + Resources.Str_ExporterBase_NotSupportedMessagePart2);
                 case CivilizationVersion.Enumeration.Civilization5:
                     return new ExporterCivlizationV();
+
                 case CivilizationVersion.Enumeration.CivilizationBE:
                     throw new NotImplementedException(Resources.Str_ExporterBase_NotSupportedMessagePart1 +
                         civilizationVersion.ToString() + Resources.Str_ExporterBase_NotSupportedMessagePart2);
@@ -32,7 +33,6 @@ namespace Map2CivilizationCtrl.ModelFileStorage
                     throw new InvalidEnumArgumentException("Invalid or empty parameter value 'civilizationVersion'");
             }
         }
-
 
         public abstract void ExportModel(Map2CivilizationModel.DataModel dataModel, string fullFilePath);
     }

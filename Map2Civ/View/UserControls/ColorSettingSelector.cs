@@ -7,11 +7,9 @@ namespace Map2CivilizationView.UserControls
 {
     public partial class ColorSettingSelector : UserControl, ISettingControl
     {
-        Color _currentlySelectedColor;
-        EventHandler<ColorSelectorValueChangedEventArgs> _colorSelectorValueChanged;
-        string _propertyName = String.Empty;
-
-        
+        private Color _currentlySelectedColor;
+        private EventHandler<ColorSelectorValueChangedEventArgs> _colorSelectorValueChanged;
+        private string _propertyName = String.Empty;
 
         public EventHandler<ColorSelectorValueChangedEventArgs> ColorSelectorValueChanged
         {
@@ -37,29 +35,21 @@ namespace Map2CivilizationView.UserControls
             _propertyName = propertyName;
             _currentlySelectedColor = (Color)Settings.Default[_propertyName];
             UpdateColorDisplay();
-
         }
 
-
-
-
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Globalization", "CA1303:Do not pass literals as localized parameters", MessageId = "System.Windows.Forms.Control.set_Text(System.string)")]
-         void UpdateColorDisplay()
+        private void UpdateColorDisplay()
         {
-            colorBox.Text = string.Concat(Convert.ToInt32(_currentlySelectedColor.R), Resources.Str_ColorSelector_RGBSeparator, 
+            colorBox.Text = string.Concat(Convert.ToInt32(_currentlySelectedColor.R), Resources.Str_ColorSelector_RGBSeparator,
                 Convert.ToInt32(_currentlySelectedColor.G), Resources.Str_ColorSelector_RGBSeparator
                 , Convert.ToInt32(_currentlySelectedColor.B));
 
             colorPanel.BackColor = _currentlySelectedColor;
         }
 
-
-
-        
-
-         void colorButton_Click(object sender, EventArgs e)
+        private void colorButton_Click(object sender, EventArgs e)
         {
-            using(ColorDialog colorDialog = new ColorDialog())
+            using (ColorDialog colorDialog = new ColorDialog())
             {
                 colorDialog.Color = _currentlySelectedColor;
                 colorDialog.AnyColor = true;
@@ -68,7 +58,7 @@ namespace Map2CivilizationView.UserControls
 
                 DialogResult result = colorDialog.ShowDialog();
 
-                if(result == DialogResult.OK)
+                if (result == DialogResult.OK)
                 {
                     _currentlySelectedColor = colorDialog.Color;
                     UpdateColorDisplay();
@@ -79,7 +69,6 @@ namespace Map2CivilizationView.UserControls
                         ce.SelectedColor = _currentlySelectedColor;
                         _colorSelectorValueChanged(this, ce);
                     }
-
                 }
             }
         }
@@ -90,18 +79,11 @@ namespace Map2CivilizationView.UserControls
         }
     }
 
-
-
-
     #region EventArgs definition for custom ColorSelectorValueChanged event of the user control.
-
- 
-
-
 
     public class ColorSelectorValueChangedEventArgs : EventArgs
     {
-         Color _color;
+        private Color _color;
 
         public Color SelectedColor
         {
@@ -117,5 +99,5 @@ namespace Map2CivilizationView.UserControls
         }
     }
 
-    #endregion
+    #endregion EventArgs definition for custom ColorSelectorValueChanged event of the user control.
 }

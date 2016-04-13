@@ -1,18 +1,14 @@
 ﻿using Map2CivilizationCtrl.DataStructure;
 using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace Map2CivilizationCtrl.JsonAdapters
 {
-    class MapDimensionJsonAdapter
+    internal class MapDimensionJsonAdapter
     {
-        string _description;
-        int _widthPlots;
-        int _heightPlots;
-        bool _isDefault;
+        private string _description;
+        private int _widthPlots;
+        private int _heightPlots;
+        private bool _isDefault;
 
         #region public properties
 
@@ -72,8 +68,7 @@ namespace Map2CivilizationCtrl.JsonAdapters
             }
         }
 
-
-        #endregion
+        #endregion public properties
 
         public MapDimensionJsonAdapter(MapDimension dimension)
         {
@@ -82,7 +77,6 @@ namespace Map2CivilizationCtrl.JsonAdapters
             _heightPlots = dimension.HeightPlots;
             _isDefault = dimension.IsDefault;
         }
-
 
         [JsonConstructor]
         public MapDimensionJsonAdapter(string description, int width, int height, bool isDefault)

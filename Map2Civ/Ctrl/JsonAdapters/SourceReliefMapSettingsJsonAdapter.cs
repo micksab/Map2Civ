@@ -1,26 +1,22 @@
 ﻿using Map2CivilizationCtrl.Analyzer;
-using System;
-using System.Collections.Generic;
+using Newtonsoft.Json;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 using System.IO;
-using Newtonsoft.Json;
-using System.Linq;
-using System.Text;
 
 namespace Map2CivilizationCtrl.JsonAdapters
 {
-    class SourceReliefMapSettingsJsonAdapter
+    internal class SourceReliefMapSettingsJsonAdapter
     {
-        byte[] _originalBitmapBytes;
-        PixelFormat _pixelFormat;
-        InterpolationMode _interpolationMode;
-        CompositingQuality _compositingQuality;
-        SmoothingMode _smoothingMode;
-
+        private byte[] _originalBitmapBytes;
+        private PixelFormat _pixelFormat;
+        private InterpolationMode _interpolationMode;
+        private CompositingQuality _compositingQuality;
+        private SmoothingMode _smoothingMode;
 
         #region public properties
+
         [JsonProperty("originalBytes")]
         public byte[] OriginalBitmapBytes
         {
@@ -91,9 +87,7 @@ namespace Map2CivilizationCtrl.JsonAdapters
             }
         }
 
-
-        #endregion
-
+        #endregion public properties
 
         /// <summary>
         /// Constructor used to transform a SourceReliefMapSettings instance to SourceReliefMapSettingsJsonAdapter
@@ -102,7 +96,7 @@ namespace Map2CivilizationCtrl.JsonAdapters
         public SourceReliefMapSettingsJsonAdapter(SourceReliefMapSettings settings)
         {
             ImageConverter converter = new ImageConverter();
-            _originalBitmapBytes =  (byte[])converter.ConvertTo(settings.OriginalMapBitmap, typeof(byte[]));
+            _originalBitmapBytes = (byte[])converter.ConvertTo(settings.OriginalMapBitmap, typeof(byte[]));
             _pixelFormat = settings.PixelFormat;
             _interpolationMode = settings.InterpolationMode;
             _compositingQuality = settings.CompositingQuality;
@@ -118,7 +112,7 @@ namespace Map2CivilizationCtrl.JsonAdapters
         /// <param name="compositing"></param>
         /// <param name="smoothing"></param>
         [JsonConstructor]
-        public SourceReliefMapSettingsJsonAdapter(byte[] originalBytes, PixelFormat pixelFormat, InterpolationMode interpolation, 
+        public SourceReliefMapSettingsJsonAdapter(byte[] originalBytes, PixelFormat pixelFormat, InterpolationMode interpolation,
             CompositingQuality compositing, SmoothingMode smoothing)
         {
             _originalBitmapBytes = originalBytes;
@@ -127,8 +121,6 @@ namespace Map2CivilizationCtrl.JsonAdapters
             _compositingQuality = compositing;
             _smoothingMode = smoothing;
         }
-
-
 
         public SourceReliefMapSettings GetSourceReliefMapSettings()
         {

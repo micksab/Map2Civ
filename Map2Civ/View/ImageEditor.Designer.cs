@@ -270,6 +270,7 @@ namespace Map2CivilizationView
             this.Controls.Add(this.toolStrip);
             this.Name = "ImageEditor";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
+            this.TopMost = true;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.ImageEditor_Load);
             this.toolStrip.ResumeLayout(false);

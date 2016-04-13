@@ -1,14 +1,14 @@
-﻿using Map2CivilizationCtrl.DataStructure;
+﻿using Map2Civilization.Properties;
+using Map2CivilizationCtrl.DataStructure;
 using Map2CivilizationCtrl.Enumerations;
+using Map2CivilizationModel;
 using System;
 using System.IO;
 using System.Text;
-using Map2CivilizationModel;
-using Map2Civilization.Properties;
 
 namespace Map2CivilizationCtrl.ModelFileStorage
 {
-    class ExporterCivlizationV : ExporterBase
+    internal class ExporterCivlizationV : ExporterBase
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2202:Do not dispose objects multiple times")]
         public override void ExportModel(DataModel dataModel, string fullFilePath)
@@ -27,13 +27,9 @@ namespace Map2CivilizationCtrl.ModelFileStorage
                 //int - map height plots
                 writer.Write(heightPlots);
 
-
-
                 Byte[] block1Bytes = Map2Civilization.Properties.Resources.Block1_v5;
 
                 writer.Write(block1Bytes);
-
-
 
                 for (int y = 0; y < heightPlots; y++)
                 {
@@ -54,6 +50,7 @@ namespace Map2CivilizationCtrl.ModelFileStorage
                                 writer.Write(Convert.ToByte(255));
                                 writer.Write(Convert.ToByte(0));
                                 break;
+
                             case TerrainType.Enumeration.Coast:
                                 writer.Write(Convert.ToByte(5));
                                 writer.Write(Convert.ToByte(255));
@@ -64,6 +61,7 @@ namespace Map2CivilizationCtrl.ModelFileStorage
                                 writer.Write(Convert.ToByte(255));
                                 writer.Write(Convert.ToByte(0));
                                 break;
+
                             case TerrainType.Enumeration.Flat:
                                 writer.Write(Convert.ToByte(0));
                                 writer.Write(Convert.ToByte(255));
@@ -74,6 +72,7 @@ namespace Map2CivilizationCtrl.ModelFileStorage
                                 writer.Write(Convert.ToByte(255));
                                 writer.Write(Convert.ToByte(0));
                                 break;
+
                             case TerrainType.Enumeration.Hills:
                                 writer.Write(Convert.ToByte(0));
                                 writer.Write(Convert.ToByte(255));
@@ -84,6 +83,7 @@ namespace Map2CivilizationCtrl.ModelFileStorage
                                 writer.Write(Convert.ToByte(255));
                                 writer.Write(Convert.ToByte(0));
                                 break;
+
                             case TerrainType.Enumeration.Mountains:
                                 writer.Write(Convert.ToByte(0));
                                 writer.Write(Convert.ToByte(255));
@@ -94,6 +94,7 @@ namespace Map2CivilizationCtrl.ModelFileStorage
                                 writer.Write(Convert.ToByte(255));
                                 writer.Write(Convert.ToByte(0));
                                 break;
+
                             default:
                                 throw new NotImplementedException();
                         }
@@ -105,17 +106,13 @@ namespace Map2CivilizationCtrl.ModelFileStorage
                 writer.Write(block2Bytes);
             }
 
-
-
             string presentableFilename = VariousUtilityMethods.ExtractDisplayableModelFilePath(fullFilePath);
             RegisteredListenersCtrl.CentralFormPublishNewInfoMessage(Resources.Str_ExporterCivilizationV_ExportedMessage +
                 presentableFilename);
         }
 
-        
-
-
         #region usefull documentation on the format of CivV map files
+
         /******************************************************************************************************************/
         /******            Code used to fetch portions of a valid map file - For dev puproses only                       **/
         /******************************************************************************************************************/
@@ -205,6 +202,7 @@ namespace Map2CivilizationCtrl.ModelFileStorage
         //            These blocks can be read en masse and then split on the nulls into an array of type names.
         //            The int/ string combination for string3 was apparently added for version xB maps as it is not present in any version xA maps that I've looked at.
         //             Plots only seem to have 1 of the 2 feature types present.For exported maps, if a plot has a "normal" feature(forest, jungle, flood plain) it'll be the first feature; if instead it has a Natural Wonder feature, it'll be the second feature.
-        #endregion
+
+        #endregion usefull documentation on the format of CivV map files
     }
 }

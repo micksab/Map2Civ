@@ -47,12 +47,12 @@ namespace Map2CivilizationView
             this.mapSizeLabel = new System.Windows.Forms.Label();
             this.dataSourceLabel = new System.Windows.Forms.Label();
             this.gridTypeLabel = new System.Windows.Forms.Label();
-            this.versionCustomEnumComboBox = new Map2CivilizationView.UserControls.CustomEnumComboBox();
-            this.dataSourceCustomEnumComboBox = new Map2CivilizationView.UserControls.CustomEnumComboBox();
             this.versionLabel = new System.Windows.Forms.Label();
             this.gridTypeBox = new System.Windows.Forms.TextBox();
             this.mapSizeComboBox = new System.Windows.Forms.ComboBox();
             this.extraOptionsPanel = new System.Windows.Forms.Panel();
+            this.versionCustomEnumComboBox = new Map2CivilizationView.UserControls.CustomEnumComboBox();
+            this.dataSourceCustomEnumComboBox = new Map2CivilizationView.UserControls.CustomEnumComboBox();
             this.progressPanel.SuspendLayout();
             this.buttonsPanel.SuspendLayout();
             this.labelPanel.SuspendLayout();
@@ -137,18 +137,6 @@ namespace Map2CivilizationView
             resources.ApplyResources(this.gridTypeLabel, "gridTypeLabel");
             this.gridTypeLabel.Name = "gridTypeLabel";
             // 
-            // versionCustomEnumComboBox
-            // 
-            resources.ApplyResources(this.versionCustomEnumComboBox, "versionCustomEnumComboBox");
-            this.versionCustomEnumComboBox.Name = "versionCustomEnumComboBox";
-            this.versionCustomEnumComboBox.SelectedIndexChanged = null;
-            // 
-            // dataSourceCustomEnumComboBox
-            // 
-            resources.ApplyResources(this.dataSourceCustomEnumComboBox, "dataSourceCustomEnumComboBox");
-            this.dataSourceCustomEnumComboBox.Name = "dataSourceCustomEnumComboBox";
-            this.dataSourceCustomEnumComboBox.SelectedIndexChanged = null;
-            // 
             // versionLabel
             // 
             resources.ApplyResources(this.versionLabel, "versionLabel");
@@ -177,6 +165,18 @@ namespace Map2CivilizationView
             this.extraOptionsPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.extraOptionsPanel.Name = "extraOptionsPanel";
             // 
+            // versionCustomEnumComboBox
+            // 
+            resources.ApplyResources(this.versionCustomEnumComboBox, "versionCustomEnumComboBox");
+            this.versionCustomEnumComboBox.Name = "versionCustomEnumComboBox";
+            this.versionCustomEnumComboBox.SelectedIndexChanged = null;
+            // 
+            // dataSourceCustomEnumComboBox
+            // 
+            resources.ApplyResources(this.dataSourceCustomEnumComboBox, "dataSourceCustomEnumComboBox");
+            this.dataSourceCustomEnumComboBox.Name = "dataSourceCustomEnumComboBox";
+            this.dataSourceCustomEnumComboBox.SelectedIndexChanged = null;
+            // 
             // NewMapForm
             // 
             resources.ApplyResources(this, "$this");
@@ -190,6 +190,7 @@ namespace Map2CivilizationView
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "NewMapForm";
+            this.TopMost = true;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.NewMapForm_FormClosed);
             this.progressPanel.ResumeLayout(false);
             this.buttonsPanel.ResumeLayout(false);

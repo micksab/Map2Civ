@@ -1,17 +1,14 @@
-﻿using System;
-using System.Drawing;
-using Map2CivilizationCtrl;
+﻿using Map2CivilizationCtrl;
 using Map2CivilizationCtrl.Enumerations;
+using System;
+using System.Drawing;
 
 namespace Map2CivilizationModel
 {
-    
     public class PlotReliefMap : Plot
     {
-        readonly string _hexDominantColor;
-        readonly Color _dominantColor;
-
-       
+        private readonly string _hexDominantColor;
+        private readonly Color _dominantColor;
 
         public PlotReliefMap(int plotX, int plotY, string hexDominantColor) : base(plotX, plotY)
         {
@@ -26,14 +23,12 @@ namespace Map2CivilizationModel
             _dominantColor = BitmapOperationsCtrl.ColorFromHex(_hexDominantColor);
         }
 
-
         protected internal string HexDominantColor
         {
             get
             {
                 return _hexDominantColor;
             }
-            
         }
 
         public Color DominantColor

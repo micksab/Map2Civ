@@ -1,17 +1,15 @@
 ﻿using System;
 using System.Globalization;
-using System.Linq;
 
 namespace Map2CivilizationCtrl.DataStructure
 {
     public struct PlotId : IEquatable<PlotId>
     {
-        
-        readonly int _x;
-        readonly int _y;
-        readonly string _name;
+        private readonly int _x;
+        private readonly int _y;
+        private readonly string _name;
 
-        #region getters 
+        #region getters
 
         /// <summary>
         /// The X coordinate component of the plot id
@@ -37,7 +35,6 @@ namespace Map2CivilizationCtrl.DataStructure
             }
         }
 
-
         public string Name
         {
             get
@@ -46,34 +43,31 @@ namespace Map2CivilizationCtrl.DataStructure
             }
         }
 
-        #endregion
+        #endregion getters
 
         public PlotId(string name)
         {
             _name = name;
-            char[] delimiterChar = {','};
+            char[] delimiterChar = { ',' };
 
             if (string.IsNullOrEmpty(name.Trim()))
                 throw new ArgumentException(string.Empty, "name");
 
-            string[] components = name.Split(delimiterChar,StringSplitOptions.RemoveEmptyEntries);
+            string[] components = name.Split(delimiterChar, StringSplitOptions.RemoveEmptyEntries);
 
-            if(components.Length!=2)
+            if (components.Length != 2)
                 throw new ArgumentException(string.Empty, "name");
-
 
             _x = Convert.ToInt32(components[0], CultureInfo.InvariantCulture);
             _y = Convert.ToInt32(components[1], CultureInfo.InvariantCulture);
         }
-        
+
         public PlotId(int X, int Y)
         {
             _x = X;
             _y = Y;
             _name = string.Concat(X, ",", Y);
         }
-
-        
 
         public bool Equals(PlotId other)
         {
@@ -113,10 +107,5 @@ namespace Map2CivilizationCtrl.DataStructure
         {
             return !id1.Equals(id2);
         }
-
-
-
-
-
     }
 }
