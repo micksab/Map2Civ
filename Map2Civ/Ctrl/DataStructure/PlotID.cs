@@ -1,4 +1,23 @@
-﻿using System;
+﻿/************************************************************************************/
+//
+//      This file is part of Map2Civilization.
+//      Map2Civilization is free software: you can redistribute it and/or modify
+//      it under the terms of the GNU General Public License as published by
+//      the Free Software Foundation, either version 3 of the License, or
+//      (at your option) any later version.
+//
+//      Map2Civilization is distributed in the hope that it will be useful,
+//      but WITHOUT ANY WARRANTY; without even the implied warranty of
+//      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.See the
+//      GNU General Public License for more details.
+//
+//      You should have received a copy of the GNU General Public License
+//      along with Map2Civilization.  If not, see http://www.gnu.org/licenses/.
+//
+/************************************************************************************/
+
+
+using System;
 using System.Globalization;
 
 namespace Map2CivilizationCtrl.DataStructure
@@ -47,11 +66,13 @@ namespace Map2CivilizationCtrl.DataStructure
 
         public PlotId(string name)
         {
+            if (string.IsNullOrEmpty(name))
+                throw new ArgumentException(string.Empty, "name");
+
             _name = name;
             char[] delimiterChar = { ',' };
 
-            if (string.IsNullOrEmpty(name.Trim()))
-                throw new ArgumentException(string.Empty, "name");
+            
 
             string[] components = name.Split(delimiterChar, StringSplitOptions.RemoveEmptyEntries);
 
@@ -62,11 +83,13 @@ namespace Map2CivilizationCtrl.DataStructure
             _y = Convert.ToInt32(components[1], CultureInfo.InvariantCulture);
         }
 
-        public PlotId(int X, int Y)
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly", MessageId = "y")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly", MessageId = "x")]
+        public PlotId(int x, int y)
         {
-            _x = X;
-            _y = Y;
-            _name = string.Concat(X, ",", Y);
+            _x = x;
+            _y = y;
+            _name = string.Concat(x, ",", y);
         }
 
         public bool Equals(PlotId other)

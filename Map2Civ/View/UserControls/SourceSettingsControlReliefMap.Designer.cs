@@ -46,9 +46,9 @@ namespace Map2CivilizationView.UserControls
             this.interpolationBox = new System.Windows.Forms.ComboBox();
             this.interpolationLabel = new System.Windows.Forms.Label();
             this.defaultCheck = new System.Windows.Forms.CheckBox();
-            this.colorDepthBox = new System.Windows.Forms.ComboBox();
             this.depthLabel = new System.Windows.Forms.Label();
             this.openFileButton = new System.Windows.Forms.Button();
+            this.colorDepthBox = new Map2CivilizationView.UserControls.CustomEnumComboBox();
             this.advancedGroup.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,6 +65,7 @@ namespace Map2CivilizationView.UserControls
             // 
             // advancedGroup
             // 
+            this.advancedGroup.Controls.Add(this.colorDepthBox);
             this.advancedGroup.Controls.Add(this.smoothingModeBox);
             this.advancedGroup.Controls.Add(this.smoothingLabel);
             this.advancedGroup.Controls.Add(this.composingQualityBox);
@@ -72,7 +73,6 @@ namespace Map2CivilizationView.UserControls
             this.advancedGroup.Controls.Add(this.interpolationBox);
             this.advancedGroup.Controls.Add(this.interpolationLabel);
             this.advancedGroup.Controls.Add(this.defaultCheck);
-            this.advancedGroup.Controls.Add(this.colorDepthBox);
             this.advancedGroup.Controls.Add(this.depthLabel);
             resources.ApplyResources(this.advancedGroup, "advancedGroup");
             this.advancedGroup.Name = "advancedGroup";
@@ -123,13 +123,6 @@ namespace Map2CivilizationView.UserControls
             this.defaultCheck.UseVisualStyleBackColor = true;
             this.defaultCheck.CheckedChanged += new System.EventHandler(this.defaultCheck_CheckedChanged);
             // 
-            // colorDepthBox
-            // 
-            this.colorDepthBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            resources.ApplyResources(this.colorDepthBox, "colorDepthBox");
-            this.colorDepthBox.FormattingEnabled = true;
-            this.colorDepthBox.Name = "colorDepthBox";
-            // 
             // depthLabel
             // 
             resources.ApplyResources(this.depthLabel, "depthLabel");
@@ -142,6 +135,12 @@ namespace Map2CivilizationView.UserControls
             this.openFileButton.Name = "openFileButton";
             this.openFileButton.UseVisualStyleBackColor = true;
             this.openFileButton.Click += new System.EventHandler(this.OpenFileButton_Click);
+            // 
+            // colorDepthBox
+            // 
+            resources.ApplyResources(this.colorDepthBox, "colorDepthBox");
+            this.colorDepthBox.Name = "colorDepthBox";
+            this.colorDepthBox.SelectedIndexChanged = null;
             // 
             // SourceSettingsControlReliefMap
             // 
@@ -172,7 +171,7 @@ namespace Map2CivilizationView.UserControls
          System.Windows.Forms.ComboBox interpolationBox;
          System.Windows.Forms.Label interpolationLabel;
          System.Windows.Forms.CheckBox defaultCheck;
-         System.Windows.Forms.ComboBox colorDepthBox;
          System.Windows.Forms.Label depthLabel;
+        private CustomEnumComboBox colorDepthBox;
     }
 }

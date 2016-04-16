@@ -1,4 +1,23 @@
-﻿using System;
+﻿/************************************************************************************/
+//
+//      This file is part of Map2Civilization.
+//      Map2Civilization is free software: you can redistribute it and/or modify
+//      it under the terms of the GNU General Public License as published by
+//      the Free Software Foundation, either version 3 of the License, or
+//      (at your option) any later version.
+//
+//      Map2Civilization is distributed in the hope that it will be useful,
+//      but WITHOUT ANY WARRANTY; without even the implied warranty of
+//      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.See the
+//      GNU General Public License for more details.
+//
+//      You should have received a copy of the GNU General Public License
+//      along with Map2Civilization.  If not, see http://www.gnu.org/licenses/.
+//
+/************************************************************************************/
+
+
+using System;
 using System.Drawing;
 using System.Threading;
 using System.Windows.Forms;
@@ -132,22 +151,25 @@ namespace Map2CivilizationView
         
 
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1024:UsePropertiesWhereAppropriate")]
-        public Bitmap GetBitmapToProcess()
+        public Bitmap BitmapToProcess
         {
-            Bitmap toReturn = null;
-
-            if (_selectionToolControl.SelectorIsVisible==false && DialogResult == DialogResult.OK)
+            get
             {
-                toReturn = (Bitmap)_selectionToolControl.BackgroundImage.Clone();
-            }
-            else if(_selectionToolControl.SelectorIsVisible == true && DialogResult== DialogResult.OK)
-            {
-                toReturn = (Bitmap)_selectionToolControl.GetSelectedAreaImage().Clone();
-            }
+                Bitmap toReturn = null;
 
-            toReturn.SetResolution(96, 96);
-            return toReturn;
+                if (_selectionToolControl.SelectorIsVisible == false && DialogResult == DialogResult.OK)
+                {
+                    toReturn = (Bitmap)_selectionToolControl.BackgroundImage.Clone();
+                }
+                else if (_selectionToolControl.SelectorIsVisible == true && DialogResult == DialogResult.OK)
+                {
+                    toReturn = (Bitmap)_selectionToolControl.SelectedAreaImage.Clone();
+                }
+
+                toReturn.SetResolution(96, 96);
+                return toReturn;
+            }
+            
         }
 
         
@@ -224,8 +246,8 @@ namespace Map2CivilizationView
                 DialogResult result = canvasForm.ShowDialog();
                 if (result == DialogResult.OK)
                 {
-                    Size toResize = canvasForm.GetCanvasWidthHeight();
-                    Color toApply = canvasForm.GetBackgroundColor();
+                    Size toResize = canvasForm.CanvasSize;
+                    Color toApply = canvasForm.CanvasBackgroundColor;
                     Bitmap newImage = BitmapOperationsCtrl.ResizeCanvas(_originalBmp, toApply, toResize.Width, toResize.Height);
                     SetImage(newImage);
                     EvaluateIntendedRatio();

@@ -1,4 +1,23 @@
-﻿using Map2Civilization.Properties;
+﻿/************************************************************************************/
+//
+//      This file is part of Map2Civilization.
+//      Map2Civilization is free software: you can redistribute it and/or modify
+//      it under the terms of the GNU General Public License as published by
+//      the Free Software Foundation, either version 3 of the License, or
+//      (at your option) any later version.
+//
+//      Map2Civilization is distributed in the hope that it will be useful,
+//      but WITHOUT ANY WARRANTY; without even the implied warranty of
+//      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.See the
+//      GNU General Public License for more details.
+//
+//      You should have received a copy of the GNU General Public License
+//      along with Map2Civilization.  If not, see http://www.gnu.org/licenses/.
+//
+/************************************************************************************/
+
+
+using Map2Civilization.Properties;
 using Map2CivilizationCtrl.DataStructure;
 using System;
 using System.Collections.ObjectModel;
@@ -6,12 +25,12 @@ using System.ComponentModel;
 
 namespace Map2CivilizationCtrl.Enumerations
 {
-    public class CivilizationVersion : IEnrichedEnumWrapper
+    public class CivilizationVersionEnumWrapper : EnrichedEnumWrapper
     {
         /// <summary>
         /// Enumeration that holds all Civilization Versions
         /// </summary>
-        public enum Enumeration
+        public enum CivilizationVersion
         {
             Civilization1 = 0,
             Civilization2 = 1,
@@ -26,142 +45,160 @@ namespace Map2CivilizationCtrl.Enumerations
         /// <summary>
         /// Used to store the single instance needed to perform any operation.
         /// </summary>
-        private static CivilizationVersion _singleInstance;
+        private static CivilizationVersionEnumWrapper _singleInstance;
 
         /// <summary>
         ///  constructor
         /// </summary>
-        private CivilizationVersion()
+        private CivilizationVersionEnumWrapper()
         { }
 
-        public static CivilizationVersion Singleton
+        public static CivilizationVersionEnumWrapper Singleton
         {
             get
             {
                 if (_singleInstance == null)
                 {
-                    _singleInstance = new CivilizationVersion();
+                    _singleInstance = new CivilizationVersionEnumWrapper();
                 }
 
                 return _singleInstance;
             }
         }
 
-        public Type EnumType
+        #endregion Singleton methods
+
+
+        #region base abstract class implementations
+
+        override public Type EnumType
         {
             get
             {
-                return typeof(Enumeration);
+                return typeof(CivilizationVersion);
             }
         }
 
-        public string GetEnumValueDescription(System.Enum value)
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:Validate arguments of public methods", MessageId = "0")]
+        override protected internal string GetEnumSpecificDescription(System.Enum value)
         {
-            switch ((Enumeration)value)
+
+            switch ((CivilizationVersion)value)
             {
-                case Enumeration.Civilization1:
+                case CivilizationVersion.Civilization1:
                     return "Civilization I";
 
-                case Enumeration.Civilization2:
+                case CivilizationVersion.Civilization2:
                     return "Civilization II";
 
-                case Enumeration.Civilization3:
+                case CivilizationVersion.Civilization3:
                     return "Civilization III";
 
-                case Enumeration.Civilization4:
+                case CivilizationVersion.Civilization4:
                     return "Civilization IV";
 
-                case Enumeration.Civilization5:
+                case CivilizationVersion.Civilization5:
                     return "Civilization V";
 
-                case Enumeration.CivilizationBE:
+                case CivilizationVersion.CivilizationBE:
                     return "Civilization Beyond Earth";
 
                 default:
-                    throw new InvalidEnumArgumentException("");
+                    throw new NotImplementedException(string.Concat("Handling not implemented for enum value ", value.ToString()));
+
             }
         }
 
-        public Boolean GetEnumValueEnabledStatus(System.Enum value)
+        override protected internal bool GetEnumSpecificEnabledStatus(System.Enum value)
         {
-            switch ((Enumeration)value)
+            VerifyEnumTypeCompatible(value);
+
+
+            switch ((CivilizationVersion)value)
             {
-                case Enumeration.Civilization1:
+                case CivilizationVersion.Civilization1:
                     return false;
 
-                case Enumeration.Civilization2:
+                case CivilizationVersion.Civilization2:
                     return false;
 
-                case Enumeration.Civilization3:
+                case CivilizationVersion.Civilization3:
                     return false;
 
-                case Enumeration.Civilization4:
+                case CivilizationVersion.Civilization4:
                     //return false;
                     /**** FOR TEST ONLY - REMEMBER TO REMOVE!***/
                     return true;
                 /*******************************************/
-                case Enumeration.Civilization5:
+                case CivilizationVersion.Civilization5:
                     return true;
 
-                case Enumeration.CivilizationBE:
+                case CivilizationVersion.CivilizationBE:
                     return false;
 
                 default:
-                    throw new InvalidEnumArgumentException("Non existing enumeration value.");
+                    throw new NotImplementedException(string.Concat("Handling not implemented for enum value ", value.ToString()));
+
+
             }
         }
 
-        public Boolean GetEnumValueDefaultStatus(System.Enum value)
+        override protected internal bool GetEnumSpecificDefaultStatus(System.Enum value)
         {
-            switch ((Enumeration)value)
+            VerifyEnumTypeCompatible(value);
+
+
+            switch ((CivilizationVersion)value)
             {
-                case Enumeration.Civilization1:
+                case CivilizationVersion.Civilization1:
                     return false;
 
-                case Enumeration.Civilization2:
+                case CivilizationVersion.Civilization2:
                     return false;
 
-                case Enumeration.Civilization3:
+                case CivilizationVersion.Civilization3:
                     return false;
 
-                case Enumeration.Civilization4:
+                case CivilizationVersion.Civilization4:
                     return false;
 
-                case Enumeration.Civilization5:
+                case CivilizationVersion.Civilization5:
                     return true;
 
-                case Enumeration.CivilizationBE:
+                case CivilizationVersion.CivilizationBE:
                     return false;
 
                 default:
-                    throw new InvalidEnumArgumentException("Non existing enumeration value.");
+                    throw new NotImplementedException(string.Concat("Handling not implemented for enum value ", value.ToString()));
+
             }
         }
 
-        #endregion Singleton methods
+
+        #endregion
 
         #region CivilizationVersion specific utility methods
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
-        public Collection<MapDimension> GetVersionMapDimensions(Enumeration version)
+        public Collection<MapDimension> GetVersionMapDimensions(CivilizationVersion version)
         {
             Collection<MapDimension> toReturn = new Collection<MapDimension>();
 
             switch (version)
             {
-                case Enumeration.Civilization1:
+                case CivilizationVersion.Civilization1:
                     toReturn.Add(new MapDimension("Not Supported.", 0, 0, true));
                     return toReturn;
 
-                case Enumeration.Civilization2:
+                case CivilizationVersion.Civilization2:
                     toReturn.Add(new MapDimension("Not Supported.", 0, 0, true));
                     return toReturn;
 
-                case Enumeration.Civilization3:
+                case CivilizationVersion.Civilization3:
                     toReturn.Add(new MapDimension("Not Supported.", 0, 0, true));
                     return toReturn;
 
-                case Enumeration.Civilization4:
+                case CivilizationVersion.Civilization4:
                     //toReturn.Add(new MapDimension("Not Supported.", 0, 0, true));
                     /****** INVALID VALUES - FOR TEST PURPOSES ONLY  *****/
                     toReturn.Add(new MapDimension(Resources.Str_CivilizationVersion_Civilization5MapSizes_Duel, 40, 25, false));
@@ -174,7 +211,7 @@ namespace Map2CivilizationCtrl.Enumerations
                     /********************************************************/
                     return toReturn;
 
-                case Enumeration.Civilization5:
+                case CivilizationVersion.Civilization5:
                     // Source: http://forums.civfanatics.com/showthread.php?t=389835
                     toReturn.Add(new MapDimension(Resources.Str_CivilizationVersion_Civilization5MapSizes_Duel, 40, 25, false));
                     toReturn.Add(new MapDimension(Resources.Str_CivilizationVersion_Civilization5MapSizes_Tiny, 56, 36, false));
@@ -185,7 +222,7 @@ namespace Map2CivilizationCtrl.Enumerations
                     toReturn.Add(new MapDimension(Resources.Str_CivilizationVersion_Civilization5MapSizes_Humongous, 300, 200, false));
                     return toReturn;
 
-                case Enumeration.CivilizationBE:
+                case CivilizationVersion.CivilizationBE:
                     toReturn.Add(new MapDimension("Not Supported.", 0, 0, true));
                     return toReturn;
 
@@ -195,27 +232,27 @@ namespace Map2CivilizationCtrl.Enumerations
         }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
-        public GridType.Enumeration GetVersionGridType(Enumeration version)
+        public GridTypeEnumWrapper.GridType GetVersionGridType(CivilizationVersion version)
         {
             switch (version)
             {
-                case Enumeration.Civilization1:
-                    return GridType.Enumeration.Rhombus;
+                case CivilizationVersion.Civilization1:
+                    return GridTypeEnumWrapper.GridType.Rhombus;
 
-                case Enumeration.Civilization2:
-                    return GridType.Enumeration.Rhombus;
+                case CivilizationVersion.Civilization2:
+                    return GridTypeEnumWrapper.GridType.Rhombus;
 
-                case Enumeration.Civilization3:
-                    return GridType.Enumeration.Rhombus;
+                case CivilizationVersion.Civilization3:
+                    return GridTypeEnumWrapper.GridType.Rhombus;
 
-                case Enumeration.Civilization4:
-                    return GridType.Enumeration.Square;
+                case CivilizationVersion.Civilization4:
+                    return GridTypeEnumWrapper.GridType.Square;
 
-                case Enumeration.Civilization5:
-                    return GridType.Enumeration.HexagonalPT;
+                case CivilizationVersion.Civilization5:
+                    return GridTypeEnumWrapper.GridType.HexagonalPT;
 
-                case Enumeration.CivilizationBE:
-                    return GridType.Enumeration.HexagonalPT;
+                case CivilizationVersion.CivilizationBE:
+                    return GridTypeEnumWrapper.GridType.HexagonalPT;
 
                 default:
                     throw new InvalidEnumArgumentException("Non existing enumeration value.");
@@ -223,22 +260,22 @@ namespace Map2CivilizationCtrl.Enumerations
         }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
-        public string GetSaveFileFilter(Enumeration version)
+        public string GetSaveFileFilter(CivilizationVersion version)
         {
             switch (version)
             {
-                case Enumeration.Civilization1:
+                case CivilizationVersion.Civilization1:
                     throw new NotImplementedException();
-                case Enumeration.Civilization2:
+                case CivilizationVersion.Civilization2:
                     throw new NotImplementedException();
-                case Enumeration.Civilization3:
+                case CivilizationVersion.Civilization3:
                     throw new NotImplementedException();
-                case Enumeration.Civilization4:
+                case CivilizationVersion.Civilization4:
                     throw new NotImplementedException();
-                case Enumeration.Civilization5:
+                case CivilizationVersion.Civilization5:
                     return "Civ 5 Map Files | *.Civ5Map";
 
-                case Enumeration.CivilizationBE:
+                case CivilizationVersion.CivilizationBE:
                     throw new NotImplementedException();
                 default:
                     throw new InvalidEnumArgumentException("Non existing enumeration value.");
@@ -246,22 +283,22 @@ namespace Map2CivilizationCtrl.Enumerations
         }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
-        public string GetSaveFileDefaultExtension(Enumeration version)
+        public string GetSaveFileDefaultExtension(CivilizationVersion version)
         {
             switch (version)
             {
-                case Enumeration.Civilization1:
+                case CivilizationVersion.Civilization1:
                     throw new NotImplementedException();
-                case Enumeration.Civilization2:
+                case CivilizationVersion.Civilization2:
                     throw new NotImplementedException();
-                case Enumeration.Civilization3:
+                case CivilizationVersion.Civilization3:
                     throw new NotImplementedException();
-                case Enumeration.Civilization4:
+                case CivilizationVersion.Civilization4:
                     throw new NotImplementedException();
-                case Enumeration.Civilization5:
+                case CivilizationVersion.Civilization5:
                     return "*.Civ5Map";
 
-                case Enumeration.CivilizationBE:
+                case CivilizationVersion.CivilizationBE:
                     throw new NotImplementedException();
                 default:
                     throw new InvalidEnumArgumentException("Non existing enumeration value.");

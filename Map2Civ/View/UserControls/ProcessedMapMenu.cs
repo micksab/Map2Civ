@@ -1,4 +1,23 @@
-﻿using Map2Civilization.Properties;
+﻿/************************************************************************************/
+//
+//      This file is part of Map2Civilization.
+//      Map2Civilization is free software: you can redistribute it and/or modify
+//      it under the terms of the GNU General Public License as published by
+//      the Free Software Foundation, either version 3 of the License, or
+//      (at your option) any later version.
+//
+//      Map2Civilization is distributed in the hope that it will be useful,
+//      but WITHOUT ANY WARRANTY; without even the implied warranty of
+//      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.See the
+//      GNU General Public License for more details.
+//
+//      You should have received a copy of the GNU General Public License
+//      along with Map2Civilization.  If not, see http://www.gnu.org/licenses/.
+//
+/************************************************************************************/
+
+
+using Map2Civilization.Properties;
 using Map2CivilizationCtrl;
 using Map2CivilizationCtrl.Enumerations;
 using System;
@@ -25,7 +44,7 @@ namespace Map2CivilizationView.UserControls
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Globalization", "CA1303:Do not pass literals as localized parameters", MessageId = "System.Windows.Forms.ToolStripItem.set_Text(System.String)")]
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Globalization", "CA1303:Do not pass literals as localized parameters", MessageId = "System.Windows.Forms.ToolStripItem.set_Text(System.string)")]
-        public ProcessedMapMenu(ProcessedMapControlMode.Enumeration mode)
+        public ProcessedMapMenu(ProcessedMapControlModeEnumWrapper.ProcessedMapControlMode mode)
         {
             Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             _editPlotColorMenuItem,
@@ -61,53 +80,53 @@ namespace Map2CivilizationView.UserControls
             //
             // oceanStripMenuItem
             //
-            _oceanStripMenuItem.Image = TerrainType.Singleton.OceanPlotBitmap;
-            _oceanStripMenuItem.Name = TerrainType.Enumeration.Ocean.ToString();
+            _oceanStripMenuItem.Image = TerrainTypeEnumWrapper.Singleton.OceanPlotBitmap;
+            _oceanStripMenuItem.Name = TerrainTypeEnumWrapper.TerrainType.Ocean.ToString();
             _oceanStripMenuItem.Size = new System.Drawing.Size(202, 22);
-            _oceanStripMenuItem.Text = TerrainType.Singleton.GetEnumValueDescription(TerrainType.Enumeration.Ocean) + " (" +
+            _oceanStripMenuItem.Text = TerrainTypeEnumWrapper.Singleton.GetEnumValueDescription(TerrainTypeEnumWrapper.TerrainType.Ocean) + " (" +
                VariousUtilityMethods.FormatKeyStringRepresentation(Settings.Default.KeyShrortcuts_AssignOcean) + ")";
             _oceanStripMenuItem.Click += plotMenuStrip_Click;
             //
             // coastStripMenuItem
             //
-            _coastStripMenuItem.Image = TerrainType.Singleton.CoastPlotBitmap;
-            _coastStripMenuItem.Name = TerrainType.Enumeration.Coast.ToString();
+            _coastStripMenuItem.Image = TerrainTypeEnumWrapper.Singleton.CoastPlotBitmap;
+            _coastStripMenuItem.Name = TerrainTypeEnumWrapper.TerrainType.Coast.ToString();
             _coastStripMenuItem.Size = new System.Drawing.Size(202, 22);
-            _coastStripMenuItem.Text = TerrainType.Singleton.GetEnumValueDescription(TerrainType.Enumeration.Coast) + " (" +
+            _coastStripMenuItem.Text = TerrainTypeEnumWrapper.Singleton.GetEnumValueDescription(TerrainTypeEnumWrapper.TerrainType.Coast) + " (" +
                 VariousUtilityMethods.FormatKeyStringRepresentation(Settings.Default.KeyShrortcuts_AssignCoast) + ")";
             _coastStripMenuItem.Click += plotMenuStrip_Click;
             //
             // flatStripMenuItem
             //
-            _flatStripMenuItem.Image = TerrainType.Singleton.FlatPlotBitmap;
-            _flatStripMenuItem.Name = TerrainType.Enumeration.Flat.ToString();
+            _flatStripMenuItem.Image = TerrainTypeEnumWrapper.Singleton.FlatPlotBitmap;
+            _flatStripMenuItem.Name = TerrainTypeEnumWrapper.TerrainType.Flat.ToString();
             _flatStripMenuItem.Size = new System.Drawing.Size(202, 22);
-            _flatStripMenuItem.Text = TerrainType.Singleton.GetEnumValueDescription(TerrainType.Enumeration.Flat) + " (" +
+            _flatStripMenuItem.Text = TerrainTypeEnumWrapper.Singleton.GetEnumValueDescription(TerrainTypeEnumWrapper.TerrainType.Flat) + " (" +
                VariousUtilityMethods.FormatKeyStringRepresentation(Settings.Default.KeyShrortcuts_AssignFlat) + ")";
             _flatStripMenuItem.Click += plotMenuStrip_Click;
             //
             // hillsStripMenuItem
             //
-            _hillsStripMenuItem.Image = TerrainType.Singleton.HillPlotBitmap;
-            _hillsStripMenuItem.Name = TerrainType.Enumeration.Hills.ToString();
+            _hillsStripMenuItem.Image = TerrainTypeEnumWrapper.Singleton.HillPlotBitmap;
+            _hillsStripMenuItem.Name = TerrainTypeEnumWrapper.TerrainType.Hills.ToString();
             _hillsStripMenuItem.Size = new System.Drawing.Size(202, 22);
-            _hillsStripMenuItem.Text = TerrainType.Singleton.GetEnumValueDescription(TerrainType.Enumeration.Hills) + "  (" +
+            _hillsStripMenuItem.Text = TerrainTypeEnumWrapper.Singleton.GetEnumValueDescription(TerrainTypeEnumWrapper.TerrainType.Hills) + "  (" +
                VariousUtilityMethods.FormatKeyStringRepresentation(Settings.Default.KeyShrortcuts_AssignHill) + ")";
             _hillsStripMenuItem.Click += plotMenuStrip_Click;
             //
             // mountainStripMenuItem
             //
-            _mountainStripMenuItem.Image = TerrainType.Singleton.MountainPlotBitmap;
-            _mountainStripMenuItem.Name = TerrainType.Enumeration.Mountains.ToString();
+            _mountainStripMenuItem.Image = TerrainTypeEnumWrapper.Singleton.MountainPlotBitmap;
+            _mountainStripMenuItem.Name = TerrainTypeEnumWrapper.TerrainType.Mountains.ToString();
             _mountainStripMenuItem.Size = new System.Drawing.Size(202, 22);
-            _mountainStripMenuItem.Text = TerrainType.Singleton.GetEnumValueDescription(TerrainType.Enumeration.Mountains) + " (" +
+            _mountainStripMenuItem.Text = TerrainTypeEnumWrapper.Singleton.GetEnumValueDescription(TerrainTypeEnumWrapper.TerrainType.Mountains) + " (" +
                VariousUtilityMethods.FormatKeyStringRepresentation(Settings.Default.KeyShrortcuts_AssignMountain) + ")";
             _mountainStripMenuItem.Click += plotMenuStrip_Click;
             //
             // mountainStripMenuItem
             //
             _removeTerrainMenuItem.Image = Resources.Cancel_Image;
-            _removeTerrainMenuItem.Name = TerrainType.Enumeration.Mountains.ToString();
+            _removeTerrainMenuItem.Name = TerrainTypeEnumWrapper.TerrainType.Mountains.ToString();
             _removeTerrainMenuItem.Size = new System.Drawing.Size(202, 22);
             _removeTerrainMenuItem.Text = Resources.Str_ProcessedMapMenu_DeAssign_Text + " (" +
                VariousUtilityMethods.FormatKeyStringRepresentation(Settings.Default.KeyShrortcuts_RepealAssignment) + ")";
@@ -116,9 +135,9 @@ namespace Map2CivilizationView.UserControls
             setMode(mode);
         }
 
-        public void setMode(ProcessedMapControlMode.Enumeration mode)
+        public void setMode(ProcessedMapControlModeEnumWrapper.ProcessedMapControlMode mode)
         {
-            if (mode == ProcessedMapControlMode.Enumeration.ColorEditor)
+            if (mode == ProcessedMapControlModeEnumWrapper.ProcessedMapControlMode.ColorEditor)
             {
                 Visible = true;
                 _editPlotColorMenuItem.Visible = true;
@@ -130,7 +149,7 @@ namespace Map2CivilizationView.UserControls
                 _mountainStripMenuItem.Visible = false;
                 _removeTerrainMenuItem.Visible = false;
             }
-            else if (mode == ProcessedMapControlMode.Enumeration.PlotEditor)
+            else if (mode == ProcessedMapControlModeEnumWrapper.ProcessedMapControlMode.PlotEditor)
             {
                 Visible = true;
                 _editPlotColorMenuItem.Visible = false;
@@ -166,27 +185,27 @@ namespace Map2CivilizationView.UserControls
 
                 if (sender == _oceanStripMenuItem)
                 {
-                    evtArg.SourceMenuValue = TerrainType.Enumeration.Ocean;
+                    evtArg.SourceMenuValue = TerrainTypeEnumWrapper.TerrainType.Ocean;
                 }
                 else if (sender == _coastStripMenuItem)
                 {
-                    evtArg.SourceMenuValue = TerrainType.Enumeration.Coast;
+                    evtArg.SourceMenuValue = TerrainTypeEnumWrapper.TerrainType.Coast;
                 }
                 else if (sender == _flatStripMenuItem)
                 {
-                    evtArg.SourceMenuValue = TerrainType.Enumeration.Flat;
+                    evtArg.SourceMenuValue = TerrainTypeEnumWrapper.TerrainType.Flat;
                 }
                 else if (sender == _hillsStripMenuItem)
                 {
-                    evtArg.SourceMenuValue = TerrainType.Enumeration.Hills;
+                    evtArg.SourceMenuValue = TerrainTypeEnumWrapper.TerrainType.Hills;
                 }
                 else if (sender == _mountainStripMenuItem)
                 {
-                    evtArg.SourceMenuValue = TerrainType.Enumeration.Mountains;
+                    evtArg.SourceMenuValue = TerrainTypeEnumWrapper.TerrainType.Mountains;
                 }
                 else if (sender == _removeTerrainMenuItem)
                 {
-                    evtArg.SourceMenuValue = TerrainType.Enumeration.NotDefined;
+                    evtArg.SourceMenuValue = TerrainTypeEnumWrapper.TerrainType.NotDefined;
                 }
 
                 PlotEditEvent(this, evtArg);
@@ -213,9 +232,9 @@ namespace Map2CivilizationView.UserControls
 
         public class CustomPlotMapMenuEventArgs : EventArgs
         {
-            private TerrainType.Enumeration sourceMenuValue = TerrainType.Enumeration.NotDefined;
+            private TerrainTypeEnumWrapper.TerrainType sourceMenuValue = TerrainTypeEnumWrapper.TerrainType.NotDefined;
 
-            public TerrainType.Enumeration SourceMenuValue
+            public TerrainTypeEnumWrapper.TerrainType SourceMenuValue
             {
                 get
                 {

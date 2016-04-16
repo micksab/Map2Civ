@@ -1,4 +1,23 @@
-﻿using Map2CivilizationCtrl.DataStructure;
+﻿/************************************************************************************/
+//
+//      This file is part of Map2Civilization.
+//      Map2Civilization is free software: you can redistribute it and/or modify
+//      it under the terms of the GNU General Public License as published by
+//      the Free Software Foundation, either version 3 of the License, or
+//      (at your option) any later version.
+//
+//      Map2Civilization is distributed in the hope that it will be useful,
+//      but WITHOUT ANY WARRANTY; without even the implied warranty of
+//      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.See the
+//      GNU General Public License for more details.
+//
+//      You should have received a copy of the GNU General Public License
+//      along with Map2Civilization.  If not, see http://www.gnu.org/licenses/.
+//
+/************************************************************************************/
+
+
+using Map2CivilizationCtrl.DataStructure;
 using Map2CivilizationCtrl.Enumerations;
 using Map2CivilizationModel;
 using Map2CivilizationView;
@@ -12,18 +31,18 @@ namespace Map2CivilizationCtrl.Analyzer
     internal class AnalyserReliefMap : AnalyzerFactory, IDisposable
     {
         private SourceReliefMapSettings _settings;
-        private GridType.Enumeration _gridType;
+        private GridTypeEnumWrapper.GridType _gridType;
         private MapDimension _dimension;
         private BackgroundWorker _analyseBackgroundWorker = new BackgroundWorker();
-        private CivilizationVersion.Enumeration _civilizationVersion;
+        private CivilizationVersionEnumWrapper.CivilizationVersion _civilizationVersion;
 
         private readonly string _settingsKey = "settings";
         private readonly string _gridTypeKey = "gridType";
         private readonly string _dimensionKey = "mapDimension";
         private readonly string _civilizationVersionKey = "civVersion";
 
-        public AnalyserReliefMap(SourceReliefMapSettings settings, GridType.Enumeration gridType,
-            MapDimension dimension, CivilizationVersion.Enumeration civilizationVersion)
+        public AnalyserReliefMap(SourceReliefMapSettings settings, GridTypeEnumWrapper.GridType gridType,
+            MapDimension dimension, CivilizationVersionEnumWrapper.CivilizationVersion civilizationVersion)
         {
             _settings = settings;
             _gridType = gridType;
@@ -53,16 +72,16 @@ namespace Map2CivilizationCtrl.Analyzer
         {
             Dictionary<string, object> arguments = (Dictionary<string, object>)e.Argument;
             SourceReliefMapSettings settings = (SourceReliefMapSettings)arguments[_settingsKey];
-            GridType.Enumeration gridTypeEnum = (GridType.Enumeration)arguments[_gridTypeKey];
+            GridTypeEnumWrapper.GridType gridTypeEnum = (GridTypeEnumWrapper.GridType)arguments[_gridTypeKey];
             MapDimension mapDimension = (MapDimension)arguments[_dimensionKey];
-            CivilizationVersion.Enumeration civilizationVersion = (CivilizationVersion.Enumeration)arguments[_civilizationVersionKey];
+            CivilizationVersionEnumWrapper.CivilizationVersion civilizationVersion = (CivilizationVersionEnumWrapper.CivilizationVersion)arguments[_civilizationVersionKey];
 
             //Calculate the number of plots to process, and initialize a counter
             // used to track progress
             decimal progressMaxValue = mapDimension.WidthPlots * mapDimension.HeightPlots + 2;
             decimal counter = 0;
 
-            DataModel newDataModel = new DataModel(mapDimension, gridTypeEnum, MapDataSource.Enumeration.ReliefMapImage,
+            DataModel newDataModel = new DataModel(mapDimension, gridTypeEnum, MapDataSourceEnumWrapper.MapDataSource.ReliefMapImage,
                 civilizationVersion, settings);
             //Initialize the empty processed map image
             newDataModel.ProcessedBitmap = BitmapOperationsCtrl.InitializeProcessedMapImage(mapDimension, gridTypeEnum);

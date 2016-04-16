@@ -1,4 +1,23 @@
-﻿using Map2Civilization.Properties;
+﻿/************************************************************************************/
+//
+//      This file is part of Map2Civilization.
+//      Map2Civilization is free software: you can redistribute it and/or modify
+//      it under the terms of the GNU General Public License as published by
+//      the Free Software Foundation, either version 3 of the License, or
+//      (at your option) any later version.
+//
+//      Map2Civilization is distributed in the hope that it will be useful,
+//      but WITHOUT ANY WARRANTY; without even the implied warranty of
+//      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.See the
+//      GNU General Public License for more details.
+//
+//      You should have received a copy of the GNU General Public License
+//      along with Map2Civilization.  If not, see http://www.gnu.org/licenses/.
+//
+/************************************************************************************/
+
+
+using Map2Civilization.Properties;
 using Map2CivilizationCtrl;
 using Map2CivilizationCtrl.Analyzer;
 using Map2CivilizationCtrl.DataStructure;
@@ -14,7 +33,7 @@ namespace Map2CivilizationView
 {
     public partial class NewMapForm : Form, IUiListenerProgress
     {
-        private GridType.Enumeration _gridTypeValue;
+        private GridTypeEnumWrapper.GridType _gridTypeValue;
 
         public NewMapForm()
         {
@@ -23,8 +42,8 @@ namespace Map2CivilizationView
             this.versionCustomEnumComboBox.SelectedIndexChanged += SelectedCivVersionChanged;
             this.dataSourceCustomEnumComboBox.SelectedIndexChanged += SelectedSourceTypeChanged;
             //Set the data sources for the custom combos..
-            this.versionCustomEnumComboBox.SetEnumDataSource(CivilizationVersion.Singleton);
-            this.dataSourceCustomEnumComboBox.SetEnumDataSource(MapDataSource.Singleton);
+            this.versionCustomEnumComboBox.SetEnumDataSource(CivilizationVersionEnumWrapper.Singleton);
+            this.dataSourceCustomEnumComboBox.SetEnumDataSource(MapDataSourceEnumWrapper.Singleton);
 
             //Raise a couple of events to let all controls sync their status...
             mapSizeComboBox_SelectedValueChanged(this, new EventArgs());
@@ -35,17 +54,17 @@ namespace Map2CivilizationView
 
         private void SelectedCivVersionChanged(Object sender, EventArgs e)
         {
-            CivilizationVersion.Enumeration version =
-                (CivilizationVersion.Enumeration)versionCustomEnumComboBox.SelectedItem;
+            CivilizationVersionEnumWrapper.CivilizationVersion version =
+                (CivilizationVersionEnumWrapper.CivilizationVersion)versionCustomEnumComboBox.SelectedItem;
 
-            mapSizeComboBox.DataSource = CivilizationVersion.Singleton.GetVersionMapDimensions(
+            mapSizeComboBox.DataSource = CivilizationVersionEnumWrapper.Singleton.GetVersionMapDimensions(
                         version);
             mapSizeComboBox.DisplayMember = "Description";
             SelectDefaultMapSize();
 
-            GridType.Enumeration gridTypeEnum = CivilizationVersion.Singleton.GetVersionGridType(version);
+            GridTypeEnumWrapper.GridType gridTypeEnum = CivilizationVersionEnumWrapper.Singleton.GetVersionGridType(version);
             _gridTypeValue = gridTypeEnum;
-            gridTypeBox.Text = GridType.Singleton.GetEnumValueDescription(gridTypeEnum);
+            gridTypeBox.Text = GridTypeEnumWrapper.Singleton.GetEnumValueDescription(gridTypeEnum);
 
             foreach (Control tempControl in this.extraOptionsPanel.Controls)
             {
@@ -77,14 +96,14 @@ namespace Map2CivilizationView
             createButton.Enabled = false;
             SourceSettingsControlBase settingsControlToAdd;
 
-            if (dataSourceCustomEnumComboBox.SelectedItem.Equals(MapDataSource.Enumeration.ReliefMapImage))
+            if (dataSourceCustomEnumComboBox.SelectedItem.Equals(MapDataSourceEnumWrapper.MapDataSource.ReliefMapImage))
             {
                 settingsControlToAdd = new UserControls.SourceSettingsControlReliefMap(this);
                 extraOptionsPanel.Controls.Add(settingsControlToAdd);
                 settingsControlToAdd.Location = new Point(0, 0);
                 createButton.Enabled = true;
             }
-            else if (dataSourceCustomEnumComboBox.SelectedItem.Equals(MapDataSource.Enumeration.GeoDataProvider))
+            else if (dataSourceCustomEnumComboBox.SelectedItem.Equals(MapDataSourceEnumWrapper.MapDataSource.GeoDataProvider))
             {
                 settingsControlToAdd = new UserControls.SourceSettingsControlGeoData();
                 extraOptionsPanel.Controls.Add(settingsControlToAdd);
@@ -152,7 +171,7 @@ namespace Map2CivilizationView
                 ISourceMapSettings settings = ((SourceSettingsControlBase)extraOptionsPanel.Controls[0]).Settings;
 
                 AnalyzerFactory analyser = AnalyzerFactory.GetAnalyzer(settings, _gridTypeValue,
-                    (MapDimension)mapSizeComboBox.SelectedItem, (CivilizationVersion.Enumeration)versionCustomEnumComboBox.SelectedItem);
+                    (MapDimension)mapSizeComboBox.SelectedItem, (CivilizationVersionEnumWrapper.CivilizationVersion)versionCustomEnumComboBox.SelectedItem);
 
                 analyser.AnalyzeData();
             }

@@ -1,17 +1,20 @@
-﻿/*This file is part of Map2Civilization.
-
-    Map2Civilization is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
-
-    Map2Civilization is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with Foobar.  If not, see<http://www.gnu.org/licenses/>.*/
+﻿/************************************************************************************/
+//
+//      This file is part of Map2Civilization.
+//      Map2Civilization is free software: you can redistribute it and/or modify
+//      it under the terms of the GNU General Public License as published by
+//      the Free Software Foundation, either version 3 of the License, or
+//      (at your option) any later version.
+//
+//      Map2Civilization is distributed in the hope that it will be useful,
+//      but WITHOUT ANY WARRANTY; without even the implied warranty of
+//      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.See the
+//      GNU General Public License for more details.
+//
+//      You should have received a copy of the GNU General Public License
+//      along with Map2Civilization.  If not, see http://www.gnu.org/licenses/.
+//
+/************************************************************************************/
 
 using Map2Civilization.Properties;
 using System;
@@ -107,7 +110,7 @@ namespace Map2CivilizationView
             }
         }
 
-        public String AssemblyCopyright
+        public static string AssemblyCopyright
         {
             get
             {
@@ -128,18 +131,18 @@ namespace Map2CivilizationView
         }
 
         // Performs the actual browser launch to follow link:
-        private void LaunchWeblink(string url)
+        private static void LaunchWeblink(string url)
         {
             if (IsHttpURL(url)) Process.Start(url);
         }
 
         // Simple check to make sure link is valid,
         // can be modified to check for other protocols:
-        private bool IsHttpURL(string url)
+        private static bool IsHttpURL(string url)
         {
             return
                 ((!string.IsNullOrWhiteSpace(url)) &&
-                (url.ToLower(CultureInfo.InvariantCulture).StartsWith("http", StringComparison.Ordinal)));
+                (url.ToUpperInvariant().StartsWith("HTTP", StringComparison.Ordinal)));
         }
 
         private void creditsButton_Click(object sender, EventArgs e)

@@ -1,4 +1,23 @@
-﻿using Map2CivilizationCtrl.Analyzer;
+﻿/************************************************************************************/
+//
+//      This file is part of Map2Civilization.
+//      Map2Civilization is free software: you can redistribute it and/or modify
+//      it under the terms of the GNU General Public License as published by
+//      the Free Software Foundation, either version 3 of the License, or
+//      (at your option) any later version.
+//
+//      Map2Civilization is distributed in the hope that it will be useful,
+//      but WITHOUT ANY WARRANTY; without even the implied warranty of
+//      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.See the
+//      GNU General Public License for more details.
+//
+//      You should have received a copy of the GNU General Public License
+//      along with Map2Civilization.  If not, see http://www.gnu.org/licenses/.
+//
+/************************************************************************************/
+
+
+using Map2CivilizationCtrl.Analyzer;
 using Map2CivilizationCtrl.DataStructure;
 using Map2CivilizationCtrl.Enumerations;
 using Map2CivilizationModel;
@@ -23,7 +42,7 @@ namespace Map2CivilizationCtrl
             return _dataModel;
         }
 
-        public static MapDataSource.Enumeration GetModelDataSourceType()
+        public static MapDataSourceEnumWrapper.MapDataSource GetModelDataSourceType()
         {
             if (_dataModel != null)
             {
@@ -31,16 +50,13 @@ namespace Map2CivilizationCtrl
             }
             else
             {
-                return MapDataSource.Enumeration.ReliefMapImage;
+                return MapDataSourceEnumWrapper.MapDataSource.ReliefMapImage;
             }
         }
 
-        public static SourceReliefMapSettings GetReliefMapSettings()
-        {
-            return _dataModel.ReliefMapSettings;
-        }
+       
 
-        public static CivilizationVersion.Enumeration GetCivilizationVersion()
+        public static CivilizationVersionEnumWrapper.CivilizationVersion GetCivilizationVersion()
         {
             return _dataModel.CivilizationVersion;
         }
@@ -65,9 +81,9 @@ namespace Map2CivilizationCtrl
 
             _dataModel = newModel;
 
-            TerrainType.Singleton.GenerateTerrainBitmaps();
+            TerrainTypeEnumWrapper.Singleton.GenerateTerrainBitmaps();
             RegisteredListenersCtrl.CentralFormUpdateAssignedPercentComplete();
-            RegisteredListenersCtrl.ProcessedMapNotifyProcessedMapChanged(_dataModel.PlotCollection.GetPlotIds());
+            RegisteredListenersCtrl.ProcessedMapNotifyProcessedMapChanged(_dataModel.PlotCollection.PlotIds);
             RegisteredListenersCtrl.UpdateOriginalMap();
             RegisteredListenersCtrl.ModelListenersModelChanged();
             RegisteredListenersCtrl.DetectedColorsGridFill();
@@ -78,7 +94,7 @@ namespace Map2CivilizationCtrl
             return _dataModel.SelectedMapSize;
         }
 
-        public static GridType.Enumeration GetGridType()
+        public static GridTypeEnumWrapper.GridType GetGridType()
         {
             return _dataModel.GridType;
         }
@@ -89,7 +105,7 @@ namespace Map2CivilizationCtrl
         /// <returns>The width of the plot (Pixels)</returns>
         public static float GetPlotWidthPixels()
         {
-            return GridType.Singleton.GetPlotWidthPixels(_dataModel.GridType);
+            return GridTypeEnumWrapper.Singleton.GetPlotWidthPixels(_dataModel.GridType);
         }
 
         /// <summary>
@@ -98,13 +114,10 @@ namespace Map2CivilizationCtrl
         /// <returns>The height of the plot (Pixels)</returns>
         public static float GetPlotHeightPixels()
         {
-            return GridType.Singleton.GetPlotHeightPixels(_dataModel.GridType);
+            return GridTypeEnumWrapper.Singleton.GetPlotHeightPixels(_dataModel.GridType);
         }
 
-        public static Bitmap GetDataSourceEditedImage()
-        {
-            return _dataModel.ReliefMapSettings.AdjustedMapBitmap;
-        }
+        
 
         public static Bitmap GetDataSourceAdjustedImageWithGrid()
         {
@@ -120,7 +133,7 @@ namespace Map2CivilizationCtrl
 
         public static double GetAssignedPercentComplete()
         {
-            return _dataModel.PlotCollection.GetAssignedPercentComplete();
+            return _dataModel.PlotCollection.AssignedPercent;
         }
     }
 }

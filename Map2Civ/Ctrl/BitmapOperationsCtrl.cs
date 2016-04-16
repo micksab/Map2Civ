@@ -1,4 +1,23 @@
-﻿using Map2Civilization.Properties;
+﻿/************************************************************************************/
+//
+//      This file is part of Map2Civilization.
+//      Map2Civilization is free software: you can redistribute it and/or modify
+//      it under the terms of the GNU General Public License as published by
+//      the Free Software Foundation, either version 3 of the License, or
+//      (at your option) any later version.
+//
+//      Map2Civilization is distributed in the hope that it will be useful,
+//      but WITHOUT ANY WARRANTY; without even the implied warranty of
+//      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.See the
+//      GNU General Public License for more details.
+//
+//      You should have received a copy of the GNU General Public License
+//      along with Map2Civilization.  If not, see http://www.gnu.org/licenses/.
+//
+/************************************************************************************/
+
+
+using Map2Civilization.Properties;
 using Map2CivilizationCtrl.Analyzer;
 using Map2CivilizationCtrl.DataStructure;
 using Map2CivilizationCtrl.Enumerations;
@@ -8,6 +27,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 
@@ -17,7 +37,7 @@ namespace Map2CivilizationCtrl
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Reliability", "CA2000:Dispose objects before losing scope")]
         public static Bitmap InitializeDataSourceImage(SourceReliefMapSettings settings, MapDimension mapSize,
-            GridType.Enumeration gridTypeEnum)
+            GridTypeEnumWrapper.GridType gridTypeEnum)
         {
             Size imageSize = GridCoordinateHelperCtrl.CalculateImageSize(mapSize, gridTypeEnum);
 
@@ -37,7 +57,8 @@ namespace Map2CivilizationCtrl
             return resizedBmp;
         }
 
-        public static Bitmap InitializeProcessedMapImage(MapDimension mapDimension, GridType.Enumeration gridTypeEnum)
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Reliability", "CA2000:Dispose objects before losing scope")]
+        public static Bitmap InitializeProcessedMapImage(MapDimension mapDimension, GridTypeEnumWrapper.GridType gridTypeEnum)
         {
             Size imageSize = GridCoordinateHelperCtrl.CalculateImageSize(mapDimension, gridTypeEnum);
             Bitmap toReturn = new Bitmap(imageSize.Width, imageSize.Height);
@@ -110,7 +131,7 @@ namespace Map2CivilizationCtrl
             {
                 using (Graphics graphics = Graphics.FromImage(bmp))
                 {
-                    foreach (Plot plot in ModelCtrl.GetDataModel().PlotCollection.GetPlots())
+                    foreach (Plot plot in ModelCtrl.GetDataModel().PlotCollection.Plots)
                     {
                         PointF[] points = GridCoordinateHelperCtrl.GetPlotPolygonPoints(plot.Id);
                         graphics.DrawPolygon(gridPen, points);
@@ -209,11 +230,11 @@ namespace Map2CivilizationCtrl
             Pen bluePen = new Pen(Color.Blue, 1);
 
             Bitmap toReturn = ModelCtrl.GetProcessedBitmap();
-            Bitmap oceanBmp = TerrainType.Singleton.OceanPlotBitmap;
-            Bitmap coastBmp = TerrainType.Singleton.CoastPlotBitmap;
-            Bitmap flatBmp = TerrainType.Singleton.FlatPlotBitmap;
-            Bitmap hillBmp = TerrainType.Singleton.HillPlotBitmap;
-            Bitmap mountainBmp = TerrainType.Singleton.MountainPlotBitmap;
+            Bitmap oceanBmp = TerrainTypeEnumWrapper.Singleton.OceanPlotBitmap;
+            Bitmap coastBmp = TerrainTypeEnumWrapper.Singleton.CoastPlotBitmap;
+            Bitmap flatBmp = TerrainTypeEnumWrapper.Singleton.FlatPlotBitmap;
+            Bitmap hillBmp = TerrainTypeEnumWrapper.Singleton.HillPlotBitmap;
+            Bitmap mountainBmp = TerrainTypeEnumWrapper.Singleton.MountainPlotBitmap;
             Bitmap lockBmp = new Bitmap(Resources.LockedTile_Image);
 
             using (Graphics grp = Graphics.FromImage(toReturn))
@@ -222,7 +243,7 @@ namespace Map2CivilizationCtrl
                 {
                     SolidBrush brushToUse;
 
-                    if (ModelCtrl.GetDataModel().MapDataSource == MapDataSource.Enumeration.ReliefMapImage)
+                    if (ModelCtrl.GetDataModel().MapDataSource == MapDataSourceEnumWrapper.MapDataSource.ReliefMapImage)
                     {
                         brushToUse =
                             new SolidBrush(((PlotReliefMap)ModelCtrl.GetDataModel().PlotCollection.GetPlot(tempPlotId)).DominantColor);
@@ -242,27 +263,27 @@ namespace Map2CivilizationCtrl
 
                     switch (ModelCtrl.GetDataModel().PlotCollection.GetPlot(tempPlotId).TerrainDescriptor)
                     {
-                        case TerrainType.Enumeration.NotDefined:
+                        case TerrainTypeEnumWrapper.TerrainType.NotDefined:
                             grp.DrawPolygon(UnassignedPen, points);
                             break;
 
-                        case TerrainType.Enumeration.Flat:
+                        case TerrainTypeEnumWrapper.TerrainType.Flat:
                             grp.DrawImage(flatBmp, xRefPix, yRefPix);
                             break;
 
-                        case TerrainType.Enumeration.Hills:
+                        case TerrainTypeEnumWrapper.TerrainType.Hills:
                             grp.DrawImage(hillBmp, xRefPix, yRefPix);
                             break;
 
-                        case TerrainType.Enumeration.Mountains:
+                        case TerrainTypeEnumWrapper.TerrainType.Mountains:
                             grp.DrawImage(mountainBmp, xRefPix, yRefPix);
                             break;
 
-                        case TerrainType.Enumeration.Coast:
+                        case TerrainTypeEnumWrapper.TerrainType.Coast:
                             grp.DrawImage(coastBmp, xRefPix, yRefPix);
                             break;
 
-                        case TerrainType.Enumeration.Ocean:
+                        case TerrainTypeEnumWrapper.TerrainType.Ocean:
                             grp.DrawImage(oceanBmp, xRefPix, yRefPix);
                             break;
 
@@ -274,8 +295,8 @@ namespace Map2CivilizationCtrl
                     if (ModelCtrl.GetDataModel().PlotCollection.GetPlot(tempPlotId).IsLocked)
                     {
                         grp.DrawImage(lockBmp,
-                            xRefPix + (GridType.Singleton.GetPlotWidthPixels(ModelCtrl.GetGridType()) / 2f) - 3.5f,
-                            yRefPix + (GridType.Singleton.GetPlotHeightPixels(ModelCtrl.GetGridType()) / 2f) - 3.5f);
+                            xRefPix + (GridTypeEnumWrapper.Singleton.GetPlotWidthPixels(ModelCtrl.GetGridType()) / 2f) - 3.5f,
+                            yRefPix + (GridTypeEnumWrapper.Singleton.GetPlotHeightPixels(ModelCtrl.GetGridType()) / 2f) - 3.5f);
                     }
                 }
             }
@@ -305,29 +326,9 @@ namespace Map2CivilizationCtrl
             return toReturn;
         }
 
-        public static string GetBase64stringFromBitmap(Bitmap image)
-        {
-            ImageConverter converter = new ImageConverter();
-            return Convert.ToBase64String((byte[])converter.ConvertTo(image, typeof(byte[])));
-        }
+       
 
-        public static Bitmap GetBitmapFromBase64string(string imagestring)
-        {
-            Bitmap toReturn;
-
-            byte[] bytes = Convert.FromBase64String(imagestring);
-
-            using (MemoryStream ms = new MemoryStream(bytes))
-            {
-                toReturn = (Bitmap)Image.FromStream(ms);
-            }
-
-            bytes = null;
-
-            toReturn.SetResolution(96, 96);
-
-            return toReturn;
-        }
+       
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Reliability", "CA2000:Dispose objects before losing scope")]
         public static Bitmap CreateHighlightedColorsProcessedBitmap(List<PlotId> plotCoordinatePairs)
@@ -356,10 +357,10 @@ namespace Map2CivilizationCtrl
 
         //Base On Source: http://csharphelper.com/blog/2014/09/copy-an-irregular-area-from-one-picture-to-another-in-c/
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Reliability", "CA2000:Dispose objects before losing scope")]
-        public static Bitmap GetPlotArea(Image source, PlotId id, Brush brush, GridType.Enumeration gridType, MapDimension mapDimension)
+        public static Bitmap GetPlotArea(Image source, PlotId id, Brush brush, GridTypeEnumWrapper.GridType gridType, MapDimension mapDimension)
         {
-            Bitmap toReturn = new Bitmap((int)GridType.Singleton.GetPlotWidthPixels(gridType),
-                (int)GridType.Singleton.GetPlotHeightPixels(gridType));
+            Bitmap toReturn = new Bitmap((int)GridTypeEnumWrapper.Singleton.GetPlotWidthPixels(gridType),
+                (int)GridTypeEnumWrapper.Singleton.GetPlotHeightPixels(gridType));
             toReturn.SetResolution(96, 96);
 
             PointF[] points = GridCoordinateHelperCtrl.GetPlotPolygonPoints(id, gridType, mapDimension);
@@ -405,7 +406,7 @@ namespace Map2CivilizationCtrl
         }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Reliability", "CA2000:Dispose objects before losing scope")]
-        public static Bitmap GetAssignedPlotBitmap(GridType.Enumeration gridType, TerrainType.Enumeration terrainType, float width, float height)
+        public static Bitmap GetAssignedPlotBitmap(GridTypeEnumWrapper.GridType gridType, TerrainTypeEnumWrapper.TerrainType terrainType, float width, float height)
         {
             Bitmap toReturn = new Bitmap((int)Math.Ceiling(width), (int)Math.Ceiling(height));
             float circleRadious = 0;
@@ -414,19 +415,19 @@ namespace Map2CivilizationCtrl
 
             switch (gridType)
             {
-                case GridType.Enumeration.Square:
+                case GridTypeEnumWrapper.GridType.Square:
                     rectOffsetWidth = width * (10f / 100f);
                     rectOffsetHeight = height * (10f / 100f);
                     circleRadious = width * (80f / 100f);
                     break;
 
-                case GridType.Enumeration.HexagonalPT:
+                case GridTypeEnumWrapper.GridType.HexagonalPT:
                     rectOffsetWidth = width * (15f / 100f);
                     rectOffsetHeight = (2f * rectOffsetWidth) / ((float)Math.Sqrt(3));
                     circleRadious = (width - (2f * rectOffsetWidth));
                     break;
 
-                case GridType.Enumeration.Rhombus:
+                case GridTypeEnumWrapper.GridType.Rhombus:
                     throw new NotImplementedException(Resources.Str_BitmapOperations_RhombusNotSupported);
                 default:
                     throw new InvalidEnumArgumentException("Non existing enumeration value.");
@@ -436,23 +437,23 @@ namespace Map2CivilizationCtrl
 
             switch (terrainType)
             {
-                case TerrainType.Enumeration.Ocean:
+                case TerrainTypeEnumWrapper.TerrainType.Ocean:
                     fillColor = Map2Civilization.Properties.Settings.Default.PlotColorOcean;
                     break;
 
-                case TerrainType.Enumeration.Coast:
+                case TerrainTypeEnumWrapper.TerrainType.Coast:
                     fillColor = Map2Civilization.Properties.Settings.Default.PlotColorCoast;
                     break;
 
-                case TerrainType.Enumeration.Flat:
+                case TerrainTypeEnumWrapper.TerrainType.Flat:
                     fillColor = Map2Civilization.Properties.Settings.Default.PlotColorFlat;
                     break;
 
-                case TerrainType.Enumeration.Hills:
+                case TerrainTypeEnumWrapper.TerrainType.Hills:
                     fillColor = Map2Civilization.Properties.Settings.Default.PlotColorHill;
                     break;
 
-                case TerrainType.Enumeration.Mountains:
+                case TerrainTypeEnumWrapper.TerrainType.Mountains:
                     fillColor = Map2Civilization.Properties.Settings.Default.PlotColorMountain;
                     break;
 
@@ -478,6 +479,7 @@ namespace Map2CivilizationCtrl
             return toReturn;
         }
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Reliability", "CA2000:Dispose objects before losing scope")]
         public static Bitmap SafeCloneStreamBasedBitmap(Bitmap sourceBitmap)
         {
             Bitmap toReturn = new Bitmap(sourceBitmap.Width,
@@ -495,5 +497,9 @@ namespace Map2CivilizationCtrl
 
             return toReturn;
         }
+
+
+
+        
     }
 }

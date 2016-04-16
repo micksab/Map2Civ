@@ -1,4 +1,22 @@
-﻿using Map2CivilizationCtrl.DataStructure;
+﻿/************************************************************************************/
+//
+//      This file is part of Map2Civilization.
+//      Map2Civilization is free software: you can redistribute it and/or modify
+//      it under the terms of the GNU General Public License as published by
+//      the Free Software Foundation, either version 3 of the License, or
+//      (at your option) any later version.
+//
+//      Map2Civilization is distributed in the hope that it will be useful,
+//      but WITHOUT ANY WARRANTY; without even the implied warranty of
+//      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.See the
+//      GNU General Public License for more details.
+//
+//      You should have received a copy of the GNU General Public License
+//      along with Map2Civilization.  If not, see http://www.gnu.org/licenses/.
+//
+/************************************************************************************/
+
+using Map2CivilizationCtrl.DataStructure;
 using Map2CivilizationCtrl.Enumerations;
 using System;
 
@@ -8,8 +26,8 @@ namespace Map2CivilizationModel
     {
         private PlotId _id;
 
-        private TerrainType.Enumeration _terrainDescriptor =
-            TerrainType.Enumeration.NotDefined;
+        private TerrainTypeEnumWrapper.TerrainType _terrainDescriptor =
+            TerrainTypeEnumWrapper.TerrainType.NotDefined;
 
         private bool _isLocked = false;
 
@@ -29,7 +47,7 @@ namespace Map2CivilizationModel
         /// <param name="id">The id of the plot</param>
         /// <param name="terrainDescriptor">The terrain assigned to the plot</param>
         /// <param name="isLocked">Marker indicating that the plot's terrain is locked (as defined by the user)</param>
-        protected Plot(string id, TerrainType.Enumeration terrainDescriptor,
+        protected Plot(string id, TerrainTypeEnumWrapper.TerrainType terrainDescriptor,
              Boolean isLocked)
         {
             _id = new PlotId(id);
@@ -53,7 +71,7 @@ namespace Map2CivilizationModel
             }
         }
 
-        public TerrainType.Enumeration TerrainDescriptor
+        public TerrainTypeEnumWrapper.TerrainType TerrainDescriptor
         {
             get
             {
@@ -74,7 +92,7 @@ namespace Map2CivilizationModel
             }
         }
 
-        public void UpdatePlot(TerrainType.Enumeration terrainDescriptor, Boolean isLocked)
+        public void UpdatePlot(TerrainTypeEnumWrapper.TerrainType terrainDescriptor, Boolean isLocked)
         {
             _terrainDescriptor = terrainDescriptor;
             _isLocked = isLocked;

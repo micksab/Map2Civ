@@ -1,4 +1,23 @@
-﻿using Map2CivilizationCtrl;
+﻿/************************************************************************************/
+//
+//      This file is part of Map2Civilization.
+//      Map2Civilization is free software: you can redistribute it and/or modify
+//      it under the terms of the GNU General Public License as published by
+//      the Free Software Foundation, either version 3 of the License, or
+//      (at your option) any later version.
+//
+//      Map2Civilization is distributed in the hope that it will be useful,
+//      but WITHOUT ANY WARRANTY; without even the implied warranty of
+//      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.See the
+//      GNU General Public License for more details.
+//
+//      You should have received a copy of the GNU General Public License
+//      along with Map2Civilization.  If not, see http://www.gnu.org/licenses/.
+//
+/************************************************************************************/
+
+
+using Map2CivilizationCtrl;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -146,18 +165,21 @@ namespace Map2CivilizationView.UserControls
             DrawSelectionRect();
         }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1024:UsePropertiesWhereAppropriate")]
-        public Bitmap GetSelectedAreaImage()
+        public Bitmap SelectedAreaImage
         {
-            double pixelsX = BackgroundImage.Width * (_CurrentXPerMille / 1000d);
-            double pixelsY = BackgroundImage.Height * (_CurrentYPerMille / 1000d);
-            double pixelsWidth = BackgroundImage.Width * (_CurrentWidthPerMille / 1000d);
-            double pixelsHeight = BackgroundImage.Width * ((_CurrentWidthPerMille / _MapRatio) / 1000d);
+            get
+            {
+                double pixelsX = BackgroundImage.Width * (_CurrentXPerMille / 1000d);
+                double pixelsY = BackgroundImage.Height * (_CurrentYPerMille / 1000d);
+                double pixelsWidth = BackgroundImage.Width * (_CurrentWidthPerMille / 1000d);
+                double pixelsHeight = BackgroundImage.Width * ((_CurrentWidthPerMille / _MapRatio) / 1000d);
 
-            Bitmap toReturn = BitmapOperationsCtrl.FetchRegionOfBitmap((Bitmap)BackgroundImage, new Point((int)pixelsX, (int)pixelsY),
-                (int)pixelsWidth, (int)pixelsHeight);
+                Bitmap toReturn = BitmapOperationsCtrl.FetchRegionOfBitmap((Bitmap)BackgroundImage, new Point((int)pixelsX, (int)pixelsY),
+                    (int)pixelsWidth, (int)pixelsHeight);
 
-            return toReturn;
+                return toReturn;
+            }
+            
         }
     }
 }

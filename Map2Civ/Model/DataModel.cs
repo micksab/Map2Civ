@@ -1,4 +1,22 @@
-﻿using Map2CivilizationCtrl.Analyzer;
+﻿/************************************************************************************/
+//
+//      This file is part of Map2Civilization.
+//      Map2Civilization is free software: you can redistribute it and/or modify
+//      it under the terms of the GNU General Public License as published by
+//      the Free Software Foundation, either version 3 of the License, or
+//      (at your option) any later version.
+//
+//      Map2Civilization is distributed in the hope that it will be useful,
+//      but WITHOUT ANY WARRANTY; without even the implied warranty of
+//      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.See the
+//      GNU General Public License for more details.
+//
+//      You should have received a copy of the GNU General Public License
+//      along with Map2Civilization.  If not, see http://www.gnu.org/licenses/.
+//
+/************************************************************************************/
+
+using Map2CivilizationCtrl.Analyzer;
 using Map2CivilizationCtrl.DataStructure;
 using Map2CivilizationCtrl.Enumerations;
 using System;
@@ -10,13 +28,14 @@ namespace Map2CivilizationModel
     {
         private MapDimension _selectedMapSize;
         private SourceReliefMapSettings _reliefMapSettings;
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         private SourceGeoDataSettings _geoDataSettings;
         private Bitmap _processedBitmap;
-        private GridType.Enumeration _gridType;
-        private MapDataSource.Enumeration _mapDataSource;
-        private CivilizationVersion.Enumeration _civilizationVersion;
-        private Plots _plotCollection = new Plots();
-        private DetectedColors _detectedColorCollection = new DetectedColors();
+        private GridTypeEnumWrapper.GridType _gridType;
+        private MapDataSourceEnumWrapper.MapDataSource _mapDataSource;
+        private CivilizationVersionEnumWrapper.CivilizationVersion _civilizationVersion;
+        private PlotList _plotCollection = new PlotList();
+        private DetectedColorList _detectedColorCollection = new DetectedColorList();
 
         private string _modelFile = string.Empty;
 
@@ -33,8 +52,8 @@ namespace Map2CivilizationModel
         /// <param name="civilizationVersion">The intended (to be exported) version of Civilization map</param>
         /// <param name="reliefSettings">The settings based upon which the analysis of the source image is
         /// to be performed.</param>
-        public DataModel(MapDimension mapDimension, GridType.Enumeration gridType, MapDataSource.Enumeration mapDataSource,
-            CivilizationVersion.Enumeration civilizationVersion, SourceReliefMapSettings reliefSettings)
+        public DataModel(MapDimension mapDimension, GridTypeEnumWrapper.GridType gridType, MapDataSourceEnumWrapper.MapDataSource mapDataSource,
+            CivilizationVersionEnumWrapper.CivilizationVersion civilizationVersion, SourceReliefMapSettings reliefSettings)
         {
             _selectedMapSize = mapDimension;
             _reliefMapSettings = reliefSettings;
@@ -55,7 +74,7 @@ namespace Map2CivilizationModel
             }
         }
 
-        internal DetectedColors DetectedColorCollection
+        internal DetectedColorList DetectedColorCollection
         {
             get
             {
@@ -76,7 +95,7 @@ namespace Map2CivilizationModel
             }
         }
 
-        public GridType.Enumeration GridType
+        public GridTypeEnumWrapper.GridType GridType
         {
             get
             {
@@ -89,7 +108,7 @@ namespace Map2CivilizationModel
             }
         }
 
-        public CivilizationVersion.Enumeration CivilizationVersion
+        public CivilizationVersionEnumWrapper.CivilizationVersion CivilizationVersion
         {
             get
             {
@@ -102,7 +121,7 @@ namespace Map2CivilizationModel
             }
         }
 
-        public MapDataSource.Enumeration MapDataSource
+        public MapDataSourceEnumWrapper.MapDataSource MapDataSource
         {
             get
             {
@@ -140,21 +159,21 @@ namespace Map2CivilizationModel
             }
         }
 
+        
         internal SourceGeoDataSettings GeoDataSettings
         {
             get
             {
-                return null;
-                //throw new NotImplementedException();
+                return _geoDataSettings;
             }
 
             set
             {
-                throw new NotImplementedException();
+                _geoDataSettings = value;
             }
         }
 
-        public Plots PlotCollection
+        public PlotList PlotCollection
         {
             get
             {

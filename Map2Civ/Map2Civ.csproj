@@ -77,12 +77,13 @@
     <Compile Include="Ctrl\Analyser\AnalyserGeoData.cs" />
     <Compile Include="Ctrl\Analyser\AnalyserReliefMap.cs" />
     <Compile Include="Ctrl\DataStructure\PlotID.cs" />
-    <Compile Include="Ctrl\Enumerations\CivilizationVersion.cs" />
-    <Compile Include="Ctrl\Enumerations\GridType.cs" />
-    <Compile Include="Ctrl\Enumerations\IEnrichedEnumWrapper.cs" />
-    <Compile Include="Ctrl\Enumerations\MapDataSource.cs" />
-    <Compile Include="Ctrl\Enumerations\ProcessedMapControlMode.cs" />
-    <Compile Include="Ctrl\Enumerations\TerrainType.cs" />
+    <Compile Include="Ctrl\Enumerations\CivilizationVersionEnumWrapper.cs" />
+    <Compile Include="Ctrl\Enumerations\GridTypeEnumWrapper.cs" />
+    <Compile Include="Ctrl\Enumerations\EnrichedEnumWrapper.cs" />
+    <Compile Include="Ctrl\Enumerations\MapDataSourceEnumWrapper.cs" />
+    <Compile Include="Ctrl\Enumerations\PixelColorDepthEnumWrapper.cs" />
+    <Compile Include="Ctrl\Enumerations\ProcessedMapControlModeEnumWrapper.cs" />
+    <Compile Include="Ctrl\Enumerations\TerrainTypeEnumWrapper.cs" />
     <Compile Include="Ctrl\DataStructure\MapDimension.cs" />
     <Compile Include="Ctrl\JsonAdapters\DetectedColorJsonAdapter.cs" />
     <Compile Include="Ctrl\JsonAdapters\MapDimensionJsonAdapter.cs" />
@@ -119,10 +120,10 @@
     <Compile Include="Ctrl\GridCoordinateHelperCtrl.cs" />
     <Compile Include="Ctrl\Analyser\SourceGeoDataSettings.cs" />
     <Compile Include="Model\DetectedColor.cs" />
-    <Compile Include="Model\DetectedColors.cs" />
+    <Compile Include="Model\DetectedColorList.cs" />
     <Compile Include="Model\Plot.cs" />
     <Compile Include="Model\DataModel.cs" />
-    <Compile Include="Model\Plots.cs" />
+    <Compile Include="Model\PlotList.cs" />
     <Compile Include="Ctrl\Analyser\ISourceMapSettings.cs" />
     <Compile Include="Ctrl\Analyser\SourceReliefMapSettings.cs" />
     <Compile Include="View\AboutBox.cs">
@@ -438,6 +439,7 @@
       <DependentUpon>SourceSettingsControlReliefMap.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
+    <None Include="ClassDiagrams\Enumerations_ClassDiagram.cd" />
     <None Include="ExportTemplates\Block1_v5.bin" />
     <None Include="ExportTemplates\Block2_v5.bin" />
     <None Include="packages.config" />

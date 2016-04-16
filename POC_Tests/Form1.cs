@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing.Imaging;
 using System.Windows.Forms;
 
 namespace POC_Tests
@@ -35,6 +36,19 @@ namespace POC_Tests
             int compressedStringLength = compressedString.Length;
 
             return;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+             
+            Console.WriteLine("Format1bppIndexed : {0} ", Convert.ToInt32(PixelFormat.Format1bppIndexed));
+            Console.WriteLine("Format4bppIndexed : {0} ", Convert.ToInt32(PixelFormat.Format4bppIndexed));
+            Console.WriteLine("Format8bppIndexed : {0}", Convert.ToInt32(PixelFormat.Format8bppIndexed));
+            Console.WriteLine("Format16bppRgb555 : {0}", Convert.ToInt32(PixelFormat.Format16bppRgb555));
+            Console.WriteLine("Format24bppRgb : {0}", Convert.ToInt32(PixelFormat.Format24bppRgb));
+            Console.WriteLine("Format32bppRgb : {0}", Convert.ToInt32(PixelFormat.Format32bppRgb));
+            Console.WriteLine("Format48bppRgb : {0}", Convert.ToInt32(PixelFormat.Format48bppRgb));
+            Console.WriteLine("Format64bppArgb : {0}", Convert.ToInt32(PixelFormat.Format64bppArgb));
         }
     }
 }

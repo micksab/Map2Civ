@@ -1,10 +1,31 @@
-﻿using Map2Civilization.Properties;
+﻿/************************************************************************************/
+//
+//      This file is part of Map2Civilization.
+//      Map2Civilization is free software: you can redistribute it and/or modify
+//      it under the terms of the GNU General Public License as published by
+//      the Free Software Foundation, either version 3 of the License, or
+//      (at your option) any later version.
+//
+//      Map2Civilization is distributed in the hope that it will be useful,
+//      but WITHOUT ANY WARRANTY; without even the implied warranty of
+//      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.See the
+//      GNU General Public License for more details.
+//
+//      You should have received a copy of the GNU General Public License
+//      along with Map2Civilization.  If not, see http://www.gnu.org/licenses/.
+//
+/************************************************************************************/
+
+
+using Map2Civilization.Properties;
+using Map2CivilizationCtrl;
 using Map2CivilizationCtrl.Analyzer;
 using Map2CivilizationCtrl.DataStructure;
 using Map2CivilizationCtrl.Enumerations;
 using System;
 using System.ComponentModel;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Windows.Forms;
 
 namespace Map2CivilizationView.UserControls
@@ -14,7 +35,7 @@ namespace Map2CivilizationView.UserControls
     {
         private Bitmap _mapBitmap;
         private MapDimension _mapDimension;
-        private GridType.Enumeration _gridTypeEnum;
+        private GridTypeEnumWrapper.GridType _gridTypeEnum;
         private Form _ownerForm;
 
         public SourceSettingsControlReliefMap(Form ownerForm)
@@ -40,7 +61,7 @@ namespace Map2CivilizationView.UserControls
             }
         }
 
-        public override GridType.Enumeration SelectedGridType
+        public override GridTypeEnumWrapper.GridType SelectedGridType
         {
             set
             {
@@ -54,8 +75,8 @@ namespace Map2CivilizationView.UserControls
 
         private void PopulateListBoxes()
         {
-            colorDepthBox.DataSource = Enum.GetValues(typeof(System.Drawing.Imaging.PixelFormat));
 
+            colorDepthBox.SetEnumDataSource(PixelColorDepthEnumWrapper.Singleton);
             interpolationBox.DataSource = Enum.GetValues(typeof(System.Drawing.Drawing2D.InterpolationMode));
             composingQualityBox.DataSource = Enum.GetValues(typeof(System.Drawing.Drawing2D.CompositingQuality));
             smoothingModeBox.DataSource = Enum.GetValues(typeof(System.Drawing.Drawing2D.SmoothingMode));
@@ -65,7 +86,7 @@ namespace Map2CivilizationView.UserControls
 
         private void SetRestoreDefaultValues()
         {
-            colorDepthBox.SelectedItem = System.Drawing.Imaging.PixelFormat.Format8bppIndexed;
+            colorDepthBox.SelectDefaultEnumEntry(typeof(PixelColorDepthEnumWrapper.PixelColorDepth));
             interpolationBox.SelectedItem = System.Drawing.Drawing2D.InterpolationMode.Default;
             composingQualityBox.SelectedItem = System.Drawing.Drawing2D.CompositingQuality.Default;
             smoothingModeBox.SelectedItem = System.Drawing.Drawing2D.SmoothingMode.Default;
@@ -130,6 +151,7 @@ namespace Map2CivilizationView.UserControls
             }
         }
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Reliability", "CA2000:Dispose objects before losing scope")]
         override public ISourceMapSettings Settings
         {
             get
@@ -140,12 +162,12 @@ namespace Map2CivilizationView.UserControls
                     SourceReliefMapSettings settings;
 
                     settings = new SourceReliefMapSettings(_mapBitmap,
-                        (System.Drawing.Imaging.PixelFormat)colorDepthBox.SelectedItem,
+                        PixelColorDepthEnumWrapper.GetPixelFormat((PixelColorDepthEnumWrapper.PixelColorDepth)colorDepthBox.SelectedItem),
                         (System.Drawing.Drawing2D.InterpolationMode)interpolationBox.SelectedItem,
                         (System.Drawing.Drawing2D.CompositingQuality)composingQualityBox.SelectedItem,
                         (System.Drawing.Drawing2D.SmoothingMode)smoothingModeBox.SelectedItem);
 
-                    return (ISourceMapSettings)settings;
+                    return settings;
                 }
                 else
                 {
@@ -174,7 +196,7 @@ namespace Map2CivilizationView.UserControls
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Reliability", "CA2001:AvoidCallingProblematicMethods", MessageId = "System.GC.Collect")]
         private Bitmap CheckImageDimensionsCompatibility(Bitmap sourceImage)
         {
-            double modelRatio = GridType.Singleton.GetMapRatio(_gridTypeEnum, _mapDimension.WidthPlots, _mapDimension.HeightPlots);
+            double modelRatio = GridTypeEnumWrapper.Singleton.GetMapRatio(_gridTypeEnum, _mapDimension.WidthPlots, _mapDimension.HeightPlots);
             double imageRatio = (double)sourceImage.Width / (double)sourceImage.Height;
 
             //Allow for 1% tolerance..
@@ -203,7 +225,7 @@ namespace Map2CivilizationView.UserControls
                         switch (editorResult)
                         {
                             case DialogResult.OK:
-                                toReturn = editorForm.GetBitmapToProcess();
+                                toReturn = editorForm.BitmapToProcess;
                                 break;
 
                             case DialogResult.Cancel:

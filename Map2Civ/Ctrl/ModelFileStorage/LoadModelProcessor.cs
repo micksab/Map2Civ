@@ -1,4 +1,23 @@
-﻿using Map2Civilization.Properties;
+﻿/************************************************************************************/
+//
+//      This file is part of Map2Civilization.
+//      Map2Civilization is free software: you can redistribute it and/or modify
+//      it under the terms of the GNU General Public License as published by
+//      the Free Software Foundation, either version 3 of the License, or
+//      (at your option) any later version.
+//
+//      Map2Civilization is distributed in the hope that it will be useful,
+//      but WITHOUT ANY WARRANTY; without even the implied warranty of
+//      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.See the
+//      GNU General Public License for more details.
+//
+//      You should have received a copy of the GNU General Public License
+//      along with Map2Civilization.  If not, see http://www.gnu.org/licenses/.
+//
+/************************************************************************************/
+
+
+using Map2Civilization.Properties;
 using Map2CivilizationCtrl.Enumerations;
 using Map2CivilizationCtrl.JsonAdapters;
 using Map2CivilizationModel;
@@ -35,6 +54,8 @@ namespace Map2CivilizationCtrl.ModelFileStorage
             processor._loadBackgroundWorker.RunWorkerAsync(fullFilePath);
         }
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Globalization", "CA1303:Do not pass literals as localized parameters", MessageId = "System.Console.WriteLine(System.String,System.Object)")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2202:Do not dispose objects multiple times")]
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Reliability", "CA2000:Dispose objects before losing scope")]
         private void LoadBackgroundWorker_DoWork(object sender, DoWorkEventArgs e)
         {
@@ -65,7 +86,7 @@ namespace Map2CivilizationCtrl.ModelFileStorage
             counter++;
             _loadBackgroundWorker.ReportProgress((int)((counter / progressMaxValue) * 100));
 
-            if (newDataModel.MapDataSource == MapDataSource.Enumeration.ReliefMapImage)
+            if (newDataModel.MapDataSource == MapDataSourceEnumWrapper.MapDataSource.ReliefMapImage)
             {
                 newDataModel.ReliefMapSettings = loadModelAdapter.ReliefMapSettings.GetSourceReliefMapSettings();
                 //Add the relief plots
@@ -82,7 +103,7 @@ namespace Map2CivilizationCtrl.ModelFileStorage
                 }
             }
 
-            if (newDataModel.MapDataSource == MapDataSource.Enumeration.GeoDataProvider)
+            if (newDataModel.MapDataSource == MapDataSourceEnumWrapper.MapDataSource.GeoDataProvider)
             {
                 newDataModel.GeoDataSettings = loadModelAdapter.GeoDataSettings.GetGeoDataSettings();
                 //Add the geo-data plots

@@ -117,8 +117,11 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="advancedGroup.Text" xml:space="preserve">
-    <value>Ρυθμίσεις Εξαγωγής Στοιχείων Χάρτη</value>
+  <data name="smoothingLabel.Text" xml:space="preserve">
+    <value>Μέθοδος Εξομάλυνσης:</value>
+  </data>
+  <data name="compositingLabel.Text" xml:space="preserve">
+    <value>Ποιότητα Συνθεσης:</value>
   </data>
   <data name="interpolationLabel.Text" xml:space="preserve">
     <value>Μέθοδος Παρεμβολής:</value>
@@ -129,10 +132,7 @@
   <data name="depthLabel.Text" xml:space="preserve">
     <value>Βάθος Χρώματος:</value>
   </data>
-  <data name="compositingLabel.Text" xml:space="preserve">
-    <value>Ποιότητα Συνθεσης:</value>
-  </data>
-  <data name="smoothingLabel.Text" xml:space="preserve">
-    <value>Μέθοδος Εξομάλυνσης:</value>
+  <data name="advancedGroup.Text" xml:space="preserve">
+    <value>Ρυθμίσεις Εξαγωγής Στοιχείων Χάρτη</value>
   </data>
 </root>

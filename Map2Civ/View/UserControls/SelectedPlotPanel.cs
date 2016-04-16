@@ -1,4 +1,23 @@
-﻿using Map2CivilizationCtrl;
+﻿/************************************************************************************/
+//
+//      This file is part of Map2Civilization.
+//      Map2Civilization is free software: you can redistribute it and/or modify
+//      it under the terms of the GNU General Public License as published by
+//      the Free Software Foundation, either version 3 of the License, or
+//      (at your option) any later version.
+//
+//      Map2Civilization is distributed in the hope that it will be useful,
+//      but WITHOUT ANY WARRANTY; without even the implied warranty of
+//      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.See the
+//      GNU General Public License for more details.
+//
+//      You should have received a copy of the GNU General Public License
+//      along with Map2Civilization.  If not, see http://www.gnu.org/licenses/.
+//
+/************************************************************************************/
+
+
+using Map2CivilizationCtrl;
 using Map2CivilizationCtrl.DataStructure;
 using Map2CivilizationCtrl.Enumerations;
 using Map2CivilizationCtrl.Listener;
@@ -53,9 +72,9 @@ namespace Map2CivilizationView.UserControls
         public void ResizePanel()
         {
             float zoomFactor = GridCoordinateHelperCtrl.GetZoomFactor();
-            GridType.Enumeration currentGridType = ModelCtrl.GetGridType();
-            float widthPixels = (GridType.Singleton.GetPlotWidthPixels(currentGridType) * (zoomFactor / 100f)) + SystemInformation.BorderSize.Width * 4;
-            float heightPixels = (GridType.Singleton.GetPlotHeightPixels(currentGridType) * (zoomFactor / 100f)) + SystemInformation.BorderSize.Height * 4;
+            GridTypeEnumWrapper.GridType currentGridType = ModelCtrl.GetGridType();
+            float widthPixels = (GridTypeEnumWrapper.Singleton.GetPlotWidthPixels(currentGridType) * (zoomFactor / 100f)) + SystemInformation.BorderSize.Width * 4;
+            float heightPixels = (GridTypeEnumWrapper.Singleton.GetPlotHeightPixels(currentGridType) * (zoomFactor / 100f)) + SystemInformation.BorderSize.Height * 4;
 
             this.Size = new Size((int)Math.Ceiling(widthPixels), (int)Math.Ceiling(heightPixels));
             this.Update();

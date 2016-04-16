@@ -1,4 +1,23 @@
-﻿using Map2Civilization.Properties;
+﻿/************************************************************************************/
+//
+//      This file is part of Map2Civilization.
+//      Map2Civilization is free software: you can redistribute it and/or modify
+//      it under the terms of the GNU General Public License as published by
+//      the Free Software Foundation, either version 3 of the License, or
+//      (at your option) any later version.
+//
+//      Map2Civilization is distributed in the hope that it will be useful,
+//      but WITHOUT ANY WARRANTY; without even the implied warranty of
+//      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.See the
+//      GNU General Public License for more details.
+//
+//      You should have received a copy of the GNU General Public License
+//      along with Map2Civilization.  If not, see http://www.gnu.org/licenses/.
+//
+/************************************************************************************/
+
+
+using Map2Civilization.Properties;
 using Map2CivilizationCtrl;
 using Map2CivilizationCtrl.DataStructure;
 using Map2CivilizationCtrl.Enumerations;
@@ -34,7 +53,7 @@ namespace Map2CivilizationView
             originalMapControl.Location = new Point(0, 0);
             originalMapControl.Dock = DockStyle.Fill;
 
-            MapControlProcessed processedMapControl = new MapControlProcessed(true, ProcessedMapControlMode.Enumeration.ColorEditor);
+            MapControlProcessed processedMapControl = new MapControlProcessed(true, ProcessedMapControlModeEnumWrapper.ProcessedMapControlMode.ColorEditor);
             splitContainer.Panel1.Controls.Add(processedMapControl);
             processedMapControl.Location = new Point(0, 0);
             processedMapControl.Dock = DockStyle.Fill;
@@ -70,15 +89,15 @@ namespace Map2CivilizationView
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Reliability", "CA2000:Dispose objects before losing scope")]
         public void ModelChanged()
         {
-            this.civVersionLabel.Text = CivilizationVersion.Singleton.GetEnumValueDescription(ModelCtrl.GetCivilizationVersion());
+            this.civVersionLabel.Text = CivilizationVersionEnumWrapper.Singleton.GetEnumValueDescription(ModelCtrl.GetCivilizationVersion());
             this.MapSizeLabel.Text = ModelCtrl.GetMapSize().Description;
 
             //Check the type of the new model..
             switch (ModelCtrl.GetModelDataSourceType())
             {
-                case MapDataSource.Enumeration.GeoDataProvider:
+                case MapDataSourceEnumWrapper.MapDataSource.GeoDataProvider:
                     throw new NotImplementedException("No implementation for Geo-Data Source Settings.");
-                case MapDataSource.Enumeration.ReliefMapImage:
+                case MapDataSourceEnumWrapper.MapDataSource.ReliefMapImage:
                     //Clear any existing control from the data manipulation panel
                     foreach (Control tempControl in splitContainer.Panel2.Controls)
                     {
@@ -221,8 +240,8 @@ namespace Map2CivilizationView
         {
             using (SaveFileDialog exportFileDialog = new SaveFileDialog())
             {
-                exportFileDialog.Filter = CivilizationVersion.Singleton.GetSaveFileFilter(ModelCtrl.GetCivilizationVersion());
-                exportFileDialog.DefaultExt = CivilizationVersion.Singleton.GetSaveFileDefaultExtension(ModelCtrl.GetCivilizationVersion());
+                exportFileDialog.Filter = CivilizationVersionEnumWrapper.Singleton.GetSaveFileFilter(ModelCtrl.GetCivilizationVersion());
+                exportFileDialog.DefaultExt = CivilizationVersionEnumWrapper.Singleton.GetSaveFileDefaultExtension(ModelCtrl.GetCivilizationVersion());
 
                 DialogResult result = exportFileDialog.ShowDialog();
 

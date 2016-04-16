@@ -1,4 +1,23 @@
-﻿using System;
+﻿/************************************************************************************/
+//
+//      This file is part of Map2Civilization.
+//      Map2Civilization is free software: you can redistribute it and/or modify
+//      it under the terms of the GNU General Public License as published by
+//      the Free Software Foundation, either version 3 of the License, or
+//      (at your option) any later version.
+//
+//      Map2Civilization is distributed in the hope that it will be useful,
+//      but WITHOUT ANY WARRANTY; without even the implied warranty of
+//      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.See the
+//      GNU General Public License for more details.
+//
+//      You should have received a copy of the GNU General Public License
+//      along with Map2Civilization.  If not, see http://www.gnu.org/licenses/.
+//
+/************************************************************************************/
+
+
+using System;
 using System.Drawing;
 
 using System.Windows.Forms;
@@ -29,42 +48,48 @@ namespace Map2CivilizationView
 
         #region Public methods
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1024:UsePropertiesWhereAppropriate")]
-        public Size GetCanvasWidthHeight()
+        public Size CanvasSize
         {
-            Size toReturn;
-
-            if (nearestRadio.Checked)
+            get
             {
-                double imageRatio = (double)_minWidth / (double)_minHeight;
+                Size toReturn;
 
-                if (_intentedRatio <= imageRatio)
+                if (nearestRadio.Checked)
                 {
-                    //We need to adjust the height
-                    double newHeight = _imageSize.Width / _intentedRatio;
+                    double imageRatio = (double)_minWidth / (double)_minHeight;
 
-                    toReturn = new Size(_imageSize.Width, (int)newHeight);
+                    if (_intentedRatio <= imageRatio)
+                    {
+                        //We need to adjust the height
+                        double newHeight = _imageSize.Width / _intentedRatio;
+
+                        toReturn = new Size(_imageSize.Width, (int)newHeight);
+                    }
+                    else
+                    {
+                        //We need to adjust the width
+                        double newWidth = _imageSize.Height * _intentedRatio;
+
+                        toReturn = new Size((int)newWidth, _imageSize.Height);
+                    }
                 }
                 else
                 {
-                    //We need to adjust the width
-                    double newWidth = _imageSize.Height * _intentedRatio;
-
-                    toReturn = new Size((int)newWidth, _imageSize.Height);
+                    toReturn = new Size((int)widthNumeric.Value, (int)heightNumeric.Value);
                 }
-            }
-            else
-            {
-                toReturn = new Size((int)widthNumeric.Value, (int)heightNumeric.Value);
-            }
 
-            return toReturn;
+                return toReturn;
+            }
+            
         }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1024:UsePropertiesWhereAppropriate")]
-        public Color GetBackgroundColor()
+        public Color CanvasBackgroundColor
         {
-            return _backColor;
+            get
+            {
+                return _backColor;
+
+            }
         }
 
         #endregion Public methods

@@ -1,4 +1,23 @@
-﻿using Map2Civilization.Properties;
+﻿/************************************************************************************/
+//
+//      This file is part of Map2Civilization.
+//      Map2Civilization is free software: you can redistribute it and/or modify
+//      it under the terms of the GNU General Public License as published by
+//      the Free Software Foundation, either version 3 of the License, or
+//      (at your option) any later version.
+//
+//      Map2Civilization is distributed in the hope that it will be useful,
+//      but WITHOUT ANY WARRANTY; without even the implied warranty of
+//      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.See the
+//      GNU General Public License for more details.
+//
+//      You should have received a copy of the GNU General Public License
+//      along with Map2Civilization.  If not, see http://www.gnu.org/licenses/.
+//
+/************************************************************************************/
+
+
+using Map2Civilization.Properties;
 using Map2CivilizationCtrl.DataStructure;
 using Map2CivilizationCtrl.Enumerations;
 using Map2CivilizationModel;
@@ -95,24 +114,24 @@ namespace Map2CivilizationCtrl
             float plotWidth = (int)ModelCtrl.GetPlotWidthPixels() * zoomMultiplier;
             float plotHeight = (int)ModelCtrl.GetPlotHeightPixels() * zoomMultiplier;
             MapDimension mapSize = ModelCtrl.GetMapSize();
-            GridType.Enumeration gridType = ModelCtrl.GetGridType();
+            GridTypeEnumWrapper.GridType gridType = ModelCtrl.GetGridType();
 
             int currentPlotX = 0;
             int currentPlotY = 0;
 
             switch (gridType)
             {
-                case GridType.Enumeration.Square:
+                case GridTypeEnumWrapper.GridType.Square:
                     currentPlotX = (int)(pixelX / plotWidth);
                     int tempPlotY = (int)(pixelY / plotHeight);
                     currentPlotY = Math.Abs(tempPlotY - mapSize.HeightPlots + 1);
                     return new PlotId(currentPlotX, currentPlotY);
 
-                case GridType.Enumeration.HexagonalPT:
+                case GridTypeEnumWrapper.GridType.HexagonalPT:
                     PlotId shortestDistanceCenterPlotId = new PlotId(0, 0);
                     float minDistance = float.MaxValue;
 
-                    foreach (Plot tempPlot in ModelCtrl.GetDataModel().PlotCollection.GetPlots())
+                    foreach (Plot tempPlot in ModelCtrl.GetDataModel().PlotCollection.Plots)
                     {
                         float distance = CalculatePointDistanceFromPlotCenter(tempPlot.Id, new PointF((float)pixelX, (float)pixelY), gridType);
 
@@ -125,14 +144,14 @@ namespace Map2CivilizationCtrl
 
                     return shortestDistanceCenterPlotId;
 
-                case GridType.Enumeration.Rhombus:
+                case GridTypeEnumWrapper.GridType.Rhombus:
                     throw new NotImplementedException();
                 default:
                     throw new InvalidEnumArgumentException("Unknown Grid Type");
             }
         }
 
-        public static PointF ConvertPlotIdToPixelLocation(PlotId id, MapDimension mapSize, GridType.Enumeration gridType, Boolean useZoom)
+        public static PointF ConvertPlotIdToPixelLocation(PlotId id, MapDimension mapSize, GridTypeEnumWrapper.GridType gridType, Boolean useZoom)
         {
             float zoomMultiplier = 0;
             if (useZoom)
@@ -144,17 +163,17 @@ namespace Map2CivilizationCtrl
                 zoomMultiplier = 1f;
             }
 
-            float plotWidthPixels = GridType.Singleton.GetPlotWidthPixels(gridType) * zoomMultiplier;
-            float plotHeightPixels = GridType.Singleton.GetPlotHeightPixels(gridType) * zoomMultiplier;
+            float plotWidthPixels = GridTypeEnumWrapper.Singleton.GetPlotWidthPixels(gridType) * zoomMultiplier;
+            float plotHeightPixels = GridTypeEnumWrapper.Singleton.GetPlotHeightPixels(gridType) * zoomMultiplier;
 
             switch (gridType)
             {
-                case GridType.Enumeration.Square:
+                case GridTypeEnumWrapper.GridType.Square:
                     float currentPlotXPixel = id.X * plotWidthPixels;
                     float currentPlotYPixel = Math.Abs((mapSize.HeightPlots - id.Y - 1) * plotHeightPixels);
                     return new PointF(currentPlotXPixel, currentPlotYPixel);
 
-                case GridType.Enumeration.HexagonalPT:
+                case GridTypeEnumWrapper.GridType.HexagonalPT:
                     int baseYPlot = Math.Abs(mapSize.HeightPlots - id.Y - 1);
                     //if the base plot is the first one
                     if (id.Y == 0)
@@ -176,7 +195,7 @@ namespace Map2CivilizationCtrl
                         }
                     }
 
-                case GridType.Enumeration.Rhombus:
+                case GridTypeEnumWrapper.GridType.Rhombus:
                     throw new NotImplementedException(Resources.Str_BitmapOperations_RhombusNotSupported);
                 default:
                     throw new InvalidEnumArgumentException("Non existing enumeration value.");
@@ -206,16 +225,16 @@ namespace Map2CivilizationCtrl
             return false;
         }
 
-        public static PointF[] GetPlotPolygonPoints(PlotId id, GridType.Enumeration gridType, MapDimension mapDimension)
+        public static PointF[] GetPlotPolygonPoints(PlotId id, GridTypeEnumWrapper.GridType gridType, MapDimension mapDimension)
         {
             List<PointF> toReturn = new List<PointF>();
             PointF UpperLeftCornerPoint = ConvertPlotIdToPixelLocation(id, mapDimension, gridType, false);
-            float plotWidth = GridType.Singleton.GetPlotWidthPixels(gridType);
-            float plotHeight = GridType.Singleton.GetPlotHeightPixels(gridType);
+            float plotWidth = GridTypeEnumWrapper.Singleton.GetPlotWidthPixels(gridType);
+            float plotHeight = GridTypeEnumWrapper.Singleton.GetPlotHeightPixels(gridType);
 
             switch (gridType)
             {
-                case GridType.Enumeration.Square:
+                case GridTypeEnumWrapper.GridType.Square:
                     toReturn.Add(UpperLeftCornerPoint);
                     toReturn.Add(new PointF(UpperLeftCornerPoint.X + plotWidth, UpperLeftCornerPoint.Y));
                     toReturn.Add(new PointF(UpperLeftCornerPoint.X + plotWidth, UpperLeftCornerPoint.Y + plotHeight));
@@ -223,7 +242,7 @@ namespace Map2CivilizationCtrl
 
                     break;
 
-                case GridType.Enumeration.HexagonalPT:
+                case GridTypeEnumWrapper.GridType.HexagonalPT:
                     toReturn.Add(new PointF(UpperLeftCornerPoint.X + (plotWidth / 2), UpperLeftCornerPoint.Y));
                     toReturn.Add(new PointF(UpperLeftCornerPoint.X + plotWidth, UpperLeftCornerPoint.Y + (plotHeight / 4)));
                     toReturn.Add(new PointF(UpperLeftCornerPoint.X + plotWidth, UpperLeftCornerPoint.Y + (3 * plotHeight / 4)));
@@ -232,7 +251,7 @@ namespace Map2CivilizationCtrl
                     toReturn.Add(new PointF(UpperLeftCornerPoint.X, UpperLeftCornerPoint.Y + (plotHeight / 4)));
                     break;
 
-                case GridType.Enumeration.Rhombus:
+                case GridTypeEnumWrapper.GridType.Rhombus:
                     throw new NotImplementedException(Resources.Str_BitmapOperations_RhombusNotSupported);
                 default:
                     throw new InvalidEnumArgumentException("Non existing enumeration value.");
@@ -255,13 +274,13 @@ namespace Map2CivilizationCtrl
             return toReturn;
         }
 
-        private static float CalculatePointDistanceFromPlotCenter(PlotId plotId, PointF point, GridType.Enumeration gridType)
+        private static float CalculatePointDistanceFromPlotCenter(PlotId plotId, PointF point, GridTypeEnumWrapper.GridType gridType)
         {
             float zoomMultiplier = _currentZoomMultiplier;
 
             PointF plotUpperLeftCorner = ConvertPlotIdToPixelLocation(plotId, true);
-            float plotWidthPixels = GridType.Singleton.GetPlotWidthPixels(gridType) * zoomMultiplier;
-            float plotHeightPixels = GridType.Singleton.GetPlotHeightPixels(gridType) * zoomMultiplier;
+            float plotWidthPixels = GridTypeEnumWrapper.Singleton.GetPlotWidthPixels(gridType) * zoomMultiplier;
+            float plotHeightPixels = GridTypeEnumWrapper.Singleton.GetPlotHeightPixels(gridType) * zoomMultiplier;
 
             float distanceX = Math.Abs((plotUpperLeftCorner.X + (plotWidthPixels / 2f)) - point.X);
             float distanceY = Math.Abs((plotUpperLeftCorner.Y + (plotHeightPixels / 2f)) - point.Y);
@@ -269,29 +288,29 @@ namespace Map2CivilizationCtrl
             return (float)Math.Sqrt(Math.Pow(distanceX, 2) + Math.Pow(distanceY, 2));
         }
 
-        public static Size CalculateImageSize(MapDimension mapSize, GridType.Enumeration gridTypeEnum)
+        public static Size CalculateImageSize(MapDimension mapSize, GridTypeEnumWrapper.GridType gridTypeEnum)
         {
             int newWidth = 0;
             int newHeight = 0;
             float wp = mapSize.WidthPlots;
             float hp = mapSize.HeightPlots;
-            float w = GridType.Singleton.GetPlotWidthPixels(gridTypeEnum);
-            float h = GridType.Singleton.GetPlotHeightPixels(gridTypeEnum);
+            float w = GridTypeEnumWrapper.Singleton.GetPlotWidthPixels(gridTypeEnum);
+            float h = GridTypeEnumWrapper.Singleton.GetPlotHeightPixels(gridTypeEnum);
 
             switch (gridTypeEnum)
             {
-                case GridType.Enumeration.Square:
+                case GridTypeEnumWrapper.GridType.Square:
 
                     newWidth = (int)(wp * w);
                     newHeight = (int)(hp * h);
                     break;
 
-                case GridType.Enumeration.HexagonalPT:
+                case GridTypeEnumWrapper.GridType.HexagonalPT:
                     newWidth = (int)(wp * w + (w / 2));
                     newHeight = (int)(((2f * w) / Math.Sqrt(3)) + ((6f * w) / (4f * Math.Sqrt(3))) * (hp - 1f));
                     break;
 
-                case GridType.Enumeration.Rhombus:
+                case GridTypeEnumWrapper.GridType.Rhombus:
                     throw new NotImplementedException(Resources.Str_BitmapOperations_RhombusNotSupported);
                 default:
                     throw new InvalidEnumArgumentException("Invalid value of enum GridType");

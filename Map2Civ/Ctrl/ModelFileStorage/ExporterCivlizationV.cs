@@ -1,4 +1,23 @@
-﻿using Map2Civilization.Properties;
+﻿/************************************************************************************/
+//
+//      This file is part of Map2Civilization.
+//      Map2Civilization is free software: you can redistribute it and/or modify
+//      it under the terms of the GNU General Public License as published by
+//      the Free Software Foundation, either version 3 of the License, or
+//      (at your option) any later version.
+//
+//      Map2Civilization is distributed in the hope that it will be useful,
+//      but WITHOUT ANY WARRANTY; without even the implied warranty of
+//      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.See the
+//      GNU General Public License for more details.
+//
+//      You should have received a copy of the GNU General Public License
+//      along with Map2Civilization.  If not, see http://www.gnu.org/licenses/.
+//
+/************************************************************************************/
+
+
+using Map2Civilization.Properties;
 using Map2CivilizationCtrl.DataStructure;
 using Map2CivilizationCtrl.Enumerations;
 using Map2CivilizationModel;
@@ -36,11 +55,11 @@ namespace Map2CivilizationCtrl.ModelFileStorage
                     for (int x = 0; x < widthPlots; x++)
                     {
                         PlotId id = new PlotId(x, y);
-                        TerrainType.Enumeration descriptor =
+                        TerrainTypeEnumWrapper.TerrainType descriptor =
                             Map2CivilizationCtrl.PlotCollectionCtrl.getPlotCombinedTerrainDescriptor(id);
                         switch (descriptor)
                         {
-                            case TerrainType.Enumeration.Ocean:
+                            case TerrainTypeEnumWrapper.TerrainType.Ocean:
                                 writer.Write(Convert.ToByte(6));
                                 writer.Write(Convert.ToByte(255));
                                 writer.Write(Convert.ToByte(255));
@@ -51,7 +70,7 @@ namespace Map2CivilizationCtrl.ModelFileStorage
                                 writer.Write(Convert.ToByte(0));
                                 break;
 
-                            case TerrainType.Enumeration.Coast:
+                            case TerrainTypeEnumWrapper.TerrainType.Coast:
                                 writer.Write(Convert.ToByte(5));
                                 writer.Write(Convert.ToByte(255));
                                 writer.Write(Convert.ToByte(255));
@@ -62,7 +81,7 @@ namespace Map2CivilizationCtrl.ModelFileStorage
                                 writer.Write(Convert.ToByte(0));
                                 break;
 
-                            case TerrainType.Enumeration.Flat:
+                            case TerrainTypeEnumWrapper.TerrainType.Flat:
                                 writer.Write(Convert.ToByte(0));
                                 writer.Write(Convert.ToByte(255));
                                 writer.Write(Convert.ToByte(255));
@@ -73,7 +92,7 @@ namespace Map2CivilizationCtrl.ModelFileStorage
                                 writer.Write(Convert.ToByte(0));
                                 break;
 
-                            case TerrainType.Enumeration.Hills:
+                            case TerrainTypeEnumWrapper.TerrainType.Hills:
                                 writer.Write(Convert.ToByte(0));
                                 writer.Write(Convert.ToByte(255));
                                 writer.Write(Convert.ToByte(255));
@@ -84,7 +103,7 @@ namespace Map2CivilizationCtrl.ModelFileStorage
                                 writer.Write(Convert.ToByte(0));
                                 break;
 
-                            case TerrainType.Enumeration.Mountains:
+                            case TerrainTypeEnumWrapper.TerrainType.Mountains:
                                 writer.Write(Convert.ToByte(0));
                                 writer.Write(Convert.ToByte(255));
                                 writer.Write(Convert.ToByte(255));

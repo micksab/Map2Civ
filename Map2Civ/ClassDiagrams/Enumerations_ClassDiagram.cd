@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Map2CivilizationCtrl.Enumerations.CivilizationVersionEnumWrapper">
+    <Position X="0.5" Y="0.5" Width="2.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="Map2CivilizationCtrl.Enumerations.CivilizationVersionEnumWrapper.CivilizationVersion" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Ctrl\Enumerations\CivilizationVersionEnumWrapper.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAoAAAABAAAAAAAAEEAAAAAAEAAkBIAAAAAAA=</HashCode>
+      <FileName>Ctrl\Enumerations\CivilizationVersionEnumWrapper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Map2CivilizationCtrl.Enumerations.EnrichedEnumWrapper">
+    <Position X="6.25" Y="0.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIIAAAAAAAAABAAAAAAEAAAAAAAAAkAIAAAEAAA=</HashCode>
+      <FileName>Ctrl\Enumerations\EnrichedEnumWrapper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Map2CivilizationCtrl.Enumerations.GridTypeEnumWrapper">
+    <Position X="10" Y="4.5" Width="2.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="Map2CivilizationCtrl.Enumerations.GridTypeEnumWrapper.GridType" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Ctrl\Enumerations\GridTypeEnumWrapper.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAAAAABCAACAAAIEAAAAAAEABkAIAACAAAA=</HashCode>
+      <FileName>Ctrl\Enumerations\GridTypeEnumWrapper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Map2CivilizationCtrl.Enumerations.MapDataSourceEnumWrapper">
+    <Position X="0.5" Y="5.75" Width="2.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="Map2CivilizationCtrl.Enumerations.MapDataSourceEnumWrapper.MapDataSource" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Ctrl\Enumerations\MapDataSourceEnumWrapper.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAAAAAAAAAAAAAAEAAAAAAEAAkAIAAAAAAA=</HashCode>
+      <FileName>Ctrl\Enumerations\MapDataSourceEnumWrapper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Map2CivilizationCtrl.Enumerations.PixelColorDepthEnumWrapper">
+    <Position X="6.75" Y="4" Width="2.75" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="Map2CivilizationCtrl.Enumerations.PixelColorDepthEnumWrapper.PixelColorDepth" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Ctrl\Enumerations\PixelColorDepthEnumWrapper.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAEAAAAAAAAAAAAEAAAAAAEAAkAIAAAAAAA=</HashCode>
+      <FileName>Ctrl\Enumerations\PixelColorDepthEnumWrapper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Map2CivilizationCtrl.Enumerations.ProcessedMapControlModeEnumWrapper">
+    <Position X="12.25" Y="0.5" Width="3.25" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="Map2CivilizationCtrl.Enumerations.ProcessedMapControlModeEnumWrapper.ProcessedMapControlMode" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Ctrl\Enumerations\ProcessedMapControlModeEnumWrapper.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAAAAAAAAAAAAAAEAAAAAAEAAkAIAAAAAAA=</HashCode>
+      <FileName>Ctrl\Enumerations\ProcessedMapControlModeEnumWrapper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Map2CivilizationCtrl.Enumerations.TerrainTypeEnumWrapper">
+    <Position X="4" Y="4" Width="2.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="Map2CivilizationCtrl.Enumerations.TerrainTypeEnumWrapper.TerrainType" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Ctrl\Enumerations\TerrainTypeEnumWrapper.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>ACAAQAAAgAAAAAAAACAIIAAEAAAAAAEAAkSIgIIBAAA=</HashCode>
+      <FileName>Ctrl\Enumerations\TerrainTypeEnumWrapper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

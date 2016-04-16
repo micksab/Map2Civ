@@ -1,4 +1,23 @@
-﻿using Map2CivilizationCtrl;
+﻿/************************************************************************************/
+//
+//      This file is part of Map2Civilization.
+//      Map2Civilization is free software: you can redistribute it and/or modify
+//      it under the terms of the GNU General Public License as published by
+//      the Free Software Foundation, either version 3 of the License, or
+//      (at your option) any later version.
+//
+//      Map2Civilization is distributed in the hope that it will be useful,
+//      but WITHOUT ANY WARRANTY; without even the implied warranty of
+//      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.See the
+//      GNU General Public License for more details.
+//
+//      You should have received a copy of the GNU General Public License
+//      along with Map2Civilization.  If not, see http://www.gnu.org/licenses/.
+//
+/************************************************************************************/
+
+
+using Map2CivilizationCtrl;
 using Map2CivilizationCtrl.DataStructure;
 using Map2CivilizationCtrl.Enumerations;
 using Map2CivilizationCtrl.Listener;
@@ -13,7 +32,7 @@ namespace Map2CivilizationView.UserControls
 {
     public partial class DetectedColorsGrid : UserControl, IUiListenerDetectedColorsGrid
     {
-        private string[] detectedColors;
+        private List<string> detectedColors;
         private bool discardCellChangeEvent = false;
 
         public DetectedColorsGrid()
@@ -21,9 +40,9 @@ namespace Map2CivilizationView.UserControls
             InitializeComponent();
 
             RegisteredListenersCtrl.ColorGridListeners.RegisterObserver(this);
-            ((DataGridViewComboBoxColumn)gridView.Columns[settingColumn.Name]).ValueType = typeof(TerrainType.Enumeration);
+            ((DataGridViewComboBoxColumn)gridView.Columns[settingColumn.Name]).ValueType = typeof(TerrainTypeEnumWrapper.TerrainType);
             ((DataGridViewComboBoxColumn)gridView.Columns[settingColumn.Name]).DataSource =
-               Enum.GetValues(typeof(TerrainType.Enumeration));
+               Enum.GetValues(typeof(TerrainTypeEnumWrapper.TerrainType));
 
             Disposed += GridControl_Disposed;
         }
@@ -35,10 +54,10 @@ namespace Map2CivilizationView.UserControls
             foreach (DataGridViewRow tempRow in gridView.Rows)
             {
                 string id = (string)tempRow.Cells[idColumn.Name].Value;
-                TerrainType.Enumeration displayedValue = (TerrainType.Enumeration)tempRow.Cells[settingColumn.Name].Value;
+                TerrainTypeEnumWrapper.TerrainType displayedValue = (TerrainTypeEnumWrapper.TerrainType)tempRow.Cells[settingColumn.Name].Value;
 
-                TerrainType.Enumeration storedValue =
-                    DetectedColorCollectionCtrl.getCombinedDescriptorByColorID(id);
+                TerrainTypeEnumWrapper.TerrainType storedValue =
+                    DetectedColorCollectionCtrl.GetCombinedDescriptorByColorID(id);
 
                 if (displayedValue != storedValue)
                 {
@@ -57,15 +76,15 @@ namespace Map2CivilizationView.UserControls
             gridView.Update();
             gridView.Refresh();
 
-            detectedColors = DetectedColorCollectionCtrl.getDetectedColorIDsArray();
+            detectedColors = DetectedColorCollectionCtrl.GetDetectedColorIDsArray();
 
             foreach (string colorID in detectedColors)
             {
                 Bitmap bmpToAdd = BitmapOperationsCtrl.CreateSolidColorBitmap(colorID);
                 string idToAdd = colorID;
 
-                TerrainType.Enumeration selectedSettingToAdd =
-                    DetectedColorCollectionCtrl.getCombinedDescriptorByColorID(idToAdd);
+                TerrainTypeEnumWrapper.TerrainType selectedSettingToAdd =
+                    DetectedColorCollectionCtrl.GetCombinedDescriptorByColorID(idToAdd);
 
                 int newRowIndex = gridView.Rows.Add(bmpToAdd, idToAdd, selectedSettingToAdd);
 
@@ -85,8 +104,8 @@ namespace Map2CivilizationView.UserControls
             if (e.RowIndex > (-1) && discardCellChangeEvent == false && e.ColumnIndex != gridView.Columns[colorIsAssignedColumn.Name].Index)
             {
                 string colorId = (string)gridView.Rows[e.RowIndex].Cells[idColumn.Name].Value;
-                TerrainType.Enumeration newValue =
-                    (TerrainType.Enumeration)gridView.Rows[e.RowIndex].Cells[settingColumn.Name].Value;
+                TerrainTypeEnumWrapper.TerrainType newValue =
+                    (TerrainTypeEnumWrapper.TerrainType)gridView.Rows[e.RowIndex].Cells[settingColumn.Name].Value;
 
                 DetectedColorCollectionCtrl.UpdateDetectedColorsAndRefreshProcessedMap(new string[] { colorId }, newValue);
 
@@ -98,10 +117,10 @@ namespace Map2CivilizationView.UserControls
         {
             string id = (string)gridView.Rows[rownum].Cells[idColumn.Name].Value;
 
-            TerrainType.Enumeration descriptor =
-            DetectedColorCollectionCtrl.getCombinedDescriptorByColorID(id);
+            TerrainTypeEnumWrapper.TerrainType descriptor =
+            DetectedColorCollectionCtrl.GetCombinedDescriptorByColorID(id);
 
-            if (descriptor == TerrainType.Enumeration.NotDefined)
+            if (descriptor == TerrainTypeEnumWrapper.TerrainType.NotDefined)
             {
                 gridView.Rows[rownum].Cells[idColumn.Name].Style.ForeColor = Color.Red;
                 gridView.Rows[rownum].Cells[colorIsAssignedColumn.Name].Value = false;
@@ -130,7 +149,7 @@ namespace Map2CivilizationView.UserControls
                 foreach (DataGridViewRow tempRow in selectedRows)
                 {
                     List<PlotId> toAdd =
-                        DetectedColorCollectionCtrl.getDetectedColorPlotCoordinates((string)tempRow.Cells[idColumn.Name].Value);
+                        DetectedColorCollectionCtrl.GetDetectedColorPlotCoordinates((string)tempRow.Cells[idColumn.Name].Value);
 
                     plotIdList.AddRange(toAdd);
                 }
