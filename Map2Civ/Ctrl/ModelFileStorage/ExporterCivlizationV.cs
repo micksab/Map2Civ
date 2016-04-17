@@ -56,7 +56,7 @@ namespace Map2CivilizationCtrl.ModelFileStorage
                     {
                         PlotId id = new PlotId(x, y);
                         TerrainTypeEnumWrapper.TerrainType descriptor =
-                            Map2CivilizationCtrl.PlotCollectionCtrl.getPlotCombinedTerrainDescriptor(id);
+                            Map2CivilizationCtrl.PlotListCtrl.getPlotCombinedTerrainDescriptor(id);
                         switch (descriptor)
                         {
                             case TerrainTypeEnumWrapper.TerrainType.Ocean:

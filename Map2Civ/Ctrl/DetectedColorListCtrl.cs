@@ -25,7 +25,7 @@ using System.Collections.ObjectModel;
 
 namespace Map2CivilizationCtrl
 {
-    internal static class DetectedColorCollectionCtrl
+    internal static class DetectedColorListCtrl
     {
         public static void UpdateDetectedColorsAndRefreshProcessedMap(string[] colorIDs,
             TerrainTypeEnumWrapper.TerrainType descriptor)

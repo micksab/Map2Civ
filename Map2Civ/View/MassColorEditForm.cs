@@ -56,7 +56,7 @@ namespace Map2CivilizationView
         private void okButton_Click(object sender, EventArgs e)
         {
             TerrainTypeEnumWrapper.TerrainType selectedValue = (TerrainTypeEnumWrapper.TerrainType)terrainsCombo.SelectedValue;
-            DetectedColorCollectionCtrl.UpdateDetectedColorsAndRefreshProcessedMap(colorIDs, selectedValue);
+            DetectedColorListCtrl.UpdateDetectedColorsAndRefreshProcessedMap(colorIDs, selectedValue);
             DialogResult = DialogResult.OK;
             Close();
         }

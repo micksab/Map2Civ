@@ -60,10 +60,10 @@ namespace Map2CivilizationCtrl.Enumerations
         }
 
 
-        protected internal abstract string GetEnumSpecificDescription(System.Enum value);
+        protected abstract string GetEnumSpecificDescription(System.Enum value);
 
-        protected internal abstract bool GetEnumSpecificEnabledStatus(System.Enum value);
+        protected abstract bool GetEnumSpecificEnabledStatus(System.Enum value);
 
-        protected internal abstract bool GetEnumSpecificDefaultStatus(System.Enum value);
+        protected abstract bool GetEnumSpecificDefaultStatus(System.Enum value);
     }
 }

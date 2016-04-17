@@ -33,32 +33,14 @@ namespace Map2CivilizationView
          void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegionEditForm));
+            this.splitContainer = new System.Windows.Forms.SplitContainer();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.plotTitleLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.plotValueLabel = new System.Windows.Forms.ToolStripStatusLabel();
-            this.splitContainer = new System.Windows.Forms.SplitContainer();
-            this.statusStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).BeginInit();
             this.splitContainer.SuspendLayout();
+            this.statusStrip.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // statusStrip
-            // 
-            this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.plotTitleLabel,
-            this.plotValueLabel});
-            resources.ApplyResources(this.statusStrip, "statusStrip");
-            this.statusStrip.Name = "statusStrip";
-            // 
-            // plotTitleLabel
-            // 
-            this.plotTitleLabel.Name = "plotTitleLabel";
-            resources.ApplyResources(this.plotTitleLabel, "plotTitleLabel");
-            // 
-            // plotValueLabel
-            // 
-            this.plotValueLabel.Name = "plotValueLabel";
-            resources.ApplyResources(this.plotValueLabel, "plotValueLabel");
             // 
             // splitContainer
             // 
@@ -77,6 +59,31 @@ namespace Map2CivilizationView
             resources.ApplyResources(this.splitContainer.Panel2, "splitContainer.Panel2");
             this.splitContainer.Panel2.Resize += new System.EventHandler(this.SplitPanelsSizeChanged);
             // 
+            // statusStrip
+            // 
+            this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.plotTitleLabel,
+            this.plotValueLabel});
+            resources.ApplyResources(this.statusStrip, "statusStrip");
+            this.statusStrip.Name = "statusStrip";
+            // 
+            // plotTitleLabel
+            // 
+            this.plotTitleLabel.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)(((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Top) 
+            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
+            this.plotTitleLabel.BorderStyle = System.Windows.Forms.Border3DStyle.SunkenOuter;
+            this.plotTitleLabel.Name = "plotTitleLabel";
+            resources.ApplyResources(this.plotTitleLabel, "plotTitleLabel");
+            // 
+            // plotValueLabel
+            // 
+            this.plotValueLabel.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)(((System.Windows.Forms.ToolStripStatusLabelBorderSides.Top | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right) 
+            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
+            this.plotValueLabel.BorderStyle = System.Windows.Forms.Border3DStyle.SunkenOuter;
+            this.plotValueLabel.Margin = new System.Windows.Forms.Padding(-1, 3, 0, 2);
+            this.plotValueLabel.Name = "plotValueLabel";
+            resources.ApplyResources(this.plotValueLabel, "plotValueLabel");
+            // 
             // RegionEditForm
             // 
             resources.ApplyResources(this, "$this");
@@ -86,10 +93,10 @@ namespace Map2CivilizationView
             this.Name = "RegionEditForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.RegionEditForm_FormClosing);
-            this.statusStrip.ResumeLayout(false);
-            this.statusStrip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).EndInit();
             this.splitContainer.ResumeLayout(false);
+            this.statusStrip.ResumeLayout(false);
+            this.statusStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

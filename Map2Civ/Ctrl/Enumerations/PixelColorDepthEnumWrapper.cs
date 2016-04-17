@@ -79,7 +79,7 @@ namespace Map2CivilizationCtrl.Enumerations
             }
         }
 
-        override protected internal bool GetEnumSpecificDefaultStatus(Enum value)
+        override protected bool GetEnumSpecificDefaultStatus(Enum value)
         {
             OperatingSystem os = Environment.OSVersion;
 
@@ -130,7 +130,7 @@ namespace Map2CivilizationCtrl.Enumerations
         }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:Validate arguments of public methods", MessageId = "0")]
-        override protected internal string GetEnumSpecificDescription(Enum value)
+        override protected string GetEnumSpecificDescription(Enum value)
         {
             switch ((PixelColorDepth)value)
             {
@@ -164,7 +164,7 @@ namespace Map2CivilizationCtrl.Enumerations
             }
         }
 
-        override protected internal bool GetEnumSpecificEnabledStatus(Enum value)
+        override protected bool GetEnumSpecificEnabledStatus(Enum value)
         {
             OperatingSystem os = Environment.OSVersion;
 

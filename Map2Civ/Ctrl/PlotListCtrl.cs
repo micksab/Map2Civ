@@ -25,7 +25,7 @@ using System.Collections.Generic;
 
 namespace Map2CivilizationCtrl
 {
-    internal static class PlotCollectionCtrl
+    internal static class PlotListCtrl
     {
         public static string GetDominantColorHex(PlotId plotID)
         {
@@ -36,7 +36,7 @@ namespace Map2CivilizationCtrl
         public static void UpdatePlotPlotTerrain(PlotId plotID,
             TerrainTypeEnumWrapper.TerrainType descriptor, Boolean IsLocked)
         {
-            Plot plot = PlotCollectionCtrl.getPlot(plotID);
+            Plot plot = PlotListCtrl.getPlot(plotID);
             plot.UpdatePlot(descriptor, IsLocked);
 
             List<PlotId> singleElementPlotList = new List<PlotId>();
@@ -48,7 +48,7 @@ namespace Map2CivilizationCtrl
         public static void ResetManuallyLockedPlot(PlotId plotID)
         {
             string dominantColor = GetDominantColorHex(plotID);
-            TerrainTypeEnumWrapper.TerrainType terrain = DetectedColorCollectionCtrl.GetCombinedDescriptorByColorID(dominantColor);
+            TerrainTypeEnumWrapper.TerrainType terrain = DetectedColorListCtrl.GetCombinedDescriptorByColorID(dominantColor);
             UpdatePlotPlotTerrain(plotID, terrain, false);
         }
 

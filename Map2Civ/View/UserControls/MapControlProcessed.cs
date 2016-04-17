@@ -111,27 +111,27 @@ namespace Map2CivilizationView.UserControls
             {
                 if (e.KeyData == Map2Civilization.Properties.Settings.Default.KeyShrortcuts_AssignOcean)
                 {
-                    PlotCollectionCtrl.UpdatePlotPlotTerrain(CurrentPlotId, TerrainTypeEnumWrapper.TerrainType.Ocean, true);
+                    PlotListCtrl.UpdatePlotPlotTerrain(CurrentPlotId, TerrainTypeEnumWrapper.TerrainType.Ocean, true);
                 }
                 else if (e.KeyData == Map2Civilization.Properties.Settings.Default.KeyShrortcuts_AssignCoast)
                 {
-                    PlotCollectionCtrl.UpdatePlotPlotTerrain(CurrentPlotId, TerrainTypeEnumWrapper.TerrainType.Coast, true);
+                    PlotListCtrl.UpdatePlotPlotTerrain(CurrentPlotId, TerrainTypeEnumWrapper.TerrainType.Coast, true);
                 }
                 else if (e.KeyData == Map2Civilization.Properties.Settings.Default.KeyShrortcuts_AssignFlat)
                 {
-                    PlotCollectionCtrl.UpdatePlotPlotTerrain(CurrentPlotId, TerrainTypeEnumWrapper.TerrainType.Flat, true);
+                    PlotListCtrl.UpdatePlotPlotTerrain(CurrentPlotId, TerrainTypeEnumWrapper.TerrainType.Flat, true);
                 }
                 else if (e.KeyData == Map2Civilization.Properties.Settings.Default.KeyShrortcuts_AssignHill)
                 {
-                    PlotCollectionCtrl.UpdatePlotPlotTerrain(CurrentPlotId, TerrainTypeEnumWrapper.TerrainType.Hills, true);
+                    PlotListCtrl.UpdatePlotPlotTerrain(CurrentPlotId, TerrainTypeEnumWrapper.TerrainType.Hills, true);
                 }
                 else if (e.KeyData == Map2Civilization.Properties.Settings.Default.KeyShrortcuts_AssignMountain)
                 {
-                    PlotCollectionCtrl.UpdatePlotPlotTerrain(CurrentPlotId, TerrainTypeEnumWrapper.TerrainType.Mountains, true);
+                    PlotListCtrl.UpdatePlotPlotTerrain(CurrentPlotId, TerrainTypeEnumWrapper.TerrainType.Mountains, true);
                 }
                 else if (e.KeyData == Map2Civilization.Properties.Settings.Default.KeyShrortcuts_RepealAssignment)
                 {
-                    PlotCollectionCtrl.ResetManuallyLockedPlot(CurrentPlotId);
+                    PlotListCtrl.ResetManuallyLockedPlot(CurrentPlotId);
                 }
             }
         }
@@ -146,7 +146,7 @@ namespace Map2CivilizationView.UserControls
 
         private void Menu_ColorEditEvent(object sender, EventArgs e)
         {
-            string dominantColorHex = PlotCollectionCtrl.GetDominantColorHex(CurrentPlotId);
+            string dominantColorHex = PlotListCtrl.GetDominantColorHex(CurrentPlotId);
             RegisteredListenersCtrl.DetectedColorsGridSetSelectedColor(dominantColorHex);
         }
 
@@ -156,12 +156,12 @@ namespace Map2CivilizationView.UserControls
                 e.SourceMenuValue == TerrainTypeEnumWrapper.TerrainType.Flat || e.SourceMenuValue == TerrainTypeEnumWrapper.TerrainType.Hills ||
                 e.SourceMenuValue == TerrainTypeEnumWrapper.TerrainType.Mountains)
             {
-                PlotCollectionCtrl.UpdatePlotPlotTerrain(CurrentPlotId, e.SourceMenuValue, true);
+                PlotListCtrl.UpdatePlotPlotTerrain(CurrentPlotId, e.SourceMenuValue, true);
             }
 
             if (e.SourceMenuValue == TerrainTypeEnumWrapper.TerrainType.NotDefined)
             {
-                PlotCollectionCtrl.ResetManuallyLockedPlot(CurrentPlotId);
+                PlotListCtrl.ResetManuallyLockedPlot(CurrentPlotId);
             }
         }
 

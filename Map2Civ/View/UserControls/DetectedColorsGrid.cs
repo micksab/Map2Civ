@@ -57,7 +57,7 @@ namespace Map2CivilizationView.UserControls
                 TerrainTypeEnumWrapper.TerrainType displayedValue = (TerrainTypeEnumWrapper.TerrainType)tempRow.Cells[settingColumn.Name].Value;
 
                 TerrainTypeEnumWrapper.TerrainType storedValue =
-                    DetectedColorCollectionCtrl.GetCombinedDescriptorByColorID(id);
+                    DetectedColorListCtrl.GetCombinedDescriptorByColorID(id);
 
                 if (displayedValue != storedValue)
                 {
@@ -76,7 +76,7 @@ namespace Map2CivilizationView.UserControls
             gridView.Update();
             gridView.Refresh();
 
-            detectedColors = DetectedColorCollectionCtrl.GetDetectedColorIDsArray();
+            detectedColors = DetectedColorListCtrl.GetDetectedColorIDsArray();
 
             foreach (string colorID in detectedColors)
             {
@@ -84,7 +84,7 @@ namespace Map2CivilizationView.UserControls
                 string idToAdd = colorID;
 
                 TerrainTypeEnumWrapper.TerrainType selectedSettingToAdd =
-                    DetectedColorCollectionCtrl.GetCombinedDescriptorByColorID(idToAdd);
+                    DetectedColorListCtrl.GetCombinedDescriptorByColorID(idToAdd);
 
                 int newRowIndex = gridView.Rows.Add(bmpToAdd, idToAdd, selectedSettingToAdd);
 
@@ -107,7 +107,7 @@ namespace Map2CivilizationView.UserControls
                 TerrainTypeEnumWrapper.TerrainType newValue =
                     (TerrainTypeEnumWrapper.TerrainType)gridView.Rows[e.RowIndex].Cells[settingColumn.Name].Value;
 
-                DetectedColorCollectionCtrl.UpdateDetectedColorsAndRefreshProcessedMap(new string[] { colorId }, newValue);
+                DetectedColorListCtrl.UpdateDetectedColorsAndRefreshProcessedMap(new string[] { colorId }, newValue);
 
                 evaluateCompleteness(e.RowIndex);
             }
@@ -118,7 +118,7 @@ namespace Map2CivilizationView.UserControls
             string id = (string)gridView.Rows[rownum].Cells[idColumn.Name].Value;
 
             TerrainTypeEnumWrapper.TerrainType descriptor =
-            DetectedColorCollectionCtrl.GetCombinedDescriptorByColorID(id);
+            DetectedColorListCtrl.GetCombinedDescriptorByColorID(id);
 
             if (descriptor == TerrainTypeEnumWrapper.TerrainType.NotDefined)
             {
@@ -149,7 +149,7 @@ namespace Map2CivilizationView.UserControls
                 foreach (DataGridViewRow tempRow in selectedRows)
                 {
                     List<PlotId> toAdd =
-                        DetectedColorCollectionCtrl.GetDetectedColorPlotCoordinates((string)tempRow.Cells[idColumn.Name].Value);
+                        DetectedColorListCtrl.GetDetectedColorPlotCoordinates((string)tempRow.Cells[idColumn.Name].Value);
 
                     plotIdList.AddRange(toAdd);
                 }

@@ -72,7 +72,7 @@ namespace Map2CivilizationCtrl.Enumerations
         }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:Validate arguments of public methods", MessageId = "0")]
-        override protected internal string GetEnumSpecificDescription(System.Enum value)
+        override protected string GetEnumSpecificDescription(System.Enum value)
         {
             switch ((MapDataSource)value)
             {
@@ -89,7 +89,7 @@ namespace Map2CivilizationCtrl.Enumerations
         }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:Validate arguments of public methods", MessageId = "0")]
-        override protected internal bool GetEnumSpecificEnabledStatus(System.Enum value)
+        override protected bool GetEnumSpecificEnabledStatus(System.Enum value)
         {
             switch ((MapDataSource)value)
             {
@@ -106,7 +106,7 @@ namespace Map2CivilizationCtrl.Enumerations
         }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:Validate arguments of public methods", MessageId = "0")]
-        override protected internal bool GetEnumSpecificDefaultStatus(System.Enum value)
+        override protected bool GetEnumSpecificDefaultStatus(System.Enum value)
         {
             switch ((MapDataSource)value)
             {

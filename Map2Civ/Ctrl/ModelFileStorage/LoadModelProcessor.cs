@@ -17,6 +17,7 @@
 /************************************************************************************/
 
 
+using Map2Civilization.Ctrl;
 using Map2Civilization.Properties;
 using Map2CivilizationCtrl.Enumerations;
 using Map2CivilizationCtrl.JsonAdapters;
@@ -65,13 +66,25 @@ namespace Map2CivilizationCtrl.ModelFileStorage
             jsonDeserializeStopWatch.Start();
             DataModelJsonAdapter loadModelAdapter;
             JsonSerializer deserializer = new JsonSerializer();
-            using (StreamReader rd = new StreamReader(fullFilePath))
+            string jsonString = GZipCompression.DecompressModelFile(fullFilePath);
+
+            using (StringReader rd = new StringReader(jsonString))
             using (JsonReader jrd = new JsonTextReader(rd))
             {
                 loadModelAdapter = deserializer.Deserialize<DataModelJsonAdapter>(jrd);
             }
             jsonDeserializeStopWatch.Stop();
             Console.WriteLine("Read json file in {0} millis", jsonDeserializeStopWatch.ElapsedMilliseconds);
+
+
+            //using (StreamReader rd = new StreamReader(fullFilePath))
+            //using (JsonReader jrd = new JsonTextReader(rd))
+            //{
+            //    loadModelAdapter = deserializer.Deserialize<DataModelJsonAdapter>(jrd);
+            //}
+            //jsonDeserializeStopWatch.Stop();
+            //Console.WriteLine("Read json file in {0} millis", jsonDeserializeStopWatch.ElapsedMilliseconds);
+
 
             decimal progressMaxValue = 2 + loadModelAdapter.DetectedColorArray.Length +
                 loadModelAdapter.ReliefPlotArray.Length + loadModelAdapter.GeoDataPlotArray.Length;

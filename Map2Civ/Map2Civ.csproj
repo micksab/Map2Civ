@@ -85,6 +85,7 @@
     <Compile Include="Ctrl\Enumerations\ProcessedMapControlModeEnumWrapper.cs" />
     <Compile Include="Ctrl\Enumerations\TerrainTypeEnumWrapper.cs" />
     <Compile Include="Ctrl\DataStructure\MapDimension.cs" />
+    <Compile Include="Ctrl\GZipCompression.cs" />
     <Compile Include="Ctrl\JsonAdapters\DetectedColorJsonAdapter.cs" />
     <Compile Include="Ctrl\JsonAdapters\MapDimensionJsonAdapter.cs" />
     <Compile Include="Ctrl\JsonAdapters\PlotGeoDataJsonAdapter.cs" />
@@ -102,13 +103,13 @@
     <Compile Include="Ctrl\VariousUtilityMethods.cs" />
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Ctrl\BitmapOperationsCtrl.cs" />
-    <Compile Include="Ctrl\DetectedColorCollectionCtrl.cs" />
+    <Compile Include="Ctrl\DetectedColorListCtrl.cs" />
     <Compile Include="Ctrl\Listener\IUiListenerDetectedColorsCounter.cs" />
     <Compile Include="Ctrl\Listener\IUiListenerProgress.cs" />
     <Compile Include="Ctrl\Listener\UIListenersRegister.cs" />
     <Compile Include="Ctrl\ModelCtrl.cs" />
     <Compile Include="Ctrl\RegisteredListenersCtrl.cs" />
-    <Compile Include="Ctrl\PlotCollectionCtrl.cs" />
+    <Compile Include="Ctrl\PlotListCtrl.cs" />
     <Compile Include="Ctrl\JsonAdapters\DataModelJsonAdapter.cs" />
     <Compile Include="Model\PlotGeoData.cs" />
     <Compile Include="Model\PlotReliefMap.cs" />

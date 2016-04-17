@@ -17,6 +17,7 @@
 /************************************************************************************/
 
 
+using Map2Civilization.Ctrl;
 using Map2Civilization.Properties;
 using Map2CivilizationCtrl.JsonAdapters;
 using Map2CivilizationView;
@@ -67,27 +68,25 @@ namespace Map2CivilizationCtrl.ModelFileStorage
             DataModelJsonAdapter modelAdapter = new DataModelJsonAdapter(ModelCtrl.GetDataModel());
             JsonSerializer serializer = new JsonSerializer();
 
-            using (StreamWriter sw = new StreamWriter(fullFilePath))
-            using (JsonWriter writer = new JsonTextWriter(sw))
+            //using (StreamWriter sw = new StreamWriter(fullFilePath))
+            //using (JsonWriter writer = new JsonTextWriter(sw))
+            //{
+            //    serializer.Serialize(writer, modelAdapter);
+            //}
+
+            using (MemoryStream ms = new MemoryStream())
+            using (TextWriter tr = new StreamWriter(ms))
+            using (JsonWriter writer = new JsonTextWriter(tr))
             {
                 serializer.Serialize(writer, modelAdapter);
+                writer.Flush();
+                GZipCompression.CompressModelFile(ms, fullFilePath);
             }
 
             jsonSerializeStopWatch.Stop();
             Console.WriteLine("Created json file in {0} millis", jsonSerializeStopWatch.ElapsedMilliseconds);
 
-            //Stopwatch jsonDeserializeStopWatch = new Stopwatch();
-            //jsonDeserializeStopWatch.Start();
-            //DataModelJsonAdapter model2;
-            //JsonSerializer deserializer = new JsonSerializer();
-            //using (StreamReader rd = new StreamReader(@"C:\MyDocuments\GeoMap2Civ5Map\Map2Civ\Map2Civ\bin\Debug\json.txt"))
-            //using (JsonReader jrd = new JsonTextReader(rd))
-            //{
-            //     model2 = deserializer.Deserialize<DataModelJsonAdapter>(jrd);
-            //    //model2.ReliefMapSettings.OriginalMapBitmap.Save(@"C:\MyDocuments\GeoMap2Civ5Map\Map2Civ\Map2Civ\bin\Debug\json.bmp");
-            //}
-            //jsonDeserializeStopWatch.Stop();
-            //Console.WriteLine("Read json file in {0} millis", jsonSerializeStopWatch.ElapsedMilliseconds);
+           
 
             _saveBackgroundWorker.ReportProgress(100);
         }
