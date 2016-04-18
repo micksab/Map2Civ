@@ -95,5 +95,8 @@
     <Setting Name="KeyShrortcuts_RepealAssignment" Type="System.Windows.Forms.Keys" Scope="User">
       <Value Profile="(Default)">X</Value>
     </Setting>
+    <Setting Name="RegionEditor_AutoCenterSelectedPlot" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

@@ -748,6 +748,15 @@ namespace Map2Civilization.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Auto-Center on selected plot.
+        /// </summary>
+        internal static string Str_RegionEditForm_AutoCenterBox {
+            get {
+                return ResourceManager.GetString("Str_RegionEditForm_AutoCenterBox", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Error while saving model..
         /// </summary>
         internal static string Str_SaveModelProcessor_SavedError {

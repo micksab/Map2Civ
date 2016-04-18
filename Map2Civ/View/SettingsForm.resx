@@ -180,117 +180,6 @@
   <data name="applyButton.Text" xml:space="preserve">
     <value>Apply Changes</value>
   </data>
-  <data name="generalTabPage.Text" xml:space="preserve">
-    <value>General</value>
-  </data>
-  <data name="labelKeyShrortcuts_RepealAssignment.Text" xml:space="preserve">
-    <value>Repeal Elevation Assignment</value>
-  </data>
-  <data name="labelKeyShrortcuts_OpenModel.Text" xml:space="preserve">
-    <value>Open Existing Model</value>
-  </data>
-  <data name="labelKeyShrortcuts_SaveAs.Text" xml:space="preserve">
-    <value>Save As</value>
-  </data>
-  <data name="labelKeyShrortcuts_Save.Text" xml:space="preserve">
-    <value>Save</value>
-  </data>
-  <data name="labelKeyShrortcuts_NewModel.Text" xml:space="preserve">
-    <value>New Model</value>
-  </data>
-  <data name="labelKeyShrortcuts_ExportToCivMap.Text" xml:space="preserve">
-    <value>Export To Civilization Map</value>
-  </data>
-  <data name="labelKeyShrortcuts_EditRegion.Text" xml:space="preserve">
-    <value>Edit Region</value>
-  </data>
-  <data name="labelKeyShrortcuts_EditPlotData.Text" xml:space="preserve">
-    <value>Edit Plot Data</value>
-  </data>
-  <data name="labelKeyShrortcuts_AssignOcean.Text" xml:space="preserve">
-    <value>Assign 'Ocean' Elevation</value>
-  </data>
-  <data name="labelKeyShrortcuts_AssignCoast.Text" xml:space="preserve">
-    <value>Assign 'Coast' Elevation</value>
-  </data>
-  <data name="labelKeyShrortcuts_AssignFlat.Text" xml:space="preserve">
-    <value>Assign 'Flat' Elevation</value>
-  </data>
-  <data name="labelKeyShrortcuts_AssignHill.Text" xml:space="preserve">
-    <value>Assign 'Hill' Elevation</value>
-  </data>
-  <data name="labelKeyShrortcuts_AssignMountain.Text" xml:space="preserve">
-    <value>Assign 'Mountain' Elevation</value>
-  </data>
-  <data name="keyboardShortcutsTabPage.Text" xml:space="preserve">
-    <value>Keyboard Shortcuts</value>
-  </data>
-  <data name="mapDisplayTabPage.Text" xml:space="preserve">
-    <value>Map Display</value>
-  </data>
-  <data name="uiCultureLabel.Text" xml:space="preserve">
-    <value>Language</value>
-  </data>
-  <data name="revertButton.Text" xml:space="preserve">
-    <value>Revert To Default Settings</value>
-  </data>
-  <data name="gridGroup.Text" xml:space="preserve">
-    <value>Grid</value>
-  </data>
-  <data name="processedMapUnassignedGridColorLabel.Text" xml:space="preserve">
-    <value>Processed Map Unassigned Grid Color</value>
-  </data>
-  <data name="originalMapGridLabel.Text" xml:space="preserve">
-    <value>Map (Source) Grid Color</value>
-  </data>
-  <data name="plotWidthGroup.Text" xml:space="preserve">
-    <value>Plot Width</value>
-  </data>
-  <data name="rhombusPlotWidthLabel.Text" xml:space="preserve">
-    <value>Rhombus Plot Width (Pixels)</value>
-  </data>
-  <data name="squarePlotWidthLabel.Text" xml:space="preserve">
-    <value>Square Plot Width (Pixels)</value>
-  </data>
-  <data name="hexPlotWidthLabel.Text" xml:space="preserve">
-    <value>Hexagonal (Pointy Top) Plot Width (Pixels)</value>
-  </data>
-  <data name="terrainGroup.Text" xml:space="preserve">
-    <value>Terrain Colors</value>
-  </data>
-  <data name="mountainPlotLabel.Text" xml:space="preserve">
-    <value>Mountains Plot Color</value>
-  </data>
-  <data name="hillPlotLabel.Text" xml:space="preserve">
-    <value>Hills Plot Color</value>
-  </data>
-  <data name="flatPlotLabel.Text" xml:space="preserve">
-    <value>Flat Plot Color</value>
-  </data>
-  <data name="coastPlotLabel.Text" xml:space="preserve">
-    <value>Coast Plot Color</value>
-  </data>
-  <data name="ocealPlotLabel.Text" xml:space="preserve">
-    <value>Ocean Plot Color</value>
-  </data>
-  <data name="zoomGroup.Text" xml:space="preserve">
-    <value>Zoom</value>
-  </data>
-  <data name="zoomStepLabel.Text" xml:space="preserve">
-    <value>Zoom Step (%)</value>
-  </data>
-  <data name="maximumZoomLabel.Text" xml:space="preserve">
-    <value>Maximum Zoom Value (%)</value>
-  </data>
-  <data name="minZoomLabel.Text" xml:space="preserve">
-    <value>Minimum Zoom Value (%)</value>
-  </data>
-  <data name="highlightedPlotGridWidthLabel.Text" xml:space="preserve">
-    <value>Highlighted Plot Grid Width (Pixels)</value>
-  </data>
-  <data name="highlightedPlotGridColorLabel.Text" xml:space="preserve">
-    <value>Highlighted Plot Grid Color</value>
-  </data>
   <data name="&gt;&gt;applyButton.Name" xml:space="preserve">
     <value>applyButton</value>
   </data>
@@ -336,6 +225,162 @@
   <data name="generalTabPage.AutoScroll" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="generalTableLayoutPanel.ColumnCount" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="uiCultureLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="uiCultureLabel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="uiCultureLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="uiCultureLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 33</value>
+  </data>
+  <data name="uiCultureLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="uiCultureLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 24</value>
+  </data>
+  <data name="uiCultureLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="uiCultureLabel.Text" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="uiCultureLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;uiCultureLabel.Name" xml:space="preserve">
+    <value>uiCultureLabel</value>
+  </data>
+  <data name="&gt;&gt;uiCultureLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;uiCultureLabel.Parent" xml:space="preserve">
+    <value>generalTableLayoutPanel</value>
+  </data>
+  <data name="&gt;&gt;uiCultureLabel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="uiLanguageComboBox.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="uiLanguageComboBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>103, 33</value>
+  </data>
+  <data name="uiLanguageComboBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>244, 21</value>
+  </data>
+  <data name="uiLanguageComboBox.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;uiLanguageComboBox.Name" xml:space="preserve">
+    <value>uiLanguageComboBox</value>
+  </data>
+  <data name="&gt;&gt;uiLanguageComboBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;uiLanguageComboBox.Parent" xml:space="preserve">
+    <value>generalTableLayoutPanel</value>
+  </data>
+  <data name="&gt;&gt;uiLanguageComboBox.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="revertButton.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="revertButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
+  </data>
+  <data name="revertButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="revertButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>353, 363</value>
+  </data>
+  <data name="revertButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>400, 24</value>
+  </data>
+  <data name="revertButton.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="revertButton.Text" xml:space="preserve">
+    <value>Revert To Default Settings</value>
+  </data>
+  <data name="keyboardShortcutsTabPage.Text" xml:space="preserve">
+    <value>Keyboard Shortcuts</value>
+  </data>
+  <data name="labelKeyShrortcuts_AssignMountain.Text" xml:space="preserve">
+    <value>Assign 'Mountain' Elevation</value>
+  </data>
+  <data name="labelKeyShrortcuts_AssignHill.Text" xml:space="preserve">
+    <value>Assign 'Hill' Elevation</value>
+  </data>
+  <data name="labelKeyShrortcuts_AssignFlat.Text" xml:space="preserve">
+    <value>Assign 'Flat' Elevation</value>
+  </data>
+  <data name="labelKeyShrortcuts_AssignCoast.Text" xml:space="preserve">
+    <value>Assign 'Coast' Elevation</value>
+  </data>
+  <data name="labelKeyShrortcuts_AssignOcean.Text" xml:space="preserve">
+    <value>Assign 'Ocean' Elevation</value>
+  </data>
+  <data name="labelKeyShrortcuts_EditPlotData.Text" xml:space="preserve">
+    <value>Edit Plot Data</value>
+  </data>
+  <data name="labelKeyShrortcuts_EditRegion.Text" xml:space="preserve">
+    <value>Edit Region</value>
+  </data>
+  <data name="labelKeyShrortcuts_ExportToCivMap.Text" xml:space="preserve">
+    <value>Export To Civilization Map</value>
+  </data>
+  <data name="labelKeyShrortcuts_NewModel.Text" xml:space="preserve">
+    <value>New Model</value>
+  </data>
+  <data name="labelKeyShrortcuts_Save.Text" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="labelKeyShrortcuts_SaveAs.Text" xml:space="preserve">
+    <value>Save As</value>
+  </data>
+  <data name="labelKeyShrortcuts_OpenModel.Text" xml:space="preserve">
+    <value>Open Existing Model</value>
+  </data>
+  <data name="labelKeyShrortcuts_RepealAssignment.Text" xml:space="preserve">
+    <value>Repeal Elevation Assignment</value>
+  </data>
+  <data name="&gt;&gt;revertButton.Name" xml:space="preserve">
+    <value>revertButton</value>
+  </data>
+  <data name="&gt;&gt;revertButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;revertButton.Parent" xml:space="preserve">
+    <value>generalTableLayoutPanel</value>
+  </data>
+  <data name="&gt;&gt;revertButton.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="generalTableLayoutPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="generalTableLayoutPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="generalTableLayoutPanel.RowCount" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="generalTableLayoutPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>756, 416</value>
+  </data>
+  <data name="generalTableLayoutPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
   <data name="&gt;&gt;generalTableLayoutPanel.Name" xml:space="preserve">
     <value>generalTableLayoutPanel</value>
   </data>
@@ -362,6 +407,9 @@
   </data>
   <data name="generalTabPage.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
+  </data>
+  <data name="generalTabPage.Text" xml:space="preserve">
+    <value>General</value>
   </data>
   <data name="&gt;&gt;generalTabPage.Name" xml:space="preserve">
     <value>generalTabPage</value>
@@ -391,7 +439,7 @@
     <value>selectorKeyShrortcuts_RepealAssignment</value>
   </data>
   <data name="&gt;&gt;selectorKeyShrortcuts_RepealAssignment.Type" xml:space="preserve">
-    <value>Map2CivilizationView.UserControls.KeyboardShortcutSettingSelector, Map2Civilization, Version=0.9.0.1, Culture=neutral, PublicKeyToken=null</value>
+    <value>Map2CivilizationView.UserControls.KeyboardShortcutSettingSelector, Map2Civilization, Version=0.9.0.5, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;selectorKeyShrortcuts_RepealAssignment.Parent" xml:space="preserve">
     <value>keyboardShortcutsTableLayoutPanel</value>
@@ -448,7 +496,7 @@
     <value>selectorKeyShrortcuts_OpenModel</value>
   </data>
   <data name="&gt;&gt;selectorKeyShrortcuts_OpenModel.Type" xml:space="preserve">
-    <value>Map2CivilizationView.UserControls.KeyboardShortcutSettingSelector, Map2Civilization, Version=0.9.0.1, Culture=neutral, PublicKeyToken=null</value>
+    <value>Map2CivilizationView.UserControls.KeyboardShortcutSettingSelector, Map2Civilization, Version=0.9.0.5, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;selectorKeyShrortcuts_OpenModel.Parent" xml:space="preserve">
     <value>keyboardShortcutsTableLayoutPanel</value>
@@ -901,7 +949,7 @@
     <value>selectorKeyShrortcuts_SaveAs</value>
   </data>
   <data name="&gt;&gt;selectorKeyShrortcuts_SaveAs.Type" xml:space="preserve">
-    <value>Map2CivilizationView.UserControls.KeyboardShortcutSettingSelector, Map2Civilization, Version=0.9.0.1, Culture=neutral, PublicKeyToken=null</value>
+    <value>Map2CivilizationView.UserControls.KeyboardShortcutSettingSelector, Map2Civilization, Version=0.9.0.5, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;selectorKeyShrortcuts_SaveAs.Parent" xml:space="preserve">
     <value>keyboardShortcutsTableLayoutPanel</value>
@@ -922,7 +970,7 @@
     <value>selectorKeyShrortcuts_Save</value>
   </data>
   <data name="&gt;&gt;selectorKeyShrortcuts_Save.Type" xml:space="preserve">
-    <value>Map2CivilizationView.UserControls.KeyboardShortcutSettingSelector, Map2Civilization, Version=0.9.0.1, Culture=neutral, PublicKeyToken=null</value>
+    <value>Map2CivilizationView.UserControls.KeyboardShortcutSettingSelector, Map2Civilization, Version=0.9.0.5, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;selectorKeyShrortcuts_Save.Parent" xml:space="preserve">
     <value>keyboardShortcutsTableLayoutPanel</value>
@@ -943,7 +991,7 @@
     <value>selectorKeyShrortcuts_NewModel</value>
   </data>
   <data name="&gt;&gt;selectorKeyShrortcuts_NewModel.Type" xml:space="preserve">
-    <value>Map2CivilizationView.UserControls.KeyboardShortcutSettingSelector, Map2Civilization, Version=0.9.0.1, Culture=neutral, PublicKeyToken=null</value>
+    <value>Map2CivilizationView.UserControls.KeyboardShortcutSettingSelector, Map2Civilization, Version=0.9.0.5, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;selectorKeyShrortcuts_NewModel.Parent" xml:space="preserve">
     <value>keyboardShortcutsTableLayoutPanel</value>
@@ -964,7 +1012,7 @@
     <value>selectorKeyShrortcuts_ExportToCivMap</value>
   </data>
   <data name="&gt;&gt;selectorKeyShrortcuts_ExportToCivMap.Type" xml:space="preserve">
-    <value>Map2CivilizationView.UserControls.KeyboardShortcutSettingSelector, Map2Civilization, Version=0.9.0.1, Culture=neutral, PublicKeyToken=null</value>
+    <value>Map2CivilizationView.UserControls.KeyboardShortcutSettingSelector, Map2Civilization, Version=0.9.0.5, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;selectorKeyShrortcuts_ExportToCivMap.Parent" xml:space="preserve">
     <value>keyboardShortcutsTableLayoutPanel</value>
@@ -985,7 +1033,7 @@
     <value>selectorKeyShrortcuts_EditRegion</value>
   </data>
   <data name="&gt;&gt;selectorKeyShrortcuts_EditRegion.Type" xml:space="preserve">
-    <value>Map2CivilizationView.UserControls.KeyboardShortcutSettingSelector, Map2Civilization, Version=0.9.0.1, Culture=neutral, PublicKeyToken=null</value>
+    <value>Map2CivilizationView.UserControls.KeyboardShortcutSettingSelector, Map2Civilization, Version=0.9.0.5, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;selectorKeyShrortcuts_EditRegion.Parent" xml:space="preserve">
     <value>keyboardShortcutsTableLayoutPanel</value>
@@ -1006,7 +1054,7 @@
     <value>selectorKeyShrortcuts_EditPlotData</value>
   </data>
   <data name="&gt;&gt;selectorKeyShrortcuts_EditPlotData.Type" xml:space="preserve">
-    <value>Map2CivilizationView.UserControls.KeyboardShortcutSettingSelector, Map2Civilization, Version=0.9.0.1, Culture=neutral, PublicKeyToken=null</value>
+    <value>Map2CivilizationView.UserControls.KeyboardShortcutSettingSelector, Map2Civilization, Version=0.9.0.5, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;selectorKeyShrortcuts_EditPlotData.Parent" xml:space="preserve">
     <value>keyboardShortcutsTableLayoutPanel</value>
@@ -1027,7 +1075,7 @@
     <value>selectorKeyShrortcuts_AssignOcean</value>
   </data>
   <data name="&gt;&gt;selectorKeyShrortcuts_AssignOcean.Type" xml:space="preserve">
-    <value>Map2CivilizationView.UserControls.KeyboardShortcutSettingSelector, Map2Civilization, Version=0.9.0.1, Culture=neutral, PublicKeyToken=null</value>
+    <value>Map2CivilizationView.UserControls.KeyboardShortcutSettingSelector, Map2Civilization, Version=0.9.0.5, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;selectorKeyShrortcuts_AssignOcean.Parent" xml:space="preserve">
     <value>keyboardShortcutsTableLayoutPanel</value>
@@ -1048,7 +1096,7 @@
     <value>selectorKeyShrortcuts_AssignCoast</value>
   </data>
   <data name="&gt;&gt;selectorKeyShrortcuts_AssignCoast.Type" xml:space="preserve">
-    <value>Map2CivilizationView.UserControls.KeyboardShortcutSettingSelector, Map2Civilization, Version=0.9.0.1, Culture=neutral, PublicKeyToken=null</value>
+    <value>Map2CivilizationView.UserControls.KeyboardShortcutSettingSelector, Map2Civilization, Version=0.9.0.5, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;selectorKeyShrortcuts_AssignCoast.Parent" xml:space="preserve">
     <value>keyboardShortcutsTableLayoutPanel</value>
@@ -1069,7 +1117,7 @@
     <value>selectorKeyShrortcuts_AssignFlat</value>
   </data>
   <data name="&gt;&gt;selectorKeyShrortcuts_AssignFlat.Type" xml:space="preserve">
-    <value>Map2CivilizationView.UserControls.KeyboardShortcutSettingSelector, Map2Civilization, Version=0.9.0.1, Culture=neutral, PublicKeyToken=null</value>
+    <value>Map2CivilizationView.UserControls.KeyboardShortcutSettingSelector, Map2Civilization, Version=0.9.0.5, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;selectorKeyShrortcuts_AssignFlat.Parent" xml:space="preserve">
     <value>keyboardShortcutsTableLayoutPanel</value>
@@ -1090,7 +1138,7 @@
     <value>selectorKeyShrortcuts_AssignHill</value>
   </data>
   <data name="&gt;&gt;selectorKeyShrortcuts_AssignHill.Type" xml:space="preserve">
-    <value>Map2CivilizationView.UserControls.KeyboardShortcutSettingSelector, Map2Civilization, Version=0.9.0.1, Culture=neutral, PublicKeyToken=null</value>
+    <value>Map2CivilizationView.UserControls.KeyboardShortcutSettingSelector, Map2Civilization, Version=0.9.0.5, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;selectorKeyShrortcuts_AssignHill.Parent" xml:space="preserve">
     <value>keyboardShortcutsTableLayoutPanel</value>
@@ -1111,7 +1159,7 @@
     <value>selectorKeyShrortcuts_AssignMountain</value>
   </data>
   <data name="&gt;&gt;selectorKeyShrortcuts_AssignMountain.Type" xml:space="preserve">
-    <value>Map2CivilizationView.UserControls.KeyboardShortcutSettingSelector, Map2Civilization, Version=0.9.0.1, Culture=neutral, PublicKeyToken=null</value>
+    <value>Map2CivilizationView.UserControls.KeyboardShortcutSettingSelector, Map2Civilization, Version=0.9.0.5, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;selectorKeyShrortcuts_AssignMountain.Parent" xml:space="preserve">
     <value>keyboardShortcutsTableLayoutPanel</value>
@@ -1173,6 +1221,324 @@
   <data name="&gt;&gt;keyboardShortcutsTabPage.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="autoCenterRegionEditFormCheckBox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="autoCenterRegionEditFormCheckBox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="autoCenterRegionEditFormCheckBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 19</value>
+  </data>
+  <data name="autoCenterRegionEditFormCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>160, 17</value>
+  </data>
+  <data name="autoCenterRegionEditFormCheckBox.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="autoCenterRegionEditFormCheckBox.Text" xml:space="preserve">
+    <value>Auto-Center on selected plot</value>
+  </data>
+  <data name="mapDisplayTabPage.Text" xml:space="preserve">
+    <value>Map Display</value>
+  </data>
+  <data name="zoomGroup.Text" xml:space="preserve">
+    <value>Zoom</value>
+  </data>
+  <data name="terrainGroup.Text" xml:space="preserve">
+    <value>Terrain Colors</value>
+  </data>
+  <data name="plotWidthGroup.Text" xml:space="preserve">
+    <value>Plot Width</value>
+  </data>
+  <data name="gridGroup.Text" xml:space="preserve">
+    <value>Grid</value>
+  </data>
+  <data name="regionEditGroupBox.Text" xml:space="preserve">
+    <value>Region Editor</value>
+  </data>
+  <data name="&gt;&gt;autoCenterRegionEditFormCheckBox.Name" xml:space="preserve">
+    <value>autoCenterRegionEditFormCheckBox</value>
+  </data>
+  <data name="&gt;&gt;autoCenterRegionEditFormCheckBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;autoCenterRegionEditFormCheckBox.Parent" xml:space="preserve">
+    <value>regionEditGroupBox</value>
+  </data>
+  <data name="&gt;&gt;autoCenterRegionEditFormCheckBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="regionEditGroupBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 345</value>
+  </data>
+  <data name="regionEditGroupBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>370, 52</value>
+  </data>
+  <data name="regionEditGroupBox.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;regionEditGroupBox.Name" xml:space="preserve">
+    <value>regionEditGroupBox</value>
+  </data>
+  <data name="&gt;&gt;regionEditGroupBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;regionEditGroupBox.Parent" xml:space="preserve">
+    <value>mapDisplayTabPage</value>
+  </data>
+  <data name="&gt;&gt;regionEditGroupBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="highlightedPlotGridWidthNumeric.Location" type="System.Drawing.Point, System.Drawing">
+    <value>175, 142</value>
+  </data>
+  <data name="highlightedPlotGridWidthNumeric.Size" type="System.Drawing.Size, System.Drawing">
+    <value>91, 20</value>
+  </data>
+  <data name="highlightedPlotGridWidthNumeric.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="&gt;&gt;highlightedPlotGridWidthNumeric.Name" xml:space="preserve">
+    <value>highlightedPlotGridWidthNumeric</value>
+  </data>
+  <data name="&gt;&gt;highlightedPlotGridWidthNumeric.Type" xml:space="preserve">
+    <value>Map2CivilizationView.UserControls.NumericSettingSelector, Map2Civilization, Version=0.9.0.5, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;highlightedPlotGridWidthNumeric.Parent" xml:space="preserve">
+    <value>gridGroup</value>
+  </data>
+  <data name="&gt;&gt;highlightedPlotGridWidthNumeric.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="highlightedPlotGridWidthLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="highlightedPlotGridWidthLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="highlightedPlotGridWidthLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 135</value>
+  </data>
+  <data name="highlightedPlotGridWidthLabel.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>155, 30</value>
+  </data>
+  <data name="highlightedPlotGridWidthLabel.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>155, 30</value>
+  </data>
+  <data name="highlightedPlotGridWidthLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>155, 30</value>
+  </data>
+  <data name="highlightedPlotGridWidthLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="highlightedPlotGridWidthLabel.Text" xml:space="preserve">
+    <value>Highlighted Plot Grid Width (Pixels)</value>
+  </data>
+  <data name="highlightedPlotGridWidthLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;highlightedPlotGridWidthLabel.Name" xml:space="preserve">
+    <value>highlightedPlotGridWidthLabel</value>
+  </data>
+  <data name="&gt;&gt;highlightedPlotGridWidthLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;highlightedPlotGridWidthLabel.Parent" xml:space="preserve">
+    <value>gridGroup</value>
+  </data>
+  <data name="&gt;&gt;highlightedPlotGridWidthLabel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="highlightedPlotGridColorLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="highlightedPlotGridColorLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="highlightedPlotGridColorLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 99</value>
+  </data>
+  <data name="highlightedPlotGridColorLabel.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>155, 30</value>
+  </data>
+  <data name="highlightedPlotGridColorLabel.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>155, 30</value>
+  </data>
+  <data name="highlightedPlotGridColorLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>155, 30</value>
+  </data>
+  <data name="highlightedPlotGridColorLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="highlightedPlotGridColorLabel.Text" xml:space="preserve">
+    <value>Highlighted Plot Grid Color</value>
+  </data>
+  <data name="highlightedPlotGridColorLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;highlightedPlotGridColorLabel.Name" xml:space="preserve">
+    <value>highlightedPlotGridColorLabel</value>
+  </data>
+  <data name="&gt;&gt;highlightedPlotGridColorLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;highlightedPlotGridColorLabel.Parent" xml:space="preserve">
+    <value>gridGroup</value>
+  </data>
+  <data name="&gt;&gt;highlightedPlotGridColorLabel.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="highlightedGridColorSelector.Location" type="System.Drawing.Point, System.Drawing">
+    <value>175, 101</value>
+  </data>
+  <data name="highlightedGridColorSelector.Size" type="System.Drawing.Size, System.Drawing">
+    <value>172, 28</value>
+  </data>
+  <data name="highlightedGridColorSelector.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;highlightedGridColorSelector.Name" xml:space="preserve">
+    <value>highlightedGridColorSelector</value>
+  </data>
+  <data name="&gt;&gt;highlightedGridColorSelector.Type" xml:space="preserve">
+    <value>Map2CivilizationView.UserControls.ColorSettingSelector, Map2Civilization, Version=0.9.0.5, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;highlightedGridColorSelector.Parent" xml:space="preserve">
+    <value>gridGroup</value>
+  </data>
+  <data name="&gt;&gt;highlightedGridColorSelector.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="processedMapUnassignedGridColorLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="processedMapUnassignedGridColorLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="processedMapUnassignedGridColorLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 60</value>
+  </data>
+  <data name="processedMapUnassignedGridColorLabel.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>155, 30</value>
+  </data>
+  <data name="processedMapUnassignedGridColorLabel.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>155, 30</value>
+  </data>
+  <data name="processedMapUnassignedGridColorLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>155, 30</value>
+  </data>
+  <data name="processedMapUnassignedGridColorLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="processedMapUnassignedGridColorLabel.Text" xml:space="preserve">
+    <value>Processed Map Unassigned Grid Color</value>
+  </data>
+  <data name="processedMapUnassignedGridColorLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;processedMapUnassignedGridColorLabel.Name" xml:space="preserve">
+    <value>processedMapUnassignedGridColorLabel</value>
+  </data>
+  <data name="&gt;&gt;processedMapUnassignedGridColorLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;processedMapUnassignedGridColorLabel.Parent" xml:space="preserve">
+    <value>gridGroup</value>
+  </data>
+  <data name="&gt;&gt;processedMapUnassignedGridColorLabel.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="processedMapUnassignedGridColorSelector.Location" type="System.Drawing.Point, System.Drawing">
+    <value>175, 60</value>
+  </data>
+  <data name="processedMapUnassignedGridColorSelector.Size" type="System.Drawing.Size, System.Drawing">
+    <value>172, 28</value>
+  </data>
+  <data name="processedMapUnassignedGridColorSelector.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="&gt;&gt;processedMapUnassignedGridColorSelector.Name" xml:space="preserve">
+    <value>processedMapUnassignedGridColorSelector</value>
+  </data>
+  <data name="&gt;&gt;processedMapUnassignedGridColorSelector.Type" xml:space="preserve">
+    <value>Map2CivilizationView.UserControls.ColorSettingSelector, Map2Civilization, Version=0.9.0.5, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;processedMapUnassignedGridColorSelector.Parent" xml:space="preserve">
+    <value>gridGroup</value>
+  </data>
+  <data name="&gt;&gt;processedMapUnassignedGridColorSelector.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="originalMapGridLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="originalMapGridLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="originalMapGridLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 18</value>
+  </data>
+  <data name="originalMapGridLabel.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>155, 30</value>
+  </data>
+  <data name="originalMapGridLabel.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>155, 30</value>
+  </data>
+  <data name="originalMapGridLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>155, 30</value>
+  </data>
+  <data name="originalMapGridLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="originalMapGridLabel.Text" xml:space="preserve">
+    <value>Map (Source) Grid Color</value>
+  </data>
+  <data name="originalMapGridLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;originalMapGridLabel.Name" xml:space="preserve">
+    <value>originalMapGridLabel</value>
+  </data>
+  <data name="&gt;&gt;originalMapGridLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;originalMapGridLabel.Parent" xml:space="preserve">
+    <value>gridGroup</value>
+  </data>
+  <data name="&gt;&gt;originalMapGridLabel.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="originalMapGridColorSelector.Location" type="System.Drawing.Point, System.Drawing">
+    <value>175, 21</value>
+  </data>
+  <data name="originalMapGridColorSelector.Size" type="System.Drawing.Size, System.Drawing">
+    <value>172, 28</value>
+  </data>
+  <data name="originalMapGridColorSelector.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="&gt;&gt;originalMapGridColorSelector.Name" xml:space="preserve">
+    <value>originalMapGridColorSelector</value>
+  </data>
+  <data name="&gt;&gt;originalMapGridColorSelector.Type" xml:space="preserve">
+    <value>Map2CivilizationView.UserControls.ColorSettingSelector, Map2Civilization, Version=0.9.0.5, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;originalMapGridColorSelector.Parent" xml:space="preserve">
+    <value>gridGroup</value>
+  </data>
+  <data name="&gt;&gt;originalMapGridColorSelector.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="gridGroup.Location" type="System.Drawing.Point, System.Drawing">
+    <value>384, 109</value>
+  </data>
+  <data name="gridGroup.Size" type="System.Drawing.Size, System.Drawing">
+    <value>370, 230</value>
+  </data>
+  <data name="gridGroup.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
   <data name="&gt;&gt;gridGroup.Name" xml:space="preserve">
     <value>gridGroup</value>
   </data>
@@ -1183,7 +1549,169 @@
     <value>mapDisplayTabPage</value>
   </data>
   <data name="&gt;&gt;gridGroup.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="rhombusPlotWidthNumeric.Location" type="System.Drawing.Point, System.Drawing">
+    <value>239, 67</value>
+  </data>
+  <data name="rhombusPlotWidthNumeric.Size" type="System.Drawing.Size, System.Drawing">
+    <value>91, 20</value>
+  </data>
+  <data name="rhombusPlotWidthNumeric.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;rhombusPlotWidthNumeric.Name" xml:space="preserve">
+    <value>rhombusPlotWidthNumeric</value>
+  </data>
+  <data name="&gt;&gt;rhombusPlotWidthNumeric.Type" xml:space="preserve">
+    <value>Map2CivilizationView.UserControls.NumericSettingSelector, Map2Civilization, Version=0.9.0.5, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;rhombusPlotWidthNumeric.Parent" xml:space="preserve">
+    <value>plotWidthGroup</value>
+  </data>
+  <data name="&gt;&gt;rhombusPlotWidthNumeric.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="squarePlotWidthNumeric.Location" type="System.Drawing.Point, System.Drawing">
+    <value>239, 43</value>
+  </data>
+  <data name="squarePlotWidthNumeric.Size" type="System.Drawing.Size, System.Drawing">
+    <value>91, 20</value>
+  </data>
+  <data name="squarePlotWidthNumeric.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;squarePlotWidthNumeric.Name" xml:space="preserve">
+    <value>squarePlotWidthNumeric</value>
+  </data>
+  <data name="&gt;&gt;squarePlotWidthNumeric.Type" xml:space="preserve">
+    <value>Map2CivilizationView.UserControls.NumericSettingSelector, Map2Civilization, Version=0.9.0.5, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;squarePlotWidthNumeric.Parent" xml:space="preserve">
+    <value>plotWidthGroup</value>
+  </data>
+  <data name="&gt;&gt;squarePlotWidthNumeric.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="hexPlotWidthNumeric.Location" type="System.Drawing.Point, System.Drawing">
+    <value>239, 20</value>
+  </data>
+  <data name="hexPlotWidthNumeric.Size" type="System.Drawing.Size, System.Drawing">
+    <value>91, 20</value>
+  </data>
+  <data name="hexPlotWidthNumeric.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;hexPlotWidthNumeric.Name" xml:space="preserve">
+    <value>hexPlotWidthNumeric</value>
+  </data>
+  <data name="&gt;&gt;hexPlotWidthNumeric.Type" xml:space="preserve">
+    <value>Map2CivilizationView.UserControls.NumericSettingSelector, Map2Civilization, Version=0.9.0.5, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;hexPlotWidthNumeric.Parent" xml:space="preserve">
+    <value>plotWidthGroup</value>
+  </data>
+  <data name="&gt;&gt;hexPlotWidthNumeric.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="rhombusPlotWidthLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="rhombusPlotWidthLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 64</value>
+  </data>
+  <data name="rhombusPlotWidthLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>212, 23</value>
+  </data>
+  <data name="rhombusPlotWidthLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="rhombusPlotWidthLabel.Text" xml:space="preserve">
+    <value>Rhombus Plot Width (Pixels)</value>
+  </data>
+  <data name="rhombusPlotWidthLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;rhombusPlotWidthLabel.Name" xml:space="preserve">
+    <value>rhombusPlotWidthLabel</value>
+  </data>
+  <data name="&gt;&gt;rhombusPlotWidthLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rhombusPlotWidthLabel.Parent" xml:space="preserve">
+    <value>plotWidthGroup</value>
+  </data>
+  <data name="&gt;&gt;rhombusPlotWidthLabel.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="squarePlotWidthLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="squarePlotWidthLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 40</value>
+  </data>
+  <data name="squarePlotWidthLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>212, 23</value>
+  </data>
+  <data name="squarePlotWidthLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="squarePlotWidthLabel.Text" xml:space="preserve">
+    <value>Square Plot Width (Pixels)</value>
+  </data>
+  <data name="squarePlotWidthLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;squarePlotWidthLabel.Name" xml:space="preserve">
+    <value>squarePlotWidthLabel</value>
+  </data>
+  <data name="&gt;&gt;squarePlotWidthLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;squarePlotWidthLabel.Parent" xml:space="preserve">
+    <value>plotWidthGroup</value>
+  </data>
+  <data name="&gt;&gt;squarePlotWidthLabel.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="hexPlotWidthLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="hexPlotWidthLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 17</value>
+  </data>
+  <data name="hexPlotWidthLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>212, 23</value>
+  </data>
+  <data name="hexPlotWidthLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="hexPlotWidthLabel.Text" xml:space="preserve">
+    <value>Hexagonal (Pointy Top) Plot Width (Pixels)</value>
+  </data>
+  <data name="hexPlotWidthLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;hexPlotWidthLabel.Name" xml:space="preserve">
+    <value>hexPlotWidthLabel</value>
+  </data>
+  <data name="&gt;&gt;hexPlotWidthLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;hexPlotWidthLabel.Parent" xml:space="preserve">
+    <value>plotWidthGroup</value>
+  </data>
+  <data name="&gt;&gt;hexPlotWidthLabel.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="plotWidthGroup.Location" type="System.Drawing.Point, System.Drawing">
+    <value>384, 3</value>
+  </data>
+  <data name="plotWidthGroup.Size" type="System.Drawing.Size, System.Drawing">
+    <value>370, 100</value>
+  </data>
+  <data name="plotWidthGroup.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
   </data>
   <data name="&gt;&gt;plotWidthGroup.Name" xml:space="preserve">
     <value>plotWidthGroup</value>
@@ -1195,7 +1723,316 @@
     <value>mapDisplayTabPage</value>
   </data>
   <data name="&gt;&gt;plotWidthGroup.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="mountainColorSelector.Location" type="System.Drawing.Point, System.Drawing">
+    <value>177, 181</value>
+  </data>
+  <data name="mountainColorSelector.Size" type="System.Drawing.Size, System.Drawing">
+    <value>172, 28</value>
+  </data>
+  <data name="mountainColorSelector.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;mountainColorSelector.Name" xml:space="preserve">
+    <value>mountainColorSelector</value>
+  </data>
+  <data name="&gt;&gt;mountainColorSelector.Type" xml:space="preserve">
+    <value>Map2CivilizationView.UserControls.ColorSettingSelector, Map2Civilization, Version=0.9.0.5, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;mountainColorSelector.Parent" xml:space="preserve">
+    <value>terrainGroup</value>
+  </data>
+  <data name="&gt;&gt;mountainColorSelector.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="mountainPlotLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="mountainPlotLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="mountainPlotLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 179</value>
+  </data>
+  <data name="mountainPlotLabel.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>155, 30</value>
+  </data>
+  <data name="mountainPlotLabel.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>155, 30</value>
+  </data>
+  <data name="mountainPlotLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>155, 30</value>
+  </data>
+  <data name="mountainPlotLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="mountainPlotLabel.Text" xml:space="preserve">
+    <value>Mountains Plot Color</value>
+  </data>
+  <data name="mountainPlotLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;mountainPlotLabel.Name" xml:space="preserve">
+    <value>mountainPlotLabel</value>
+  </data>
+  <data name="&gt;&gt;mountainPlotLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;mountainPlotLabel.Parent" xml:space="preserve">
+    <value>terrainGroup</value>
+  </data>
+  <data name="&gt;&gt;mountainPlotLabel.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="hillPlotLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="hillPlotLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="hillPlotLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 139</value>
+  </data>
+  <data name="hillPlotLabel.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>155, 30</value>
+  </data>
+  <data name="hillPlotLabel.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>155, 30</value>
+  </data>
+  <data name="hillPlotLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>155, 30</value>
+  </data>
+  <data name="hillPlotLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="hillPlotLabel.Text" xml:space="preserve">
+    <value>Hills Plot Color</value>
+  </data>
+  <data name="hillPlotLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;hillPlotLabel.Name" xml:space="preserve">
+    <value>hillPlotLabel</value>
+  </data>
+  <data name="&gt;&gt;hillPlotLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;hillPlotLabel.Parent" xml:space="preserve">
+    <value>terrainGroup</value>
+  </data>
+  <data name="&gt;&gt;hillPlotLabel.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="flatPlotLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="flatPlotLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="flatPlotLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 99</value>
+  </data>
+  <data name="flatPlotLabel.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>155, 30</value>
+  </data>
+  <data name="flatPlotLabel.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>155, 30</value>
+  </data>
+  <data name="flatPlotLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>155, 30</value>
+  </data>
+  <data name="flatPlotLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="flatPlotLabel.Text" xml:space="preserve">
+    <value>Flat Plot Color</value>
+  </data>
+  <data name="flatPlotLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;flatPlotLabel.Name" xml:space="preserve">
+    <value>flatPlotLabel</value>
+  </data>
+  <data name="&gt;&gt;flatPlotLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;flatPlotLabel.Parent" xml:space="preserve">
+    <value>terrainGroup</value>
+  </data>
+  <data name="&gt;&gt;flatPlotLabel.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="coastPlotLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="coastPlotLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="coastPlotLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 58</value>
+  </data>
+  <data name="coastPlotLabel.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>155, 30</value>
+  </data>
+  <data name="coastPlotLabel.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>155, 30</value>
+  </data>
+  <data name="coastPlotLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>155, 30</value>
+  </data>
+  <data name="coastPlotLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="coastPlotLabel.Text" xml:space="preserve">
+    <value>Coast Plot Color</value>
+  </data>
+  <data name="coastPlotLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;coastPlotLabel.Name" xml:space="preserve">
+    <value>coastPlotLabel</value>
+  </data>
+  <data name="&gt;&gt;coastPlotLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;coastPlotLabel.Parent" xml:space="preserve">
+    <value>terrainGroup</value>
+  </data>
+  <data name="&gt;&gt;coastPlotLabel.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="ocealPlotLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="ocealPlotLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ocealPlotLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 19</value>
+  </data>
+  <data name="ocealPlotLabel.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>155, 30</value>
+  </data>
+  <data name="ocealPlotLabel.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>155, 30</value>
+  </data>
+  <data name="ocealPlotLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>155, 30</value>
+  </data>
+  <data name="ocealPlotLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="ocealPlotLabel.Text" xml:space="preserve">
+    <value>Ocean Plot Color</value>
+  </data>
+  <data name="ocealPlotLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;ocealPlotLabel.Name" xml:space="preserve">
+    <value>ocealPlotLabel</value>
+  </data>
+  <data name="&gt;&gt;ocealPlotLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ocealPlotLabel.Parent" xml:space="preserve">
+    <value>terrainGroup</value>
+  </data>
+  <data name="&gt;&gt;ocealPlotLabel.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="hillColorSelector.Location" type="System.Drawing.Point, System.Drawing">
+    <value>177, 142</value>
+  </data>
+  <data name="hillColorSelector.Size" type="System.Drawing.Size, System.Drawing">
+    <value>172, 28</value>
+  </data>
+  <data name="hillColorSelector.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;hillColorSelector.Name" xml:space="preserve">
+    <value>hillColorSelector</value>
+  </data>
+  <data name="&gt;&gt;hillColorSelector.Type" xml:space="preserve">
+    <value>Map2CivilizationView.UserControls.ColorSettingSelector, Map2Civilization, Version=0.9.0.5, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;hillColorSelector.Parent" xml:space="preserve">
+    <value>terrainGroup</value>
+  </data>
+  <data name="&gt;&gt;hillColorSelector.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="flatColorSelector.Location" type="System.Drawing.Point, System.Drawing">
+    <value>177, 101</value>
+  </data>
+  <data name="flatColorSelector.Size" type="System.Drawing.Size, System.Drawing">
+    <value>172, 28</value>
+  </data>
+  <data name="flatColorSelector.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;flatColorSelector.Name" xml:space="preserve">
+    <value>flatColorSelector</value>
+  </data>
+  <data name="&gt;&gt;flatColorSelector.Type" xml:space="preserve">
+    <value>Map2CivilizationView.UserControls.ColorSettingSelector, Map2Civilization, Version=0.9.0.5, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;flatColorSelector.Parent" xml:space="preserve">
+    <value>terrainGroup</value>
+  </data>
+  <data name="&gt;&gt;flatColorSelector.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="coastColorSelector.Location" type="System.Drawing.Point, System.Drawing">
+    <value>177, 60</value>
+  </data>
+  <data name="coastColorSelector.Size" type="System.Drawing.Size, System.Drawing">
+    <value>172, 28</value>
+  </data>
+  <data name="coastColorSelector.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;coastColorSelector.Name" xml:space="preserve">
+    <value>coastColorSelector</value>
+  </data>
+  <data name="&gt;&gt;coastColorSelector.Type" xml:space="preserve">
+    <value>Map2CivilizationView.UserControls.ColorSettingSelector, Map2Civilization, Version=0.9.0.5, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;coastColorSelector.Parent" xml:space="preserve">
+    <value>terrainGroup</value>
+  </data>
+  <data name="&gt;&gt;coastColorSelector.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="oceanColorSelector.Location" type="System.Drawing.Point, System.Drawing">
+    <value>177, 21</value>
+  </data>
+  <data name="oceanColorSelector.Size" type="System.Drawing.Size, System.Drawing">
+    <value>172, 28</value>
+  </data>
+  <data name="oceanColorSelector.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;oceanColorSelector.Name" xml:space="preserve">
+    <value>oceanColorSelector</value>
+  </data>
+  <data name="&gt;&gt;oceanColorSelector.Type" xml:space="preserve">
+    <value>Map2CivilizationView.UserControls.ColorSettingSelector, Map2Civilization, Version=0.9.0.5, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;oceanColorSelector.Parent" xml:space="preserve">
+    <value>terrainGroup</value>
+  </data>
+  <data name="&gt;&gt;oceanColorSelector.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="terrainGroup.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 109</value>
+  </data>
+  <data name="terrainGroup.Size" type="System.Drawing.Size, System.Drawing">
+    <value>370, 230</value>
+  </data>
+  <data name="terrainGroup.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
   </data>
   <data name="&gt;&gt;terrainGroup.Name" xml:space="preserve">
     <value>terrainGroup</value>
@@ -1207,7 +2044,169 @@
     <value>mapDisplayTabPage</value>
   </data>
   <data name="&gt;&gt;terrainGroup.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="zoomStepNumeric.Location" type="System.Drawing.Point, System.Drawing">
+    <value>230, 67</value>
+  </data>
+  <data name="zoomStepNumeric.Size" type="System.Drawing.Size, System.Drawing">
+    <value>91, 20</value>
+  </data>
+  <data name="zoomStepNumeric.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;zoomStepNumeric.Name" xml:space="preserve">
+    <value>zoomStepNumeric</value>
+  </data>
+  <data name="&gt;&gt;zoomStepNumeric.Type" xml:space="preserve">
+    <value>Map2CivilizationView.UserControls.NumericSettingSelector, Map2Civilization, Version=0.9.0.5, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;zoomStepNumeric.Parent" xml:space="preserve">
+    <value>zoomGroup</value>
+  </data>
+  <data name="&gt;&gt;zoomStepNumeric.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="maximumZoomNumeric.Location" type="System.Drawing.Point, System.Drawing">
+    <value>230, 43</value>
+  </data>
+  <data name="maximumZoomNumeric.Size" type="System.Drawing.Size, System.Drawing">
+    <value>91, 20</value>
+  </data>
+  <data name="maximumZoomNumeric.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;maximumZoomNumeric.Name" xml:space="preserve">
+    <value>maximumZoomNumeric</value>
+  </data>
+  <data name="&gt;&gt;maximumZoomNumeric.Type" xml:space="preserve">
+    <value>Map2CivilizationView.UserControls.NumericSettingSelector, Map2Civilization, Version=0.9.0.5, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;maximumZoomNumeric.Parent" xml:space="preserve">
+    <value>zoomGroup</value>
+  </data>
+  <data name="&gt;&gt;maximumZoomNumeric.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="minimumZoomNumeric.Location" type="System.Drawing.Point, System.Drawing">
+    <value>230, 19</value>
+  </data>
+  <data name="minimumZoomNumeric.Size" type="System.Drawing.Size, System.Drawing">
+    <value>91, 20</value>
+  </data>
+  <data name="minimumZoomNumeric.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;minimumZoomNumeric.Name" xml:space="preserve">
+    <value>minimumZoomNumeric</value>
+  </data>
+  <data name="&gt;&gt;minimumZoomNumeric.Type" xml:space="preserve">
+    <value>Map2CivilizationView.UserControls.NumericSettingSelector, Map2Civilization, Version=0.9.0.5, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;minimumZoomNumeric.Parent" xml:space="preserve">
+    <value>zoomGroup</value>
+  </data>
+  <data name="&gt;&gt;minimumZoomNumeric.ZOrder" xml:space="preserve">
     <value>2</value>
+  </data>
+  <data name="zoomStepLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="zoomStepLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 64</value>
+  </data>
+  <data name="zoomStepLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>206, 23</value>
+  </data>
+  <data name="zoomStepLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="zoomStepLabel.Text" xml:space="preserve">
+    <value>Zoom Step (%)</value>
+  </data>
+  <data name="zoomStepLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;zoomStepLabel.Name" xml:space="preserve">
+    <value>zoomStepLabel</value>
+  </data>
+  <data name="&gt;&gt;zoomStepLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;zoomStepLabel.Parent" xml:space="preserve">
+    <value>zoomGroup</value>
+  </data>
+  <data name="&gt;&gt;zoomStepLabel.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="maximumZoomLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="maximumZoomLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 40</value>
+  </data>
+  <data name="maximumZoomLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>206, 23</value>
+  </data>
+  <data name="maximumZoomLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="maximumZoomLabel.Text" xml:space="preserve">
+    <value>Maximum Zoom Value (%)</value>
+  </data>
+  <data name="maximumZoomLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;maximumZoomLabel.Name" xml:space="preserve">
+    <value>maximumZoomLabel</value>
+  </data>
+  <data name="&gt;&gt;maximumZoomLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;maximumZoomLabel.Parent" xml:space="preserve">
+    <value>zoomGroup</value>
+  </data>
+  <data name="&gt;&gt;maximumZoomLabel.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="minZoomLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="minZoomLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 17</value>
+  </data>
+  <data name="minZoomLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>206, 23</value>
+  </data>
+  <data name="minZoomLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="minZoomLabel.Text" xml:space="preserve">
+    <value>Minimum Zoom Value (%)</value>
+  </data>
+  <data name="minZoomLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;minZoomLabel.Name" xml:space="preserve">
+    <value>minZoomLabel</value>
+  </data>
+  <data name="&gt;&gt;minZoomLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;minZoomLabel.Parent" xml:space="preserve">
+    <value>zoomGroup</value>
+  </data>
+  <data name="&gt;&gt;minZoomLabel.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="zoomGroup.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 3</value>
+  </data>
+  <data name="zoomGroup.Size" type="System.Drawing.Size, System.Drawing">
+    <value>370, 100</value>
+  </data>
+  <data name="zoomGroup.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="&gt;&gt;zoomGroup.Name" xml:space="preserve">
     <value>zoomGroup</value>
@@ -1219,7 +2218,7 @@
     <value>mapDisplayTabPage</value>
   </data>
   <data name="&gt;&gt;zoomGroup.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="mapDisplayTabPage.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
@@ -1265,1410 +2264,6 @@
   </data>
   <data name="&gt;&gt;tabControl.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="generalTableLayoutPanel.ColumnCount" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;uiCultureLabel.Name" xml:space="preserve">
-    <value>uiCultureLabel</value>
-  </data>
-  <data name="&gt;&gt;uiCultureLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;uiCultureLabel.Parent" xml:space="preserve">
-    <value>generalTableLayoutPanel</value>
-  </data>
-  <data name="&gt;&gt;uiCultureLabel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;uiLanguageComboBox.Name" xml:space="preserve">
-    <value>uiLanguageComboBox</value>
-  </data>
-  <data name="&gt;&gt;uiLanguageComboBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;uiLanguageComboBox.Parent" xml:space="preserve">
-    <value>generalTableLayoutPanel</value>
-  </data>
-  <data name="&gt;&gt;uiLanguageComboBox.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;revertButton.Name" xml:space="preserve">
-    <value>revertButton</value>
-  </data>
-  <data name="&gt;&gt;revertButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;revertButton.Parent" xml:space="preserve">
-    <value>generalTableLayoutPanel</value>
-  </data>
-  <data name="&gt;&gt;revertButton.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="generalTableLayoutPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="generalTableLayoutPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="generalTableLayoutPanel.RowCount" type="System.Int32, mscorlib">
-    <value>15</value>
-  </data>
-  <data name="generalTableLayoutPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>756, 416</value>
-  </data>
-  <data name="generalTableLayoutPanel.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;generalTableLayoutPanel.Name" xml:space="preserve">
-    <value>generalTableLayoutPanel</value>
-  </data>
-  <data name="&gt;&gt;generalTableLayoutPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;generalTableLayoutPanel.Parent" xml:space="preserve">
-    <value>generalTabPage</value>
-  </data>
-  <data name="&gt;&gt;generalTableLayoutPanel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="generalTableLayoutPanel.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="uiCultureLabel" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="uiLanguageComboBox" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="revertButton" Row="12" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Absolute,100,Absolute,250,Percent,100" /&gt;&lt;Rows Styles="Absolute,30,Absolute,30,Absolute,30,Absolute,30,Absolute,30,Absolute,30,Absolute,30,Absolute,30,Absolute,30,Absolute,30,Absolute,30,Absolute,30,Absolute,30,Absolute,30,Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
-  </data>
-  <data name="uiCultureLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="uiCultureLabel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="uiCultureLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="uiCultureLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 33</value>
-  </data>
-  <data name="uiCultureLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="uiCultureLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>94, 24</value>
-  </data>
-  <data name="uiCultureLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="uiCultureLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleRight</value>
-  </data>
-  <data name="&gt;&gt;uiCultureLabel.Name" xml:space="preserve">
-    <value>uiCultureLabel</value>
-  </data>
-  <data name="&gt;&gt;uiCultureLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;uiCultureLabel.Parent" xml:space="preserve">
-    <value>generalTableLayoutPanel</value>
-  </data>
-  <data name="&gt;&gt;uiCultureLabel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="uiLanguageComboBox.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="uiLanguageComboBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>103, 33</value>
-  </data>
-  <data name="uiLanguageComboBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>244, 21</value>
-  </data>
-  <data name="uiLanguageComboBox.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;uiLanguageComboBox.Name" xml:space="preserve">
-    <value>uiLanguageComboBox</value>
-  </data>
-  <data name="&gt;&gt;uiLanguageComboBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;uiLanguageComboBox.Parent" xml:space="preserve">
-    <value>generalTableLayoutPanel</value>
-  </data>
-  <data name="&gt;&gt;uiLanguageComboBox.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="revertButton.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="revertButton.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
-  </data>
-  <data name="revertButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="revertButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>353, 363</value>
-  </data>
-  <data name="revertButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>400, 24</value>
-  </data>
-  <data name="revertButton.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;revertButton.Name" xml:space="preserve">
-    <value>revertButton</value>
-  </data>
-  <data name="&gt;&gt;revertButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;revertButton.Parent" xml:space="preserve">
-    <value>generalTableLayoutPanel</value>
-  </data>
-  <data name="&gt;&gt;revertButton.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;highlightedPlotGridWidthNumeric.Name" xml:space="preserve">
-    <value>highlightedPlotGridWidthNumeric</value>
-  </data>
-  <data name="&gt;&gt;highlightedPlotGridWidthNumeric.Type" xml:space="preserve">
-    <value>Map2CivilizationView.UserControls.NumericSettingSelector, Map2Civilization, Version=0.9.0.1, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;highlightedPlotGridWidthNumeric.Parent" xml:space="preserve">
-    <value>gridGroup</value>
-  </data>
-  <data name="&gt;&gt;highlightedPlotGridWidthNumeric.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;highlightedPlotGridWidthLabel.Name" xml:space="preserve">
-    <value>highlightedPlotGridWidthLabel</value>
-  </data>
-  <data name="&gt;&gt;highlightedPlotGridWidthLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;highlightedPlotGridWidthLabel.Parent" xml:space="preserve">
-    <value>gridGroup</value>
-  </data>
-  <data name="&gt;&gt;highlightedPlotGridWidthLabel.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;highlightedPlotGridColorLabel.Name" xml:space="preserve">
-    <value>highlightedPlotGridColorLabel</value>
-  </data>
-  <data name="&gt;&gt;highlightedPlotGridColorLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;highlightedPlotGridColorLabel.Parent" xml:space="preserve">
-    <value>gridGroup</value>
-  </data>
-  <data name="&gt;&gt;highlightedPlotGridColorLabel.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;highlightedGridColorSelector.Name" xml:space="preserve">
-    <value>highlightedGridColorSelector</value>
-  </data>
-  <data name="&gt;&gt;highlightedGridColorSelector.Type" xml:space="preserve">
-    <value>Map2CivilizationView.UserControls.ColorSettingSelector, Map2Civilization, Version=0.9.0.1, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;highlightedGridColorSelector.Parent" xml:space="preserve">
-    <value>gridGroup</value>
-  </data>
-  <data name="&gt;&gt;highlightedGridColorSelector.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;processedMapUnassignedGridColorLabel.Name" xml:space="preserve">
-    <value>processedMapUnassignedGridColorLabel</value>
-  </data>
-  <data name="&gt;&gt;processedMapUnassignedGridColorLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;processedMapUnassignedGridColorLabel.Parent" xml:space="preserve">
-    <value>gridGroup</value>
-  </data>
-  <data name="&gt;&gt;processedMapUnassignedGridColorLabel.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;processedMapUnassignedGridColorSelector.Name" xml:space="preserve">
-    <value>processedMapUnassignedGridColorSelector</value>
-  </data>
-  <data name="&gt;&gt;processedMapUnassignedGridColorSelector.Type" xml:space="preserve">
-    <value>Map2CivilizationView.UserControls.ColorSettingSelector, Map2Civilization, Version=0.9.0.1, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;processedMapUnassignedGridColorSelector.Parent" xml:space="preserve">
-    <value>gridGroup</value>
-  </data>
-  <data name="&gt;&gt;processedMapUnassignedGridColorSelector.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;originalMapGridLabel.Name" xml:space="preserve">
-    <value>originalMapGridLabel</value>
-  </data>
-  <data name="&gt;&gt;originalMapGridLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;originalMapGridLabel.Parent" xml:space="preserve">
-    <value>gridGroup</value>
-  </data>
-  <data name="&gt;&gt;originalMapGridLabel.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;originalMapGridColorSelector.Name" xml:space="preserve">
-    <value>originalMapGridColorSelector</value>
-  </data>
-  <data name="&gt;&gt;originalMapGridColorSelector.Type" xml:space="preserve">
-    <value>Map2CivilizationView.UserControls.ColorSettingSelector, Map2Civilization, Version=0.9.0.1, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;originalMapGridColorSelector.Parent" xml:space="preserve">
-    <value>gridGroup</value>
-  </data>
-  <data name="&gt;&gt;originalMapGridColorSelector.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="gridGroup.Location" type="System.Drawing.Point, System.Drawing">
-    <value>384, 109</value>
-  </data>
-  <data name="gridGroup.Size" type="System.Drawing.Size, System.Drawing">
-    <value>370, 230</value>
-  </data>
-  <data name="gridGroup.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;gridGroup.Name" xml:space="preserve">
-    <value>gridGroup</value>
-  </data>
-  <data name="&gt;&gt;gridGroup.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;gridGroup.Parent" xml:space="preserve">
-    <value>mapDisplayTabPage</value>
-  </data>
-  <data name="&gt;&gt;gridGroup.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="highlightedPlotGridWidthNumeric.Location" type="System.Drawing.Point, System.Drawing">
-    <value>175, 142</value>
-  </data>
-  <data name="highlightedPlotGridWidthNumeric.Size" type="System.Drawing.Size, System.Drawing">
-    <value>91, 20</value>
-  </data>
-  <data name="highlightedPlotGridWidthNumeric.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
-  </data>
-  <data name="&gt;&gt;highlightedPlotGridWidthNumeric.Name" xml:space="preserve">
-    <value>highlightedPlotGridWidthNumeric</value>
-  </data>
-  <data name="&gt;&gt;highlightedPlotGridWidthNumeric.Type" xml:space="preserve">
-    <value>Map2CivilizationView.UserControls.NumericSettingSelector, Map2Civilization, Version=0.9.0.1, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;highlightedPlotGridWidthNumeric.Parent" xml:space="preserve">
-    <value>gridGroup</value>
-  </data>
-  <data name="&gt;&gt;highlightedPlotGridWidthNumeric.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="highlightedPlotGridWidthLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="highlightedPlotGridWidthLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="highlightedPlotGridWidthLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 135</value>
-  </data>
-  <data name="highlightedPlotGridWidthLabel.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>155, 30</value>
-  </data>
-  <data name="highlightedPlotGridWidthLabel.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>155, 30</value>
-  </data>
-  <data name="highlightedPlotGridWidthLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>155, 30</value>
-  </data>
-  <data name="highlightedPlotGridWidthLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="highlightedPlotGridWidthLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleRight</value>
-  </data>
-  <data name="&gt;&gt;highlightedPlotGridWidthLabel.Name" xml:space="preserve">
-    <value>highlightedPlotGridWidthLabel</value>
-  </data>
-  <data name="&gt;&gt;highlightedPlotGridWidthLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;highlightedPlotGridWidthLabel.Parent" xml:space="preserve">
-    <value>gridGroup</value>
-  </data>
-  <data name="&gt;&gt;highlightedPlotGridWidthLabel.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="highlightedPlotGridColorLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="highlightedPlotGridColorLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="highlightedPlotGridColorLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 99</value>
-  </data>
-  <data name="highlightedPlotGridColorLabel.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>155, 30</value>
-  </data>
-  <data name="highlightedPlotGridColorLabel.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>155, 30</value>
-  </data>
-  <data name="highlightedPlotGridColorLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>155, 30</value>
-  </data>
-  <data name="highlightedPlotGridColorLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="highlightedPlotGridColorLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleRight</value>
-  </data>
-  <data name="&gt;&gt;highlightedPlotGridColorLabel.Name" xml:space="preserve">
-    <value>highlightedPlotGridColorLabel</value>
-  </data>
-  <data name="&gt;&gt;highlightedPlotGridColorLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;highlightedPlotGridColorLabel.Parent" xml:space="preserve">
-    <value>gridGroup</value>
-  </data>
-  <data name="&gt;&gt;highlightedPlotGridColorLabel.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="highlightedGridColorSelector.Location" type="System.Drawing.Point, System.Drawing">
-    <value>175, 101</value>
-  </data>
-  <data name="highlightedGridColorSelector.Size" type="System.Drawing.Size, System.Drawing">
-    <value>172, 28</value>
-  </data>
-  <data name="highlightedGridColorSelector.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
-  </data>
-  <data name="&gt;&gt;highlightedGridColorSelector.Name" xml:space="preserve">
-    <value>highlightedGridColorSelector</value>
-  </data>
-  <data name="&gt;&gt;highlightedGridColorSelector.Type" xml:space="preserve">
-    <value>Map2CivilizationView.UserControls.ColorSettingSelector, Map2Civilization, Version=0.9.0.1, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;highlightedGridColorSelector.Parent" xml:space="preserve">
-    <value>gridGroup</value>
-  </data>
-  <data name="&gt;&gt;highlightedGridColorSelector.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="processedMapUnassignedGridColorLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="processedMapUnassignedGridColorLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="processedMapUnassignedGridColorLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 60</value>
-  </data>
-  <data name="processedMapUnassignedGridColorLabel.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>155, 30</value>
-  </data>
-  <data name="processedMapUnassignedGridColorLabel.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>155, 30</value>
-  </data>
-  <data name="processedMapUnassignedGridColorLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>155, 30</value>
-  </data>
-  <data name="processedMapUnassignedGridColorLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="processedMapUnassignedGridColorLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleRight</value>
-  </data>
-  <data name="&gt;&gt;processedMapUnassignedGridColorLabel.Name" xml:space="preserve">
-    <value>processedMapUnassignedGridColorLabel</value>
-  </data>
-  <data name="&gt;&gt;processedMapUnassignedGridColorLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;processedMapUnassignedGridColorLabel.Parent" xml:space="preserve">
-    <value>gridGroup</value>
-  </data>
-  <data name="&gt;&gt;processedMapUnassignedGridColorLabel.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="processedMapUnassignedGridColorSelector.Location" type="System.Drawing.Point, System.Drawing">
-    <value>175, 60</value>
-  </data>
-  <data name="processedMapUnassignedGridColorSelector.Size" type="System.Drawing.Size, System.Drawing">
-    <value>172, 28</value>
-  </data>
-  <data name="processedMapUnassignedGridColorSelector.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
-  </data>
-  <data name="&gt;&gt;processedMapUnassignedGridColorSelector.Name" xml:space="preserve">
-    <value>processedMapUnassignedGridColorSelector</value>
-  </data>
-  <data name="&gt;&gt;processedMapUnassignedGridColorSelector.Type" xml:space="preserve">
-    <value>Map2CivilizationView.UserControls.ColorSettingSelector, Map2Civilization, Version=0.9.0.1, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;processedMapUnassignedGridColorSelector.Parent" xml:space="preserve">
-    <value>gridGroup</value>
-  </data>
-  <data name="&gt;&gt;processedMapUnassignedGridColorSelector.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="originalMapGridLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="originalMapGridLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="originalMapGridLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 18</value>
-  </data>
-  <data name="originalMapGridLabel.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>155, 30</value>
-  </data>
-  <data name="originalMapGridLabel.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>155, 30</value>
-  </data>
-  <data name="originalMapGridLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>155, 30</value>
-  </data>
-  <data name="originalMapGridLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="originalMapGridLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleRight</value>
-  </data>
-  <data name="&gt;&gt;originalMapGridLabel.Name" xml:space="preserve">
-    <value>originalMapGridLabel</value>
-  </data>
-  <data name="&gt;&gt;originalMapGridLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;originalMapGridLabel.Parent" xml:space="preserve">
-    <value>gridGroup</value>
-  </data>
-  <data name="&gt;&gt;originalMapGridLabel.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="originalMapGridColorSelector.Location" type="System.Drawing.Point, System.Drawing">
-    <value>175, 21</value>
-  </data>
-  <data name="originalMapGridColorSelector.Size" type="System.Drawing.Size, System.Drawing">
-    <value>172, 28</value>
-  </data>
-  <data name="originalMapGridColorSelector.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
-  </data>
-  <data name="&gt;&gt;originalMapGridColorSelector.Name" xml:space="preserve">
-    <value>originalMapGridColorSelector</value>
-  </data>
-  <data name="&gt;&gt;originalMapGridColorSelector.Type" xml:space="preserve">
-    <value>Map2CivilizationView.UserControls.ColorSettingSelector, Map2Civilization, Version=0.9.0.1, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;originalMapGridColorSelector.Parent" xml:space="preserve">
-    <value>gridGroup</value>
-  </data>
-  <data name="&gt;&gt;originalMapGridColorSelector.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;rhombusPlotWidthNumeric.Name" xml:space="preserve">
-    <value>rhombusPlotWidthNumeric</value>
-  </data>
-  <data name="&gt;&gt;rhombusPlotWidthNumeric.Type" xml:space="preserve">
-    <value>Map2CivilizationView.UserControls.NumericSettingSelector, Map2Civilization, Version=0.9.0.1, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;rhombusPlotWidthNumeric.Parent" xml:space="preserve">
-    <value>plotWidthGroup</value>
-  </data>
-  <data name="&gt;&gt;rhombusPlotWidthNumeric.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;squarePlotWidthNumeric.Name" xml:space="preserve">
-    <value>squarePlotWidthNumeric</value>
-  </data>
-  <data name="&gt;&gt;squarePlotWidthNumeric.Type" xml:space="preserve">
-    <value>Map2CivilizationView.UserControls.NumericSettingSelector, Map2Civilization, Version=0.9.0.1, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;squarePlotWidthNumeric.Parent" xml:space="preserve">
-    <value>plotWidthGroup</value>
-  </data>
-  <data name="&gt;&gt;squarePlotWidthNumeric.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;hexPlotWidthNumeric.Name" xml:space="preserve">
-    <value>hexPlotWidthNumeric</value>
-  </data>
-  <data name="&gt;&gt;hexPlotWidthNumeric.Type" xml:space="preserve">
-    <value>Map2CivilizationView.UserControls.NumericSettingSelector, Map2Civilization, Version=0.9.0.1, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;hexPlotWidthNumeric.Parent" xml:space="preserve">
-    <value>plotWidthGroup</value>
-  </data>
-  <data name="&gt;&gt;hexPlotWidthNumeric.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;rhombusPlotWidthLabel.Name" xml:space="preserve">
-    <value>rhombusPlotWidthLabel</value>
-  </data>
-  <data name="&gt;&gt;rhombusPlotWidthLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;rhombusPlotWidthLabel.Parent" xml:space="preserve">
-    <value>plotWidthGroup</value>
-  </data>
-  <data name="&gt;&gt;rhombusPlotWidthLabel.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;squarePlotWidthLabel.Name" xml:space="preserve">
-    <value>squarePlotWidthLabel</value>
-  </data>
-  <data name="&gt;&gt;squarePlotWidthLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;squarePlotWidthLabel.Parent" xml:space="preserve">
-    <value>plotWidthGroup</value>
-  </data>
-  <data name="&gt;&gt;squarePlotWidthLabel.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;hexPlotWidthLabel.Name" xml:space="preserve">
-    <value>hexPlotWidthLabel</value>
-  </data>
-  <data name="&gt;&gt;hexPlotWidthLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;hexPlotWidthLabel.Parent" xml:space="preserve">
-    <value>plotWidthGroup</value>
-  </data>
-  <data name="&gt;&gt;hexPlotWidthLabel.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="plotWidthGroup.Location" type="System.Drawing.Point, System.Drawing">
-    <value>384, 3</value>
-  </data>
-  <data name="plotWidthGroup.Size" type="System.Drawing.Size, System.Drawing">
-    <value>370, 100</value>
-  </data>
-  <data name="plotWidthGroup.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;plotWidthGroup.Name" xml:space="preserve">
-    <value>plotWidthGroup</value>
-  </data>
-  <data name="&gt;&gt;plotWidthGroup.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;plotWidthGroup.Parent" xml:space="preserve">
-    <value>mapDisplayTabPage</value>
-  </data>
-  <data name="&gt;&gt;plotWidthGroup.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="rhombusPlotWidthNumeric.Location" type="System.Drawing.Point, System.Drawing">
-    <value>239, 67</value>
-  </data>
-  <data name="rhombusPlotWidthNumeric.Size" type="System.Drawing.Size, System.Drawing">
-    <value>91, 20</value>
-  </data>
-  <data name="rhombusPlotWidthNumeric.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;rhombusPlotWidthNumeric.Name" xml:space="preserve">
-    <value>rhombusPlotWidthNumeric</value>
-  </data>
-  <data name="&gt;&gt;rhombusPlotWidthNumeric.Type" xml:space="preserve">
-    <value>Map2CivilizationView.UserControls.NumericSettingSelector, Map2Civilization, Version=0.9.0.1, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;rhombusPlotWidthNumeric.Parent" xml:space="preserve">
-    <value>plotWidthGroup</value>
-  </data>
-  <data name="&gt;&gt;rhombusPlotWidthNumeric.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="squarePlotWidthNumeric.Location" type="System.Drawing.Point, System.Drawing">
-    <value>239, 43</value>
-  </data>
-  <data name="squarePlotWidthNumeric.Size" type="System.Drawing.Size, System.Drawing">
-    <value>91, 20</value>
-  </data>
-  <data name="squarePlotWidthNumeric.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;squarePlotWidthNumeric.Name" xml:space="preserve">
-    <value>squarePlotWidthNumeric</value>
-  </data>
-  <data name="&gt;&gt;squarePlotWidthNumeric.Type" xml:space="preserve">
-    <value>Map2CivilizationView.UserControls.NumericSettingSelector, Map2Civilization, Version=0.9.0.1, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;squarePlotWidthNumeric.Parent" xml:space="preserve">
-    <value>plotWidthGroup</value>
-  </data>
-  <data name="&gt;&gt;squarePlotWidthNumeric.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="hexPlotWidthNumeric.Location" type="System.Drawing.Point, System.Drawing">
-    <value>239, 20</value>
-  </data>
-  <data name="hexPlotWidthNumeric.Size" type="System.Drawing.Size, System.Drawing">
-    <value>91, 20</value>
-  </data>
-  <data name="hexPlotWidthNumeric.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;hexPlotWidthNumeric.Name" xml:space="preserve">
-    <value>hexPlotWidthNumeric</value>
-  </data>
-  <data name="&gt;&gt;hexPlotWidthNumeric.Type" xml:space="preserve">
-    <value>Map2CivilizationView.UserControls.NumericSettingSelector, Map2Civilization, Version=0.9.0.1, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;hexPlotWidthNumeric.Parent" xml:space="preserve">
-    <value>plotWidthGroup</value>
-  </data>
-  <data name="&gt;&gt;hexPlotWidthNumeric.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="rhombusPlotWidthLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="rhombusPlotWidthLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 64</value>
-  </data>
-  <data name="rhombusPlotWidthLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>212, 23</value>
-  </data>
-  <data name="rhombusPlotWidthLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="rhombusPlotWidthLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleRight</value>
-  </data>
-  <data name="&gt;&gt;rhombusPlotWidthLabel.Name" xml:space="preserve">
-    <value>rhombusPlotWidthLabel</value>
-  </data>
-  <data name="&gt;&gt;rhombusPlotWidthLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;rhombusPlotWidthLabel.Parent" xml:space="preserve">
-    <value>plotWidthGroup</value>
-  </data>
-  <data name="&gt;&gt;rhombusPlotWidthLabel.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="squarePlotWidthLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="squarePlotWidthLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 40</value>
-  </data>
-  <data name="squarePlotWidthLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>212, 23</value>
-  </data>
-  <data name="squarePlotWidthLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="squarePlotWidthLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleRight</value>
-  </data>
-  <data name="&gt;&gt;squarePlotWidthLabel.Name" xml:space="preserve">
-    <value>squarePlotWidthLabel</value>
-  </data>
-  <data name="&gt;&gt;squarePlotWidthLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;squarePlotWidthLabel.Parent" xml:space="preserve">
-    <value>plotWidthGroup</value>
-  </data>
-  <data name="&gt;&gt;squarePlotWidthLabel.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="hexPlotWidthLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="hexPlotWidthLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 17</value>
-  </data>
-  <data name="hexPlotWidthLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>212, 23</value>
-  </data>
-  <data name="hexPlotWidthLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="hexPlotWidthLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleRight</value>
-  </data>
-  <data name="&gt;&gt;hexPlotWidthLabel.Name" xml:space="preserve">
-    <value>hexPlotWidthLabel</value>
-  </data>
-  <data name="&gt;&gt;hexPlotWidthLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;hexPlotWidthLabel.Parent" xml:space="preserve">
-    <value>plotWidthGroup</value>
-  </data>
-  <data name="&gt;&gt;hexPlotWidthLabel.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;mountainColorSelector.Name" xml:space="preserve">
-    <value>mountainColorSelector</value>
-  </data>
-  <data name="&gt;&gt;mountainColorSelector.Type" xml:space="preserve">
-    <value>Map2CivilizationView.UserControls.ColorSettingSelector, Map2Civilization, Version=0.9.0.1, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;mountainColorSelector.Parent" xml:space="preserve">
-    <value>terrainGroup</value>
-  </data>
-  <data name="&gt;&gt;mountainColorSelector.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;mountainPlotLabel.Name" xml:space="preserve">
-    <value>mountainPlotLabel</value>
-  </data>
-  <data name="&gt;&gt;mountainPlotLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;mountainPlotLabel.Parent" xml:space="preserve">
-    <value>terrainGroup</value>
-  </data>
-  <data name="&gt;&gt;mountainPlotLabel.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;hillPlotLabel.Name" xml:space="preserve">
-    <value>hillPlotLabel</value>
-  </data>
-  <data name="&gt;&gt;hillPlotLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;hillPlotLabel.Parent" xml:space="preserve">
-    <value>terrainGroup</value>
-  </data>
-  <data name="&gt;&gt;hillPlotLabel.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;flatPlotLabel.Name" xml:space="preserve">
-    <value>flatPlotLabel</value>
-  </data>
-  <data name="&gt;&gt;flatPlotLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;flatPlotLabel.Parent" xml:space="preserve">
-    <value>terrainGroup</value>
-  </data>
-  <data name="&gt;&gt;flatPlotLabel.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;coastPlotLabel.Name" xml:space="preserve">
-    <value>coastPlotLabel</value>
-  </data>
-  <data name="&gt;&gt;coastPlotLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;coastPlotLabel.Parent" xml:space="preserve">
-    <value>terrainGroup</value>
-  </data>
-  <data name="&gt;&gt;coastPlotLabel.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;ocealPlotLabel.Name" xml:space="preserve">
-    <value>ocealPlotLabel</value>
-  </data>
-  <data name="&gt;&gt;ocealPlotLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ocealPlotLabel.Parent" xml:space="preserve">
-    <value>terrainGroup</value>
-  </data>
-  <data name="&gt;&gt;ocealPlotLabel.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;hillColorSelector.Name" xml:space="preserve">
-    <value>hillColorSelector</value>
-  </data>
-  <data name="&gt;&gt;hillColorSelector.Type" xml:space="preserve">
-    <value>Map2CivilizationView.UserControls.ColorSettingSelector, Map2Civilization, Version=0.9.0.1, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;hillColorSelector.Parent" xml:space="preserve">
-    <value>terrainGroup</value>
-  </data>
-  <data name="&gt;&gt;hillColorSelector.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;flatColorSelector.Name" xml:space="preserve">
-    <value>flatColorSelector</value>
-  </data>
-  <data name="&gt;&gt;flatColorSelector.Type" xml:space="preserve">
-    <value>Map2CivilizationView.UserControls.ColorSettingSelector, Map2Civilization, Version=0.9.0.1, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;flatColorSelector.Parent" xml:space="preserve">
-    <value>terrainGroup</value>
-  </data>
-  <data name="&gt;&gt;flatColorSelector.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;coastColorSelector.Name" xml:space="preserve">
-    <value>coastColorSelector</value>
-  </data>
-  <data name="&gt;&gt;coastColorSelector.Type" xml:space="preserve">
-    <value>Map2CivilizationView.UserControls.ColorSettingSelector, Map2Civilization, Version=0.9.0.1, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;coastColorSelector.Parent" xml:space="preserve">
-    <value>terrainGroup</value>
-  </data>
-  <data name="&gt;&gt;coastColorSelector.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;oceanColorSelector.Name" xml:space="preserve">
-    <value>oceanColorSelector</value>
-  </data>
-  <data name="&gt;&gt;oceanColorSelector.Type" xml:space="preserve">
-    <value>Map2CivilizationView.UserControls.ColorSettingSelector, Map2Civilization, Version=0.9.0.1, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;oceanColorSelector.Parent" xml:space="preserve">
-    <value>terrainGroup</value>
-  </data>
-  <data name="&gt;&gt;oceanColorSelector.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="terrainGroup.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 109</value>
-  </data>
-  <data name="terrainGroup.Size" type="System.Drawing.Size, System.Drawing">
-    <value>370, 230</value>
-  </data>
-  <data name="terrainGroup.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;terrainGroup.Name" xml:space="preserve">
-    <value>terrainGroup</value>
-  </data>
-  <data name="&gt;&gt;terrainGroup.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;terrainGroup.Parent" xml:space="preserve">
-    <value>mapDisplayTabPage</value>
-  </data>
-  <data name="&gt;&gt;terrainGroup.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="mountainColorSelector.Location" type="System.Drawing.Point, System.Drawing">
-    <value>177, 181</value>
-  </data>
-  <data name="mountainColorSelector.Size" type="System.Drawing.Size, System.Drawing">
-    <value>172, 28</value>
-  </data>
-  <data name="mountainColorSelector.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;mountainColorSelector.Name" xml:space="preserve">
-    <value>mountainColorSelector</value>
-  </data>
-  <data name="&gt;&gt;mountainColorSelector.Type" xml:space="preserve">
-    <value>Map2CivilizationView.UserControls.ColorSettingSelector, Map2Civilization, Version=0.9.0.1, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;mountainColorSelector.Parent" xml:space="preserve">
-    <value>terrainGroup</value>
-  </data>
-  <data name="&gt;&gt;mountainColorSelector.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="mountainPlotLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="mountainPlotLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="mountainPlotLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 179</value>
-  </data>
-  <data name="mountainPlotLabel.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>155, 30</value>
-  </data>
-  <data name="mountainPlotLabel.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>155, 30</value>
-  </data>
-  <data name="mountainPlotLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>155, 30</value>
-  </data>
-  <data name="mountainPlotLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="mountainPlotLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleRight</value>
-  </data>
-  <data name="&gt;&gt;mountainPlotLabel.Name" xml:space="preserve">
-    <value>mountainPlotLabel</value>
-  </data>
-  <data name="&gt;&gt;mountainPlotLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;mountainPlotLabel.Parent" xml:space="preserve">
-    <value>terrainGroup</value>
-  </data>
-  <data name="&gt;&gt;mountainPlotLabel.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="hillPlotLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="hillPlotLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="hillPlotLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 139</value>
-  </data>
-  <data name="hillPlotLabel.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>155, 30</value>
-  </data>
-  <data name="hillPlotLabel.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>155, 30</value>
-  </data>
-  <data name="hillPlotLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>155, 30</value>
-  </data>
-  <data name="hillPlotLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="hillPlotLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleRight</value>
-  </data>
-  <data name="&gt;&gt;hillPlotLabel.Name" xml:space="preserve">
-    <value>hillPlotLabel</value>
-  </data>
-  <data name="&gt;&gt;hillPlotLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;hillPlotLabel.Parent" xml:space="preserve">
-    <value>terrainGroup</value>
-  </data>
-  <data name="&gt;&gt;hillPlotLabel.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="flatPlotLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="flatPlotLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="flatPlotLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 99</value>
-  </data>
-  <data name="flatPlotLabel.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>155, 30</value>
-  </data>
-  <data name="flatPlotLabel.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>155, 30</value>
-  </data>
-  <data name="flatPlotLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>155, 30</value>
-  </data>
-  <data name="flatPlotLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="flatPlotLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleRight</value>
-  </data>
-  <data name="&gt;&gt;flatPlotLabel.Name" xml:space="preserve">
-    <value>flatPlotLabel</value>
-  </data>
-  <data name="&gt;&gt;flatPlotLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;flatPlotLabel.Parent" xml:space="preserve">
-    <value>terrainGroup</value>
-  </data>
-  <data name="&gt;&gt;flatPlotLabel.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="coastPlotLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="coastPlotLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="coastPlotLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 58</value>
-  </data>
-  <data name="coastPlotLabel.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>155, 30</value>
-  </data>
-  <data name="coastPlotLabel.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>155, 30</value>
-  </data>
-  <data name="coastPlotLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>155, 30</value>
-  </data>
-  <data name="coastPlotLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="coastPlotLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleRight</value>
-  </data>
-  <data name="&gt;&gt;coastPlotLabel.Name" xml:space="preserve">
-    <value>coastPlotLabel</value>
-  </data>
-  <data name="&gt;&gt;coastPlotLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;coastPlotLabel.Parent" xml:space="preserve">
-    <value>terrainGroup</value>
-  </data>
-  <data name="&gt;&gt;coastPlotLabel.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="ocealPlotLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="ocealPlotLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="ocealPlotLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 19</value>
-  </data>
-  <data name="ocealPlotLabel.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>155, 30</value>
-  </data>
-  <data name="ocealPlotLabel.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>155, 30</value>
-  </data>
-  <data name="ocealPlotLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>155, 30</value>
-  </data>
-  <data name="ocealPlotLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="ocealPlotLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleRight</value>
-  </data>
-  <data name="&gt;&gt;ocealPlotLabel.Name" xml:space="preserve">
-    <value>ocealPlotLabel</value>
-  </data>
-  <data name="&gt;&gt;ocealPlotLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ocealPlotLabel.Parent" xml:space="preserve">
-    <value>terrainGroup</value>
-  </data>
-  <data name="&gt;&gt;ocealPlotLabel.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="hillColorSelector.Location" type="System.Drawing.Point, System.Drawing">
-    <value>177, 142</value>
-  </data>
-  <data name="hillColorSelector.Size" type="System.Drawing.Size, System.Drawing">
-    <value>172, 28</value>
-  </data>
-  <data name="hillColorSelector.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="&gt;&gt;hillColorSelector.Name" xml:space="preserve">
-    <value>hillColorSelector</value>
-  </data>
-  <data name="&gt;&gt;hillColorSelector.Type" xml:space="preserve">
-    <value>Map2CivilizationView.UserControls.ColorSettingSelector, Map2Civilization, Version=0.9.0.1, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;hillColorSelector.Parent" xml:space="preserve">
-    <value>terrainGroup</value>
-  </data>
-  <data name="&gt;&gt;hillColorSelector.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="flatColorSelector.Location" type="System.Drawing.Point, System.Drawing">
-    <value>177, 101</value>
-  </data>
-  <data name="flatColorSelector.Size" type="System.Drawing.Size, System.Drawing">
-    <value>172, 28</value>
-  </data>
-  <data name="flatColorSelector.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="&gt;&gt;flatColorSelector.Name" xml:space="preserve">
-    <value>flatColorSelector</value>
-  </data>
-  <data name="&gt;&gt;flatColorSelector.Type" xml:space="preserve">
-    <value>Map2CivilizationView.UserControls.ColorSettingSelector, Map2Civilization, Version=0.9.0.1, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;flatColorSelector.Parent" xml:space="preserve">
-    <value>terrainGroup</value>
-  </data>
-  <data name="&gt;&gt;flatColorSelector.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="coastColorSelector.Location" type="System.Drawing.Point, System.Drawing">
-    <value>177, 60</value>
-  </data>
-  <data name="coastColorSelector.Size" type="System.Drawing.Size, System.Drawing">
-    <value>172, 28</value>
-  </data>
-  <data name="coastColorSelector.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="&gt;&gt;coastColorSelector.Name" xml:space="preserve">
-    <value>coastColorSelector</value>
-  </data>
-  <data name="&gt;&gt;coastColorSelector.Type" xml:space="preserve">
-    <value>Map2CivilizationView.UserControls.ColorSettingSelector, Map2Civilization, Version=0.9.0.1, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;coastColorSelector.Parent" xml:space="preserve">
-    <value>terrainGroup</value>
-  </data>
-  <data name="&gt;&gt;coastColorSelector.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="oceanColorSelector.Location" type="System.Drawing.Point, System.Drawing">
-    <value>177, 21</value>
-  </data>
-  <data name="oceanColorSelector.Size" type="System.Drawing.Size, System.Drawing">
-    <value>172, 28</value>
-  </data>
-  <data name="oceanColorSelector.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
-  </data>
-  <data name="&gt;&gt;oceanColorSelector.Name" xml:space="preserve">
-    <value>oceanColorSelector</value>
-  </data>
-  <data name="&gt;&gt;oceanColorSelector.Type" xml:space="preserve">
-    <value>Map2CivilizationView.UserControls.ColorSettingSelector, Map2Civilization, Version=0.9.0.1, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;oceanColorSelector.Parent" xml:space="preserve">
-    <value>terrainGroup</value>
-  </data>
-  <data name="&gt;&gt;oceanColorSelector.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="&gt;&gt;zoomStepNumeric.Name" xml:space="preserve">
-    <value>zoomStepNumeric</value>
-  </data>
-  <data name="&gt;&gt;zoomStepNumeric.Type" xml:space="preserve">
-    <value>Map2CivilizationView.UserControls.NumericSettingSelector, Map2Civilization, Version=0.9.0.1, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;zoomStepNumeric.Parent" xml:space="preserve">
-    <value>zoomGroup</value>
-  </data>
-  <data name="&gt;&gt;zoomStepNumeric.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;maximumZoomNumeric.Name" xml:space="preserve">
-    <value>maximumZoomNumeric</value>
-  </data>
-  <data name="&gt;&gt;maximumZoomNumeric.Type" xml:space="preserve">
-    <value>Map2CivilizationView.UserControls.NumericSettingSelector, Map2Civilization, Version=0.9.0.1, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;maximumZoomNumeric.Parent" xml:space="preserve">
-    <value>zoomGroup</value>
-  </data>
-  <data name="&gt;&gt;maximumZoomNumeric.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;minimumZoomNumeric.Name" xml:space="preserve">
-    <value>minimumZoomNumeric</value>
-  </data>
-  <data name="&gt;&gt;minimumZoomNumeric.Type" xml:space="preserve">
-    <value>Map2CivilizationView.UserControls.NumericSettingSelector, Map2Civilization, Version=0.9.0.1, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;minimumZoomNumeric.Parent" xml:space="preserve">
-    <value>zoomGroup</value>
-  </data>
-  <data name="&gt;&gt;minimumZoomNumeric.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;zoomStepLabel.Name" xml:space="preserve">
-    <value>zoomStepLabel</value>
-  </data>
-  <data name="&gt;&gt;zoomStepLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;zoomStepLabel.Parent" xml:space="preserve">
-    <value>zoomGroup</value>
-  </data>
-  <data name="&gt;&gt;zoomStepLabel.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;maximumZoomLabel.Name" xml:space="preserve">
-    <value>maximumZoomLabel</value>
-  </data>
-  <data name="&gt;&gt;maximumZoomLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;maximumZoomLabel.Parent" xml:space="preserve">
-    <value>zoomGroup</value>
-  </data>
-  <data name="&gt;&gt;maximumZoomLabel.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;minZoomLabel.Name" xml:space="preserve">
-    <value>minZoomLabel</value>
-  </data>
-  <data name="&gt;&gt;minZoomLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;minZoomLabel.Parent" xml:space="preserve">
-    <value>zoomGroup</value>
-  </data>
-  <data name="&gt;&gt;minZoomLabel.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="zoomGroup.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 3</value>
-  </data>
-  <data name="zoomGroup.Size" type="System.Drawing.Size, System.Drawing">
-    <value>370, 100</value>
-  </data>
-  <data name="zoomGroup.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;zoomGroup.Name" xml:space="preserve">
-    <value>zoomGroup</value>
-  </data>
-  <data name="&gt;&gt;zoomGroup.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;zoomGroup.Parent" xml:space="preserve">
-    <value>mapDisplayTabPage</value>
-  </data>
-  <data name="&gt;&gt;zoomGroup.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="zoomStepNumeric.Location" type="System.Drawing.Point, System.Drawing">
-    <value>230, 67</value>
-  </data>
-  <data name="zoomStepNumeric.Size" type="System.Drawing.Size, System.Drawing">
-    <value>91, 20</value>
-  </data>
-  <data name="zoomStepNumeric.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;zoomStepNumeric.Name" xml:space="preserve">
-    <value>zoomStepNumeric</value>
-  </data>
-  <data name="&gt;&gt;zoomStepNumeric.Type" xml:space="preserve">
-    <value>Map2CivilizationView.UserControls.NumericSettingSelector, Map2Civilization, Version=0.9.0.1, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;zoomStepNumeric.Parent" xml:space="preserve">
-    <value>zoomGroup</value>
-  </data>
-  <data name="&gt;&gt;zoomStepNumeric.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="maximumZoomNumeric.Location" type="System.Drawing.Point, System.Drawing">
-    <value>230, 43</value>
-  </data>
-  <data name="maximumZoomNumeric.Size" type="System.Drawing.Size, System.Drawing">
-    <value>91, 20</value>
-  </data>
-  <data name="maximumZoomNumeric.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;maximumZoomNumeric.Name" xml:space="preserve">
-    <value>maximumZoomNumeric</value>
-  </data>
-  <data name="&gt;&gt;maximumZoomNumeric.Type" xml:space="preserve">
-    <value>Map2CivilizationView.UserControls.NumericSettingSelector, Map2Civilization, Version=0.9.0.1, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;maximumZoomNumeric.Parent" xml:space="preserve">
-    <value>zoomGroup</value>
-  </data>
-  <data name="&gt;&gt;maximumZoomNumeric.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="minimumZoomNumeric.Location" type="System.Drawing.Point, System.Drawing">
-    <value>230, 19</value>
-  </data>
-  <data name="minimumZoomNumeric.Size" type="System.Drawing.Size, System.Drawing">
-    <value>91, 20</value>
-  </data>
-  <data name="minimumZoomNumeric.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;minimumZoomNumeric.Name" xml:space="preserve">
-    <value>minimumZoomNumeric</value>
-  </data>
-  <data name="&gt;&gt;minimumZoomNumeric.Type" xml:space="preserve">
-    <value>Map2CivilizationView.UserControls.NumericSettingSelector, Map2Civilization, Version=0.9.0.1, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;minimumZoomNumeric.Parent" xml:space="preserve">
-    <value>zoomGroup</value>
-  </data>
-  <data name="&gt;&gt;minimumZoomNumeric.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="zoomStepLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="zoomStepLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 64</value>
-  </data>
-  <data name="zoomStepLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>206, 23</value>
-  </data>
-  <data name="zoomStepLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="zoomStepLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleRight</value>
-  </data>
-  <data name="&gt;&gt;zoomStepLabel.Name" xml:space="preserve">
-    <value>zoomStepLabel</value>
-  </data>
-  <data name="&gt;&gt;zoomStepLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;zoomStepLabel.Parent" xml:space="preserve">
-    <value>zoomGroup</value>
-  </data>
-  <data name="&gt;&gt;zoomStepLabel.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="maximumZoomLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="maximumZoomLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 40</value>
-  </data>
-  <data name="maximumZoomLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>206, 23</value>
-  </data>
-  <data name="maximumZoomLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="maximumZoomLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleRight</value>
-  </data>
-  <data name="&gt;&gt;maximumZoomLabel.Name" xml:space="preserve">
-    <value>maximumZoomLabel</value>
-  </data>
-  <data name="&gt;&gt;maximumZoomLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;maximumZoomLabel.Parent" xml:space="preserve">
-    <value>zoomGroup</value>
-  </data>
-  <data name="&gt;&gt;maximumZoomLabel.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="minZoomLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="minZoomLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 17</value>
-  </data>
-  <data name="minZoomLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>206, 23</value>
-  </data>
-  <data name="minZoomLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="minZoomLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleRight</value>
-  </data>
-  <data name="&gt;&gt;minZoomLabel.Name" xml:space="preserve">
-    <value>minZoomLabel</value>
-  </data>
-  <data name="&gt;&gt;minZoomLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;minZoomLabel.Parent" xml:space="preserve">
-    <value>zoomGroup</value>
-  </data>
-  <data name="&gt;&gt;minZoomLabel.ZOrder" xml:space="preserve">
-    <value>5</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

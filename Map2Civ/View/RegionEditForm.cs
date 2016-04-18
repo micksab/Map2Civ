@@ -16,7 +16,7 @@
 //
 /************************************************************************************/
 
-
+using Map2Civilization.Properties;
 using Map2CivilizationCtrl;
 using Map2CivilizationCtrl.DataStructure;
 using Map2CivilizationCtrl.Enumerations;
@@ -33,13 +33,15 @@ namespace Map2CivilizationView
     {
         private MapControlOriginal _originalMapControl;
         private MapControlProcessed _processedMapControl;
+        ToolStripCheckBox _autoCenterCheckBox;
+        private bool _autoCenter;
         private PlotId _currentPlotId;
 
         public RegionEditForm(PlotId plotId)
         {
             InitializeComponent();
 
-            this.DoubleBuffered = true;
+            DoubleBuffered = true;
 
             _currentPlotId = plotId;
 
@@ -70,6 +72,17 @@ namespace Map2CivilizationView
             statusStrip.Items.Add(zoomButton);
             zoomButton.Enabled = true;
 
+            //Add the ToolStripCheckBox (_autoCenterCheckBox)
+            _autoCenterCheckBox = new ToolStripCheckBox();
+            statusStrip.Items.Add(_autoCenterCheckBox);
+            _autoCenterCheckBox.Text = Map2Civilization.Properties.Resources.Str_RegionEditForm_AutoCenterBox;
+            _autoCenterCheckBox.Margin = new Padding(10, 3, 10, 3);
+            _autoCenterCheckBox.CheckChanged += ToolCheckBox_CheckChanged;
+            _autoCenterCheckBox.Checked = Settings.Default.RegionEditor_AutoCenterSelectedPlot;
+
+
+
+
             RegisteredListenersCtrl.PlotLocationListeners.RegisterObserver(this);
             RegisteredListenersCtrl.ZoomListeners.RegisterObserver(this);
 
@@ -79,6 +92,14 @@ namespace Map2CivilizationView
 
             _originalMapControl.GotFocus += _originalMapControl_GotFocus;
             HandleDestroyed += RegionEditForm_HandleDestroyed;
+        }
+
+        private void ToolCheckBox_CheckChanged(object sender, EventArgs e)
+        {
+            _autoCenter = _autoCenterCheckBox.Checked;
+            _processedMapControl.Focus();
+            if (_autoCenter)
+                CenterToSelectedPlot();
         }
 
         private void _originalMapControl_GotFocus(object sender, EventArgs e)
@@ -96,7 +117,9 @@ namespace Map2CivilizationView
         {
             plotValueLabel.Text = id.Name;
             _currentPlotId = id;
-            CenterToSelectedPlot();
+
+            if (_autoCenter)
+                CenterToSelectedPlot();
         }
 
         private void RegionEditForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -109,7 +132,8 @@ namespace Map2CivilizationView
 
         private void SplitPanelsSizeChanged(object sender, EventArgs e)
         {
-            CenterToSelectedPlot();
+            if (_autoCenter)
+                CenterToSelectedPlot();
         }
 
         private void CenterToSelectedPlot()
@@ -137,6 +161,8 @@ namespace Map2CivilizationView
         public void ZoomChanged(float value)
         {
             CenterToSelectedPlot();
+            _processedMapControl.Focus();
+
         }
     }
 }

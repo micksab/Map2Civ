@@ -127,6 +127,18 @@ namespace Map2CivilizationCtrl.ModelFileStorage
                 RegisteredListenersCtrl.SetProgressPercent(0);
                 RegisteredListenersCtrl.ProgressFinished();
                 RegisteredListenersCtrl.CentralFormSetModelButtonAndMenusEnabledState(true, true);
+
+                //Call GC.Collect twice to clear any stubborn memory streams...
+                //http://stackoverflow.com/questions/9345415/c-sharp-memorystream-leaking-memory-after-disposing-close-etc
+                //"There is one more thing with MemoryStream (and any other large 86K +) allocations - 
+                //they use Large Objects Heap that will be only collected on full GC, to trigger it 
+                //you may need to run GC.Collect twice. In normal flow of an application it will happen 
+                //were enough, so you may not see this memory freed before application shutdown.
+                //To diagnose -check GC collection perf counter (number of GC)."
+                System.GC.Collect();
+                System.GC.Collect();
+
+
                 Dispose();
             }
         }

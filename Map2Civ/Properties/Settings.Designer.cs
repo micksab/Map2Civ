@@ -394,5 +394,17 @@ namespace Map2Civilization.Properties {
                 this["KeyShrortcuts_RepealAssignment"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool RegionEditor_AutoCenterSelectedPlot {
+            get {
+                return ((bool)(this["RegionEditor_AutoCenterSelectedPlot"]));
+            }
+            set {
+                this["RegionEditor_AutoCenterSelectedPlot"] = value;
+            }
+        }
     }
 }

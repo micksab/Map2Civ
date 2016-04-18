@@ -192,12 +192,6 @@
   <data name="plotValueLabel.Text" xml:space="preserve">
     <value>----</value>
   </data>
-  <data name="statusStrip.Text" xml:space="preserve">
-    <value>----</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Region Editor</value>
-  </data>
   <data name="statusStrip.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 487</value>
   </data>
@@ -206,6 +200,9 @@
   </data>
   <data name="statusStrip.TabIndex" type="System.Int32, mscorlib">
     <value>18</value>
+  </data>
+  <data name="statusStrip.Text" xml:space="preserve">
+    <value>----</value>
   </data>
   <data name="&gt;&gt;statusStrip.Name" xml:space="preserve">
     <value>statusStrip</value>
@@ -363,6 +360,9 @@
         HwDx4Y8A5+HnAM/h8wDP4PMAn8D5AJ/AeQA+ADwAPAA4ABwAgAAcAAAAPAgAAD4+AACfMgEAn4ABAMeA
         AwDD+AMA4/AHAPH4DwD4fh8A/gB/AP+B/wA=
 </value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Region Editor</value>
   </data>
   <data name="&gt;&gt;plotTitleLabel.Name" xml:space="preserve">
     <value>plotTitleLabel</value>

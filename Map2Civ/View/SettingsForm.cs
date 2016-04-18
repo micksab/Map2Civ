@@ -60,6 +60,7 @@ namespace Map2CivilizationView
         private const string KeyShrortcuts_AssignCoast = "KeyShrortcuts_AssignCoast";
         private const string KeyShrortcuts_OpenModel = "KeyShrortcuts_OpenModel";
         private const string KeyShortcuts_RepealAssignment = "KeyShrortcuts_RepealAssignment";
+        private const string Form_RegionEditor_AutoCenterSelectedPlot = "RegionEditor_AutoCenterSelectedPlot";
         private const string UiCulture = "UICulture";
 
         private string _ReportEMailAddress = Map2Civilization.Properties.Settings.Default.ReportEMailAddress;
@@ -73,6 +74,12 @@ namespace Map2CivilizationView
             PopulateNumericBoxes();
             PopulateColorSelectors();
             PopulateLanguagesCombo();
+            PopulateCheckBoxes();
+        }
+
+        private void PopulateCheckBoxes()
+        {
+            autoCenterRegionEditFormCheckBox.Checked = Settings.Default.RegionEditor_AutoCenterSelectedPlot;
         }
 
         private void PopulateShortcutsKeysSelectors()
@@ -246,6 +253,12 @@ namespace Map2CivilizationView
             SettingsChanged();
         }
 
+
+        private void autoCenterRegionEditForm_CheckedChanged(object sender, EventArgs e)
+        {
+            SettingsChanged();
+        }
+
         private void cancelButton_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.Cancel;
@@ -299,6 +312,7 @@ namespace Map2CivilizationView
         {
             Settings.Default.ReportEMailAddress = _ReportEMailAddress;
             Settings.Default.UICulture = _uICulture;
+            Settings.Default.RegionEditor_AutoCenterSelectedPlot = autoCenterRegionEditFormCheckBox.Checked;
 
             foreach (ISettingControl tempControl in _settingControlList)
             {
@@ -319,5 +333,6 @@ namespace Map2CivilizationView
 
             Application.Restart();
         }
+
     }
 }

@@ -38,8 +38,10 @@ namespace Map2Civilization.Ctrl
                 StreamReader sr = new StreamReader(outMemoryStream);
                 toReturn = sr.ReadToEnd();
             }
-                
+
             
+
+
             return toReturn;
 
         }

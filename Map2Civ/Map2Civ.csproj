@@ -269,6 +269,9 @@
     <Compile Include="View\UserControls\SourceSettingsControlReliefMap.Designer.cs">
       <DependentUpon>SourceSettingsControlReliefMap.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\UserControls\ToolStripCheckBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="View\UserControls\ZoomSplitButton.cs">
       <SubType>Component</SubType>
     </Compile>
