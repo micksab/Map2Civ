@@ -65,6 +65,8 @@ namespace Map2CivilizationView
             statusStrip.Items.Add(_zoomSplitButton);
 
             HandleDestroyed += MainForm_Closing;
+
+            RegisteredListenersCtrl.ModelListenersCurrentFileChanged(null);
         }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Globalization", "CA1303:Do not pass literals as localized parameters", MessageId = "System.Windows.Forms.Control.set_Text(System.String)")]
@@ -81,9 +83,21 @@ namespace Map2CivilizationView
             }
             productName = ((AssemblyProductAttribute)attributes[0]).Product;
 
-            string toDisplay = string.Concat(productName, " v", version, " ", "...", displayableFilestring);
+            string toDisplay = string.Empty;
+
+            if (fileName != null)
+            {
+                toDisplay = string.Concat(productName, " v ", version, " ", "...", displayableFilestring);
+            }
+            else
+            {
+                toDisplay = string.Concat(productName, " v ", version);
+            }
+
 
             Text = toDisplay;
+
+
         }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Reliability", "CA2000:Dispose objects before losing scope")]

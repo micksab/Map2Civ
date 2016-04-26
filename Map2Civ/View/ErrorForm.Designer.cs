@@ -67,6 +67,7 @@ namespace Map2CivilizationView
             // closeButton
             // 
             resources.ApplyResources(this.closeButton, "closeButton");
+            this.closeButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.closeButton.Name = "closeButton";
             this.closeButton.UseVisualStyleBackColor = true;
             this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
@@ -121,8 +122,10 @@ namespace Map2CivilizationView
             // 
             // ErrorForm
             // 
+            this.AcceptButton = this.closeButton;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.closeButton;
             this.ControlBox = false;
             this.Controls.Add(this.ExceptionInfoPanel);
             this.Controls.Add(this.buttonPanel);

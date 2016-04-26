@@ -2,7 +2,7 @@
 
 namespace Map2CivilizationView
 {
-    partial class ImageEditor
+    partial class ImageEditorForm
     {
         /// <summary>
         /// Required designer variable.
@@ -32,13 +32,14 @@ namespace Map2CivilizationView
         [GeneratedCodeAttribute("Winform Designer GeneratedCode", "VS2015")]
          void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ImageEditor));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ImageEditorForm));
             this.toolStrip = new System.Windows.Forms.ToolStrip();
             this.resizeButton = new System.Windows.Forms.ToolStripButton();
             this.cancelButton = new System.Windows.Forms.ToolStripButton();
             this.okButton = new System.Windows.Forms.ToolStripButton();
             this.selectAreaOnButton = new System.Windows.Forms.ToolStripButton();
             this.selectAreaOffButton = new System.Windows.Forms.ToolStripButton();
+            this.adjustmentsButton = new System.Windows.Forms.ToolStripButton();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.intentedRatioLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.imageWidthLabel = new System.Windows.Forms.ToolStripStatusLabel();
@@ -74,7 +75,8 @@ namespace Map2CivilizationView
             this.cancelButton,
             this.okButton,
             this.selectAreaOnButton,
-            this.selectAreaOffButton});
+            this.selectAreaOffButton,
+            this.adjustmentsButton});
             this.toolStrip.Name = "toolStrip";
             // 
             // resizeButton
@@ -118,6 +120,14 @@ namespace Map2CivilizationView
             this.selectAreaOffButton.Image = global::Map2Civilization.Properties.Resources.SelectOff_Image;
             this.selectAreaOffButton.Name = "selectAreaOffButton";
             this.selectAreaOffButton.Click += new System.EventHandler(this.SelectAreaButton_Click);
+            // 
+            // adjustmentsButton
+            // 
+            resources.ApplyResources(this.adjustmentsButton, "adjustmentsButton");
+            this.adjustmentsButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.adjustmentsButton.Image = global::Map2Civilization.Properties.Resources.ContrastBrightness_Image;
+            this.adjustmentsButton.Name = "adjustmentsButton";
+            this.adjustmentsButton.Click += new System.EventHandler(this.adjustmentsButton_Click);
             // 
             // statusStrip
             // 
@@ -259,7 +269,7 @@ namespace Map2CivilizationView
             resources.ApplyResources(this.imagePanel, "imagePanel");
             this.imagePanel.Name = "imagePanel";
             // 
-            // ImageEditor
+            // ImageEditorForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -268,9 +278,8 @@ namespace Map2CivilizationView
             this.Controls.Add(this.slidersPanel);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.toolStrip);
-            this.Name = "ImageEditor";
+            this.Name = "ImageEditorForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
-            this.TopMost = true;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.ImageEditor_Load);
             this.toolStrip.ResumeLayout(false);
@@ -313,5 +322,6 @@ namespace Map2CivilizationView
          System.Windows.Forms.Label xLabel;
          System.Windows.Forms.TrackBar xTrackBar;
          System.Windows.Forms.NumericUpDown xNumeric;
+        private System.Windows.Forms.ToolStripButton adjustmentsButton;
     }
 }

@@ -460,4 +460,7 @@ You should have received a copy of the GNU General Public License along with GIM
   <data name="Str_RegionEditForm_AutoCenterBox" xml:space="preserve">
     <value>Auto-Center on selected plot</value>
   </data>
+  <data name="ContrastBrightness_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\ContrastBrightness_Image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

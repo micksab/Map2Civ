@@ -146,11 +146,17 @@
     <Compile Include="View\CreditsForm.Designer.cs">
       <DependentUpon>CreditsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\ImageEditor.cs">
+    <Compile Include="View\ImageEditorForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\ImageEditor.Designer.cs">
-      <DependentUpon>ImageEditor.cs</DependentUpon>
+    <Compile Include="View\ImageEditorForm.Designer.cs">
+      <DependentUpon>ImageEditorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ImageProcessingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ImageProcessingForm.Designer.cs">
+      <DependentUpon>ImageProcessingForm.cs</DependentUpon>
     </Compile>
     <Compile Include="View\KeyboardShortcutSelectorForm.cs">
       <SubType>Form</SubType>
@@ -312,14 +318,17 @@
     <EmbeddedResource Include="View\ErrorForm.el.resx">
       <DependentUpon>ErrorForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\ImageEditor.el-GR.resx">
-      <DependentUpon>ImageEditor.cs</DependentUpon>
+    <EmbeddedResource Include="View\ImageEditorForm.el-GR.resx">
+      <DependentUpon>ImageEditorForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\ImageEditor.el.resx">
-      <DependentUpon>ImageEditor.cs</DependentUpon>
+    <EmbeddedResource Include="View\ImageEditorForm.el.resx">
+      <DependentUpon>ImageEditorForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\ImageEditor.resx">
-      <DependentUpon>ImageEditor.cs</DependentUpon>
+    <EmbeddedResource Include="View\ImageEditorForm.resx">
+      <DependentUpon>ImageEditorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ImageProcessingForm.resx">
+      <DependentUpon>ImageProcessingForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\KeyboardShortcutSelectorForm.el-GR.resx">
       <DependentUpon>KeyboardShortcutSelectorForm.cs</DependentUpon>
@@ -472,6 +481,7 @@
     <None Include="SampleMapFiles\Greece_large_topographic_basemap_adjusted.png" />
     <None Include="SampleMapFiles\Greece_topo_scaled.jpg" />
     <None Include="SampleMapFiles\Peloponnese_relief_map-blank.png" />
+    <None Include="Images\ContrastBrightness_Image.png" />
     <Content Include="WorldMap64-256.ico" />
     <None Include="Images\WorldMap16-32.ico" />
     <None Include="Images\WorldMap64-256.ico" />

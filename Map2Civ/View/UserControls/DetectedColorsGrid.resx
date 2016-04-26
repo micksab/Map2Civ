@@ -144,7 +144,7 @@
     <value>Assign Terrain Type</value>
   </data>
   <data name="contextMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>177, 26</value>
+    <value>177, 48</value>
   </data>
   <data name="&gt;&gt;contextMenu.Name" xml:space="preserve">
     <value>contextMenu</value>
@@ -213,12 +213,6 @@
   <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
     <value>320, 332</value>
   </data>
-  <data name="&gt;&gt;massAssignMenuEntry.Name" xml:space="preserve">
-    <value>massAssignMenuEntry</value>
-  </data>
-  <data name="&gt;&gt;massAssignMenuEntry.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;colorDisplayColumn.Name" xml:space="preserve">
     <value>colorDisplayColumn</value>
   </data>
@@ -230,6 +224,12 @@
   </data>
   <data name="&gt;&gt;idColumn.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;massAssignMenuEntry.Name" xml:space="preserve">
+    <value>massAssignMenuEntry</value>
+  </data>
+  <data name="&gt;&gt;massAssignMenuEntry.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;settingColumn.Name" xml:space="preserve">
     <value>settingColumn</value>

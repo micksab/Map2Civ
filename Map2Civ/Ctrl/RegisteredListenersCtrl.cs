@@ -136,7 +136,7 @@ namespace Map2CivilizationCtrl
             }
 
             //Reset zoom factor to 100%
-            RegisteredListenersCtrl.ZoomChangedUpdate(100f);
+            ZoomChangedUpdate(100f);
         }
 
         public static void ModelListenersCurrentFileChanged(string fullFilename)

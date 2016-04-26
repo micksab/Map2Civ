@@ -303,25 +303,25 @@
   <data name="okButton.Text" xml:space="preserve">
     <value>Αποδοχή</value>
   </data>
-  <data name="customRadio.Text" xml:space="preserve">
-    <value>Ελεύθερη Επιλογή Μεγέθους</value>
-  </data>
   <data name="cancelButton.Text" xml:space="preserve">
     <value>Ακύρωση</value>
   </data>
   <data name="nearestRadio.Text" xml:space="preserve">
     <value>Πλησιέστερη Αναλογία Μεγέθους Χάρτη</value>
   </data>
-  <data name="colorButton.Text" xml:space="preserve">
-    <value>Αλλαγή Χρώματος Υποβάθρου</value>
-  </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Χρώμα Υποβάθρου Καμβά</value>
+  <data name="sizeGroupBox.Text" xml:space="preserve">
+    <value>Ελεύθερη Επιλογή Μεγέθους</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Μέγεθος Καμβά</value>
   </data>
-  <data name="sizeGroupBox.Text" xml:space="preserve">
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Χρώμα Υποβάθρου Καμβά</value>
+  </data>
+  <data name="colorButton.Text" xml:space="preserve">
+    <value>Αλλαγή Χρώματος Υποβάθρου</value>
+  </data>
+  <data name="customRadio.Text" xml:space="preserve">
     <value>Ελεύθερη Επιλογή Μεγέθους</value>
   </data>
 </root>

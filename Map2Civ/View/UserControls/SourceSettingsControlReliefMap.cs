@@ -212,12 +212,13 @@ namespace Map2CivilizationView.UserControls
 
                 if (result == DialogResult.No)
                 {
+                    _ownerForm.BringToFront();
                     return sourceImage;
                 }
                 else
                 {
                     Bitmap toReturn;
-                    using (ImageEditor editorForm = new ImageEditor(sourceImage, modelRatio))
+                    using (ImageEditorForm editorForm = new ImageEditorForm(sourceImage, modelRatio))
                     {
                         DialogResult editorResult = editorForm.ShowDialog(_ownerForm);
                         

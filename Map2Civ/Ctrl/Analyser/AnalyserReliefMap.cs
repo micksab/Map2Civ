@@ -147,6 +147,7 @@ namespace Map2CivilizationCtrl.Analyzer
                     DataModel newModel = (DataModel)e.Result;
                     ModelCtrl.SetDataModel(newModel);
                     RegisteredListenersCtrl.CentralFormPublishNewInfoMessage(Map2Civilization.Properties.Resources.Str_AnalyserReliefMap_ModelCreated);
+                    RegisteredListenersCtrl.ModelListenersCurrentFileChanged(null);
                     RegisteredListenersCtrl.CentralFormSetModelButtonAndMenusEnabledState(true, false);
                 }
                 else

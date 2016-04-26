@@ -27,7 +27,7 @@ using Map2CivilizationCtrl;
 namespace Map2CivilizationView
 {
     
-    public partial class ImageEditor : Form
+    public partial class ImageEditorForm : Form
     {
          Bitmap _originalBmp;
          double _intendedRatio;
@@ -37,7 +37,7 @@ namespace Map2CivilizationView
 
         UserControls.ImageAreaSelector _selectionToolControl;
 
-        public ImageEditor(Bitmap image, double intendedRatio)
+        public ImageEditorForm(Bitmap image, double intendedRatio)
         {
             InitializeComponent();
 
@@ -358,6 +358,14 @@ namespace Map2CivilizationView
             
         }
 
-        
+        private void adjustmentsButton_Click(object sender, EventArgs e)
+        {
+            using (ImageProcessingForm imageAdjustmentForm = new ImageProcessingForm(_originalBmp))
+            {
+                DialogResult result = imageAdjustmentForm.ShowDialog();
+            }
+
+            
+        }
     }
 }

@@ -132,6 +132,9 @@
   <data name="selectAreaOffButton.Text" xml:space="preserve">
     <value>Απόκρυψη Εργαλείου Επιλογής Τμήματος Της Εικόνας</value>
   </data>
+  <data name="intentedRatioLabel.Text" xml:space="preserve">
+    <value>Επιδιωκόμενος Λόγος Εικόνας:</value>
+  </data>
   <data name="imageWidthLabel.Text" xml:space="preserve">
     <value>Πλάτος Εικόνας:</value>
   </data>
@@ -150,7 +153,7 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Επεξεργασία Εικόνας</value>
   </data>
-  <data name="intentedRatioLabel.Text" xml:space="preserve">
-    <value>Επιδιωκόμενος Λόγος Εικόνας:</value>
+  <data name="toolStripButton1.Text" xml:space="preserve">
+    <value>Ρυθμίσεις φωτεινότητας/αντίθεσης</value>
   </data>
 </root>

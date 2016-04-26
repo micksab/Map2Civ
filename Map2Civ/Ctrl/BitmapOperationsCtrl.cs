@@ -84,14 +84,14 @@ namespace Map2CivilizationCtrl
 
                         return toReturn;
                     }
-                    // new Bitmap(modelBitmap);
-                   
+                // new Bitmap(modelBitmap);
 
-                    /******** TEST CODE - REMEMBER TO REMOVE ********/
-                    //toReturn.Save(System.IO.Path.Combine(savePath, string.Concat(timeStampStr, "Returned", ".bmp")));
-                    /************************************************/
 
-                    
+                /******** TEST CODE - REMEMBER TO REMOVE ********/
+                //toReturn.Save(System.IO.Path.Combine(savePath, string.Concat(timeStampStr, "Returned", ".bmp")));
+                /************************************************/
+
+
 
                 default:
                     /******** TEST CODE - REMEMBER TO REMOVE ********/
@@ -326,9 +326,9 @@ namespace Map2CivilizationCtrl
             return toReturn;
         }
 
-       
 
-       
+
+
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Reliability", "CA2000:Dispose objects before losing scope")]
         public static Bitmap CreateHighlightedColorsProcessedBitmap(List<PlotId> plotCoordinatePairs)
@@ -500,6 +500,34 @@ namespace Map2CivilizationCtrl
 
 
 
-        
+
+        public static Bitmap PerfromImageAdjustments(Bitmap originalImage, float brightness, float contrast, float gamma)
+        {
+            Bitmap adjustedImage = new Bitmap(originalImage.Width, originalImage.Height);
+
+            float adjustedBrightness = brightness / 255f;
+            // create matrix that will brighten and contrast the image
+            float[][] ptsArray ={
+            new float[] {contrast, 0, 0, 0, 0}, // scale red
+            new float[] {0, contrast, 0, 0, 0}, // scale green
+            new float[] {0, 0, contrast, 0, 0}, // scale blue
+            new float[] {0, 0, 0, 1.0f, 0}, // don't scale alpha
+            new float[] {adjustedBrightness, adjustedBrightness, adjustedBrightness, 0, 1}};
+
+            ImageAttributes imageAttributes = new ImageAttributes();
+            imageAttributes.ClearColorMatrix();
+            imageAttributes.SetColorMatrix(new ColorMatrix(ptsArray), ColorMatrixFlag.Default, ColorAdjustType.Bitmap);
+            imageAttributes.SetGamma(gamma, ColorAdjustType.Bitmap);
+            Graphics g = Graphics.FromImage(adjustedImage);
+            g.DrawImage(originalImage, new Rectangle(0, 0, adjustedImage.Width, adjustedImage.Height)
+                , 0, 0, originalImage.Width, originalImage.Height,
+                GraphicsUnit.Pixel, imageAttributes);
+
+            return adjustedImage;
+        }
+
+
     }
+
+        
 }

@@ -123,4 +123,15 @@
   <data name="okButton.Text" xml:space="preserve">
     <value>Επιστροφή</value>
   </data>
+  <data name="creditsBox.Text" xml:space="preserve">
+    <value>*** Προγραμματισμός ***
+Michail Sampatakakis
+
+*** Μεταφράσεις ***
+Michail Sampatakakis (Ελληνικά &amp; Αγγλικά)
+
+*** Σύμβουλοι ***
+Sven Vermeulen
+Demian Cummings</value>
+  </data>
 </root>

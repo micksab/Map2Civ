@@ -131,33 +131,6 @@
   <data name="widthLabel.Text" xml:space="preserve">
     <value>Width (Pixels)</value>
   </data>
-  <data name="heightLabel.Text" xml:space="preserve">
-    <value>Height (Pixels)</value>
-  </data>
-  <data name="okButton.Text" xml:space="preserve">
-    <value>OK</value>
-  </data>
-  <data name="customRadio.Text" xml:space="preserve">
-    <value>Custom Size</value>
-  </data>
-  <data name="cancelButton.Text" xml:space="preserve">
-    <value>Cancel</value>
-  </data>
-  <data name="nearestRadio.Text" xml:space="preserve">
-    <value>Nearest Selected Map Ratio Size</value>
-  </data>
-  <data name="colorButton.Text" xml:space="preserve">
-    <value>Change Color</value>
-  </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Canvas Background Color</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Canvas Size</value>
-  </data>
-  <data name="sizeGroupBox.Text" xml:space="preserve">
-    <value>Custom Size</value>
-  </data>
   <data name="widthLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleRight</value>
   </data>
@@ -181,6 +154,9 @@
   </data>
   <data name="heightLabel.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
+  </data>
+  <data name="heightLabel.Text" xml:space="preserve">
+    <value>Height (Pixels)</value>
   </data>
   <data name="heightLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleRight</value>
@@ -247,6 +223,30 @@
   </data>
   <data name="okButton.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
+  </data>
+  <data name="okButton.Text" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="cancelButton.Text" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="nearestRadio.Text" xml:space="preserve">
+    <value>Nearest Selected Map Ratio Size</value>
+  </data>
+  <data name="sizeGroupBox.Text" xml:space="preserve">
+    <value>Custom Size</value>
+  </data>
+  <data name="customRadio.Text" xml:space="preserve">
+    <value>Custom Size</value>
+  </data>
+  <data name="colorButton.Text" xml:space="preserve">
+    <value>Change Color</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Canvas Background Color</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Canvas Size</value>
   </data>
   <data name="&gt;&gt;okButton.Name" xml:space="preserve">
     <value>okButton</value>

@@ -30,11 +30,11 @@ namespace Map2CivilizationView.UserControls
         private double _CurrentYPerMille;
         private double _CurrentWidthPerMille;
         private readonly double _MapRatio;
-        private readonly ImageEditor _Editor;
+        private readonly ImageEditorForm _Editor;
         private bool _SelectorIsVisible = false;
         private Bitmap _ForegroundBitmap;
 
-        public ImageAreaSelector(double mapRatio, ImageEditor editor)
+        public ImageAreaSelector(double mapRatio, ImageEditorForm editor)
         {
             _MapRatio = mapRatio;
             BackgroundImageLayout = ImageLayout.Zoom;

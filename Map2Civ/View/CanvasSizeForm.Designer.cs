@@ -91,6 +91,7 @@ namespace Map2CivilizationView
             // 
             // cancelButton
             // 
+            this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             resources.ApplyResources(this.cancelButton, "cancelButton");
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.UseVisualStyleBackColor = true;
@@ -150,8 +151,10 @@ namespace Map2CivilizationView
             // 
             // CanvasSizeForm
             // 
+            this.AcceptButton = this.okButton;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.cancelButton;
             this.ControlBox = false;
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.sizeGroupBox);
