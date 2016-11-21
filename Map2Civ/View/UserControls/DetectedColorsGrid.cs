@@ -134,13 +134,10 @@ namespace Map2CivilizationView.UserControls
 
         private void gridView_SelectionChanged(object sender, EventArgs e)
         {
+           
             DataGridViewSelectedRowCollection selectedRows = gridView.SelectedRows;
 
-            //if (selectedRows.Count == 1)
-            //{
-            //    gridView.CurrentCell = selectedRows[0].Cells[settingColumn.Name];
-            //    gridView.BeginEdit(true);
-            //}
+            
 
             List<PlotId> plotIdList = new List<PlotId>();
 
@@ -155,6 +152,13 @@ namespace Map2CivilizationView.UserControls
                 }
 
                 RegisteredListenersCtrl.ProcessedMapShowSelectedColorsPlots(plotIdList);
+            }
+
+
+            if (selectedRows.Count == 1)
+            {
+                gridView.CurrentCell = selectedRows[0].Cells[settingColumn.Name];
+                gridView.BeginEdit(true);
             }
         }
 
@@ -194,12 +198,12 @@ namespace Map2CivilizationView.UserControls
                 if (((string)tempRow.Cells[idColumn.Name].Value).Equals(colorId))
                 {
                     tempRow.Selected = true;
-                    DataGridViewCell cell = tempRow.Cells[colorDisplayColumn.Name];
+                    //DataGridViewCell cell = tempRow.Cells[settingColumn.Name];
 
-                    gridView.FirstDisplayedScrollingRowIndex = tempRow.Index;
-                    gridView.CurrentCell = cell;
-                    gridView.BeginEdit(true);
-                    break;
+                    //gridView.FirstDisplayedScrollingRowIndex = tempRow.Index;
+                    //gridView.CurrentCell = cell;
+                    //gridView.BeginEdit(true);
+                    //break;
                 }
             }
         }

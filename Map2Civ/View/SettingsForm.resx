@@ -196,7 +196,7 @@
     <value>Bottom</value>
   </data>
   <data name="buttonsPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 448</value>
+    <value>0, 446</value>
   </data>
   <data name="buttonsPanel.RowCount" type="System.Int32, mscorlib">
     <value>1</value>
@@ -334,7 +334,7 @@
     <value>15</value>
   </data>
   <data name="generalTableLayoutPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>756, 416</value>
+    <value>756, 414</value>
   </data>
   <data name="generalTableLayoutPanel.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -361,7 +361,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="generalTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>762, 422</value>
+    <value>762, 420</value>
   </data>
   <data name="generalTabPage.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -397,7 +397,7 @@
     <value>selectorKeyShrortcuts_RepealAssignment</value>
   </data>
   <data name="&gt;&gt;selectorKeyShrortcuts_RepealAssignment.Type" xml:space="preserve">
-    <value>Map2CivilizationView.UserControls.KeyboardShortcutSettingSelector, Map2Civilization, Version=0.9.0.6, Culture=neutral, PublicKeyToken=null</value>
+    <value>Map2CivilizationView.UserControls.KeyboardShortcutSettingSelector, Map2Civilization, Version=0.9.0.7, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;selectorKeyShrortcuts_RepealAssignment.Parent" xml:space="preserve">
     <value>keyboardShortcutsTableLayoutPanel</value>
@@ -457,7 +457,7 @@
     <value>selectorKeyShrortcuts_OpenModel</value>
   </data>
   <data name="&gt;&gt;selectorKeyShrortcuts_OpenModel.Type" xml:space="preserve">
-    <value>Map2CivilizationView.UserControls.KeyboardShortcutSettingSelector, Map2Civilization, Version=0.9.0.6, Culture=neutral, PublicKeyToken=null</value>
+    <value>Map2CivilizationView.UserControls.KeyboardShortcutSettingSelector, Map2Civilization, Version=0.9.0.7, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;selectorKeyShrortcuts_OpenModel.Parent" xml:space="preserve">
     <value>keyboardShortcutsTableLayoutPanel</value>
@@ -946,7 +946,7 @@
     <value>selectorKeyShrortcuts_SaveAs</value>
   </data>
   <data name="&gt;&gt;selectorKeyShrortcuts_SaveAs.Type" xml:space="preserve">
-    <value>Map2CivilizationView.UserControls.KeyboardShortcutSettingSelector, Map2Civilization, Version=0.9.0.6, Culture=neutral, PublicKeyToken=null</value>
+    <value>Map2CivilizationView.UserControls.KeyboardShortcutSettingSelector, Map2Civilization, Version=0.9.0.7, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;selectorKeyShrortcuts_SaveAs.Parent" xml:space="preserve">
     <value>keyboardShortcutsTableLayoutPanel</value>
@@ -967,7 +967,7 @@
     <value>selectorKeyShrortcuts_Save</value>
   </data>
   <data name="&gt;&gt;selectorKeyShrortcuts_Save.Type" xml:space="preserve">
-    <value>Map2CivilizationView.UserControls.KeyboardShortcutSettingSelector, Map2Civilization, Version=0.9.0.6, Culture=neutral, PublicKeyToken=null</value>
+    <value>Map2CivilizationView.UserControls.KeyboardShortcutSettingSelector, Map2Civilization, Version=0.9.0.7, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;selectorKeyShrortcuts_Save.Parent" xml:space="preserve">
     <value>keyboardShortcutsTableLayoutPanel</value>
@@ -988,7 +988,7 @@
     <value>selectorKeyShrortcuts_NewModel</value>
   </data>
   <data name="&gt;&gt;selectorKeyShrortcuts_NewModel.Type" xml:space="preserve">
-    <value>Map2CivilizationView.UserControls.KeyboardShortcutSettingSelector, Map2Civilization, Version=0.9.0.6, Culture=neutral, PublicKeyToken=null</value>
+    <value>Map2CivilizationView.UserControls.KeyboardShortcutSettingSelector, Map2Civilization, Version=0.9.0.7, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;selectorKeyShrortcuts_NewModel.Parent" xml:space="preserve">
     <value>keyboardShortcutsTableLayoutPanel</value>
@@ -1009,7 +1009,7 @@
     <value>selectorKeyShrortcuts_ExportToCivMap</value>
   </data>
   <data name="&gt;&gt;selectorKeyShrortcuts_ExportToCivMap.Type" xml:space="preserve">
-    <value>Map2CivilizationView.UserControls.KeyboardShortcutSettingSelector, Map2Civilization, Version=0.9.0.6, Culture=neutral, PublicKeyToken=null</value>
+    <value>Map2CivilizationView.UserControls.KeyboardShortcutSettingSelector, Map2Civilization, Version=0.9.0.7, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;selectorKeyShrortcuts_ExportToCivMap.Parent" xml:space="preserve">
     <value>keyboardShortcutsTableLayoutPanel</value>
@@ -1030,7 +1030,7 @@
     <value>selectorKeyShrortcuts_EditRegion</value>
   </data>
   <data name="&gt;&gt;selectorKeyShrortcuts_EditRegion.Type" xml:space="preserve">
-    <value>Map2CivilizationView.UserControls.KeyboardShortcutSettingSelector, Map2Civilization, Version=0.9.0.6, Culture=neutral, PublicKeyToken=null</value>
+    <value>Map2CivilizationView.UserControls.KeyboardShortcutSettingSelector, Map2Civilization, Version=0.9.0.7, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;selectorKeyShrortcuts_EditRegion.Parent" xml:space="preserve">
     <value>keyboardShortcutsTableLayoutPanel</value>
@@ -1051,7 +1051,7 @@
     <value>selectorKeyShrortcuts_EditPlotData</value>
   </data>
   <data name="&gt;&gt;selectorKeyShrortcuts_EditPlotData.Type" xml:space="preserve">
-    <value>Map2CivilizationView.UserControls.KeyboardShortcutSettingSelector, Map2Civilization, Version=0.9.0.6, Culture=neutral, PublicKeyToken=null</value>
+    <value>Map2CivilizationView.UserControls.KeyboardShortcutSettingSelector, Map2Civilization, Version=0.9.0.7, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;selectorKeyShrortcuts_EditPlotData.Parent" xml:space="preserve">
     <value>keyboardShortcutsTableLayoutPanel</value>
@@ -1072,7 +1072,7 @@
     <value>selectorKeyShrortcuts_AssignOcean</value>
   </data>
   <data name="&gt;&gt;selectorKeyShrortcuts_AssignOcean.Type" xml:space="preserve">
-    <value>Map2CivilizationView.UserControls.KeyboardShortcutSettingSelector, Map2Civilization, Version=0.9.0.6, Culture=neutral, PublicKeyToken=null</value>
+    <value>Map2CivilizationView.UserControls.KeyboardShortcutSettingSelector, Map2Civilization, Version=0.9.0.7, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;selectorKeyShrortcuts_AssignOcean.Parent" xml:space="preserve">
     <value>keyboardShortcutsTableLayoutPanel</value>
@@ -1093,7 +1093,7 @@
     <value>selectorKeyShrortcuts_AssignCoast</value>
   </data>
   <data name="&gt;&gt;selectorKeyShrortcuts_AssignCoast.Type" xml:space="preserve">
-    <value>Map2CivilizationView.UserControls.KeyboardShortcutSettingSelector, Map2Civilization, Version=0.9.0.6, Culture=neutral, PublicKeyToken=null</value>
+    <value>Map2CivilizationView.UserControls.KeyboardShortcutSettingSelector, Map2Civilization, Version=0.9.0.7, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;selectorKeyShrortcuts_AssignCoast.Parent" xml:space="preserve">
     <value>keyboardShortcutsTableLayoutPanel</value>
@@ -1114,7 +1114,7 @@
     <value>selectorKeyShrortcuts_AssignFlat</value>
   </data>
   <data name="&gt;&gt;selectorKeyShrortcuts_AssignFlat.Type" xml:space="preserve">
-    <value>Map2CivilizationView.UserControls.KeyboardShortcutSettingSelector, Map2Civilization, Version=0.9.0.6, Culture=neutral, PublicKeyToken=null</value>
+    <value>Map2CivilizationView.UserControls.KeyboardShortcutSettingSelector, Map2Civilization, Version=0.9.0.7, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;selectorKeyShrortcuts_AssignFlat.Parent" xml:space="preserve">
     <value>keyboardShortcutsTableLayoutPanel</value>
@@ -1135,7 +1135,7 @@
     <value>selectorKeyShrortcuts_AssignHill</value>
   </data>
   <data name="&gt;&gt;selectorKeyShrortcuts_AssignHill.Type" xml:space="preserve">
-    <value>Map2CivilizationView.UserControls.KeyboardShortcutSettingSelector, Map2Civilization, Version=0.9.0.6, Culture=neutral, PublicKeyToken=null</value>
+    <value>Map2CivilizationView.UserControls.KeyboardShortcutSettingSelector, Map2Civilization, Version=0.9.0.7, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;selectorKeyShrortcuts_AssignHill.Parent" xml:space="preserve">
     <value>keyboardShortcutsTableLayoutPanel</value>
@@ -1156,7 +1156,7 @@
     <value>selectorKeyShrortcuts_AssignMountain</value>
   </data>
   <data name="&gt;&gt;selectorKeyShrortcuts_AssignMountain.Type" xml:space="preserve">
-    <value>Map2CivilizationView.UserControls.KeyboardShortcutSettingSelector, Map2Civilization, Version=0.9.0.6, Culture=neutral, PublicKeyToken=null</value>
+    <value>Map2CivilizationView.UserControls.KeyboardShortcutSettingSelector, Map2Civilization, Version=0.9.0.7, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;selectorKeyShrortcuts_AssignMountain.Parent" xml:space="preserve">
     <value>keyboardShortcutsTableLayoutPanel</value>
@@ -1231,7 +1231,7 @@
     <value>10, 19</value>
   </data>
   <data name="autoCenterRegionEditFormCheckBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>160, 17</value>
+    <value>179, 19</value>
   </data>
   <data name="autoCenterRegionEditFormCheckBox.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
@@ -1288,7 +1288,7 @@
     <value>highlightedPlotGridWidthNumeric</value>
   </data>
   <data name="&gt;&gt;highlightedPlotGridWidthNumeric.Type" xml:space="preserve">
-    <value>Map2CivilizationView.UserControls.NumericSettingSelector, Map2Civilization, Version=0.9.0.6, Culture=neutral, PublicKeyToken=null</value>
+    <value>Map2CivilizationView.UserControls.NumericSettingSelector, Map2Civilization, Version=0.9.0.7, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;highlightedPlotGridWidthNumeric.Parent" xml:space="preserve">
     <value>gridGroup</value>
@@ -1387,7 +1387,7 @@
     <value>highlightedGridColorSelector</value>
   </data>
   <data name="&gt;&gt;highlightedGridColorSelector.Type" xml:space="preserve">
-    <value>Map2CivilizationView.UserControls.ColorSettingSelector, Map2Civilization, Version=0.9.0.6, Culture=neutral, PublicKeyToken=null</value>
+    <value>Map2CivilizationView.UserControls.ColorSettingSelector, Map2Civilization, Version=0.9.0.7, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;highlightedGridColorSelector.Parent" xml:space="preserve">
     <value>gridGroup</value>
@@ -1447,7 +1447,7 @@
     <value>processedMapUnassignedGridColorSelector</value>
   </data>
   <data name="&gt;&gt;processedMapUnassignedGridColorSelector.Type" xml:space="preserve">
-    <value>Map2CivilizationView.UserControls.ColorSettingSelector, Map2Civilization, Version=0.9.0.6, Culture=neutral, PublicKeyToken=null</value>
+    <value>Map2CivilizationView.UserControls.ColorSettingSelector, Map2Civilization, Version=0.9.0.7, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;processedMapUnassignedGridColorSelector.Parent" xml:space="preserve">
     <value>gridGroup</value>
@@ -1507,7 +1507,7 @@
     <value>originalMapGridColorSelector</value>
   </data>
   <data name="&gt;&gt;originalMapGridColorSelector.Type" xml:space="preserve">
-    <value>Map2CivilizationView.UserControls.ColorSettingSelector, Map2Civilization, Version=0.9.0.6, Culture=neutral, PublicKeyToken=null</value>
+    <value>Map2CivilizationView.UserControls.ColorSettingSelector, Map2Civilization, Version=0.9.0.7, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;originalMapGridColorSelector.Parent" xml:space="preserve">
     <value>gridGroup</value>
@@ -1552,7 +1552,7 @@
     <value>rhombusPlotWidthNumeric</value>
   </data>
   <data name="&gt;&gt;rhombusPlotWidthNumeric.Type" xml:space="preserve">
-    <value>Map2CivilizationView.UserControls.NumericSettingSelector, Map2Civilization, Version=0.9.0.6, Culture=neutral, PublicKeyToken=null</value>
+    <value>Map2CivilizationView.UserControls.NumericSettingSelector, Map2Civilization, Version=0.9.0.7, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;rhombusPlotWidthNumeric.Parent" xml:space="preserve">
     <value>plotWidthGroup</value>
@@ -1573,7 +1573,7 @@
     <value>squarePlotWidthNumeric</value>
   </data>
   <data name="&gt;&gt;squarePlotWidthNumeric.Type" xml:space="preserve">
-    <value>Map2CivilizationView.UserControls.NumericSettingSelector, Map2Civilization, Version=0.9.0.6, Culture=neutral, PublicKeyToken=null</value>
+    <value>Map2CivilizationView.UserControls.NumericSettingSelector, Map2Civilization, Version=0.9.0.7, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;squarePlotWidthNumeric.Parent" xml:space="preserve">
     <value>plotWidthGroup</value>
@@ -1594,7 +1594,7 @@
     <value>hexPlotWidthNumeric</value>
   </data>
   <data name="&gt;&gt;hexPlotWidthNumeric.Type" xml:space="preserve">
-    <value>Map2CivilizationView.UserControls.NumericSettingSelector, Map2Civilization, Version=0.9.0.6, Culture=neutral, PublicKeyToken=null</value>
+    <value>Map2CivilizationView.UserControls.NumericSettingSelector, Map2Civilization, Version=0.9.0.7, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;hexPlotWidthNumeric.Parent" xml:space="preserve">
     <value>plotWidthGroup</value>
@@ -1729,7 +1729,7 @@
     <value>mountainColorSelector</value>
   </data>
   <data name="&gt;&gt;mountainColorSelector.Type" xml:space="preserve">
-    <value>Map2CivilizationView.UserControls.ColorSettingSelector, Map2Civilization, Version=0.9.0.6, Culture=neutral, PublicKeyToken=null</value>
+    <value>Map2CivilizationView.UserControls.ColorSettingSelector, Map2Civilization, Version=0.9.0.7, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;mountainColorSelector.Parent" xml:space="preserve">
     <value>terrainGroup</value>
@@ -1945,7 +1945,7 @@
     <value>hillColorSelector</value>
   </data>
   <data name="&gt;&gt;hillColorSelector.Type" xml:space="preserve">
-    <value>Map2CivilizationView.UserControls.ColorSettingSelector, Map2Civilization, Version=0.9.0.6, Culture=neutral, PublicKeyToken=null</value>
+    <value>Map2CivilizationView.UserControls.ColorSettingSelector, Map2Civilization, Version=0.9.0.7, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;hillColorSelector.Parent" xml:space="preserve">
     <value>terrainGroup</value>
@@ -1966,7 +1966,7 @@
     <value>flatColorSelector</value>
   </data>
   <data name="&gt;&gt;flatColorSelector.Type" xml:space="preserve">
-    <value>Map2CivilizationView.UserControls.ColorSettingSelector, Map2Civilization, Version=0.9.0.6, Culture=neutral, PublicKeyToken=null</value>
+    <value>Map2CivilizationView.UserControls.ColorSettingSelector, Map2Civilization, Version=0.9.0.7, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;flatColorSelector.Parent" xml:space="preserve">
     <value>terrainGroup</value>
@@ -1987,7 +1987,7 @@
     <value>coastColorSelector</value>
   </data>
   <data name="&gt;&gt;coastColorSelector.Type" xml:space="preserve">
-    <value>Map2CivilizationView.UserControls.ColorSettingSelector, Map2Civilization, Version=0.9.0.6, Culture=neutral, PublicKeyToken=null</value>
+    <value>Map2CivilizationView.UserControls.ColorSettingSelector, Map2Civilization, Version=0.9.0.7, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;coastColorSelector.Parent" xml:space="preserve">
     <value>terrainGroup</value>
@@ -2008,7 +2008,7 @@
     <value>oceanColorSelector</value>
   </data>
   <data name="&gt;&gt;oceanColorSelector.Type" xml:space="preserve">
-    <value>Map2CivilizationView.UserControls.ColorSettingSelector, Map2Civilization, Version=0.9.0.6, Culture=neutral, PublicKeyToken=null</value>
+    <value>Map2CivilizationView.UserControls.ColorSettingSelector, Map2Civilization, Version=0.9.0.7, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;oceanColorSelector.Parent" xml:space="preserve">
     <value>terrainGroup</value>
@@ -2053,7 +2053,7 @@
     <value>zoomStepNumeric</value>
   </data>
   <data name="&gt;&gt;zoomStepNumeric.Type" xml:space="preserve">
-    <value>Map2CivilizationView.UserControls.NumericSettingSelector, Map2Civilization, Version=0.9.0.6, Culture=neutral, PublicKeyToken=null</value>
+    <value>Map2CivilizationView.UserControls.NumericSettingSelector, Map2Civilization, Version=0.9.0.7, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;zoomStepNumeric.Parent" xml:space="preserve">
     <value>zoomGroup</value>
@@ -2074,7 +2074,7 @@
     <value>maximumZoomNumeric</value>
   </data>
   <data name="&gt;&gt;maximumZoomNumeric.Type" xml:space="preserve">
-    <value>Map2CivilizationView.UserControls.NumericSettingSelector, Map2Civilization, Version=0.9.0.6, Culture=neutral, PublicKeyToken=null</value>
+    <value>Map2CivilizationView.UserControls.NumericSettingSelector, Map2Civilization, Version=0.9.0.7, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;maximumZoomNumeric.Parent" xml:space="preserve">
     <value>zoomGroup</value>
@@ -2095,7 +2095,7 @@
     <value>minimumZoomNumeric</value>
   </data>
   <data name="&gt;&gt;minimumZoomNumeric.Type" xml:space="preserve">
-    <value>Map2CivilizationView.UserControls.NumericSettingSelector, Map2Civilization, Version=0.9.0.6, Culture=neutral, PublicKeyToken=null</value>
+    <value>Map2CivilizationView.UserControls.NumericSettingSelector, Map2Civilization, Version=0.9.0.7, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;minimumZoomNumeric.Parent" xml:space="preserve">
     <value>zoomGroup</value>
@@ -2248,7 +2248,7 @@
     <value>0, 0</value>
   </data>
   <data name="tabControl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>770, 448</value>
+    <value>770, 446</value>
   </data>
   <data name="tabControl.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -2272,7 +2272,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>770, 492</value>
+    <value>770, 490</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
