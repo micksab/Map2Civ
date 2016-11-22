@@ -79,9 +79,11 @@ namespace Map2CivilizationCtrl
                 case false:
                     using (Bitmap intermediateBitmap = SafeCloneStreamBasedBitmap(modelBitmap))
                     {
+                        intermediateBitmap.SetResolution(96, 96);
                         Bitmap toReturn = intermediateBitmap.Clone(new Rectangle(0, 0,
                                modelBitmap.Width, modelBitmap.Height), settings.PixelFormat);
 
+                        toReturn.SetResolution(96, 96);
                         return toReturn;
                     }
                 // new Bitmap(modelBitmap);
@@ -484,6 +486,7 @@ namespace Map2CivilizationCtrl
         {
             Bitmap toReturn = new Bitmap(sourceBitmap.Width,
                 sourceBitmap.Height);
+            toReturn.SetResolution(96, 96);
             //Due to a GID+ feature according to which if a bitmap is opened from a stream, the stream should be available for
             // the lifetime of the bitmap's instance (and that applies to cloned instances of the original bitmap),
             // we would get a misleading "Out of Memory" exception on any method that would
@@ -501,6 +504,7 @@ namespace Map2CivilizationCtrl
 
 
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Reliability", "CA2000:Dispose objects before losing scope")]
         public static Bitmap PerfromImageAdjustments(Bitmap originalImage, float brightness, float contrast, float gamma)
         {
             Bitmap adjustedImage = new Bitmap(originalImage.Width, originalImage.Height);

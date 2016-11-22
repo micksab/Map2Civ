@@ -164,6 +164,7 @@ namespace Map2CivilizationView
             RegisteredListenersCtrl.ProgressListeners.DeregisterObserver(this);
         }
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1031:DoNotCatchGeneralExceptionTypes")]
         private void nextButton_Click(object sender, EventArgs e)
         {
             try

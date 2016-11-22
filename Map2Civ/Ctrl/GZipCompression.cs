@@ -11,6 +11,7 @@ namespace Map2Civilization.Ctrl
     static class GZipCompression
     {
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2202:Do not dispose objects multiple times")]
         public static void CompressModelFile(MemoryStream memoryStream, string destinationFile)
         {
             FileInfo destinationFileInfo = new FileInfo(destinationFile);
@@ -25,6 +26,7 @@ namespace Map2Civilization.Ctrl
         }
 
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2202:Do not dispose objects multiple times")]
         public static string DecompressModelFile(String sourceFile)
         {
             string toReturn = string.Empty;

@@ -78,9 +78,9 @@ namespace Map2CivilizationView
                     previewImageBox.Image = toDisplay;
                 }
             }
-            catch (Exception ex)
+            catch
             {
-                string test = "test";
+                throw;
             }
             finally
             {

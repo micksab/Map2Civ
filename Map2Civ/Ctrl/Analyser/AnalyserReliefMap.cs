@@ -138,6 +138,7 @@ namespace Map2CivilizationCtrl.Analyzer
             RegisteredListenersCtrl.SetProgressPercent(toReport);
         }
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1031:DoNotCatchGeneralExceptionTypes")]
         private void AnalysisBackgroundWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             try
