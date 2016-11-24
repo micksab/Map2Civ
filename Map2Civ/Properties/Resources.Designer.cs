@@ -143,6 +143,16 @@ namespace Map2Civilization.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Edit_Image {
+            get {
+                object obj = ResourceManager.GetObject("Edit_Image", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Export_Image {
             get {
                 object obj = ResourceManager.GetObject("Export_Image", resourceCulture);

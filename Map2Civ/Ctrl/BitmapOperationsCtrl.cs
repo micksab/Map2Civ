@@ -52,7 +52,7 @@ namespace Map2CivilizationCtrl
                 g.DrawImage(settings.OriginalMapBitmap, new Rectangle(0, 0, imageSize.Width, imageSize.Height));
             }
 
-            resizedBmp.SetResolution(96, 96);
+            resizedBmp.SetDefaultResolution();
 
             return resizedBmp;
         }
@@ -62,7 +62,7 @@ namespace Map2CivilizationCtrl
         {
             Size imageSize = GridCoordinateHelperCtrl.CalculateImageSize(mapDimension, gridTypeEnum);
             Bitmap toReturn = new Bitmap(imageSize.Width, imageSize.Height);
-            toReturn.SetResolution(96, 96);
+            toReturn.SetDefaultResolution();
 
             using (Graphics g = Graphics.FromImage(toReturn))
             {
@@ -83,7 +83,7 @@ namespace Map2CivilizationCtrl
                         Bitmap toReturn = intermediateBitmap.Clone(new Rectangle(0, 0,
                                modelBitmap.Width, modelBitmap.Height), settings.PixelFormat);
 
-                        toReturn.SetResolution(96, 96);
+                        toReturn.SetDefaultResolution();
                         return toReturn;
                     }
                 // new Bitmap(modelBitmap);
@@ -107,7 +107,7 @@ namespace Map2CivilizationCtrl
         public static Bitmap ResizeCanvas(Bitmap bmp, Color backgroundColor, int width, int height)
         {
             Bitmap toReturn = new Bitmap(width, height, bmp.PixelFormat);
-            toReturn.SetResolution(96, 96);
+            toReturn.SetDefaultResolution();
             int bmpWidth = bmp.Width;
             int bmpHeight = bmp.Height;
             int origBmpNewCoordinatesX = (width - bmpWidth) / 2;
@@ -191,7 +191,7 @@ namespace Map2CivilizationCtrl
             Color color = (Color)conv.ConvertFromString(colorHex);
 
             Bitmap toReturn = new Bitmap(1, 1);
-            toReturn.SetResolution(96, 96);
+            toReturn.SetDefaultResolution();
 
             using (SolidBrush brushToUse = new SolidBrush(color))
             {
@@ -211,7 +211,7 @@ namespace Map2CivilizationCtrl
         public static Bitmap FetchRegionOfBitmap(Bitmap sourceBmp, Point upperLeftCorner, int width, int height)
         {
             Bitmap toReturn = new Bitmap(width, height);
-            toReturn.SetResolution(96, 96);
+            toReturn.SetDefaultResolution();
             using (Graphics g = Graphics.FromImage(toReturn))
             {
                 g.DrawImage(sourceBmp, 0, 0,
@@ -339,7 +339,7 @@ namespace Map2CivilizationCtrl
             int gridLineWidthPixels = Map2Civilization.Properties.Settings.Default.ProcessedMapHighlightedPlotGridWidthPixels;
             Size mapSizePixels = GridCoordinateHelperCtrl.CalculateImageSize(ModelCtrl.GetMapSize(), ModelCtrl.GetGridType());
             Bitmap toReturn = new Bitmap(mapSizePixels.Width, mapSizePixels.Height);
-            toReturn.SetResolution(96, 96);
+            toReturn.SetDefaultResolution();
 
             using (Pen gridPen = new Pen(highlightedGridColor, (float)gridLineWidthPixels))
             using (Graphics grp = Graphics.FromImage(toReturn))
@@ -363,7 +363,7 @@ namespace Map2CivilizationCtrl
         {
             Bitmap toReturn = new Bitmap((int)GridTypeEnumWrapper.Singleton.GetPlotWidthPixels(gridType),
                 (int)GridTypeEnumWrapper.Singleton.GetPlotHeightPixels(gridType));
-            toReturn.SetResolution(96, 96);
+            toReturn.SetDefaultResolution();
 
             PointF[] points = GridCoordinateHelperCtrl.GetPlotPolygonPoints(id, gridType, mapDimension);
 
@@ -476,7 +476,7 @@ namespace Map2CivilizationCtrl
                 g.DrawEllipse(blackPen, rectOffsetWidth, rectOffsetHeight, circleRadious, circleRadious);
                 g.FillEllipse(brushToUse, rectOffsetWidth + 1f, rectOffsetHeight + 1f, circleRadious - 2f, circleRadious - 2f);
             }
-            toReturn.SetResolution(96, 96);
+            toReturn.SetDefaultResolution();
 
             return toReturn;
         }
@@ -486,7 +486,7 @@ namespace Map2CivilizationCtrl
         {
             Bitmap toReturn = new Bitmap(sourceBitmap.Width,
                 sourceBitmap.Height);
-            toReturn.SetResolution(96, 96);
+            toReturn.SetDefaultResolution();
             //Due to a GID+ feature according to which if a bitmap is opened from a stream, the stream should be available for
             // the lifetime of the bitmap's instance (and that applies to cloned instances of the original bitmap),
             // we would get a misleading "Out of Memory" exception on any method that would
@@ -503,11 +503,19 @@ namespace Map2CivilizationCtrl
 
 
 
-
+        /// <summary>
+        /// Based on data found at http://stackoverflow.com/questions/15408607/adjust-brightness-contrast-and-gamma-of-an-image
+        /// </summary>
+        /// <param name="originalImage"></param>
+        /// <param name="brightness"></param>
+        /// <param name="contrast"></param>
+        /// <param name="gamma"></param>
+        /// <returns></returns>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Reliability", "CA2000:Dispose objects before losing scope")]
         public static Bitmap PerfromImageAdjustments(Bitmap originalImage, float brightness, float contrast, float gamma)
         {
             Bitmap adjustedImage = new Bitmap(originalImage.Width, originalImage.Height);
+            adjustedImage.SetDefaultResolution();
 
             float adjustedBrightness = brightness / 255f;
             // create matrix that will brighten and contrast the image
@@ -528,6 +536,12 @@ namespace Map2CivilizationCtrl
                 GraphicsUnit.Pixel, imageAttributes);
 
             return adjustedImage;
+        }
+
+
+        public static void SetDefaultResolution(this Bitmap bmp)
+        {
+            bmp.SetResolution(96, 96);
         }
 
 

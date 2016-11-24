@@ -70,6 +70,7 @@ namespace Map2CivilizationView
             // 
             resources.ApplyResources(this.toolStrip, "toolStrip");
             this.toolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.toolStrip.ImageScalingSize = new System.Drawing.Size(18, 18);
             this.toolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.resizeButton,
             this.cancelButton,
@@ -131,6 +132,7 @@ namespace Map2CivilizationView
             // 
             // statusStrip
             // 
+            this.statusStrip.ImageScalingSize = new System.Drawing.Size(18, 18);
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.intentedRatioLabel,
             this.imageWidthLabel,

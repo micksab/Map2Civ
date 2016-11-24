@@ -152,11 +152,11 @@
     <Compile Include="View\ImageEditorForm.Designer.cs">
       <DependentUpon>ImageEditorForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\ImageProcessingForm.cs">
+    <Compile Include="View\ColorAdjustmentsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\ImageProcessingForm.Designer.cs">
-      <DependentUpon>ImageProcessingForm.cs</DependentUpon>
+    <Compile Include="View\ColorAdjustmentsForm.Designer.cs">
+      <DependentUpon>ColorAdjustmentsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="View\KeyboardShortcutSelectorForm.cs">
       <SubType>Form</SubType>
@@ -327,8 +327,14 @@
     <EmbeddedResource Include="View\ImageEditorForm.resx">
       <DependentUpon>ImageEditorForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\ImageProcessingForm.resx">
-      <DependentUpon>ImageProcessingForm.cs</DependentUpon>
+    <EmbeddedResource Include="View\ColorAdjustmentsForm.el-GR.resx">
+      <DependentUpon>ColorAdjustmentsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ColorAdjustmentsForm.el.resx">
+      <DependentUpon>ColorAdjustmentsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ColorAdjustmentsForm.resx">
+      <DependentUpon>ColorAdjustmentsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\KeyboardShortcutSelectorForm.el-GR.resx">
       <DependentUpon>KeyboardShortcutSelectorForm.cs</DependentUpon>
@@ -482,6 +488,7 @@
     <None Include="SampleMapFiles\Greece_topo_scaled.jpg" />
     <None Include="SampleMapFiles\Peloponnese_relief_map-blank.png" />
     <None Include="Images\ContrastBrightness_Image.png" />
+    <Content Include="Images\Edit_Image.png" />
     <Content Include="WorldMap64-256.ico" />
     <None Include="Images\WorldMap16-32.ico" />
     <None Include="Images\WorldMap64-256.ico" />

@@ -130,7 +130,7 @@
     <value>75, 16</value>
   </data>
   <data name="imageLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>0, 13</value>
+    <value>0, 15</value>
   </data>
   <data name="imageLabel.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
@@ -145,13 +145,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;imageLabel.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="pathBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>68, 13</value>
+    <value>14, 13</value>
   </data>
   <data name="pathBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>408, 20</value>
+    <value>458, 20</value>
   </data>
   <data name="pathBox.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -166,7 +166,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pathBox.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="colorDepthBox.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -184,7 +184,7 @@
     <value>colorDepthBox</value>
   </data>
   <data name="&gt;&gt;colorDepthBox.Type" xml:space="preserve">
-    <value>Map2CivilizationView.UserControls.CustomEnumComboBox, Map2Civilization, Version=0.9.0.3, Culture=neutral, PublicKeyToken=null</value>
+    <value>Map2CivilizationView.UserControls.CustomEnumComboBox, Map2Civilization, Version=0.9.0.9, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;colorDepthBox.Parent" xml:space="preserve">
     <value>advancedGroup</value>
@@ -226,7 +226,7 @@
     <value>8, 144</value>
   </data>
   <data name="smoothingLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>208, 25</value>
+    <value>208, 23</value>
   </data>
   <data name="smoothingLabel.TabIndex" type="System.Int32, mscorlib">
     <value>18</value>
@@ -373,7 +373,7 @@
     <value>129, 19</value>
   </data>
   <data name="defaultCheck.Size" type="System.Drawing.Size, System.Drawing">
-    <value>123, 17</value>
+    <value>137, 19</value>
   </data>
   <data name="defaultCheck.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -427,10 +427,10 @@
     <value>8</value>
   </data>
   <data name="advancedGroup.Location" type="System.Drawing.Point, System.Drawing">
-    <value>68, 39</value>
+    <value>14, 39</value>
   </data>
   <data name="advancedGroup.Size" type="System.Drawing.Size, System.Drawing">
-    <value>501, 170</value>
+    <value>568, 170</value>
   </data>
   <data name="advancedGroup.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
@@ -448,16 +448,16 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;advancedGroup.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="openFileButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="openFileButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>492, 6</value>
+    <value>478, 6</value>
   </data>
   <data name="openFileButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 32</value>
+    <value>49, 32</value>
   </data>
   <data name="openFileButton.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -472,7 +472,34 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;openFileButton.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
+  </data>
+  <data name="editImageButton.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="editImageButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="editImageButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>533, 6</value>
+  </data>
+  <data name="editImageButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>49, 32</value>
+  </data>
+  <data name="editImageButton.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="&gt;&gt;editImageButton.Name" xml:space="preserve">
+    <value>editImageButton</value>
+  </data>
+  <data name="&gt;&gt;editImageButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;editImageButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;editImageButton.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

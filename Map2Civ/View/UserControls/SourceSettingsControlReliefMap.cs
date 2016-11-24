@@ -100,6 +100,8 @@ namespace Map2CivilizationView.UserControls
         {
             try
             {
+
+
                 using (OpenFileDialog openFileDialog = new OpenFileDialog())
                 {
                     openFileDialog.Filter = "Image files (*.bmp, *.jpg, *.jpeg, *.png)|*.bmp;*.jpg;*.jpeg;*.png|All files (*.*)|*.*";
@@ -113,20 +115,26 @@ namespace Map2CivilizationView.UserControls
 
                         using (Bitmap toProc = (Bitmap)Image.FromFile(openFileDialog.FileName))
                         {
-                            toProc.SetResolution(96, 96);
+                            toProc.SetDefaultResolution();
+
                             _mapBitmap = new Bitmap(toProc.Width, toProc.Height);
+                            _mapBitmap.SetDefaultResolution();
+
 
                             using (Graphics g = Graphics.FromImage(_mapBitmap))
                             {
                                 g.DrawImageUnscaled(toProc, 0, 0);
                             }
 
-                            _mapBitmap.SetResolution(96, 96);
 
                             _mapBitmap = CheckImageDimensionsCompatibility(_mapBitmap);
                         }
                     }
                 }
+
+                editImageButton.Enabled = true;
+
+
             }
             catch (Exception ex)
             {
@@ -248,6 +256,38 @@ namespace Map2CivilizationView.UserControls
 
 
             }
+        }
+
+        private void editImageButton_Click(object sender, EventArgs e)
+        {
+            Bitmap toReturn;
+            double modelRatio = GridTypeEnumWrapper.Singleton.GetMapRatio(_gridTypeEnum, _mapDimension.WidthPlots, _mapDimension.HeightPlots);
+
+            using (ImageEditorForm editorForm = new ImageEditorForm(_mapBitmap, modelRatio))
+            {
+                DialogResult editorResult = editorForm.ShowDialog(_ownerForm);
+
+
+                switch (editorResult)
+                {
+                    case DialogResult.OK:
+                        toReturn = editorForm.BitmapToProcess;
+                        break;
+
+                    case DialogResult.Cancel:
+                        toReturn = _mapBitmap;
+                        break;
+
+                    default:
+                        throw new InvalidEnumArgumentException("Unexpected Dialog Result Value");
+                }
+            }
+
+            //Force Garbage collection because Bitmaps that are not explicitly disposed are
+            // very slow to be sweapt by the garbage collector..
+            GC.Collect();
+
+            _mapBitmap = toReturn;
         }
     }
 

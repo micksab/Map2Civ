@@ -11,6 +11,7 @@ namespace Map2CivilizationView.UserControls
     /// </summary>
     class ToolStripCheckBox : ToolStripControlHost
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Reliability", "CA2000:Dispose objects before losing scope")]
         public ToolStripCheckBox() : base(new CheckBox()) { }
 
         public CheckBox CheckBoxControl
@@ -86,6 +87,9 @@ namespace Map2CivilizationView.UserControls
         {
             CheckChanged?.Invoke(this, e);
         }
+
+
+        
 
     }
 }

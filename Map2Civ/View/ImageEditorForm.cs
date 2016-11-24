@@ -77,7 +77,7 @@ namespace Map2CivilizationView
             }
         }
 
-
+        
 
         void PositionImageAreaSelector()
         {
@@ -166,7 +166,7 @@ namespace Map2CivilizationView
                     toReturn = (Bitmap)_selectionToolControl.SelectedAreaImage.Clone();
                 }
 
-                toReturn.SetResolution(96, 96);
+                toReturn.SetDefaultResolution();
                 return toReturn;
             }
             
@@ -360,12 +360,42 @@ namespace Map2CivilizationView
 
         private void adjustmentsButton_Click(object sender, EventArgs e)
         {
-            using (ImageProcessingForm imageAdjustmentForm = new ImageProcessingForm(_originalBmp))
+            using (ColorAdjustmentsForm imageAdjustmentForm = new ColorAdjustmentsForm(_originalBmp))
             {
                 DialogResult result = imageAdjustmentForm.ShowDialog();
+
+                if(result == DialogResult.OK)
+                {
+                    Bitmap newImage = imageAdjustmentForm.ColorAdjustedImage;
+                    _originalBmp = newImage;
+                    SetImage(newImage);
+                    EvaluateIntendedRatio();
+                }
+
+                
             }
 
             
         }
+
+
+
+        protected override bool ProcessCmdKey(ref System.Windows.Forms.Message msg, System.Windows.Forms.Keys keyData)
+        {
+            switch (keyData)
+            {
+                case Keys.Return:
+                    okButton.PerformClick();
+                    break;
+                case Keys.Escape:
+                    cancelButton.PerformClick();
+                    break;
+                default:
+                    return base.ProcessCmdKey(ref msg, keyData);
+            }
+
+            return true;
+        }
+
     }
 }

@@ -28,11 +28,26 @@ using System.Windows.Forms;
 
 namespace Map2CivilizationView
 {
-    public partial class ImageProcessingForm : Form
+    public partial class ColorAdjustmentsForm : Form
     {
         Bitmap _imageToChange;
 
-        public ImageProcessingForm(Bitmap imageToChange)
+        public Bitmap ColorAdjustedImage
+        {
+            get
+            {
+                if (previewImageBox.Image != null)
+                {
+                    return BitmapOperationsCtrl.SafeCloneStreamBasedBitmap((Bitmap)previewImageBox.Image);
+                }
+                else
+                {
+                    return null;
+                }
+            }
+        }
+
+        public ColorAdjustmentsForm(Bitmap imageToChange)
         {
             InitializeComponent();
 

@@ -164,5 +164,23 @@ namespace Map2CivilizationView
             _processedMapControl.Focus();
 
         }
+
+
+
+        protected override bool ProcessCmdKey(ref System.Windows.Forms.Message msg, System.Windows.Forms.Keys keyData)
+        {
+            switch (keyData)
+            {
+                case Keys.Escape:
+                    this.Close();
+                    break;
+                default:
+                    return base.ProcessCmdKey(ref msg, keyData);
+                    
+            }
+
+            return true;
+        }
+
     }
 }

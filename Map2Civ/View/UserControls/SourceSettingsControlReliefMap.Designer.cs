@@ -39,6 +39,7 @@ namespace Map2CivilizationView.UserControls
             this.imageLabel = new System.Windows.Forms.Label();
             this.pathBox = new System.Windows.Forms.TextBox();
             this.advancedGroup = new System.Windows.Forms.GroupBox();
+            this.colorDepthBox = new Map2CivilizationView.UserControls.CustomEnumComboBox();
             this.smoothingModeBox = new System.Windows.Forms.ComboBox();
             this.smoothingLabel = new System.Windows.Forms.Label();
             this.composingQualityBox = new System.Windows.Forms.ComboBox();
@@ -48,7 +49,7 @@ namespace Map2CivilizationView.UserControls
             this.defaultCheck = new System.Windows.Forms.CheckBox();
             this.depthLabel = new System.Windows.Forms.Label();
             this.openFileButton = new System.Windows.Forms.Button();
-            this.colorDepthBox = new Map2CivilizationView.UserControls.CustomEnumComboBox();
+            this.editImageButton = new System.Windows.Forms.Button();
             this.advancedGroup.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -77,6 +78,12 @@ namespace Map2CivilizationView.UserControls
             resources.ApplyResources(this.advancedGroup, "advancedGroup");
             this.advancedGroup.Name = "advancedGroup";
             this.advancedGroup.TabStop = false;
+            // 
+            // colorDepthBox
+            // 
+            resources.ApplyResources(this.colorDepthBox, "colorDepthBox");
+            this.colorDepthBox.Name = "colorDepthBox";
+            this.colorDepthBox.SelectedIndexChanged = null;
             // 
             // smoothingModeBox
             // 
@@ -136,16 +143,19 @@ namespace Map2CivilizationView.UserControls
             this.openFileButton.UseVisualStyleBackColor = true;
             this.openFileButton.Click += new System.EventHandler(this.OpenFileButton_Click);
             // 
-            // colorDepthBox
+            // editImageButton
             // 
-            resources.ApplyResources(this.colorDepthBox, "colorDepthBox");
-            this.colorDepthBox.Name = "colorDepthBox";
-            this.colorDepthBox.SelectedIndexChanged = null;
+            resources.ApplyResources(this.editImageButton, "editImageButton");
+            this.editImageButton.Image = global::Map2Civilization.Properties.Resources.Edit_Image;
+            this.editImageButton.Name = "editImageButton";
+            this.editImageButton.UseVisualStyleBackColor = true;
+            this.editImageButton.Click += new System.EventHandler(this.editImageButton_Click);
             // 
             // SourceSettingsControlReliefMap
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.editImageButton);
             this.Controls.Add(this.advancedGroup);
             this.Controls.Add(this.imageLabel);
             this.Controls.Add(this.openFileButton);
@@ -173,5 +183,6 @@ namespace Map2CivilizationView.UserControls
          System.Windows.Forms.CheckBox defaultCheck;
          System.Windows.Forms.Label depthLabel;
         private CustomEnumComboBox colorDepthBox;
+        private System.Windows.Forms.Button editImageButton;
     }
 }
